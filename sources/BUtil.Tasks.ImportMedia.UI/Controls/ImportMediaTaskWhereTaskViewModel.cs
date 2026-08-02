@@ -113,9 +113,9 @@ public class ImportMediaTaskWhereTaskViewModel : ObservableObject
 
     #region FileLastWriteTimeMin
 
-    private DateTimeOffset? _fileLastWriteTimeMin;
+    private DateTime? _fileLastWriteTimeMin;
 
-    public DateTimeOffset? FileLastWriteTimeMin
+    public DateTime? FileLastWriteTimeMin
     {
         get => _fileLastWriteTimeMin;
         set

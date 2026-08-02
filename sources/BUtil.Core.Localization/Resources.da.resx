@@ -1,5 +1,4 @@
 <root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -263,14 +262,14 @@ Brugsscenarie: Du kopierer data til en fjernserver. Der er et problem: Internetu
   <data name="Field_Folder_Validation_Empty" xml:space="preserve">
     <value>Mappe er ikke angivet.</value>
   </data>
-  <data name="Field_Validation_NotSpecified" xml:space="preserve">
-    <value>{0} er ikke angivet.</value>
-  </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Mappen findes ikke.</value>
   </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>Protokol:</value>
+  </data>
+  <data name="Field_Validation_NotSpecified" xml:space="preserve">
+    <value>{0} er ikke angivet.</value>
   </data>
   <data name="Field_Version" xml:space="preserve">
     <value>Version:</value>
@@ -332,14 +331,26 @@ Brugsscenarie: Du kopierer data til en fjernserver. Der er et problem: Internetu
   <data name="ImportMediaTask_Create" xml:space="preserve">
     <value>Medieimportopgave</value>
   </data>
+  <data name="ImportMediaTask_DeleteCopiedDataOnSourceMedia" xml:space="preserve">
+    <value>Slet kopierede data på kildemediet</value>
+  </data>
   <data name="ImportMediaTask_Edit_Title" xml:space="preserve">
     <value>Rediger medieimportopgave "{0}"</value>
+  </data>
+  <data name="ImportMediaTask_Field_FileExtensions" xml:space="preserve">
+    <value>Filtypenavne:</value>
+  </data>
+  <data name="ImportMediaTask_Field_FileExtensions_Help" xml:space="preserve">
+    <value>Kommasepareret liste over filtypenavne, der skal importeres (f.eks. .jpg, .png, .mp3). Lad feltet være tomt for at importere alle filer.</value>
   </data>
   <data name="ImportMediaTask_Field_OutputFolder" xml:space="preserve">
     <value>Outputmappe:</value>
   </data>
   <data name="ImportMediaTask_Field_TransformFileName" xml:space="preserve">
     <value>Filnavntransformationer:</value>
+  </data>
+  <data name="ImportMediaTask_Field_TransformFileName_Documentation" xml:space="preserve">
+    <value>Dokumentation til datoformat</value>
   </data>
   <data name="ImportMediaTask_Field_TransformFileName_Example" xml:space="preserve">
     <value>Eksempel:
@@ -366,17 +377,20 @@ Søg efter "C# DateTime format" for at se alle muligheder.</value>
 
 Se applikationens hjemmeside for dokumentation om opsætning af filoverførsel via WI-FI gennem FTP Server-applikationen på telefonen.</value>
   </data>
-  <data name="ImportMediaTask_Storage_Help" xml:space="preserve">
-    <value>Angiv den kilde, du vil importere medier fra — fx et SD-kort, en kameramappe eller en telefon via FTPS.</value>
-  </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
     <value>Importér datakilde</value>
   </data>
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>Spring allerede importerede filer over</value>
   </data>
-  <data name="ImportMediaTask_DeleteCopiedDataOnSourceMedia" xml:space="preserve">
-    <value>Slet kopierede data på kildemediet</value>
+  <data name="ImportMediaTask_SkipAlreadyImportedFiles_Help" xml:space="preserve">
+    <value>Når det er aktiveret, springer programmet filer over, der allerede findes i destinationsmappen, eller som er importeret tidligere. Tidligere importerede filnavne huskes, så en fil ikke behandles igen, selv hvis du senere sletter kopien fra destinationsmappen.</value>
+  </data>
+  <data name="ImportMediaTask_Storage_Help" xml:space="preserve">
+    <value>Angiv den kilde, du vil importere medier fra — fx et SD-kort, en kameramappe eller en telefon via FTPS.</value>
+  </data>
+  <data name="ImportMediaTask_Storage_Validation_TooBroad" xml:space="preserve">
+    <value>Den valgte mappe ligner en enheds- eller hjemmerod, fordi den indeholder flere kendte mediemapper ({0}). Vælg en mere specifik mappe, for eksempel "{1}".</value>
   </data>
   <data name="ImproveIt_Message" xml:space="preserve">
     <value>Der opstod en uventet fejl.
@@ -463,9 +477,6 @@ Vælg venligst:
   <data name="LeftMenu_What_Hint" xml:space="preserve">
     <value>Her kan du tilføje mapper og filer, du vil behandle.</value>
   </data>
-  <data name="WhatTask_Description" xml:space="preserve">
-    <value>Her kan du angive de mapper, du vil sikkerhedskopiere.</value>
-  </data>
   <data name="LeftMenu_What_Validation" xml:space="preserve">
     <value>Ingen elementer at behandle.</value>
   </data>
@@ -477,9 +488,6 @@ Vælg venligst:
   </data>
   <data name="LeftMenu_When_Optional_Hint" xml:space="preserve">
     <value>Dette afsnit er valgfrit. Hvis du springer det over, kører opgaven kun, når du starter den manuelt.</value>
-  </data>
-  <data name="RunAtLogin_Label" xml:space="preserve">
-    <value>Kør ved login</value>
   </data>
   <data name="LeftMenu_Where" xml:space="preserve">
     <value>Hvor?</value>
@@ -529,11 +537,11 @@ Vælg venligst:
   <data name="Name_Field_Validation" xml:space="preserve">
     <value>Navnet er tomt eller indeholder ikke-understøttede stitegn.</value>
   </data>
-  <data name="Name_Field_Validation_ExceedsLimit" xml:space="preserve">
-    <value>Navnet '{0}' overskrider grænsen med {1} tegn.</value>
-  </data>
   <data name="Name_Field_Validation_Duplicate" xml:space="preserve">
     <value>Der findes allerede en opgave med dette navn.</value>
+  </data>
+  <data name="Name_Field_Validation_ExceedsLimit" xml:space="preserve">
+    <value>Navnet '{0}' overskrider grænsen med {1} tegn.</value>
   </data>
   <data name="Name_Title" xml:space="preserve">
     <value>Navn</value>
@@ -590,6 +598,180 @@ Peg på en mappe, der indeholder denne fil.</value>
   </data>
   <data name="RestoreFrom_Field_Validation_StateInvalid" xml:space="preserve">
     <value>Kan ikke læse tilstanden.</value>
+  </data>
+  <data name="RunAtLogin_Label" xml:space="preserve">
+    <value>Kør ved login</value>
+  </data>
+  <data name="S3_Provider_AlibabaCloudOSS_Help" xml:space="preserve">
+    <value>Alibaba Cloud OSS — S3-kompatibel objektlagring fra Alibaba.
+
+1. I OSS Console (https://oss.console.aliyun.com/), opret en bucket. Bemærk dens region (f.eks. oss-cn-hangzhou).
+2. I RAM Console → Brugere → opret en bruger → vedhæft AliyunOSSFullAccess → opret en adgangsnøgle.
+   Kopier AccessKey ID (= Access Key) og AccessKey Secret (= Secret Key).
+3. Tjenestewebadresse: https://oss-&lt;REGION&gt;.aliyuncs.com (f.eks. https://oss-cn-hangzhou.aliyuncs.com).
+4. Region: f.eks. oss-cn-hangzhou.</value>
+  </data>
+  <data name="S3_Provider_AWSS3_Help" xml:space="preserve">
+    <value>AWS S3 — Amazons originale objektlager.
+
+1. Åbn S3-konsollen (https://s3.console.aws.amazon.com/), og opret en bøtte. Bemærk dens region (f.eks. us-east-1).
+2. Åbn IAM → Brugere → opret en bruger → vedhæft AmazonS3FullAccess-politikken.
+3. Under Sikkerhedslegitimationsoplysninger skal du oprette en adgangsnøgle — kopier nøgle-id'et og hemmeligheden.
+4. Udfyld: Bucket, Access Key, Secret Key og Region.</value>
+  </data>
+  <data name="S3_Provider_BackblazeB2_Help" xml:space="preserve">
+    <value>Backblaze B2 — overkommelig S3-kompatibel opbevaring.
+
+1. I Backblaze (https://www.backblaze.com/) → B2 Cloud Storage → Buckets skal du oprette en bucket.
+2. Gå til App-nøgler → Tilføj en ny applikationsnøgle, sæt den ind i bøtten.
+   Kopier nøgle-ID (= adgangsnøgle) og applikationsnøgle (= hemmelig nøgle).
+3. Service-URL: din buckets slutpunkt vist i bucket-detaljerne, f.eks. https://s3.us-west-004.backblazeb2.com
+4. Region: segmentet mellem 's3.' og '.backblazeb2.com', f.eks. us-vest-004.</value>
+  </data>
+  <data name="S3_Provider_BaiduCloudBOS_Help" xml:space="preserve">
+    <value>Baidu Cloud BOS — S3-kompatibel objektlagring fra Baidu.
+
+1. I BOS Console (https://console.bce.baidu.com/bos/) skal du oprette en bucket. Bemærk dens region (f.eks. bj, gz, su).
+2. Gå til Sikkerhed → Adgangsnøgler — kopier dit adgangsnøgle-id og hemmelige adgangsnøgle.
+3. Tjeneste-URL: https://s3.&lt;REGION&gt;.bcebos.com (f.eks. https://s3.bj.bcebos.com).
+4. Region: f.eks. bj.</value>
+  </data>
+  <data name="S3_Provider_CloudflareR2_Help" xml:space="preserve">
+    <value>Cloudflare R2 — nul-egress S3-kompatibel lagerplads.
+
+1. I Cloudflare Dashboard (https://dash.cloudflare.com/) → R2 → opret en bøtte.
+2. Gå til R2 → Administrer R2 API-tokens → Opret API-token med objektlæsning og skrivning.
+   Kopier adgangsnøgle-id'et og hemmelig adgangsnøgle.
+3. Tjeneste-URL: https://&lt;ACCOUNT_ID&gt;.r2.cloudflarestorage.com
+   Dit konto-id vises på R2-oversigtssiden.
+4. Udfyld: Bucket, Access Key, Secret Key og Service URL. Region indstilles automatisk til 'auto'.</value>
+  </data>
+  <data name="S3_Provider_CloudRuStorage_Help" xml:space="preserve">
+    <value>Cloud.ru (SberCloud) Object Storage — S3-kompatibel OBS-lagring.
+
+1. I Cloud.ru-konsollen (https://cloud.ru/) → Object Storage Service (OBS) → opret en bucket.
+2. Gå til Mine legitimationsoplysninger → Adgangsnøgler → Tilføj adgangsnøgle.
+   Kopier adgangsnøglen og hemmelig adgangsnøgle.
+3. Udfyld: Bucket, Access Key, Secret Key og Region (f.eks. ru-moscow-1).
+   Service URL udfyldes automatisk.</value>
+  </data>
+  <data name="S3_Provider_Custom_Help" xml:space="preserve">
+    <value>MinIO eller enhver S3-kompatibel server.
+
+1. Start din MinIO (eller anden S3-kompatibel) server.
+2. Opret en bucket via MinIO-konsollen eller 'mc mb &lt;alias&gt;/&lt;bucket&gt;'.
+3. Opret en adgangsnøgle i MinIO Console → Adgangsnøgler (undgå root-legitimationsoplysninger i produktionen).
+4. Service URL: dit serverendepunkt, f.eks. http://192.168.1.10:9000 eller https://minio.example.com.
+5. Region: enhver værdi (f.eks. us-east-1) - eller lad den stå tom, hvis serveren ikke håndhæver det.</value>
+  </data>
+  <data name="S3_Provider_DigitalOceanSpaces_Help" xml:space="preserve">
+    <value>DigitalOcean Spaces — S3-kompatibel objektlagring.
+
+1. Opret et mellemrum i Spaces (https://cloud.digitalocean.com/spaces). Bemærk dens region (f.eks. nyc3).
+2. Gå til API → Mellemrumsnøgler → Generer ny nøgle. Kopier nøglen (= adgangsnøgle) og hemmeligheden.
+3. Tjeneste-URL: https://&lt;REGION&gt;.digitaloceanspaces.com (f.eks. https://nyc3.digitaloceanspaces.com).
+4. Region: samme kortkode, f.eks. nyc3.</value>
+  </data>
+  <data name="S3_Provider_GoogleCloudStorage_Help" xml:space="preserve">
+    <value>Google Cloud Storage - via S3 interoperability API.
+
+1. Opret en bucket i Google Cloud Console (https://console.cloud.google.com/storage).
+2. Gå til Cloud Storage → Indstillinger → Interoperabilitet → opret en HMAC-nøgle til en tjenestekonto.
+   Kopier adgangsnøglen og hemmeligheden.
+3. Udfyld: Bucket, Access Key (HMAC key), Secret Key (HMAC secret).
+   Tjeneste-URL og område indstilles automatisk.</value>
+  </data>
+  <data name="S3_Provider_HuaweiCloudOBS_Help" xml:space="preserve">
+    <value>Huawei Cloud OBS — S3-kompatibel objektlagring fra Huawei.
+
+1. I OBS Console (https://console.huaweicloud.com/obs/) skal du oprette en bucket. Bemærk dens region (f.eks. cn-nord-4).
+2. Gå til Mine legitimationsoplysninger → Adgangsnøgler → Opret adgangsnøgle.
+   Kopier AK (= Access Key) og SK (= Secret Key).
+3. Tjeneste-URL: https://obs.&lt;REGION&gt;.myhuaweicloud.com (f.eks. https://obs.cn-north-4.myhuaweicloud.com).
+4. Region: f.eks. cn-nord-4.</value>
+  </data>
+  <data name="S3_Provider_LinodeObjectStorage_Help" xml:space="preserve">
+    <value>Linode (Akamai) Object Storage — S3-kompatibel opbevaring.
+
+1. Opret en bucket i Linode Cloud Manager (https://cloud.linode.com/object-storage/buckets). Bemærk dens klynge.
+2. Gå til Objektopbevaring → Adgangsnøgler → Opret en adgangsnøgle, der passer til bucket.
+   Kopier adgangsnøglen og hemmelig nøgle.
+3. Tjeneste-URL: https://&lt;CLUSTER&gt;.linodeobjects.com (f.eks. https://us-east-1.linodeobjects.com).
+4. Region: samme klyngekode, f.eks. os-øst-1.</value>
+  </data>
+  <data name="S3_Provider_QiniuCloudKodo_Help" xml:space="preserve">
+    <value>Qiniu Cloud Kodo — S3-kompatibel lagring fra Qiniu.
+
+1. I Qiniu Portal (https://portal.qiniu.com/kodo/bucket) skal du oprette en bucket. Bemærk dens region.
+2. Gå til Personal Center → Key Management — kopier din AccessKey og SecretKey.
+3. Tjenestewebadresse efter område:
+   Østkina: https://s3-cn-east-1.qiniucs.com
+   Nordkina: https://s3-cn-north-1.qiniucs.com
+   Sydkina: https://s3-cn-south-1.qiniucs.com
+   Nordamerika: https://s3-us-north-1.qiniucs.com
+4. Region: matchende kode, f.eks. cn-øst-1.</value>
+  </data>
+  <data name="S3_Provider_ScalewayObjectStorage_Help" xml:space="preserve">
+    <value>Scaleway Object Storage — Europæisk S3-kompatibel lagring.
+
+1. I Scaleway Console (https://console.scaleway.com/object-storage/buckets) skal du oprette en bucket. Bemærk dens region (f.eks. fr-par).
+2. Gå til IAM → API-nøgler → Generer API-nøgle med skrivetilladelser til objektlagring.
+   Kopier adgangsnøglen og hemmelig nøgle.
+3. Tjeneste-URL: https://s3.&lt;REGION&gt;.scw.cloud (f.eks. https://s3.fr-par.scw.cloud).
+4. Region: f.eks. fr-par, nl-ams, pl-waw.</value>
+  </data>
+  <data name="S3_Provider_SelectelStorage_Help" xml:space="preserve">
+    <value>Selectel Object Storage — S3-kompatibel russisk lagring.
+
+1. I Selectel Panel (https://my.selectel.ru/) → Cloud Storage → opret en container (= spand).
+2. Under Brugere og roller skal du oprette en tjenestebruger med lageradgang → S3-nøgler → opret et nøglepar.
+   Kopier adgangsnøglen og hemmelig nøgle.
+3. Udfyld: Spand, Adgangsnøgle, Hemmelig nøgle.
+   Service URL udfyldes automatisk.</value>
+  </data>
+  <data name="S3_Provider_TencentCloudCOS_Help" xml:space="preserve">
+    <value>Tencent Cloud COS — S3-kompatibel objektlagring fra Tencent.
+
+1. I COS Console (https://console.cloud.tencent.com/cos) skal du oprette en bucket. Bemærk AppId og Region (f.eks. ap-beijing).
+2. I Adgangsstyring → API-nøgler → Opret nøgle.
+   Kopier SecretId (= Adgangsnøgle) og SecretKey (= Secret Key).
+3. Tjeneste-URL: https://cos.&lt;REGION&gt;.myqcloud.com (f.eks. https://cos.ap-beijing.myqcloud.com).
+4. Bucket name-format: &lt;navn&gt;-&lt;AppId&gt; (f.eks. mybucket-1250000000). Region: f.eks. ap-beijing.</value>
+  </data>
+  <data name="S3_Provider_VKCloudStorage_Help" xml:space="preserve">
+    <value>VK Cloud Object Storage — S3-kompatibel lagring fra VK Cloud.
+
+1. I VK Cloud Portal (https://msk.cloud.vk.com/) → Cloud Storage → opret en bucket.
+2. Under din konto → Adgangsnøgler → opret et nyt nøglepar.
+   Kopier adgangsnøglen og hemmelig nøgle.
+3. Udfyld: Bucket, Access Key, Secret Key og Region, hvis det kræves (f.eks. ru-msk).
+   Service URL udfyldes automatisk.</value>
+  </data>
+  <data name="S3_Provider_VolcanoEngineTOS_Help" xml:space="preserve">
+    <value>Volcano Engine TOS (ByteDance) — S3-kompatibelt lager.
+
+1. Opret en spand i Volcano Engine Console (https://console.volcengine.com/tos). Bemærk dens region (f.eks. cn-beijing).
+2. Gå til IAM → Adgangsnøgler → opret en nøgle.
+   Kopier adgangsnøgle-id'et og hemmelig adgangsnøgle.
+3. Tjeneste-URL: https://tos-s3-&lt;REGION&gt;.volces.com (f.eks. https://tos-s3-cn-beijing.volces.com).
+4. Region: f.eks. cn-beijing.</value>
+  </data>
+  <data name="S3_Provider_Wasabi_Help" xml:space="preserve">
+    <value>Wasabi — hot cloud storage uden udgangsgebyrer.
+
+1. I Wasabi-konsollen (https://console.wasabisys.com/) → Buckets → Create Bucket. Vælg en region.
+2. Gå til Adgangsnøgler → Opret ny adgangsnøgle. Kopier adgangsnøglen og hemmelig nøgle.
+3. Udfyld: Bucket, Access Key, Secret Key og Region (f.eks. us-east-1, eu-central-1).
+   Service URL udfyldes automatisk.</value>
+  </data>
+  <data name="S3_Provider_YandexObjectStorage_Help" xml:space="preserve">
+    <value>Yandex Object Storage — S3-kompatibel russisk skylagring.
+
+1. I Yandex Cloud Console (https://console.yandex.cloud/) → Objektlagring → opret en bøtte.
+2. Gå til Tjenestekonti → opret en med rollen storage.editor → opret en statisk adgangsnøgle.
+   Kopier nøgle-id (= adgangsnøgle) og hemmelig nøgle.
+3. Udfyld: Spand, Adgangsnøgle, Hemmelig nøgle.
+   Tjeneste-URL og område indstilles automatisk.</value>
   </data>
   <data name="Server_Field_Address" xml:space="preserve">
     <value>Servernavn:</value>
@@ -988,177 +1170,6 @@ Se detaljeret beskrivelse i følgende link.</value>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>Bruger er ikke angivet.</value>
   </data>
-  <data name="S3_Provider_AlibabaCloudOSS_Help" xml:space="preserve">
-    <value>Alibaba Cloud OSS — S3-kompatibel objektlagring fra Alibaba.
-
-1. I OSS Console (https://oss.console.aliyun.com/), opret en bucket. Bemærk dens region (f.eks. oss-cn-hangzhou).
-2. I RAM Console → Brugere → opret en bruger → vedhæft AliyunOSSFullAccess → opret en adgangsnøgle.
-   Kopier AccessKey ID (= Access Key) og AccessKey Secret (= Secret Key).
-3. Tjenestewebadresse: https://oss-&lt;REGION&gt;.aliyuncs.com (f.eks. https://oss-cn-hangzhou.aliyuncs.com).
-4. Region: f.eks. oss-cn-hangzhou.</value>
-  </data>
-  <data name="S3_Provider_AWSS3_Help" xml:space="preserve">
-    <value>AWS S3 — Amazons originale objektlager.
-
-1. Åbn S3-konsollen (https://s3.console.aws.amazon.com/), og opret en bøtte. Bemærk dens region (f.eks. us-east-1).
-2. Åbn IAM → Brugere → opret en bruger → vedhæft AmazonS3FullAccess-politikken.
-3. Under Sikkerhedslegitimationsoplysninger skal du oprette en adgangsnøgle — kopier nøgle-id&apos;et og hemmeligheden.
-4. Udfyld: Bucket, Access Key, Secret Key og Region.</value>
-  </data>
-  <data name="S3_Provider_BaiduCloudBOS_Help" xml:space="preserve">
-    <value>Baidu Cloud BOS — S3-kompatibel objektlagring fra Baidu.
-
-1. I BOS Console (https://console.bce.baidu.com/bos/) skal du oprette en bucket. Bemærk dens region (f.eks. bj, gz, su).
-2. Gå til Sikkerhed → Adgangsnøgler — kopier dit adgangsnøgle-id og hemmelige adgangsnøgle.
-3. Tjeneste-URL: https://s3.&lt;REGION&gt;.bcebos.com (f.eks. https://s3.bj.bcebos.com).
-4. Region: f.eks. bj.</value>
-  </data>
-  <data name="S3_Provider_BackblazeB2_Help" xml:space="preserve">
-    <value>Backblaze B2 — overkommelig S3-kompatibel opbevaring.
-
-1. I Backblaze (https://www.backblaze.com/) → B2 Cloud Storage → Buckets skal du oprette en bucket.
-2. Gå til App-nøgler → Tilføj en ny applikationsnøgle, sæt den ind i bøtten.
-   Kopier nøgle-ID (= adgangsnøgle) og applikationsnøgle (= hemmelig nøgle).
-3. Service-URL: din buckets slutpunkt vist i bucket-detaljerne, f.eks. https://s3.us-west-004.backblazeb2.com
-4. Region: segmentet mellem &apos;s3.&apos; og &apos;.backblazeb2.com&apos;, f.eks. us-vest-004.</value>
-  </data>
-  <data name="S3_Provider_CloudflareR2_Help" xml:space="preserve">
-    <value>Cloudflare R2 — nul-egress S3-kompatibel lagerplads.
-
-1. I Cloudflare Dashboard (https://dash.cloudflare.com/) → R2 → opret en bøtte.
-2. Gå til R2 → Administrer R2 API-tokens → Opret API-token med objektlæsning og skrivning.
-   Kopier adgangsnøgle-id&apos;et og hemmelig adgangsnøgle.
-3. Tjeneste-URL: https://&lt;ACCOUNT_ID&gt;.r2.cloudflarestorage.com
-   Dit konto-id vises på R2-oversigtssiden.
-4. Udfyld: Bucket, Access Key, Secret Key og Service URL. Region indstilles automatisk til &apos;auto&apos;.</value>
-  </data>
-  <data name="S3_Provider_CloudRuStorage_Help" xml:space="preserve">
-    <value>Cloud.ru (SberCloud) Object Storage — S3-kompatibel OBS-lagring.
-
-1. I Cloud.ru-konsollen (https://cloud.ru/) → Object Storage Service (OBS) → opret en bucket.
-2. Gå til Mine legitimationsoplysninger → Adgangsnøgler → Tilføj adgangsnøgle.
-   Kopier adgangsnøglen og hemmelig adgangsnøgle.
-3. Udfyld: Bucket, Access Key, Secret Key og Region (f.eks. ru-moscow-1).
-   Service URL udfyldes automatisk.</value>
-  </data>
-  <data name="S3_Provider_Custom_Help" xml:space="preserve">
-    <value>MinIO eller enhver S3-kompatibel server.
-
-1. Start din MinIO (eller anden S3-kompatibel) server.
-2. Opret en bucket via MinIO-konsollen eller &apos;mc mb &lt;alias&gt;/&lt;bucket&gt;&apos;.
-3. Opret en adgangsnøgle i MinIO Console → Adgangsnøgler (undgå root-legitimationsoplysninger i produktionen).
-4. Service URL: dit serverendepunkt, f.eks. http://192.168.1.10:9000 eller https://minio.example.com.
-5. Region: enhver værdi (f.eks. us-east-1) - eller lad den stå tom, hvis serveren ikke håndhæver det.</value>
-  </data>
-  <data name="S3_Provider_DigitalOceanSpaces_Help" xml:space="preserve">
-    <value>DigitalOcean Spaces — S3-kompatibel objektlagring.
-
-1. Opret et mellemrum i Spaces (https://cloud.digitalocean.com/spaces). Bemærk dens region (f.eks. nyc3).
-2. Gå til API → Mellemrumsnøgler → Generer ny nøgle. Kopier nøglen (= adgangsnøgle) og hemmeligheden.
-3. Tjeneste-URL: https://&lt;REGION&gt;.digitaloceanspaces.com (f.eks. https://nyc3.digitaloceanspaces.com).
-4. Region: samme kortkode, f.eks. nyc3.</value>
-  </data>
-  <data name="S3_Provider_GoogleCloudStorage_Help" xml:space="preserve">
-    <value>Google Cloud Storage - via S3 interoperability API.
-
-1. Opret en bucket i Google Cloud Console (https://console.cloud.google.com/storage).
-2. Gå til Cloud Storage → Indstillinger → Interoperabilitet → opret en HMAC-nøgle til en tjenestekonto.
-   Kopier adgangsnøglen og hemmeligheden.
-3. Udfyld: Bucket, Access Key (HMAC key), Secret Key (HMAC secret).
-   Tjeneste-URL og område indstilles automatisk.</value>
-  </data>
-  <data name="S3_Provider_HuaweiCloudOBS_Help" xml:space="preserve">
-    <value>Huawei Cloud OBS — S3-kompatibel objektlagring fra Huawei.
-
-1. I OBS Console (https://console.huaweicloud.com/obs/) skal du oprette en bucket. Bemærk dens region (f.eks. cn-nord-4).
-2. Gå til Mine legitimationsoplysninger → Adgangsnøgler → Opret adgangsnøgle.
-   Kopier AK (= Access Key) og SK (= Secret Key).
-3. Tjeneste-URL: https://obs.&lt;REGION&gt;.myhuaweicloud.com (f.eks. https://obs.cn-north-4.myhuaweicloud.com).
-4. Region: f.eks. cn-nord-4.</value>
-  </data>
-  <data name="S3_Provider_LinodeObjectStorage_Help" xml:space="preserve">
-    <value>Linode (Akamai) Object Storage — S3-kompatibel opbevaring.
-
-1. Opret en bucket i Linode Cloud Manager (https://cloud.linode.com/object-storage/buckets). Bemærk dens klynge.
-2. Gå til Objektopbevaring → Adgangsnøgler → Opret en adgangsnøgle, der passer til bucket.
-   Kopier adgangsnøglen og hemmelig nøgle.
-3. Tjeneste-URL: https://&lt;CLUSTER&gt;.linodeobjects.com (f.eks. https://us-east-1.linodeobjects.com).
-4. Region: samme klyngekode, f.eks. os-øst-1.</value>
-  </data>
-  <data name="S3_Provider_QiniuCloudKodo_Help" xml:space="preserve">
-    <value>Qiniu Cloud Kodo — S3-kompatibel lagring fra Qiniu.
-
-1. I Qiniu Portal (https://portal.qiniu.com/kodo/bucket) skal du oprette en bucket. Bemærk dens region.
-2. Gå til Personal Center → Key Management — kopier din AccessKey og SecretKey.
-3. Tjenestewebadresse efter område:
-   Østkina: https://s3-cn-east-1.qiniucs.com
-   Nordkina: https://s3-cn-north-1.qiniucs.com
-   Sydkina: https://s3-cn-south-1.qiniucs.com
-   Nordamerika: https://s3-us-north-1.qiniucs.com
-4. Region: matchende kode, f.eks. cn-øst-1.</value>
-  </data>
-  <data name="S3_Provider_ScalewayObjectStorage_Help" xml:space="preserve">
-    <value>Scaleway Object Storage — Europæisk S3-kompatibel lagring.
-
-1. I Scaleway Console (https://console.scaleway.com/object-storage/buckets) skal du oprette en bucket. Bemærk dens region (f.eks. fr-par).
-2. Gå til IAM → API-nøgler → Generer API-nøgle med skrivetilladelser til objektlagring.
-   Kopier adgangsnøglen og hemmelig nøgle.
-3. Tjeneste-URL: https://s3.&lt;REGION&gt;.scw.cloud (f.eks. https://s3.fr-par.scw.cloud).
-4. Region: f.eks. fr-par, nl-ams, pl-waw.</value>
-  </data>
-  <data name="S3_Provider_SelectelStorage_Help" xml:space="preserve">
-    <value>Selectel Object Storage — S3-kompatibel russisk lagring.
-
-1. I Selectel Panel (https://my.selectel.ru/) → Cloud Storage → opret en container (= spand).
-2. Under Brugere og roller skal du oprette en tjenestebruger med lageradgang → S3-nøgler → opret et nøglepar.
-   Kopier adgangsnøglen og hemmelig nøgle.
-3. Udfyld: Spand, Adgangsnøgle, Hemmelig nøgle.
-   Service URL udfyldes automatisk.</value>
-  </data>
-  <data name="S3_Provider_TencentCloudCOS_Help" xml:space="preserve">
-    <value>Tencent Cloud COS — S3-kompatibel objektlagring fra Tencent.
-
-1. I COS Console (https://console.cloud.tencent.com/cos) skal du oprette en bucket. Bemærk AppId og Region (f.eks. ap-beijing).
-2. I Adgangsstyring → API-nøgler → Opret nøgle.
-   Kopier SecretId (= Adgangsnøgle) og SecretKey (= Secret Key).
-3. Tjeneste-URL: https://cos.&lt;REGION&gt;.myqcloud.com (f.eks. https://cos.ap-beijing.myqcloud.com).
-4. Bucket name-format: &lt;navn&gt;-&lt;AppId&gt; (f.eks. mybucket-1250000000). Region: f.eks. ap-beijing.</value>
-  </data>
-  <data name="S3_Provider_VKCloudStorage_Help" xml:space="preserve">
-    <value>VK Cloud Object Storage — S3-kompatibel lagring fra VK Cloud.
-
-1. I VK Cloud Portal (https://msk.cloud.vk.com/) → Cloud Storage → opret en bucket.
-2. Under din konto → Adgangsnøgler → opret et nyt nøglepar.
-   Kopier adgangsnøglen og hemmelig nøgle.
-3. Udfyld: Bucket, Access Key, Secret Key og Region, hvis det kræves (f.eks. ru-msk).
-   Service URL udfyldes automatisk.</value>
-  </data>
-  <data name="S3_Provider_VolcanoEngineTOS_Help" xml:space="preserve">
-    <value>Volcano Engine TOS (ByteDance) — S3-kompatibelt lager.
-
-1. Opret en spand i Volcano Engine Console (https://console.volcengine.com/tos). Bemærk dens region (f.eks. cn-beijing).
-2. Gå til IAM → Adgangsnøgler → opret en nøgle.
-   Kopier adgangsnøgle-id&apos;et og hemmelig adgangsnøgle.
-3. Tjeneste-URL: https://tos-s3-&lt;REGION&gt;.volces.com (f.eks. https://tos-s3-cn-beijing.volces.com).
-4. Region: f.eks. cn-beijing.</value>
-  </data>
-  <data name="S3_Provider_Wasabi_Help" xml:space="preserve">
-    <value>Wasabi — hot cloud storage uden udgangsgebyrer.
-
-1. I Wasabi-konsollen (https://console.wasabisys.com/) → Buckets → Create Bucket. Vælg en region.
-2. Gå til Adgangsnøgler → Opret ny adgangsnøgle. Kopier adgangsnøglen og hemmelig nøgle.
-3. Udfyld: Bucket, Access Key, Secret Key og Region (f.eks. us-east-1, eu-central-1).
-   Service URL udfyldes automatisk.</value>
-  </data>
-  <data name="S3_Provider_YandexObjectStorage_Help" xml:space="preserve">
-    <value>Yandex Object Storage — S3-kompatibel russisk skylagring.
-
-1. I Yandex Cloud Console (https://console.yandex.cloud/) → Objektlagring → opret en bøtte.
-2. Gå til Tjenestekonti → opret en med rollen storage.editor → opret en statisk adgangsnøgle.
-   Kopier nøgle-id (= adgangsnøgle) og hemmelig nøgle.
-3. Udfyld: Spand, Adgangsnøgle, Hemmelig nøgle.
-   Tjeneste-URL og område indstilles automatisk.</value>
-  </data>
   <data name="WebDav_Preset_Box_Help" xml:space="preserve">
     <value>Box — enterprise cloud storage med WebDAV-understøttelse.
 
@@ -1207,7 +1218,7 @@ Se detaljeret beskrivelse i følgende link.</value>
     <value>Mail.ru Cloud via WebDAV.
 
 1. Gå til account.mail.ru → Sikkerhed → App-adgangskoder → Opret app-adgangskode.
-   Vælg &apos;Mail&apos; eller &apos;Alle&apos; som type, og kopier derefter den genererede adgangskode.
+   Vælg 'Mail' eller 'Alle' som type, og kopier derefter den genererede adgangskode.
 2. Indtast din Mail.ru-e-mailadresse som bruger.
 3. Indtast app-adgangskoden som adgangskode.
    Serveradresse, HTTPS, port og basissti konfigureres automatisk.</value>
@@ -1242,13 +1253,15 @@ Se detaljeret beskrivelse i følgende link.</value>
   <data name="WebDav_Preset_YandexDisk_Help" xml:space="preserve">
     <value>Yandex Disk via WebDAV.
 
-1. Gå til id.yandex.com → Sikkerhed → App-adgangskoder → Opret app-adgangskode til &apos;WebDAV-adgang&apos;.
+1. Gå til id.yandex.com → Sikkerhed → App-adgangskoder → Opret app-adgangskode til 'WebDAV-adgang'.
    Kopier den genererede adgangskode - den vises kun én gang.
 2. Indtast dit Yandex-login som bruger.
 3. Indtast app-adgangskoden (ikke din Yandex-kontoadgangskode) som adgangskoden.
    Serveradresse, HTTPS og port konfigureres automatisk.</value>
   </data>
-
+  <data name="WhatTask_Description" xml:space="preserve">
+    <value>Her kan du angive de mapper, du vil sikkerhedskopiere.</value>
+  </data>
   <data name="Winget_Description" xml:space="preserve">
     <value>Sikkerhedskopier/synkroniser dine data på Windows, Linux.
 Importér fotos fra telefon via WI-FI og mere.

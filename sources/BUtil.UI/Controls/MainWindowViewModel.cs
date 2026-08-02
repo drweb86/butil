@@ -104,7 +104,7 @@ public partial class MainWindowViewModel : ViewModelBase
 
         PlatformSpecificExperience.Instance
                 .SupportManager
-                .OpenHomePage();
+                .OpenLink(ApplicationLinks.HomePage);
     }
 
     #endregion

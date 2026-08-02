@@ -38,20 +38,6 @@ public class WindowsSupportManager : ISupportManager
     #region Link
     public bool CanOpenLink { get => true; }
     public bool SupportsSmileIcons => true;
-    public void OpenHomePage()
-    {
-        ProcessHelper.ShellExecute(ApplicationLinks.HomePage);
-    }
-
-    public void OpenLatestRelease()
-    {
-        ProcessHelper.ShellExecute(ApplicationLinks.LatestRelease);
-    }
-
-    public void OpenIcons()
-    {
-        ProcessHelper.ShellExecute(ApplicationLinks.Icons);
-    }
 
     public void OpenLink(string url)
     {

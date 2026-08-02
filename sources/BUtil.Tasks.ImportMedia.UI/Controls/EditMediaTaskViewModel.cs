@@ -124,7 +124,7 @@ public class EditMediaTaskViewModel : BUtil.UI.Controls.ViewModelBase
                 DestinationFolder = ImportMediaTaskWhereTaskViewModel.OutputFolder,
                 SkipAlreadyImportedFiles = ImportMediaTaskWhereTaskViewModel.SkipAlreadyImportedFiles,
                 DeleteCopiedDataOnSourceMedia = ImportMediaTaskWhereTaskViewModel.DeleteCopiedDataOnSourceMedia,
-                FileLastWriteTimeMin = ImportMediaTaskWhereTaskViewModel.FileLastWriteTimeMin?.DateTime ?? null,
+                FileLastWriteTimeMin = ImportMediaTaskWhereTaskViewModel.FileLastWriteTimeMin,
                 TransformFileName = ImportMediaTaskWhereTaskViewModel.TransformFileName,
                 FileExtensions = fileExtensions.Count == 0 ? null : fileExtensions,
                 From = SourceTaskViewModel.GetStorageSettings()

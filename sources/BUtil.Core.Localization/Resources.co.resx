@@ -1,5 +1,4 @@
 <root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -263,14 +262,14 @@ Scenariu d'usu: Copiate i dati à u servitore remotu. Ci hè un prublema: l'ISP 
   <data name="Field_Folder_Validation_Empty" xml:space="preserve">
     <value>U cartulare ùn hè micca specificatu.</value>
   </data>
-  <data name="Field_Validation_NotSpecified" xml:space="preserve">
-    <value>{0} ùn hè micca specificatu.</value>
-  </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>U cartulare ùn esiste micca.</value>
   </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>Protocolu:</value>
+  </data>
+  <data name="Field_Validation_NotSpecified" xml:space="preserve">
+    <value>{0} ùn hè micca specificatu.</value>
   </data>
   <data name="Field_Version" xml:space="preserve">
     <value>Versione:</value>
@@ -332,14 +331,26 @@ Scenariu d'usu: Copiate i dati à u servitore remotu. Ci hè un prublema: l'ISP 
   <data name="ImportMediaTask_Create" xml:space="preserve">
     <value>Impurtà compitu di media</value>
   </data>
+  <data name="ImportMediaTask_DeleteCopiedDataOnSourceMedia" xml:space="preserve">
+    <value>Sguassà i dati cupiati nant'à u media surghjente</value>
+  </data>
   <data name="ImportMediaTask_Edit_Title" xml:space="preserve">
     <value>Edite "{0}" compitu di impurtazione di media</value>
+  </data>
+  <data name="ImportMediaTask_Field_FileExtensions" xml:space="preserve">
+    <value>Estensioni file:</value>
+  </data>
+  <data name="ImportMediaTask_Field_FileExtensions_Help" xml:space="preserve">
+    <value>Elenco di estensioni da importare, separate da virgole (ad esempio .jpg, .png, .mp3). Lasciare vuoto per importare tutti i file.</value>
   </data>
   <data name="ImportMediaTask_Field_OutputFolder" xml:space="preserve">
     <value>Cartulare di output:</value>
   </data>
   <data name="ImportMediaTask_Field_TransformFileName" xml:space="preserve">
     <value>Trasformazioni di nomi di file:</value>
+  </data>
+  <data name="ImportMediaTask_Field_TransformFileName_Documentation" xml:space="preserve">
+    <value>Documentazione formato data</value>
   </data>
   <data name="ImportMediaTask_Field_TransformFileName_Example" xml:space="preserve">
     <value>Esempiu:
@@ -366,17 +377,20 @@ Per vede tutte l'opzioni Google "formatu C# DateTime".</value>
 
 Vede u situ web di l'applicazioni per a documentazione cumu cunfigurà a trasmissione di file via WI-FI attraversu l'applicazione Server FTP in u telefunu.</value>
   </data>
-  <data name="ImportMediaTask_Storage_Help" xml:space="preserve">
-    <value>Specificate a fonte da induve impurtà i media — per esempiu una carta SD, una cartella di camera, o un telefunu via FTPS.</value>
-  </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
     <value>Import fonte di dati</value>
   </data>
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>Salta i fugliali digià impurtati</value>
   </data>
-  <data name="ImportMediaTask_DeleteCopiedDataOnSourceMedia" xml:space="preserve">
-    <value>Sguassà i dati cupiati nant&apos;à u media surghjente</value>
+  <data name="ImportMediaTask_SkipAlreadyImportedFiles_Help" xml:space="preserve">
+    <value>Se abilitata, l'applicazione ignora i file già presenti nella cartella di destinazione o importati in precedenza. I nomi dei file già importati vengono memorizzati, quindi un file non viene rielaborato anche se in seguito elimini la relativa copia dalla cartella di destinazione.</value>
+  </data>
+  <data name="ImportMediaTask_Storage_Help" xml:space="preserve">
+    <value>Specificate a fonte da induve impurtà i media — per esempiu una carta SD, una cartella di camera, o un telefunu via FTPS.</value>
+  </data>
+  <data name="ImportMediaTask_Storage_Validation_TooBroad" xml:space="preserve">
+    <value>La cartella selezionata sembra la radice di un dispositivo o di una directory home perché contiene diverse cartelle multimediali note ({0}). Scegliere una cartella più specifica, ad esempio "{1}".</value>
   </data>
   <data name="ImproveIt_Message" xml:space="preserve">
     <value>Un errore imprevisu hè accadutu.
@@ -463,9 +477,6 @@ Per piacè sia:
   <data name="LeftMenu_What_Hint" xml:space="preserve">
     <value>Quì pudete aghjunghje cartulare è schedari chì avete bisognu di processà.</value>
   </data>
-  <data name="WhatTask_Description" xml:space="preserve">
-    <value>Quì pudete specificà i cartulari chì vulete salvà in copia di salvezza.</value>
-  </data>
   <data name="LeftMenu_What_Validation" xml:space="preserve">
     <value>Nisun articulu per processà.</value>
   </data>
@@ -477,9 +488,6 @@ Per piacè sia:
   </data>
   <data name="LeftMenu_When_Optional_Hint" xml:space="preserve">
     <value>Questa sezione hè facultativa. Se a saltate, a taccia si eseguisce solu quandu a lanciate manualmente.</value>
-  </data>
-  <data name="RunAtLogin_Label" xml:space="preserve">
-    <value>Eseguì à a cunnessione</value>
   </data>
   <data name="LeftMenu_Where" xml:space="preserve">
     <value>Induve ?</value>
@@ -529,11 +537,11 @@ Per piacè sia:
   <data name="Name_Field_Validation" xml:space="preserve">
     <value>U nome hè viotu o cuntene caratteri di caminu micca supportati.</value>
   </data>
-  <data name="Name_Field_Validation_ExceedsLimit" xml:space="preserve">
-    <value>A lunghezza di u nome '{0}' supera u limitu di {1} caratteri.</value>
-  </data>
   <data name="Name_Field_Validation_Duplicate" xml:space="preserve">
     <value>Un compitu cù stu nome esiste dighjà.</value>
+  </data>
+  <data name="Name_Field_Validation_ExceedsLimit" xml:space="preserve">
+    <value>A lunghezza di u nome '{0}' supera u limitu di {1} caratteri.</value>
   </data>
   <data name="Name_Title" xml:space="preserve">
     <value>Nome</value>
@@ -590,6 +598,180 @@ Puntate à un cartulare chì cuntene stu schedariu.</value>
   </data>
   <data name="RestoreFrom_Field_Validation_StateInvalid" xml:space="preserve">
     <value>Ùn pò micca leghje u statu.</value>
+  </data>
+  <data name="RunAtLogin_Label" xml:space="preserve">
+    <value>Eseguì à a cunnessione</value>
+  </data>
+  <data name="S3_Provider_AlibabaCloudOSS_Help" xml:space="preserve">
+    <value>Alibaba Cloud OSS - Storage d'ughjettu S3-compatibile da Alibaba.
+
+1. In OSS Console (https://oss.console.aliyun.com/), crea un bucket. Nota a so regione (per esempiu, oss-cn-hangzhou).
+2. In RAM Console → Users → create a user → attache AliyunOSSFullAccess → create an AccessKey.
+   Copia l'ID AccessKey (= Chjave d'Access) è AccessKey Secret (= Chjave Secreta).
+3. URL di serviziu: https://oss-&lt;REGION&gt;.aliyuncs.com (per esempiu https://oss-cn-hangzhou.aliyuncs.com).
+4. Regione : p.e. oss-cn-hangzhou.</value>
+  </data>
+  <data name="S3_Provider_AWSS3_Help" xml:space="preserve">
+    <value>AWS S3 - U almacenamentu d'ughjettu originale di Amazon.
+
+1. Aprite a Console S3 (https://s3.console.aws.amazon.com/) è crea un bucket. Nota a so regione (per esempiu, us-east-1).
+2. Apertura IAM → Users → creà un utilizatore → aghjunghje a pulitica AmazonS3FullAccess.
+3. Sottu credentials Security, creà una chjave Access - cupià u ID Chjave è Secret.
+4. Fill in: Bucket, Access Key, Secret Key, è Regione.</value>
+  </data>
+  <data name="S3_Provider_BackblazeB2_Help" xml:space="preserve">
+    <value>Backblaze B2 - almacenamentu assequible cumpatibile cù S3.
+
+1. In Backblaze (https://www.backblaze.com/) → B2 Cloud Storage → Buckets, crea un bucket.
+2. Vai à App Keys → Add a New Application Key, scopre à u bucket.
+   Copia l'ID di chjave (= Chjave di Accessu) è l'Applicazione Chjave (= Chjave Secreta).
+3. URL di serviziu: u puntu finale di u bucket mostratu in i dettagli di u bucket, per esempiu. https://s3.us-west-004.backblazeb2.com
+4. Regione : u segmentu trà 's3.' è '.backblazeb2.com', p.e. us-west-004.</value>
+  </data>
+  <data name="S3_Provider_BaiduCloudBOS_Help" xml:space="preserve">
+    <value>Baidu Cloud BOS - L'almacenamiento d'oggetti compatibile cù S3 da Baidu.
+
+1. In BOS Console (https://console.bce.baidu.com/bos/), crea un bucket. Nota a so regione (per esempiu bj, gz, su).
+2. Andà à Sicurezza → Chjavi d'accessu - copiate u vostru ID Chjave di Accessu è Chjave d'Accessu Secret.
+3. URL di serviziu: https://s3.&lt;REGION&gt;.bcebos.com (per esempiu https://s3.bj.bcebos.com).
+4. Regione : p.e. bj.</value>
+  </data>
+  <data name="S3_Provider_CloudflareR2_Help" xml:space="preserve">
+    <value>Cloudflare R2 - almacenamentu compatibile cù S3 senza uscita.
+
+1. In Cloudflare Dashboard (https://dash.cloudflare.com/) → R2 → crea un bucket.
+2. Andà à R2 → Manage R2 API Tokens → Create API Token with Object Read &amp; Write.
+   Copia l'ID Chjave d'Access è Chjave d'Access Secret.
+3. URL serviziu: https://&lt;ACCOUNT_ID&gt;.r2.cloudflarestorage.com
+   U vostru ID di contu hè mostratu nantu à a pagina di panoramica R2.
+4. Fill in: Bucket, Access Key, Secret Key, è Service URL. A regione hè impostata automaticamente à "auto".</value>
+  </data>
+  <data name="S3_Provider_CloudRuStorage_Help" xml:space="preserve">
+    <value>Cloud.ru (SberCloud) Storage Object - Storage OBS compatible S3.
+
+1. In Cloud.ru Console (https://cloud.ru/) → Service Storage d'Oggetti (OBS) → crea un bucket.
+2. Andà à My Credentials → Access Keys → Add Access Key.
+   Copia a chjave d'accessu è a chjave d'accessu secreta.
+3. Fill in: Bucket, Access Key, Secret Key, è Regione (per esempiu ru-moscow-1).
+   L'URL di u serviziu hè cumpletu automaticamente.</value>
+  </data>
+  <data name="S3_Provider_Custom_Help" xml:space="preserve">
+    <value>MinIO o qualsiasi servitore S3-compatibile.
+
+1. Cumincià u vostru servitore MinIO (o altru S3-compatibile).
+2. Crea un bucket via a MinIO Console o 'mc mb &lt;alias&gt;/&lt;bucket&gt;'.
+3. Crea una chjave d'accessu in MinIO Console → Chjavi d'accessu (evitate e credenziali di root in a produzzione).
+4. URL di serviziu: u vostru endpoint di u servitore, per esempiu. http://192.168.1.10:9000 o https://minio.example.com.
+5. Regione: ogni valore (per esempiu, us-east-1) - o lascià viotu se u servitore ùn l'hà micca infurzatu.</value>
+  </data>
+  <data name="S3_Provider_DigitalOceanSpaces_Help" xml:space="preserve">
+    <value>DigitalOcean Spaces - U almacenamentu d'ughjettu S3-compatibile.
+
+1. In Spaces (https://cloud.digitalocean.com/spaces), creà un Space. Nota a so regione (per esempiu nyc3).
+2. Andà à API → Spazi Chjavi → Generate New Key. Copia a Chjave (= Chjave di Accessu) è Secret.
+3. URL di serviziu: https://&lt;REGION&gt;.digitaloceanspaces.com (per esempiu https://nyc3.digitaloceanspaces.com).
+4. Regione: listessu codice cortu, per esempiu. nyc3.</value>
+  </data>
+  <data name="S3_Provider_GoogleCloudStorage_Help" xml:space="preserve">
+    <value>Google Cloud Storage - via l'API d'interoperabilità S3.
+
+1. In Google Cloud Console (https://console.cloud.google.com/storage), crea un bucket.
+2. Andà à Cloud Storage → Settings → Interoperability → creà una chjave HMAC per un contu di serviziu.
+   Copia a chjave d'accessu è u sicretu.
+3. Riempite: Bucket, Access Key (HMAC key), Secret Key (HMAC secret).
+   L'URL di u serviziu è a regione sò stabiliti automaticamente.</value>
+  </data>
+  <data name="S3_Provider_HuaweiCloudOBS_Help" xml:space="preserve">
+    <value>Huawei Cloud OBS - L'almacenamiento d'ughjettu S3-compatibile da Huawei.
+
+1. In OBS Console (https://console.huaweicloud.com/obs/), crea un bucket. Nota a so regione (per esempiu, cn-north-4).
+2. Andà à My Credentials → Access Keys → Crea Access Key.
+   Copia l'AK (= Chjave di Accessu) è SK (= Chjave Secreta).
+3. URL di serviziu: https://obs.&lt;REGION&gt;.myhuaweicloud.com (per esempiu https://obs.cn-north-4.myhuaweicloud.com).
+4. Regione : p.e. cn-nord-4.</value>
+  </data>
+  <data name="S3_Provider_LinodeObjectStorage_Help" xml:space="preserve">
+    <value>Linode (Akamai) Object Storage - Storage compatible S3.
+
+1. In Linode Cloud Manager (https://cloud.linode.com/object-storage/buckets), crea un bucket. Nota u so cluster.
+2. Andà à Object Storage → Access Keys → Crea un Access Key scoped à u bucket.
+   Copia a chjave d'accessu è a chjave secreta.
+3. URL di serviziu: https://&lt;CLUSTER&gt;.linodeobjects.com (per esempiu https://us-east-1.linodeobjects.com).
+4. Regione: listessu codice cluster, per esempiu. us-est-1.</value>
+  </data>
+  <data name="S3_Provider_QiniuCloudKodo_Help" xml:space="preserve">
+    <value>Qiniu Cloud Kodo - Storage compatible S3 da Qiniu.
+
+1. In Qiniu Portal (https://portal.qiniu.com/kodo/bucket), crea un bucket. Nota a so regione.
+2. Andà à Centru Personale → Gestione di chjave - copiate u vostru AccessKey è SecretKey.
+3. URL di serviziu per regione:
+   Cina orientale: https://s3-cn-east-1.qiniucs.com
+   Cina di u Nordu: https://s3-cn-north-1.qiniucs.com
+   Cina meridionale: https://s3-cn-south-1.qiniucs.com
+   America di u Nordu: https://s3-us-north-1.qiniucs.com
+4. Regione: codice currispundente, p.e. cn-est-1.</value>
+  </data>
+  <data name="S3_Provider_ScalewayObjectStorage_Help" xml:space="preserve">
+    <value>Scaleway Object Storage - L'almacenamiento europeu S3-compatibile.
+
+1. In Scaleway Console (https://console.scaleway.com/object-storage/buckets), crea un bucket. Nota a so regione (per esempiu fr-par).
+2. Andà à IAM → API Keys → Generate API Key with Object Storage write permissions.
+   Copia a chjave d'accessu è a chjave secreta.
+3. URL di serviziu: https://s3.&lt;REGION&gt;.scw.cloud (per esempiu https://s3.fr-par.scw.cloud).
+4. Regione : p.e. fr-par, nl-ams, pl-waw.</value>
+  </data>
+  <data name="S3_Provider_SelectelStorage_Help" xml:space="preserve">
+    <value>Selectel Object Storage - L'almacenamiento russu cumpatibile cù S3.
+
+1. In Selectel Panel (https://my.selectel.ru/) → Cloud Storage → creà un cuntinuu (= bucket).
+2. Sottu Users &amp; Roles, crea un utilizatore di serviziu cù accessu à l'almacenamiento → S3 Keys → creà una coppia di chjave.
+   Copia a chjave d'accessu è a chjave secreta.
+3. Fill in: Bucket, Access Key, Secret Key.
+   L'URL di u serviziu hè cumpletu automaticamente.</value>
+  </data>
+  <data name="S3_Provider_TencentCloudCOS_Help" xml:space="preserve">
+    <value>Tencent Cloud COS - L'almacenamentu d'ughjettu S3-compatibile da Tencent.
+
+1. In COS Console (https://console.cloud.tencent.com/cos), crea un bucket. Nota l'AppId è a Regione (per esempiu ap-beijing).
+2. In Access Management → API Keys → Create Key.
+   Copia u SecretId (= Chjave di Accessu) è SecretKey (= Chiave Secreta).
+3. URL di serviziu: https://cos.&lt;REGION&gt;.myqcloud.com (per esempiu https://cos.ap-beijing.myqcloud.com).
+4. Formatu di u nome di u bucket: &lt;name&gt;-&lt;AppId&gt; (per esempiu, mybucket-1250000000). Regione: per esempiu ap-Beijing.</value>
+  </data>
+  <data name="S3_Provider_VKCloudStorage_Help" xml:space="preserve">
+    <value>VK Cloud Object Storage - Storage compatible S3 da VK Cloud.
+
+1. In VK Cloud Portal (https://msk.cloud.vk.com/) → Cloud Storage → crea un bucket.
+2. Sottu u vostru contu → Chjavi Access → creà una nova coppia chjave.
+   Copia a chjave d'accessu è a chjave secreta.
+3. Riempite: Bucket, Access Key, Secret Key, è Regione se necessariu (per esempiu ru-msk).
+   L'URL di u serviziu hè cumpletu automaticamente.</value>
+  </data>
+  <data name="S3_Provider_VolcanoEngineTOS_Help" xml:space="preserve">
+    <value>Volcano Engine TOS (ByteDance) - Storage compatible S3.
+
+1. In Volcano Engine Console (https://console.volcengine.com/tos), crea un bucket. Nota a so regione (per esempiu, cn-beijing).
+2. Andà à IAM → Access Keys → creà una chjave.
+   Copia l'ID Chjave d'Access è Chjave d'Access Secret.
+3. URL di serviziu: https://tos-s3-&lt;REGION&gt;.volces.com (per esempiu https://tos-s3-cn-beijing.volces.com).
+4. Regione : p.e. cn-Beijing.</value>
+  </data>
+  <data name="S3_Provider_Wasabi_Help" xml:space="preserve">
+    <value>Wasabi - almacenamentu in nuvola calda senza spese di uscita.
+
+1. In Wasabi Console (https://console.wasabisys.com/) → Buckets → Create Bucket. Sceglite una regione.
+2. Andà à Chjavi Access → Crea New Access Key. Copia a chjave d'accessu è a chjave secreta.
+3. Riempite: Bucket, Access Key, Secret Key, and Region (per esempiu us-east-1, eu-central-1).
+   L'URL di u serviziu hè cumpletu automaticamente.</value>
+  </data>
+  <data name="S3_Provider_YandexObjectStorage_Help" xml:space="preserve">
+    <value>Yandex Object Storage - U almacenamentu in nuvola russu cumpatibile cù S3.
+
+1. In Yandex Cloud Console (https://console.yandex.cloud/) → Object Storage → crea un bucket.
+2. Andà à Service Accounts → creà unu cù u rolu storage.editor → creà una chjave di accessu Static.
+   Copia l'ID Chjave (= Chjave d'accessu) è a chjave secreta.
+3. Fill in: Bucket, Access Key, Secret Key.
+   L'URL di u serviziu è a regione sò stabiliti automaticamente.</value>
   </data>
   <data name="Server_Field_Address" xml:space="preserve">
     <value>Nome di u servitore:</value>
@@ -988,237 +1170,66 @@ See detailed description in the following link.</value>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>L'utilizatore ùn hè micca specificatu.</value>
   </data>
-  <data name="S3_Provider_AlibabaCloudOSS_Help" xml:space="preserve">
-    <value>Alibaba Cloud OSS - Storage d&apos;ughjettu S3-compatibile da Alibaba.
-
-1. In OSS Console (https://oss.console.aliyun.com/), crea un bucket. Nota a so regione (per esempiu, oss-cn-hangzhou).
-2. In RAM Console → Users → create a user → attache AliyunOSSFullAccess → create an AccessKey.
-   Copia l&apos;ID AccessKey (= Chjave d&apos;Access) è AccessKey Secret (= Chjave Secreta).
-3. URL di serviziu: https://oss-&lt;REGION&gt;.aliyuncs.com (per esempiu https://oss-cn-hangzhou.aliyuncs.com).
-4. Regione : p.e. oss-cn-hangzhou.</value>
-  </data>
-  <data name="S3_Provider_AWSS3_Help" xml:space="preserve">
-    <value>AWS S3 - U almacenamentu d&apos;ughjettu originale di Amazon.
-
-1. Aprite a Console S3 (https://s3.console.aws.amazon.com/) è crea un bucket. Nota a so regione (per esempiu, us-east-1).
-2. Apertura IAM → Users → creà un utilizatore → aghjunghje a pulitica AmazonS3FullAccess.
-3. Sottu credentials Security, creà una chjave Access - cupià u ID Chjave è Secret.
-4. Fill in: Bucket, Access Key, Secret Key, è Regione.</value>
-  </data>
-  <data name="S3_Provider_BaiduCloudBOS_Help" xml:space="preserve">
-    <value>Baidu Cloud BOS - L&apos;almacenamiento d&apos;oggetti compatibile cù S3 da Baidu.
-
-1. In BOS Console (https://console.bce.baidu.com/bos/), crea un bucket. Nota a so regione (per esempiu bj, gz, su).
-2. Andà à Sicurezza → Chjavi d&apos;accessu - copiate u vostru ID Chjave di Accessu è Chjave d&apos;Accessu Secret.
-3. URL di serviziu: https://s3.&lt;REGION&gt;.bcebos.com (per esempiu https://s3.bj.bcebos.com).
-4. Regione : p.e. bj.</value>
-  </data>
-  <data name="S3_Provider_BackblazeB2_Help" xml:space="preserve">
-    <value>Backblaze B2 - almacenamentu assequible cumpatibile cù S3.
-
-1. In Backblaze (https://www.backblaze.com/) → B2 Cloud Storage → Buckets, crea un bucket.
-2. Vai à App Keys → Add a New Application Key, scopre à u bucket.
-   Copia l&apos;ID di chjave (= Chjave di Accessu) è l&apos;Applicazione Chjave (= Chjave Secreta).
-3. URL di serviziu: u puntu finale di u bucket mostratu in i dettagli di u bucket, per esempiu. https://s3.us-west-004.backblazeb2.com
-4. Regione : u segmentu trà &apos;s3.&apos; è &apos;.backblazeb2.com&apos;, p.e. us-west-004.</value>
-  </data>
-  <data name="S3_Provider_CloudflareR2_Help" xml:space="preserve">
-    <value>Cloudflare R2 - almacenamentu compatibile cù S3 senza uscita.
-
-1. In Cloudflare Dashboard (https://dash.cloudflare.com/) → R2 → crea un bucket.
-2. Andà à R2 → Manage R2 API Tokens → Create API Token with Object Read &amp; Write.
-   Copia l&apos;ID Chjave d&apos;Access è Chjave d&apos;Access Secret.
-3. URL serviziu: https://&lt;ACCOUNT_ID&gt;.r2.cloudflarestorage.com
-   U vostru ID di contu hè mostratu nantu à a pagina di panoramica R2.
-4. Fill in: Bucket, Access Key, Secret Key, è Service URL. A regione hè impostata automaticamente à &quot;auto&quot;.</value>
-  </data>
-  <data name="S3_Provider_CloudRuStorage_Help" xml:space="preserve">
-    <value>Cloud.ru (SberCloud) Storage Object - Storage OBS compatible S3.
-
-1. In Cloud.ru Console (https://cloud.ru/) → Service Storage d&apos;Oggetti (OBS) → crea un bucket.
-2. Andà à My Credentials → Access Keys → Add Access Key.
-   Copia a chjave d&apos;accessu è a chjave d&apos;accessu secreta.
-3. Fill in: Bucket, Access Key, Secret Key, è Regione (per esempiu ru-moscow-1).
-   L&apos;URL di u serviziu hè cumpletu automaticamente.</value>
-  </data>
-  <data name="S3_Provider_Custom_Help" xml:space="preserve">
-    <value>MinIO o qualsiasi servitore S3-compatibile.
-
-1. Cumincià u vostru servitore MinIO (o altru S3-compatibile).
-2. Crea un bucket via a MinIO Console o &apos;mc mb &lt;alias&gt;/&lt;bucket&gt;&apos;.
-3. Crea una chjave d&apos;accessu in MinIO Console → Chjavi d&apos;accessu (evitate e credenziali di root in a produzzione).
-4. URL di serviziu: u vostru endpoint di u servitore, per esempiu. http://192.168.1.10:9000 o https://minio.example.com.
-5. Regione: ogni valore (per esempiu, us-east-1) - o lascià viotu se u servitore ùn l&apos;hà micca infurzatu.</value>
-  </data>
-  <data name="S3_Provider_DigitalOceanSpaces_Help" xml:space="preserve">
-    <value>DigitalOcean Spaces - U almacenamentu d&apos;ughjettu S3-compatibile.
-
-1. In Spaces (https://cloud.digitalocean.com/spaces), creà un Space. Nota a so regione (per esempiu nyc3).
-2. Andà à API → Spazi Chjavi → Generate New Key. Copia a Chjave (= Chjave di Accessu) è Secret.
-3. URL di serviziu: https://&lt;REGION&gt;.digitaloceanspaces.com (per esempiu https://nyc3.digitaloceanspaces.com).
-4. Regione: listessu codice cortu, per esempiu. nyc3.</value>
-  </data>
-  <data name="S3_Provider_GoogleCloudStorage_Help" xml:space="preserve">
-    <value>Google Cloud Storage - via l&apos;API d&apos;interoperabilità S3.
-
-1. In Google Cloud Console (https://console.cloud.google.com/storage), crea un bucket.
-2. Andà à Cloud Storage → Settings → Interoperability → creà una chjave HMAC per un contu di serviziu.
-   Copia a chjave d&apos;accessu è u sicretu.
-3. Riempite: Bucket, Access Key (HMAC key), Secret Key (HMAC secret).
-   L&apos;URL di u serviziu è a regione sò stabiliti automaticamente.</value>
-  </data>
-  <data name="S3_Provider_HuaweiCloudOBS_Help" xml:space="preserve">
-    <value>Huawei Cloud OBS - L&apos;almacenamiento d&apos;ughjettu S3-compatibile da Huawei.
-
-1. In OBS Console (https://console.huaweicloud.com/obs/), crea un bucket. Nota a so regione (per esempiu, cn-north-4).
-2. Andà à My Credentials → Access Keys → Crea Access Key.
-   Copia l&apos;AK (= Chjave di Accessu) è SK (= Chjave Secreta).
-3. URL di serviziu: https://obs.&lt;REGION&gt;.myhuaweicloud.com (per esempiu https://obs.cn-north-4.myhuaweicloud.com).
-4. Regione : p.e. cn-nord-4.</value>
-  </data>
-  <data name="S3_Provider_LinodeObjectStorage_Help" xml:space="preserve">
-    <value>Linode (Akamai) Object Storage - Storage compatible S3.
-
-1. In Linode Cloud Manager (https://cloud.linode.com/object-storage/buckets), crea un bucket. Nota u so cluster.
-2. Andà à Object Storage → Access Keys → Crea un Access Key scoped à u bucket.
-   Copia a chjave d&apos;accessu è a chjave secreta.
-3. URL di serviziu: https://&lt;CLUSTER&gt;.linodeobjects.com (per esempiu https://us-east-1.linodeobjects.com).
-4. Regione: listessu codice cluster, per esempiu. us-est-1.</value>
-  </data>
-  <data name="S3_Provider_QiniuCloudKodo_Help" xml:space="preserve">
-    <value>Qiniu Cloud Kodo - Storage compatible S3 da Qiniu.
-
-1. In Qiniu Portal (https://portal.qiniu.com/kodo/bucket), crea un bucket. Nota a so regione.
-2. Andà à Centru Personale → Gestione di chjave - copiate u vostru AccessKey è SecretKey.
-3. URL di serviziu per regione:
-   Cina orientale: https://s3-cn-east-1.qiniucs.com
-   Cina di u Nordu: https://s3-cn-north-1.qiniucs.com
-   Cina meridionale: https://s3-cn-south-1.qiniucs.com
-   America di u Nordu: https://s3-us-north-1.qiniucs.com
-4. Regione: codice currispundente, p.e. cn-est-1.</value>
-  </data>
-  <data name="S3_Provider_ScalewayObjectStorage_Help" xml:space="preserve">
-    <value>Scaleway Object Storage - L&apos;almacenamiento europeu S3-compatibile.
-
-1. In Scaleway Console (https://console.scaleway.com/object-storage/buckets), crea un bucket. Nota a so regione (per esempiu fr-par).
-2. Andà à IAM → API Keys → Generate API Key with Object Storage write permissions.
-   Copia a chjave d&apos;accessu è a chjave secreta.
-3. URL di serviziu: https://s3.&lt;REGION&gt;.scw.cloud (per esempiu https://s3.fr-par.scw.cloud).
-4. Regione : p.e. fr-par, nl-ams, pl-waw.</value>
-  </data>
-  <data name="S3_Provider_SelectelStorage_Help" xml:space="preserve">
-    <value>Selectel Object Storage - L&apos;almacenamiento russu cumpatibile cù S3.
-
-1. In Selectel Panel (https://my.selectel.ru/) → Cloud Storage → creà un cuntinuu (= bucket).
-2. Sottu Users &amp; Roles, crea un utilizatore di serviziu cù accessu à l&apos;almacenamiento → S3 Keys → creà una coppia di chjave.
-   Copia a chjave d&apos;accessu è a chjave secreta.
-3. Fill in: Bucket, Access Key, Secret Key.
-   L&apos;URL di u serviziu hè cumpletu automaticamente.</value>
-  </data>
-  <data name="S3_Provider_TencentCloudCOS_Help" xml:space="preserve">
-    <value>Tencent Cloud COS - L&apos;almacenamentu d&apos;ughjettu S3-compatibile da Tencent.
-
-1. In COS Console (https://console.cloud.tencent.com/cos), crea un bucket. Nota l&apos;AppId è a Regione (per esempiu ap-beijing).
-2. In Access Management → API Keys → Create Key.
-   Copia u SecretId (= Chjave di Accessu) è SecretKey (= Chiave Secreta).
-3. URL di serviziu: https://cos.&lt;REGION&gt;.myqcloud.com (per esempiu https://cos.ap-beijing.myqcloud.com).
-4. Formatu di u nome di u bucket: &lt;name&gt;-&lt;AppId&gt; (per esempiu, mybucket-1250000000). Regione: per esempiu ap-Beijing.</value>
-  </data>
-  <data name="S3_Provider_VKCloudStorage_Help" xml:space="preserve">
-    <value>VK Cloud Object Storage - Storage compatible S3 da VK Cloud.
-
-1. In VK Cloud Portal (https://msk.cloud.vk.com/) → Cloud Storage → crea un bucket.
-2. Sottu u vostru contu → Chjavi Access → creà una nova coppia chjave.
-   Copia a chjave d&apos;accessu è a chjave secreta.
-3. Riempite: Bucket, Access Key, Secret Key, è Regione se necessariu (per esempiu ru-msk).
-   L&apos;URL di u serviziu hè cumpletu automaticamente.</value>
-  </data>
-  <data name="S3_Provider_VolcanoEngineTOS_Help" xml:space="preserve">
-    <value>Volcano Engine TOS (ByteDance) - Storage compatible S3.
-
-1. In Volcano Engine Console (https://console.volcengine.com/tos), crea un bucket. Nota a so regione (per esempiu, cn-beijing).
-2. Andà à IAM → Access Keys → creà una chjave.
-   Copia l&apos;ID Chjave d&apos;Access è Chjave d&apos;Access Secret.
-3. URL di serviziu: https://tos-s3-&lt;REGION&gt;.volces.com (per esempiu https://tos-s3-cn-beijing.volces.com).
-4. Regione : p.e. cn-Beijing.</value>
-  </data>
-  <data name="S3_Provider_Wasabi_Help" xml:space="preserve">
-    <value>Wasabi - almacenamentu in nuvola calda senza spese di uscita.
-
-1. In Wasabi Console (https://console.wasabisys.com/) → Buckets → Create Bucket. Sceglite una regione.
-2. Andà à Chjavi Access → Crea New Access Key. Copia a chjave d&apos;accessu è a chjave secreta.
-3. Riempite: Bucket, Access Key, Secret Key, and Region (per esempiu us-east-1, eu-central-1).
-   L&apos;URL di u serviziu hè cumpletu automaticamente.</value>
-  </data>
-  <data name="S3_Provider_YandexObjectStorage_Help" xml:space="preserve">
-    <value>Yandex Object Storage - U almacenamentu in nuvola russu cumpatibile cù S3.
-
-1. In Yandex Cloud Console (https://console.yandex.cloud/) → Object Storage → crea un bucket.
-2. Andà à Service Accounts → creà unu cù u rolu storage.editor → creà una chjave di accessu Static.
-   Copia l&apos;ID Chjave (= Chjave d&apos;accessu) è a chjave secreta.
-3. Fill in: Bucket, Access Key, Secret Key.
-   L&apos;URL di u serviziu è a regione sò stabiliti automaticamente.</value>
-  </data>
   <data name="WebDav_Preset_Box_Help" xml:space="preserve">
-    <value>Box - almacenamentu in nuvola di l&apos;impresa cù supportu WebDAV.
+    <value>Box - almacenamentu in nuvola di l'impresa cù supportu WebDAV.
 
 1. Entra in app.box.com. Nota chì Box WebDAV hè dispunibule solu per i piani pagati.
-2. Entre in u vostru contu Box email cum&apos;è User.
-3. Entre u vostru password Box cum&apos;è u Password.
+2. Entre in u vostru contu Box email cum'è User.
+3. Entre u vostru password Box cum'è u Password.
    Sè aduprate SSO, pudete avè bisognu di stabilisce una password WebDAV separata in Settings Account.
-   L&apos;indirizzu di u servitore, HTTPS, u portu è u percorsu di basa sò cunfigurati automaticamente.</value>
+   L'indirizzu di u servitore, HTTPS, u portu è u percorsu di basa sò cunfigurati automaticamente.</value>
   </data>
   <data name="WebDav_Preset_Custom_Help" xml:space="preserve">
     <value>Servitore WebDAV genericu (Nextcloud, ownCloud, Synology DSM, Seafile, Apache, etc.)
 
-1. Inserite l&apos;indirizzu di u servitore, sceglite HTTPS (cunsigliatu), è stabilisce u portu (0 = predeterminatu: 80 per HTTP, 443 per HTTPS).
-2. Inserite u percorsu di basa per l&apos;endpoint WebDAV.
+1. Inserite l'indirizzu di u servitore, sceglite HTTPS (cunsigliatu), è stabilisce u portu (0 = predeterminatu: 80 per HTTP, 443 per HTTPS).
+2. Inserite u percorsu di basa per l'endpoint WebDAV.
    Esempiu Nextcloud: /remote.php/dav/files/&lt;username&gt;/Backups
    Synology DSM: /
-3. Inserite u vostru nome d&apos;utilizatore è a vostra password (o una password specifica per l&apos;app se u vostru servitore ne richiede).</value>
+3. Inserite u vostru nome d'utilizatore è a vostra password (o una password specifica per l'app se u vostru servitore ne richiede).</value>
   </data>
   <data name="WebDav_Preset_IONOSHiDrive_Help" xml:space="preserve">
     <value>IONOS HiDrive - Storage in nuvola tedesca cun forte focus di privacy.
 
 1. Log in à hidrive.ionos.com → Settings → Apps &amp; servizii cunnessi → WebDAV.
    O accede direttamente à WebDAV cù e vostre credenziali esistenti.
-2. Inserite u vostru nome d&apos;utilizatore HiDrive cum&apos;è User.
-3. Entre u vostru password HiDrive cum&apos;è u Password.
-   L&apos;indirizzu di u servitore, HTTPS, u portu è u percorsu di basa sò cunfigurati automaticamente.</value>
+2. Inserite u vostru nome d'utilizatore HiDrive cum'è User.
+3. Entre u vostru password HiDrive cum'è u Password.
+   L'indirizzu di u servitore, HTTPS, u portu è u percorsu di basa sò cunfigurati automaticamente.</value>
   </data>
   <data name="WebDav_Preset_Jianguoyun_Help" xml:space="preserve">
     <value>Jianguoyun (坚果云) - famosu almacenamentu in nuvola cinese cù supportu nativu WebDAV.
 
 1. Entra in jianguoyun.com → Account Info → Security → Third-Party App Management → Add Application.
-   Copia a password di l&apos;app generata - hè mostrata solu una volta.
-2. Entre in u vostru indirizzu email Jianguoyun cum&apos;è User.
-3. Entre u password &apos;app generatu cum&apos;è u Password.
-   L&apos;indirizzu di u servitore, HTTPS, u portu è u percorsu di basa sò cunfigurati automaticamente.</value>
+   Copia a password di l'app generata - hè mostrata solu una volta.
+2. Entre in u vostru indirizzu email Jianguoyun cum'è User.
+3. Entre u password 'app generatu cum'è u Password.
+   L'indirizzu di u servitore, HTTPS, u portu è u percorsu di basa sò cunfigurati automaticamente.</value>
   </data>
   <data name="WebDav_Preset_Koofr_Help" xml:space="preserve">
     <value>Koofr - un almacenamentu in nuvola favuritu di a privacy basatu in Slovenia (UE).
 
 1. Andà à app.koofr.eu → Preferences → Password → App password → Add password.
-2. Entre in u vostru email contu Koofr cum&apos;è User.
-3. Entre u password &apos;app generatu cum&apos;è u Password.
-   L&apos;indirizzu di u servitore, HTTPS, u portu è u percorsu di basa sò cunfigurati automaticamente.</value>
+2. Entre in u vostru email contu Koofr cum'è User.
+3. Entre u password 'app generatu cum'è u Password.
+   L'indirizzu di u servitore, HTTPS, u portu è u percorsu di basa sò cunfigurati automaticamente.</value>
   </data>
   <data name="WebDav_Preset_MailRuCloud_Help" xml:space="preserve">
     <value>Mail.ru Cloud via WebDAV.
 
 1. Andà à account.mail.ru → Sicurezza → App password → Crea password app.
-   Selezziunate &quot;Mail&quot; o &quot;Tutti&quot; cum&apos;è u tipu, dopu copià a password generata.
-2. Entre in u vostru indirizzu email Mail.ru cum&apos;è User.
-3. Entre u password &apos;app cum&apos;è u Password.
-   L&apos;indirizzu di u servitore, HTTPS, u portu è u percorsu di basa sò cunfigurati automaticamente.</value>
+   Selezziunate "Mail" o "Tutti" cum'è u tipu, dopu copià a password generata.
+2. Entre in u vostru indirizzu email Mail.ru cum'è User.
+3. Entre u password 'app cum'è u Password.
+   L'indirizzu di u servitore, HTTPS, u portu è u percorsu di basa sò cunfigurati automaticamente.</value>
   </data>
   <data name="WebDav_Preset_Nextcloud_Help" xml:space="preserve">
     <value>Nextcloud - populari sincronia è sparte di i schedari self-hosted.
 
 1. Inserite u vostru indirizzu servore Nextcloud (per esempiu nextcloud.example.com).
 2. U percorsu di basa hè pre-pienu: /remote.php/dav/files/&lt;username&gt;/
-   Sustituisci &lt;username&gt; cù u vostru veru nome d&apos;utilizatore Nextcloud.
-3. Inserite u vostru nome d&apos;utilizatore è password Nextcloud (o una password di l&apos;app da
+   Sustituisci &lt;username&gt; cù u vostru veru nome d'utilizatore Nextcloud.
+3. Inserite u vostru nome d'utilizatore è password Nextcloud (o una password di l'app da
    Configurazione → Sicurezza → Dispositivi è sessioni → App password).</value>
   </data>
   <data name="WebDav_Preset_ownCloud_Help" xml:space="preserve">
@@ -1226,29 +1237,31 @@ See detailed description in the following link.</value>
 
 1. Inserite u vostru indirizzu servore ownCloud (per esempiu owncloud.example.com).
 2. U percorsu di basa hè pre-pienu: /remote.php/dav/files/&lt;username&gt;/
-   Sustituisci &lt;username&gt; cù u vostru propiu nome d&apos;utilizatore ownCloud.
-3. Inserite u vostru nome d&apos;utilizatore è password ownCloud (o una password di l&apos;app se 2FA hè attivatu).</value>
+   Sustituisci &lt;username&gt; cù u vostru propiu nome d'utilizatore ownCloud.
+3. Inserite u vostru nome d'utilizatore è password ownCloud (o una password di l'app se 2FA hè attivatu).</value>
   </data>
   <data name="WebDav_Preset_pCloud_Help" xml:space="preserve">
-    <value>pCloud - almacenamiento in nuvola cù centri di dati di l&apos;UE è di i Stati Uniti.
+    <value>pCloud - almacenamiento in nuvola cù centri di dati di l'UE è di i Stati Uniti.
 
 1. Entra in my.pcloud.com → Settings → Security → App Passwords → Create.
-   Copia a password di l&apos;app - hè mostrata solu una volta.
-2. Entre in u vostru contu pCloud email cum&apos;è User.
-3. Entre u password &apos;app cum&apos;è u Password.
-   Per u centru di dati di l&apos;UE: ewebdav.pcloud.com hè utilizatu automaticamente.
-   Per u centru di dati di i Stati Uniti: cambia l&apos;ospite in webdav.pcloud.com.</value>
+   Copia a password di l'app - hè mostrata solu una volta.
+2. Entre in u vostru contu pCloud email cum'è User.
+3. Entre u password 'app cum'è u Password.
+   Per u centru di dati di l'UE: ewebdav.pcloud.com hè utilizatu automaticamente.
+   Per u centru di dati di i Stati Uniti: cambia l'ospite in webdav.pcloud.com.</value>
   </data>
   <data name="WebDav_Preset_YandexDisk_Help" xml:space="preserve">
     <value>Yandex Disk via WebDAV.
 
-1. Andà à id.yandex.com → Sicurezza → App password → Crea password app per &apos;accessu WebDAV&apos;.
+1. Andà à id.yandex.com → Sicurezza → App password → Crea password app per 'accessu WebDAV'.
    Copia a password generata - hè mostrata solu una volta.
-2. Entre in u vostru login Yandex cum&apos;è User.
-3. Inserite a password di l&apos;app (micca u password di u vostru contu Yandex) cum&apos;è Password.
-   L&apos;indirizzu di u servitore, HTTPS è u portu sò cunfigurati automaticamente.</value>
+2. Entre in u vostru login Yandex cum'è User.
+3. Inserite a password di l'app (micca u password di u vostru contu Yandex) cum'è Password.
+   L'indirizzu di u servitore, HTTPS è u portu sò cunfigurati automaticamente.</value>
   </data>
-
+  <data name="WhatTask_Description" xml:space="preserve">
+    <value>Quì pudete specificà i cartulari chì vulete salvà in copia di salvezza.</value>
+  </data>
   <data name="Winget_Description" xml:space="preserve">
     <value>Salvà / sincronizà i vostri dati Windows, Linux.
 Importa foto da u telefunu via WI-FI è più.

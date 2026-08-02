@@ -1,5 +1,4 @@
 <root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -260,14 +259,14 @@
   <data name="Field_Folder_Validation_Empty" xml:space="preserve">
     <value>Folder no dey specified.</value>
   </data>
-  <data name="Field_Validation_NotSpecified" xml:space="preserve">
-    <value>{0} no dey specified.</value>
-  </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Folder no dey exist.</value>
   </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>Protocol:</value>
+  </data>
+  <data name="Field_Validation_NotSpecified" xml:space="preserve">
+    <value>{0} no dey specified.</value>
   </data>
   <data name="Field_Version" xml:space="preserve">
     <value>Version:</value>
@@ -329,14 +328,26 @@
   <data name="ImportMediaTask_Create" xml:space="preserve">
     <value>Import media task</value>
   </data>
+  <data name="ImportMediaTask_DeleteCopiedDataOnSourceMedia" xml:space="preserve">
+    <value>Delete copied data from source media</value>
+  </data>
   <data name="ImportMediaTask_Edit_Title" xml:space="preserve">
     <value>Edit "{0}" media import task</value>
+  </data>
+  <data name="ImportMediaTask_Field_FileExtensions" xml:space="preserve">
+    <value>File extensions:</value>
+  </data>
+  <data name="ImportMediaTask_Field_FileExtensions_Help" xml:space="preserve">
+    <value>Comma-separated list of extensions to import (for example .jpg, .png, .mp3). Leave empty to import all files.</value>
   </data>
   <data name="ImportMediaTask_Field_OutputFolder" xml:space="preserve">
     <value>Output folder:</value>
   </data>
   <data name="ImportMediaTask_Field_TransformFileName" xml:space="preserve">
     <value>File name transformations:</value>
+  </data>
+  <data name="ImportMediaTask_Field_TransformFileName_Documentation" xml:space="preserve">
+    <value>Date format docs</value>
   </data>
   <data name="ImportMediaTask_Field_TransformFileName_Example" xml:space="preserve">
     <value>Example:
@@ -363,17 +374,20 @@
     
     See application web-site for documentation on how to set up file transmission via WI-FI through FTP Server application on the phone.</value>
   </data>
-  <data name="ImportMediaTask_Storage_Help" xml:space="preserve">
-    <value>Choose the place wey you wan import media come from — like SD card, camera folder, or phone through FTPS.</value>
-  </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
     <value>Import data source</value>
   </data>
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>Skip files wey don already import</value>
   </data>
-  <data name="ImportMediaTask_DeleteCopiedDataOnSourceMedia" xml:space="preserve">
-    <value>Delete copied data from source media</value>
+  <data name="ImportMediaTask_SkipAlreadyImportedFiles_Help" xml:space="preserve">
+    <value>When enabled, the application skips files that already exist in the destination or that were imported earlier. Previously imported file names are remembered, so a file is not processed again even if you delete its copy from the destination later.</value>
+  </data>
+  <data name="ImportMediaTask_Storage_Help" xml:space="preserve">
+    <value>Choose the place wey you wan import media come from — like SD card, camera folder, or phone through FTPS.</value>
+  </data>
+  <data name="ImportMediaTask_Storage_Validation_TooBroad" xml:space="preserve">
+    <value>The selected folder looks like a device or home root because it contains several known media folders ({0}). Please choose a more specific folder, for example "{1}".</value>
   </data>
   <data name="ImproveIt_Message" xml:space="preserve">
     <value>One unexpected error occur.
@@ -460,9 +474,6 @@ Abeg do one of dese:
   <data name="LeftMenu_What_Hint" xml:space="preserve">
     <value>Here you fit add folders and files wey you need to process.</value>
   </data>
-  <data name="WhatTask_Description" xml:space="preserve">
-    <value>For here, you fit choose di folders wey you wan backup.</value>
-  </data>
   <data name="LeftMenu_What_Validation" xml:space="preserve">
     <value>No items to process.</value>
   </data>
@@ -471,9 +482,6 @@ Abeg do one of dese:
   </data>
   <data name="LeftMenu_When_Help" xml:space="preserve">
     <value>Here you fit set up scheduler. Scheduler fit help you automate task launch.</value>
-  </data>
-  <data name="RunAtLogin_Label" xml:space="preserve">
-    <value>Run at login</value>
   </data>
   <data name="LeftMenu_When_Optional_Hint" xml:space="preserve">
     <value>Dis section no dey compulsory. If you skip am, the task go only run when you start am by hand.</value>
@@ -526,11 +534,11 @@ Abeg do one of dese:
   <data name="Name_Field_Validation" xml:space="preserve">
     <value>Name dey empty or e get unsupported path characters.</value>
   </data>
-  <data name="Name_Field_Validation_ExceedsLimit" xml:space="preserve">
-    <value>Name '{0}' length pass limit by {1} chars.</value>
-  </data>
   <data name="Name_Field_Validation_Duplicate" xml:space="preserve">
     <value>Task wey get dis name don already dey.</value>
+  </data>
+  <data name="Name_Field_Validation_ExceedsLimit" xml:space="preserve">
+    <value>Name '{0}' length pass limit by {1} chars.</value>
   </data>
   <data name="Name_Title" xml:space="preserve">
     <value>Name</value>
@@ -587,6 +595,180 @@ Abeg do one of dese:
   </data>
   <data name="RestoreFrom_Field_Validation_StateInvalid" xml:space="preserve">
     <value>No fit read state.</value>
+  </data>
+  <data name="RunAtLogin_Label" xml:space="preserve">
+    <value>Run at login</value>
+  </data>
+  <data name="S3_Provider_AlibabaCloudOSS_Help" xml:space="preserve">
+    <value>Alibaba Cloud OSS — S3-compatible object storage from Alibaba.
+
+1. In OSS Console (https://oss.console.aliyun.com/), create a bucket. Note its region (e.g. oss-cn-hangzhou).
+2. In RAM Console → Users → create a user → attach AliyunOSSFullAccess → create an AccessKey.
+   Copy the AccessKey ID (= Access Key) and AccessKey Secret (= Secret Key).
+3. Service URL: https://oss-&lt;REGION&gt;.aliyuncs.com (e.g. https://oss-cn-hangzhou.aliyuncs.com).
+4. Region: e.g. oss-cn-hangzhou.</value>
+  </data>
+  <data name="S3_Provider_AWSS3_Help" xml:space="preserve">
+    <value>AWS S3 — Amazon's original object storage.
+
+1. Open the S3 Console (https://s3.console.aws.amazon.com/) and create a bucket. Note its region (e.g. us-east-1).
+2. Open IAM → Users → create a user → attach the AmazonS3FullAccess policy.
+3. Under Security credentials, create an Access key — copy the Key ID and Secret.
+4. Fill in: Bucket, Access Key, Secret Key, and Region.</value>
+  </data>
+  <data name="S3_Provider_BackblazeB2_Help" xml:space="preserve">
+    <value>Backblaze B2 — affordable S3-compatible storage.
+
+1. In Backblaze (https://www.backblaze.com/) → B2 Cloud Storage → Buckets, create a bucket.
+2. Go to App Keys → Add a New Application Key, scope it to the bucket.
+   Copy the keyID (= Access Key) and applicationKey (= Secret Key).
+3. Service URL: your bucket's endpoint shown in bucket details, e.g. https://s3.us-west-004.backblazeb2.com
+4. Region: the segment between 's3.' and '.backblazeb2.com', e.g. us-west-004.</value>
+  </data>
+  <data name="S3_Provider_BaiduCloudBOS_Help" xml:space="preserve">
+    <value>Baidu Cloud BOS — S3-compatible object storage from Baidu.
+
+1. In BOS Console (https://console.bce.baidu.com/bos/), create a bucket. Note its region (e.g. bj, gz, su).
+2. Go to Security → Access Keys — copy your Access Key ID and Secret Access Key.
+3. Service URL: https://s3.&lt;REGION&gt;.bcebos.com (e.g. https://s3.bj.bcebos.com).
+4. Region: e.g. bj.</value>
+  </data>
+  <data name="S3_Provider_CloudflareR2_Help" xml:space="preserve">
+    <value>Cloudflare R2 — zero-egress S3-compatible storage.
+
+1. In Cloudflare Dashboard (https://dash.cloudflare.com/) → R2 → create a bucket.
+2. Go to R2 → Manage R2 API Tokens → Create API Token with Object Read &amp; Write.
+   Copy the Access Key ID and Secret Access Key.
+3. Service URL: https://&lt;ACCOUNT_ID&gt;.r2.cloudflarestorage.com
+   Your Account ID is shown on the R2 overview page.
+4. Fill in: Bucket, Access Key, Secret Key, and Service URL. Region is set to 'auto' automatically.</value>
+  </data>
+  <data name="S3_Provider_CloudRuStorage_Help" xml:space="preserve">
+    <value>Cloud.ru (SberCloud) Object Storage — S3-compatible OBS storage.
+
+1. In Cloud.ru Console (https://cloud.ru/) → Object Storage Service (OBS) → create a bucket.
+2. Go to My Credentials → Access Keys → Add Access Key.
+   Copy the Access Key and Secret Access Key.
+3. Fill in: Bucket, Access Key, Secret Key, and Region (e.g. ru-moscow-1).
+   Service URL is filled in automatically.</value>
+  </data>
+  <data name="S3_Provider_Custom_Help" xml:space="preserve">
+    <value>MinIO or any S3-compatible server.
+
+1. Start your MinIO (or other S3-compatible) server.
+2. Create a bucket via the MinIO Console or 'mc mb &lt;alias&gt;/&lt;bucket&gt;'.
+3. Create an access key in MinIO Console → Access Keys (avoid root credentials in production).
+4. Service URL: your server endpoint, e.g. http://192.168.1.10:9000 or https://minio.example.com.
+5. Region: any value (e.g. us-east-1) — or leave empty if the server does not enforce it.</value>
+  </data>
+  <data name="S3_Provider_DigitalOceanSpaces_Help" xml:space="preserve">
+    <value>DigitalOcean Spaces — S3-compatible object storage.
+
+1. In Spaces (https://cloud.digitalocean.com/spaces), create a Space. Note its region (e.g. nyc3).
+2. Go to API → Spaces Keys → Generate New Key. Copy the Key (= Access Key) and Secret.
+3. Service URL: https://&lt;REGION&gt;.digitaloceanspaces.com (e.g. https://nyc3.digitaloceanspaces.com).
+4. Region: same short code, e.g. nyc3.</value>
+  </data>
+  <data name="S3_Provider_GoogleCloudStorage_Help" xml:space="preserve">
+    <value>Google Cloud Storage — via the S3 interoperability API.
+
+1. In Google Cloud Console (https://console.cloud.google.com/storage), create a bucket.
+2. Go to Cloud Storage → Settings → Interoperability → create an HMAC key for a service account.
+   Copy the Access Key and Secret.
+3. Fill in: Bucket, Access Key (HMAC key), Secret Key (HMAC secret).
+   Service URL and region are set automatically.</value>
+  </data>
+  <data name="S3_Provider_HuaweiCloudOBS_Help" xml:space="preserve">
+    <value>Huawei Cloud OBS — S3-compatible object storage from Huawei.
+
+1. In OBS Console (https://console.huaweicloud.com/obs/), create a bucket. Note its region (e.g. cn-north-4).
+2. Go to My Credentials → Access Keys → Create Access Key.
+   Copy the AK (= Access Key) and SK (= Secret Key).
+3. Service URL: https://obs.&lt;REGION&gt;.myhuaweicloud.com (e.g. https://obs.cn-north-4.myhuaweicloud.com).
+4. Region: e.g. cn-north-4.</value>
+  </data>
+  <data name="S3_Provider_LinodeObjectStorage_Help" xml:space="preserve">
+    <value>Linode (Akamai) Object Storage — S3-compatible storage.
+
+1. In Linode Cloud Manager (https://cloud.linode.com/object-storage/buckets), create a bucket. Note its cluster.
+2. Go to Object Storage → Access Keys → Create an Access Key scoped to the bucket.
+   Copy the Access Key and Secret Key.
+3. Service URL: https://&lt;CLUSTER&gt;.linodeobjects.com (e.g. https://us-east-1.linodeobjects.com).
+4. Region: same cluster code, e.g. us-east-1.</value>
+  </data>
+  <data name="S3_Provider_QiniuCloudKodo_Help" xml:space="preserve">
+    <value>Qiniu Cloud Kodo — S3-compatible storage from Qiniu.
+
+1. In Qiniu Portal (https://portal.qiniu.com/kodo/bucket), create a bucket. Note its region.
+2. Go to Personal Center → Key Management — copy your AccessKey and SecretKey.
+3. Service URL by region:
+   East China:    https://s3-cn-east-1.qiniucs.com
+   North China:   https://s3-cn-north-1.qiniucs.com
+   South China:   https://s3-cn-south-1.qiniucs.com
+   North America: https://s3-us-north-1.qiniucs.com
+4. Region: matching code, e.g. cn-east-1.</value>
+  </data>
+  <data name="S3_Provider_ScalewayObjectStorage_Help" xml:space="preserve">
+    <value>Scaleway Object Storage — European S3-compatible storage.
+
+1. In Scaleway Console (https://console.scaleway.com/object-storage/buckets), create a bucket. Note its region (e.g. fr-par).
+2. Go to IAM → API Keys → Generate API Key with Object Storage write permissions.
+   Copy the Access Key and Secret Key.
+3. Service URL: https://s3.&lt;REGION&gt;.scw.cloud (e.g. https://s3.fr-par.scw.cloud).
+4. Region: e.g. fr-par, nl-ams, pl-waw.</value>
+  </data>
+  <data name="S3_Provider_SelectelStorage_Help" xml:space="preserve">
+    <value>Selectel Object Storage — S3-compatible Russian storage.
+
+1. In Selectel Panel (https://my.selectel.ru/) → Cloud Storage → create a container (= bucket).
+2. Under Users &amp; Roles, create a service user with storage access → S3 Keys → create a key pair.
+   Copy the Access Key and Secret Key.
+3. Fill in: Bucket, Access Key, Secret Key.
+   Service URL is filled in automatically.</value>
+  </data>
+  <data name="S3_Provider_TencentCloudCOS_Help" xml:space="preserve">
+    <value>Tencent Cloud COS — S3-compatible object storage from Tencent.
+
+1. In COS Console (https://console.cloud.tencent.com/cos), create a bucket. Note the AppId and Region (e.g. ap-beijing).
+2. In Access Management → API Keys → Create Key.
+   Copy the SecretId (= Access Key) and SecretKey (= Secret Key).
+3. Service URL: https://cos.&lt;REGION&gt;.myqcloud.com (e.g. https://cos.ap-beijing.myqcloud.com).
+4. Bucket name format: &lt;name&gt;-&lt;AppId&gt; (e.g. mybucket-1250000000). Region: e.g. ap-beijing.</value>
+  </data>
+  <data name="S3_Provider_VKCloudStorage_Help" xml:space="preserve">
+    <value>VK Cloud Object Storage — S3-compatible storage from VK Cloud.
+
+1. In VK Cloud Portal (https://msk.cloud.vk.com/) → Cloud Storage → create a bucket.
+2. Under your account → Access Keys → create a new key pair.
+   Copy the Access Key and Secret Key.
+3. Fill in: Bucket, Access Key, Secret Key, and Region if required (e.g. ru-msk).
+   Service URL is filled in automatically.</value>
+  </data>
+  <data name="S3_Provider_VolcanoEngineTOS_Help" xml:space="preserve">
+    <value>Volcano Engine TOS (ByteDance) — S3-compatible storage.
+
+1. In Volcano Engine Console (https://console.volcengine.com/tos), create a bucket. Note its region (e.g. cn-beijing).
+2. Go to IAM → Access Keys → create a key.
+   Copy the Access Key ID and Secret Access Key.
+3. Service URL: https://tos-s3-&lt;REGION&gt;.volces.com (e.g. https://tos-s3-cn-beijing.volces.com).
+4. Region: e.g. cn-beijing.</value>
+  </data>
+  <data name="S3_Provider_Wasabi_Help" xml:space="preserve">
+    <value>Wasabi — hot cloud storage with no egress fees.
+
+1. In Wasabi Console (https://console.wasabisys.com/) → Buckets → Create Bucket. Choose a region.
+2. Go to Access Keys → Create New Access Key. Copy the Access Key and Secret Key.
+3. Fill in: Bucket, Access Key, Secret Key, and Region (e.g. us-east-1, eu-central-1).
+   Service URL is filled in automatically.</value>
+  </data>
+  <data name="S3_Provider_YandexObjectStorage_Help" xml:space="preserve">
+    <value>Yandex Object Storage — S3-compatible Russian cloud storage.
+
+1. In Yandex Cloud Console (https://console.yandex.cloud/) → Object Storage → create a bucket.
+2. Go to Service Accounts → create one with the storage.editor role → create a Static access key.
+   Copy the Key ID (= Access Key) and Secret key.
+3. Fill in: Bucket, Access Key, Secret Key.
+   Service URL and region are set automatically.</value>
   </data>
   <data name="Server_Field_Address" xml:space="preserve">
     <value>Server name:</value>
@@ -985,177 +1167,6 @@ Abeg do one of dese:
   <data name="User_Field_Validation" xml:space="preserve">
     <value>User no dey specified.</value>
   </data>
-  <data name="S3_Provider_AlibabaCloudOSS_Help" xml:space="preserve">
-    <value>Alibaba Cloud OSS — S3-compatible object storage from Alibaba.
-
-1. In OSS Console (https://oss.console.aliyun.com/), create a bucket. Note its region (e.g. oss-cn-hangzhou).
-2. In RAM Console → Users → create a user → attach AliyunOSSFullAccess → create an AccessKey.
-   Copy the AccessKey ID (= Access Key) and AccessKey Secret (= Secret Key).
-3. Service URL: https://oss-&lt;REGION&gt;.aliyuncs.com (e.g. https://oss-cn-hangzhou.aliyuncs.com).
-4. Region: e.g. oss-cn-hangzhou.</value>
-  </data>
-  <data name="S3_Provider_AWSS3_Help" xml:space="preserve">
-    <value>AWS S3 — Amazon&apos;s original object storage.
-
-1. Open the S3 Console (https://s3.console.aws.amazon.com/) and create a bucket. Note its region (e.g. us-east-1).
-2. Open IAM → Users → create a user → attach the AmazonS3FullAccess policy.
-3. Under Security credentials, create an Access key — copy the Key ID and Secret.
-4. Fill in: Bucket, Access Key, Secret Key, and Region.</value>
-  </data>
-  <data name="S3_Provider_BaiduCloudBOS_Help" xml:space="preserve">
-    <value>Baidu Cloud BOS — S3-compatible object storage from Baidu.
-
-1. In BOS Console (https://console.bce.baidu.com/bos/), create a bucket. Note its region (e.g. bj, gz, su).
-2. Go to Security → Access Keys — copy your Access Key ID and Secret Access Key.
-3. Service URL: https://s3.&lt;REGION&gt;.bcebos.com (e.g. https://s3.bj.bcebos.com).
-4. Region: e.g. bj.</value>
-  </data>
-  <data name="S3_Provider_BackblazeB2_Help" xml:space="preserve">
-    <value>Backblaze B2 — affordable S3-compatible storage.
-
-1. In Backblaze (https://www.backblaze.com/) → B2 Cloud Storage → Buckets, create a bucket.
-2. Go to App Keys → Add a New Application Key, scope it to the bucket.
-   Copy the keyID (= Access Key) and applicationKey (= Secret Key).
-3. Service URL: your bucket&apos;s endpoint shown in bucket details, e.g. https://s3.us-west-004.backblazeb2.com
-4. Region: the segment between &apos;s3.&apos; and &apos;.backblazeb2.com&apos;, e.g. us-west-004.</value>
-  </data>
-  <data name="S3_Provider_CloudflareR2_Help" xml:space="preserve">
-    <value>Cloudflare R2 — zero-egress S3-compatible storage.
-
-1. In Cloudflare Dashboard (https://dash.cloudflare.com/) → R2 → create a bucket.
-2. Go to R2 → Manage R2 API Tokens → Create API Token with Object Read &amp; Write.
-   Copy the Access Key ID and Secret Access Key.
-3. Service URL: https://&lt;ACCOUNT_ID&gt;.r2.cloudflarestorage.com
-   Your Account ID is shown on the R2 overview page.
-4. Fill in: Bucket, Access Key, Secret Key, and Service URL. Region is set to &apos;auto&apos; automatically.</value>
-  </data>
-  <data name="S3_Provider_CloudRuStorage_Help" xml:space="preserve">
-    <value>Cloud.ru (SberCloud) Object Storage — S3-compatible OBS storage.
-
-1. In Cloud.ru Console (https://cloud.ru/) → Object Storage Service (OBS) → create a bucket.
-2. Go to My Credentials → Access Keys → Add Access Key.
-   Copy the Access Key and Secret Access Key.
-3. Fill in: Bucket, Access Key, Secret Key, and Region (e.g. ru-moscow-1).
-   Service URL is filled in automatically.</value>
-  </data>
-  <data name="S3_Provider_Custom_Help" xml:space="preserve">
-    <value>MinIO or any S3-compatible server.
-
-1. Start your MinIO (or other S3-compatible) server.
-2. Create a bucket via the MinIO Console or &apos;mc mb &lt;alias&gt;/&lt;bucket&gt;&apos;.
-3. Create an access key in MinIO Console → Access Keys (avoid root credentials in production).
-4. Service URL: your server endpoint, e.g. http://192.168.1.10:9000 or https://minio.example.com.
-5. Region: any value (e.g. us-east-1) — or leave empty if the server does not enforce it.</value>
-  </data>
-  <data name="S3_Provider_DigitalOceanSpaces_Help" xml:space="preserve">
-    <value>DigitalOcean Spaces — S3-compatible object storage.
-
-1. In Spaces (https://cloud.digitalocean.com/spaces), create a Space. Note its region (e.g. nyc3).
-2. Go to API → Spaces Keys → Generate New Key. Copy the Key (= Access Key) and Secret.
-3. Service URL: https://&lt;REGION&gt;.digitaloceanspaces.com (e.g. https://nyc3.digitaloceanspaces.com).
-4. Region: same short code, e.g. nyc3.</value>
-  </data>
-  <data name="S3_Provider_GoogleCloudStorage_Help" xml:space="preserve">
-    <value>Google Cloud Storage — via the S3 interoperability API.
-
-1. In Google Cloud Console (https://console.cloud.google.com/storage), create a bucket.
-2. Go to Cloud Storage → Settings → Interoperability → create an HMAC key for a service account.
-   Copy the Access Key and Secret.
-3. Fill in: Bucket, Access Key (HMAC key), Secret Key (HMAC secret).
-   Service URL and region are set automatically.</value>
-  </data>
-  <data name="S3_Provider_HuaweiCloudOBS_Help" xml:space="preserve">
-    <value>Huawei Cloud OBS — S3-compatible object storage from Huawei.
-
-1. In OBS Console (https://console.huaweicloud.com/obs/), create a bucket. Note its region (e.g. cn-north-4).
-2. Go to My Credentials → Access Keys → Create Access Key.
-   Copy the AK (= Access Key) and SK (= Secret Key).
-3. Service URL: https://obs.&lt;REGION&gt;.myhuaweicloud.com (e.g. https://obs.cn-north-4.myhuaweicloud.com).
-4. Region: e.g. cn-north-4.</value>
-  </data>
-  <data name="S3_Provider_LinodeObjectStorage_Help" xml:space="preserve">
-    <value>Linode (Akamai) Object Storage — S3-compatible storage.
-
-1. In Linode Cloud Manager (https://cloud.linode.com/object-storage/buckets), create a bucket. Note its cluster.
-2. Go to Object Storage → Access Keys → Create an Access Key scoped to the bucket.
-   Copy the Access Key and Secret Key.
-3. Service URL: https://&lt;CLUSTER&gt;.linodeobjects.com (e.g. https://us-east-1.linodeobjects.com).
-4. Region: same cluster code, e.g. us-east-1.</value>
-  </data>
-  <data name="S3_Provider_QiniuCloudKodo_Help" xml:space="preserve">
-    <value>Qiniu Cloud Kodo — S3-compatible storage from Qiniu.
-
-1. In Qiniu Portal (https://portal.qiniu.com/kodo/bucket), create a bucket. Note its region.
-2. Go to Personal Center → Key Management — copy your AccessKey and SecretKey.
-3. Service URL by region:
-   East China:    https://s3-cn-east-1.qiniucs.com
-   North China:   https://s3-cn-north-1.qiniucs.com
-   South China:   https://s3-cn-south-1.qiniucs.com
-   North America: https://s3-us-north-1.qiniucs.com
-4. Region: matching code, e.g. cn-east-1.</value>
-  </data>
-  <data name="S3_Provider_ScalewayObjectStorage_Help" xml:space="preserve">
-    <value>Scaleway Object Storage — European S3-compatible storage.
-
-1. In Scaleway Console (https://console.scaleway.com/object-storage/buckets), create a bucket. Note its region (e.g. fr-par).
-2. Go to IAM → API Keys → Generate API Key with Object Storage write permissions.
-   Copy the Access Key and Secret Key.
-3. Service URL: https://s3.&lt;REGION&gt;.scw.cloud (e.g. https://s3.fr-par.scw.cloud).
-4. Region: e.g. fr-par, nl-ams, pl-waw.</value>
-  </data>
-  <data name="S3_Provider_SelectelStorage_Help" xml:space="preserve">
-    <value>Selectel Object Storage — S3-compatible Russian storage.
-
-1. In Selectel Panel (https://my.selectel.ru/) → Cloud Storage → create a container (= bucket).
-2. Under Users &amp; Roles, create a service user with storage access → S3 Keys → create a key pair.
-   Copy the Access Key and Secret Key.
-3. Fill in: Bucket, Access Key, Secret Key.
-   Service URL is filled in automatically.</value>
-  </data>
-  <data name="S3_Provider_TencentCloudCOS_Help" xml:space="preserve">
-    <value>Tencent Cloud COS — S3-compatible object storage from Tencent.
-
-1. In COS Console (https://console.cloud.tencent.com/cos), create a bucket. Note the AppId and Region (e.g. ap-beijing).
-2. In Access Management → API Keys → Create Key.
-   Copy the SecretId (= Access Key) and SecretKey (= Secret Key).
-3. Service URL: https://cos.&lt;REGION&gt;.myqcloud.com (e.g. https://cos.ap-beijing.myqcloud.com).
-4. Bucket name format: &lt;name&gt;-&lt;AppId&gt; (e.g. mybucket-1250000000). Region: e.g. ap-beijing.</value>
-  </data>
-  <data name="S3_Provider_VKCloudStorage_Help" xml:space="preserve">
-    <value>VK Cloud Object Storage — S3-compatible storage from VK Cloud.
-
-1. In VK Cloud Portal (https://msk.cloud.vk.com/) → Cloud Storage → create a bucket.
-2. Under your account → Access Keys → create a new key pair.
-   Copy the Access Key and Secret Key.
-3. Fill in: Bucket, Access Key, Secret Key, and Region if required (e.g. ru-msk).
-   Service URL is filled in automatically.</value>
-  </data>
-  <data name="S3_Provider_VolcanoEngineTOS_Help" xml:space="preserve">
-    <value>Volcano Engine TOS (ByteDance) — S3-compatible storage.
-
-1. In Volcano Engine Console (https://console.volcengine.com/tos), create a bucket. Note its region (e.g. cn-beijing).
-2. Go to IAM → Access Keys → create a key.
-   Copy the Access Key ID and Secret Access Key.
-3. Service URL: https://tos-s3-&lt;REGION&gt;.volces.com (e.g. https://tos-s3-cn-beijing.volces.com).
-4. Region: e.g. cn-beijing.</value>
-  </data>
-  <data name="S3_Provider_Wasabi_Help" xml:space="preserve">
-    <value>Wasabi — hot cloud storage with no egress fees.
-
-1. In Wasabi Console (https://console.wasabisys.com/) → Buckets → Create Bucket. Choose a region.
-2. Go to Access Keys → Create New Access Key. Copy the Access Key and Secret Key.
-3. Fill in: Bucket, Access Key, Secret Key, and Region (e.g. us-east-1, eu-central-1).
-   Service URL is filled in automatically.</value>
-  </data>
-  <data name="S3_Provider_YandexObjectStorage_Help" xml:space="preserve">
-    <value>Yandex Object Storage — S3-compatible Russian cloud storage.
-
-1. In Yandex Cloud Console (https://console.yandex.cloud/) → Object Storage → create a bucket.
-2. Go to Service Accounts → create one with the storage.editor role → create a Static access key.
-   Copy the Key ID (= Access Key) and Secret key.
-3. Fill in: Bucket, Access Key, Secret Key.
-   Service URL and region are set automatically.</value>
-  </data>
   <data name="WebDav_Preset_Box_Help" xml:space="preserve">
     <value>Box — enterprise cloud storage with WebDAV support.
 
@@ -1204,7 +1215,7 @@ Abeg do one of dese:
     <value>Mail.ru Cloud via WebDAV.
 
 1. Go to account.mail.ru → Security → App passwords → Create app password.
-   Select &apos;Mail&apos; or &apos;All&apos; as the type, then copy the generated password.
+   Select 'Mail' or 'All' as the type, then copy the generated password.
 2. Enter your Mail.ru email address as the User.
 3. Enter the app password as the Password.
    Server address, HTTPS, port, and base path are configured automatically.</value>
@@ -1239,13 +1250,15 @@ Abeg do one of dese:
   <data name="WebDav_Preset_YandexDisk_Help" xml:space="preserve">
     <value>Yandex Disk via WebDAV.
 
-1. Go to id.yandex.com → Security → App passwords → Create app password for &apos;WebDAV access&apos;.
+1. Go to id.yandex.com → Security → App passwords → Create app password for 'WebDAV access'.
    Copy the generated password — it is shown only once.
 2. Enter your Yandex login as the User.
 3. Enter the app password (not your Yandex account password) as the Password.
    Server address, HTTPS, and port are configured automatically.</value>
   </data>
-
+  <data name="WhatTask_Description" xml:space="preserve">
+    <value>For here, you fit choose di folders wey you wan backup.</value>
+  </data>
   <data name="Winget_Description" xml:space="preserve">
     <value>Backup/synchronize your data for Windows, Linux.
 Import photos from phone through WI-FI and more.

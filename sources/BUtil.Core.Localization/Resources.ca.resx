@@ -1,5 +1,4 @@
 <root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -263,14 +262,14 @@ Escenari d'ús: copieu dades al servidor remot. Hi ha un problema: l'ISP baixa l
   <data name="Field_Folder_Validation_Empty" xml:space="preserve">
     <value>La carpeta no està especificada.</value>
   </data>
-  <data name="Field_Validation_NotSpecified" xml:space="preserve">
-    <value>{0} no està especificat.</value>
-  </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>La carpeta no existeix.</value>
   </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>Protocol:</value>
+  </data>
+  <data name="Field_Validation_NotSpecified" xml:space="preserve">
+    <value>{0} no està especificat.</value>
   </data>
   <data name="Field_Version" xml:space="preserve">
     <value>Versió:</value>
@@ -332,14 +331,26 @@ Escenari d'ús: copieu dades al servidor remot. Hi ha un problema: l'ISP baixa l
   <data name="ImportMediaTask_Create" xml:space="preserve">
     <value>Tasca d'importació multimèdia</value>
   </data>
+  <data name="ImportMediaTask_DeleteCopiedDataOnSourceMedia" xml:space="preserve">
+    <value>Suprimeix les dades copiades del suport d'origen</value>
+  </data>
   <data name="ImportMediaTask_Edit_Title" xml:space="preserve">
     <value>Editeu la tasca d'importació multimèdia "{0}".</value>
+  </data>
+  <data name="ImportMediaTask_Field_FileExtensions" xml:space="preserve">
+    <value>Extensions de fitxer:</value>
+  </data>
+  <data name="ImportMediaTask_Field_FileExtensions_Help" xml:space="preserve">
+    <value>Llista d'extensions a importar, separades per comes (per exemple .jpg, .png, .mp3). Deixeu-la buida per importar tots els fitxers.</value>
   </data>
   <data name="ImportMediaTask_Field_OutputFolder" xml:space="preserve">
     <value>Carpeta de sortida:</value>
   </data>
   <data name="ImportMediaTask_Field_TransformFileName" xml:space="preserve">
     <value>Transformació de nom de fitxer:</value>
+  </data>
+  <data name="ImportMediaTask_Field_TransformFileName_Documentation" xml:space="preserve">
+    <value>Documentació del format de data</value>
   </data>
   <data name="ImportMediaTask_Field_TransformFileName_Example" xml:space="preserve">
     <value>Exemple:
@@ -366,17 +377,20 @@ Per veure totes les opcions, busqueu a Google "Format C# DateTime".</value>
 
 Consulteu el lloc web de l'aplicació per obtenir informació sobre com configurar la transmissió de fitxers mitjançant WI-FI mitjançant l'aplicació del servidor FTP al telèfon.</value>
   </data>
-  <data name="ImportMediaTask_Storage_Help" xml:space="preserve">
-    <value>Especifiqueu la font des d'on importar contingut multimèdia — per exemple una targeta SD, una carpeta de la càmera o un telèfon per FTPS.</value>
-  </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
     <value>Importa la font de dades</value>
   </data>
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>Omet els fitxers ja importats</value>
   </data>
-  <data name="ImportMediaTask_DeleteCopiedDataOnSourceMedia" xml:space="preserve">
-    <value>Suprimeix les dades copiades del suport d&apos;origen</value>
+  <data name="ImportMediaTask_SkipAlreadyImportedFiles_Help" xml:space="preserve">
+    <value>Si està activat, l'aplicació omet els fitxers que ja existeixen a la carpeta de destinació o que s'han importat abans. Es recorden els noms dels fitxers importats, de manera que un fitxer no es torna a processar encara que després en suprimiu la còpia de la carpeta de destinació.</value>
+  </data>
+  <data name="ImportMediaTask_Storage_Help" xml:space="preserve">
+    <value>Especifiqueu la font des d'on importar contingut multimèdia — per exemple una targeta SD, una carpeta de la càmera o un telèfon per FTPS.</value>
+  </data>
+  <data name="ImportMediaTask_Storage_Validation_TooBroad" xml:space="preserve">
+    <value>La carpeta seleccionada sembla l'arrel d'un dispositiu o d'un directori personal perquè conté diverses carpetes multimèdia conegudes ({0}). Trieu una carpeta més específica, per exemple "{1}".</value>
   </data>
   <data name="ImproveIt_Message" xml:space="preserve">
     <value>S'ha produït un error inesperat.
@@ -463,9 +477,6 @@ Si us plau:
   <data name="LeftMenu_What_Hint" xml:space="preserve">
     <value>Aquí podeu afegir carpetes i fitxers que necessiteu processar.</value>
   </data>
-  <data name="WhatTask_Description" xml:space="preserve">
-    <value>Aquí podeu especificar les carpetes de les quals voleu fer una còpia de seguretat.</value>
-  </data>
   <data name="LeftMenu_What_Validation" xml:space="preserve">
     <value>No hi ha elements per processar.</value>
   </data>
@@ -477,9 +488,6 @@ Si us plau:
   </data>
   <data name="LeftMenu_When_Optional_Hint" xml:space="preserve">
     <value>Aquesta secció és opcional. Si l'ometeu, la tasca només s'executarà quan l'engegueu manualment.</value>
-  </data>
-  <data name="RunAtLogin_Label" xml:space="preserve">
-    <value>Executar en iniciar sessió</value>
   </data>
   <data name="LeftMenu_Where" xml:space="preserve">
     <value>On?</value>
@@ -529,11 +537,11 @@ Si us plau:
   <data name="Name_Field_Validation" xml:space="preserve">
     <value>El nom és buit o conté caràcters de camí no admesos.</value>
   </data>
-  <data name="Name_Field_Validation_ExceedsLimit" xml:space="preserve">
-    <value>La longitud del nom "{0}" supera el límit en {1} caràcters.</value>
-  </data>
   <data name="Name_Field_Validation_Duplicate" xml:space="preserve">
     <value>Ja existeix una tasca amb aquest nom.</value>
+  </data>
+  <data name="Name_Field_Validation_ExceedsLimit" xml:space="preserve">
+    <value>La longitud del nom "{0}" supera el límit en {1} caràcters.</value>
   </data>
   <data name="Name_Title" xml:space="preserve">
     <value>Nom</value>
@@ -590,6 +598,180 @@ Apunteu a un directori que conté aquest fitxer.</value>
   </data>
   <data name="RestoreFrom_Field_Validation_StateInvalid" xml:space="preserve">
     <value>No es pot llegir l'estat.</value>
+  </data>
+  <data name="RunAtLogin_Label" xml:space="preserve">
+    <value>Executar en iniciar sessió</value>
+  </data>
+  <data name="S3_Provider_AlibabaCloudOSS_Help" xml:space="preserve">
+    <value>Alibaba Cloud OSS: emmagatzematge d'objectes compatible amb S3 d'Alibaba.
+
+1. A la consola OSS (https://oss.console.aliyun.com/), creeu un cub. Tingueu en compte la seva regió (per exemple, oss-cn-hangzhou).
+2. A RAM Console → Usuaris → crear un usuari → adjuntar AliyunOSSFullAccess → crear una clau d'accés.
+   Copieu l'identificador de la clau d'accés (= clau d'accés) i el secret de la clau d'accés (= clau secreta).
+3. URL del servei: https://oss-&lt;REGION&gt;.aliyuncs.com (p. ex. https://oss-cn-hangzhou.aliyuncs.com).
+4. Regió: p. ex. oss-cn-hangzhou.</value>
+  </data>
+  <data name="S3_Provider_AWSS3_Help" xml:space="preserve">
+    <value>AWS S3: emmagatzematge d'objectes original d'Amazon.
+
+1. Obriu la consola S3 (https://s3.console.aws.amazon.com/) i creeu un cub. Observeu la seva regió (per exemple, us-east-1).
+2. Obriu IAM → Usuaris → creeu un usuari → adjunteu la política d'AmazonS3FullAccess.
+3. A Credencials de seguretat, creeu una clau d'accés: copieu l'identificador de la clau i el secret.
+4. Empleneu: cub, clau d'accés, clau secreta i regió.</value>
+  </data>
+  <data name="S3_Provider_BackblazeB2_Help" xml:space="preserve">
+    <value>Backblaze B2: emmagatzematge assequible compatible amb S3.
+
+1. A Backblaze (https://www.backblaze.com/) → B2 Cloud Storage → Buckets, creeu un cub.
+2. Aneu a Tecles d'aplicació → Afegeix una clau d'aplicació nova, abasteu-la al dipòsit.
+   Copieu el keyID (= clau d'accés) i applicationKey (= clau secreta).
+3. URL del servei: el punt final del vostre cub es mostra als detalls del cub, p. ex. https://s3.us-west-004.backblazeb2.com
+4. Regió: el segment entre 's3'. i '.backblazeb2.com', p. ex. us-oest-004.</value>
+  </data>
+  <data name="S3_Provider_BaiduCloudBOS_Help" xml:space="preserve">
+    <value>Baidu Cloud BOS: emmagatzematge d'objectes compatible amb S3 de Baidu.
+
+1. A la consola BOS (https://console.bce.baidu.com/bos/), creeu un cub. Observeu la seva regió (per exemple, bj, gz, su).
+2. Aneu a Seguretat → Claus d'accés: copieu l'identificador de la clau d'accés i la clau d'accés secreta.
+3. URL del servei: https://s3.&lt;REGION&gt;.bcebos.com (p. ex. https://s3.bj.bcebos.com).
+4. Regió: p. ex. bj.</value>
+  </data>
+  <data name="S3_Provider_CloudflareR2_Help" xml:space="preserve">
+    <value>Cloudflare R2: emmagatzematge compatible amb S3 sense sortida.
+
+1. A Cloudflare Dashboard (https://dash.cloudflare.com/) → R2 → crea un cub.
+2. Aneu a R2 → Gestiona fitxes de l'API R2 → Crea un testimoni d'API amb objectes de lectura i escriptura.
+   Copieu l'identificador de la clau d'accés i la clau d'accés secreta.
+3. URL del servei: https://&lt;ID_ACCOUNT&gt;.r2.cloudflarestorage.com
+   L'identificador del vostre compte es mostra a la pàgina de visió general de R2.
+4. Empleneu: cub, clau d'accés, clau secreta i URL del servei. La regió s'estableix com a "automàtic" automàticament.</value>
+  </data>
+  <data name="S3_Provider_CloudRuStorage_Help" xml:space="preserve">
+    <value>Cloud.ru (SberCloud) Object Storage — Emmagatzematge OBS compatible amb S3.
+
+1. A la consola de Cloud.ru (https://cloud.ru/) → Servei d'emmagatzematge d'objectes (OBS) → creeu un cub.
+2. Aneu a Les meves credencials → Claus d'accés → Afegeix una clau d'accés.
+   Copieu la clau d'accés i la clau d'accés secreta.
+3. Empleneu: cub, clau d'accés, clau secreta i regió (p. ex., ru-moscow-1).
+   L'URL del servei s'omple automàticament.</value>
+  </data>
+  <data name="S3_Provider_Custom_Help" xml:space="preserve">
+    <value>MinIO o qualsevol servidor compatible amb S3.
+
+1. Inicieu el vostre servidor MinIO (o un altre servidor compatible amb S3).
+2. Creeu un cub mitjançant la consola MinIO o 'mc mb &lt;àlies&gt;/&lt;bucket&gt;'.
+3. Creeu una clau d'accés a la Consola MinIO → Claus d'accés (eviteu les credencials d'arrel en producció).
+4. URL del servei: el punt final del vostre servidor, p. http://192.168.1.10:9000 o https://minio.example.com.
+5. Regió: qualsevol valor (p. ex., us-east-1), o deixeu-lo en blanc si el servidor no l'aplica.</value>
+  </data>
+  <data name="S3_Provider_DigitalOceanSpaces_Help" xml:space="preserve">
+    <value>DigitalOcean Spaces: emmagatzematge d'objectes compatible amb S3.
+
+1. A Espais (https://cloud.digitalocean.com/spaces), crea un Espai. Tingueu en compte la seva regió (per exemple, nyc3).
+2. Aneu a API → Spaces Keys → Generate New Key. Copieu la clau (= clau d'accés) i el secret.
+3. URL del servei: https://&lt;REGION&gt;.digitaloceanspaces.com (p. ex. https://nyc3.digitaloceanspaces.com).
+4. Regió: mateix codi curt, p. ex. nyc3.</value>
+  </data>
+  <data name="S3_Provider_GoogleCloudStorage_Help" xml:space="preserve">
+    <value>Google Cloud Storage: mitjançant l'API d'interoperabilitat S3.
+
+1. A Google Cloud Console (https://console.cloud.google.com/storage), creeu un cub.
+2. Aneu a Cloud Storage → Configuració → Interoperabilitat → creeu una clau HMAC per a un compte de servei.
+   Copieu la clau d'accés i el secret.
+3. Ompliu: Cub, Clau d'accés (clau HMAC), Clau secreta (secret HMAC).
+   L'URL del servei i la regió s'estableixen automàticament.</value>
+  </data>
+  <data name="S3_Provider_HuaweiCloudOBS_Help" xml:space="preserve">
+    <value>Huawei Cloud OBS: emmagatzematge d'objectes compatible amb S3 de Huawei.
+
+1. A la consola OBS (https://console.huaweicloud.com/obs/), creeu un cub. Observeu la seva regió (per exemple, cn-north-4).
+2. Aneu a Les meves credencials → Claus d'accés → Crea clau d'accés.
+   Copieu l'AK (= Clau d'accés) i SK (= Clau secreta).
+3. URL del servei: https://obs.&lt;REGION&gt;.myhuaweicloud.com (p. ex. https://obs.cn-north-4.myhuaweicloud.com).
+4. Regió: p. ex. cn-nord-4.</value>
+  </data>
+  <data name="S3_Provider_LinodeObjectStorage_Help" xml:space="preserve">
+    <value>Emmagatzematge d'objectes Linode (Akamai): emmagatzematge compatible amb S3.
+
+1. A Linode Cloud Manager (https://cloud.linode.com/object-storage/buckets), creeu un cub. Observeu el seu clúster.
+2. Aneu a Emmagatzematge d'objectes → Claus d'accés → Crea una clau d'accés amb l'àmbit del cub.
+   Copieu la clau d'accés i la clau secreta.
+3. URL del servei: https://&lt;CLUSTER&gt;.linodeobjects.com (p. ex. https://us-east-1.linodeobjects.com).
+4. Regió: mateix codi de clúster, p. us-est-1.</value>
+  </data>
+  <data name="S3_Provider_QiniuCloudKodo_Help" xml:space="preserve">
+    <value>Qiniu Cloud Kodo: emmagatzematge compatible amb S3 de Qiniu.
+
+1. Al portal de Qiniu (https://portal.qiniu.com/kodo/bucket), creeu un cub. Fixeu-vos en la seva regió.
+2. Aneu a Centre personal → Gestió de claus: copieu la clau d'accés i la clau secreta.
+3. URL del servei per regió:
+   Xina oriental: https://s3-cn-east-1.qiniucs.com
+   Nord de la Xina: https://s3-cn-north-1.qiniucs.com
+   Sud de la Xina: https://s3-cn-south-1.qiniucs.com
+   Amèrica del Nord: https://s3-us-north-1.qiniucs.com
+4. Regió: codi coincident, p. ex. cn-est-1.</value>
+  </data>
+  <data name="S3_Provider_ScalewayObjectStorage_Help" xml:space="preserve">
+    <value>Scaleway Object Storage — Emmagatzematge europeu compatible amb S3.
+
+1. A Scaleway Console (https://console.scaleway.com/object-storage/buckets), creeu un cub. Observeu la seva regió (per exemple, fr-par).
+2. Aneu a IAM → Claus API → Genera clau API amb permisos d'escriptura d'emmagatzematge d'objectes.
+   Copieu la clau d'accés i la clau secreta.
+3. URL del servei: https://s3.&lt;REGION&gt;.scw.cloud (p. ex. https://s3.fr-par.scw.cloud).
+4. Regió: p. ex. fr-par, nl-ams, pl-waw.</value>
+  </data>
+  <data name="S3_Provider_SelectelStorage_Help" xml:space="preserve">
+    <value>Selectel Object Storage — Emmagatzematge rus compatible amb S3.
+
+1. A Selectel Panel (https://my.selectel.ru/) → Cloud Storage → crea un contenidor (= cub).
+2. A Usuaris i rols, creeu un usuari de servei amb accés a l'emmagatzematge → Claus S3 → creeu un parell de claus.
+   Copieu la clau d'accés i la clau secreta.
+3. Ompliu: Cub, Clau d'accés, Clau secreta.
+   L'URL del servei s'omple automàticament.</value>
+  </data>
+  <data name="S3_Provider_TencentCloudCOS_Help" xml:space="preserve">
+    <value>Tencent Cloud COS: emmagatzematge d'objectes compatible amb S3 de Tencent.
+
+1. A la consola COS (https://console.cloud.tencent.com/cos), creeu un cub. Tingueu en compte l'AppId i la Regió (per exemple, ap-beijing).
+2. A Gestió d'accés → Claus API → Crea clau.
+   Copieu el SecretId (= Clau d'accés) i SecretKey (= Clau secreta).
+3. URL del servei: https://cos.&lt;REGION&gt;.myqcloud.com (p. ex. https://cos.ap-beijing.myqcloud.com).
+4. Format del nom del cub: &lt;nom&gt;-&lt;AppId&gt; (p. ex., mybucket-1250000000). Regió: p. ex. ap-beijing.</value>
+  </data>
+  <data name="S3_Provider_VKCloudStorage_Help" xml:space="preserve">
+    <value>VK Cloud Object Storage: emmagatzematge compatible amb S3 de VK Cloud.
+
+1. A VK Cloud Portal (https://msk.cloud.vk.com/) → Cloud Storage → creeu un cub.
+2. Al vostre compte → Claus d'accés → creeu un nou parell de claus.
+   Copieu la clau d'accés i la clau secreta.
+3. Empleneu: cub, clau d'accés, clau secreta i regió si cal (p. ex., ru-msk).
+   L'URL del servei s'omple automàticament.</value>
+  </data>
+  <data name="S3_Provider_VolcanoEngineTOS_Help" xml:space="preserve">
+    <value>Volcano Engine TOS (ByteDance): emmagatzematge compatible amb S3.
+
+1. A Volcano Engine Console (https://console.volcengine.com/tos), creeu un cub. Observeu la seva regió (per exemple, cn-beijing).
+2. Aneu a IAM → Claus d'accés → creeu una clau.
+   Copieu l'identificador de la clau d'accés i la clau d'accés secreta.
+3. URL del servei: https://tos-s3-&lt;REGION&gt;.volces.com (p. ex. https://tos-s3-cn-beijing.volces.com).
+4. Regió: p. ex. cn-beijing.</value>
+  </data>
+  <data name="S3_Provider_Wasabi_Help" xml:space="preserve">
+    <value>Wasabi: emmagatzematge al núvol calent sense despeses de sortida.
+
+1. A la consola Wasabi (https://console.wasabisys.com/) → Cubs → Crea cub. Trieu una regió.
+2. Aneu a Claus d'accés → Crea una clau d'accés nova. Copieu la clau d'accés i la clau secreta.
+3. Empleneu: cub, clau d'accés, clau secreta i regió (p. ex., us-east-1, eu-central-1).
+   L'URL del servei s'omple automàticament.</value>
+  </data>
+  <data name="S3_Provider_YandexObjectStorage_Help" xml:space="preserve">
+    <value>Yandex Object Storage: emmagatzematge en núvol rus compatible amb S3.
+
+1. A Yandex Cloud Console (https://console.yandex.cloud/) → Emmagatzematge d'objectes → creeu un cub.
+2. Aneu a Comptes de servei → creeu-ne un amb la funció storage.editor → creeu una clau d'accés estàtica.
+   Copieu l'identificador de clau (= clau d'accés) i la clau secreta.
+3. Ompliu: Cub, Clau d'accés, Clau secreta.
+   L'URL del servei i la regió s'estableixen automàticament.</value>
   </data>
   <data name="Server_Field_Address" xml:space="preserve">
     <value>Nom del servidor:</value>
@@ -988,267 +1170,98 @@ See detailed description in the following link.</value>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>No s'especifica l'usuari.</value>
   </data>
-  <data name="S3_Provider_AlibabaCloudOSS_Help" xml:space="preserve">
-    <value>Alibaba Cloud OSS: emmagatzematge d&apos;objectes compatible amb S3 d&apos;Alibaba.
-
-1. A la consola OSS (https://oss.console.aliyun.com/), creeu un cub. Tingueu en compte la seva regió (per exemple, oss-cn-hangzhou).
-2. A RAM Console → Usuaris → crear un usuari → adjuntar AliyunOSSFullAccess → crear una clau d&apos;accés.
-   Copieu l&apos;identificador de la clau d&apos;accés (= clau d&apos;accés) i el secret de la clau d&apos;accés (= clau secreta).
-3. URL del servei: https://oss-&lt;REGION&gt;.aliyuncs.com (p. ex. https://oss-cn-hangzhou.aliyuncs.com).
-4. Regió: p. ex. oss-cn-hangzhou.</value>
-  </data>
-  <data name="S3_Provider_AWSS3_Help" xml:space="preserve">
-    <value>AWS S3: emmagatzematge d&apos;objectes original d&apos;Amazon.
-
-1. Obriu la consola S3 (https://s3.console.aws.amazon.com/) i creeu un cub. Observeu la seva regió (per exemple, us-east-1).
-2. Obriu IAM → Usuaris → creeu un usuari → adjunteu la política d&apos;AmazonS3FullAccess.
-3. A Credencials de seguretat, creeu una clau d&apos;accés: copieu l&apos;identificador de la clau i el secret.
-4. Empleneu: cub, clau d&apos;accés, clau secreta i regió.</value>
-  </data>
-  <data name="S3_Provider_BaiduCloudBOS_Help" xml:space="preserve">
-    <value>Baidu Cloud BOS: emmagatzematge d&apos;objectes compatible amb S3 de Baidu.
-
-1. A la consola BOS (https://console.bce.baidu.com/bos/), creeu un cub. Observeu la seva regió (per exemple, bj, gz, su).
-2. Aneu a Seguretat → Claus d&apos;accés: copieu l&apos;identificador de la clau d&apos;accés i la clau d&apos;accés secreta.
-3. URL del servei: https://s3.&lt;REGION&gt;.bcebos.com (p. ex. https://s3.bj.bcebos.com).
-4. Regió: p. ex. bj.</value>
-  </data>
-  <data name="S3_Provider_BackblazeB2_Help" xml:space="preserve">
-    <value>Backblaze B2: emmagatzematge assequible compatible amb S3.
-
-1. A Backblaze (https://www.backblaze.com/) → B2 Cloud Storage → Buckets, creeu un cub.
-2. Aneu a Tecles d&apos;aplicació → Afegeix una clau d&apos;aplicació nova, abasteu-la al dipòsit.
-   Copieu el keyID (= clau d&apos;accés) i applicationKey (= clau secreta).
-3. URL del servei: el punt final del vostre cub es mostra als detalls del cub, p. ex. https://s3.us-west-004.backblazeb2.com
-4. Regió: el segment entre &apos;s3&apos;. i &apos;.backblazeb2.com&apos;, p. ex. us-oest-004.</value>
-  </data>
-  <data name="S3_Provider_CloudflareR2_Help" xml:space="preserve">
-    <value>Cloudflare R2: emmagatzematge compatible amb S3 sense sortida.
-
-1. A Cloudflare Dashboard (https://dash.cloudflare.com/) → R2 → crea un cub.
-2. Aneu a R2 → Gestiona fitxes de l&apos;API R2 → Crea un testimoni d&apos;API amb objectes de lectura i escriptura.
-   Copieu l&apos;identificador de la clau d&apos;accés i la clau d&apos;accés secreta.
-3. URL del servei: https://&lt;ID_ACCOUNT&gt;.r2.cloudflarestorage.com
-   L&apos;identificador del vostre compte es mostra a la pàgina de visió general de R2.
-4. Empleneu: cub, clau d&apos;accés, clau secreta i URL del servei. La regió s&apos;estableix com a &quot;automàtic&quot; automàticament.</value>
-  </data>
-  <data name="S3_Provider_CloudRuStorage_Help" xml:space="preserve">
-    <value>Cloud.ru (SberCloud) Object Storage — Emmagatzematge OBS compatible amb S3.
-
-1. A la consola de Cloud.ru (https://cloud.ru/) → Servei d&apos;emmagatzematge d&apos;objectes (OBS) → creeu un cub.
-2. Aneu a Les meves credencials → Claus d&apos;accés → Afegeix una clau d&apos;accés.
-   Copieu la clau d&apos;accés i la clau d&apos;accés secreta.
-3. Empleneu: cub, clau d&apos;accés, clau secreta i regió (p. ex., ru-moscow-1).
-   L&apos;URL del servei s&apos;omple automàticament.</value>
-  </data>
-  <data name="S3_Provider_Custom_Help" xml:space="preserve">
-    <value>MinIO o qualsevol servidor compatible amb S3.
-
-1. Inicieu el vostre servidor MinIO (o un altre servidor compatible amb S3).
-2. Creeu un cub mitjançant la consola MinIO o &apos;mc mb &lt;àlies&gt;/&lt;bucket&gt;&apos;.
-3. Creeu una clau d&apos;accés a la Consola MinIO → Claus d&apos;accés (eviteu les credencials d&apos;arrel en producció).
-4. URL del servei: el punt final del vostre servidor, p. http://192.168.1.10:9000 o https://minio.example.com.
-5. Regió: qualsevol valor (p. ex., us-east-1), o deixeu-lo en blanc si el servidor no l&apos;aplica.</value>
-  </data>
-  <data name="S3_Provider_DigitalOceanSpaces_Help" xml:space="preserve">
-    <value>DigitalOcean Spaces: emmagatzematge d&apos;objectes compatible amb S3.
-
-1. A Espais (https://cloud.digitalocean.com/spaces), crea un Espai. Tingueu en compte la seva regió (per exemple, nyc3).
-2. Aneu a API → Spaces Keys → Generate New Key. Copieu la clau (= clau d&apos;accés) i el secret.
-3. URL del servei: https://&lt;REGION&gt;.digitaloceanspaces.com (p. ex. https://nyc3.digitaloceanspaces.com).
-4. Regió: mateix codi curt, p. ex. nyc3.</value>
-  </data>
-  <data name="S3_Provider_GoogleCloudStorage_Help" xml:space="preserve">
-    <value>Google Cloud Storage: mitjançant l&apos;API d&apos;interoperabilitat S3.
-
-1. A Google Cloud Console (https://console.cloud.google.com/storage), creeu un cub.
-2. Aneu a Cloud Storage → Configuració → Interoperabilitat → creeu una clau HMAC per a un compte de servei.
-   Copieu la clau d&apos;accés i el secret.
-3. Ompliu: Cub, Clau d&apos;accés (clau HMAC), Clau secreta (secret HMAC).
-   L&apos;URL del servei i la regió s&apos;estableixen automàticament.</value>
-  </data>
-  <data name="S3_Provider_HuaweiCloudOBS_Help" xml:space="preserve">
-    <value>Huawei Cloud OBS: emmagatzematge d&apos;objectes compatible amb S3 de Huawei.
-
-1. A la consola OBS (https://console.huaweicloud.com/obs/), creeu un cub. Observeu la seva regió (per exemple, cn-north-4).
-2. Aneu a Les meves credencials → Claus d&apos;accés → Crea clau d&apos;accés.
-   Copieu l&apos;AK (= Clau d&apos;accés) i SK (= Clau secreta).
-3. URL del servei: https://obs.&lt;REGION&gt;.myhuaweicloud.com (p. ex. https://obs.cn-north-4.myhuaweicloud.com).
-4. Regió: p. ex. cn-nord-4.</value>
-  </data>
-  <data name="S3_Provider_LinodeObjectStorage_Help" xml:space="preserve">
-    <value>Emmagatzematge d&apos;objectes Linode (Akamai): emmagatzematge compatible amb S3.
-
-1. A Linode Cloud Manager (https://cloud.linode.com/object-storage/buckets), creeu un cub. Observeu el seu clúster.
-2. Aneu a Emmagatzematge d&apos;objectes → Claus d&apos;accés → Crea una clau d&apos;accés amb l&apos;àmbit del cub.
-   Copieu la clau d&apos;accés i la clau secreta.
-3. URL del servei: https://&lt;CLUSTER&gt;.linodeobjects.com (p. ex. https://us-east-1.linodeobjects.com).
-4. Regió: mateix codi de clúster, p. us-est-1.</value>
-  </data>
-  <data name="S3_Provider_QiniuCloudKodo_Help" xml:space="preserve">
-    <value>Qiniu Cloud Kodo: emmagatzematge compatible amb S3 de Qiniu.
-
-1. Al portal de Qiniu (https://portal.qiniu.com/kodo/bucket), creeu un cub. Fixeu-vos en la seva regió.
-2. Aneu a Centre personal → Gestió de claus: copieu la clau d&apos;accés i la clau secreta.
-3. URL del servei per regió:
-   Xina oriental: https://s3-cn-east-1.qiniucs.com
-   Nord de la Xina: https://s3-cn-north-1.qiniucs.com
-   Sud de la Xina: https://s3-cn-south-1.qiniucs.com
-   Amèrica del Nord: https://s3-us-north-1.qiniucs.com
-4. Regió: codi coincident, p. ex. cn-est-1.</value>
-  </data>
-  <data name="S3_Provider_ScalewayObjectStorage_Help" xml:space="preserve">
-    <value>Scaleway Object Storage — Emmagatzematge europeu compatible amb S3.
-
-1. A Scaleway Console (https://console.scaleway.com/object-storage/buckets), creeu un cub. Observeu la seva regió (per exemple, fr-par).
-2. Aneu a IAM → Claus API → Genera clau API amb permisos d&apos;escriptura d&apos;emmagatzematge d&apos;objectes.
-   Copieu la clau d&apos;accés i la clau secreta.
-3. URL del servei: https://s3.&lt;REGION&gt;.scw.cloud (p. ex. https://s3.fr-par.scw.cloud).
-4. Regió: p. ex. fr-par, nl-ams, pl-waw.</value>
-  </data>
-  <data name="S3_Provider_SelectelStorage_Help" xml:space="preserve">
-    <value>Selectel Object Storage — Emmagatzematge rus compatible amb S3.
-
-1. A Selectel Panel (https://my.selectel.ru/) → Cloud Storage → crea un contenidor (= cub).
-2. A Usuaris i rols, creeu un usuari de servei amb accés a l&apos;emmagatzematge → Claus S3 → creeu un parell de claus.
-   Copieu la clau d&apos;accés i la clau secreta.
-3. Ompliu: Cub, Clau d&apos;accés, Clau secreta.
-   L&apos;URL del servei s&apos;omple automàticament.</value>
-  </data>
-  <data name="S3_Provider_TencentCloudCOS_Help" xml:space="preserve">
-    <value>Tencent Cloud COS: emmagatzematge d&apos;objectes compatible amb S3 de Tencent.
-
-1. A la consola COS (https://console.cloud.tencent.com/cos), creeu un cub. Tingueu en compte l&apos;AppId i la Regió (per exemple, ap-beijing).
-2. A Gestió d&apos;accés → Claus API → Crea clau.
-   Copieu el SecretId (= Clau d&apos;accés) i SecretKey (= Clau secreta).
-3. URL del servei: https://cos.&lt;REGION&gt;.myqcloud.com (p. ex. https://cos.ap-beijing.myqcloud.com).
-4. Format del nom del cub: &lt;nom&gt;-&lt;AppId&gt; (p. ex., mybucket-1250000000). Regió: p. ex. ap-beijing.</value>
-  </data>
-  <data name="S3_Provider_VKCloudStorage_Help" xml:space="preserve">
-    <value>VK Cloud Object Storage: emmagatzematge compatible amb S3 de VK Cloud.
-
-1. A VK Cloud Portal (https://msk.cloud.vk.com/) → Cloud Storage → creeu un cub.
-2. Al vostre compte → Claus d&apos;accés → creeu un nou parell de claus.
-   Copieu la clau d&apos;accés i la clau secreta.
-3. Empleneu: cub, clau d&apos;accés, clau secreta i regió si cal (p. ex., ru-msk).
-   L&apos;URL del servei s&apos;omple automàticament.</value>
-  </data>
-  <data name="S3_Provider_VolcanoEngineTOS_Help" xml:space="preserve">
-    <value>Volcano Engine TOS (ByteDance): emmagatzematge compatible amb S3.
-
-1. A Volcano Engine Console (https://console.volcengine.com/tos), creeu un cub. Observeu la seva regió (per exemple, cn-beijing).
-2. Aneu a IAM → Claus d&apos;accés → creeu una clau.
-   Copieu l&apos;identificador de la clau d&apos;accés i la clau d&apos;accés secreta.
-3. URL del servei: https://tos-s3-&lt;REGION&gt;.volces.com (p. ex. https://tos-s3-cn-beijing.volces.com).
-4. Regió: p. ex. cn-beijing.</value>
-  </data>
-  <data name="S3_Provider_Wasabi_Help" xml:space="preserve">
-    <value>Wasabi: emmagatzematge al núvol calent sense despeses de sortida.
-
-1. A la consola Wasabi (https://console.wasabisys.com/) → Cubs → Crea cub. Trieu una regió.
-2. Aneu a Claus d&apos;accés → Crea una clau d&apos;accés nova. Copieu la clau d&apos;accés i la clau secreta.
-3. Empleneu: cub, clau d&apos;accés, clau secreta i regió (p. ex., us-east-1, eu-central-1).
-   L&apos;URL del servei s&apos;omple automàticament.</value>
-  </data>
-  <data name="S3_Provider_YandexObjectStorage_Help" xml:space="preserve">
-    <value>Yandex Object Storage: emmagatzematge en núvol rus compatible amb S3.
-
-1. A Yandex Cloud Console (https://console.yandex.cloud/) → Emmagatzematge d&apos;objectes → creeu un cub.
-2. Aneu a Comptes de servei → creeu-ne un amb la funció storage.editor → creeu una clau d&apos;accés estàtica.
-   Copieu l&apos;identificador de clau (= clau d&apos;accés) i la clau secreta.
-3. Ompliu: Cub, Clau d&apos;accés, Clau secreta.
-   L&apos;URL del servei i la regió s&apos;estableixen automàticament.</value>
-  </data>
   <data name="WebDav_Preset_Box_Help" xml:space="preserve">
     <value>Box: emmagatzematge al núvol empresarial amb suport WebDAV.
 
 1. Inicieu la sessió a app.box.com. Tingueu en compte que Box WebDAV només està disponible per a plans de pagament.
 2. Introduïu el correu electrònic del vostre compte de Box com a Usuari.
 3. Introduïu la vostra contrasenya de Box com a contrasenya.
-   Si utilitzeu SSO, és possible que hàgiu d&apos;establir una contrasenya de WebDAV independent a la configuració del compte.
-   L&apos;adreça del servidor, HTTPS, el port i la ruta base es configuren automàticament.</value>
+   Si utilitzeu SSO, és possible que hàgiu d'establir una contrasenya de WebDAV independent a la configuració del compte.
+   L'adreça del servidor, HTTPS, el port i la ruta base es configuren automàticament.</value>
   </data>
   <data name="WebDav_Preset_Custom_Help" xml:space="preserve">
     <value>Servidor WebDAV genèric (Nextcloud, ownCloud, Synology DSM, Seafile, Apache, etc.)
 
-1. Introduïu l&apos;adreça del servidor, trieu HTTPS (recomanat) i configureu el port (0 = per defecte: 80 per a HTTP, 443 per a HTTPS).
+1. Introduïu l'adreça del servidor, trieu HTTPS (recomanat) i configureu el port (0 = per defecte: 80 per a HTTP, 443 per a HTTPS).
 2. Introduïu la ruta base per al punt final de WebDAV.
-   Exemple de Nextcloud: /remote.php/dav/files/&lt;nom d&apos;usuari&gt;/Còpies de seguretat
+   Exemple de Nextcloud: /remote.php/dav/files/&lt;nom d'usuari&gt;/Còpies de seguretat
    Synology DSM: /
-3. Introduïu el vostre nom d&apos;usuari i contrasenya (o una contrasenya específica de l&apos;aplicació si el vostre servidor ho requereix).</value>
+3. Introduïu el vostre nom d'usuari i contrasenya (o una contrasenya específica de l'aplicació si el vostre servidor ho requereix).</value>
   </data>
   <data name="WebDav_Preset_IONOSHiDrive_Help" xml:space="preserve">
     <value>IONOS HiDrive: emmagatzematge al núvol alemany amb un fort focus de privadesa.
 
 1. Inicieu sessió a hidrive.ionos.com → Configuració → Aplicacions i serveis connectats → WebDAV.
    O accedeix directament a WebDAV amb les teves credencials existents.
-2. Introduïu el vostre nom d&apos;usuari d&apos;HiDrive com a Usuari.
-3. Introduïu la vostra contrasenya d&apos;HiDrive com a contrasenya.
-   L&apos;adreça del servidor, HTTPS, el port i la ruta base es configuren automàticament.</value>
+2. Introduïu el vostre nom d'usuari d'HiDrive com a Usuari.
+3. Introduïu la vostra contrasenya d'HiDrive com a contrasenya.
+   L'adreça del servidor, HTTPS, el port i la ruta base es configuren automàticament.</value>
   </data>
   <data name="WebDav_Preset_Jianguoyun_Help" xml:space="preserve">
     <value>Jianguoyun (坚果云): emmagatzematge al núvol popular xinès amb suport natiu WebDAV.
 
-1. Inicieu sessió a jianguoyun.com → Informació del compte → Seguretat → Gestió d&apos;aplicacions de tercers → Afegeix una aplicació.
-   Copieu la contrasenya de l&apos;aplicació generada: només es mostra una vegada.
+1. Inicieu sessió a jianguoyun.com → Informació del compte → Seguretat → Gestió d'aplicacions de tercers → Afegeix una aplicació.
+   Copieu la contrasenya de l'aplicació generada: només es mostra una vegada.
 2. Introduïu la vostra adreça de correu electrònic de Jianguoyun com a Usuari.
-3. Introduïu la contrasenya de l&apos;aplicació generada com a contrasenya.
-   L&apos;adreça del servidor, HTTPS, el port i la ruta base es configuren automàticament.</value>
+3. Introduïu la contrasenya de l'aplicació generada com a contrasenya.
+   L'adreça del servidor, HTTPS, el port i la ruta base es configuren automàticament.</value>
   </data>
   <data name="WebDav_Preset_Koofr_Help" xml:space="preserve">
     <value>Koofr: emmagatzematge al núvol respectuós amb la privadesa amb seu a Eslovènia (UE).
 
-1. Aneu a app.koofr.eu → Preferències → Contrasenya → Contrasenyes de l&apos;aplicació → Afegeix contrasenya.
+1. Aneu a app.koofr.eu → Preferències → Contrasenya → Contrasenyes de l'aplicació → Afegeix contrasenya.
 2. Introduïu el correu electrònic del vostre compte de Koofr com a Usuari.
-3. Introduïu la contrasenya de l&apos;aplicació generada com a contrasenya.
-   L&apos;adreça del servidor, HTTPS, el port i la ruta base es configuren automàticament.</value>
+3. Introduïu la contrasenya de l'aplicació generada com a contrasenya.
+   L'adreça del servidor, HTTPS, el port i la ruta base es configuren automàticament.</value>
   </data>
   <data name="WebDav_Preset_MailRuCloud_Help" xml:space="preserve">
     <value>Mail.ru Cloud via WebDAV.
 
-1. Aneu a account.mail.ru → Seguretat → Contrasenyes d&apos;aplicació → Crea contrasenya d&apos;aplicació.
-   Seleccioneu &quot;Correu&quot; o &quot;Tot&quot; com a tipus i, a continuació, copieu la contrasenya generada.
+1. Aneu a account.mail.ru → Seguretat → Contrasenyes d'aplicació → Crea contrasenya d'aplicació.
+   Seleccioneu "Correu" o "Tot" com a tipus i, a continuació, copieu la contrasenya generada.
 2. Introduïu la vostra adreça de correu electrònic de Mail.ru com a Usuari.
-3. Introduïu la contrasenya de l&apos;aplicació com a contrasenya.
-   L&apos;adreça del servidor, HTTPS, el port i la ruta base es configuren automàticament.</value>
+3. Introduïu la contrasenya de l'aplicació com a contrasenya.
+   L'adreça del servidor, HTTPS, el port i la ruta base es configuren automàticament.</value>
   </data>
   <data name="WebDav_Preset_Nextcloud_Help" xml:space="preserve">
     <value>Nextcloud: sincronització i compartició de fitxers autoallotjats populars.
 
-1. Introduïu l&apos;adreça del vostre servidor Nextcloud (p. ex. nextcloud.example.com).
-2. La ruta base s&apos;ha omplert prèviament: /remote.php/dav/files/&lt;nom d&apos;usuari&gt;/
-   Substituïu &lt;username&gt; pel vostre nom d&apos;usuari real de Nextcloud.
-3. Introduïu el vostre nom d&apos;usuari i contrasenya de Nextcloud (o una contrasenya d&apos;aplicació de
-   Configuració → Seguretat → Dispositius i sessions → Contrasenyes d&apos;aplicacions).</value>
+1. Introduïu l'adreça del vostre servidor Nextcloud (p. ex. nextcloud.example.com).
+2. La ruta base s'ha omplert prèviament: /remote.php/dav/files/&lt;nom d'usuari&gt;/
+   Substituïu &lt;username&gt; pel vostre nom d'usuari real de Nextcloud.
+3. Introduïu el vostre nom d'usuari i contrasenya de Nextcloud (o una contrasenya d'aplicació de
+   Configuració → Seguretat → Dispositius i sessions → Contrasenyes d'aplicacions).</value>
   </data>
   <data name="WebDav_Preset_ownCloud_Help" xml:space="preserve">
     <value>ownCloud: sincronització i compartició de fitxers autoallotjats.
 
-1. Introduïu l&apos;adreça del vostre servidor ownCloud (p. ex., owncloud.example.com).
-2. La ruta base s&apos;ha omplert prèviament: /remote.php/dav/files/&lt;nom d&apos;usuari&gt;/
-   Substituïu &lt;username&gt; pel vostre nom d&apos;usuari real de ownCloud.
-3. Introduïu el vostre nom d&apos;usuari i contrasenya ownCloud (o una contrasenya d&apos;aplicació si 2FA està habilitat).</value>
+1. Introduïu l'adreça del vostre servidor ownCloud (p. ex., owncloud.example.com).
+2. La ruta base s'ha omplert prèviament: /remote.php/dav/files/&lt;nom d'usuari&gt;/
+   Substituïu &lt;username&gt; pel vostre nom d'usuari real de ownCloud.
+3. Introduïu el vostre nom d'usuari i contrasenya ownCloud (o una contrasenya d'aplicació si 2FA està habilitat).</value>
   </data>
   <data name="WebDav_Preset_pCloud_Help" xml:space="preserve">
     <value>pCloud: emmagatzematge al núvol amb centres de dades de la UE i els EUA.
 
-1. Inicieu sessió a my.pcloud.com → Configuració → Seguretat → Contrasenyes d&apos;aplicacions → Crear.
-   Copieu la contrasenya de l&apos;aplicació: només es mostra una vegada.
+1. Inicieu sessió a my.pcloud.com → Configuració → Seguretat → Contrasenyes d'aplicacions → Crear.
+   Copieu la contrasenya de l'aplicació: només es mostra una vegada.
 2. Introduïu el correu electrònic del vostre compte de pCloud com a Usuari.
-3. Introduïu la contrasenya de l&apos;aplicació com a contrasenya.
-   Per al centre de dades de la UE: ewebdav.pcloud.com s&apos;utilitza automàticament.
-   Per al centre de dades dels EUA: canvieu l&apos;amfitrió a webdav.pcloud.com.</value>
+3. Introduïu la contrasenya de l'aplicació com a contrasenya.
+   Per al centre de dades de la UE: ewebdav.pcloud.com s'utilitza automàticament.
+   Per al centre de dades dels EUA: canvieu l'amfitrió a webdav.pcloud.com.</value>
   </data>
   <data name="WebDav_Preset_YandexDisk_Help" xml:space="preserve">
     <value>Yandex Disk mitjançant WebDAV.
 
-1. Aneu a id.yandex.com → Seguretat → Contrasenyes d&apos;aplicació → Crea una contrasenya d&apos;aplicació per a &quot;Accés WebDAV&quot;.
+1. Aneu a id.yandex.com → Seguretat → Contrasenyes d'aplicació → Crea una contrasenya d'aplicació per a "Accés WebDAV".
    Copieu la contrasenya generada: només es mostra una vegada.
 2. Introduïu el vostre inici de sessió Yandex com a Usuari.
-3. Introduïu la contrasenya de l&apos;aplicació (no la contrasenya del vostre compte Yandex) com a contrasenya.
-   L&apos;adreça del servidor, HTTPS i el port es configuren automàticament.</value>
+3. Introduïu la contrasenya de l'aplicació (no la contrasenya del vostre compte Yandex) com a contrasenya.
+   L'adreça del servidor, HTTPS i el port es configuren automàticament.</value>
   </data>
-
+  <data name="WhatTask_Description" xml:space="preserve">
+    <value>Aquí podeu especificar les carpetes de les quals voleu fer una còpia de seguretat.</value>
+  </data>
   <data name="Winget_Description" xml:space="preserve">
     <value>Còpia de seguretat/sincronització de les vostres dades Windows, Linux.
 Importa fotos del telèfon mitjançant WI-FI i molt més.

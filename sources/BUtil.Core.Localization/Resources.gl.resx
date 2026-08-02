@@ -1,5 +1,4 @@
 <root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -263,14 +262,14 @@ Escenario de uso: copia os datos ao servidor remoto. Hai un problema: o ISP redu
   <data name="Field_Folder_Validation_Empty" xml:space="preserve">
     <value>Non se especifica o cartafol.</value>
   </data>
-  <data name="Field_Validation_NotSpecified" xml:space="preserve">
-    <value>Non se especifica {0}.</value>
-  </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>O cartafol non existe.</value>
   </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>Protocolo:</value>
+  </data>
+  <data name="Field_Validation_NotSpecified" xml:space="preserve">
+    <value>Non se especifica {0}.</value>
   </data>
   <data name="Field_Version" xml:space="preserve">
     <value>Versión:</value>
@@ -332,14 +331,26 @@ Escenario de uso: copia os datos ao servidor remoto. Hai un problema: o ISP redu
   <data name="ImportMediaTask_Create" xml:space="preserve">
     <value>Importar tarefas multimedia</value>
   </data>
+  <data name="ImportMediaTask_DeleteCopiedDataOnSourceMedia" xml:space="preserve">
+    <value>Eliminar os datos copiados do medio de orixe</value>
+  </data>
   <data name="ImportMediaTask_Edit_Title" xml:space="preserve">
     <value>Edita a tarefa de importación multimedia "{0}".</value>
+  </data>
+  <data name="ImportMediaTask_Field_FileExtensions" xml:space="preserve">
+    <value>Extensiones de archivo:</value>
+  </data>
+  <data name="ImportMediaTask_Field_FileExtensions_Help" xml:space="preserve">
+    <value>Lista de extensiones a importar, separadas por comas (por ejemplo .jpg, .png, .mp3). Déjela vacía para importar todos los archivos.</value>
   </data>
   <data name="ImportMediaTask_Field_OutputFolder" xml:space="preserve">
     <value>Cartafol de saída:</value>
   </data>
   <data name="ImportMediaTask_Field_TransformFileName" xml:space="preserve">
     <value>Transformacións de nome de ficheiro:</value>
+  </data>
+  <data name="ImportMediaTask_Field_TransformFileName_Documentation" xml:space="preserve">
+    <value>Docs de formato de fecha</value>
   </data>
   <data name="ImportMediaTask_Field_TransformFileName_Example" xml:space="preserve">
     <value>Exemplo:
@@ -366,17 +377,20 @@ Para ver todas as opcións, google "C# Formato DateTime".</value>
 
 Consulte o sitio web da aplicación para obter documentación sobre como configurar a transmisión de ficheiros mediante WI-FI mediante a aplicación do servidor FTP do teléfono.</value>
   </data>
-  <data name="ImportMediaTask_Storage_Help" xml:space="preserve">
-    <value>Especifique a orixe desde a que importar contido multimedia — por exemplo, unha tarxeta SD, un cartafol de cámara ou un teléfono mediante FTPS.</value>
-  </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
     <value>Importar fonte de datos</value>
   </data>
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>Omitir ficheiros xa importados</value>
   </data>
-  <data name="ImportMediaTask_DeleteCopiedDataOnSourceMedia" xml:space="preserve">
-    <value>Eliminar os datos copiados do medio de orixe</value>
+  <data name="ImportMediaTask_SkipAlreadyImportedFiles_Help" xml:space="preserve">
+    <value>Si está activado, la aplicación omite los archivos que ya existen en la carpeta de destino o que se importaron antes. Se recuerdan los nombres de los archivos importados, por lo que un archivo no se vuelve a procesar aunque elimine más tarde su copia de la carpeta de destino.</value>
+  </data>
+  <data name="ImportMediaTask_Storage_Help" xml:space="preserve">
+    <value>Especifique a orixe desde a que importar contido multimedia — por exemplo, unha tarxeta SD, un cartafol de cámara ou un teléfono mediante FTPS.</value>
+  </data>
+  <data name="ImportMediaTask_Storage_Validation_TooBroad" xml:space="preserve">
+    <value>La carpeta seleccionada parece la raíz de un dispositivo o de un directorio personal porque contiene varias carpetas multimedia conocidas ({0}). Elija una carpeta más concreta, por ejemplo "{1}".</value>
   </data>
   <data name="ImproveIt_Message" xml:space="preserve">
     <value>Produciuse un erro inesperado.
@@ -463,9 +477,6 @@ Por favor:
   <data name="LeftMenu_What_Hint" xml:space="preserve">
     <value>Aquí pode engadir cartafoles e ficheiros que precisa procesar.</value>
   </data>
-  <data name="WhatTask_Description" xml:space="preserve">
-    <value>Aquí pode especificar os cartafoles dos que quere facer unha copia de seguridade.</value>
-  </data>
   <data name="LeftMenu_What_Validation" xml:space="preserve">
     <value>Non hai elementos que procesar.</value>
   </data>
@@ -477,9 +488,6 @@ Por favor:
   </data>
   <data name="LeftMenu_When_Optional_Hint" xml:space="preserve">
     <value>Esta sección é opcional. Se a omites, a tarefa só se executará cando a lances manualmente.</value>
-  </data>
-  <data name="RunAtLogin_Label" xml:space="preserve">
-    <value>Executar ao iniciar sesión</value>
   </data>
   <data name="LeftMenu_Where" xml:space="preserve">
     <value>Onde?</value>
@@ -529,11 +537,11 @@ Por favor:
   <data name="Name_Field_Validation" xml:space="preserve">
     <value>O nome está baleiro ou contén caracteres de camiño non admitidos.</value>
   </data>
-  <data name="Name_Field_Validation_ExceedsLimit" xml:space="preserve">
-    <value>A lonxitude do nome "{0}" supera o límite en {1} caracteres.</value>
-  </data>
   <data name="Name_Field_Validation_Duplicate" xml:space="preserve">
     <value>Xa existe unha tarefa con este nome.</value>
+  </data>
+  <data name="Name_Field_Validation_ExceedsLimit" xml:space="preserve">
+    <value>A lonxitude do nome "{0}" supera o límite en {1} caracteres.</value>
   </data>
   <data name="Name_Title" xml:space="preserve">
     <value>Nome</value>
@@ -590,6 +598,180 @@ Apunte a un directorio que contén este ficheiro.</value>
   </data>
   <data name="RestoreFrom_Field_Validation_StateInvalid" xml:space="preserve">
     <value>Non se pode ler o estado.</value>
+  </data>
+  <data name="RunAtLogin_Label" xml:space="preserve">
+    <value>Executar ao iniciar sesión</value>
+  </data>
+  <data name="S3_Provider_AlibabaCloudOSS_Help" xml:space="preserve">
+    <value>Alibaba Cloud OSS: almacenamento de obxectos compatible con S3 de Alibaba.
+
+1. Na Consola OSS (https://oss.console.aliyun.com/), cree un depósito. Teña en conta a súa rexión (por exemplo, oss-cn-hangzhou).
+2. Na Consola RAM → Usuarios → crear un usuario → anexar AliyunOSSFullAccess → crear unha clave de acceso.
+   Copie o ID da clave de acceso (= clave de acceso) e o segredo da clave de acceso (= chave secreta).
+3. URL do servizo: https://oss-&lt;REXION&gt;.aliyuncs.com (por exemplo, https://oss-cn-hangzhou.aliyuncs.com).
+4. Rexión: p.ex. oss-cn-hangzhou.</value>
+  </data>
+  <data name="S3_Provider_AWSS3_Help" xml:space="preserve">
+    <value>AWS S3: almacenamento de obxectos orixinal de Amazon.
+
+1. Abra a Consola S3 (https://s3.console.aws.amazon.com/) e cree un depósito. Teña en conta a súa rexión (por exemplo, us-east-1).
+2. Abra IAM → Usuarios → cree un usuario → anexa a política de AmazonS3FullAccess.
+3. En Credenciais de seguranza, cree unha clave de acceso — copie o ID e o segredo da chave.
+4. Encha: Cubo, Chave de acceso, Chave secreta e Rexión.</value>
+  </data>
+  <data name="S3_Provider_BackblazeB2_Help" xml:space="preserve">
+    <value>Backblaze B2: almacenamento económico compatible con S3.
+
+1. En Backblaze (https://www.backblaze.com/) → B2 Cloud Storage → Buckets, crea un bucket.
+2. Vaia a Teclas de aplicación → Engadir unha nova clave de aplicación, amplíea ao depósito.
+   Copie o ID da chave (= Chave de acceso) e a Chave da aplicación (= Chave secreta).
+3. URL do servizo: o punto final do seu depósito que se mostra nos detalles do depósito, p. ex. https://s3.us-west-004.backblazeb2.com
+4. Rexión: o segmento entre 's3'. e '.backblazeb2.com', por exemplo. us-west-004.</value>
+  </data>
+  <data name="S3_Provider_BaiduCloudBOS_Help" xml:space="preserve">
+    <value>Baidu Cloud BOS: almacenamento de obxectos compatible con S3 de Baidu.
+
+1. Na Consola BOS (https://console.bce.baidu.com/bos/), cree un depósito. Observe a súa rexión (por exemplo, bj, gz, su).
+2. Vaia a Seguridade → Chaves de acceso — copie o ID da chave de acceso e a clave de acceso secreta.
+3. URL do servizo: https://s3.&lt;REXION&gt;.bcebos.com (por exemplo, https://s3.bj.bcebos.com).
+4. Rexión: p.ex. bj.</value>
+  </data>
+  <data name="S3_Provider_CloudflareR2_Help" xml:space="preserve">
+    <value>Cloudflare R2: almacenamento compatible con S3 sen saída.
+
+1. En Cloudflare Dashboard (https://dash.cloudflare.com/) → R2 → crea un depósito.
+2. Vaia a R2 → Xestionar fichas de API R2 → Crear fichas de API con Lectura e escritura de obxectos.
+   Copia o ID da chave de acceso e a clave de acceso secreta.
+3. URL do servizo: https://&lt;ACCOUNT_ID&gt;.r2.cloudflarestorage.com
+   O ID da túa conta móstrase na páxina de descrición xeral de R2.
+4. Encha: Depósito, Chave de acceso, Chave secreta e URL do servizo. A rexión está configurada como "automático" automaticamente.</value>
+  </data>
+  <data name="S3_Provider_CloudRuStorage_Help" xml:space="preserve">
+    <value>Almacenamento de obxectos Cloud.ru (SberCloud) — Almacenamento OBS compatible con S3.
+
+1. Na consola de Cloud.ru (https://cloud.ru/) → Servizo de almacenamento de obxectos (OBS) → crea un depósito.
+2. Vaia a As miñas credenciais → Chaves de acceso → Engadir clave de acceso.
+   Copia a clave de acceso e a clave de acceso secreta.
+3. Encha: depósito, clave de acceso, clave secreta e rexión (por exemplo, ru-moscow-1).
+   O URL do servizo énchese automaticamente.</value>
+  </data>
+  <data name="S3_Provider_Custom_Help" xml:space="preserve">
+    <value>MinIO ou calquera servidor compatible con S3.
+
+1. Inicie o seu servidor MinIO (ou outro compatible con S3).
+2. Cree un depósito a través da Consola MinIO ou 'mc mb &lt;alias&gt;/&lt;bucket&gt;'.
+3. Cree unha clave de acceso na Consola MinIO → Chaves de acceso (evite as credenciais de root na produción).
+4. URL do servizo: o punto final do teu servidor, p. ex. http://192.168.1.10:9000 ou https://minio.example.com.
+5. Rexión: calquera valor (por exemplo, us-east-1) — ou déixao baleiro se o servidor non o aplica.</value>
+  </data>
+  <data name="S3_Provider_DigitalOceanSpaces_Help" xml:space="preserve">
+    <value>DigitalOcean Spaces — Almacenamento de obxectos compatible con S3.
+
+1. En Espazos (https://cloud.digitalocean.com/spaces), crea un Espazo. Teña en conta a súa rexión (por exemplo, nyc3).
+2. Vaia a API → Spaces Keys → Xerar New Key. Copia a chave (= chave de acceso) e o segredo.
+3. URL do servizo: https://&lt;REXION&gt;.digitaloceanspaces.com (por exemplo, https://nyc3.digitaloceanspaces.com).
+4. Rexión: mesmo código curto, p. ex. nyc3.</value>
+  </data>
+  <data name="S3_Provider_GoogleCloudStorage_Help" xml:space="preserve">
+    <value>Google Cloud Storage: a través da API de interoperabilidade S3.
+
+1. En Google Cloud Console (https://console.cloud.google.com/storage), crea un depósito.
+2. Vaia a Almacenamento na nube → Configuración → Interoperabilidade → cree unha clave HMAC para unha conta de servizo.
+   Copia a clave de acceso e o segredo.
+3. Encha: Cubo, Chave de acceso (chave HMAC), Chave secreta (segredo HMAC).
+   O URL do servizo e a rexión establécense automaticamente.</value>
+  </data>
+  <data name="S3_Provider_HuaweiCloudOBS_Help" xml:space="preserve">
+    <value>Huawei Cloud OBS: almacenamento de obxectos compatible con S3 de Huawei.
+
+1. Na Consola OBS (https://console.huaweicloud.com/obs/), cree un depósito. Teña en conta a súa rexión (por exemplo, cn-norte-4).
+2. Vaia a As miñas credenciais → Chaves de acceso → Crear clave de acceso.
+   Copia o AK (= Chave de acceso) e SK (= Chave secreta).
+3. URL do servizo: https://obs.&lt;REXION&gt;.myhuaweicloud.com (por exemplo, https://obs.cn-north-4.myhuaweicloud.com).
+4. Rexión: p.ex. cn-norte-4.</value>
+  </data>
+  <data name="S3_Provider_LinodeObjectStorage_Help" xml:space="preserve">
+    <value>Almacenamento de obxectos Linode (Akamai): almacenamento compatible con S3.
+
+1. En Linode Cloud Manager (https://cloud.linode.com/object-storage/buckets), cree un depósito. Teña en conta o seu clúster.
+2. Vaia a Almacenamento de obxectos → Chaves de acceso → Crear unha clave de acceso con alcance para o depósito.
+   Copia a clave de acceso e a clave secreta.
+3. URL do servizo: https://&lt;CLUSTER&gt;.linodeobjects.com (por exemplo, https://us-east-1.linodeobjects.com).
+4. Rexión: mesmo código de clúster, p. ex. us-leste-1.</value>
+  </data>
+  <data name="S3_Provider_QiniuCloudKodo_Help" xml:space="preserve">
+    <value>Qiniu Cloud Kodo: almacenamento compatible con S3 de Qiniu.
+
+1. No portal Qiniu (https://portal.qiniu.com/kodo/bucket), cree un depósito. Teña en conta a súa rexión.
+2. Vaia a Centro persoal → Xestión de chaves: copie a súa clave de acceso e a clave secreta.
+3. URL do servizo por rexión:
+   China Oriental: https://s3-cn-east-1.qiniucs.com
+   Norte de China: https://s3-cn-north-1.qiniucs.com
+   Sur da China: https://s3-cn-south-1.qiniucs.com
+   América do Norte: https://s3-us-north-1.qiniucs.com
+4. Rexión: código coincidente, p. ex. cn-leste-1.</value>
+  </data>
+  <data name="S3_Provider_ScalewayObjectStorage_Help" xml:space="preserve">
+    <value>Scaleway Object Storage — Almacenamento europeo compatible con S3.
+
+1. En Scaleway Console (https://console.scaleway.com/object-storage/buckets), cree un depósito. Teña en conta a súa rexión (por exemplo, fr-par).
+2. Vaia a IAM → Chaves API → Xerar clave API con permisos de escritura de almacenamento de obxectos.
+   Copia a clave de acceso e a clave secreta.
+3. URL do servizo: https://s3.&lt;REXION&gt;.scw.cloud (por exemplo, https://s3.fr-par.scw.cloud).
+4. Rexión: p.ex. fr-par, nl-ams, pl-waw.</value>
+  </data>
+  <data name="S3_Provider_SelectelStorage_Help" xml:space="preserve">
+    <value>Selectel Object Storage — Almacenamento ruso compatible con S3.
+
+1. No Panel Selectel (https://my.selectel.ru/) → Almacenamento na nube → crea un contedor (= balde).
+2. En Usuarios e roles, cree un usuario do servizo con acceso ao almacenamento → Teclas S3 → cree un par de claves.
+   Copia a clave de acceso e a clave secreta.
+3. Encha: Cubo, Chave de acceso, Chave secreta.
+   O URL do servizo énchese automaticamente.</value>
+  </data>
+  <data name="S3_Provider_TencentCloudCOS_Help" xml:space="preserve">
+    <value>Tencent Cloud COS: almacenamento de obxectos compatible con S3 de Tencent.
+
+1. En COS Console (https://console.cloud.tencent.com/cos), cree un depósito. Teña en conta o AppId e a Rexión (por exemplo, ap-beijing).
+2. En Xestión de acceso → Chaves API → Crear clave.
+   Copie o SecretId (= Chave de acceso) e SecretKey (= Chave secreta).
+3. URL do servizo: https://cos.&lt;REXION&gt;.myqcloud.com (por exemplo, https://cos.ap-beijing.myqcloud.com).
+4. Formato do nome do depósito: &lt;nome&gt;-&lt;AppId&gt; (por exemplo, mybucket-1250000000). Rexión: p.ex. ap-pequín.</value>
+  </data>
+  <data name="S3_Provider_VKCloudStorage_Help" xml:space="preserve">
+    <value>VK Cloud Object Storage — Almacenamento compatible con S3 de VK Cloud.
+
+1. En VK Cloud Portal (https://msk.cloud.vk.com/) → Cloud Storage → crea un depósito.
+2. Na súa conta → Teclas de acceso → crea un novo par de chaves.
+   Copia a clave de acceso e a clave secreta.
+3. Encha: depósito, clave de acceso, clave secreta e rexión se é necesario (por exemplo, ru-msk).
+   O URL do servizo énchese automaticamente.</value>
+  </data>
+  <data name="S3_Provider_VolcanoEngineTOS_Help" xml:space="preserve">
+    <value>Volcano Engine TOS (ByteDance): almacenamento compatible con S3.
+
+1. En Volcano Engine Console (https://console.volcengine.com/tos), cree un depósito. Teña en conta a súa rexión (por exemplo, cn-beijing).
+2. Vaia a IAM → Chaves de acceso → crear unha clave.
+   Copia o ID da chave de acceso e a clave de acceso secreta.
+3. URL do servizo: https://tos-s3-&lt;REXION&gt;.volces.com (por exemplo, https://tos-s3-cn-beijing.volces.com).
+4. Rexión: p.ex. cn-beijing.</value>
+  </data>
+  <data name="S3_Provider_Wasabi_Help" xml:space="preserve">
+    <value>Wasabi: almacenamento en nube quente sen taxas de saída.
+
+1. Na consola Wasabi (https://console.wasabisys.com/) → Cubos → Crear cubo. Escolle unha rexión.
+2. Vaia a Teclas de acceso → Crear nova clave de acceso. Copia a clave de acceso e a clave secreta.
+3. Encha: depósito, clave de acceso, clave secreta e rexión (por exemplo, us-east-1, eu-central-1).
+   O URL do servizo énchese automaticamente.</value>
+  </data>
+  <data name="S3_Provider_YandexObjectStorage_Help" xml:space="preserve">
+    <value>Almacenamento de obxectos Yandex: almacenamento na nube ruso compatible con S3.
+
+1. En Yandex Cloud Console (https://console.yandex.cloud/) → Almacenamento de obxectos → crea un depósito.
+2. Vaia a Contas de servizo → crea unha co rol storage.editor → crea unha clave de acceso estática.
+   Copia o ID da chave (= Chave de acceso) e a clave secreta.
+3. Encha: Cubo, Chave de acceso, Chave secreta.
+   O URL do servizo e a rexión establécense automaticamente.</value>
   </data>
   <data name="Server_Field_Address" xml:space="preserve">
     <value>Nome do servidor:</value>
@@ -988,177 +1170,6 @@ See detailed description in the following link.</value>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>Non se especifica o usuario.</value>
   </data>
-  <data name="S3_Provider_AlibabaCloudOSS_Help" xml:space="preserve">
-    <value>Alibaba Cloud OSS: almacenamento de obxectos compatible con S3 de Alibaba.
-
-1. Na Consola OSS (https://oss.console.aliyun.com/), cree un depósito. Teña en conta a súa rexión (por exemplo, oss-cn-hangzhou).
-2. Na Consola RAM → Usuarios → crear un usuario → anexar AliyunOSSFullAccess → crear unha clave de acceso.
-   Copie o ID da clave de acceso (= clave de acceso) e o segredo da clave de acceso (= chave secreta).
-3. URL do servizo: https://oss-&lt;REXION&gt;.aliyuncs.com (por exemplo, https://oss-cn-hangzhou.aliyuncs.com).
-4. Rexión: p.ex. oss-cn-hangzhou.</value>
-  </data>
-  <data name="S3_Provider_AWSS3_Help" xml:space="preserve">
-    <value>AWS S3: almacenamento de obxectos orixinal de Amazon.
-
-1. Abra a Consola S3 (https://s3.console.aws.amazon.com/) e cree un depósito. Teña en conta a súa rexión (por exemplo, us-east-1).
-2. Abra IAM → Usuarios → cree un usuario → anexa a política de AmazonS3FullAccess.
-3. En Credenciais de seguranza, cree unha clave de acceso — copie o ID e o segredo da chave.
-4. Encha: Cubo, Chave de acceso, Chave secreta e Rexión.</value>
-  </data>
-  <data name="S3_Provider_BaiduCloudBOS_Help" xml:space="preserve">
-    <value>Baidu Cloud BOS: almacenamento de obxectos compatible con S3 de Baidu.
-
-1. Na Consola BOS (https://console.bce.baidu.com/bos/), cree un depósito. Observe a súa rexión (por exemplo, bj, gz, su).
-2. Vaia a Seguridade → Chaves de acceso — copie o ID da chave de acceso e a clave de acceso secreta.
-3. URL do servizo: https://s3.&lt;REXION&gt;.bcebos.com (por exemplo, https://s3.bj.bcebos.com).
-4. Rexión: p.ex. bj.</value>
-  </data>
-  <data name="S3_Provider_BackblazeB2_Help" xml:space="preserve">
-    <value>Backblaze B2: almacenamento económico compatible con S3.
-
-1. En Backblaze (https://www.backblaze.com/) → B2 Cloud Storage → Buckets, crea un bucket.
-2. Vaia a Teclas de aplicación → Engadir unha nova clave de aplicación, amplíea ao depósito.
-   Copie o ID da chave (= Chave de acceso) e a Chave da aplicación (= Chave secreta).
-3. URL do servizo: o punto final do seu depósito que se mostra nos detalles do depósito, p. ex. https://s3.us-west-004.backblazeb2.com
-4. Rexión: o segmento entre &apos;s3&apos;. e &apos;.backblazeb2.com&apos;, por exemplo. us-west-004.</value>
-  </data>
-  <data name="S3_Provider_CloudflareR2_Help" xml:space="preserve">
-    <value>Cloudflare R2: almacenamento compatible con S3 sen saída.
-
-1. En Cloudflare Dashboard (https://dash.cloudflare.com/) → R2 → crea un depósito.
-2. Vaia a R2 → Xestionar fichas de API R2 → Crear fichas de API con Lectura e escritura de obxectos.
-   Copia o ID da chave de acceso e a clave de acceso secreta.
-3. URL do servizo: https://&lt;ACCOUNT_ID&gt;.r2.cloudflarestorage.com
-   O ID da túa conta móstrase na páxina de descrición xeral de R2.
-4. Encha: Depósito, Chave de acceso, Chave secreta e URL do servizo. A rexión está configurada como &quot;automático&quot; automaticamente.</value>
-  </data>
-  <data name="S3_Provider_CloudRuStorage_Help" xml:space="preserve">
-    <value>Almacenamento de obxectos Cloud.ru (SberCloud) — Almacenamento OBS compatible con S3.
-
-1. Na consola de Cloud.ru (https://cloud.ru/) → Servizo de almacenamento de obxectos (OBS) → crea un depósito.
-2. Vaia a As miñas credenciais → Chaves de acceso → Engadir clave de acceso.
-   Copia a clave de acceso e a clave de acceso secreta.
-3. Encha: depósito, clave de acceso, clave secreta e rexión (por exemplo, ru-moscow-1).
-   O URL do servizo énchese automaticamente.</value>
-  </data>
-  <data name="S3_Provider_Custom_Help" xml:space="preserve">
-    <value>MinIO ou calquera servidor compatible con S3.
-
-1. Inicie o seu servidor MinIO (ou outro compatible con S3).
-2. Cree un depósito a través da Consola MinIO ou &apos;mc mb &lt;alias&gt;/&lt;bucket&gt;&apos;.
-3. Cree unha clave de acceso na Consola MinIO → Chaves de acceso (evite as credenciais de root na produción).
-4. URL do servizo: o punto final do teu servidor, p. ex. http://192.168.1.10:9000 ou https://minio.example.com.
-5. Rexión: calquera valor (por exemplo, us-east-1) — ou déixao baleiro se o servidor non o aplica.</value>
-  </data>
-  <data name="S3_Provider_DigitalOceanSpaces_Help" xml:space="preserve">
-    <value>DigitalOcean Spaces — Almacenamento de obxectos compatible con S3.
-
-1. En Espazos (https://cloud.digitalocean.com/spaces), crea un Espazo. Teña en conta a súa rexión (por exemplo, nyc3).
-2. Vaia a API → Spaces Keys → Xerar New Key. Copia a chave (= chave de acceso) e o segredo.
-3. URL do servizo: https://&lt;REXION&gt;.digitaloceanspaces.com (por exemplo, https://nyc3.digitaloceanspaces.com).
-4. Rexión: mesmo código curto, p. ex. nyc3.</value>
-  </data>
-  <data name="S3_Provider_GoogleCloudStorage_Help" xml:space="preserve">
-    <value>Google Cloud Storage: a través da API de interoperabilidade S3.
-
-1. En Google Cloud Console (https://console.cloud.google.com/storage), crea un depósito.
-2. Vaia a Almacenamento na nube → Configuración → Interoperabilidade → cree unha clave HMAC para unha conta de servizo.
-   Copia a clave de acceso e o segredo.
-3. Encha: Cubo, Chave de acceso (chave HMAC), Chave secreta (segredo HMAC).
-   O URL do servizo e a rexión establécense automaticamente.</value>
-  </data>
-  <data name="S3_Provider_HuaweiCloudOBS_Help" xml:space="preserve">
-    <value>Huawei Cloud OBS: almacenamento de obxectos compatible con S3 de Huawei.
-
-1. Na Consola OBS (https://console.huaweicloud.com/obs/), cree un depósito. Teña en conta a súa rexión (por exemplo, cn-norte-4).
-2. Vaia a As miñas credenciais → Chaves de acceso → Crear clave de acceso.
-   Copia o AK (= Chave de acceso) e SK (= Chave secreta).
-3. URL do servizo: https://obs.&lt;REXION&gt;.myhuaweicloud.com (por exemplo, https://obs.cn-north-4.myhuaweicloud.com).
-4. Rexión: p.ex. cn-norte-4.</value>
-  </data>
-  <data name="S3_Provider_LinodeObjectStorage_Help" xml:space="preserve">
-    <value>Almacenamento de obxectos Linode (Akamai): almacenamento compatible con S3.
-
-1. En Linode Cloud Manager (https://cloud.linode.com/object-storage/buckets), cree un depósito. Teña en conta o seu clúster.
-2. Vaia a Almacenamento de obxectos → Chaves de acceso → Crear unha clave de acceso con alcance para o depósito.
-   Copia a clave de acceso e a clave secreta.
-3. URL do servizo: https://&lt;CLUSTER&gt;.linodeobjects.com (por exemplo, https://us-east-1.linodeobjects.com).
-4. Rexión: mesmo código de clúster, p. ex. us-leste-1.</value>
-  </data>
-  <data name="S3_Provider_QiniuCloudKodo_Help" xml:space="preserve">
-    <value>Qiniu Cloud Kodo: almacenamento compatible con S3 de Qiniu.
-
-1. No portal Qiniu (https://portal.qiniu.com/kodo/bucket), cree un depósito. Teña en conta a súa rexión.
-2. Vaia a Centro persoal → Xestión de chaves: copie a súa clave de acceso e a clave secreta.
-3. URL do servizo por rexión:
-   China Oriental: https://s3-cn-east-1.qiniucs.com
-   Norte de China: https://s3-cn-north-1.qiniucs.com
-   Sur da China: https://s3-cn-south-1.qiniucs.com
-   América do Norte: https://s3-us-north-1.qiniucs.com
-4. Rexión: código coincidente, p. ex. cn-leste-1.</value>
-  </data>
-  <data name="S3_Provider_ScalewayObjectStorage_Help" xml:space="preserve">
-    <value>Scaleway Object Storage — Almacenamento europeo compatible con S3.
-
-1. En Scaleway Console (https://console.scaleway.com/object-storage/buckets), cree un depósito. Teña en conta a súa rexión (por exemplo, fr-par).
-2. Vaia a IAM → Chaves API → Xerar clave API con permisos de escritura de almacenamento de obxectos.
-   Copia a clave de acceso e a clave secreta.
-3. URL do servizo: https://s3.&lt;REXION&gt;.scw.cloud (por exemplo, https://s3.fr-par.scw.cloud).
-4. Rexión: p.ex. fr-par, nl-ams, pl-waw.</value>
-  </data>
-  <data name="S3_Provider_SelectelStorage_Help" xml:space="preserve">
-    <value>Selectel Object Storage — Almacenamento ruso compatible con S3.
-
-1. No Panel Selectel (https://my.selectel.ru/) → Almacenamento na nube → crea un contedor (= balde).
-2. En Usuarios e roles, cree un usuario do servizo con acceso ao almacenamento → Teclas S3 → cree un par de claves.
-   Copia a clave de acceso e a clave secreta.
-3. Encha: Cubo, Chave de acceso, Chave secreta.
-   O URL do servizo énchese automaticamente.</value>
-  </data>
-  <data name="S3_Provider_TencentCloudCOS_Help" xml:space="preserve">
-    <value>Tencent Cloud COS: almacenamento de obxectos compatible con S3 de Tencent.
-
-1. En COS Console (https://console.cloud.tencent.com/cos), cree un depósito. Teña en conta o AppId e a Rexión (por exemplo, ap-beijing).
-2. En Xestión de acceso → Chaves API → Crear clave.
-   Copie o SecretId (= Chave de acceso) e SecretKey (= Chave secreta).
-3. URL do servizo: https://cos.&lt;REXION&gt;.myqcloud.com (por exemplo, https://cos.ap-beijing.myqcloud.com).
-4. Formato do nome do depósito: &lt;nome&gt;-&lt;AppId&gt; (por exemplo, mybucket-1250000000). Rexión: p.ex. ap-pequín.</value>
-  </data>
-  <data name="S3_Provider_VKCloudStorage_Help" xml:space="preserve">
-    <value>VK Cloud Object Storage — Almacenamento compatible con S3 de VK Cloud.
-
-1. En VK Cloud Portal (https://msk.cloud.vk.com/) → Cloud Storage → crea un depósito.
-2. Na súa conta → Teclas de acceso → crea un novo par de chaves.
-   Copia a clave de acceso e a clave secreta.
-3. Encha: depósito, clave de acceso, clave secreta e rexión se é necesario (por exemplo, ru-msk).
-   O URL do servizo énchese automaticamente.</value>
-  </data>
-  <data name="S3_Provider_VolcanoEngineTOS_Help" xml:space="preserve">
-    <value>Volcano Engine TOS (ByteDance): almacenamento compatible con S3.
-
-1. En Volcano Engine Console (https://console.volcengine.com/tos), cree un depósito. Teña en conta a súa rexión (por exemplo, cn-beijing).
-2. Vaia a IAM → Chaves de acceso → crear unha clave.
-   Copia o ID da chave de acceso e a clave de acceso secreta.
-3. URL do servizo: https://tos-s3-&lt;REXION&gt;.volces.com (por exemplo, https://tos-s3-cn-beijing.volces.com).
-4. Rexión: p.ex. cn-beijing.</value>
-  </data>
-  <data name="S3_Provider_Wasabi_Help" xml:space="preserve">
-    <value>Wasabi: almacenamento en nube quente sen taxas de saída.
-
-1. Na consola Wasabi (https://console.wasabisys.com/) → Cubos → Crear cubo. Escolle unha rexión.
-2. Vaia a Teclas de acceso → Crear nova clave de acceso. Copia a clave de acceso e a clave secreta.
-3. Encha: depósito, clave de acceso, clave secreta e rexión (por exemplo, us-east-1, eu-central-1).
-   O URL do servizo énchese automaticamente.</value>
-  </data>
-  <data name="S3_Provider_YandexObjectStorage_Help" xml:space="preserve">
-    <value>Almacenamento de obxectos Yandex: almacenamento na nube ruso compatible con S3.
-
-1. En Yandex Cloud Console (https://console.yandex.cloud/) → Almacenamento de obxectos → crea un depósito.
-2. Vaia a Contas de servizo → crea unha co rol storage.editor → crea unha clave de acceso estática.
-   Copia o ID da chave (= Chave de acceso) e a clave secreta.
-3. Encha: Cubo, Chave de acceso, Chave secreta.
-   O URL do servizo e a rexión establécense automaticamente.</value>
-  </data>
   <data name="WebDav_Preset_Box_Help" xml:space="preserve">
     <value>Box: almacenamento na nube empresarial con compatibilidade con WebDAV.
 
@@ -1207,7 +1218,7 @@ See detailed description in the following link.</value>
     <value>Mail.ru Cloud a través de WebDAV.
 
 1. Vaia a account.mail.ru → Seguridade → Contrasinais da aplicación → Crear contrasinal da aplicación.
-   Seleccione &quot;Correo&quot; ou &quot;Todos&quot; como tipo e, a continuación, copie o contrasinal xerado.
+   Seleccione "Correo" ou "Todos" como tipo e, a continuación, copie o contrasinal xerado.
 2. Introduza o seu enderezo de correo electrónico de Mail.ru como Usuario.
 3. Introduza o contrasinal da aplicación como contrasinal.
    O enderezo do servidor, o HTTPS, o porto e a ruta base configúranse automaticamente.</value>
@@ -1242,13 +1253,15 @@ See detailed description in the following link.</value>
   <data name="WebDav_Preset_YandexDisk_Help" xml:space="preserve">
     <value>Yandex Disk a través de WebDAV.
 
-1. Vaia a id.yandex.com → Seguridade → Contrasinais da aplicación → Crear contrasinal da aplicación para o &apos;acceso WebDAV&apos;.
+1. Vaia a id.yandex.com → Seguridade → Contrasinais da aplicación → Crear contrasinal da aplicación para o 'acceso WebDAV'.
    Copia o contrasinal xerado: só se mostra unha vez.
 2. Introduza o seu inicio de sesión Yandex como Usuario.
 3. Introduza o contrasinal da aplicación (non o contrasinal da súa conta Yandex) como contrasinal.
    O enderezo do servidor, o HTTPS e o porto configúranse automaticamente.</value>
   </data>
-
+  <data name="WhatTask_Description" xml:space="preserve">
+    <value>Aquí pode especificar os cartafoles dos que quere facer unha copia de seguridade.</value>
+  </data>
   <data name="Winget_Description" xml:space="preserve">
     <value>Copia de seguranza/sincronización dos seus datos Windows, Linux.
 Importa fotos do teléfono mediante WI-FI e moito máis.

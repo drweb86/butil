@@ -1,5 +1,4 @@
 <root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -263,14 +262,14 @@ Skenari i përdorimit: Ju kopjoni të dhëna në një server të largët. Ka nj�
   <data name="Field_Folder_Validation_Empty" xml:space="preserve">
     <value>Dosja nuk është specifikuar.</value>
   </data>
-  <data name="Field_Validation_NotSpecified" xml:space="preserve">
-    <value>{0} nuk është specifikuar.</value>
-  </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Dosja nuk ekziston.</value>
   </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>Protokolli:</value>
+  </data>
+  <data name="Field_Validation_NotSpecified" xml:space="preserve">
+    <value>{0} nuk është specifikuar.</value>
   </data>
   <data name="Field_Version" xml:space="preserve">
     <value>Versioni:</value>
@@ -332,14 +331,26 @@ Skenari i përdorimit: Ju kopjoni të dhëna në një server të largët. Ka nj�
   <data name="ImportMediaTask_Create" xml:space="preserve">
     <value>Detyra e importit të mediave</value>
   </data>
+  <data name="ImportMediaTask_DeleteCopiedDataOnSourceMedia" xml:space="preserve">
+    <value>Fshi të dhënat e kopjuara nga media burimore</value>
+  </data>
   <data name="ImportMediaTask_Edit_Title" xml:space="preserve">
     <value>Redakto detyrën e importit të mediave "{0}"</value>
+  </data>
+  <data name="ImportMediaTask_Field_FileExtensions" xml:space="preserve">
+    <value>Ekstenzije datoteka:</value>
+  </data>
+  <data name="ImportMediaTask_Field_FileExtensions_Help" xml:space="preserve">
+    <value>Popis ekstenzija za uvoz odvojen zarezima (npr. .jpg, .png, .mp3). Ostavi prazno za uvoz svih datoteka.</value>
   </data>
   <data name="ImportMediaTask_Field_OutputFolder" xml:space="preserve">
     <value>Dosja e daljes:</value>
   </data>
   <data name="ImportMediaTask_Field_TransformFileName" xml:space="preserve">
     <value>Transformimet e emrit të skedarit:</value>
+  </data>
+  <data name="ImportMediaTask_Field_TransformFileName_Documentation" xml:space="preserve">
+    <value>Dokumentacija formata datuma</value>
   </data>
   <data name="ImportMediaTask_Field_TransformFileName_Example" xml:space="preserve">
     <value>Shembull:
@@ -366,17 +377,20 @@ Për të parë të gjitha opsionet, kërkoni "C# DateTime format".</value>
 
 Shihni faqen e internetit të aplikacionit për dokumentacionin se si të konfiguroni transferimin e skedarëve përmes WI-FI nëpërmjet aplikacionit të Serverit FTP në telefon.</value>
   </data>
-  <data name="ImportMediaTask_Storage_Help" xml:space="preserve">
-    <value>Specifikoni burimin nga i cili do të importohen media — për shembull një kartë SD, një dosje kamere, ose një telefon nëpërmjet FTPS.</value>
-  </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
     <value>Importo burimin e të dhënave</value>
   </data>
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>Anashkalo skedarët e importuar tashmë</value>
   </data>
-  <data name="ImportMediaTask_DeleteCopiedDataOnSourceMedia" xml:space="preserve">
-    <value>Fshi të dhënat e kopjuara nga media burimore</value>
+  <data name="ImportMediaTask_SkipAlreadyImportedFiles_Help" xml:space="preserve">
+    <value>Kad je omogućeno, aplikacija preskače datoteke koje već postoje u odredišnoj mapi ili su ranije uvezene. Imena ranije uvezenih datoteka pamte se, pa se datoteka ne obrađuje ponovno ni ako kasnije izbrišete njezinu kopiju iz odredišne mape.</value>
+  </data>
+  <data name="ImportMediaTask_Storage_Help" xml:space="preserve">
+    <value>Specifikoni burimin nga i cili do të importohen media — për shembull një kartë SD, një dosje kamere, ose një telefon nëpërmjet FTPS.</value>
+  </data>
+  <data name="ImportMediaTask_Storage_Validation_TooBroad" xml:space="preserve">
+    <value>Odabrana mapa izgleda kao korijen uređaja ili početni direktorij jer sadrži nekoliko poznatih medijskih mapa ({0}). Odaberite konkretniju mapu, na primjer "{1}".</value>
   </data>
   <data name="ImproveIt_Message" xml:space="preserve">
     <value>Ndodhi një gabim i papritur.
@@ -463,9 +477,6 @@ Ju lutem bëni njërën nga këto:
   <data name="LeftMenu_What_Hint" xml:space="preserve">
     <value>Këtu mund të shtoni dosje dhe skedarë që duhet të përpunohen.</value>
   </data>
-  <data name="WhatTask_Description" xml:space="preserve">
-    <value>Këtu mund të specifikoni dosjet që dëshironi të rezervoni.</value>
-  </data>
   <data name="LeftMenu_What_Validation" xml:space="preserve">
     <value>Nuk ka elemente për t'u përpunuar.</value>
   </data>
@@ -474,9 +485,6 @@ Ju lutem bëni njërën nga këto:
   </data>
   <data name="LeftMenu_When_Help" xml:space="preserve">
     <value>Këtu mund të konfiguroni një planifikues. Planifikuesi mund t'ju ndihmojë të automatizoni nisjen e detyrave.</value>
-  </data>
-  <data name="RunAtLogin_Label" xml:space="preserve">
-    <value>Ekzekuto në hyrje</value>
   </data>
   <data name="LeftMenu_When_Optional_Hint" xml:space="preserve">
     <value>Ky seksion është opsional. Nëse e anashkaloni, detyra do të ekzekutohet vetëm kur ta nisni manualisht.</value>
@@ -529,11 +537,11 @@ Ju lutem bëni njërën nga këto:
   <data name="Name_Field_Validation" xml:space="preserve">
     <value>Emri është bosh ose përmban karaktere shtegu të pambështetura.</value>
   </data>
-  <data name="Name_Field_Validation_ExceedsLimit" xml:space="preserve">
-    <value>Gjatësia e emrit '{0}' tejkalon kufirin me {1} karaktere.</value>
-  </data>
   <data name="Name_Field_Validation_Duplicate" xml:space="preserve">
     <value>Një detyrë me këtë emër ekziston tashmë.</value>
+  </data>
+  <data name="Name_Field_Validation_ExceedsLimit" xml:space="preserve">
+    <value>Gjatësia e emrit '{0}' tejkalon kufirin me {1} karaktere.</value>
   </data>
   <data name="Name_Title" xml:space="preserve">
     <value>Emri</value>
@@ -590,6 +598,180 @@ Tregoni një drejtori që përmban këtë skedar.</value>
   </data>
   <data name="RestoreFrom_Field_Validation_StateInvalid" xml:space="preserve">
     <value>Nuk mund të lexohet gjendja.</value>
+  </data>
+  <data name="RunAtLogin_Label" xml:space="preserve">
+    <value>Ekzekuto në hyrje</value>
+  </data>
+  <data name="S3_Provider_AlibabaCloudOSS_Help" xml:space="preserve">
+    <value>Alibaba Cloud OSS — Ruajtja e objekteve të pajtueshme me S3 nga Alibaba.
+
+1. Në OSS Console (https://oss.console.aliyun.com/), krijoni një kovë. Vini re rajonin e tij (p.sh. oss-cn-hangzhou).
+2. Në RAM Console → Përdoruesit → krijoni një përdorues → bashkëngjitni AliyunOSSFullAccess → krijoni një AccessKey.
+   Kopjo ID-në AccessKey (= Çelësi i hyrjes) dhe AccessKey Sekret (= Çelësi sekret).
+3. URL-ja e shërbimit: https://oss-&lt;REGION&gt;.aliyuncs.com (p.sh. https://oss-cn-hangzhou.aliyuncs.com).
+4. Rajoni: p.sh. oss-cn-hangzhou.</value>
+  </data>
+  <data name="S3_Provider_AWSS3_Help" xml:space="preserve">
+    <value>AWS S3 - ruajtja origjinale e objekteve të Amazon.
+
+1. Hapni S3 Console (https://s3.console.aws.amazon.com/) dhe krijoni një kovë. Vini re rajonin e tij (p.sh. us-east-1).
+2. Hapni IAM → Përdoruesit → krijoni një përdorues → bashkëngjitni politikën e AmazonS3FullAccess.
+3. Nën Kredencialet e sigurisë, krijoni një çelës Access - kopjoni ID-në e çelësit dhe sekretin.
+4. Plotësoni: Bucket, Key Access, Key Secret dhe Region.</value>
+  </data>
+  <data name="S3_Provider_BackblazeB2_Help" xml:space="preserve">
+    <value>Backblaze B2 — ruajtje e përballueshme e përputhshme me S3.
+
+1. Në Backblaze (https://www.backblaze.com/) → B2 Cloud Storage → Buckets, krijoni një kovë.
+2. Shkoni te tastet e aplikacionit → Shto një çelës të ri aplikacioni, vendoseni në kovë.
+   Kopjoni ID-në e çelësit (= Çelësi i hyrjes) dhe aplikacioni Key (= Çelësi sekret).
+3. URL e shërbimit: pika e fundit e kovës suaj shfaqet në detajet e kovës, p.sh. https://s3.us-west-004.backblazeb2.com
+4. Rajoni: segmenti ndërmjet 's3'. dhe '.backblazeb2.com', p.sh. us-perëndim-004.</value>
+  </data>
+  <data name="S3_Provider_BaiduCloudBOS_Help" xml:space="preserve">
+    <value>Baidu Cloud BOS — Ruajtja e objekteve të pajtueshme me S3 nga Baidu.
+
+1. Në BOS Console (https://console.bce.baidu.com/bos/), krijoni një kovë. Vini re rajonin e tij (p.sh. bj, gz, su).
+2. Shkoni te Siguria → Çelësat e hyrjes — kopjoni ID-në e çelësit të hyrjes dhe çelësin sekret të hyrjes.
+3. URL-ja e shërbimit: https://s3.&lt;REGION&gt;.bcebos.com (p.sh. https://s3.bj.bcebos.com).
+4. Rajoni: p.sh. bj.</value>
+  </data>
+  <data name="S3_Provider_CloudflareR2_Help" xml:space="preserve">
+    <value>Cloudflare R2 - ruajtje e pajtueshme me S3 me dalje zero.
+
+1. Në Panelin e Cloudflare (https://dash.cloudflare.com/) → R2 → krijoni një kovë.
+2. Shkoni te R2 → Manage R2 API Tokens → Create API Token with Object Read &amp; Write.
+   Kopjoni ID-në e çelësit të hyrjes dhe çelësin sekret të hyrjes.
+3. URL-ja e shërbimit: https://&lt;ACCOUNT_ID&gt;.r2.cloudflarestorage.com
+   ID-ja e llogarisë suaj shfaqet në faqen e përmbledhjes së R2.
+4. Plotësoni: Bucket, Key Access, Key Sekret dhe URL Service. Rajoni është vendosur në 'auto' automatikisht.</value>
+  </data>
+  <data name="S3_Provider_CloudRuStorage_Help" xml:space="preserve">
+    <value>Cloud.ru (SberCloud) Ruajtja e objekteve - ruajtja e OBS e pajtueshme me S3.
+
+1. Në konsolën Cloud.ru (https://cloud.ru/) → Shërbimi i ruajtjes së objekteve (OBS) → krijoni një kovë.
+2. Shkoni te Kredencialet e mia → Çelësat e hyrjes → Shto çelësin e hyrjes.
+   Kopjoni çelësin e hyrjes dhe çelësin e hyrjes sekrete.
+3. Plotësoni: Kovë, Çelës Qasje, Çelës Sekret dhe Rajoni (p.sh. ru-moscow-1).
+   URL-ja e shërbimit plotësohet automatikisht.</value>
+  </data>
+  <data name="S3_Provider_Custom_Help" xml:space="preserve">
+    <value>MinIO ose ndonjë server i pajtueshëm me S3.
+
+1. Nisni serverin tuaj MinIO (ose një tjetër të pajtueshëm me S3).
+2. Krijoni një kovë nëpërmjet MinIO Console ose 'mc mb &lt;alias&gt;/&lt;bucket&gt;'.
+3. Krijoni një çelës aksesi në MinIO Console → Keys Access (shmangni kredencialet rrënjësore në prodhim).
+4. URL e shërbimit: pika e fundit e serverit tuaj, p.sh. http://192.168.1.10:9000 ose https://minio.example.com.
+5. Rajoni: çdo vlerë (p.sh. us-east-1) - ose lëre bosh nëse serveri nuk e zbaton atë.</value>
+  </data>
+  <data name="S3_Provider_DigitalOceanSpaces_Help" xml:space="preserve">
+    <value>DigitalOcean Spaces - ruajtja e objekteve të pajtueshme me S3.
+
+1. Në Spaces (https://cloud.digitalocean.com/spaces), krijoni një Hapësirë. Vini re rajonin e tij (p.sh. nyc3).
+2. Shkoni te API → Hapësirat → Gjeneroni çelësin e ri. Kopjoni çelësin (= Çelësin e hyrjes) dhe sekretin.
+3. URL-ja e shërbimit: https://&lt;REGION&gt;.digitaloceanspaces.com (p.sh. https://nyc3.digitaloceanspaces.com).
+4. Rajoni: i njëjti kod i shkurtër, p.sh. nyc3.</value>
+  </data>
+  <data name="S3_Provider_GoogleCloudStorage_Help" xml:space="preserve">
+    <value>Google Cloud Storage — nëpërmjet API-së së ndërveprimit S3.
+
+1. Në Google Cloud Console (https://console.cloud.google.com/storage), krijoni një kovë.
+2. Shkoni te Ruajtja në renë kompjuterike → Cilësimet → Ndërveprueshmëria → krijoni një çelës HMAC për një llogari shërbimi.
+   Kopjoni çelësin e hyrjes dhe sekretin.
+3. Plotësoni: Bucket, Access Key (çelës HMAC), Çelës Sekret (HMAC Secret).
+   URL-ja e shërbimit dhe rajoni caktohen automatikisht.</value>
+  </data>
+  <data name="S3_Provider_HuaweiCloudOBS_Help" xml:space="preserve">
+    <value>Huawei Cloud OBS — Ruajtja e objekteve të pajtueshme me S3 nga Huawei.
+
+1. Në OBS Console (https://console.huaweicloud.com/obs/), krijoni një kovë. Vini re rajonin e tij (p.sh. cn-veri-4).
+2. Shkoni te Kredencialet e mia → Çelësat e hyrjes → Krijo çelësin e hyrjes.
+   Kopjoni AK (= Çelësi i hyrjes) dhe SK (= Çelësi sekret).
+3. URL-ja e shërbimit: https://obs.&lt;REGION&gt;.myhuaweicloud.com (p.sh. https://obs.cn-north-4.myhuaweicloud.com).
+4. Rajoni: p.sh. cn-veri-4.</value>
+  </data>
+  <data name="S3_Provider_LinodeObjectStorage_Help" xml:space="preserve">
+    <value>Ruajtja e objekteve Linode (Akamai) — ruajtje e përputhshme me S3.
+
+1. Në Linode Cloud Manager (https://cloud.linode.com/object-storage/buckets), krijoni një kovë. Vini re grupin e tij.
+2. Shkoni te Ruajtja e objekteve → Çelësat e hyrjes → Krijoni një çelës aksesi të shtrirë në kovë.
+   Kopjoni çelësin e hyrjes dhe çelësin sekret.
+3. URL-ja e shërbimit: https://&lt;CLUSTER&gt;.linodeobjects.com (p.sh. https://us-east-1.linodeobjects.com).
+4. Rajoni: i njëjti kod grupi, p.sh. ne-lindje-1.</value>
+  </data>
+  <data name="S3_Provider_QiniuCloudKodo_Help" xml:space="preserve">
+    <value>Qiniu Cloud Kodo — ruajtje e përputhshme me S3 nga Qiniu.
+
+1. Në Portalin Qiniu (https://portal.qiniu.com/kodo/bucket), krijoni një kovë. Vini re rajonin e tij.
+2. Shkoni te Qendra Personale → Menaxhimi i çelësave — kopjoni AccessKey dhe SecretKey.
+3. URL-ja e shërbimit sipas rajonit:
+   Kina Lindore: https://s3-cn-east-1.qiniucs.com
+   Kina e Veriut: https://s3-cn-north-1.qiniucs.com
+   Kina e Jugut: https://s3-cn-south-1.qiniucs.com
+   Amerika e Veriut: https://s3-us-north-1.qiniucs.com
+4. Rajoni: kodi që përputhet, p.sh. cn-lindje-1.</value>
+  </data>
+  <data name="S3_Provider_ScalewayObjectStorage_Help" xml:space="preserve">
+    <value>Scaleway Object Storage — ruajtje evropiane e pajtueshme me S3.
+
+1. Në Scaleway Console (https://console.scaleway.com/object-storage/buckets), krijoni një kovë. Vini re rajonin e tij (p.sh. fr-par).
+2. Shkoni te IAM → tastet API → Generate API key with Object Storage lejet e shkrimit.
+   Kopjoni çelësin e hyrjes dhe çelësin sekret.
+3. URL-ja e shërbimit: https://s3.&lt;REGION&gt;.scw.cloud (p.sh. https://s3.fr-par.scw.cloud).
+4. Rajoni: p.sh. fr-par, nl-ams, pl-waw.</value>
+  </data>
+  <data name="S3_Provider_SelectelStorage_Help" xml:space="preserve">
+    <value>Selectel Object Storage - Ruajtja ruse e pajtueshme me S3.
+
+1. Në panelin Selectel (https://my.selectel.ru/) → Cloud Storage → krijoni një enë (= kovë).
+2. Nën Users &amp; Roles, krijoni një përdorues shërbimi me akses në ruajtje → S3 Keys → krijoni një çift çelësash.
+   Kopjoni çelësin e hyrjes dhe çelësin sekret.
+3. Plotësoni: Bucket, Access Key, Secret Key.
+   URL-ja e shërbimit plotësohet automatikisht.</value>
+  </data>
+  <data name="S3_Provider_TencentCloudCOS_Help" xml:space="preserve">
+    <value>Tencent Cloud COS — Ruajtja e objekteve të pajtueshme me S3 nga Tencent.
+
+1. Në COS Console (https://console.cloud.tencent.com/cos), krijoni një kovë. Vini re AppId-in dhe Rajonin (p.sh. ap-pekin).
+2. Në Menaxhimin e Aksesit → Çelësat API → Krijo çelësin.
+   Kopjoni SecretId (= Çelësi i hyrjes) dhe SecretKey (= Çelësi sekret).
+3. URL-ja e shërbimit: https://cos.&lt;REGION&gt;.myqcloud.com (p.sh. https://cos.ap-beijing.myqcloud.com).
+4. Formati i emrit të kovës: &lt;emri&gt;-&lt;AppId&gt; (p.sh. mybucket-1250000000). Rajoni: p.sh. ap-pekin.</value>
+  </data>
+  <data name="S3_Provider_VKCloudStorage_Help" xml:space="preserve">
+    <value>VK Cloud Object Storage — ruajtja e përputhshme me S3 nga VK Cloud.
+
+1. Në VK Cloud Portal (https://msk.cloud.vk.com/) → Cloud Storage → krijoni një kovë.
+2. Nën llogarinë tuaj → Çelësat e hyrjes → krijoni një çift të ri çelësash.
+   Kopjoni çelësin e hyrjes dhe çelësin sekret.
+3. Plotësoni: Bucket, Key Access, Key Sekret dhe Region nëse kërkohet (p.sh. ru-msk).
+   URL-ja e shërbimit plotësohet automatikisht.</value>
+  </data>
+  <data name="S3_Provider_VolcanoEngineTOS_Help" xml:space="preserve">
+    <value>Volcano Engine TOS (ByteDance) - ruajtje e pajtueshme me S3.
+
+1. Në panelin e motorit Volcano (https://console.volcengine.com/tos), krijoni një kovë. Vini re rajonin e tij (p.sh. cn-pekin).
+2. Shkoni te IAM → Keys Access → krijoni një çelës.
+   Kopjoni ID-në e çelësit të hyrjes dhe çelësin sekret të hyrjes.
+3. URL-ja e shërbimit: https://tos-s3-&lt;REGION&gt;.volces.com (p.sh. https://tos-s3-cn-beijing.volces.com).
+4. Rajoni: p.sh. cn-pekin.</value>
+  </data>
+  <data name="S3_Provider_Wasabi_Help" xml:space="preserve">
+    <value>Wasabi - ruajtja e nxehtë e reve pa tarifa daljeje.
+
+1. Në Wasabi Console (https://console.wasabisys.com/) → Buckets → Create Bucket. Zgjidhni një rajon.
+2. Shkoni te Keys Access → Create New Access. Kopjoni çelësin e hyrjes dhe çelësin sekret.
+3. Plotësoni: Bucket, Key Access, Key Sekret dhe Region (p.sh. us-east-1, eu-central-1).
+   URL-ja e shërbimit plotësohet automatikisht.</value>
+  </data>
+  <data name="S3_Provider_YandexObjectStorage_Help" xml:space="preserve">
+    <value>Ruajtja e objekteve Yandex - Ruajtja e reve ruse e pajtueshme me S3.
+
+1. Në Yandex Cloud Console (https://console.yandex.cloud/) → Ruajtja e objekteve → krijoni një kovë.
+2. Shkoni te Llogaritë e Shërbimit → krijoni një me rolin e ruajtjes.redaktori → krijoni një çelës aksesi statik.
+   Kopjoni ID-në e çelësit (= Çelës aksesi) dhe çelësin sekret.
+3. Plotësoni: Bucket, Access Key, Secret Key.
+   URL-ja e shërbimit dhe rajoni caktohen automatikisht.</value>
   </data>
   <data name="Server_Field_Address" xml:space="preserve">
     <value>Emri i serverit:</value>
@@ -988,184 +1170,13 @@ Shihni përshkrimin e detajuar në lidhjen vijuese.</value>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>Përdoruesi nuk është specifikuar.</value>
   </data>
-  <data name="S3_Provider_AlibabaCloudOSS_Help" xml:space="preserve">
-    <value>Alibaba Cloud OSS — Ruajtja e objekteve të pajtueshme me S3 nga Alibaba.
-
-1. Në OSS Console (https://oss.console.aliyun.com/), krijoni një kovë. Vini re rajonin e tij (p.sh. oss-cn-hangzhou).
-2. Në RAM Console → Përdoruesit → krijoni një përdorues → bashkëngjitni AliyunOSSFullAccess → krijoni një AccessKey.
-   Kopjo ID-në AccessKey (= Çelësi i hyrjes) dhe AccessKey Sekret (= Çelësi sekret).
-3. URL-ja e shërbimit: https://oss-&lt;REGION&gt;.aliyuncs.com (p.sh. https://oss-cn-hangzhou.aliyuncs.com).
-4. Rajoni: p.sh. oss-cn-hangzhou.</value>
-  </data>
-  <data name="S3_Provider_AWSS3_Help" xml:space="preserve">
-    <value>AWS S3 - ruajtja origjinale e objekteve të Amazon.
-
-1. Hapni S3 Console (https://s3.console.aws.amazon.com/) dhe krijoni një kovë. Vini re rajonin e tij (p.sh. us-east-1).
-2. Hapni IAM → Përdoruesit → krijoni një përdorues → bashkëngjitni politikën e AmazonS3FullAccess.
-3. Nën Kredencialet e sigurisë, krijoni një çelës Access - kopjoni ID-në e çelësit dhe sekretin.
-4. Plotësoni: Bucket, Key Access, Key Secret dhe Region.</value>
-  </data>
-  <data name="S3_Provider_BaiduCloudBOS_Help" xml:space="preserve">
-    <value>Baidu Cloud BOS — Ruajtja e objekteve të pajtueshme me S3 nga Baidu.
-
-1. Në BOS Console (https://console.bce.baidu.com/bos/), krijoni një kovë. Vini re rajonin e tij (p.sh. bj, gz, su).
-2. Shkoni te Siguria → Çelësat e hyrjes — kopjoni ID-në e çelësit të hyrjes dhe çelësin sekret të hyrjes.
-3. URL-ja e shërbimit: https://s3.&lt;REGION&gt;.bcebos.com (p.sh. https://s3.bj.bcebos.com).
-4. Rajoni: p.sh. bj.</value>
-  </data>
-  <data name="S3_Provider_BackblazeB2_Help" xml:space="preserve">
-    <value>Backblaze B2 — ruajtje e përballueshme e përputhshme me S3.
-
-1. Në Backblaze (https://www.backblaze.com/) → B2 Cloud Storage → Buckets, krijoni një kovë.
-2. Shkoni te tastet e aplikacionit → Shto një çelës të ri aplikacioni, vendoseni në kovë.
-   Kopjoni ID-në e çelësit (= Çelësi i hyrjes) dhe aplikacioni Key (= Çelësi sekret).
-3. URL e shërbimit: pika e fundit e kovës suaj shfaqet në detajet e kovës, p.sh. https://s3.us-west-004.backblazeb2.com
-4. Rajoni: segmenti ndërmjet &apos;s3&apos;. dhe &apos;.backblazeb2.com&apos;, p.sh. us-perëndim-004.</value>
-  </data>
-  <data name="S3_Provider_CloudflareR2_Help" xml:space="preserve">
-    <value>Cloudflare R2 - ruajtje e pajtueshme me S3 me dalje zero.
-
-1. Në Panelin e Cloudflare (https://dash.cloudflare.com/) → R2 → krijoni një kovë.
-2. Shkoni te R2 → Manage R2 API Tokens → Create API Token with Object Read &amp; Write.
-   Kopjoni ID-në e çelësit të hyrjes dhe çelësin sekret të hyrjes.
-3. URL-ja e shërbimit: https://&lt;ACCOUNT_ID&gt;.r2.cloudflarestorage.com
-   ID-ja e llogarisë suaj shfaqet në faqen e përmbledhjes së R2.
-4. Plotësoni: Bucket, Key Access, Key Sekret dhe URL Service. Rajoni është vendosur në &apos;auto&apos; automatikisht.</value>
-  </data>
-  <data name="S3_Provider_CloudRuStorage_Help" xml:space="preserve">
-    <value>Cloud.ru (SberCloud) Ruajtja e objekteve - ruajtja e OBS e pajtueshme me S3.
-
-1. Në konsolën Cloud.ru (https://cloud.ru/) → Shërbimi i ruajtjes së objekteve (OBS) → krijoni një kovë.
-2. Shkoni te Kredencialet e mia → Çelësat e hyrjes → Shto çelësin e hyrjes.
-   Kopjoni çelësin e hyrjes dhe çelësin e hyrjes sekrete.
-3. Plotësoni: Kovë, Çelës Qasje, Çelës Sekret dhe Rajoni (p.sh. ru-moscow-1).
-   URL-ja e shërbimit plotësohet automatikisht.</value>
-  </data>
-  <data name="S3_Provider_Custom_Help" xml:space="preserve">
-    <value>MinIO ose ndonjë server i pajtueshëm me S3.
-
-1. Nisni serverin tuaj MinIO (ose një tjetër të pajtueshëm me S3).
-2. Krijoni një kovë nëpërmjet MinIO Console ose &apos;mc mb &lt;alias&gt;/&lt;bucket&gt;&apos;.
-3. Krijoni një çelës aksesi në MinIO Console → Keys Access (shmangni kredencialet rrënjësore në prodhim).
-4. URL e shërbimit: pika e fundit e serverit tuaj, p.sh. http://192.168.1.10:9000 ose https://minio.example.com.
-5. Rajoni: çdo vlerë (p.sh. us-east-1) - ose lëre bosh nëse serveri nuk e zbaton atë.</value>
-  </data>
-  <data name="S3_Provider_DigitalOceanSpaces_Help" xml:space="preserve">
-    <value>DigitalOcean Spaces - ruajtja e objekteve të pajtueshme me S3.
-
-1. Në Spaces (https://cloud.digitalocean.com/spaces), krijoni një Hapësirë. Vini re rajonin e tij (p.sh. nyc3).
-2. Shkoni te API → Hapësirat → Gjeneroni çelësin e ri. Kopjoni çelësin (= Çelësin e hyrjes) dhe sekretin.
-3. URL-ja e shërbimit: https://&lt;REGION&gt;.digitaloceanspaces.com (p.sh. https://nyc3.digitaloceanspaces.com).
-4. Rajoni: i njëjti kod i shkurtër, p.sh. nyc3.</value>
-  </data>
-  <data name="S3_Provider_GoogleCloudStorage_Help" xml:space="preserve">
-    <value>Google Cloud Storage — nëpërmjet API-së së ndërveprimit S3.
-
-1. Në Google Cloud Console (https://console.cloud.google.com/storage), krijoni një kovë.
-2. Shkoni te Ruajtja në renë kompjuterike → Cilësimet → Ndërveprueshmëria → krijoni një çelës HMAC për një llogari shërbimi.
-   Kopjoni çelësin e hyrjes dhe sekretin.
-3. Plotësoni: Bucket, Access Key (çelës HMAC), Çelës Sekret (HMAC Secret).
-   URL-ja e shërbimit dhe rajoni caktohen automatikisht.</value>
-  </data>
-  <data name="S3_Provider_HuaweiCloudOBS_Help" xml:space="preserve">
-    <value>Huawei Cloud OBS — Ruajtja e objekteve të pajtueshme me S3 nga Huawei.
-
-1. Në OBS Console (https://console.huaweicloud.com/obs/), krijoni një kovë. Vini re rajonin e tij (p.sh. cn-veri-4).
-2. Shkoni te Kredencialet e mia → Çelësat e hyrjes → Krijo çelësin e hyrjes.
-   Kopjoni AK (= Çelësi i hyrjes) dhe SK (= Çelësi sekret).
-3. URL-ja e shërbimit: https://obs.&lt;REGION&gt;.myhuaweicloud.com (p.sh. https://obs.cn-north-4.myhuaweicloud.com).
-4. Rajoni: p.sh. cn-veri-4.</value>
-  </data>
-  <data name="S3_Provider_LinodeObjectStorage_Help" xml:space="preserve">
-    <value>Ruajtja e objekteve Linode (Akamai) — ruajtje e përputhshme me S3.
-
-1. Në Linode Cloud Manager (https://cloud.linode.com/object-storage/buckets), krijoni një kovë. Vini re grupin e tij.
-2. Shkoni te Ruajtja e objekteve → Çelësat e hyrjes → Krijoni një çelës aksesi të shtrirë në kovë.
-   Kopjoni çelësin e hyrjes dhe çelësin sekret.
-3. URL-ja e shërbimit: https://&lt;CLUSTER&gt;.linodeobjects.com (p.sh. https://us-east-1.linodeobjects.com).
-4. Rajoni: i njëjti kod grupi, p.sh. ne-lindje-1.</value>
-  </data>
-  <data name="S3_Provider_QiniuCloudKodo_Help" xml:space="preserve">
-    <value>Qiniu Cloud Kodo — ruajtje e përputhshme me S3 nga Qiniu.
-
-1. Në Portalin Qiniu (https://portal.qiniu.com/kodo/bucket), krijoni një kovë. Vini re rajonin e tij.
-2. Shkoni te Qendra Personale → Menaxhimi i çelësave — kopjoni AccessKey dhe SecretKey.
-3. URL-ja e shërbimit sipas rajonit:
-   Kina Lindore: https://s3-cn-east-1.qiniucs.com
-   Kina e Veriut: https://s3-cn-north-1.qiniucs.com
-   Kina e Jugut: https://s3-cn-south-1.qiniucs.com
-   Amerika e Veriut: https://s3-us-north-1.qiniucs.com
-4. Rajoni: kodi që përputhet, p.sh. cn-lindje-1.</value>
-  </data>
-  <data name="S3_Provider_ScalewayObjectStorage_Help" xml:space="preserve">
-    <value>Scaleway Object Storage — ruajtje evropiane e pajtueshme me S3.
-
-1. Në Scaleway Console (https://console.scaleway.com/object-storage/buckets), krijoni një kovë. Vini re rajonin e tij (p.sh. fr-par).
-2. Shkoni te IAM → tastet API → Generate API key with Object Storage lejet e shkrimit.
-   Kopjoni çelësin e hyrjes dhe çelësin sekret.
-3. URL-ja e shërbimit: https://s3.&lt;REGION&gt;.scw.cloud (p.sh. https://s3.fr-par.scw.cloud).
-4. Rajoni: p.sh. fr-par, nl-ams, pl-waw.</value>
-  </data>
-  <data name="S3_Provider_SelectelStorage_Help" xml:space="preserve">
-    <value>Selectel Object Storage - Ruajtja ruse e pajtueshme me S3.
-
-1. Në panelin Selectel (https://my.selectel.ru/) → Cloud Storage → krijoni një enë (= kovë).
-2. Nën Users &amp; Roles, krijoni një përdorues shërbimi me akses në ruajtje → S3 Keys → krijoni një çift çelësash.
-   Kopjoni çelësin e hyrjes dhe çelësin sekret.
-3. Plotësoni: Bucket, Access Key, Secret Key.
-   URL-ja e shërbimit plotësohet automatikisht.</value>
-  </data>
-  <data name="S3_Provider_TencentCloudCOS_Help" xml:space="preserve">
-    <value>Tencent Cloud COS — Ruajtja e objekteve të pajtueshme me S3 nga Tencent.
-
-1. Në COS Console (https://console.cloud.tencent.com/cos), krijoni një kovë. Vini re AppId-in dhe Rajonin (p.sh. ap-pekin).
-2. Në Menaxhimin e Aksesit → Çelësat API → Krijo çelësin.
-   Kopjoni SecretId (= Çelësi i hyrjes) dhe SecretKey (= Çelësi sekret).
-3. URL-ja e shërbimit: https://cos.&lt;REGION&gt;.myqcloud.com (p.sh. https://cos.ap-beijing.myqcloud.com).
-4. Formati i emrit të kovës: &lt;emri&gt;-&lt;AppId&gt; (p.sh. mybucket-1250000000). Rajoni: p.sh. ap-pekin.</value>
-  </data>
-  <data name="S3_Provider_VKCloudStorage_Help" xml:space="preserve">
-    <value>VK Cloud Object Storage — ruajtja e përputhshme me S3 nga VK Cloud.
-
-1. Në VK Cloud Portal (https://msk.cloud.vk.com/) → Cloud Storage → krijoni një kovë.
-2. Nën llogarinë tuaj → Çelësat e hyrjes → krijoni një çift të ri çelësash.
-   Kopjoni çelësin e hyrjes dhe çelësin sekret.
-3. Plotësoni: Bucket, Key Access, Key Sekret dhe Region nëse kërkohet (p.sh. ru-msk).
-   URL-ja e shërbimit plotësohet automatikisht.</value>
-  </data>
-  <data name="S3_Provider_VolcanoEngineTOS_Help" xml:space="preserve">
-    <value>Volcano Engine TOS (ByteDance) - ruajtje e pajtueshme me S3.
-
-1. Në panelin e motorit Volcano (https://console.volcengine.com/tos), krijoni një kovë. Vini re rajonin e tij (p.sh. cn-pekin).
-2. Shkoni te IAM → Keys Access → krijoni një çelës.
-   Kopjoni ID-në e çelësit të hyrjes dhe çelësin sekret të hyrjes.
-3. URL-ja e shërbimit: https://tos-s3-&lt;REGION&gt;.volces.com (p.sh. https://tos-s3-cn-beijing.volces.com).
-4. Rajoni: p.sh. cn-pekin.</value>
-  </data>
-  <data name="S3_Provider_Wasabi_Help" xml:space="preserve">
-    <value>Wasabi - ruajtja e nxehtë e reve pa tarifa daljeje.
-
-1. Në Wasabi Console (https://console.wasabisys.com/) → Buckets → Create Bucket. Zgjidhni një rajon.
-2. Shkoni te Keys Access → Create New Access. Kopjoni çelësin e hyrjes dhe çelësin sekret.
-3. Plotësoni: Bucket, Key Access, Key Sekret dhe Region (p.sh. us-east-1, eu-central-1).
-   URL-ja e shërbimit plotësohet automatikisht.</value>
-  </data>
-  <data name="S3_Provider_YandexObjectStorage_Help" xml:space="preserve">
-    <value>Ruajtja e objekteve Yandex - Ruajtja e reve ruse e pajtueshme me S3.
-
-1. Në Yandex Cloud Console (https://console.yandex.cloud/) → Ruajtja e objekteve → krijoni një kovë.
-2. Shkoni te Llogaritë e Shërbimit → krijoni një me rolin e ruajtjes.redaktori → krijoni një çelës aksesi statik.
-   Kopjoni ID-në e çelësit (= Çelës aksesi) dhe çelësin sekret.
-3. Plotësoni: Bucket, Access Key, Secret Key.
-   URL-ja e shërbimit dhe rajoni caktohen automatikisht.</value>
-  </data>
   <data name="WebDav_Preset_Box_Help" xml:space="preserve">
     <value>Box - ruajtja e resë kompjuterike të ndërmarrjes me mbështetje WebDAV.
 
 1. Hyni në app.box.com. Vini re se Box WebDAV është i disponueshëm vetëm për planet me pagesë.
 2. Futni emailin e llogarisë tuaj Box si Përdorues.
 3. Fusni fjalëkalimin tuaj të Box si Fjalëkalim.
-   Nëse përdorni SSO, mund t&apos;ju duhet të vendosni një fjalëkalim të veçantë WebDAV te &quot;Cilësimet e llogarisë&quot;.
+   Nëse përdorni SSO, mund t'ju duhet të vendosni një fjalëkalim të veçantë WebDAV te "Cilësimet e llogarisë".
    Adresa e serverit, HTTPS, porti dhe rruga bazë konfigurohen automatikisht.</value>
   </data>
   <data name="WebDav_Preset_Custom_Help" xml:space="preserve">
@@ -1207,7 +1218,7 @@ Shihni përshkrimin e detajuar në lidhjen vijuese.</value>
     <value>Mail.ru Cloud përmes WebDAV.
 
 1. Shkoni te account.mail.ru → Siguria → Fjalëkalimet e aplikacionit → Krijo fjalëkalimin e aplikacionit.
-   Zgjidhni &quot;Mail&quot; ose &quot;Të gjitha&quot; si lloj, më pas kopjoni fjalëkalimin e krijuar.
+   Zgjidhni "Mail" ose "Të gjitha" si lloj, më pas kopjoni fjalëkalimin e krijuar.
 2. Futni adresën tuaj të emailit Mail.ru si Përdorues.
 3. Futni fjalëkalimin e aplikacionit si Fjalëkalim.
    Adresa e serverit, HTTPS, porti dhe rruga bazë konfigurohen automatikisht.</value>
@@ -1242,13 +1253,15 @@ Shihni përshkrimin e detajuar në lidhjen vijuese.</value>
   <data name="WebDav_Preset_YandexDisk_Help" xml:space="preserve">
     <value>Disk Yandex përmes WebDAV.
 
-1. Shkoni te id.yandex.com → Siguria → Fjalëkalimet e aplikacionit → Krijoni fjalëkalimin e aplikacionit për &quot;qasjen në WebDAV&quot;.
+1. Shkoni te id.yandex.com → Siguria → Fjalëkalimet e aplikacionit → Krijoni fjalëkalimin e aplikacionit për "qasjen në WebDAV".
    Kopjoni fjalëkalimin e krijuar - ai shfaqet vetëm një herë.
 2. Futni hyrjen tuaj në Yandex si Përdorues.
 3. Futni fjalëkalimin e aplikacionit (jo fjalëkalimin e llogarisë suaj Yandex) si fjalëkalim.
    Adresa e serverit, HTTPS dhe porti konfigurohen automatikisht.</value>
   </data>
-
+  <data name="WhatTask_Description" xml:space="preserve">
+    <value>Këtu mund të specifikoni dosjet që dëshironi të rezervoni.</value>
+  </data>
   <data name="Winget_Description" xml:space="preserve">
     <value>Kopjoni/sinkronizoni të dhënat tuaja në Windows, Linux.
 Importoni foto nga telefoni përmes WI-FI dhe më shumë.

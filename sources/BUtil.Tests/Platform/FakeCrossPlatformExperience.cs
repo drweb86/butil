@@ -69,18 +69,6 @@ internal sealed class FakeCrossPlatformExperience : CrossPlatformExperience
         {
         }
 
-        public void OpenHomePage()
-        {
-        }
-
-        public void OpenIcons()
-        {
-        }
-
-        public void OpenLatestRelease()
-        {
-        }
-
         public void OpenLink(string url)
         {
         }

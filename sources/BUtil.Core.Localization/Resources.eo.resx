@@ -1,5 +1,4 @@
 <root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -263,14 +262,14 @@ Scenaro de uzado: Vi kopias datumojn al fora servilo. Estas problemo: ISP malpli
   <data name="Field_Folder_Validation_Empty" xml:space="preserve">
     <value>Dosierujo ne estas specifita.</value>
   </data>
-  <data name="Field_Validation_NotSpecified" xml:space="preserve">
-    <value>{0} ne estas specifita.</value>
-  </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Dosierujo ne ekzistas.</value>
   </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>Protokolo:</value>
+  </data>
+  <data name="Field_Validation_NotSpecified" xml:space="preserve">
+    <value>{0} ne estas specifita.</value>
   </data>
   <data name="Field_Version" xml:space="preserve">
     <value>Versio:</value>
@@ -332,14 +331,26 @@ Scenaro de uzado: Vi kopias datumojn al fora servilo. Estas problemo: ISP malpli
   <data name="ImportMediaTask_Create" xml:space="preserve">
     <value>Importu amaskomunikilaron taskon</value>
   </data>
+  <data name="ImportMediaTask_DeleteCopiedDataOnSourceMedia" xml:space="preserve">
+    <value>Forigi kopiitajn datumojn de la fonta datumportilo</value>
+  </data>
   <data name="ImportMediaTask_Edit_Title" xml:space="preserve">
     <value>Redaktu "{0}" amaskomunikilaran importtaskon</value>
+  </data>
+  <data name="ImportMediaTask_Field_FileExtensions" xml:space="preserve">
+    <value>File extensions:</value>
+  </data>
+  <data name="ImportMediaTask_Field_FileExtensions_Help" xml:space="preserve">
+    <value>Comma-separated list of extensions to import (for example .jpg, .png, .mp3). Leave empty to import all files.</value>
   </data>
   <data name="ImportMediaTask_Field_OutputFolder" xml:space="preserve">
     <value>Eliga dosierujo:</value>
   </data>
   <data name="ImportMediaTask_Field_TransformFileName" xml:space="preserve">
     <value>Dosiernomaj transformoj:</value>
+  </data>
+  <data name="ImportMediaTask_Field_TransformFileName_Documentation" xml:space="preserve">
+    <value>Date format docs</value>
   </data>
   <data name="ImportMediaTask_Field_TransformFileName_Example" xml:space="preserve">
     <value>Ekzemplo:
@@ -366,17 +377,20 @@ Por vidi ĉiujn opciojn guglo "C# DateTime formato".</value>
 
 Vidu aplikaĵon retejon por dokumentado kiel agordi dosiertranssendon per WI-FI per FTP-Servilo-aplikaĵo sur la telefono.</value>
   </data>
-  <data name="ImportMediaTask_Storage_Help" xml:space="preserve">
-    <value>Specifu la fonton, de kie importi aŭdvidaĵojn — ekzemple SD-karton, kameran dosierujon, aŭ telefonon per FTPS.</value>
-  </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
     <value>Importi datumfonton</value>
   </data>
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>Saltu jam importitajn dosierojn</value>
   </data>
-  <data name="ImportMediaTask_DeleteCopiedDataOnSourceMedia" xml:space="preserve">
-    <value>Forigi kopiitajn datumojn de la fonta datumportilo</value>
+  <data name="ImportMediaTask_SkipAlreadyImportedFiles_Help" xml:space="preserve">
+    <value>When enabled, the application skips files that already exist in the destination or that were imported earlier. Previously imported file names are remembered, so a file is not processed again even if you delete its copy from the destination later.</value>
+  </data>
+  <data name="ImportMediaTask_Storage_Help" xml:space="preserve">
+    <value>Specifu la fonton, de kie importi aŭdvidaĵojn — ekzemple SD-karton, kameran dosierujon, aŭ telefonon per FTPS.</value>
+  </data>
+  <data name="ImportMediaTask_Storage_Validation_TooBroad" xml:space="preserve">
+    <value>The selected folder looks like a device or home root because it contains several known media folders ({0}). Please choose a more specific folder, for example "{1}".</value>
   </data>
   <data name="ImproveIt_Message" xml:space="preserve">
     <value>Neatendita eraro okazis.
@@ -463,9 +477,6 @@ Bonvolu ĉu:
   <data name="LeftMenu_What_Hint" xml:space="preserve">
     <value>Ĉi tie vi povas aldoni dosierujojn kaj dosierojn, kiujn vi bezonas prilabori.</value>
   </data>
-  <data name="WhatTask_Description" xml:space="preserve">
-    <value>Ĉi tie vi povas specifi dosierujojn, kiujn vi ŝatus sekurkopii.</value>
-  </data>
   <data name="LeftMenu_What_Validation" xml:space="preserve">
     <value>Neniuj aĵoj por procesi.</value>
   </data>
@@ -477,9 +488,6 @@ Bonvolu ĉu:
   </data>
   <data name="LeftMenu_When_Optional_Hint" xml:space="preserve">
     <value>Ĉi tiu sekcio estas laŭvola. Se vi preterlasos ĝin, la tasko funkcios nur kiam vi lanĉos ĝin permane.</value>
-  </data>
-  <data name="RunAtLogin_Label" xml:space="preserve">
-    <value>Lanĉi ĉe ensaluto</value>
   </data>
   <data name="LeftMenu_Where" xml:space="preserve">
     <value>Kie?</value>
@@ -529,11 +537,11 @@ Bonvolu ĉu:
   <data name="Name_Field_Validation" xml:space="preserve">
     <value>Nomo estas malplena aŭ enhavas ne subtenatajn padosignojn.</value>
   </data>
-  <data name="Name_Field_Validation_ExceedsLimit" xml:space="preserve">
-    <value>Nomo '{0}' longo superas limon je {1} signoj.</value>
-  </data>
   <data name="Name_Field_Validation_Duplicate" xml:space="preserve">
     <value>Tasko kun ĉi tiu nomo jam ekzistas.</value>
+  </data>
+  <data name="Name_Field_Validation_ExceedsLimit" xml:space="preserve">
+    <value>Nomo '{0}' longo superas limon je {1} signoj.</value>
   </data>
   <data name="Name_Title" xml:space="preserve">
     <value>Nomo</value>
@@ -590,6 +598,180 @@ Montru al dosierujo enhavanta ĉi tiun dosieron.</value>
   </data>
   <data name="RestoreFrom_Field_Validation_StateInvalid" xml:space="preserve">
     <value>Ne povas legi staton.</value>
+  </data>
+  <data name="RunAtLogin_Label" xml:space="preserve">
+    <value>Lanĉi ĉe ensaluto</value>
+  </data>
+  <data name="S3_Provider_AlibabaCloudOSS_Help" xml:space="preserve">
+    <value>Alibaba Cloud OSS — S3-kongrua objektostokado de Alibaba.
+
+1. En OSS-Konzolo (https://oss.console.aliyun.com/), kreu sitelon. Notu ĝian regionon (ekz. oss-cn-hangzhou).
+2. En RAM-Konzolo → Uzantoj → kreu uzanton → aligu AliyunOSSFullAccess → kreu AccessKey.
+   Kopiu la AccessKey ID (= Alirŝlosilo) kaj AccessKey Sekreto (= Sekreta Ŝlosilo).
+3. Serva URL: https://oss-&lt;REGION&gt;.aliyuncs.com (ekz. https://oss-cn-hangzhou.aliyuncs.com).
+4. Regiono: ekz. oss-cn-hangzhou.</value>
+  </data>
+  <data name="S3_Provider_AWSS3_Help" xml:space="preserve">
+    <value>AWS S3 — La originala objektostokado de Amazon.
+
+1. Malfermu la S3-Konzolon (https://s3.console.aws.amazon.com/) kaj kreu sitelon. Notu ĝian regionon (ekz. us-oriento-1).
+2. Malfermu IAM → Uzantoj → kreu uzanton → aligu la politikon de AmazonS3FullAccess.
+3. Sub Sekurecaj akreditaĵoj, kreu Alirŝlosilon — kopiu la Ŝlosilidentigilon kaj Sekreton.
+4. Plenigu: Sitelo, Alirŝlosilo, Sekreta Ŝlosilo kaj Regiono.</value>
+  </data>
+  <data name="S3_Provider_BackblazeB2_Help" xml:space="preserve">
+    <value>Backblaze B2 - pagebla S3-kongrua stokado.
+
+1. En Backblaze (https://www.backblaze.com/) → B2 Cloud Storage → Siteloj, kreu sitelon.
+2. Iru al Aplikaj Ŝlosiloj → Aldonu Novan Aplikan Ŝlosilon, metu ĝin al la sitelo.
+   Kopiu la ŝlosiloID (= Alirŝlosilo) kaj aplikaĵoKey (= Sekreta Ŝlosilo).
+3. Serva URL: la finpunkto de via sitelo montrita en siteldetaloj, ekz. https://s3.us-west-004.backblazeb2.com
+4. Regiono: la segmento inter 's3.' kaj '.backblazeb2.com', ekz. us-west-004.</value>
+  </data>
+  <data name="S3_Provider_BaiduCloudBOS_Help" xml:space="preserve">
+    <value>Baidu Cloud BOS — S3-kongrua objektostokado de Baidu.
+
+1. En BOS-Konzolo (https://console.bce.baidu.com/bos/), kreu sitelon. Notu ĝian regionon (ekz. bj, gz, su).
+2. Iru al Sekureco → Alirŝlosiloj — kopiu vian Alirŝlosilon ID kaj Sekretan Alirŝlosilon.
+3. Serva URL: https://s3.&lt;REGION&gt;.bcebos.com (ekz. https://s3.bj.bcebos.com).
+4. Regiono: ekz. bj.</value>
+  </data>
+  <data name="S3_Provider_CloudflareR2_Help" xml:space="preserve">
+    <value>Cloudflare R2 - nul-eliro S3-kongrua stokado.
+
+1. En Cloudflare Dashboard (https://dash.cloudflare.com/) → R2 → kreu sitelon.
+2. Iru al R2 → Administri R2 API Tokens → Krei API Token kun Objekto Read &amp; Write.
+   Kopiu la Alirŝlosilon ID kaj Sekretan Alirŝlosilon.
+3. Serva URL: https://&lt;ACCOUNT_ID&gt;.r2.cloudflarestorage.com
+   Via Konta ID estas montrita sur la R2-superrigarda paĝo.
+4. Plenigu: Sitelo, Alirŝlosilo, Sekreta Ŝlosilo kaj Serva URL. Regiono estas agordita al 'aŭtomata' aŭtomate.</value>
+  </data>
+  <data name="S3_Provider_CloudRuStorage_Help" xml:space="preserve">
+    <value>Cloud.ru (SberCloud) Objekta Stokado — S3-kongrua OBS-stokado.
+
+1. En Cloud.ru Konzolo (https://cloud.ru/) → Objekta Stokado-Servo (OBS) → kreu sitelon.
+2. Iru al Miaj Akreditaĵoj → Alirŝlosiloj → Aldoni Alirŝlosilon.
+   Kopiu la Alirŝlosilon kaj Sekretan Alirŝlosilon.
+3. Plenigu: Sitelo, Alirŝlosilo, Sekreta Ŝlosilo kaj Regiono (ekz. ru-moskvo-1).
+   Serva URL estas aŭtomate plenigita.</value>
+  </data>
+  <data name="S3_Provider_Custom_Help" xml:space="preserve">
+    <value>MinIO aŭ iu ajn S3-kongrua servilo.
+
+1. Komencu vian servilon MinIO (aŭ alia S3-kongrua).
+2. Kreu sitelon per la MinIO-Konzolo aŭ 'mc mb &lt;alias&gt;/&lt;bucket&gt;'.
+3. Kreu alirŝlosilon en MinIO-Konzolo → Alirŝlosiloj (evitu radikajn akreditaĵojn en produktado).
+4. Serva URL: via servila finpunkto, ekz. http://192.168.1.10:9000 aŭ https://minio.example.com.
+5. Regiono: ajna valoro (ekz. us-east-1) — aŭ lasu malplena se la servilo ne devigas ĝin.</value>
+  </data>
+  <data name="S3_Provider_DigitalOceanSpaces_Help" xml:space="preserve">
+    <value>DigitalOcean Spaces - S3-kongrua objektostokado.
+
+1. En Spacoj (https://cloud.digitalocean.com/spaces), kreu Spacon. Notu ĝian regionon (ekz. nyc3).
+2. Iru al API → Spacaj Ŝlosiloj → Generi Novan Ŝlosilon. Kopiu la Ŝlosilon (= Alirŝlosilo) kaj Sekreton.
+3. Serva URL: https://&lt;REGION&gt;.digitaloceanspaces.com (ekz. https://nyc3.digitaloceanspaces.com).
+4. Regiono: sama mallongkodo, ekz. nyc3.</value>
+  </data>
+  <data name="S3_Provider_GoogleCloudStorage_Help" xml:space="preserve">
+    <value>Google Cloud Storage - per la S3-kunfunkciebleco API.
+
+1. En Google Cloud Console (https://console.cloud.google.com/storage), kreu sitelon.
+2. Iru al Cloud Storage → Agordoj → Kunfunkciebleco → kreu HMAC-ŝlosilon por servokonto.
+   Kopiu la Alirŝlosilon kaj Sekreton.
+3. Plenigu: Sitelo, Alirŝlosilo (HMAC-ŝlosilo), Sekreta Ŝlosilo (HMAC-sekreto).
+   Serva URL kaj regiono estas agordita aŭtomate.</value>
+  </data>
+  <data name="S3_Provider_HuaweiCloudOBS_Help" xml:space="preserve">
+    <value>Huawei Cloud OBS — S3-kongrua objektostokado de Huawei.
+
+1. En OBS-Konzolo (https://console.huaweicloud.com/obs/), kreu sitelon. Notu ĝian regionon (ekz. cn-norda-4).
+2. Iru al Miaj Akreditaĵoj → Alirŝlosiloj → Krei Alirŝlosilon.
+   Kopiu la AK (= Alirŝlosilo) kaj SK (= Sekreta Ŝlosilo).
+3. Serva URL: https://obs.&lt;REGION&gt;.myhuaweicloud.com (ekz. https://obs.cn-north-4.myhuaweicloud.com).
+4. Regiono: ekz. cn-norda-4.</value>
+  </data>
+  <data name="S3_Provider_LinodeObjectStorage_Help" xml:space="preserve">
+    <value>Linode (Akamai) Objekta Stokado - S3-kongrua stokado.
+
+1. En Linode Cloud Manager (https://cloud.linode.com/object-storage/buckets), kreu sitelon. Notu ĝian areton.
+2. Iru al Objekta Stokado → Alirŝlosiloj → Krei Alirŝlosilon skopitan al la sitelo.
+   Kopiu la Alirŝlosilon kaj Sekretan Ŝlosilon.
+3. Serva URL: https://&lt;CLUSTER&gt;.linodeobjects.com (ekz. https://us-east-1.linodeobjects.com).
+4. Regiono: sama grapolkodo, ekz. us-oriento-1.</value>
+  </data>
+  <data name="S3_Provider_QiniuCloudKodo_Help" xml:space="preserve">
+    <value>Qiniu Cloud Kodo - S3-kongrua stokado de Qiniu.
+
+1. En Qiniu Portalo (https://portal.qiniu.com/kodo/bucket), kreu sitelon. Notu ĝian regionon.
+2. Iru al Persona Centro → Ŝlosiladministrado — kopiu vian Alirŝlosilon kaj Sekretan Ŝlosilon.
+3. Serva URL laŭ regiono:
+   Orienta Ĉinio: https://s3-cn-east-1.qiniucs.com
+   Norda Ĉinio: https://s3-cn-north-1.qiniucs.com
+   Suda Ĉinio: https://s3-cn-south-1.qiniucs.com
+   Nordameriko: https://s3-us-north-1.qiniucs.com
+4. Regiono: kongrua kodo, ekz. cn-oriento-1.</value>
+  </data>
+  <data name="S3_Provider_ScalewayObjectStorage_Help" xml:space="preserve">
+    <value>Scaleway Object Storage — Eŭropa S3-kongrua stokado.
+
+1. En Scaleway Console (https://console.scaleway.com/object-storage/buckets), kreu sitelon. Notu ĝian regionon (ekz. fr-par).
+2. Iru al IAM → API-Ŝlosiloj → Generu API-ŝlosilon kun skriba permesoj de Objekta Stokado.
+   Kopiu la Alirŝlosilon kaj Sekretan Ŝlosilon.
+3. Serva URL: https://s3.&lt;REGION&gt;.scw.cloud (ekz. https://s3.fr-par.scw.cloud).
+4. Regiono: ekz. fr-par, nl-ams, pl-waw.</value>
+  </data>
+  <data name="S3_Provider_SelectelStorage_Help" xml:space="preserve">
+    <value>Selectel Object Storage — S3-kongrua rusa stokado.
+
+1. En Selectel Panelo (https://my.selectel.ru/) → Nuba Stokado → kreu ujon (= sitelo).
+2. Sub Uzantoj &amp; Roloj, kreu servan uzanton kun stokada aliro → S3-Ŝlosiloj → kreu ŝlosilparon.
+   Kopiu la Alirŝlosilon kaj Sekretan Ŝlosilon.
+3. Plenigu: Sitelo, Alirŝlosilo, Sekreta Ŝlosilo.
+   Serva URL estas aŭtomate plenigita.</value>
+  </data>
+  <data name="S3_Provider_TencentCloudCOS_Help" xml:space="preserve">
+    <value>Tencent Cloud COS - S3-kongrua objektostokado de Tencent.
+
+1. En COS Console (https://console.cloud.tencent.com/cos), kreu sitelon. Notu la AppId kaj Regiono (ekz. ap-beijing).
+2. En Aliradministrado → API-Ŝlosiloj → Krei Ŝlosilon.
+   Kopiu la SecretId (= Alirŝlosilo) kaj SecretKey (= Sekreta Ŝlosilo).
+3. Serva URL: https://cos.&lt;REGION&gt;.myqcloud.com (ekz. https://cos.ap-beijing.myqcloud.com).
+4. Site-nomformato: &lt;name&gt;-&lt;AppId&gt; (ekz. mybucket-1250000000). Regiono: ekz. ap-beijing.</value>
+  </data>
+  <data name="S3_Provider_VKCloudStorage_Help" xml:space="preserve">
+    <value>VK Cloud Object Storage — S3-kongrua stokado de VK Cloud.
+
+1. En VK Cloud Portal (https://msk.cloud.vk.com/) → Cloud Storage → kreu sitelon.
+2. Sub via konto → Alirŝlosiloj → kreu novan ŝlosilparon.
+   Kopiu la Alirŝlosilon kaj Sekretan Ŝlosilon.
+3. Plenigu: Sitelo, Alirŝlosilo, Sekreta Ŝlosilo kaj Regiono se necese (ekz. ru-msk).
+   Serva URL estas aŭtomate plenigita.</value>
+  </data>
+  <data name="S3_Provider_VolcanoEngineTOS_Help" xml:space="preserve">
+    <value>Volcano Engine TOS (ByteDance) - S3-kongrua stokado.
+
+1. En Volcano Engine Console (https://console.volcengine.com/tos), kreu sitelon. Notu ĝian regionon (ekz. cn-beijing).
+2. Iru al IAM → Alirŝlosiloj → kreu ŝlosilon.
+   Kopiu la Alirŝlosilon ID kaj Sekretan Alirŝlosilon.
+3. Serva URL: https://tos-s3-&lt;REGION&gt;.volces.com (ekz. https://tos-s3-cn-beijing.volces.com).
+4. Regiono: ekz. cn-pekino.</value>
+  </data>
+  <data name="S3_Provider_Wasabi_Help" xml:space="preserve">
+    <value>Wasabi - varma nuba stokado sen eliro-kotizoj.
+
+1. En Wasabi Konzolo (https://console.wasabisys.com/) → Siteloj → Krei Sitelon. Elektu regionon.
+2. Iru al Alirŝlosiloj → Krei Novan Alirŝlosilon. Kopiu la Alirŝlosilon kaj Sekretan Ŝlosilon.
+3. Plenigu: Sitelo, Alirŝlosilo, Sekreta Ŝlosilo kaj Regiono (ekz. us-east-1, eu-central-1).
+   Serva URL estas aŭtomate plenigita.</value>
+  </data>
+  <data name="S3_Provider_YandexObjectStorage_Help" xml:space="preserve">
+    <value>Yandex Object Storage — Rusa nuba stokado kun S3-kongrua.
+
+1. En Yandex Cloud Console (https://console.yandex.cloud/) → Objekta Stokado → kreu sitelon.
+2. Iru al Servaj Kontoj → kreu unu kun la rolo stokado.redaktisto → kreu Statikan alirŝlosilon.
+   Kopiu la Ŝlosilon ID (= Alirŝlosilo) kaj Sekretan ŝlosilon.
+3. Plenigu: Sitelo, Alirŝlosilo, Sekreta Ŝlosilo.
+   Serva URL kaj regiono estas agordita aŭtomate.</value>
   </data>
   <data name="Server_Field_Address" xml:space="preserve">
     <value>Servilonomo:</value>
@@ -988,177 +1170,6 @@ See detailed description in the following link.</value>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>Uzanto ne estas specifita.</value>
   </data>
-  <data name="S3_Provider_AlibabaCloudOSS_Help" xml:space="preserve">
-    <value>Alibaba Cloud OSS — S3-kongrua objektostokado de Alibaba.
-
-1. En OSS-Konzolo (https://oss.console.aliyun.com/), kreu sitelon. Notu ĝian regionon (ekz. oss-cn-hangzhou).
-2. En RAM-Konzolo → Uzantoj → kreu uzanton → aligu AliyunOSSFullAccess → kreu AccessKey.
-   Kopiu la AccessKey ID (= Alirŝlosilo) kaj AccessKey Sekreto (= Sekreta Ŝlosilo).
-3. Serva URL: https://oss-&lt;REGION&gt;.aliyuncs.com (ekz. https://oss-cn-hangzhou.aliyuncs.com).
-4. Regiono: ekz. oss-cn-hangzhou.</value>
-  </data>
-  <data name="S3_Provider_AWSS3_Help" xml:space="preserve">
-    <value>AWS S3 — La originala objektostokado de Amazon.
-
-1. Malfermu la S3-Konzolon (https://s3.console.aws.amazon.com/) kaj kreu sitelon. Notu ĝian regionon (ekz. us-oriento-1).
-2. Malfermu IAM → Uzantoj → kreu uzanton → aligu la politikon de AmazonS3FullAccess.
-3. Sub Sekurecaj akreditaĵoj, kreu Alirŝlosilon — kopiu la Ŝlosilidentigilon kaj Sekreton.
-4. Plenigu: Sitelo, Alirŝlosilo, Sekreta Ŝlosilo kaj Regiono.</value>
-  </data>
-  <data name="S3_Provider_BaiduCloudBOS_Help" xml:space="preserve">
-    <value>Baidu Cloud BOS — S3-kongrua objektostokado de Baidu.
-
-1. En BOS-Konzolo (https://console.bce.baidu.com/bos/), kreu sitelon. Notu ĝian regionon (ekz. bj, gz, su).
-2. Iru al Sekureco → Alirŝlosiloj — kopiu vian Alirŝlosilon ID kaj Sekretan Alirŝlosilon.
-3. Serva URL: https://s3.&lt;REGION&gt;.bcebos.com (ekz. https://s3.bj.bcebos.com).
-4. Regiono: ekz. bj.</value>
-  </data>
-  <data name="S3_Provider_BackblazeB2_Help" xml:space="preserve">
-    <value>Backblaze B2 - pagebla S3-kongrua stokado.
-
-1. En Backblaze (https://www.backblaze.com/) → B2 Cloud Storage → Siteloj, kreu sitelon.
-2. Iru al Aplikaj Ŝlosiloj → Aldonu Novan Aplikan Ŝlosilon, metu ĝin al la sitelo.
-   Kopiu la ŝlosiloID (= Alirŝlosilo) kaj aplikaĵoKey (= Sekreta Ŝlosilo).
-3. Serva URL: la finpunkto de via sitelo montrita en siteldetaloj, ekz. https://s3.us-west-004.backblazeb2.com
-4. Regiono: la segmento inter &apos;s3.&apos; kaj &apos;.backblazeb2.com&apos;, ekz. us-west-004.</value>
-  </data>
-  <data name="S3_Provider_CloudflareR2_Help" xml:space="preserve">
-    <value>Cloudflare R2 - nul-eliro S3-kongrua stokado.
-
-1. En Cloudflare Dashboard (https://dash.cloudflare.com/) → R2 → kreu sitelon.
-2. Iru al R2 → Administri R2 API Tokens → Krei API Token kun Objekto Read &amp; Write.
-   Kopiu la Alirŝlosilon ID kaj Sekretan Alirŝlosilon.
-3. Serva URL: https://&lt;ACCOUNT_ID&gt;.r2.cloudflarestorage.com
-   Via Konta ID estas montrita sur la R2-superrigarda paĝo.
-4. Plenigu: Sitelo, Alirŝlosilo, Sekreta Ŝlosilo kaj Serva URL. Regiono estas agordita al &apos;aŭtomata&apos; aŭtomate.</value>
-  </data>
-  <data name="S3_Provider_CloudRuStorage_Help" xml:space="preserve">
-    <value>Cloud.ru (SberCloud) Objekta Stokado — S3-kongrua OBS-stokado.
-
-1. En Cloud.ru Konzolo (https://cloud.ru/) → Objekta Stokado-Servo (OBS) → kreu sitelon.
-2. Iru al Miaj Akreditaĵoj → Alirŝlosiloj → Aldoni Alirŝlosilon.
-   Kopiu la Alirŝlosilon kaj Sekretan Alirŝlosilon.
-3. Plenigu: Sitelo, Alirŝlosilo, Sekreta Ŝlosilo kaj Regiono (ekz. ru-moskvo-1).
-   Serva URL estas aŭtomate plenigita.</value>
-  </data>
-  <data name="S3_Provider_Custom_Help" xml:space="preserve">
-    <value>MinIO aŭ iu ajn S3-kongrua servilo.
-
-1. Komencu vian servilon MinIO (aŭ alia S3-kongrua).
-2. Kreu sitelon per la MinIO-Konzolo aŭ &apos;mc mb &lt;alias&gt;/&lt;bucket&gt;&apos;.
-3. Kreu alirŝlosilon en MinIO-Konzolo → Alirŝlosiloj (evitu radikajn akreditaĵojn en produktado).
-4. Serva URL: via servila finpunkto, ekz. http://192.168.1.10:9000 aŭ https://minio.example.com.
-5. Regiono: ajna valoro (ekz. us-east-1) — aŭ lasu malplena se la servilo ne devigas ĝin.</value>
-  </data>
-  <data name="S3_Provider_DigitalOceanSpaces_Help" xml:space="preserve">
-    <value>DigitalOcean Spaces - S3-kongrua objektostokado.
-
-1. En Spacoj (https://cloud.digitalocean.com/spaces), kreu Spacon. Notu ĝian regionon (ekz. nyc3).
-2. Iru al API → Spacaj Ŝlosiloj → Generi Novan Ŝlosilon. Kopiu la Ŝlosilon (= Alirŝlosilo) kaj Sekreton.
-3. Serva URL: https://&lt;REGION&gt;.digitaloceanspaces.com (ekz. https://nyc3.digitaloceanspaces.com).
-4. Regiono: sama mallongkodo, ekz. nyc3.</value>
-  </data>
-  <data name="S3_Provider_GoogleCloudStorage_Help" xml:space="preserve">
-    <value>Google Cloud Storage - per la S3-kunfunkciebleco API.
-
-1. En Google Cloud Console (https://console.cloud.google.com/storage), kreu sitelon.
-2. Iru al Cloud Storage → Agordoj → Kunfunkciebleco → kreu HMAC-ŝlosilon por servokonto.
-   Kopiu la Alirŝlosilon kaj Sekreton.
-3. Plenigu: Sitelo, Alirŝlosilo (HMAC-ŝlosilo), Sekreta Ŝlosilo (HMAC-sekreto).
-   Serva URL kaj regiono estas agordita aŭtomate.</value>
-  </data>
-  <data name="S3_Provider_HuaweiCloudOBS_Help" xml:space="preserve">
-    <value>Huawei Cloud OBS — S3-kongrua objektostokado de Huawei.
-
-1. En OBS-Konzolo (https://console.huaweicloud.com/obs/), kreu sitelon. Notu ĝian regionon (ekz. cn-norda-4).
-2. Iru al Miaj Akreditaĵoj → Alirŝlosiloj → Krei Alirŝlosilon.
-   Kopiu la AK (= Alirŝlosilo) kaj SK (= Sekreta Ŝlosilo).
-3. Serva URL: https://obs.&lt;REGION&gt;.myhuaweicloud.com (ekz. https://obs.cn-north-4.myhuaweicloud.com).
-4. Regiono: ekz. cn-norda-4.</value>
-  </data>
-  <data name="S3_Provider_LinodeObjectStorage_Help" xml:space="preserve">
-    <value>Linode (Akamai) Objekta Stokado - S3-kongrua stokado.
-
-1. En Linode Cloud Manager (https://cloud.linode.com/object-storage/buckets), kreu sitelon. Notu ĝian areton.
-2. Iru al Objekta Stokado → Alirŝlosiloj → Krei Alirŝlosilon skopitan al la sitelo.
-   Kopiu la Alirŝlosilon kaj Sekretan Ŝlosilon.
-3. Serva URL: https://&lt;CLUSTER&gt;.linodeobjects.com (ekz. https://us-east-1.linodeobjects.com).
-4. Regiono: sama grapolkodo, ekz. us-oriento-1.</value>
-  </data>
-  <data name="S3_Provider_QiniuCloudKodo_Help" xml:space="preserve">
-    <value>Qiniu Cloud Kodo - S3-kongrua stokado de Qiniu.
-
-1. En Qiniu Portalo (https://portal.qiniu.com/kodo/bucket), kreu sitelon. Notu ĝian regionon.
-2. Iru al Persona Centro → Ŝlosiladministrado — kopiu vian Alirŝlosilon kaj Sekretan Ŝlosilon.
-3. Serva URL laŭ regiono:
-   Orienta Ĉinio: https://s3-cn-east-1.qiniucs.com
-   Norda Ĉinio: https://s3-cn-north-1.qiniucs.com
-   Suda Ĉinio: https://s3-cn-south-1.qiniucs.com
-   Nordameriko: https://s3-us-north-1.qiniucs.com
-4. Regiono: kongrua kodo, ekz. cn-oriento-1.</value>
-  </data>
-  <data name="S3_Provider_ScalewayObjectStorage_Help" xml:space="preserve">
-    <value>Scaleway Object Storage — Eŭropa S3-kongrua stokado.
-
-1. En Scaleway Console (https://console.scaleway.com/object-storage/buckets), kreu sitelon. Notu ĝian regionon (ekz. fr-par).
-2. Iru al IAM → API-Ŝlosiloj → Generu API-ŝlosilon kun skriba permesoj de Objekta Stokado.
-   Kopiu la Alirŝlosilon kaj Sekretan Ŝlosilon.
-3. Serva URL: https://s3.&lt;REGION&gt;.scw.cloud (ekz. https://s3.fr-par.scw.cloud).
-4. Regiono: ekz. fr-par, nl-ams, pl-waw.</value>
-  </data>
-  <data name="S3_Provider_SelectelStorage_Help" xml:space="preserve">
-    <value>Selectel Object Storage — S3-kongrua rusa stokado.
-
-1. En Selectel Panelo (https://my.selectel.ru/) → Nuba Stokado → kreu ujon (= sitelo).
-2. Sub Uzantoj &amp; Roloj, kreu servan uzanton kun stokada aliro → S3-Ŝlosiloj → kreu ŝlosilparon.
-   Kopiu la Alirŝlosilon kaj Sekretan Ŝlosilon.
-3. Plenigu: Sitelo, Alirŝlosilo, Sekreta Ŝlosilo.
-   Serva URL estas aŭtomate plenigita.</value>
-  </data>
-  <data name="S3_Provider_TencentCloudCOS_Help" xml:space="preserve">
-    <value>Tencent Cloud COS - S3-kongrua objektostokado de Tencent.
-
-1. En COS Console (https://console.cloud.tencent.com/cos), kreu sitelon. Notu la AppId kaj Regiono (ekz. ap-beijing).
-2. En Aliradministrado → API-Ŝlosiloj → Krei Ŝlosilon.
-   Kopiu la SecretId (= Alirŝlosilo) kaj SecretKey (= Sekreta Ŝlosilo).
-3. Serva URL: https://cos.&lt;REGION&gt;.myqcloud.com (ekz. https://cos.ap-beijing.myqcloud.com).
-4. Site-nomformato: &lt;name&gt;-&lt;AppId&gt; (ekz. mybucket-1250000000). Regiono: ekz. ap-beijing.</value>
-  </data>
-  <data name="S3_Provider_VKCloudStorage_Help" xml:space="preserve">
-    <value>VK Cloud Object Storage — S3-kongrua stokado de VK Cloud.
-
-1. En VK Cloud Portal (https://msk.cloud.vk.com/) → Cloud Storage → kreu sitelon.
-2. Sub via konto → Alirŝlosiloj → kreu novan ŝlosilparon.
-   Kopiu la Alirŝlosilon kaj Sekretan Ŝlosilon.
-3. Plenigu: Sitelo, Alirŝlosilo, Sekreta Ŝlosilo kaj Regiono se necese (ekz. ru-msk).
-   Serva URL estas aŭtomate plenigita.</value>
-  </data>
-  <data name="S3_Provider_VolcanoEngineTOS_Help" xml:space="preserve">
-    <value>Volcano Engine TOS (ByteDance) - S3-kongrua stokado.
-
-1. En Volcano Engine Console (https://console.volcengine.com/tos), kreu sitelon. Notu ĝian regionon (ekz. cn-beijing).
-2. Iru al IAM → Alirŝlosiloj → kreu ŝlosilon.
-   Kopiu la Alirŝlosilon ID kaj Sekretan Alirŝlosilon.
-3. Serva URL: https://tos-s3-&lt;REGION&gt;.volces.com (ekz. https://tos-s3-cn-beijing.volces.com).
-4. Regiono: ekz. cn-pekino.</value>
-  </data>
-  <data name="S3_Provider_Wasabi_Help" xml:space="preserve">
-    <value>Wasabi - varma nuba stokado sen eliro-kotizoj.
-
-1. En Wasabi Konzolo (https://console.wasabisys.com/) → Siteloj → Krei Sitelon. Elektu regionon.
-2. Iru al Alirŝlosiloj → Krei Novan Alirŝlosilon. Kopiu la Alirŝlosilon kaj Sekretan Ŝlosilon.
-3. Plenigu: Sitelo, Alirŝlosilo, Sekreta Ŝlosilo kaj Regiono (ekz. us-east-1, eu-central-1).
-   Serva URL estas aŭtomate plenigita.</value>
-  </data>
-  <data name="S3_Provider_YandexObjectStorage_Help" xml:space="preserve">
-    <value>Yandex Object Storage — Rusa nuba stokado kun S3-kongrua.
-
-1. En Yandex Cloud Console (https://console.yandex.cloud/) → Objekta Stokado → kreu sitelon.
-2. Iru al Servaj Kontoj → kreu unu kun la rolo stokado.redaktisto → kreu Statikan alirŝlosilon.
-   Kopiu la Ŝlosilon ID (= Alirŝlosilo) kaj Sekretan ŝlosilon.
-3. Plenigu: Sitelo, Alirŝlosilo, Sekreta Ŝlosilo.
-   Serva URL kaj regiono estas agordita aŭtomate.</value>
-  </data>
   <data name="WebDav_Preset_Box_Help" xml:space="preserve">
     <value>Skatolo - entreprena nuba stokado kun WebDAV-subteno.
 
@@ -1207,7 +1218,7 @@ See detailed description in the following link.</value>
     <value>Mail.ru Nubo per WebDAV.
 
 1. Iru al account.mail.ru → Sekureco → Apaj pasvortoj → Krei aplikaĵon pasvorton.
-   Elektu &apos;Poŝto&apos; aŭ &apos;Ĉiuj&apos; kiel la tipon, tiam kopiu la generitan pasvorton.
+   Elektu 'Poŝto' aŭ 'Ĉiuj' kiel la tipon, tiam kopiu la generitan pasvorton.
 2. Enigu vian retpoŝtadreson de Mail.ru kiel la Uzanto.
 3. Enigu la pasvorton de la aplikaĵo kiel Pasvorton.
    Servila adreso, HTTPS, haveno kaj baza vojo estas agordita aŭtomate.</value>
@@ -1242,13 +1253,15 @@ See detailed description in the following link.</value>
   <data name="WebDav_Preset_YandexDisk_Help" xml:space="preserve">
     <value>Yandex Disk per WebDAV.
 
-1. Iru al id.yandex.com → Sekureco → Aplikaj pasvortoj → Krei aplikan pasvorton por &apos;WebDAV-aliro&apos;.
+1. Iru al id.yandex.com → Sekureco → Aplikaj pasvortoj → Krei aplikan pasvorton por 'WebDAV-aliro'.
    Kopiu la generitan pasvorton — ĝi montriĝas nur unufoje.
 2. Enigu vian Yandex-ensaluton kiel la Uzanto.
 3. Enigu la pasvorton de la aplikaĵo (ne la pasvorton de via Yandex-konto) kiel la Pasvorton.
    Servila adreso, HTTPS kaj haveno estas agorditaj aŭtomate.</value>
   </data>
-
+  <data name="WhatTask_Description" xml:space="preserve">
+    <value>Ĉi tie vi povas specifi dosierujojn, kiujn vi ŝatus sekurkopii.</value>
+  </data>
   <data name="Winget_Description" xml:space="preserve">
     <value>Rezervu/sinkronigu viajn datumojn Vindozo, Linukso.
 Importu fotojn de telefono per WI-FI kaj pli.

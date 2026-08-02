@@ -1,5 +1,4 @@
 <root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -263,14 +262,14 @@ Gebruik scenario: Jy kopieer data na afgeleë bediener. Daar is 'n probleem: ISP
   <data name="Field_Folder_Validation_Empty" xml:space="preserve">
     <value>Vouer is nie gespesifiseer nie.</value>
   </data>
-  <data name="Field_Validation_NotSpecified" xml:space="preserve">
-    <value>{0} is nie gespesifiseer nie.</value>
-  </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Vouer bestaan ​​nie.</value>
   </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>Protokol:</value>
+  </data>
+  <data name="Field_Validation_NotSpecified" xml:space="preserve">
+    <value>{0} is nie gespesifiseer nie.</value>
   </data>
   <data name="Field_Version" xml:space="preserve">
     <value>Weergawe:</value>
@@ -332,14 +331,26 @@ Gebruik scenario: Jy kopieer data na afgeleë bediener. Daar is 'n probleem: ISP
   <data name="ImportMediaTask_Create" xml:space="preserve">
     <value>Voer mediataak in</value>
   </data>
+  <data name="ImportMediaTask_DeleteCopiedDataOnSourceMedia" xml:space="preserve">
+    <value>Verwyder gekopieerde data op bronmedia</value>
+  </data>
   <data name="ImportMediaTask_Edit_Title" xml:space="preserve">
     <value>Wysig "{0}" media-invoertaak</value>
+  </data>
+  <data name="ImportMediaTask_Field_FileExtensions" xml:space="preserve">
+    <value>Bestandsextensies:</value>
+  </data>
+  <data name="ImportMediaTask_Field_FileExtensions_Help" xml:space="preserve">
+    <value>Door komma's gescheiden lijst met te importeren extensies (bijvoorbeeld .jpg, .png, .mp3). Laat leeg om alle bestanden te importeren.</value>
   </data>
   <data name="ImportMediaTask_Field_OutputFolder" xml:space="preserve">
     <value>Uitvoergids:</value>
   </data>
   <data name="ImportMediaTask_Field_TransformFileName" xml:space="preserve">
     <value>Lêernaam transformasies:</value>
+  </data>
+  <data name="ImportMediaTask_Field_TransformFileName_Documentation" xml:space="preserve">
+    <value>Documentatie datumnotatie</value>
   </data>
   <data name="ImportMediaTask_Field_TransformFileName_Example" xml:space="preserve">
     <value>Voorbeeld:
@@ -366,17 +377,20 @@ Om alle opsies te sien, google "C# DateTime format".</value>
 
 Sien toepassingswebwerf vir dokumentasie hoe om lêerversending via WI-FI deur FTP-bedienertoepassing op die telefoon op te stel.</value>
   </data>
-  <data name="ImportMediaTask_Storage_Help" xml:space="preserve">
-    <value>Spesifiseer die bron waarvandaan media ingevoer moet word — byvoorbeeld 'n SD-kaart, kameralêergids, of foon via FTPS.</value>
-  </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
     <value>Voer databron in</value>
   </data>
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>Slaan reeds ingevoerde lêers oor</value>
   </data>
-  <data name="ImportMediaTask_DeleteCopiedDataOnSourceMedia" xml:space="preserve">
-    <value>Verwyder gekopieerde data op bronmedia</value>
+  <data name="ImportMediaTask_SkipAlreadyImportedFiles_Help" xml:space="preserve">
+    <value>Indien ingeschakeld slaat de toepassing bestanden over die al in de doelmap staan of eerder zijn geïmporteerd. Eerder geïmporteerde bestandsnamen worden onthouden, zodat een bestand niet opnieuw wordt verwerkt, ook niet als u later de kopie in de doelmap verwijdert.</value>
+  </data>
+  <data name="ImportMediaTask_Storage_Help" xml:space="preserve">
+    <value>Spesifiseer die bron waarvandaan media ingevoer moet word — byvoorbeeld 'n SD-kaart, kameralêergids, of foon via FTPS.</value>
+  </data>
+  <data name="ImportMediaTask_Storage_Validation_TooBroad" xml:space="preserve">
+    <value>De geselecteerde map lijkt op een apparaat- of hoofdmap omdat deze meerdere bekende mediamappen bevat ({0}). Kies een specifiekere map, bijvoorbeeld "{1}".</value>
   </data>
   <data name="ImproveIt_Message" xml:space="preserve">
     <value>'n Onverwagte fout het voorgekom.
@@ -463,9 +477,6 @@ Asseblief óf:
   <data name="LeftMenu_What_Hint" xml:space="preserve">
     <value>Hier kan jy dopgehou en lêers byvoeg wat jy moet verwerk.</value>
   </data>
-  <data name="WhatTask_Description" xml:space="preserve">
-    <value>Hier kan jy vouers spesifiseer wat jy wil rugsteun.</value>
-  </data>
   <data name="LeftMenu_What_Validation" xml:space="preserve">
     <value>Geen items om te verwerk nie.</value>
   </data>
@@ -477,9 +488,6 @@ Asseblief óf:
   </data>
   <data name="LeftMenu_When_Optional_Hint" xml:space="preserve">
     <value>Hierdie afdeling is opsioneel. As u dit oorslaan, sal die taak net loop wanneer u dit handmatig begin.</value>
-  </data>
-  <data name="RunAtLogin_Label" xml:space="preserve">
-    <value>Hardloop by aanmelding</value>
   </data>
   <data name="LeftMenu_Where" xml:space="preserve">
     <value>Waar?</value>
@@ -529,11 +537,11 @@ Asseblief óf:
   <data name="Name_Field_Validation" xml:space="preserve">
     <value>Naam is leeg of bevat nie-gesteunde padkarakters nie.</value>
   </data>
-  <data name="Name_Field_Validation_ExceedsLimit" xml:space="preserve">
-    <value>Naam '{0}' lengte oorskry limiet met {1} karakters.</value>
-  </data>
   <data name="Name_Field_Validation_Duplicate" xml:space="preserve">
     <value>'n Taak met hierdie naam bestaan reeds.</value>
+  </data>
+  <data name="Name_Field_Validation_ExceedsLimit" xml:space="preserve">
+    <value>Naam '{0}' lengte oorskry limiet met {1} karakters.</value>
   </data>
   <data name="Name_Title" xml:space="preserve">
     <value>Naam</value>
@@ -590,6 +598,180 @@ Wys na 'n gids wat hierdie lêer bevat.</value>
   </data>
   <data name="RestoreFrom_Field_Validation_StateInvalid" xml:space="preserve">
     <value>Kan nie staat lees nie.</value>
+  </data>
+  <data name="RunAtLogin_Label" xml:space="preserve">
+    <value>Hardloop by aanmelding</value>
+  </data>
+  <data name="S3_Provider_AlibabaCloudOSS_Help" xml:space="preserve">
+    <value>Alibaba Cloud OSS - S3-versoenbare voorwerpberging vanaf Alibaba.
+
+1. Skep 'n emmer in OSS-konsole (https://oss.console.aliyun.com/). Let op sy streek (bv. oss-cn-hangzhou).
+2. In RAM-konsole → Gebruikers → skep 'n gebruiker → heg AliyunOSSFullAccess aan → skep 'n AccessKey.
+   Kopieer die AccessKey ID (= Access Key) en AccessKey Secret (= Secret Key).
+3. Diens-URL: https://oss-&lt;REGION&gt;.aliyuncs.com (bv. https://oss-cn-hangzhou.aliyuncs.com).
+4. Streek: bv. oss-cn-hangzhou.</value>
+  </data>
+  <data name="S3_Provider_AWSS3_Help" xml:space="preserve">
+    <value>AWS S3 — Amazon se oorspronklike voorwerpberging.
+
+1. Maak die S3-konsole (https://s3.console.aws.amazon.com/) oop en skep 'n emmer. Let op sy streek (bv. us-east-1).
+2. Maak IAM oop → Gebruikers → skep 'n gebruiker → heg die AmazonS3FullAccess-beleid aan.
+3. Skep 'n Toegangssleutel onder Sekuriteitsbewyse — kopieer die Sleutel-ID en Geheim.
+4. Vul in: Emmer, Toegangssleutel, Geheime Sleutel en Streek.</value>
+  </data>
+  <data name="S3_Provider_BackblazeB2_Help" xml:space="preserve">
+    <value>Backblaze B2 — bekostigbare S3-versoenbare berging.
+
+1. Skep 'n emmer in Backblaze (https://www.backblaze.com/) → B2 Wolkberging → Emmers.
+2. Gaan na Toepassingsleutels → Voeg 'n nuwe toepassingsleutel by, omvang dit by die emmer.
+   Kopieer die sleutel-ID (= Toegangssleutel) en aansoeksleutel (= Geheime Sleutel).
+3. Diens-URL: jou emmer se eindpunt word in emmerbesonderhede gewys, bv. https://s3.us-west-004.backblazeb2.com
+4. Streek: die segment tussen 's3.' en '.backblazeb2.com', bv. ons-wes-004.</value>
+  </data>
+  <data name="S3_Provider_BaiduCloudBOS_Help" xml:space="preserve">
+    <value>Baidu Cloud BOS - S3-versoenbare voorwerpberging van Baidu.
+
+1. Skep 'n emmer in BOS-konsole (https://console.bce.baidu.com/bos/). Let op sy streek (bv. bj, gz, su).
+2. Gaan na Sekuriteit → Toegangsleutels — kopieer jou Toegangssleutel-ID en Geheime Toegangssleutel.
+3. Diens-URL: https://s3.&lt;REGION&gt;.bcebos.com (bv. https://s3.bj.bcebos.com).
+4. Streek: bv. bj.</value>
+  </data>
+  <data name="S3_Provider_CloudflareR2_Help" xml:space="preserve">
+    <value>Cloudflare R2 — nul-uitgang S3-versoenbare berging.
+
+1. In Cloudflare Dashboard (https://dash.cloudflare.com/) → R2 → skep 'n emmer.
+2. Gaan na R2 → Bestuur R2 API-tokens → Skep API-token met voorwerp lees en skryf.
+   Kopieer die toegangssleutel-ID en geheime toegangssleutel.
+3. Diens-URL: https://&lt;ACCOUNT_ID&gt;.r2.cloudflarestorage.com
+   Jou rekening-ID word op die R2-oorsigbladsy gewys.
+4. Vul in: Emmer, toegangsleutel, geheime sleutel en diens-URL. Streek is outomaties op 'outo' gestel.</value>
+  </data>
+  <data name="S3_Provider_CloudRuStorage_Help" xml:space="preserve">
+    <value>Cloud.ru (SberCloud) Object Storage — S3-versoenbare OBS-berging.
+
+1. In Cloud.ru-konsole (https://cloud.ru/) → Object Storage Service (OBS) → skep 'n emmer.
+2. Gaan na My geloofsbriewe → Toegangssleutels → Voeg toegangsleutel by.
+   Kopieer die toegangsleutel en geheime toegangsleutel.
+3. Vul in: Emmer, toegangssleutel, geheime sleutel en streek (bv. ru-moskou-1).
+   Diens-URL word outomaties ingevul.</value>
+  </data>
+  <data name="S3_Provider_Custom_Help" xml:space="preserve">
+    <value>MinIO of enige S3-versoenbare bediener.
+
+1. Begin jou MinIO (of ander S3-versoenbare) bediener.
+2. Skep 'n emmer via die MinIO-konsole of 'mc mb &lt;alias&gt;/&lt;bucket&gt;'.
+3. Skep 'n toegangsleutel in MinIO Console → Toegangsleutels (vermy wortelbewyse in produksie).
+4. Diens URL: jou bediener eindpunt, bv. http://192.168.1.10:9000 of https://minio.example.com.
+5. Streek: enige waarde (bv. us-east-1) - of laat leeg as die bediener dit nie afdwing nie.</value>
+  </data>
+  <data name="S3_Provider_DigitalOceanSpaces_Help" xml:space="preserve">
+    <value>DigitalOcean Spaces - S3-versoenbare voorwerpberging.
+
+1. Skep 'n spasie in Spaces (https://cloud.digitalocean.com/spaces). Let op sy streek (bv. nyc3).
+2. Gaan na API → Spaces Keys → Generate New Key. Kopieer die sleutel (= Toegangssleutel) en Geheim.
+3. Diens-URL: https://&lt;REGION&gt;.digitaloceanspaces.com (bv. https://nyc3.digitaloceanspaces.com).
+4. Streek: dieselfde kort kode, bv. nyc3.</value>
+  </data>
+  <data name="S3_Provider_GoogleCloudStorage_Help" xml:space="preserve">
+    <value>Google Wolkberging - via die S3 interoperabiliteit API.
+
+1. Skep 'n emmer in Google Wolkkonsole (https://console.cloud.google.com/storage).
+2. Gaan na Wolkberging → Instellings → Interoperabiliteit → skep 'n HMAC-sleutel vir 'n diensrekening.
+   Kopieer die toegangsleutel en geheim.
+3. Vul in: Emmer, Toegangssleutel (HMAC-sleutel), Geheime Sleutel (HMAC-geheim).
+   Diens-URL en streek word outomaties gestel.</value>
+  </data>
+  <data name="S3_Provider_HuaweiCloudOBS_Help" xml:space="preserve">
+    <value>Huawei Cloud OBS — S3-versoenbare voorwerpberging van Huawei.
+
+1. Skep 'n emmer in OBS-konsole (https://console.huaweicloud.com/obs/). Let op sy streek (bv. cn-noord-4).
+2. Gaan na My geloofsbriewe → Toegangssleutels → Skep toegangsleutel.
+   Kopieer die AK (= Toegangssleutel) en SK (= Geheime Sleutel).
+3. Diens-URL: https://obs.&lt;REGION&gt;.myhuaweicloud.com (bv. https://obs.cn-north-4.myhuaweicloud.com).
+4. Streek: bv. cn-noord-4.</value>
+  </data>
+  <data name="S3_Provider_LinodeObjectStorage_Help" xml:space="preserve">
+    <value>Linode (Akamai) voorwerpberging — S3-versoenbare berging.
+
+1. Skep 'n emmer in Linode Cloud Manager (https://cloud.linode.com/object-storage/buckets). Let op sy cluster.
+2. Gaan na Objekberging → Toegangssleutels → Skep 'n toegangssleutel met 'n omvang van die emmer.
+   Kopieer die toegangssleutel en geheime sleutel.
+3. Diens-URL: https://&lt;CLUSTER&gt;.linodeobjects.com (bv. https://us-east-1.linodeobjects.com).
+4. Streek: dieselfde groepkode, bv. ons-oos-1.</value>
+  </data>
+  <data name="S3_Provider_QiniuCloudKodo_Help" xml:space="preserve">
+    <value>Qiniu Cloud Kodo - S3-versoenbare berging van Qiniu.
+
+1. Skep 'n emmer in Qiniu Portal (https://portal.qiniu.com/kodo/bucket). Let op sy streek.
+2. Gaan na Persoonlike Sentrum → Sleutelbestuur — kopieer jou AccessKey en SecretKey.
+3. Diens-URL volgens streek:
+   Oos-China: https://s3-cn-east-1.qiniucs.com
+   Noord-China: https://s3-cn-north-1.qiniucs.com
+   Suid-China: https://s3-cn-south-1.qiniucs.com
+   Noord-Amerika: https://s3-us-north-1.qiniucs.com
+4. Streek: ooreenstemmende kode, bv. cn-oos-1.</value>
+  </data>
+  <data name="S3_Provider_ScalewayObjectStorage_Help" xml:space="preserve">
+    <value>Scaleway Object Storage — Europese S3-versoenbare berging.
+
+1. Skep 'n emmer in Scaleway Console (https://console.scaleway.com/object-storage/buckets). Let op sy streek (bv. fr-par).
+2. Gaan na IAM → API-sleutels → Genereer API-sleutel met Object Storage-skryftoestemmings.
+   Kopieer die toegangssleutel en geheime sleutel.
+3. Diens-URL: https://s3.&lt;REGION&gt;.scw.cloud (bv. https://s3.fr-par.scw.cloud).
+4. Streek: bv. fr-par, nl-ams, pl-waw.</value>
+  </data>
+  <data name="S3_Provider_SelectelStorage_Help" xml:space="preserve">
+    <value>Selectel Object Storage — S3-versoenbare Russiese berging.
+
+1. In Selectel-paneel (https://my.selectel.ru/) → Wolkberging → skep 'n houer (= emmer).
+2. Onder Gebruikers en rolle, skep 'n diensgebruiker met bergingtoegang → S3-sleutels → skep 'n sleutelpaar.
+   Kopieer die toegangssleutel en geheime sleutel.
+3. Vul in: Emmer, Toegangssleutel, Geheime Sleutel.
+   Diens-URL word outomaties ingevul.</value>
+  </data>
+  <data name="S3_Provider_TencentCloudCOS_Help" xml:space="preserve">
+    <value>Tencent Cloud COS - S3-versoenbare voorwerpberging van Tencent.
+
+1. Skep 'n emmer in COS-konsole (https://console.cloud.tencent.com/cos). Let op die AppId en Streek (bv. ap-beijing).
+2. In Toegangsbestuur → API-sleutels → Skep sleutel.
+   Kopieer die SecretId (= Toegangssleutel) en SecretKey (= Geheime Sleutel).
+3. Diens-URL: https://cos.&lt;REGION&gt;.myqcloud.com (bv. https://cos.ap-beijing.myqcloud.com).
+4. Emmernaamformaat: &lt;naam&gt;-&lt;AppId&gt; (bv. mybucket-1250000000). Streek: bv. ap-Beijing.</value>
+  </data>
+  <data name="S3_Provider_VKCloudStorage_Help" xml:space="preserve">
+    <value>VK Cloud Object Storage — S3-versoenbare berging vanaf VK Cloud.
+
+1. In VK Wolkportaal (https://msk.cloud.vk.com/) → Wolkberging → skep 'n emmer.
+2. Onder jou rekening → Toegangsleutels → skep 'n nuwe sleutelpaar.
+   Kopieer die toegangssleutel en geheime sleutel.
+3. Vul in: Emmer, Toegangssleutel, Geheime Sleutel en Streek indien nodig (bv. ru-msk).
+   Diens-URL word outomaties ingevul.</value>
+  </data>
+  <data name="S3_Provider_VolcanoEngineTOS_Help" xml:space="preserve">
+    <value>Volcano Engine TOS (ByteDance) — S3-versoenbare berging.
+
+1. Skep 'n emmer in Volcano Engine Console (https://console.volcengine.com/tos). Let op sy streek (bv. cn-beijing).
+2. Gaan na IAM → Toegangsleutels → skep 'n sleutel.
+   Kopieer die toegangssleutel-ID en geheime toegangssleutel.
+3. Diens-URL: https://tos-s3-&lt;REGION&gt;.volces.com (bv. https://tos-s3-cn-beijing.volces.com).
+4. Streek: bv. cn-beijing.</value>
+  </data>
+  <data name="S3_Provider_Wasabi_Help" xml:space="preserve">
+    <value>Wasabi – warm wolkberging sonder uitgangsfooie.
+
+1. In Wasabi-konsole (https://console.wasabisys.com/) → Emmers → Skep emmer. Kies 'n streek.
+2. Gaan na Toegangsleutels → Skep nuwe toegangsleutel. Kopieer die toegangssleutel en geheime sleutel.
+3. Vul in: Emmer, Toegangssleutel, Geheime Sleutel en Streek (bv. us-east-1, eu-central-1).
+   Diens-URL word outomaties ingevul.</value>
+  </data>
+  <data name="S3_Provider_YandexObjectStorage_Help" xml:space="preserve">
+    <value>Yandex Object Storage — S3-versoenbare Russiese wolkberging.
+
+1. In Yandex Wolkkonsole (https://console.yandex.cloud/) → Voorwerpberging → skep 'n emmer.
+2. Gaan na Diensrekeninge → skep een met die storage.editor-rol → skep 'n Statiese toegangsleutel.
+   Kopieer die Sleutel-ID (= Toegangsleutel) en Geheime sleutel.
+3. Vul in: Emmer, Toegangssleutel, Geheime Sleutel.
+   Diens-URL en streek word outomaties gestel.</value>
   </data>
   <data name="Server_Field_Address" xml:space="preserve">
     <value>Bediener naam:</value>
@@ -988,184 +1170,13 @@ See detailed description in the following link.</value>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>Gebruiker is nie gespesifiseer nie.</value>
   </data>
-  <data name="S3_Provider_AlibabaCloudOSS_Help" xml:space="preserve">
-    <value>Alibaba Cloud OSS - S3-versoenbare voorwerpberging vanaf Alibaba.
-
-1. Skep &apos;n emmer in OSS-konsole (https://oss.console.aliyun.com/). Let op sy streek (bv. oss-cn-hangzhou).
-2. In RAM-konsole → Gebruikers → skep &apos;n gebruiker → heg AliyunOSSFullAccess aan → skep &apos;n AccessKey.
-   Kopieer die AccessKey ID (= Access Key) en AccessKey Secret (= Secret Key).
-3. Diens-URL: https://oss-&lt;REGION&gt;.aliyuncs.com (bv. https://oss-cn-hangzhou.aliyuncs.com).
-4. Streek: bv. oss-cn-hangzhou.</value>
-  </data>
-  <data name="S3_Provider_AWSS3_Help" xml:space="preserve">
-    <value>AWS S3 — Amazon se oorspronklike voorwerpberging.
-
-1. Maak die S3-konsole (https://s3.console.aws.amazon.com/) oop en skep &apos;n emmer. Let op sy streek (bv. us-east-1).
-2. Maak IAM oop → Gebruikers → skep &apos;n gebruiker → heg die AmazonS3FullAccess-beleid aan.
-3. Skep &apos;n Toegangssleutel onder Sekuriteitsbewyse — kopieer die Sleutel-ID en Geheim.
-4. Vul in: Emmer, Toegangssleutel, Geheime Sleutel en Streek.</value>
-  </data>
-  <data name="S3_Provider_BaiduCloudBOS_Help" xml:space="preserve">
-    <value>Baidu Cloud BOS - S3-versoenbare voorwerpberging van Baidu.
-
-1. Skep &apos;n emmer in BOS-konsole (https://console.bce.baidu.com/bos/). Let op sy streek (bv. bj, gz, su).
-2. Gaan na Sekuriteit → Toegangsleutels — kopieer jou Toegangssleutel-ID en Geheime Toegangssleutel.
-3. Diens-URL: https://s3.&lt;REGION&gt;.bcebos.com (bv. https://s3.bj.bcebos.com).
-4. Streek: bv. bj.</value>
-  </data>
-  <data name="S3_Provider_BackblazeB2_Help" xml:space="preserve">
-    <value>Backblaze B2 — bekostigbare S3-versoenbare berging.
-
-1. Skep &apos;n emmer in Backblaze (https://www.backblaze.com/) → B2 Wolkberging → Emmers.
-2. Gaan na Toepassingsleutels → Voeg &apos;n nuwe toepassingsleutel by, omvang dit by die emmer.
-   Kopieer die sleutel-ID (= Toegangssleutel) en aansoeksleutel (= Geheime Sleutel).
-3. Diens-URL: jou emmer se eindpunt word in emmerbesonderhede gewys, bv. https://s3.us-west-004.backblazeb2.com
-4. Streek: die segment tussen &apos;s3.&apos; en &apos;.backblazeb2.com&apos;, bv. ons-wes-004.</value>
-  </data>
-  <data name="S3_Provider_CloudflareR2_Help" xml:space="preserve">
-    <value>Cloudflare R2 — nul-uitgang S3-versoenbare berging.
-
-1. In Cloudflare Dashboard (https://dash.cloudflare.com/) → R2 → skep &apos;n emmer.
-2. Gaan na R2 → Bestuur R2 API-tokens → Skep API-token met voorwerp lees en skryf.
-   Kopieer die toegangssleutel-ID en geheime toegangssleutel.
-3. Diens-URL: https://&lt;ACCOUNT_ID&gt;.r2.cloudflarestorage.com
-   Jou rekening-ID word op die R2-oorsigbladsy gewys.
-4. Vul in: Emmer, toegangsleutel, geheime sleutel en diens-URL. Streek is outomaties op &apos;outo&apos; gestel.</value>
-  </data>
-  <data name="S3_Provider_CloudRuStorage_Help" xml:space="preserve">
-    <value>Cloud.ru (SberCloud) Object Storage — S3-versoenbare OBS-berging.
-
-1. In Cloud.ru-konsole (https://cloud.ru/) → Object Storage Service (OBS) → skep &apos;n emmer.
-2. Gaan na My geloofsbriewe → Toegangssleutels → Voeg toegangsleutel by.
-   Kopieer die toegangsleutel en geheime toegangsleutel.
-3. Vul in: Emmer, toegangssleutel, geheime sleutel en streek (bv. ru-moskou-1).
-   Diens-URL word outomaties ingevul.</value>
-  </data>
-  <data name="S3_Provider_Custom_Help" xml:space="preserve">
-    <value>MinIO of enige S3-versoenbare bediener.
-
-1. Begin jou MinIO (of ander S3-versoenbare) bediener.
-2. Skep &apos;n emmer via die MinIO-konsole of &apos;mc mb &lt;alias&gt;/&lt;bucket&gt;&apos;.
-3. Skep &apos;n toegangsleutel in MinIO Console → Toegangsleutels (vermy wortelbewyse in produksie).
-4. Diens URL: jou bediener eindpunt, bv. http://192.168.1.10:9000 of https://minio.example.com.
-5. Streek: enige waarde (bv. us-east-1) - of laat leeg as die bediener dit nie afdwing nie.</value>
-  </data>
-  <data name="S3_Provider_DigitalOceanSpaces_Help" xml:space="preserve">
-    <value>DigitalOcean Spaces - S3-versoenbare voorwerpberging.
-
-1. Skep &apos;n spasie in Spaces (https://cloud.digitalocean.com/spaces). Let op sy streek (bv. nyc3).
-2. Gaan na API → Spaces Keys → Generate New Key. Kopieer die sleutel (= Toegangssleutel) en Geheim.
-3. Diens-URL: https://&lt;REGION&gt;.digitaloceanspaces.com (bv. https://nyc3.digitaloceanspaces.com).
-4. Streek: dieselfde kort kode, bv. nyc3.</value>
-  </data>
-  <data name="S3_Provider_GoogleCloudStorage_Help" xml:space="preserve">
-    <value>Google Wolkberging - via die S3 interoperabiliteit API.
-
-1. Skep &apos;n emmer in Google Wolkkonsole (https://console.cloud.google.com/storage).
-2. Gaan na Wolkberging → Instellings → Interoperabiliteit → skep &apos;n HMAC-sleutel vir &apos;n diensrekening.
-   Kopieer die toegangsleutel en geheim.
-3. Vul in: Emmer, Toegangssleutel (HMAC-sleutel), Geheime Sleutel (HMAC-geheim).
-   Diens-URL en streek word outomaties gestel.</value>
-  </data>
-  <data name="S3_Provider_HuaweiCloudOBS_Help" xml:space="preserve">
-    <value>Huawei Cloud OBS — S3-versoenbare voorwerpberging van Huawei.
-
-1. Skep &apos;n emmer in OBS-konsole (https://console.huaweicloud.com/obs/). Let op sy streek (bv. cn-noord-4).
-2. Gaan na My geloofsbriewe → Toegangssleutels → Skep toegangsleutel.
-   Kopieer die AK (= Toegangssleutel) en SK (= Geheime Sleutel).
-3. Diens-URL: https://obs.&lt;REGION&gt;.myhuaweicloud.com (bv. https://obs.cn-north-4.myhuaweicloud.com).
-4. Streek: bv. cn-noord-4.</value>
-  </data>
-  <data name="S3_Provider_LinodeObjectStorage_Help" xml:space="preserve">
-    <value>Linode (Akamai) voorwerpberging — S3-versoenbare berging.
-
-1. Skep &apos;n emmer in Linode Cloud Manager (https://cloud.linode.com/object-storage/buckets). Let op sy cluster.
-2. Gaan na Objekberging → Toegangssleutels → Skep &apos;n toegangssleutel met &apos;n omvang van die emmer.
-   Kopieer die toegangssleutel en geheime sleutel.
-3. Diens-URL: https://&lt;CLUSTER&gt;.linodeobjects.com (bv. https://us-east-1.linodeobjects.com).
-4. Streek: dieselfde groepkode, bv. ons-oos-1.</value>
-  </data>
-  <data name="S3_Provider_QiniuCloudKodo_Help" xml:space="preserve">
-    <value>Qiniu Cloud Kodo - S3-versoenbare berging van Qiniu.
-
-1. Skep &apos;n emmer in Qiniu Portal (https://portal.qiniu.com/kodo/bucket). Let op sy streek.
-2. Gaan na Persoonlike Sentrum → Sleutelbestuur — kopieer jou AccessKey en SecretKey.
-3. Diens-URL volgens streek:
-   Oos-China: https://s3-cn-east-1.qiniucs.com
-   Noord-China: https://s3-cn-north-1.qiniucs.com
-   Suid-China: https://s3-cn-south-1.qiniucs.com
-   Noord-Amerika: https://s3-us-north-1.qiniucs.com
-4. Streek: ooreenstemmende kode, bv. cn-oos-1.</value>
-  </data>
-  <data name="S3_Provider_ScalewayObjectStorage_Help" xml:space="preserve">
-    <value>Scaleway Object Storage — Europese S3-versoenbare berging.
-
-1. Skep &apos;n emmer in Scaleway Console (https://console.scaleway.com/object-storage/buckets). Let op sy streek (bv. fr-par).
-2. Gaan na IAM → API-sleutels → Genereer API-sleutel met Object Storage-skryftoestemmings.
-   Kopieer die toegangssleutel en geheime sleutel.
-3. Diens-URL: https://s3.&lt;REGION&gt;.scw.cloud (bv. https://s3.fr-par.scw.cloud).
-4. Streek: bv. fr-par, nl-ams, pl-waw.</value>
-  </data>
-  <data name="S3_Provider_SelectelStorage_Help" xml:space="preserve">
-    <value>Selectel Object Storage — S3-versoenbare Russiese berging.
-
-1. In Selectel-paneel (https://my.selectel.ru/) → Wolkberging → skep &apos;n houer (= emmer).
-2. Onder Gebruikers en rolle, skep &apos;n diensgebruiker met bergingtoegang → S3-sleutels → skep &apos;n sleutelpaar.
-   Kopieer die toegangssleutel en geheime sleutel.
-3. Vul in: Emmer, Toegangssleutel, Geheime Sleutel.
-   Diens-URL word outomaties ingevul.</value>
-  </data>
-  <data name="S3_Provider_TencentCloudCOS_Help" xml:space="preserve">
-    <value>Tencent Cloud COS - S3-versoenbare voorwerpberging van Tencent.
-
-1. Skep &apos;n emmer in COS-konsole (https://console.cloud.tencent.com/cos). Let op die AppId en Streek (bv. ap-beijing).
-2. In Toegangsbestuur → API-sleutels → Skep sleutel.
-   Kopieer die SecretId (= Toegangssleutel) en SecretKey (= Geheime Sleutel).
-3. Diens-URL: https://cos.&lt;REGION&gt;.myqcloud.com (bv. https://cos.ap-beijing.myqcloud.com).
-4. Emmernaamformaat: &lt;naam&gt;-&lt;AppId&gt; (bv. mybucket-1250000000). Streek: bv. ap-Beijing.</value>
-  </data>
-  <data name="S3_Provider_VKCloudStorage_Help" xml:space="preserve">
-    <value>VK Cloud Object Storage — S3-versoenbare berging vanaf VK Cloud.
-
-1. In VK Wolkportaal (https://msk.cloud.vk.com/) → Wolkberging → skep &apos;n emmer.
-2. Onder jou rekening → Toegangsleutels → skep &apos;n nuwe sleutelpaar.
-   Kopieer die toegangssleutel en geheime sleutel.
-3. Vul in: Emmer, Toegangssleutel, Geheime Sleutel en Streek indien nodig (bv. ru-msk).
-   Diens-URL word outomaties ingevul.</value>
-  </data>
-  <data name="S3_Provider_VolcanoEngineTOS_Help" xml:space="preserve">
-    <value>Volcano Engine TOS (ByteDance) — S3-versoenbare berging.
-
-1. Skep &apos;n emmer in Volcano Engine Console (https://console.volcengine.com/tos). Let op sy streek (bv. cn-beijing).
-2. Gaan na IAM → Toegangsleutels → skep &apos;n sleutel.
-   Kopieer die toegangssleutel-ID en geheime toegangssleutel.
-3. Diens-URL: https://tos-s3-&lt;REGION&gt;.volces.com (bv. https://tos-s3-cn-beijing.volces.com).
-4. Streek: bv. cn-beijing.</value>
-  </data>
-  <data name="S3_Provider_Wasabi_Help" xml:space="preserve">
-    <value>Wasabi – warm wolkberging sonder uitgangsfooie.
-
-1. In Wasabi-konsole (https://console.wasabisys.com/) → Emmers → Skep emmer. Kies &apos;n streek.
-2. Gaan na Toegangsleutels → Skep nuwe toegangsleutel. Kopieer die toegangssleutel en geheime sleutel.
-3. Vul in: Emmer, Toegangssleutel, Geheime Sleutel en Streek (bv. us-east-1, eu-central-1).
-   Diens-URL word outomaties ingevul.</value>
-  </data>
-  <data name="S3_Provider_YandexObjectStorage_Help" xml:space="preserve">
-    <value>Yandex Object Storage — S3-versoenbare Russiese wolkberging.
-
-1. In Yandex Wolkkonsole (https://console.yandex.cloud/) → Voorwerpberging → skep &apos;n emmer.
-2. Gaan na Diensrekeninge → skep een met die storage.editor-rol → skep &apos;n Statiese toegangsleutel.
-   Kopieer die Sleutel-ID (= Toegangsleutel) en Geheime sleutel.
-3. Vul in: Emmer, Toegangssleutel, Geheime Sleutel.
-   Diens-URL en streek word outomaties gestel.</value>
-  </data>
   <data name="WebDav_Preset_Box_Help" xml:space="preserve">
     <value>Box — ondernemingswolkberging met WebDAV-ondersteuning.
 
 1. Meld aan by app.box.com. Let daarop dat Box WebDAV slegs beskikbaar is vir betaalde planne.
 2. Voer jou Box-rekening-e-posadres in as die gebruiker.
 3. Voer jou Box wagwoord in as die Wagwoord.
-   As jy SSO gebruik, moet jy dalk &apos;n aparte WebDAV-wagwoord in Rekeninginstellings stel.
+   As jy SSO gebruik, moet jy dalk 'n aparte WebDAV-wagwoord in Rekeninginstellings stel.
    Bedieneradres, HTTPS, poort en basispad word outomaties gekonfigureer.</value>
   </data>
   <data name="WebDav_Preset_Custom_Help" xml:space="preserve">
@@ -1175,7 +1186,7 @@ See detailed description in the following link.</value>
 2. Voer die basispad vir die WebDAV-eindpunt in.
    Nextcloud-voorbeeld: /remote.php/dav/files/&lt;gebruikersnaam&gt;/Backups
    Synology DSM: /
-3. Voer jou gebruikersnaam en wagwoord in (of &apos;n app-spesifieke wagwoord as jou bediener dit vereis).</value>
+3. Voer jou gebruikersnaam en wagwoord in (of 'n app-spesifieke wagwoord as jou bediener dit vereis).</value>
   </data>
   <data name="WebDav_Preset_IONOSHiDrive_Help" xml:space="preserve">
     <value>IONOS HiDrive — Duitse wolkberging met sterk privaatheidsfokus.
@@ -1207,7 +1218,7 @@ See detailed description in the following link.</value>
     <value>Mail.ru Wolk via WebDAV.
 
 1. Gaan na account.mail.ru → Sekuriteit → Programwagwoorde → Skep programwagwoord.
-   Kies &apos;Mail&apos; of &apos;All&apos; as die tipe, en kopieer dan die gegenereerde wagwoord.
+   Kies 'Mail' of 'All' as die tipe, en kopieer dan die gegenereerde wagwoord.
 2. Voer jou Mail.ru-e-posadres in as die gebruiker.
 3. Voer die programwagwoord in as die Wagwoord.
    Bedieneradres, HTTPS, poort en basispad word outomaties gekonfigureer.</value>
@@ -1218,7 +1229,7 @@ See detailed description in the following link.</value>
 1. Voer jou Nextcloud-bedieneradres in (bv. nextcloud.example.com).
 2. Die basispad is vooraf ingevul: /remote.php/dav/files/&lt;gebruikersnaam&gt;/
    Vervang &lt;gebruikersnaam&gt; met jou werklike Nextcloud-gebruikersnaam.
-3. Voer jou Nextcloud-gebruikersnaam en wagwoord in (of &apos;n toepassingwagwoord van
+3. Voer jou Nextcloud-gebruikersnaam en wagwoord in (of 'n toepassingwagwoord van
    Instellings → Sekuriteit → Toestelle en sessies → Programwagwoorde).</value>
   </data>
   <data name="WebDav_Preset_ownCloud_Help" xml:space="preserve">
@@ -1227,7 +1238,7 @@ See detailed description in the following link.</value>
 1. Voer jou ownCloud-bedieneradres in (bv. owncloud.example.com).
 2. Die basispad is vooraf ingevul: /remote.php/dav/files/&lt;gebruikersnaam&gt;/
    Vervang &lt;gebruikersnaam&gt; met jou werklike ownCloud-gebruikersnaam.
-3. Voer jou eieCloud-gebruikersnaam en wagwoord in (of &apos;n programwagwoord as 2FA geaktiveer is).</value>
+3. Voer jou eieCloud-gebruikersnaam en wagwoord in (of 'n programwagwoord as 2FA geaktiveer is).</value>
   </data>
   <data name="WebDav_Preset_pCloud_Help" xml:space="preserve">
     <value>pCloud — wolkberging met EU- en Amerikaanse datasentrums.
@@ -1242,13 +1253,15 @@ See detailed description in the following link.</value>
   <data name="WebDav_Preset_YandexDisk_Help" xml:space="preserve">
     <value>Yandex-skyf via WebDAV.
 
-1. Gaan na id.yandex.com → Sekuriteit → Programwagwoorde → Skep programwagwoord vir &apos;WebDAV-toegang&apos;.
+1. Gaan na id.yandex.com → Sekuriteit → Programwagwoorde → Skep programwagwoord vir 'WebDAV-toegang'.
    Kopieer die gegenereerde wagwoord - dit word net een keer gewys.
 2. Voer jou Yandex-aanmelding as die gebruiker in.
 3. Voer die programwagwoord in (nie jou Yandex-rekeningwagwoord nie) as die Wagwoord.
    Bedieneradres, HTTPS en poort word outomaties gekonfigureer.</value>
   </data>
-
+  <data name="WhatTask_Description" xml:space="preserve">
+    <value>Hier kan jy vouers spesifiseer wat jy wil rugsteun.</value>
+  </data>
   <data name="Winget_Description" xml:space="preserve">
     <value>Rugsteun / sinchroniseer jou data Windows, Linux.
 Voer foto's vanaf foon in via WI-FI en meer.

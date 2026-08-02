@@ -1,5 +1,4 @@
 <root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -258,14 +257,14 @@
   <data name="Field_Folder_Validation_Empty" xml:space="preserve">
     <value>フォルダーが指定されていません。</value>
   </data>
-  <data name="Field_Validation_NotSpecified" xml:space="preserve">
-    <value>{0}が指定されていません。</value>
-  </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>フォルダーが存在しません。</value>
   </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>プロトコル:</value>
+  </data>
+  <data name="Field_Validation_NotSpecified" xml:space="preserve">
+    <value>{0}が指定されていません。</value>
   </data>
   <data name="Field_Version" xml:space="preserve">
     <value>バージョン:</value>
@@ -327,14 +326,26 @@
   <data name="ImportMediaTask_Create" xml:space="preserve">
     <value>メディアインポートタスクを作成</value>
   </data>
+  <data name="ImportMediaTask_DeleteCopiedDataOnSourceMedia" xml:space="preserve">
+    <value>コピー済みデータをソースメディアから削除</value>
+  </data>
   <data name="ImportMediaTask_Edit_Title" xml:space="preserve">
     <value>「{0}」メディアインポートタスクを編集</value>
+  </data>
+  <data name="ImportMediaTask_Field_FileExtensions" xml:space="preserve">
+    <value>ファイル拡張子:</value>
+  </data>
+  <data name="ImportMediaTask_Field_FileExtensions_Help" xml:space="preserve">
+    <value>インポートする拡張子のカンマ区切りリスト（例: .jpg, .png, .mp3）。空のままにするとすべてのファイルをインポートします。</value>
   </data>
   <data name="ImportMediaTask_Field_OutputFolder" xml:space="preserve">
     <value>出力フォルダー:</value>
   </data>
   <data name="ImportMediaTask_Field_TransformFileName" xml:space="preserve">
     <value>ファイル名変換:</value>
+  </data>
+  <data name="ImportMediaTask_Field_TransformFileName_Documentation" xml:space="preserve">
+    <value>日付形式のドキュメント</value>
   </data>
   <data name="ImportMediaTask_Field_TransformFileName_Example" xml:space="preserve">
     <value>例:
@@ -360,17 +371,20 @@
     <value>カメラやレコーダーのSDカードから音声、写真、動画をインポートします; お使いのスマートフォンからFTPサーバアプリを使用して写真や動画をWi-Fi経由でインポートします。
 ファイル傳送の設定方法については、アプリケーションのウェブサイトのドキュメントをご覧ください。</value>
   </data>
-  <data name="ImportMediaTask_Storage_Help" xml:space="preserve">
-    <value>メディアのインポート元を指定してください（例：SDカード、カメラのフォルダ、またはFTPS経由の携帯電話）。</value>
-  </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
     <value>インポートデータソース</value>
   </data>
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>既にインポートされたファイルをスキップ</value>
   </data>
-  <data name="ImportMediaTask_DeleteCopiedDataOnSourceMedia" xml:space="preserve">
-    <value>コピー済みデータをソースメディアから削除</value>
+  <data name="ImportMediaTask_SkipAlreadyImportedFiles_Help" xml:space="preserve">
+    <value>有効にすると、保存先に既にあるファイルや以前にインポートしたファイルをスキップします。以前にインポートしたファイル名は記憶されるため、後で保存先のコピーを削除しても、そのファイルは再処理されません。</value>
+  </data>
+  <data name="ImportMediaTask_Storage_Help" xml:space="preserve">
+    <value>メディアのインポート元を指定してください（例：SDカード、カメラのフォルダ、またはFTPS経由の携帯電話）。</value>
+  </data>
+  <data name="ImportMediaTask_Storage_Validation_TooBroad" xml:space="preserve">
+    <value>選択したフォルダーには既知のメディアフォルダーが複数含まれているため（{0}）、デバイスまたはホームのルートのように見えます。より具体的なフォルダー（例: "{1}"）を指定してください。</value>
   </data>
   <data name="ImproveIt_Message" xml:space="preserve">
     <value>予期しないエラーが発生しました。
@@ -451,9 +465,6 @@
   <data name="LeftMenu_What_Hint" xml:space="preserve">
     <value>ここで処理が必要なフォルダやファイルを追加できます。</value>
   </data>
-  <data name="WhatTask_Description" xml:space="preserve">
-    <value>ここでバックアップしたいフォルダーを指定できます。</value>
-  </data>
   <data name="LeftMenu_What_Validation" xml:space="preserve">
     <value>処理する項目がありません。</value>
   </data>
@@ -462,9 +473,6 @@
   </data>
   <data name="LeftMenu_When_Help" xml:space="preserve">
     <value>ここでスケジューラーを設定できます。スケジューラはタスクの起動を自動化するのに役立ちます。</value>
-  </data>
-  <data name="RunAtLogin_Label" xml:space="preserve">
-    <value>ログイン時に実行</value>
   </data>
   <data name="LeftMenu_When_Optional_Hint" xml:space="preserve">
     <value>このセクションは任意です。スキップした場合、タスクは手動で起動したときのみ実行されます。</value>
@@ -517,11 +525,11 @@
   <data name="Name_Field_Validation" xml:space="preserve">
     <value>名前が空またはサポートされていないパス文字を含んでいます。</value>
   </data>
-  <data name="Name_Field_Validation_ExceedsLimit" xml:space="preserve">
-    <value>名前「{0}」の長さが制限を{1}文字超えています。</value>
-  </data>
   <data name="Name_Field_Validation_Duplicate" xml:space="preserve">
     <value>この名前のタスクは既に存在します。</value>
+  </data>
+  <data name="Name_Field_Validation_ExceedsLimit" xml:space="preserve">
+    <value>名前「{0}」の長さが制限を{1}文字超えています。</value>
   </data>
   <data name="Name_Title" xml:space="preserve">
     <value>名前</value>
@@ -577,6 +585,180 @@
   </data>
   <data name="RestoreFrom_Field_Validation_StateInvalid" xml:space="preserve">
     <value>状態を読み取ることができません。</value>
+  </data>
+  <data name="RunAtLogin_Label" xml:space="preserve">
+    <value>ログイン時に実行</value>
+  </data>
+  <data name="S3_Provider_AlibabaCloudOSS_Help" xml:space="preserve">
+    <value>Alibaba Cloud OSS — Alibaba の S3 互換オブジェクト ストレージ。
+
+1. OSS コンソール (https://oss.console.aliyun.com/) でバケットを作成します。その地域に注目してください (例: oss-cn-hangzhou)。
+2. RAM コンソール → ユーザー → ユーザーを作成 → AliyunOSSFullAccess をアタッチ → AccessKey を作成します。
+   AccessKey ID (= アクセスキー) と AccessKey Secret (= シークレットキー) をコピーします。
+3. サービス URL: https://oss-&lt;REGION&gt;.aliyuncs.com (例: https://oss-cn-hangzhou.aliyuncs.com)。
+4. 地域: 例: oss-cn-杭州。</value>
+  </data>
+  <data name="S3_Provider_AWSS3_Help" xml:space="preserve">
+    <value>AWS S3 — Amazon の独自のオブジェクト ストレージ。
+
+1. S3 コンソール (https://s3.console.aws.amazon.com/) を開き、バケットを作成します。そのリージョンに注目してください (例: us-east-1)。
+2. IAM → ユーザー → ユーザーを作成 → AmazonS3FullAccess ポリシーをアタッチします。
+3. [セキュリティ認証情報] で、アクセス キーを作成します。キー ID とシークレットをコピーします。
+4. バケット、アクセス キー、秘密キー、およびリージョンを入力します。</value>
+  </data>
+  <data name="S3_Provider_BackblazeB2_Help" xml:space="preserve">
+    <value>Backblaze B2 — 手頃な価格の S3 互換ストレージ。
+
+1. Backblaze (https://www.backblaze.com/) → B2 Cloud Storage → Buckets で、バケットを作成します。
+2. [アプリ キー] → [新しいアプリケーション キーの追加] に移動し、バケットに範囲を設定します。
+   keyID (= Access Key) と applicationKey (= Secret Key) をコピーします。
+3. サービス URL: バケットの詳細に表示されるバケットのエンドポイント。 https://s3.us-west-004.backblazeb2.com
+4. 領域: 「s3」の間のセグメント。および「.backblazeb2.com」、例: us-west-004。</value>
+  </data>
+  <data name="S3_Provider_BaiduCloudBOS_Help" xml:space="preserve">
+    <value>Baidu Cloud BOS — Baidu の S3 互換オブジェクト ストレージ。
+
+1. BOS コンソール (https://console.bce.baidu.com/bos/) でバケットを作成します。その領域 (bj、gz、su など) に注意してください。
+2. [セキュリティ] → [アクセス キー] に移動し、アクセス キー ID とシークレット アクセス キーをコピーします。
+3. サービス URL: https://s3.&lt;REGION&gt;.bcebos.com (例: https://s3.bj.bcebos.com)。
+4. 地域: 例: BJ。</value>
+  </data>
+  <data name="S3_Provider_CloudflareR2_Help" xml:space="preserve">
+    <value>Cloudflare R2 — ゼロエグレス S3 互換ストレージ。
+
+1. Cloudflare ダッシュボード (https://dash.cloudflare.com/) → R2 → バケットを作成します。
+2. 「R2」→「R2 API トークンの管理」→「オブジェクトの読み取りと書き込みを使用して API トークンを作成」に移動します。
+   アクセス キー ID とシークレット アクセス キーをコピーします。
+3. サービス URL: https://&lt;ACCOUNT_ID&gt;.r2.cloudflarestorage.com
+   アカウント ID は R2 概要ページに表示されます。
+4. バケット、アクセス キー、秘密キー、およびサービス URL を入力します。地域は自動的に「自動」に設定されます。</value>
+  </data>
+  <data name="S3_Provider_CloudRuStorage_Help" xml:space="preserve">
+    <value>Cloud.ru (SberCloud) オブジェクト ストレージ — S3 互換の OBS ストレージ。
+
+1. Cloud.ru コンソール (https://cloud.ru/) → Object Storage Service (OBS) → バケットを作成します。
+2. [資格情報] → [アクセス キー] → [アクセス キーの追加] に移動します。
+   アクセス キーとシークレット アクセス キーをコピーします。
+3. バケット、アクセス キー、秘密キー、およびリージョンを入力します (例: ru-moscow-1)。
+   サービス URL は自動的に入力されます。</value>
+  </data>
+  <data name="S3_Provider_Custom_Help" xml:space="preserve">
+    <value>MinIO または任意の S3 互換サーバー。
+
+1. MinIO (または他の S3 互換) サーバーを起動します。
+2. MinIO コンソールまたは「mc mb &lt;alias&gt;/&lt;bucket&gt;」を使用してバケットを作成します。
+3. MinIO コンソール → アクセス キーでアクセス キーを作成します (運用環境では root 資格情報を避けてください)。
+4. サービス URL: サーバー エンドポイント。 http://192.168.1.10:9000 または https://minio.example.com。
+5. リージョン: 任意の値 (例: us-east-1) — サーバーが強制しない場合は空のままにします。</value>
+  </data>
+  <data name="S3_Provider_DigitalOceanSpaces_Help" xml:space="preserve">
+    <value>DigitalOcean Spaces — S3 互換のオブジェクト ストレージ。
+
+1. スペース (https://cloud.digitalocean.com/spaces) で、スペースを作成します。その地域 (例: nyc3) に注目してください。
+2. 「API」→「スペースキー」→「新しいキーの生成」に移動します。キー (= アクセス キー) とシークレットをコピーします。
+3. サービス URL: https://&lt;REGION&gt;.digitaloceanspaces.com (例: https://nyc3.digitaloceanspaces.com)。
+4. リージョン: 同じショートコード、例:ニューヨーク3。</value>
+  </data>
+  <data name="S3_Provider_GoogleCloudStorage_Help" xml:space="preserve">
+    <value>Google Cloud Storage — S3 相互運用性 API 経由。
+
+1. Google Cloud Console (https://console.cloud.google.com/storage) でバケットを作成します。
+2. [Cloud Storage] → [設定] → [相互運用性] に移動し、サービス アカウントの HMAC キーを作成します。
+   アクセスキーとシークレットをコピーします。
+3. バケット、アクセス キー (HMAC キー)、秘密キー (HMAC シークレット) を入力します。
+   サービスの URL とリージョンは自動的に設定されます。</value>
+  </data>
+  <data name="S3_Provider_HuaweiCloudOBS_Help" xml:space="preserve">
+    <value>Huawei Cloud OBS — Huawei の S3 互換オブジェクト ストレージ。
+
+1. OBS コンソール (https://console.huaweicloud.com/obs/) でバケットを作成します。そのリージョンに注目してください (例: cn-north-4)。
+2. [資格情報] → [アクセス キー] → [アクセス キーの作成] に移動します。
+   AK (= アクセスキー) と SK (= シークレットキー) をコピーします。
+3. サービス URL: https://obs.&lt;REGION&gt;.myhuaweicloud.com (例: https://obs.cn-north-4.myhuaweicloud.com)。
+4. 地域: 例: cn-north-4.</value>
+  </data>
+  <data name="S3_Provider_LinodeObjectStorage_Help" xml:space="preserve">
+    <value>Linode (Akamai) オブジェクト ストレージ — S3 互換ストレージ。
+
+1. Linode Cloud Manager (https://cloud.linode.com/object-storage/buckets) でバケットを作成します。そのクラスターに注目してください。
+2. 「オブジェクトストレージ」→「アクセスキー」→「バケットを範囲とするアクセスキーの作成」に移動します。
+   アクセスキーとシークレットキーをコピーします。
+3. サービス URL: https://&lt;CLUSTER&gt;.linodeobjects.com (例: https://us-east-1.linodeobjects.com)。
+4. リージョン: 同じクラスターコード、例: us-east-1。</value>
+  </data>
+  <data name="S3_Provider_QiniuCloudKodo_Help" xml:space="preserve">
+    <value>Qiniu Cloud Kodo — Qiniu の S3 互換ストレージ。
+
+1. Qiniu ポータル (https://portal.qiniu.com/kodo/bucket) でバケットを作成します。その地域に注目してください。
+2. [パーソナル センター] → [キー管理] に移動し、AccessKey と SecretKey をコピーします。
+3. 地域別のサービス URL:
+   中国東部: https://s3-cn-east-1.qiniucs.com
+   中国北部: https://s3-cn-north-1.qiniucs.com
+   中国南部: https://s3-cn-south-1.qiniucs.com
+   北米: https://s3-us-north-1.qiniucs.com
+4. 地域: 一致するコード、例: cn-east-1。</value>
+  </data>
+  <data name="S3_Provider_ScalewayObjectStorage_Help" xml:space="preserve">
+    <value>Scaleway Object Storage — ヨーロッパの S3 互換ストレージ。
+
+1. Scaleway コンソール (https://console.scaleway.com/object-storage/buckets) でバケットを作成します。その領域 (fr-par など) に注目してください。
+2. [IAM] → [API キー] → [オブジェクトストレージ書き込み権限を持つ API キーの生成] に移動します。
+   アクセスキーとシークレットキーをコピーします。
+3. サービス URL: https://s3.&lt;REGION&gt;.scw.cloud (例: https://s3.fr-par.scw.cloud)。
+4. 地域: 例: fr-par、nl-ams、pl-waw。</value>
+  </data>
+  <data name="S3_Provider_SelectelStorage_Help" xml:space="preserve">
+    <value>Selectel Object Storage — S3 互換のロシアのストレージ。
+
+1. Selectel パネル (https://my.selectel.ru/) → Cloud Storage → コンテナ (= バケット) を作成します。
+2. [ユーザーとロール] で、ストレージ アクセスを持つサービス ユーザーを作成 → S3 キー → キー ペアを作成します。
+   アクセスキーとシークレットキーをコピーします。
+3. バケット、アクセス キー、秘密キーを入力します。
+   サービス URL は自動的に入力されます。</value>
+  </data>
+  <data name="S3_Provider_TencentCloudCOS_Help" xml:space="preserve">
+    <value>Tencent Cloud COS — Tencent の S3 互換オブジェクト ストレージ。
+
+1. COS コンソール (https://console.cloud.tencent.com/cos) でバケットを作成します。 AppId とリージョン (例: ap-beijing) をメモします。
+2. [アクセス管理] → [API キー] → [キーの作成] で。
+   SecretId (= アクセスキー) と SecretKey (= 秘密キー) をコピーします。
+3. サービス URL: https://cos.&lt;REGION&gt;.myqcloud.com (例: https://cos.ap-beijing.myqcloud.com)。
+4. バケット名の形式: &lt;name&gt;-&lt;AppId&gt; (例: mybucket-1250000000)。地域: 例:アプ北京。</value>
+  </data>
+  <data name="S3_Provider_VKCloudStorage_Help" xml:space="preserve">
+    <value>VK Cloud Object Storage — VK Cloud の S3 互換ストレージ。
+
+1. VK クラウド ポータル (https://msk.cloud.vk.com/) → クラウド ストレージ → バケットを作成します。
+2. アカウント → アクセス キー → 新しいキー ペアを作成します。
+   アクセスキーとシークレットキーをコピーします。
+3. 必要に応じて、バケット、アクセス キー、秘密キー、およびリージョンを入力します (例: ru-msk)。
+   サービス URL は自動的に入力されます。</value>
+  </data>
+  <data name="S3_Provider_VolcanoEngineTOS_Help" xml:space="preserve">
+    <value>Volcano Engine TOS (ByteDance) — S3 互換ストレージ。
+
+1. Volcano Engine コンソール (https://console.volcengine.com/tos) でバケットを作成します。その地域 (例: cn-beijing) に注意してください。
+2. [IAM] → [アクセス キー] → [キーを作成] に移動します。
+   アクセス キー ID とシークレット アクセス キーをコピーします。
+3. サービス URL: https://tos-s3-&lt;REGION&gt;.volces.com (例: https://tos-s3-cn-beijing.volces.com)。
+4. 地域: 例:中国北京。</value>
+  </data>
+  <data name="S3_Provider_Wasabi_Help" xml:space="preserve">
+    <value>Wasabi — 下り料金なしのホットクラウドストレージ。
+
+1. Wasabi コンソール (https://console.wasabisys.com/) → [バケット] → [バケットの作成] で。地域を選択してください。
+2. [アクセス キー] → [新しいアクセス キーの作成] に移動します。アクセスキーとシークレットキーをコピーします。
+3. バケット、アクセス キー、秘密キー、およびリージョンを入力します (例: us-east-1、eu-central-1)。
+   サービス URL は自動的に入力されます。</value>
+  </data>
+  <data name="S3_Provider_YandexObjectStorage_Help" xml:space="preserve">
+    <value>Yandex Object Storage — S3 互換のロシアのクラウド ストレージ。
+
+1. Yandex Cloud Console (https://console.yandex.cloud/) → Object Storage → バケットを作成します。
+2. [サービス アカウント] に移動し、storage.editor ロールを持つサービス アカウントを作成し、静的アクセス キーを作成します。
+   キーID（=アクセスキー）とシークレットキーをコピーします。
+3. バケット、アクセス キー、秘密キーを入力します。
+   サービスの URL とリージョンは自動的に設定されます。</value>
   </data>
   <data name="Server_Field_Address" xml:space="preserve">
     <value>サーバー名:</value>
@@ -972,177 +1154,6 @@ bin.
   <data name="User_Field_Validation" xml:space="preserve">
     <value>ユーザーが指定されていません。</value>
   </data>
-  <data name="S3_Provider_AlibabaCloudOSS_Help" xml:space="preserve">
-    <value>Alibaba Cloud OSS — Alibaba の S3 互換オブジェクト ストレージ。
-
-1. OSS コンソール (https://oss.console.aliyun.com/) でバケットを作成します。その地域に注目してください (例: oss-cn-hangzhou)。
-2. RAM コンソール → ユーザー → ユーザーを作成 → AliyunOSSFullAccess をアタッチ → AccessKey を作成します。
-   AccessKey ID (= アクセスキー) と AccessKey Secret (= シークレットキー) をコピーします。
-3. サービス URL: https://oss-&lt;REGION&gt;.aliyuncs.com (例: https://oss-cn-hangzhou.aliyuncs.com)。
-4. 地域: 例: oss-cn-杭州。</value>
-  </data>
-  <data name="S3_Provider_AWSS3_Help" xml:space="preserve">
-    <value>AWS S3 — Amazon の独自のオブジェクト ストレージ。
-
-1. S3 コンソール (https://s3.console.aws.amazon.com/) を開き、バケットを作成します。そのリージョンに注目してください (例: us-east-1)。
-2. IAM → ユーザー → ユーザーを作成 → AmazonS3FullAccess ポリシーをアタッチします。
-3. [セキュリティ認証情報] で、アクセス キーを作成します。キー ID とシークレットをコピーします。
-4. バケット、アクセス キー、秘密キー、およびリージョンを入力します。</value>
-  </data>
-  <data name="S3_Provider_BaiduCloudBOS_Help" xml:space="preserve">
-    <value>Baidu Cloud BOS — Baidu の S3 互換オブジェクト ストレージ。
-
-1. BOS コンソール (https://console.bce.baidu.com/bos/) でバケットを作成します。その領域 (bj、gz、su など) に注意してください。
-2. [セキュリティ] → [アクセス キー] に移動し、アクセス キー ID とシークレット アクセス キーをコピーします。
-3. サービス URL: https://s3.&lt;REGION&gt;.bcebos.com (例: https://s3.bj.bcebos.com)。
-4. 地域: 例: BJ。</value>
-  </data>
-  <data name="S3_Provider_BackblazeB2_Help" xml:space="preserve">
-    <value>Backblaze B2 — 手頃な価格の S3 互換ストレージ。
-
-1. Backblaze (https://www.backblaze.com/) → B2 Cloud Storage → Buckets で、バケットを作成します。
-2. [アプリ キー] → [新しいアプリケーション キーの追加] に移動し、バケットに範囲を設定します。
-   keyID (= Access Key) と applicationKey (= Secret Key) をコピーします。
-3. サービス URL: バケットの詳細に表示されるバケットのエンドポイント。 https://s3.us-west-004.backblazeb2.com
-4. 領域: 「s3」の間のセグメント。および「.backblazeb2.com」、例: us-west-004。</value>
-  </data>
-  <data name="S3_Provider_CloudflareR2_Help" xml:space="preserve">
-    <value>Cloudflare R2 — ゼロエグレス S3 互換ストレージ。
-
-1. Cloudflare ダッシュボード (https://dash.cloudflare.com/) → R2 → バケットを作成します。
-2. 「R2」→「R2 API トークンの管理」→「オブジェクトの読み取りと書き込みを使用して API トークンを作成」に移動します。
-   アクセス キー ID とシークレット アクセス キーをコピーします。
-3. サービス URL: https://&lt;ACCOUNT_ID&gt;.r2.cloudflarestorage.com
-   アカウント ID は R2 概要ページに表示されます。
-4. バケット、アクセス キー、秘密キー、およびサービス URL を入力します。地域は自動的に「自動」に設定されます。</value>
-  </data>
-  <data name="S3_Provider_CloudRuStorage_Help" xml:space="preserve">
-    <value>Cloud.ru (SberCloud) オブジェクト ストレージ — S3 互換の OBS ストレージ。
-
-1. Cloud.ru コンソール (https://cloud.ru/) → Object Storage Service (OBS) → バケットを作成します。
-2. [資格情報] → [アクセス キー] → [アクセス キーの追加] に移動します。
-   アクセス キーとシークレット アクセス キーをコピーします。
-3. バケット、アクセス キー、秘密キー、およびリージョンを入力します (例: ru-moscow-1)。
-   サービス URL は自動的に入力されます。</value>
-  </data>
-  <data name="S3_Provider_Custom_Help" xml:space="preserve">
-    <value>MinIO または任意の S3 互換サーバー。
-
-1. MinIO (または他の S3 互換) サーバーを起動します。
-2. MinIO コンソールまたは「mc mb &lt;alias&gt;/&lt;bucket&gt;」を使用してバケットを作成します。
-3. MinIO コンソール → アクセス キーでアクセス キーを作成します (運用環境では root 資格情報を避けてください)。
-4. サービス URL: サーバー エンドポイント。 http://192.168.1.10:9000 または https://minio.example.com。
-5. リージョン: 任意の値 (例: us-east-1) — サーバーが強制しない場合は空のままにします。</value>
-  </data>
-  <data name="S3_Provider_DigitalOceanSpaces_Help" xml:space="preserve">
-    <value>DigitalOcean Spaces — S3 互換のオブジェクト ストレージ。
-
-1. スペース (https://cloud.digitalocean.com/spaces) で、スペースを作成します。その地域 (例: nyc3) に注目してください。
-2. 「API」→「スペースキー」→「新しいキーの生成」に移動します。キー (= アクセス キー) とシークレットをコピーします。
-3. サービス URL: https://&lt;REGION&gt;.digitaloceanspaces.com (例: https://nyc3.digitaloceanspaces.com)。
-4. リージョン: 同じショートコード、例:ニューヨーク3。</value>
-  </data>
-  <data name="S3_Provider_GoogleCloudStorage_Help" xml:space="preserve">
-    <value>Google Cloud Storage — S3 相互運用性 API 経由。
-
-1. Google Cloud Console (https://console.cloud.google.com/storage) でバケットを作成します。
-2. [Cloud Storage] → [設定] → [相互運用性] に移動し、サービス アカウントの HMAC キーを作成します。
-   アクセスキーとシークレットをコピーします。
-3. バケット、アクセス キー (HMAC キー)、秘密キー (HMAC シークレット) を入力します。
-   サービスの URL とリージョンは自動的に設定されます。</value>
-  </data>
-  <data name="S3_Provider_HuaweiCloudOBS_Help" xml:space="preserve">
-    <value>Huawei Cloud OBS — Huawei の S3 互換オブジェクト ストレージ。
-
-1. OBS コンソール (https://console.huaweicloud.com/obs/) でバケットを作成します。そのリージョンに注目してください (例: cn-north-4)。
-2. [資格情報] → [アクセス キー] → [アクセス キーの作成] に移動します。
-   AK (= アクセスキー) と SK (= シークレットキー) をコピーします。
-3. サービス URL: https://obs.&lt;REGION&gt;.myhuaweicloud.com (例: https://obs.cn-north-4.myhuaweicloud.com)。
-4. 地域: 例: cn-north-4.</value>
-  </data>
-  <data name="S3_Provider_LinodeObjectStorage_Help" xml:space="preserve">
-    <value>Linode (Akamai) オブジェクト ストレージ — S3 互換ストレージ。
-
-1. Linode Cloud Manager (https://cloud.linode.com/object-storage/buckets) でバケットを作成します。そのクラスターに注目してください。
-2. 「オブジェクトストレージ」→「アクセスキー」→「バケットを範囲とするアクセスキーの作成」に移動します。
-   アクセスキーとシークレットキーをコピーします。
-3. サービス URL: https://&lt;CLUSTER&gt;.linodeobjects.com (例: https://us-east-1.linodeobjects.com)。
-4. リージョン: 同じクラスターコード、例: us-east-1。</value>
-  </data>
-  <data name="S3_Provider_QiniuCloudKodo_Help" xml:space="preserve">
-    <value>Qiniu Cloud Kodo — Qiniu の S3 互換ストレージ。
-
-1. Qiniu ポータル (https://portal.qiniu.com/kodo/bucket) でバケットを作成します。その地域に注目してください。
-2. [パーソナル センター] → [キー管理] に移動し、AccessKey と SecretKey をコピーします。
-3. 地域別のサービス URL:
-   中国東部: https://s3-cn-east-1.qiniucs.com
-   中国北部: https://s3-cn-north-1.qiniucs.com
-   中国南部: https://s3-cn-south-1.qiniucs.com
-   北米: https://s3-us-north-1.qiniucs.com
-4. 地域: 一致するコード、例: cn-east-1。</value>
-  </data>
-  <data name="S3_Provider_ScalewayObjectStorage_Help" xml:space="preserve">
-    <value>Scaleway Object Storage — ヨーロッパの S3 互換ストレージ。
-
-1. Scaleway コンソール (https://console.scaleway.com/object-storage/buckets) でバケットを作成します。その領域 (fr-par など) に注目してください。
-2. [IAM] → [API キー] → [オブジェクトストレージ書き込み権限を持つ API キーの生成] に移動します。
-   アクセスキーとシークレットキーをコピーします。
-3. サービス URL: https://s3.&lt;REGION&gt;.scw.cloud (例: https://s3.fr-par.scw.cloud)。
-4. 地域: 例: fr-par、nl-ams、pl-waw。</value>
-  </data>
-  <data name="S3_Provider_SelectelStorage_Help" xml:space="preserve">
-    <value>Selectel Object Storage — S3 互換のロシアのストレージ。
-
-1. Selectel パネル (https://my.selectel.ru/) → Cloud Storage → コンテナ (= バケット) を作成します。
-2. [ユーザーとロール] で、ストレージ アクセスを持つサービス ユーザーを作成 → S3 キー → キー ペアを作成します。
-   アクセスキーとシークレットキーをコピーします。
-3. バケット、アクセス キー、秘密キーを入力します。
-   サービス URL は自動的に入力されます。</value>
-  </data>
-  <data name="S3_Provider_TencentCloudCOS_Help" xml:space="preserve">
-    <value>Tencent Cloud COS — Tencent の S3 互換オブジェクト ストレージ。
-
-1. COS コンソール (https://console.cloud.tencent.com/cos) でバケットを作成します。 AppId とリージョン (例: ap-beijing) をメモします。
-2. [アクセス管理] → [API キー] → [キーの作成] で。
-   SecretId (= アクセスキー) と SecretKey (= 秘密キー) をコピーします。
-3. サービス URL: https://cos.&lt;REGION&gt;.myqcloud.com (例: https://cos.ap-beijing.myqcloud.com)。
-4. バケット名の形式: &lt;name&gt;-&lt;AppId&gt; (例: mybucket-1250000000)。地域: 例:アプ北京。</value>
-  </data>
-  <data name="S3_Provider_VKCloudStorage_Help" xml:space="preserve">
-    <value>VK Cloud Object Storage — VK Cloud の S3 互換ストレージ。
-
-1. VK クラウド ポータル (https://msk.cloud.vk.com/) → クラウド ストレージ → バケットを作成します。
-2. アカウント → アクセス キー → 新しいキー ペアを作成します。
-   アクセスキーとシークレットキーをコピーします。
-3. 必要に応じて、バケット、アクセス キー、秘密キー、およびリージョンを入力します (例: ru-msk)。
-   サービス URL は自動的に入力されます。</value>
-  </data>
-  <data name="S3_Provider_VolcanoEngineTOS_Help" xml:space="preserve">
-    <value>Volcano Engine TOS (ByteDance) — S3 互換ストレージ。
-
-1. Volcano Engine コンソール (https://console.volcengine.com/tos) でバケットを作成します。その地域 (例: cn-beijing) に注意してください。
-2. [IAM] → [アクセス キー] → [キーを作成] に移動します。
-   アクセス キー ID とシークレット アクセス キーをコピーします。
-3. サービス URL: https://tos-s3-&lt;REGION&gt;.volces.com (例: https://tos-s3-cn-beijing.volces.com)。
-4. 地域: 例:中国北京。</value>
-  </data>
-  <data name="S3_Provider_Wasabi_Help" xml:space="preserve">
-    <value>Wasabi — 下り料金なしのホットクラウドストレージ。
-
-1. Wasabi コンソール (https://console.wasabisys.com/) → [バケット] → [バケットの作成] で。地域を選択してください。
-2. [アクセス キー] → [新しいアクセス キーの作成] に移動します。アクセスキーとシークレットキーをコピーします。
-3. バケット、アクセス キー、秘密キー、およびリージョンを入力します (例: us-east-1、eu-central-1)。
-   サービス URL は自動的に入力されます。</value>
-  </data>
-  <data name="S3_Provider_YandexObjectStorage_Help" xml:space="preserve">
-    <value>Yandex Object Storage — S3 互換のロシアのクラウド ストレージ。
-
-1. Yandex Cloud Console (https://console.yandex.cloud/) → Object Storage → バケットを作成します。
-2. [サービス アカウント] に移動し、storage.editor ロールを持つサービス アカウントを作成し、静的アクセス キーを作成します。
-   キーID（=アクセスキー）とシークレットキーをコピーします。
-3. バケット、アクセス キー、秘密キーを入力します。
-   サービスの URL とリージョンは自動的に設定されます。</value>
-  </data>
   <data name="WebDav_Preset_Box_Help" xml:space="preserve">
     <value>Box — WebDAV をサポートするエンタープライズ クラウド ストレージ。
 
@@ -1232,7 +1243,9 @@ bin.
 3. アプリのパスワード (Yandex アカウントのパスワードではない) をパスワードとして入力します。
    サーバーアドレス、HTTPS、ポートは自動的に設定されます。</value>
   </data>
-
+  <data name="WhatTask_Description" xml:space="preserve">
+    <value>ここでバックアップしたいフォルダーを指定できます。</value>
+  </data>
   <data name="Winget_Description" xml:space="preserve">
     <value>Windows、Linuxでデータをバックアップ/同期します。
 WI-FI経由で電話から写真をインポートなど。

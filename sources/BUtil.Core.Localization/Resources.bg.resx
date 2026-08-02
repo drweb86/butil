@@ -1,5 +1,4 @@
 <root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -263,14 +262,14 @@
   <data name="Field_Folder_Validation_Empty" xml:space="preserve">
     <value>Папката не е указана.</value>
   </data>
-  <data name="Field_Validation_NotSpecified" xml:space="preserve">
-    <value>{0} не е указан.</value>
-  </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Папката не съществува.</value>
   </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>Протокол:</value>
+  </data>
+  <data name="Field_Validation_NotSpecified" xml:space="preserve">
+    <value>{0} не е указан.</value>
   </data>
   <data name="Field_Version" xml:space="preserve">
     <value>Версия:</value>
@@ -332,14 +331,26 @@
   <data name="ImportMediaTask_Create" xml:space="preserve">
     <value>Задача за импортиране на медия</value>
   </data>
+  <data name="ImportMediaTask_DeleteCopiedDataOnSourceMedia" xml:space="preserve">
+    <value>Изтриване на копираните данни от изходния носител</value>
+  </data>
   <data name="ImportMediaTask_Edit_Title" xml:space="preserve">
     <value>Редактиране на задача за импортиране на медия „{0}"</value>
+  </data>
+  <data name="ImportMediaTask_Field_FileExtensions" xml:space="preserve">
+    <value>Файлови разширения:</value>
+  </data>
+  <data name="ImportMediaTask_Field_FileExtensions_Help" xml:space="preserve">
+    <value>Списък с разширения за импортиране, разделени със запетая (например .jpg, .png, .mp3). Оставете празно, за да импортирате всички файлове.</value>
   </data>
   <data name="ImportMediaTask_Field_OutputFolder" xml:space="preserve">
     <value>Изходна папка:</value>
   </data>
   <data name="ImportMediaTask_Field_TransformFileName" xml:space="preserve">
     <value>Трансформации на имена на файлове:</value>
+  </data>
+  <data name="ImportMediaTask_Field_TransformFileName_Documentation" xml:space="preserve">
+    <value>Документация за формат на дата</value>
   </data>
   <data name="ImportMediaTask_Field_TransformFileName_Example" xml:space="preserve">
     <value>Пример:
@@ -366,17 +377,20 @@
 
 Вижте уебсайта на приложението за документация как да настроите прехвърляне на файлове чрез WI-FI чрез приложение FTP сървър на телефона.</value>
   </data>
-  <data name="ImportMediaTask_Storage_Help" xml:space="preserve">
-    <value>Посочете източника, от който да се импортират медийни файлове — например SD карта, папка на камера или телефон през FTPS.</value>
-  </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
     <value>Импортиране на източник на данни</value>
   </data>
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>Пропускане на вече импортирани файлове</value>
   </data>
-  <data name="ImportMediaTask_DeleteCopiedDataOnSourceMedia" xml:space="preserve">
-    <value>Изтриване на копираните данни от изходния носител</value>
+  <data name="ImportMediaTask_SkipAlreadyImportedFiles_Help" xml:space="preserve">
+    <value>Когато е активирано, приложението пропуска файлове, които вече съществуват в целевата папка или са били импортирани по-рано. Имената на вече импортираните файлове се запомнят, така че файлът не се обработва отново, дори ако по-късно изтриете копието му от целевата папка.</value>
+  </data>
+  <data name="ImportMediaTask_Storage_Help" xml:space="preserve">
+    <value>Посочете източника, от който да се импортират медийни файлове — например SD карта, папка на камера или телефон през FTPS.</value>
+  </data>
+  <data name="ImportMediaTask_Storage_Validation_TooBroad" xml:space="preserve">
+    <value>Избраната папка изглежда като корен на устройство или домашна директория, защото съдържа няколко известни медийни папки ({0}). Моля, изберете по-конкретна папка, например "{1}".</value>
   </data>
   <data name="ImproveIt_Message" xml:space="preserve">
     <value>Възникна неочаквана грешка.
@@ -463,9 +477,6 @@
   <data name="LeftMenu_What_Hint" xml:space="preserve">
     <value>Тук можете да добавите папки и файлове, които трябва да обработите.</value>
   </data>
-  <data name="WhatTask_Description" xml:space="preserve">
-    <value>Тук можете да посочите папките, които искате да архивирате.</value>
-  </data>
   <data name="LeftMenu_What_Validation" xml:space="preserve">
     <value>Няма елементи за обработка.</value>
   </data>
@@ -477,9 +488,6 @@
   </data>
   <data name="LeftMenu_When_Optional_Hint" xml:space="preserve">
     <value>Този раздел не е задължителен. Ако го пропуснете, задачата ще се изпълнява само когато я стартирате ръчно.</value>
-  </data>
-  <data name="RunAtLogin_Label" xml:space="preserve">
-    <value>Стартиране при влизане</value>
   </data>
   <data name="LeftMenu_Where" xml:space="preserve">
     <value>Къде?</value>
@@ -529,11 +537,11 @@
   <data name="Name_Field_Validation" xml:space="preserve">
     <value>Името е празно или съдържа неподдържани символи за път.</value>
   </data>
-  <data name="Name_Field_Validation_ExceedsLimit" xml:space="preserve">
-    <value>Дължината на името '{0}' надвишава лимита с {1} символа.</value>
-  </data>
   <data name="Name_Field_Validation_Duplicate" xml:space="preserve">
     <value>Задача с това име вече съществува.</value>
+  </data>
+  <data name="Name_Field_Validation_ExceedsLimit" xml:space="preserve">
+    <value>Дължината на името '{0}' надвишава лимита с {1} символа.</value>
   </data>
   <data name="Name_Title" xml:space="preserve">
     <value>Име</value>
@@ -590,6 +598,180 @@
   </data>
   <data name="RestoreFrom_Field_Validation_StateInvalid" xml:space="preserve">
     <value>Състоянието не може да бъде прочетено.</value>
+  </data>
+  <data name="RunAtLogin_Label" xml:space="preserve">
+    <value>Стартиране при влизане</value>
+  </data>
+  <data name="S3_Provider_AlibabaCloudOSS_Help" xml:space="preserve">
+    <value>Alibaba Cloud OSS — S3-съвместимо съхранение на обекти от Alibaba.
+
+1. В OSS Console (https://oss.console.aliyun.com/) създайте кофа. Обърнете внимание на неговия регион (напр. oss-cn-hangzhou).
+2. В RAM Console → Потребители → създайте потребител → прикачете AliyunOSSFullAccess → създайте AccessKey.
+   Копирайте AccessKey ID (= Ключ за достъп) и AccessKey Secret (= Таен ключ).
+3. URL адрес на услугата: https://oss-&lt;REGION&gt;.aliyuncs.com (напр. https://oss-cn-hangzhou.aliyuncs.com).
+4. Регион: напр. oss-cn-хангжу.</value>
+  </data>
+  <data name="S3_Provider_AWSS3_Help" xml:space="preserve">
+    <value>AWS S3 — оригиналното хранилище на обекти на Amazon.
+
+1. Отворете конзолата S3 (https://s3.console.aws.amazon.com/) и създайте кофа. Обърнете внимание на неговия регион (напр. us-east-1).
+2. Отворете IAM → Потребители → създайте потребител → прикачете правилото AmazonS3FullAccess.
+3. Под идентификационните данни за сигурност създайте ключ за достъп — копирайте ИД на ключа и тайната.
+4. Попълнете: Bucket, Access Key, Secret Key и Region.</value>
+  </data>
+  <data name="S3_Provider_BackblazeB2_Help" xml:space="preserve">
+    <value>Backblaze B2 — достъпно S3-съвместимо хранилище.
+
+1. В Backblaze (https://www.backblaze.com/) → B2 Cloud Storage → Buckets създайте кофа.
+2. Отидете на App Keys → Add a New Application Key, обхванете го в кофата.
+   Копирайте keyID (= ключ за достъп) и applicationKey (= таен ключ).
+3. URL адрес на услугата: крайната точка на вашата кофа, показана в подробности за кофата, напр. https://s3.us-west-004.backblazeb2.com
+4. Регион: сегментът между 's3.' и '.backblazeb2.com', напр. us-west-004.</value>
+  </data>
+  <data name="S3_Provider_BaiduCloudBOS_Help" xml:space="preserve">
+    <value>Baidu Cloud BOS — S3-съвместимо хранилище на обекти от Baidu.
+
+1. В BOS Console (https://console.bce.baidu.com/bos/) създайте кофа. Отбележете неговия регион (напр. bj, gz, su).
+2. Отидете на Сигурност → Ключове за достъп — копирайте вашия ID на ключа за достъп и секретния ключ за достъп.
+3. URL адрес на услугата: https://s3.&lt;REGION&gt;.bcebos.com (напр. https://s3.bj.bcebos.com).
+4. Регион: напр. bj.</value>
+  </data>
+  <data name="S3_Provider_CloudflareR2_Help" xml:space="preserve">
+    <value>Cloudflare R2 — S3-съвместимо хранилище с нулев изход.
+
+1. В таблото за управление на Cloudflare (https://dash.cloudflare.com/) → R2 → създайте кофа.
+2. Отидете на R2 → Управление на R2 API токени → Създаване на API токен с четене и запис на обект.
+   Копирайте ID на ключа за достъп и секретния ключ за достъп.
+3. URL адрес на услугата: https://&lt;ACCOUNT_ID&gt;.r2.cloudflarestorage.com
+   Идентификационният номер на вашия акаунт е показан на страницата за преглед на R2.
+4. Попълнете: Bucket, Access Key, Secret Key и Service URL. Регионът автоматично се задава на „автоматично“.</value>
+  </data>
+  <data name="S3_Provider_CloudRuStorage_Help" xml:space="preserve">
+    <value>Cloud.ru (SberCloud) Object Storage — OBS съхранение, съвместимо със S3.
+
+1. В Cloud.ru Console (https://cloud.ru/) → Object Storage Service (OBS) → създайте кофа.
+2. Отидете на Моите идентификационни данни → Ключове за достъп → Добавяне на ключ за достъп.
+   Копирайте ключа за достъп и секретния ключ за достъп.
+3. Попълнете: Bucket, Access Key, Secret Key и Region (напр. ru-moscow-1).
+   URL адресът на услугата се попълва автоматично.</value>
+  </data>
+  <data name="S3_Provider_Custom_Help" xml:space="preserve">
+    <value>MinIO или всеки S3-съвместим сървър.
+
+1. Стартирайте вашия MinIO (или друг S3-съвместим) сървър.
+2. Създайте кофа чрез конзолата MinIO или 'mc mb &lt;alias&gt;/&lt;bucket&gt;'.
+3. Създайте ключ за достъп в MinIO Console → Ключове за достъп (избягвайте root идентификационни данни в производството).
+4. URL адрес на услугата: вашата крайна точка на сървъра, напр. http://192.168.1.10:9000 или https://minio.example.com.
+5. Регион: всяка стойност (напр. us-east-1) — или оставете празно, ако сървърът не я прилага.</value>
+  </data>
+  <data name="S3_Provider_DigitalOceanSpaces_Help" xml:space="preserve">
+    <value>DigitalOcean Spaces — S3-съвместимо съхранение на обекти.
+
+1. В Spaces (https://cloud.digitalocean.com/spaces), създайте Space. Обърнете внимание на неговия регион (напр. nyc3).
+2. Отидете на API → Ключове за интервали → Генериране на нов ключ. Копирайте ключа (= ключ за достъп) и секрета.
+3. URL адрес на услугата: https://&lt;REGION&gt;.digitaloceanspaces.com (напр. https://nyc3.digitaloceanspaces.com).
+4. Регион: същият кратък код, напр. nyc3.</value>
+  </data>
+  <data name="S3_Provider_GoogleCloudStorage_Help" xml:space="preserve">
+    <value>Google Cloud Storage — чрез S3 API за оперативна съвместимост.
+
+1. В Google Cloud Console (https://console.cloud.google.com/storage) създайте кофа.
+2. Отидете на Cloud Storage → Settings → Interoperability → създайте HMAC ключ за акаунт за услуга.
+   Копирайте ключа за достъп и секрета.
+3. Попълнете: Bucket, Access Key (HMAC key), Secret Key (HMAC secret).
+   URL адресът и регионът на услугата се задават автоматично.</value>
+  </data>
+  <data name="S3_Provider_HuaweiCloudOBS_Help" xml:space="preserve">
+    <value>Huawei Cloud OBS — S3-съвместимо хранилище на обекти от Huawei.
+
+1. В OBS Console (https://console.huaweicloud.com/obs/) създайте кофа. Отбележете неговия регион (напр. cn-north-4).
+2. Отидете на Моите идентификационни данни → Ключове за достъп → Създаване на ключ за достъп.
+   Копирайте AK (= ключ за достъп) и SK (= таен ключ).
+3. URL адрес на услугата: https://obs.&lt;REGION&gt;.myhuaweicloud.com (напр. https://obs.cn-north-4.myhuaweicloud.com).
+4. Регион: напр. cn-север-4.</value>
+  </data>
+  <data name="S3_Provider_LinodeObjectStorage_Help" xml:space="preserve">
+    <value>Linode (Akamai) Object Storage — S3-съвместимо хранилище.
+
+1. В Linode Cloud Manager (https://cloud.linode.com/object-storage/buckets), създайте кофа. Обърнете внимание на неговия клъстер.
+2. Отидете на Object Storage → Ключове за достъп → Създаване на ключ за достъп, обхванат от кофата.
+   Копирайте ключа за достъп и секретния ключ.
+3. URL адрес на услугата: https://&lt;CLUSTER&gt;.linodeobjects.com (напр. https://us-east-1.linodeobjects.com).
+4. Регион: същият код на клъстера, напр. нас-изток-1.</value>
+  </data>
+  <data name="S3_Provider_QiniuCloudKodo_Help" xml:space="preserve">
+    <value>Qiniu Cloud Kodo — S3-съвместимо хранилище от Qiniu.
+
+1. В портала Qiniu (https://portal.qiniu.com/kodo/bucket) създайте кофа. Обърнете внимание на неговия регион.
+2. Отидете на Personal Center → Key Management — копирайте вашия AccessKey и SecretKey.
+3. URL адрес на услугата по регион:
+   Източен Китай: https://s3-cn-east-1.qiniucs.com
+   Северен Китай: https://s3-cn-north-1.qiniucs.com
+   Южен Китай: https://s3-cn-south-1.qiniucs.com
+   Северна Америка: https://s3-us-north-1.qiniucs.com
+4. Регион: съвпадащ код, напр. cn-изток-1.</value>
+  </data>
+  <data name="S3_Provider_ScalewayObjectStorage_Help" xml:space="preserve">
+    <value>Scaleway Object Storage — европейско S3-съвместимо хранилище.
+
+1. В Scaleway Console (https://console.scaleway.com/object-storage/buckets), създайте кофа. Отбележете неговия регион (напр. fr-par).
+2. Отидете на IAM → API ключове → Генериране на API ключ с разрешения за запис на Object Storage.
+   Копирайте ключа за достъп и секретния ключ.
+3. URL адрес на услугата: https://s3.&lt;REGION&gt;.scw.cloud (напр. https://s3.fr-par.scw.cloud).
+4. Регион: напр. fr-par, nl-ams, pl-waw.</value>
+  </data>
+  <data name="S3_Provider_SelectelStorage_Help" xml:space="preserve">
+    <value>Selectel Object Storage — S3-съвместимо руско хранилище.
+
+1. В панела Selectel (https://my.selectel.ru/) → Cloud Storage → създайте контейнер (= кофа).
+2. Под Потребители и роли създайте потребител на услуга с достъп до хранилище → S3 ключове → създайте двойка ключове.
+   Копирайте ключа за достъп и секретния ключ.
+3. Попълнете: Bucket, Access Key, Secret Key.
+   URL адресът на услугата се попълва автоматично.</value>
+  </data>
+  <data name="S3_Provider_TencentCloudCOS_Help" xml:space="preserve">
+    <value>Tencent Cloud COS — S3-съвместимо съхранение на обекти от Tencent.
+
+1. В COS Console (https://console.cloud.tencent.com/cos) създайте кофа. Обърнете внимание на AppId и Region (напр. ap-beijing).
+2. В Access Management → API Keys → Create Key.
+   Копирайте SecretId (= Ключ за достъп) и SecretKey (= Таен ключ).
+3. URL адрес на услугата: https://cos.&lt;REGION&gt;.myqcloud.com (напр. https://cos.ap-beijing.myqcloud.com).
+4. Формат на името на кофата: &lt;име&gt;-&lt;AppId&gt; (напр. mybucket-1250000000). Регион: напр. ап-Пекин.</value>
+  </data>
+  <data name="S3_Provider_VKCloudStorage_Help" xml:space="preserve">
+    <value>VK Cloud Object Storage — S3-съвместимо хранилище от VK Cloud.
+
+1. Във VK Cloud Portal (https://msk.cloud.vk.com/) → Cloud Storage → създайте кофа.
+2. Под вашия акаунт → Ключове за достъп → създайте нова двойка ключове.
+   Копирайте ключа за достъп и секретния ключ.
+3. Попълнете: Bucket, Access Key, Secret Key и Region, ако е необходимо (напр. ru-msk).
+   URL адресът на услугата се попълва автоматично.</value>
+  </data>
+  <data name="S3_Provider_VolcanoEngineTOS_Help" xml:space="preserve">
+    <value>Volcano Engine TOS (ByteDance) — съхранение, съвместимо с S3.
+
+1. Във Volcano Engine Console (https://console.volcengine.com/tos) създайте кофа. Отбележете неговия регион (напр. cn-beijing).
+2. Отидете на IAM → Ключове за достъп → създайте ключ.
+   Копирайте ID на ключа за достъп и секретния ключ за достъп.
+3. URL адрес на услугата: https://tos-s3-&lt;REGION&gt;.volces.com (напр. https://tos-s3-cn-beijing.volces.com).
+4. Регион: напр. cn-пекин.</value>
+  </data>
+  <data name="S3_Provider_Wasabi_Help" xml:space="preserve">
+    <value>Wasabi — хранилище в горещ облак без изходни такси.
+
+1. В Wasabi Console (https://console.wasabisys.com/) → Кофи → Създаване на кофа. Изберете регион.
+2. Отидете на Ключове за достъп → Създаване на нов ключ за достъп. Копирайте ключа за достъп и секретния ключ.
+3. Попълнете: Bucket, Access Key, Secret Key и Region (напр. us-east-1, eu-central-1).
+   URL адресът на услугата се попълва автоматично.</value>
+  </data>
+  <data name="S3_Provider_YandexObjectStorage_Help" xml:space="preserve">
+    <value>Yandex Object Storage — S3-съвместимо руско облачно хранилище.
+
+1. В Yandex Cloud Console (https://console.yandex.cloud/) → Object Storage → създайте кофа.
+2. Отидете на Сервизни акаунти → създайте такъв с ролята на storage.editor → създайте статичен ключ за достъп.
+   Копирайте ИД на ключа (= ключ за достъп) и секретния ключ.
+3. Попълнете: Bucket, Access Key, Secret Key.
+   URL адресът и регионът на услугата се задават автоматично.</value>
   </data>
   <data name="Server_Field_Address" xml:space="preserve">
     <value>Име на сървъра:</value>
@@ -988,177 +1170,6 @@ bin.
   <data name="User_Field_Validation" xml:space="preserve">
     <value>Потребителят не е указан.</value>
   </data>
-  <data name="S3_Provider_AlibabaCloudOSS_Help" xml:space="preserve">
-    <value>Alibaba Cloud OSS — S3-съвместимо съхранение на обекти от Alibaba.
-
-1. В OSS Console (https://oss.console.aliyun.com/) създайте кофа. Обърнете внимание на неговия регион (напр. oss-cn-hangzhou).
-2. В RAM Console → Потребители → създайте потребител → прикачете AliyunOSSFullAccess → създайте AccessKey.
-   Копирайте AccessKey ID (= Ключ за достъп) и AccessKey Secret (= Таен ключ).
-3. URL адрес на услугата: https://oss-&lt;REGION&gt;.aliyuncs.com (напр. https://oss-cn-hangzhou.aliyuncs.com).
-4. Регион: напр. oss-cn-хангжу.</value>
-  </data>
-  <data name="S3_Provider_AWSS3_Help" xml:space="preserve">
-    <value>AWS S3 — оригиналното хранилище на обекти на Amazon.
-
-1. Отворете конзолата S3 (https://s3.console.aws.amazon.com/) и създайте кофа. Обърнете внимание на неговия регион (напр. us-east-1).
-2. Отворете IAM → Потребители → създайте потребител → прикачете правилото AmazonS3FullAccess.
-3. Под идентификационните данни за сигурност създайте ключ за достъп — копирайте ИД на ключа и тайната.
-4. Попълнете: Bucket, Access Key, Secret Key и Region.</value>
-  </data>
-  <data name="S3_Provider_BaiduCloudBOS_Help" xml:space="preserve">
-    <value>Baidu Cloud BOS — S3-съвместимо хранилище на обекти от Baidu.
-
-1. В BOS Console (https://console.bce.baidu.com/bos/) създайте кофа. Отбележете неговия регион (напр. bj, gz, su).
-2. Отидете на Сигурност → Ключове за достъп — копирайте вашия ID на ключа за достъп и секретния ключ за достъп.
-3. URL адрес на услугата: https://s3.&lt;REGION&gt;.bcebos.com (напр. https://s3.bj.bcebos.com).
-4. Регион: напр. bj.</value>
-  </data>
-  <data name="S3_Provider_BackblazeB2_Help" xml:space="preserve">
-    <value>Backblaze B2 — достъпно S3-съвместимо хранилище.
-
-1. В Backblaze (https://www.backblaze.com/) → B2 Cloud Storage → Buckets създайте кофа.
-2. Отидете на App Keys → Add a New Application Key, обхванете го в кофата.
-   Копирайте keyID (= ключ за достъп) и applicationKey (= таен ключ).
-3. URL адрес на услугата: крайната точка на вашата кофа, показана в подробности за кофата, напр. https://s3.us-west-004.backblazeb2.com
-4. Регион: сегментът между &apos;s3.&apos; и &apos;.backblazeb2.com&apos;, напр. us-west-004.</value>
-  </data>
-  <data name="S3_Provider_CloudflareR2_Help" xml:space="preserve">
-    <value>Cloudflare R2 — S3-съвместимо хранилище с нулев изход.
-
-1. В таблото за управление на Cloudflare (https://dash.cloudflare.com/) → R2 → създайте кофа.
-2. Отидете на R2 → Управление на R2 API токени → Създаване на API токен с четене и запис на обект.
-   Копирайте ID на ключа за достъп и секретния ключ за достъп.
-3. URL адрес на услугата: https://&lt;ACCOUNT_ID&gt;.r2.cloudflarestorage.com
-   Идентификационният номер на вашия акаунт е показан на страницата за преглед на R2.
-4. Попълнете: Bucket, Access Key, Secret Key и Service URL. Регионът автоматично се задава на „автоматично“.</value>
-  </data>
-  <data name="S3_Provider_CloudRuStorage_Help" xml:space="preserve">
-    <value>Cloud.ru (SberCloud) Object Storage — OBS съхранение, съвместимо със S3.
-
-1. В Cloud.ru Console (https://cloud.ru/) → Object Storage Service (OBS) → създайте кофа.
-2. Отидете на Моите идентификационни данни → Ключове за достъп → Добавяне на ключ за достъп.
-   Копирайте ключа за достъп и секретния ключ за достъп.
-3. Попълнете: Bucket, Access Key, Secret Key и Region (напр. ru-moscow-1).
-   URL адресът на услугата се попълва автоматично.</value>
-  </data>
-  <data name="S3_Provider_Custom_Help" xml:space="preserve">
-    <value>MinIO или всеки S3-съвместим сървър.
-
-1. Стартирайте вашия MinIO (или друг S3-съвместим) сървър.
-2. Създайте кофа чрез конзолата MinIO или &apos;mc mb &lt;alias&gt;/&lt;bucket&gt;&apos;.
-3. Създайте ключ за достъп в MinIO Console → Ключове за достъп (избягвайте root идентификационни данни в производството).
-4. URL адрес на услугата: вашата крайна точка на сървъра, напр. http://192.168.1.10:9000 или https://minio.example.com.
-5. Регион: всяка стойност (напр. us-east-1) — или оставете празно, ако сървърът не я прилага.</value>
-  </data>
-  <data name="S3_Provider_DigitalOceanSpaces_Help" xml:space="preserve">
-    <value>DigitalOcean Spaces — S3-съвместимо съхранение на обекти.
-
-1. В Spaces (https://cloud.digitalocean.com/spaces), създайте Space. Обърнете внимание на неговия регион (напр. nyc3).
-2. Отидете на API → Ключове за интервали → Генериране на нов ключ. Копирайте ключа (= ключ за достъп) и секрета.
-3. URL адрес на услугата: https://&lt;REGION&gt;.digitaloceanspaces.com (напр. https://nyc3.digitaloceanspaces.com).
-4. Регион: същият кратък код, напр. nyc3.</value>
-  </data>
-  <data name="S3_Provider_GoogleCloudStorage_Help" xml:space="preserve">
-    <value>Google Cloud Storage — чрез S3 API за оперативна съвместимост.
-
-1. В Google Cloud Console (https://console.cloud.google.com/storage) създайте кофа.
-2. Отидете на Cloud Storage → Settings → Interoperability → създайте HMAC ключ за акаунт за услуга.
-   Копирайте ключа за достъп и секрета.
-3. Попълнете: Bucket, Access Key (HMAC key), Secret Key (HMAC secret).
-   URL адресът и регионът на услугата се задават автоматично.</value>
-  </data>
-  <data name="S3_Provider_HuaweiCloudOBS_Help" xml:space="preserve">
-    <value>Huawei Cloud OBS — S3-съвместимо хранилище на обекти от Huawei.
-
-1. В OBS Console (https://console.huaweicloud.com/obs/) създайте кофа. Отбележете неговия регион (напр. cn-north-4).
-2. Отидете на Моите идентификационни данни → Ключове за достъп → Създаване на ключ за достъп.
-   Копирайте AK (= ключ за достъп) и SK (= таен ключ).
-3. URL адрес на услугата: https://obs.&lt;REGION&gt;.myhuaweicloud.com (напр. https://obs.cn-north-4.myhuaweicloud.com).
-4. Регион: напр. cn-север-4.</value>
-  </data>
-  <data name="S3_Provider_LinodeObjectStorage_Help" xml:space="preserve">
-    <value>Linode (Akamai) Object Storage — S3-съвместимо хранилище.
-
-1. В Linode Cloud Manager (https://cloud.linode.com/object-storage/buckets), създайте кофа. Обърнете внимание на неговия клъстер.
-2. Отидете на Object Storage → Ключове за достъп → Създаване на ключ за достъп, обхванат от кофата.
-   Копирайте ключа за достъп и секретния ключ.
-3. URL адрес на услугата: https://&lt;CLUSTER&gt;.linodeobjects.com (напр. https://us-east-1.linodeobjects.com).
-4. Регион: същият код на клъстера, напр. нас-изток-1.</value>
-  </data>
-  <data name="S3_Provider_QiniuCloudKodo_Help" xml:space="preserve">
-    <value>Qiniu Cloud Kodo — S3-съвместимо хранилище от Qiniu.
-
-1. В портала Qiniu (https://portal.qiniu.com/kodo/bucket) създайте кофа. Обърнете внимание на неговия регион.
-2. Отидете на Personal Center → Key Management — копирайте вашия AccessKey и SecretKey.
-3. URL адрес на услугата по регион:
-   Източен Китай: https://s3-cn-east-1.qiniucs.com
-   Северен Китай: https://s3-cn-north-1.qiniucs.com
-   Южен Китай: https://s3-cn-south-1.qiniucs.com
-   Северна Америка: https://s3-us-north-1.qiniucs.com
-4. Регион: съвпадащ код, напр. cn-изток-1.</value>
-  </data>
-  <data name="S3_Provider_ScalewayObjectStorage_Help" xml:space="preserve">
-    <value>Scaleway Object Storage — европейско S3-съвместимо хранилище.
-
-1. В Scaleway Console (https://console.scaleway.com/object-storage/buckets), създайте кофа. Отбележете неговия регион (напр. fr-par).
-2. Отидете на IAM → API ключове → Генериране на API ключ с разрешения за запис на Object Storage.
-   Копирайте ключа за достъп и секретния ключ.
-3. URL адрес на услугата: https://s3.&lt;REGION&gt;.scw.cloud (напр. https://s3.fr-par.scw.cloud).
-4. Регион: напр. fr-par, nl-ams, pl-waw.</value>
-  </data>
-  <data name="S3_Provider_SelectelStorage_Help" xml:space="preserve">
-    <value>Selectel Object Storage — S3-съвместимо руско хранилище.
-
-1. В панела Selectel (https://my.selectel.ru/) → Cloud Storage → създайте контейнер (= кофа).
-2. Под Потребители и роли създайте потребител на услуга с достъп до хранилище → S3 ключове → създайте двойка ключове.
-   Копирайте ключа за достъп и секретния ключ.
-3. Попълнете: Bucket, Access Key, Secret Key.
-   URL адресът на услугата се попълва автоматично.</value>
-  </data>
-  <data name="S3_Provider_TencentCloudCOS_Help" xml:space="preserve">
-    <value>Tencent Cloud COS — S3-съвместимо съхранение на обекти от Tencent.
-
-1. В COS Console (https://console.cloud.tencent.com/cos) създайте кофа. Обърнете внимание на AppId и Region (напр. ap-beijing).
-2. В Access Management → API Keys → Create Key.
-   Копирайте SecretId (= Ключ за достъп) и SecretKey (= Таен ключ).
-3. URL адрес на услугата: https://cos.&lt;REGION&gt;.myqcloud.com (напр. https://cos.ap-beijing.myqcloud.com).
-4. Формат на името на кофата: &lt;име&gt;-&lt;AppId&gt; (напр. mybucket-1250000000). Регион: напр. ап-Пекин.</value>
-  </data>
-  <data name="S3_Provider_VKCloudStorage_Help" xml:space="preserve">
-    <value>VK Cloud Object Storage — S3-съвместимо хранилище от VK Cloud.
-
-1. Във VK Cloud Portal (https://msk.cloud.vk.com/) → Cloud Storage → създайте кофа.
-2. Под вашия акаунт → Ключове за достъп → създайте нова двойка ключове.
-   Копирайте ключа за достъп и секретния ключ.
-3. Попълнете: Bucket, Access Key, Secret Key и Region, ако е необходимо (напр. ru-msk).
-   URL адресът на услугата се попълва автоматично.</value>
-  </data>
-  <data name="S3_Provider_VolcanoEngineTOS_Help" xml:space="preserve">
-    <value>Volcano Engine TOS (ByteDance) — съхранение, съвместимо с S3.
-
-1. Във Volcano Engine Console (https://console.volcengine.com/tos) създайте кофа. Отбележете неговия регион (напр. cn-beijing).
-2. Отидете на IAM → Ключове за достъп → създайте ключ.
-   Копирайте ID на ключа за достъп и секретния ключ за достъп.
-3. URL адрес на услугата: https://tos-s3-&lt;REGION&gt;.volces.com (напр. https://tos-s3-cn-beijing.volces.com).
-4. Регион: напр. cn-пекин.</value>
-  </data>
-  <data name="S3_Provider_Wasabi_Help" xml:space="preserve">
-    <value>Wasabi — хранилище в горещ облак без изходни такси.
-
-1. В Wasabi Console (https://console.wasabisys.com/) → Кофи → Създаване на кофа. Изберете регион.
-2. Отидете на Ключове за достъп → Създаване на нов ключ за достъп. Копирайте ключа за достъп и секретния ключ.
-3. Попълнете: Bucket, Access Key, Secret Key и Region (напр. us-east-1, eu-central-1).
-   URL адресът на услугата се попълва автоматично.</value>
-  </data>
-  <data name="S3_Provider_YandexObjectStorage_Help" xml:space="preserve">
-    <value>Yandex Object Storage — S3-съвместимо руско облачно хранилище.
-
-1. В Yandex Cloud Console (https://console.yandex.cloud/) → Object Storage → създайте кофа.
-2. Отидете на Сервизни акаунти → създайте такъв с ролята на storage.editor → създайте статичен ключ за достъп.
-   Копирайте ИД на ключа (= ключ за достъп) и секретния ключ.
-3. Попълнете: Bucket, Access Key, Secret Key.
-   URL адресът и регионът на услугата се задават автоматично.</value>
-  </data>
   <data name="WebDav_Preset_Box_Help" xml:space="preserve">
     <value>Box — корпоративно облачно хранилище с поддръжка на WebDAV.
 
@@ -1248,7 +1259,9 @@ bin.
 3. Въведете паролата за приложение (не паролата за вашия акаунт в Yandex) като парола.
    Адресът на сървъра, HTTPS и портът се конфигурират автоматично.</value>
   </data>
-
+  <data name="WhatTask_Description" xml:space="preserve">
+    <value>Тук можете да посочите папките, които искате да архивирате.</value>
+  </data>
   <data name="Winget_Description" xml:space="preserve">
     <value>Архивирайте/синхронизирайте вашите данни под Windows, Linux.
 Импортирайте снимки от телефон чрез WI-FI и още.

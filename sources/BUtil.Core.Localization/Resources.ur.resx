@@ -1,5 +1,4 @@
 <root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -256,14 +255,14 @@
   <data name="Field_Folder_Validation_Empty" xml:space="preserve">
     <value>فولڈر کی وضاحت نہیں کی گئی۔</value>
   </data>
-  <data name="Field_Validation_NotSpecified" xml:space="preserve">
-    <value>{0} کی وضاحت نہیں کی گئی۔</value>
-  </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>فولڈر موجود نہیں۔</value>
   </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>پروٹوکول:</value>
+  </data>
+  <data name="Field_Validation_NotSpecified" xml:space="preserve">
+    <value>{0} کی وضاحت نہیں کی گئی۔</value>
   </data>
   <data name="Field_Version" xml:space="preserve">
     <value>ورژن:</value>
@@ -325,14 +324,26 @@
   <data name="ImportMediaTask_Create" xml:space="preserve">
     <value>میڈیا ٹاسک درآمد کریں</value>
   </data>
+  <data name="ImportMediaTask_DeleteCopiedDataOnSourceMedia" xml:space="preserve">
+    <value>ماخذ میڈیا سے کاپی شدہ ڈیٹا حذف کریں</value>
+  </data>
   <data name="ImportMediaTask_Edit_Title" xml:space="preserve">
     <value>ایڈیٹ کریں "{0}" میڈیا درآمد ٹاسک</value>
+  </data>
+  <data name="ImportMediaTask_Field_FileExtensions" xml:space="preserve">
+    <value>फ़ाइल एक्सटेंशन:</value>
+  </data>
+  <data name="ImportMediaTask_Field_FileExtensions_Help" xml:space="preserve">
+    <value>आयात करने के लिए एक्सटेंशन की अल्पविराम से अलग सूची (उदाहरण .jpg, .png, .mp3)। सभी फ़ाइलें आयात करने के लिए खाली छोड़ें।</value>
   </data>
   <data name="ImportMediaTask_Field_OutputFolder" xml:space="preserve">
     <value>آؤٹ پٹ فولڈر:</value>
   </data>
   <data name="ImportMediaTask_Field_TransformFileName" xml:space="preserve">
     <value>فائل نام کی تبدیلی:</value>
+  </data>
+  <data name="ImportMediaTask_Field_TransformFileName_Documentation" xml:space="preserve">
+    <value>दिनांक प्रारूप दस्तावेज़</value>
   </data>
   <data name="ImportMediaTask_Field_TransformFileName_Example" xml:space="preserve">
     <value>مثال:
@@ -359,17 +370,20 @@
 
   فائل کی ترسیل کے طریقے کے لئے ایپلیکیشن کی ویب سائٹ پر دستاویزات دیکھیں۔</value>
   </data>
-  <data name="ImportMediaTask_Storage_Help" xml:space="preserve">
-    <value>میڈیا درآمد کرنے کا ماخذ بتائیں — مثال کے طور پر ایک SD کارڈ، کیمرہ فولڈر، یا FTPS کے ذریعے فون۔</value>
-  </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
     <value>درآمد ڈیٹا کا ماخذ</value>
   </data>
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>پہلے سے درآمد شدہ فائلوں کو چھوڑ دیں</value>
   </data>
-  <data name="ImportMediaTask_DeleteCopiedDataOnSourceMedia" xml:space="preserve">
-    <value>ماخذ میڈیا سے کاپی شدہ ڈیٹا حذف کریں</value>
+  <data name="ImportMediaTask_SkipAlreadyImportedFiles_Help" xml:space="preserve">
+    <value>सक्षम होने पर, एप्लिकेशन उन फ़ाइलों को छोड़ देता है जो गंतव्य फ़ोल्डर में पहले से मौजूद हैं या पहले आयात की जा चुकी हैं। पहले आयातित फ़ाइल नाम याद रखे जाते हैं, इसलिए बाद में गंतव्य से उसकी प्रतिलिपि हटाने पर भी फ़ाइल फिर से संसाधित नहीं होती।</value>
+  </data>
+  <data name="ImportMediaTask_Storage_Help" xml:space="preserve">
+    <value>میڈیا درآمد کرنے کا ماخذ بتائیں — مثال کے طور پر ایک SD کارڈ، کیمرہ فولڈر، یا FTPS کے ذریعے فون۔</value>
+  </data>
+  <data name="ImportMediaTask_Storage_Validation_TooBroad" xml:space="preserve">
+    <value>चयनित फ़ोल्डर डिवाइस या होम रूट जैसा लगता है क्योंकि इसमें कई ज्ञात मीडिया फ़ोल्डर ({0}) हैं। कृपया अधिक विशिष्ट फ़ोल्डर चुनें, उदाहरण के लिए "{1}"।</value>
   </data>
   <data name="ImproveIt_Message" xml:space="preserve">
     <value>ایک غیر متوقع غلطی پیش آئی۔
@@ -451,9 +465,6 @@
   <data name="LeftMenu_What_Hint" xml:space="preserve">
     <value>یہاں آپ ان فولڈرز اور فائلوں کو شامل کرسکتے ہیں جنہیں آپ پروسیس کرنا چاہتے ہیں۔</value>
   </data>
-  <data name="WhatTask_Description" xml:space="preserve">
-    <value>یہاں آپ ان فولڈرز کی وضاحت کر سکتے ہیں جن کا آپ بیک اپ لینا چاہتے ہیں۔</value>
-  </data>
   <data name="LeftMenu_What_Validation" xml:space="preserve">
     <value>پروسیس کرنے کے لیے کوئی آئٹمز نہیں۔</value>
   </data>
@@ -462,9 +473,6 @@
   </data>
   <data name="LeftMenu_When_Help" xml:space="preserve">
     <value>یہاں آپ شیڈولر ترتیب دے سکتے ہیں۔ شیڈولر آپ کو ٹاسک کے آغاز کو خودکار کرنے میں مدد دے سکتا ہے۔</value>
-  </data>
-  <data name="RunAtLogin_Label" xml:space="preserve">
-    <value>لاگ اِن پر چلائیں</value>
   </data>
   <data name="LeftMenu_When_Optional_Hint" xml:space="preserve">
     <value>یہ سیکشن اختیاری ہے۔ اگر آپ اسے چھوڑ دیتے ہیں تو کام صرف اس وقت چلے گا جب آپ اسے دستی طور پر چلائیں گے۔</value>
@@ -517,11 +525,11 @@
   <data name="Name_Field_Validation" xml:space="preserve">
     <value>نام خالی ہے یا غیر حمایت یافتہ راستے کے کردار پر مشتمل ہے۔</value>
   </data>
-  <data name="Name_Field_Validation_ExceedsLimit" xml:space="preserve">
-    <value>نام '{0}' کی لمبائی حد سے تجاوز کر گئی ہے {1} کرداروں سے۔</value>
-  </data>
   <data name="Name_Field_Validation_Duplicate" xml:space="preserve">
     <value>اس نام کا ایک کام پہلے سے موجود ہے۔</value>
+  </data>
+  <data name="Name_Field_Validation_ExceedsLimit" xml:space="preserve">
+    <value>نام '{0}' کی لمبائی حد سے تجاوز کر گئی ہے {1} کرداروں سے۔</value>
   </data>
   <data name="Name_Title" xml:space="preserve">
     <value>نام</value>
@@ -577,6 +585,180 @@
   </data>
   <data name="RestoreFrom_Field_Validation_StateInvalid" xml:space="preserve">
     <value>حالت کو پڑھا نہیں جا سکا۔</value>
+  </data>
+  <data name="RunAtLogin_Label" xml:space="preserve">
+    <value>لاگ اِن پر چلائیں</value>
+  </data>
+  <data name="S3_Provider_AlibabaCloudOSS_Help" xml:space="preserve">
+    <value>علی بابا کلاؤڈ OSS - علی بابا کی طرف سے S3 سے مطابقت رکھنے والا آبجیکٹ اسٹوریج۔
+
+1. OSS کنسول (https://oss.console.aliyun.com/) میں، ایک بالٹی بنائیں۔ اس کا علاقہ نوٹ کریں (جیسے oss-cn-hangzhou)۔
+2. RAM کنسول میں → صارفین → ایک صارف بنائیں → AliyunOSSFullAccess منسلک کریں → ایک AccessKey بنائیں۔
+   AccessKey ID (= Access Key) اور AccessKey سیکرٹ (= خفیہ کلید) کاپی کریں۔
+3. سروس URL: https://oss-&lt;REGION&gt;.aliyuncs.com (جیسے https://oss-cn-hangzhou.aliyuncs.com)۔
+4. علاقہ: جیسے oss-cn-hangzhou.</value>
+  </data>
+  <data name="S3_Provider_AWSS3_Help" xml:space="preserve">
+    <value>AWS S3 - ایمیزون کا اصل آبجیکٹ اسٹوریج۔
+
+1. S3 کنسول کھولیں (https://s3.console.aws.amazon.com/) اور ایک بالٹی بنائیں۔ اس کا علاقہ نوٹ کریں (جیسے us-east-1)۔
+2. کھولیں IAM → صارفین → ایک صارف بنائیں → AmazonS3FullAccess پالیسی منسلک کریں۔
+3. سیکورٹی اسناد کے تحت، ایک رسائی کلید بنائیں — کلید ID اور خفیہ کاپی کریں۔
+4. بھریں: بالٹی، رسائی کلید، خفیہ کلید، اور علاقہ۔</value>
+  </data>
+  <data name="S3_Provider_BackblazeB2_Help" xml:space="preserve">
+    <value>Backblaze B2 - سستی S3 سے مطابقت رکھنے والا اسٹوریج۔
+
+1. بیک بلیز میں (https://www.backblaze.com/) → B2 کلاؤڈ اسٹوریج → بالٹیاں، ایک بالٹی بنائیں۔
+2. ایپ کیز پر جائیں → ایک نئی ایپلیکیشن کلید شامل کریں، اسے بالٹی تک اسکوپ کریں۔
+   کی آئی ڈی (= رسائی کلید) اور ایپلیکیشن کی (= خفیہ کلید) کاپی کریں۔
+3. سروس یو آر ایل: آپ کی بالٹی کا اختتامی نقطہ بالٹی کی تفصیلات میں دکھایا گیا ہے، جیسے https://s3.us-west-004.backblazeb2.com
+4. علاقہ: 's3' کے درمیان کا حصہ۔ اور '.backblazeb2.com'، جیسے us-west-004۔</value>
+  </data>
+  <data name="S3_Provider_BaiduCloudBOS_Help" xml:space="preserve">
+    <value>Baidu Cloud BOS — Baidu کی طرف سے S3 سے مطابقت رکھنے والا آبجیکٹ اسٹوریج۔
+
+1. BOS کنسول (https://console.bce.baidu.com/bos/) میں، ایک بالٹی بنائیں۔ اس کا علاقہ نوٹ کریں (جیسے bj, gz, su)۔
+2. سیکیورٹی → رسائی کیز پر جائیں — اپنی رسائی کلید ID اور خفیہ رسائی کلید کو کاپی کریں۔
+3. سروس URL: https://s3.&lt;REGION&gt;.bcebos.com (جیسے https://s3.bj.bcebos.com)۔
+4. علاقہ: جیسے بی جے</value>
+  </data>
+  <data name="S3_Provider_CloudflareR2_Help" xml:space="preserve">
+    <value>Cloudflare R2 - صفر-ایگریس S3-مطابق اسٹوریج۔
+
+1. Cloudflare ڈیش بورڈ میں (https://dash.cloudflare.com/) → R2 → ایک بالٹی بنائیں۔
+2. R2 پر جائیں → R2 API ٹوکنز کا نظم کریں → آبجیکٹ پڑھنے اور لکھنے کے ساتھ API ٹوکن بنائیں۔
+   رسائی کلید ID اور خفیہ رسائی کلید کو کاپی کریں۔
+3. سروس URL: https://&lt;ACCOUNT_ID&gt;.r2.cloudflarestorage.com
+   آپ کے اکاؤنٹ کی شناخت R2 جائزہ صفحہ پر دکھائی دیتی ہے۔
+4. بھریں: بالٹی، رسائی کلید، خفیہ کلید، اور سروس یو آر ایل۔ علاقہ خود بخود 'خودکار' پر سیٹ ہے۔</value>
+  </data>
+  <data name="S3_Provider_CloudRuStorage_Help" xml:space="preserve">
+    <value>Cloud.ru (SberCloud) آبجیکٹ اسٹوریج — S3 سے مطابقت رکھنے والا OBS اسٹوریج۔
+
+1. Cloud.ru کنسول میں (https://cloud.ru/) → آبجیکٹ اسٹوریج سروس (OBS) → ایک بالٹی بنائیں۔
+2. میری اسناد → رسائی کیز → رسائی کلید شامل کریں پر جائیں۔
+   رسائی کلید اور خفیہ رسائی کلید کو کاپی کریں۔
+3. بھریں: بالٹی، ایکسیس کی، خفیہ کلید، اور علاقہ (جیسے ru-moscow-1)۔
+   سروس یو آر ایل خود بخود بھر جاتا ہے۔</value>
+  </data>
+  <data name="S3_Provider_Custom_Help" xml:space="preserve">
+    <value>MinIO یا S3 سے مطابقت رکھنے والا کوئی بھی سرور۔
+
+1. اپنا MinIO (یا دیگر S3 سے ہم آہنگ) سرور شروع کریں۔
+2. MinIO کنسول یا 'mc mb &lt;alias&gt;/&lt;bucket&gt;' کے ذریعے ایک بالٹی بنائیں۔
+3. MinIO کنسول → رسائی کیز میں ایک رسائی کلید بنائیں (پروڈکشن میں روٹ اسناد سے بچیں)۔
+4. سروس URL: آپ کے سرور کا اختتامی نقطہ، جیسے http://192.168.1.10:9000 یا https://minio.example.com۔
+5. علاقہ: کوئی بھی قدر (جیسے us-east-1) — یا خالی چھوڑ دیں اگر سرور اسے نافذ نہیں کرتا ہے۔</value>
+  </data>
+  <data name="S3_Provider_DigitalOceanSpaces_Help" xml:space="preserve">
+    <value>DigitalOcean Spaces - S3 کے موافق آبجیکٹ اسٹوریج۔
+
+1. Spaces میں (https://cloud.digitalocean.com/spaces)، ایک اسپیس بنائیں۔ اس کا علاقہ نوٹ کریں (جیسے nyc3)۔
+2. API پر جائیں → Spaces Keys → نئی کلید بنائیں۔ کلید (= رسائی کلید) اور خفیہ کاپی کریں۔
+3. سروس URL: https://&lt;REGION&gt;.digitaloceanspaces.com (جیسے https://nyc3.digitaloceanspaces.com)۔
+4. علاقہ: وہی مختصر کوڈ، جیسے nyc3.</value>
+  </data>
+  <data name="S3_Provider_GoogleCloudStorage_Help" xml:space="preserve">
+    <value>Google Cloud Storage — S3 انٹرآپریبلٹی API کے ذریعے۔
+
+1. Google Cloud Console (https://console.cloud.google.com/storage) میں، ایک بالٹی بنائیں۔
+2. کلاؤڈ اسٹوریج → سیٹنگز → انٹرآپریبلٹی → پر جائیں سروس اکاؤنٹ کے لیے ایک HMAC کلید بنائیں۔
+   رسائی کلید اور راز کو کاپی کریں۔
+3. بھریں: بالٹی، ایکسیس کی (HMAC کلید)، خفیہ کلید (HMAC خفیہ)۔
+   سروس یو آر ایل اور علاقہ خود بخود سیٹ ہو جاتا ہے۔</value>
+  </data>
+  <data name="S3_Provider_HuaweiCloudOBS_Help" xml:space="preserve">
+    <value>Huawei Cloud OBS - Huawei کی طرف سے S3-مطابق آبجیکٹ اسٹوریج۔
+
+1. OBS کنسول (https://console.huaweicloud.com/obs/) میں، ایک بالٹی بنائیں۔ اس کا علاقہ نوٹ کریں (جیسے cn-north-4)۔
+2. میری اسناد → رسائی کیز → رسائی کلید بنائیں پر جائیں۔
+   AK (= رسائی کلید) اور SK (= خفیہ کلید) کو کاپی کریں۔
+3. سروس URL: https://obs.&lt;REGION&gt;.myhuaweicloud.com (جیسے https://obs.cn-north-4.myhuaweicloud.com)۔
+4. علاقہ: جیسے cn-north-4.</value>
+  </data>
+  <data name="S3_Provider_LinodeObjectStorage_Help" xml:space="preserve">
+    <value>Linode (Akamai) آبجیکٹ اسٹوریج - S3 سے مطابقت رکھنے والا اسٹوریج۔
+
+1. لینوڈ کلاؤڈ مینیجر (https://cloud.linode.com/object-storage/buckets) میں، ایک بالٹی بنائیں۔ اس کا کلسٹر نوٹ کریں۔
+2. آبجیکٹ اسٹوریج → رسائی کیز پر جائیں
+   رسائی کلید اور خفیہ کلید کو کاپی کریں۔
+3. سروس URL: https://&lt;CLUSTER&gt;.linodeobjects.com (جیسے https://us-east-1.linodeobjects.com)۔
+4. علاقہ: ایک ہی کلسٹر کوڈ، جیسے us-east-1۔</value>
+  </data>
+  <data name="S3_Provider_QiniuCloudKodo_Help" xml:space="preserve">
+    <value>Qiniu Cloud Kodo — Qiniu سے S3-مطابق اسٹوریج۔
+
+1. Qiniu پورٹل میں (https://portal.qiniu.com/kodo/bucket)، ایک بالٹی بنائیں۔ اس کا علاقہ نوٹ کریں۔
+2. پرسنل سینٹر → کلیدی انتظام پر جائیں — اپنی AccessKey اور SecretKey کو کاپی کریں۔
+3. علاقے کے لحاظ سے سروس URL:
+   مشرقی چین: https://s3-cn-east-1.qiniucs.com
+   شمالی چین: https://s3-cn-north-1.qiniucs.com
+   جنوبی چین: https://s3-cn-south-1.qiniucs.com
+   شمالی امریکہ: https://s3-us-north-1.qiniucs.com
+4. علاقہ: مماثل کوڈ، جیسے cn-east-1.</value>
+  </data>
+  <data name="S3_Provider_ScalewayObjectStorage_Help" xml:space="preserve">
+    <value>اسکیل وے آبجیکٹ اسٹوریج - یورپی S3-مطابق اسٹوریج۔
+
+1. اسکیل وے کنسول (https://console.scaleway.com/object-storage/buckets) میں، ایک بالٹی بنائیں۔ اس کا علاقہ نوٹ کریں (جیسے fr-par)۔
+2. IAM پر جائیں → API کیز → آبجیکٹ اسٹوریج لکھنے کی اجازت کے ساتھ API کلید بنائیں۔
+   رسائی کلید اور خفیہ کلید کو کاپی کریں۔
+3. سروس URL: https://s3.&lt;REGION&gt;.scw.cloud (جیسے https://s3.fr-par.scw.cloud)۔
+4. علاقہ: جیسے fr-par، nl-ams، pl-waw.</value>
+  </data>
+  <data name="S3_Provider_SelectelStorage_Help" xml:space="preserve">
+    <value>سلیکٹیل آبجیکٹ سٹوریج - S3 کے موافق روسی اسٹوریج۔
+
+1. سلیکٹیل پینل میں (https://my.selectel.ru/) → کلاؤڈ اسٹوریج → ایک کنٹینر بنائیں (= بالٹی)۔
+2. صارفین اور کردار کے تحت، اسٹوریج تک رسائی کے ساتھ ایک سروس صارف بنائیں → S3 کیز → ایک کلیدی جوڑا بنائیں۔
+   رسائی کلید اور خفیہ کلید کو کاپی کریں۔
+3. بھریں: بالٹی، رسائی کلید، خفیہ کلید۔
+   سروس یو آر ایل خود بخود بھر جاتا ہے۔</value>
+  </data>
+  <data name="S3_Provider_TencentCloudCOS_Help" xml:space="preserve">
+    <value>Tencent Cloud COS - Tencent کی طرف سے S3-مطابق آبجیکٹ اسٹوریج۔
+
+1. COS کنسول (https://console.cloud.tencent.com/cos) میں، ایک بالٹی بنائیں۔ AppId اور خطہ (جیسے ap-beijing) کو نوٹ کریں۔
+2. رسائی کے انتظام میں → API کیز → Create Key۔
+   سیکریٹ آئی ڈی (= رسائی کلید) اور سیکریٹ کی (= خفیہ کلید) کو کاپی کریں۔
+3. سروس URL: https://cos.&lt;REGION&gt;.myqcloud.com (جیسے https://cos.ap-beijing.myqcloud.com)۔
+4. بالٹی کے نام کی شکل: &lt;name&gt;-&lt;AppId&gt; (جیسے mybucket-1250000000)۔ علاقہ: جیسے اے پی بیجنگ</value>
+  </data>
+  <data name="S3_Provider_VKCloudStorage_Help" xml:space="preserve">
+    <value>VK کلاؤڈ آبجیکٹ اسٹوریج - VK کلاؤڈ سے S3-مطابقت رکھنے والا اسٹوریج۔
+
+1. VK کلاؤڈ پورٹل میں (https://msk.cloud.vk.com/) → کلاؤڈ اسٹوریج → ایک بالٹی بنائیں۔
+2. اپنے اکاؤنٹ کے تحت ← رسائی کیز → ایک نیا کلیدی جوڑا بنائیں۔
+   رسائی کلید اور خفیہ کلید کو کاپی کریں۔
+بھریں۔
+   سروس یو آر ایل خود بخود بھر جاتا ہے۔</value>
+  </data>
+  <data name="S3_Provider_VolcanoEngineTOS_Help" xml:space="preserve">
+    <value>Volcano Engine TOS (ByteDance) - S3 کے موافق اسٹوریج۔
+
+1. Volcano Engine Console (https://console.volcengine.com/tos) میں، ایک بالٹی بنائیں۔ اس کا علاقہ نوٹ کریں (جیسے cn-beijing)۔
+2. IAM پر جائیں → رسائی کیز → ایک کلید بنائیں۔
+   رسائی کلید ID اور خفیہ رسائی کلید کو کاپی کریں۔
+3. سروس URL: https://tos-s3-&lt;REGION&gt;.volces.com (جیسے https://tos-s3-cn-beijing.volces.com)۔
+4. علاقہ: جیسے cn-بیجنگ۔</value>
+  </data>
+  <data name="S3_Provider_Wasabi_Help" xml:space="preserve">
+    <value>وسابی - گرم کلاؤڈ اسٹوریج جس میں کوئی خارجی فیس نہیں ہے۔
+
+1. وسابی کنسول میں (https://console.wasabisys.com/) → بالٹیاں → بالٹی بنائیں۔ ایک علاقہ منتخب کریں۔
+2. رسائی کیز پر جائیں → نئی رسائی کلید بنائیں۔ رسائی کلید اور خفیہ کلید کو کاپی کریں۔
+3. بھریں: بالٹی، رسائی کلید، خفیہ کلید، اور علاقہ (مثلاً us-east-1، eu-central-1)۔
+   سروس یو آر ایل خود بخود بھر جاتا ہے۔</value>
+  </data>
+  <data name="S3_Provider_YandexObjectStorage_Help" xml:space="preserve">
+    <value>Yandex آبجیکٹ اسٹوریج - S3 سے مطابقت رکھنے والا روسی کلاؤڈ اسٹوریج۔
+
+1. Yandex Cloud Console میں (https://console.yandex.cloud/) → آبجیکٹ اسٹوریج → ایک بالٹی بنائیں۔
+2. سروس اکاؤنٹس پر جائیں → اسٹوریج ایڈیٹر رول کے ساتھ ایک بنائیں → ایک جامد رسائی کلید بنائیں۔
+   کلیدی ID (= رسائی کلید) اور خفیہ کلید کاپی کریں۔
+3. بھریں: بالٹی، رسائی کلید، خفیہ کلید۔
+   سروس یو آر ایل اور علاقہ خود بخود سیٹ ہو جاتا ہے۔</value>
   </data>
   <data name="Server_Field_Address" xml:space="preserve">
     <value>سرور کا نام:</value>
@@ -975,177 +1157,6 @@
   <data name="User_Field_Validation" xml:space="preserve">
     <value>صارف کی وضاحت نہیں کی گئی۔</value>
   </data>
-  <data name="S3_Provider_AlibabaCloudOSS_Help" xml:space="preserve">
-    <value>علی بابا کلاؤڈ OSS - علی بابا کی طرف سے S3 سے مطابقت رکھنے والا آبجیکٹ اسٹوریج۔
-
-1. OSS کنسول (https://oss.console.aliyun.com/) میں، ایک بالٹی بنائیں۔ اس کا علاقہ نوٹ کریں (جیسے oss-cn-hangzhou)۔
-2. RAM کنسول میں → صارفین → ایک صارف بنائیں → AliyunOSSFullAccess منسلک کریں → ایک AccessKey بنائیں۔
-   AccessKey ID (= Access Key) اور AccessKey سیکرٹ (= خفیہ کلید) کاپی کریں۔
-3. سروس URL: https://oss-&lt;REGION&gt;.aliyuncs.com (جیسے https://oss-cn-hangzhou.aliyuncs.com)۔
-4. علاقہ: جیسے oss-cn-hangzhou.</value>
-  </data>
-  <data name="S3_Provider_AWSS3_Help" xml:space="preserve">
-    <value>AWS S3 - ایمیزون کا اصل آبجیکٹ اسٹوریج۔
-
-1. S3 کنسول کھولیں (https://s3.console.aws.amazon.com/) اور ایک بالٹی بنائیں۔ اس کا علاقہ نوٹ کریں (جیسے us-east-1)۔
-2. کھولیں IAM → صارفین → ایک صارف بنائیں → AmazonS3FullAccess پالیسی منسلک کریں۔
-3. سیکورٹی اسناد کے تحت، ایک رسائی کلید بنائیں — کلید ID اور خفیہ کاپی کریں۔
-4. بھریں: بالٹی، رسائی کلید، خفیہ کلید، اور علاقہ۔</value>
-  </data>
-  <data name="S3_Provider_BaiduCloudBOS_Help" xml:space="preserve">
-    <value>Baidu Cloud BOS — Baidu کی طرف سے S3 سے مطابقت رکھنے والا آبجیکٹ اسٹوریج۔
-
-1. BOS کنسول (https://console.bce.baidu.com/bos/) میں، ایک بالٹی بنائیں۔ اس کا علاقہ نوٹ کریں (جیسے bj, gz, su)۔
-2. سیکیورٹی → رسائی کیز پر جائیں — اپنی رسائی کلید ID اور خفیہ رسائی کلید کو کاپی کریں۔
-3. سروس URL: https://s3.&lt;REGION&gt;.bcebos.com (جیسے https://s3.bj.bcebos.com)۔
-4. علاقہ: جیسے بی جے</value>
-  </data>
-  <data name="S3_Provider_BackblazeB2_Help" xml:space="preserve">
-    <value>Backblaze B2 - سستی S3 سے مطابقت رکھنے والا اسٹوریج۔
-
-1. بیک بلیز میں (https://www.backblaze.com/) → B2 کلاؤڈ اسٹوریج → بالٹیاں، ایک بالٹی بنائیں۔
-2. ایپ کیز پر جائیں → ایک نئی ایپلیکیشن کلید شامل کریں، اسے بالٹی تک اسکوپ کریں۔
-   کی آئی ڈی (= رسائی کلید) اور ایپلیکیشن کی (= خفیہ کلید) کاپی کریں۔
-3. سروس یو آر ایل: آپ کی بالٹی کا اختتامی نقطہ بالٹی کی تفصیلات میں دکھایا گیا ہے، جیسے https://s3.us-west-004.backblazeb2.com
-4. علاقہ: &apos;s3&apos; کے درمیان کا حصہ۔ اور &apos;.backblazeb2.com&apos;، جیسے us-west-004۔</value>
-  </data>
-  <data name="S3_Provider_CloudflareR2_Help" xml:space="preserve">
-    <value>Cloudflare R2 - صفر-ایگریس S3-مطابق اسٹوریج۔
-
-1. Cloudflare ڈیش بورڈ میں (https://dash.cloudflare.com/) → R2 → ایک بالٹی بنائیں۔
-2. R2 پر جائیں → R2 API ٹوکنز کا نظم کریں → آبجیکٹ پڑھنے اور لکھنے کے ساتھ API ٹوکن بنائیں۔
-   رسائی کلید ID اور خفیہ رسائی کلید کو کاپی کریں۔
-3. سروس URL: https://&lt;ACCOUNT_ID&gt;.r2.cloudflarestorage.com
-   آپ کے اکاؤنٹ کی شناخت R2 جائزہ صفحہ پر دکھائی دیتی ہے۔
-4. بھریں: بالٹی، رسائی کلید، خفیہ کلید، اور سروس یو آر ایل۔ علاقہ خود بخود &apos;خودکار&apos; پر سیٹ ہے۔</value>
-  </data>
-  <data name="S3_Provider_CloudRuStorage_Help" xml:space="preserve">
-    <value>Cloud.ru (SberCloud) آبجیکٹ اسٹوریج — S3 سے مطابقت رکھنے والا OBS اسٹوریج۔
-
-1. Cloud.ru کنسول میں (https://cloud.ru/) → آبجیکٹ اسٹوریج سروس (OBS) → ایک بالٹی بنائیں۔
-2. میری اسناد → رسائی کیز → رسائی کلید شامل کریں پر جائیں۔
-   رسائی کلید اور خفیہ رسائی کلید کو کاپی کریں۔
-3. بھریں: بالٹی، ایکسیس کی، خفیہ کلید، اور علاقہ (جیسے ru-moscow-1)۔
-   سروس یو آر ایل خود بخود بھر جاتا ہے۔</value>
-  </data>
-  <data name="S3_Provider_Custom_Help" xml:space="preserve">
-    <value>MinIO یا S3 سے مطابقت رکھنے والا کوئی بھی سرور۔
-
-1. اپنا MinIO (یا دیگر S3 سے ہم آہنگ) سرور شروع کریں۔
-2. MinIO کنسول یا &apos;mc mb &lt;alias&gt;/&lt;bucket&gt;&apos; کے ذریعے ایک بالٹی بنائیں۔
-3. MinIO کنسول → رسائی کیز میں ایک رسائی کلید بنائیں (پروڈکشن میں روٹ اسناد سے بچیں)۔
-4. سروس URL: آپ کے سرور کا اختتامی نقطہ، جیسے http://192.168.1.10:9000 یا https://minio.example.com۔
-5. علاقہ: کوئی بھی قدر (جیسے us-east-1) — یا خالی چھوڑ دیں اگر سرور اسے نافذ نہیں کرتا ہے۔</value>
-  </data>
-  <data name="S3_Provider_DigitalOceanSpaces_Help" xml:space="preserve">
-    <value>DigitalOcean Spaces - S3 کے موافق آبجیکٹ اسٹوریج۔
-
-1. Spaces میں (https://cloud.digitalocean.com/spaces)، ایک اسپیس بنائیں۔ اس کا علاقہ نوٹ کریں (جیسے nyc3)۔
-2. API پر جائیں → Spaces Keys → نئی کلید بنائیں۔ کلید (= رسائی کلید) اور خفیہ کاپی کریں۔
-3. سروس URL: https://&lt;REGION&gt;.digitaloceanspaces.com (جیسے https://nyc3.digitaloceanspaces.com)۔
-4. علاقہ: وہی مختصر کوڈ، جیسے nyc3.</value>
-  </data>
-  <data name="S3_Provider_GoogleCloudStorage_Help" xml:space="preserve">
-    <value>Google Cloud Storage — S3 انٹرآپریبلٹی API کے ذریعے۔
-
-1. Google Cloud Console (https://console.cloud.google.com/storage) میں، ایک بالٹی بنائیں۔
-2. کلاؤڈ اسٹوریج → سیٹنگز → انٹرآپریبلٹی → پر جائیں سروس اکاؤنٹ کے لیے ایک HMAC کلید بنائیں۔
-   رسائی کلید اور راز کو کاپی کریں۔
-3. بھریں: بالٹی، ایکسیس کی (HMAC کلید)، خفیہ کلید (HMAC خفیہ)۔
-   سروس یو آر ایل اور علاقہ خود بخود سیٹ ہو جاتا ہے۔</value>
-  </data>
-  <data name="S3_Provider_HuaweiCloudOBS_Help" xml:space="preserve">
-    <value>Huawei Cloud OBS - Huawei کی طرف سے S3-مطابق آبجیکٹ اسٹوریج۔
-
-1. OBS کنسول (https://console.huaweicloud.com/obs/) میں، ایک بالٹی بنائیں۔ اس کا علاقہ نوٹ کریں (جیسے cn-north-4)۔
-2. میری اسناد → رسائی کیز → رسائی کلید بنائیں پر جائیں۔
-   AK (= رسائی کلید) اور SK (= خفیہ کلید) کو کاپی کریں۔
-3. سروس URL: https://obs.&lt;REGION&gt;.myhuaweicloud.com (جیسے https://obs.cn-north-4.myhuaweicloud.com)۔
-4. علاقہ: جیسے cn-north-4.</value>
-  </data>
-  <data name="S3_Provider_LinodeObjectStorage_Help" xml:space="preserve">
-    <value>Linode (Akamai) آبجیکٹ اسٹوریج - S3 سے مطابقت رکھنے والا اسٹوریج۔
-
-1. لینوڈ کلاؤڈ مینیجر (https://cloud.linode.com/object-storage/buckets) میں، ایک بالٹی بنائیں۔ اس کا کلسٹر نوٹ کریں۔
-2. آبجیکٹ اسٹوریج → رسائی کیز پر جائیں
-   رسائی کلید اور خفیہ کلید کو کاپی کریں۔
-3. سروس URL: https://&lt;CLUSTER&gt;.linodeobjects.com (جیسے https://us-east-1.linodeobjects.com)۔
-4. علاقہ: ایک ہی کلسٹر کوڈ، جیسے us-east-1۔</value>
-  </data>
-  <data name="S3_Provider_QiniuCloudKodo_Help" xml:space="preserve">
-    <value>Qiniu Cloud Kodo — Qiniu سے S3-مطابق اسٹوریج۔
-
-1. Qiniu پورٹل میں (https://portal.qiniu.com/kodo/bucket)، ایک بالٹی بنائیں۔ اس کا علاقہ نوٹ کریں۔
-2. پرسنل سینٹر → کلیدی انتظام پر جائیں — اپنی AccessKey اور SecretKey کو کاپی کریں۔
-3. علاقے کے لحاظ سے سروس URL:
-   مشرقی چین: https://s3-cn-east-1.qiniucs.com
-   شمالی چین: https://s3-cn-north-1.qiniucs.com
-   جنوبی چین: https://s3-cn-south-1.qiniucs.com
-   شمالی امریکہ: https://s3-us-north-1.qiniucs.com
-4. علاقہ: مماثل کوڈ، جیسے cn-east-1.</value>
-  </data>
-  <data name="S3_Provider_ScalewayObjectStorage_Help" xml:space="preserve">
-    <value>اسکیل وے آبجیکٹ اسٹوریج - یورپی S3-مطابق اسٹوریج۔
-
-1. اسکیل وے کنسول (https://console.scaleway.com/object-storage/buckets) میں، ایک بالٹی بنائیں۔ اس کا علاقہ نوٹ کریں (جیسے fr-par)۔
-2. IAM پر جائیں → API کیز → آبجیکٹ اسٹوریج لکھنے کی اجازت کے ساتھ API کلید بنائیں۔
-   رسائی کلید اور خفیہ کلید کو کاپی کریں۔
-3. سروس URL: https://s3.&lt;REGION&gt;.scw.cloud (جیسے https://s3.fr-par.scw.cloud)۔
-4. علاقہ: جیسے fr-par، nl-ams، pl-waw.</value>
-  </data>
-  <data name="S3_Provider_SelectelStorage_Help" xml:space="preserve">
-    <value>سلیکٹیل آبجیکٹ سٹوریج - S3 کے موافق روسی اسٹوریج۔
-
-1. سلیکٹیل پینل میں (https://my.selectel.ru/) → کلاؤڈ اسٹوریج → ایک کنٹینر بنائیں (= بالٹی)۔
-2. صارفین اور کردار کے تحت، اسٹوریج تک رسائی کے ساتھ ایک سروس صارف بنائیں → S3 کیز → ایک کلیدی جوڑا بنائیں۔
-   رسائی کلید اور خفیہ کلید کو کاپی کریں۔
-3. بھریں: بالٹی، رسائی کلید، خفیہ کلید۔
-   سروس یو آر ایل خود بخود بھر جاتا ہے۔</value>
-  </data>
-  <data name="S3_Provider_TencentCloudCOS_Help" xml:space="preserve">
-    <value>Tencent Cloud COS - Tencent کی طرف سے S3-مطابق آبجیکٹ اسٹوریج۔
-
-1. COS کنسول (https://console.cloud.tencent.com/cos) میں، ایک بالٹی بنائیں۔ AppId اور خطہ (جیسے ap-beijing) کو نوٹ کریں۔
-2. رسائی کے انتظام میں → API کیز → Create Key۔
-   سیکریٹ آئی ڈی (= رسائی کلید) اور سیکریٹ کی (= خفیہ کلید) کو کاپی کریں۔
-3. سروس URL: https://cos.&lt;REGION&gt;.myqcloud.com (جیسے https://cos.ap-beijing.myqcloud.com)۔
-4. بالٹی کے نام کی شکل: &lt;name&gt;-&lt;AppId&gt; (جیسے mybucket-1250000000)۔ علاقہ: جیسے اے پی بیجنگ</value>
-  </data>
-  <data name="S3_Provider_VKCloudStorage_Help" xml:space="preserve">
-    <value>VK کلاؤڈ آبجیکٹ اسٹوریج - VK کلاؤڈ سے S3-مطابقت رکھنے والا اسٹوریج۔
-
-1. VK کلاؤڈ پورٹل میں (https://msk.cloud.vk.com/) → کلاؤڈ اسٹوریج → ایک بالٹی بنائیں۔
-2. اپنے اکاؤنٹ کے تحت ← رسائی کیز → ایک نیا کلیدی جوڑا بنائیں۔
-   رسائی کلید اور خفیہ کلید کو کاپی کریں۔
-بھریں۔
-   سروس یو آر ایل خود بخود بھر جاتا ہے۔</value>
-  </data>
-  <data name="S3_Provider_VolcanoEngineTOS_Help" xml:space="preserve">
-    <value>Volcano Engine TOS (ByteDance) - S3 کے موافق اسٹوریج۔
-
-1. Volcano Engine Console (https://console.volcengine.com/tos) میں، ایک بالٹی بنائیں۔ اس کا علاقہ نوٹ کریں (جیسے cn-beijing)۔
-2. IAM پر جائیں → رسائی کیز → ایک کلید بنائیں۔
-   رسائی کلید ID اور خفیہ رسائی کلید کو کاپی کریں۔
-3. سروس URL: https://tos-s3-&lt;REGION&gt;.volces.com (جیسے https://tos-s3-cn-beijing.volces.com)۔
-4. علاقہ: جیسے cn-بیجنگ۔</value>
-  </data>
-  <data name="S3_Provider_Wasabi_Help" xml:space="preserve">
-    <value>وسابی - گرم کلاؤڈ اسٹوریج جس میں کوئی خارجی فیس نہیں ہے۔
-
-1. وسابی کنسول میں (https://console.wasabisys.com/) → بالٹیاں → بالٹی بنائیں۔ ایک علاقہ منتخب کریں۔
-2. رسائی کیز پر جائیں → نئی رسائی کلید بنائیں۔ رسائی کلید اور خفیہ کلید کو کاپی کریں۔
-3. بھریں: بالٹی، رسائی کلید، خفیہ کلید، اور علاقہ (مثلاً us-east-1، eu-central-1)۔
-   سروس یو آر ایل خود بخود بھر جاتا ہے۔</value>
-  </data>
-  <data name="S3_Provider_YandexObjectStorage_Help" xml:space="preserve">
-    <value>Yandex آبجیکٹ اسٹوریج - S3 سے مطابقت رکھنے والا روسی کلاؤڈ اسٹوریج۔
-
-1. Yandex Cloud Console میں (https://console.yandex.cloud/) → آبجیکٹ اسٹوریج → ایک بالٹی بنائیں۔
-2. سروس اکاؤنٹس پر جائیں → اسٹوریج ایڈیٹر رول کے ساتھ ایک بنائیں → ایک جامد رسائی کلید بنائیں۔
-   کلیدی ID (= رسائی کلید) اور خفیہ کلید کاپی کریں۔
-3. بھریں: بالٹی، رسائی کلید، خفیہ کلید۔
-   سروس یو آر ایل اور علاقہ خود بخود سیٹ ہو جاتا ہے۔</value>
-  </data>
   <data name="WebDav_Preset_Box_Help" xml:space="preserve">
     <value>باکس — WebDAV سپورٹ کے ساتھ انٹرپرائز کلاؤڈ اسٹوریج۔
 
@@ -1194,7 +1205,7 @@
     <value>Mail.ru کلاؤڈ بذریعہ WebDAV۔
 
 1. account.mail.ru پر جائیں → سیکیورٹی → ایپ پاس ورڈز → ایپ پاس ورڈ بنائیں۔
-   &apos;میل&apos; یا &apos;سب&apos; کو بطور قسم منتخب کریں، پھر تیار کردہ پاس ورڈ کاپی کریں۔
+   'میل' یا 'سب' کو بطور قسم منتخب کریں، پھر تیار کردہ پاس ورڈ کاپی کریں۔
 2. بطور صارف اپنا Mail.ru ای میل ایڈریس درج کریں۔
 3۔ ایپ پاس ورڈ بطور پاس ورڈ درج کریں۔
    سرور کا پتہ، HTTPS، پورٹ، اور بیس پاتھ خود بخود کنفیگر ہو جاتے ہیں۔</value>
@@ -1229,13 +1240,15 @@
   <data name="WebDav_Preset_YandexDisk_Help" xml:space="preserve">
     <value>Yandex Disk بذریعہ WebDAV۔
 
-1. id.yandex.com پر جائیں → سیکیورٹی → ایپ پاس ورڈز → &apos;WebDAV رسائی&apos; کے لیے ایپ پاس ورڈ بنائیں۔
+1. id.yandex.com پر جائیں → سیکیورٹی → ایپ پاس ورڈز → 'WebDAV رسائی' کے لیے ایپ پاس ورڈ بنائیں۔
    تیار کردہ پاس ورڈ کاپی کریں - یہ صرف ایک بار دکھایا گیا ہے۔
 2. اپنا Yandex لاگ ان بطور صارف درج کریں۔
 3۔ ایپ پاس ورڈ (اپنے Yandex اکاؤنٹ کا پاس ورڈ نہیں) بطور پاس ورڈ درج کریں۔
    سرور کا پتہ، HTTPS، اور پورٹ خود بخود کنفیگر ہو جاتے ہیں۔</value>
   </data>
-
+  <data name="WhatTask_Description" xml:space="preserve">
+    <value>یہاں آپ ان فولڈرز کی وضاحت کر سکتے ہیں جن کا آپ بیک اپ لینا چاہتے ہیں۔</value>
+  </data>
   <data name="Winget_Description" xml:space="preserve">
     <value>Windows، Linux پر اپنے ڈیٹا کا بیک اپ/سنکرونائز کریں۔
 WI-FI کے ذریعے فون سے تصاویر امپورٹ کریں اور بہت کچھ۔

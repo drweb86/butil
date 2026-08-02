@@ -1,5 +1,4 @@
 <root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -263,14 +262,14 @@ Senario penggunaan: Anda menyalin data ke pelayan jauh. Terdapat masalah: ISP me
   <data name="Field_Folder_Validation_Empty" xml:space="preserve">
     <value>Folder tidak dinyatakan.</value>
   </data>
-  <data name="Field_Validation_NotSpecified" xml:space="preserve">
-    <value>{0} tidak dinyatakan.</value>
-  </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Folder tidak wujud.</value>
   </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>Protokol:</value>
+  </data>
+  <data name="Field_Validation_NotSpecified" xml:space="preserve">
+    <value>{0} tidak dinyatakan.</value>
   </data>
   <data name="Field_Version" xml:space="preserve">
     <value>Versi:</value>
@@ -332,14 +331,26 @@ Senario penggunaan: Anda menyalin data ke pelayan jauh. Terdapat masalah: ISP me
   <data name="ImportMediaTask_Create" xml:space="preserve">
     <value>Tugasan import media</value>
   </data>
+  <data name="ImportMediaTask_DeleteCopiedDataOnSourceMedia" xml:space="preserve">
+    <value>Padam data yang disalin daripada media sumber</value>
+  </data>
   <data name="ImportMediaTask_Edit_Title" xml:space="preserve">
     <value>Edit tugasan import media "{0}"</value>
+  </data>
+  <data name="ImportMediaTask_Field_FileExtensions" xml:space="preserve">
+    <value>Sambungan fail:</value>
+  </data>
+  <data name="ImportMediaTask_Field_FileExtensions_Help" xml:space="preserve">
+    <value>Senarai sambungan untuk diimport, dipisahkan koma (contohnya .jpg, .png, .mp3). Biarkan kosong untuk mengimport semua fail.</value>
   </data>
   <data name="ImportMediaTask_Field_OutputFolder" xml:space="preserve">
     <value>Folder output:</value>
   </data>
   <data name="ImportMediaTask_Field_TransformFileName" xml:space="preserve">
     <value>Transformasi nama fail:</value>
+  </data>
+  <data name="ImportMediaTask_Field_TransformFileName_Documentation" xml:space="preserve">
+    <value>Dokumentasi format tarikh</value>
   </data>
   <data name="ImportMediaTask_Field_TransformFileName_Example" xml:space="preserve">
     <value>Contoh:
@@ -366,17 +377,20 @@ Untuk melihat semua pilihan, cari "C# DateTime format".</value>
 
 Lihat laman web aplikasi untuk dokumentasi tentang cara menyediakan pemindahan fail melalui WI-FI menerusi aplikasi Pelayan FTP pada telefon.</value>
   </data>
-  <data name="ImportMediaTask_Storage_Help" xml:space="preserve">
-    <value>Nyatakan sumber untuk mengimport media — contohnya kad SD, folder kamera, atau telefon melalui FTPS.</value>
-  </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
     <value>Import sumber data</value>
   </data>
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>Langkau fail yang telah diimport</value>
   </data>
-  <data name="ImportMediaTask_DeleteCopiedDataOnSourceMedia" xml:space="preserve">
-    <value>Padam data yang disalin daripada media sumber</value>
+  <data name="ImportMediaTask_SkipAlreadyImportedFiles_Help" xml:space="preserve">
+    <value>Apabila didayakan, aplikasi melangkau fail yang sudah wujud dalam folder destinasi atau yang telah diimport sebelum ini. Nama fail yang diimport sebelum ini diingati, jadi fail tidak diproses semula walaupun anda kemudian memadam salinannya dari folder destinasi.</value>
+  </data>
+  <data name="ImportMediaTask_Storage_Help" xml:space="preserve">
+    <value>Nyatakan sumber untuk mengimport media — contohnya kad SD, folder kamera, atau telefon melalui FTPS.</value>
+  </data>
+  <data name="ImportMediaTask_Storage_Validation_TooBroad" xml:space="preserve">
+    <value>Folder yang dipilih kelihatan seperti akar peranti atau folder rumah kerana mengandungi beberapa folder media yang diketahui ({0}). Sila pilih folder yang lebih khusus, contohnya "{1}".</value>
   </data>
   <data name="ImproveIt_Message" xml:space="preserve">
     <value>Ralat tidak dijangka berlaku.
@@ -463,9 +477,6 @@ Sila lakukan salah satu:
   <data name="LeftMenu_What_Hint" xml:space="preserve">
     <value>Di sini anda boleh menambah folder dan fail yang perlu diproses.</value>
   </data>
-  <data name="WhatTask_Description" xml:space="preserve">
-    <value>Di sini anda boleh menentukan folder yang ingin anda sandarkan.</value>
-  </data>
   <data name="LeftMenu_What_Validation" xml:space="preserve">
     <value>Tiada item untuk diproses.</value>
   </data>
@@ -474,9 +485,6 @@ Sila lakukan salah satu:
   </data>
   <data name="LeftMenu_When_Help" xml:space="preserve">
     <value>Di sini anda boleh menyediakan penjadual. Penjadual boleh membantu anda mengautomasi pelancaran tugasan.</value>
-  </data>
-  <data name="RunAtLogin_Label" xml:space="preserve">
-    <value>Jalankan semasa log masuk</value>
   </data>
   <data name="LeftMenu_When_Optional_Hint" xml:space="preserve">
     <value>Bahagian ini adalah pilihan. Jika anda langkau, tugas hanya akan berjalan apabila anda melancarkannya secara manual.</value>
@@ -529,11 +537,11 @@ Sila lakukan salah satu:
   <data name="Name_Field_Validation" xml:space="preserve">
     <value>Nama kosong atau mengandungi aksara laluan yang tidak disokong.</value>
   </data>
-  <data name="Name_Field_Validation_ExceedsLimit" xml:space="preserve">
-    <value>Panjang nama '{0}' melebihi had sebanyak {1} aksara.</value>
-  </data>
   <data name="Name_Field_Validation_Duplicate" xml:space="preserve">
     <value>Tugas dengan nama ini sudah wujud.</value>
+  </data>
+  <data name="Name_Field_Validation_ExceedsLimit" xml:space="preserve">
+    <value>Panjang nama '{0}' melebihi had sebanyak {1} aksara.</value>
   </data>
   <data name="Name_Title" xml:space="preserve">
     <value>Nama</value>
@@ -590,6 +598,180 @@ Tunjuk ke direktori yang mengandungi fail ini.</value>
   </data>
   <data name="RestoreFrom_Field_Validation_StateInvalid" xml:space="preserve">
     <value>Tidak dapat membaca keadaan.</value>
+  </data>
+  <data name="RunAtLogin_Label" xml:space="preserve">
+    <value>Jalankan semasa log masuk</value>
+  </data>
+  <data name="S3_Provider_AlibabaCloudOSS_Help" xml:space="preserve">
+    <value>Alibaba Cloud OSS — Storan objek serasi S3 daripada Alibaba.
+
+1. Dalam OSS Console (https://oss.console.aliyun.com/), buat baldi. Perhatikan kawasannya (cth. oss-cn-hangzhou).
+2. Dalam Konsol RAM → Pengguna → buat pengguna → lampirkan AliyunOSSFullAccess → buat AccessKey.
+   Salin ID AccessKey (= Kunci Akses) dan Rahsia AccessKey (= Kunci Rahsia).
+3. URL Perkhidmatan: https://oss-&lt;REGION&gt;.aliyuncs.com (cth. https://oss-cn-hangzhou.aliyuncs.com).
+4. Wilayah: cth. oss-cn-hangzhou.</value>
+  </data>
+  <data name="S3_Provider_AWSS3_Help" xml:space="preserve">
+    <value>AWS S3 — Storan objek asal Amazon.
+
+1. Buka S3 Console (https://s3.console.aws.amazon.com/) dan buat baldi. Perhatikan kawasannya (cth. us-east-1).
+2. Buka IAM → Pengguna → buat pengguna → lampirkan dasar AmazonS3FullAccess.
+3. Di bawah Bukti kelayakan Keselamatan, buat kunci Akses — salin ID Kunci dan Rahsia.
+4. Isikan: Baldi, Kunci Akses, Kunci Rahsia dan Wilayah.</value>
+  </data>
+  <data name="S3_Provider_BackblazeB2_Help" xml:space="preserve">
+    <value>Backblaze B2 — storan serasi S3 mampu milik.
+
+1. Dalam Backblaze (https://www.backblaze.com/) → B2 Cloud Storage → Baldi, buat baldi.
+2. Pergi ke Kekunci Apl → Tambah Kunci Aplikasi Baharu, skopkannya ke baldi.
+   Salin ID kunci (= Kunci Akses) dan Kunci Aplikasi (= Kunci Rahsia).
+3. URL Perkhidmatan: titik akhir baldi anda ditunjukkan dalam butiran baldi, mis. https://s3.us-west-004.backblazeb2.com
+4. Wilayah: segmen antara 's3.' dan '.backblazeb2.com', mis. kami-barat-004.</value>
+  </data>
+  <data name="S3_Provider_BaiduCloudBOS_Help" xml:space="preserve">
+    <value>Baidu Cloud BOS — Storan objek serasi S3 daripada Baidu.
+
+1. Dalam BOS Console (https://console.bce.baidu.com/bos/), buat baldi. Perhatikan kawasannya (cth. bj, gz, su).
+2. Pergi ke Keselamatan → Kekunci Akses — salin ID Kunci Akses dan Kunci Akses Rahsia anda.
+3. URL Perkhidmatan: https://s3.&lt;REGION&gt;.bcebos.com (cth. https://s3.bj.bcebos.com).
+4. Wilayah: cth. bj.</value>
+  </data>
+  <data name="S3_Provider_CloudflareR2_Help" xml:space="preserve">
+    <value>Cloudflare R2 — storan serasi S3 keluar sifar.
+
+1. Dalam Papan Pemuka Cloudflare (https://dash.cloudflare.com/) → R2 → buat baldi.
+2. Pergi ke R2 → Urus Token API R2 → Cipta Token API dengan Objek Baca &amp; Tulis.
+   Salin ID Kunci Akses dan Kunci Akses Rahsia.
+3. URL Perkhidmatan: https://&lt;ACCOUNT_ID&gt;.r2.cloudflarestorage.com
+   ID Akaun anda ditunjukkan pada halaman gambaran keseluruhan R2.
+4. Isikan: Baldi, Kunci Akses, Kunci Rahsia dan URL Perkhidmatan. Rantau ditetapkan kepada 'auto' secara automatik.</value>
+  </data>
+  <data name="S3_Provider_CloudRuStorage_Help" xml:space="preserve">
+    <value>Cloud.ru (SberCloud) Storan Objek — Storan OBS serasi S3.
+
+1. Dalam Cloud.ru Console (https://cloud.ru/) → Object Storage Service (OBS) → buat baldi.
+2. Pergi ke Kredensial Saya → Kekunci Akses → Tambah Kekunci Akses.
+   Salin Kunci Akses dan Kunci Akses Rahsia.
+3. Isikan: Baldi, Kunci Akses, Kunci Rahsia dan Wilayah (cth. ru-moscow-1).
+   URL Perkhidmatan diisi secara automatik.</value>
+  </data>
+  <data name="S3_Provider_Custom_Help" xml:space="preserve">
+    <value>MiniIO atau mana-mana pelayan serasi S3.
+
+1. Mulakan pelayan MiniIO anda (atau serasi S3 lain).
+2. Buat baldi melalui MiniIO Console atau 'mc mb &lt;alias&gt;/&lt;bucket&gt;'.
+3. Cipta kunci akses dalam MiniIO Console → Kekunci Akses (elakkan bukti kelayakan akar dalam pengeluaran).
+4. URL Perkhidmatan: titik akhir pelayan anda, mis. http://192.168.1.10:9000 atau https://minio.example.com.
+5. Rantau: sebarang nilai (cth. us-east-1) — atau biarkan kosong jika pelayan tidak menguatkuasakannya.</value>
+  </data>
+  <data name="S3_Provider_DigitalOceanSpaces_Help" xml:space="preserve">
+    <value>DigitalOcean Spaces — storan objek serasi S3.
+
+1. Dalam Spaces (https://cloud.digitalocean.com/spaces), cipta Ruang. Perhatikan kawasannya (cth. nyc3).
+2. Pergi ke API → Spaces Keys → Generate New Key. Salin Kekunci (= Kunci Akses) dan Rahsia.
+3. URL Perkhidmatan: https://&lt;REGION&gt;.digitaloceanspaces.com (cth. https://nyc3.digitaloceanspaces.com).
+4. Wilayah: kod pendek yang sama, cth. nyc3.</value>
+  </data>
+  <data name="S3_Provider_GoogleCloudStorage_Help" xml:space="preserve">
+    <value>Storan Awan Google — melalui API kebolehoperasian S3.
+
+1. Dalam Google Cloud Console (https://console.cloud.google.com/storage), buat baldi.
+2. Pergi ke Storan Awan → Tetapan → Saling kendali → buat kunci HMAC untuk akaun perkhidmatan.
+   Salin Kunci Akses dan Rahsia.
+3. Isikan: Baldi, Kunci Akses (kunci HMAC), Kunci Rahsia (rahsia HMAC).
+   URL dan wilayah perkhidmatan ditetapkan secara automatik.</value>
+  </data>
+  <data name="S3_Provider_HuaweiCloudOBS_Help" xml:space="preserve">
+    <value>Huawei Cloud OBS — Storan objek serasi S3 daripada Huawei.
+
+1. Dalam OBS Console (https://console.huaweicloud.com/obs/), buat baldi. Perhatikan kawasannya (cth. cn-north-4).
+2. Pergi ke Kredensial Saya → Kekunci Akses → Cipta Kunci Akses.
+   Salin AK (= Kunci Akses) dan SK (= Kunci Rahsia).
+3. URL Perkhidmatan: https://obs.&lt;REGION&gt;.myhuaweicloud.com (cth. https://obs.cn-north-4.myhuaweicloud.com).
+4. Wilayah: cth. cn-utara-4.</value>
+  </data>
+  <data name="S3_Provider_LinodeObjectStorage_Help" xml:space="preserve">
+    <value>Penyimpanan Objek Linode (Akamai) — Storan serasi S3.
+
+1. Dalam Pengurus Awan Linode (https://cloud.linode.com/object-storage/buckets), buat baldi. Perhatikan kelompoknya.
+2. Pergi ke Penyimpanan Objek → Kekunci Akses → Cipta Kunci Akses berskop ke baldi.
+   Salin Kunci Akses dan Kunci Rahsia.
+3. URL Perkhidmatan: https://&lt;CLUSTER&gt;.linodeobjects.com (cth. https://us-east-1.linodeobjects.com).
+4. Rantau: kod kelompok yang sama, mis. kami-timur-1.</value>
+  </data>
+  <data name="S3_Provider_QiniuCloudKodo_Help" xml:space="preserve">
+    <value>Qiniu Cloud Kodo — Storan serasi S3 daripada Qiniu.
+
+1. Dalam Portal Qiniu (https://portal.qiniu.com/kodo/bucket), buat baldi. Perhatikan kawasannya.
+2. Pergi ke Pusat Peribadi → Pengurusan Kunci — salin AccessKey dan SecretKey anda.
+3. URL Perkhidmatan mengikut wilayah:
+   China Timur: https://s3-cn-east-1.qiniucs.com
+   China Utara: https://s3-cn-north-1.qiniucs.com
+   China Selatan: https://s3-cn-south-1.qiniucs.com
+   Amerika Utara: https://s3-us-north-1.qiniucs.com
+4. Rantau: kod yang sepadan, cth. cn-timur-1.</value>
+  </data>
+  <data name="S3_Provider_ScalewayObjectStorage_Help" xml:space="preserve">
+    <value>Storan Objek Scaleway — Storan serasi Eropah S3.
+
+1. Dalam Scaleway Console (https://console.scaleway.com/object-storage/buckets), buat baldi. Perhatikan kawasannya (cth. fr-par).
+2. Pergi ke IAM → Kunci API → Jana Kunci API dengan kebenaran menulis Storan Objek.
+   Salin Kunci Akses dan Kunci Rahsia.
+3. URL Perkhidmatan: https://s3.&lt;REGION&gt;.scw.cloud (cth. https://s3.fr-par.scw.cloud).
+4. Wilayah: cth. fr-par, nl-ams, pl-waw.</value>
+  </data>
+  <data name="S3_Provider_SelectelStorage_Help" xml:space="preserve">
+    <value>Storan Objek Selectel — Storan Rusia yang serasi dengan S3.
+
+1. Dalam Panel Pilih (https://my.selectel.ru/) → Cloud Storage → buat bekas (= baldi).
+2. Di bawah Pengguna &amp; Peranan, cipta pengguna perkhidmatan dengan akses storan → Kekunci S3 → buat pasangan kunci.
+   Salin Kunci Akses dan Kunci Rahsia.
+3. Isikan: Baldi, Kunci Akses, Kunci Rahsia.
+   URL Perkhidmatan diisi secara automatik.</value>
+  </data>
+  <data name="S3_Provider_TencentCloudCOS_Help" xml:space="preserve">
+    <value>Tencent Cloud COS — Storan objek serasi S3 daripada Tencent.
+
+1. Dalam COS Console (https://console.cloud.tencent.com/cos), buat baldi. Perhatikan AppId dan Wilayah (cth. ap-beijing).
+2. Dalam Pengurusan Akses → Kunci API → Buat Kunci.
+   Salin SecretId (= Kunci Akses) dan SecretKey (= Kunci Rahsia).
+3. URL Perkhidmatan: https://cos.&lt;REGION&gt;.myqcloud.com (cth. https://cos.ap-beijing.myqcloud.com).
+4. Format nama baldi: &lt;nama&gt;-&lt;AppId&gt; (cth. mybucket-1250000000). Wilayah: cth. ap-beijing.</value>
+  </data>
+  <data name="S3_Provider_VKCloudStorage_Help" xml:space="preserve">
+    <value>Storan Objek Awan VK — Storan serasi S3 daripada Awan VK.
+
+1. Dalam Portal Awan VK (https://msk.cloud.vk.com/) → Storan Awan → buat baldi.
+2. Di bawah akaun anda → Kekunci Akses → buat pasangan kunci baharu.
+   Salin Kunci Akses dan Kunci Rahsia.
+3. Isikan: Baldi, Kunci Akses, Kunci Rahsia dan Wilayah jika diperlukan (cth. ru-msk).
+   URL Perkhidmatan diisi secara automatik.</value>
+  </data>
+  <data name="S3_Provider_VolcanoEngineTOS_Help" xml:space="preserve">
+    <value>Volcano Engine TOS (ByteDance) — Storan serasi S3.
+
+1. Dalam Volcano Engine Console (https://console.volcengine.com/tos), buat baldi. Perhatikan kawasannya (cth. cn-beijing).
+2. Pergi ke IAM → Kekunci Akses → buat kunci.
+   Salin ID Kunci Akses dan Kunci Akses Rahsia.
+3. URL Perkhidmatan: https://tos-s3-&lt;REGION&gt;.volces.com (cth. https://tos-s3-cn-beijing.volces.com).
+4. Wilayah: cth. cn-beijing.</value>
+  </data>
+  <data name="S3_Provider_Wasabi_Help" xml:space="preserve">
+    <value>Wasabi — storan awan panas tanpa bayaran keluar.
+
+1. Dalam Wasabi Console (https://console.wasabisys.com/) → Baldi → Cipta Baldi. Pilih wilayah.
+2. Pergi ke Kekunci Akses → Cipta Kunci Akses Baharu. Salin Kunci Akses dan Kunci Rahsia.
+3. Isikan: Baldi, Kunci Akses, Kunci Rahsia dan Wilayah (cth. us-east-1, eu-central-1).
+   URL Perkhidmatan diisi secara automatik.</value>
+  </data>
+  <data name="S3_Provider_YandexObjectStorage_Help" xml:space="preserve">
+    <value>Penyimpanan Objek Yandex — storan awan Rusia yang serasi dengan S3.
+
+1. Dalam Konsol Awan Yandex (https://console.yandex.cloud/) → Storan Objek → buat baldi.
+2. Pergi ke Akaun Perkhidmatan → buat satu dengan peranan storan.editor → buat kunci akses Statik.
+   Salin ID Kunci (= Kunci Akses) dan kunci Rahsia.
+3. Isikan: Baldi, Kunci Akses, Kunci Rahsia.
+   URL dan wilayah perkhidmatan ditetapkan secara automatik.</value>
   </data>
   <data name="Server_Field_Address" xml:space="preserve">
     <value>Nama pelayan:</value>
@@ -988,177 +1170,6 @@ Lihat penerangan terperinci di pautan berikut.</value>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>Pengguna tidak dinyatakan.</value>
   </data>
-  <data name="S3_Provider_AlibabaCloudOSS_Help" xml:space="preserve">
-    <value>Alibaba Cloud OSS — Storan objek serasi S3 daripada Alibaba.
-
-1. Dalam OSS Console (https://oss.console.aliyun.com/), buat baldi. Perhatikan kawasannya (cth. oss-cn-hangzhou).
-2. Dalam Konsol RAM → Pengguna → buat pengguna → lampirkan AliyunOSSFullAccess → buat AccessKey.
-   Salin ID AccessKey (= Kunci Akses) dan Rahsia AccessKey (= Kunci Rahsia).
-3. URL Perkhidmatan: https://oss-&lt;REGION&gt;.aliyuncs.com (cth. https://oss-cn-hangzhou.aliyuncs.com).
-4. Wilayah: cth. oss-cn-hangzhou.</value>
-  </data>
-  <data name="S3_Provider_AWSS3_Help" xml:space="preserve">
-    <value>AWS S3 — Storan objek asal Amazon.
-
-1. Buka S3 Console (https://s3.console.aws.amazon.com/) dan buat baldi. Perhatikan kawasannya (cth. us-east-1).
-2. Buka IAM → Pengguna → buat pengguna → lampirkan dasar AmazonS3FullAccess.
-3. Di bawah Bukti kelayakan Keselamatan, buat kunci Akses — salin ID Kunci dan Rahsia.
-4. Isikan: Baldi, Kunci Akses, Kunci Rahsia dan Wilayah.</value>
-  </data>
-  <data name="S3_Provider_BaiduCloudBOS_Help" xml:space="preserve">
-    <value>Baidu Cloud BOS — Storan objek serasi S3 daripada Baidu.
-
-1. Dalam BOS Console (https://console.bce.baidu.com/bos/), buat baldi. Perhatikan kawasannya (cth. bj, gz, su).
-2. Pergi ke Keselamatan → Kekunci Akses — salin ID Kunci Akses dan Kunci Akses Rahsia anda.
-3. URL Perkhidmatan: https://s3.&lt;REGION&gt;.bcebos.com (cth. https://s3.bj.bcebos.com).
-4. Wilayah: cth. bj.</value>
-  </data>
-  <data name="S3_Provider_BackblazeB2_Help" xml:space="preserve">
-    <value>Backblaze B2 — storan serasi S3 mampu milik.
-
-1. Dalam Backblaze (https://www.backblaze.com/) → B2 Cloud Storage → Baldi, buat baldi.
-2. Pergi ke Kekunci Apl → Tambah Kunci Aplikasi Baharu, skopkannya ke baldi.
-   Salin ID kunci (= Kunci Akses) dan Kunci Aplikasi (= Kunci Rahsia).
-3. URL Perkhidmatan: titik akhir baldi anda ditunjukkan dalam butiran baldi, mis. https://s3.us-west-004.backblazeb2.com
-4. Wilayah: segmen antara &apos;s3.&apos; dan &apos;.backblazeb2.com&apos;, mis. kami-barat-004.</value>
-  </data>
-  <data name="S3_Provider_CloudflareR2_Help" xml:space="preserve">
-    <value>Cloudflare R2 — storan serasi S3 keluar sifar.
-
-1. Dalam Papan Pemuka Cloudflare (https://dash.cloudflare.com/) → R2 → buat baldi.
-2. Pergi ke R2 → Urus Token API R2 → Cipta Token API dengan Objek Baca &amp; Tulis.
-   Salin ID Kunci Akses dan Kunci Akses Rahsia.
-3. URL Perkhidmatan: https://&lt;ACCOUNT_ID&gt;.r2.cloudflarestorage.com
-   ID Akaun anda ditunjukkan pada halaman gambaran keseluruhan R2.
-4. Isikan: Baldi, Kunci Akses, Kunci Rahsia dan URL Perkhidmatan. Rantau ditetapkan kepada &apos;auto&apos; secara automatik.</value>
-  </data>
-  <data name="S3_Provider_CloudRuStorage_Help" xml:space="preserve">
-    <value>Cloud.ru (SberCloud) Storan Objek — Storan OBS serasi S3.
-
-1. Dalam Cloud.ru Console (https://cloud.ru/) → Object Storage Service (OBS) → buat baldi.
-2. Pergi ke Kredensial Saya → Kekunci Akses → Tambah Kekunci Akses.
-   Salin Kunci Akses dan Kunci Akses Rahsia.
-3. Isikan: Baldi, Kunci Akses, Kunci Rahsia dan Wilayah (cth. ru-moscow-1).
-   URL Perkhidmatan diisi secara automatik.</value>
-  </data>
-  <data name="S3_Provider_Custom_Help" xml:space="preserve">
-    <value>MiniIO atau mana-mana pelayan serasi S3.
-
-1. Mulakan pelayan MiniIO anda (atau serasi S3 lain).
-2. Buat baldi melalui MiniIO Console atau &apos;mc mb &lt;alias&gt;/&lt;bucket&gt;&apos;.
-3. Cipta kunci akses dalam MiniIO Console → Kekunci Akses (elakkan bukti kelayakan akar dalam pengeluaran).
-4. URL Perkhidmatan: titik akhir pelayan anda, mis. http://192.168.1.10:9000 atau https://minio.example.com.
-5. Rantau: sebarang nilai (cth. us-east-1) — atau biarkan kosong jika pelayan tidak menguatkuasakannya.</value>
-  </data>
-  <data name="S3_Provider_DigitalOceanSpaces_Help" xml:space="preserve">
-    <value>DigitalOcean Spaces — storan objek serasi S3.
-
-1. Dalam Spaces (https://cloud.digitalocean.com/spaces), cipta Ruang. Perhatikan kawasannya (cth. nyc3).
-2. Pergi ke API → Spaces Keys → Generate New Key. Salin Kekunci (= Kunci Akses) dan Rahsia.
-3. URL Perkhidmatan: https://&lt;REGION&gt;.digitaloceanspaces.com (cth. https://nyc3.digitaloceanspaces.com).
-4. Wilayah: kod pendek yang sama, cth. nyc3.</value>
-  </data>
-  <data name="S3_Provider_GoogleCloudStorage_Help" xml:space="preserve">
-    <value>Storan Awan Google — melalui API kebolehoperasian S3.
-
-1. Dalam Google Cloud Console (https://console.cloud.google.com/storage), buat baldi.
-2. Pergi ke Storan Awan → Tetapan → Saling kendali → buat kunci HMAC untuk akaun perkhidmatan.
-   Salin Kunci Akses dan Rahsia.
-3. Isikan: Baldi, Kunci Akses (kunci HMAC), Kunci Rahsia (rahsia HMAC).
-   URL dan wilayah perkhidmatan ditetapkan secara automatik.</value>
-  </data>
-  <data name="S3_Provider_HuaweiCloudOBS_Help" xml:space="preserve">
-    <value>Huawei Cloud OBS — Storan objek serasi S3 daripada Huawei.
-
-1. Dalam OBS Console (https://console.huaweicloud.com/obs/), buat baldi. Perhatikan kawasannya (cth. cn-north-4).
-2. Pergi ke Kredensial Saya → Kekunci Akses → Cipta Kunci Akses.
-   Salin AK (= Kunci Akses) dan SK (= Kunci Rahsia).
-3. URL Perkhidmatan: https://obs.&lt;REGION&gt;.myhuaweicloud.com (cth. https://obs.cn-north-4.myhuaweicloud.com).
-4. Wilayah: cth. cn-utara-4.</value>
-  </data>
-  <data name="S3_Provider_LinodeObjectStorage_Help" xml:space="preserve">
-    <value>Penyimpanan Objek Linode (Akamai) — Storan serasi S3.
-
-1. Dalam Pengurus Awan Linode (https://cloud.linode.com/object-storage/buckets), buat baldi. Perhatikan kelompoknya.
-2. Pergi ke Penyimpanan Objek → Kekunci Akses → Cipta Kunci Akses berskop ke baldi.
-   Salin Kunci Akses dan Kunci Rahsia.
-3. URL Perkhidmatan: https://&lt;CLUSTER&gt;.linodeobjects.com (cth. https://us-east-1.linodeobjects.com).
-4. Rantau: kod kelompok yang sama, mis. kami-timur-1.</value>
-  </data>
-  <data name="S3_Provider_QiniuCloudKodo_Help" xml:space="preserve">
-    <value>Qiniu Cloud Kodo — Storan serasi S3 daripada Qiniu.
-
-1. Dalam Portal Qiniu (https://portal.qiniu.com/kodo/bucket), buat baldi. Perhatikan kawasannya.
-2. Pergi ke Pusat Peribadi → Pengurusan Kunci — salin AccessKey dan SecretKey anda.
-3. URL Perkhidmatan mengikut wilayah:
-   China Timur: https://s3-cn-east-1.qiniucs.com
-   China Utara: https://s3-cn-north-1.qiniucs.com
-   China Selatan: https://s3-cn-south-1.qiniucs.com
-   Amerika Utara: https://s3-us-north-1.qiniucs.com
-4. Rantau: kod yang sepadan, cth. cn-timur-1.</value>
-  </data>
-  <data name="S3_Provider_ScalewayObjectStorage_Help" xml:space="preserve">
-    <value>Storan Objek Scaleway — Storan serasi Eropah S3.
-
-1. Dalam Scaleway Console (https://console.scaleway.com/object-storage/buckets), buat baldi. Perhatikan kawasannya (cth. fr-par).
-2. Pergi ke IAM → Kunci API → Jana Kunci API dengan kebenaran menulis Storan Objek.
-   Salin Kunci Akses dan Kunci Rahsia.
-3. URL Perkhidmatan: https://s3.&lt;REGION&gt;.scw.cloud (cth. https://s3.fr-par.scw.cloud).
-4. Wilayah: cth. fr-par, nl-ams, pl-waw.</value>
-  </data>
-  <data name="S3_Provider_SelectelStorage_Help" xml:space="preserve">
-    <value>Storan Objek Selectel — Storan Rusia yang serasi dengan S3.
-
-1. Dalam Panel Pilih (https://my.selectel.ru/) → Cloud Storage → buat bekas (= baldi).
-2. Di bawah Pengguna &amp; Peranan, cipta pengguna perkhidmatan dengan akses storan → Kekunci S3 → buat pasangan kunci.
-   Salin Kunci Akses dan Kunci Rahsia.
-3. Isikan: Baldi, Kunci Akses, Kunci Rahsia.
-   URL Perkhidmatan diisi secara automatik.</value>
-  </data>
-  <data name="S3_Provider_TencentCloudCOS_Help" xml:space="preserve">
-    <value>Tencent Cloud COS — Storan objek serasi S3 daripada Tencent.
-
-1. Dalam COS Console (https://console.cloud.tencent.com/cos), buat baldi. Perhatikan AppId dan Wilayah (cth. ap-beijing).
-2. Dalam Pengurusan Akses → Kunci API → Buat Kunci.
-   Salin SecretId (= Kunci Akses) dan SecretKey (= Kunci Rahsia).
-3. URL Perkhidmatan: https://cos.&lt;REGION&gt;.myqcloud.com (cth. https://cos.ap-beijing.myqcloud.com).
-4. Format nama baldi: &lt;nama&gt;-&lt;AppId&gt; (cth. mybucket-1250000000). Wilayah: cth. ap-beijing.</value>
-  </data>
-  <data name="S3_Provider_VKCloudStorage_Help" xml:space="preserve">
-    <value>Storan Objek Awan VK — Storan serasi S3 daripada Awan VK.
-
-1. Dalam Portal Awan VK (https://msk.cloud.vk.com/) → Storan Awan → buat baldi.
-2. Di bawah akaun anda → Kekunci Akses → buat pasangan kunci baharu.
-   Salin Kunci Akses dan Kunci Rahsia.
-3. Isikan: Baldi, Kunci Akses, Kunci Rahsia dan Wilayah jika diperlukan (cth. ru-msk).
-   URL Perkhidmatan diisi secara automatik.</value>
-  </data>
-  <data name="S3_Provider_VolcanoEngineTOS_Help" xml:space="preserve">
-    <value>Volcano Engine TOS (ByteDance) — Storan serasi S3.
-
-1. Dalam Volcano Engine Console (https://console.volcengine.com/tos), buat baldi. Perhatikan kawasannya (cth. cn-beijing).
-2. Pergi ke IAM → Kekunci Akses → buat kunci.
-   Salin ID Kunci Akses dan Kunci Akses Rahsia.
-3. URL Perkhidmatan: https://tos-s3-&lt;REGION&gt;.volces.com (cth. https://tos-s3-cn-beijing.volces.com).
-4. Wilayah: cth. cn-beijing.</value>
-  </data>
-  <data name="S3_Provider_Wasabi_Help" xml:space="preserve">
-    <value>Wasabi — storan awan panas tanpa bayaran keluar.
-
-1. Dalam Wasabi Console (https://console.wasabisys.com/) → Baldi → Cipta Baldi. Pilih wilayah.
-2. Pergi ke Kekunci Akses → Cipta Kunci Akses Baharu. Salin Kunci Akses dan Kunci Rahsia.
-3. Isikan: Baldi, Kunci Akses, Kunci Rahsia dan Wilayah (cth. us-east-1, eu-central-1).
-   URL Perkhidmatan diisi secara automatik.</value>
-  </data>
-  <data name="S3_Provider_YandexObjectStorage_Help" xml:space="preserve">
-    <value>Penyimpanan Objek Yandex — storan awan Rusia yang serasi dengan S3.
-
-1. Dalam Konsol Awan Yandex (https://console.yandex.cloud/) → Storan Objek → buat baldi.
-2. Pergi ke Akaun Perkhidmatan → buat satu dengan peranan storan.editor → buat kunci akses Statik.
-   Salin ID Kunci (= Kunci Akses) dan kunci Rahsia.
-3. Isikan: Baldi, Kunci Akses, Kunci Rahsia.
-   URL dan wilayah perkhidmatan ditetapkan secara automatik.</value>
-  </data>
   <data name="WebDav_Preset_Box_Help" xml:space="preserve">
     <value>Box — storan awan perusahaan dengan sokongan WebDAV.
 
@@ -1207,7 +1218,7 @@ Lihat penerangan terperinci di pautan berikut.</value>
     <value>Mail.ru Cloud melalui WebDAV.
 
 1. Pergi ke account.mail.ru → Keselamatan → Kata laluan apl → Buat kata laluan apl.
-   Pilih &apos;Mel&apos; atau &apos;Semua&apos; sebagai jenis, kemudian salin kata laluan yang dijana.
+   Pilih 'Mel' atau 'Semua' sebagai jenis, kemudian salin kata laluan yang dijana.
 2. Masukkan alamat e-mel Mail.ru anda sebagai Pengguna.
 3. Masukkan kata laluan apl sebagai Kata Laluan.
    Alamat pelayan, HTTPS, port dan laluan asas dikonfigurasikan secara automatik.</value>
@@ -1242,13 +1253,15 @@ Lihat penerangan terperinci di pautan berikut.</value>
   <data name="WebDav_Preset_YandexDisk_Help" xml:space="preserve">
     <value>Cakera Yandex melalui WebDAV.
 
-1. Pergi ke id.yandex.com → Keselamatan → Kata laluan apl → Buat kata laluan apl untuk &apos;akses WebDAV&apos;.
+1. Pergi ke id.yandex.com → Keselamatan → Kata laluan apl → Buat kata laluan apl untuk 'akses WebDAV'.
    Salin kata laluan yang dijana — ia ditunjukkan sekali sahaja.
 2. Masukkan log masuk Yandex anda sebagai Pengguna.
 3. Masukkan kata laluan apl (bukan kata laluan akaun Yandex anda) sebagai Kata Laluan.
    Alamat pelayan, HTTPS dan port dikonfigurasikan secara automatik.</value>
   </data>
-
+  <data name="WhatTask_Description" xml:space="preserve">
+    <value>Di sini anda boleh menentukan folder yang ingin anda sandarkan.</value>
+  </data>
   <data name="Winget_Description" xml:space="preserve">
     <value>Sandaran/segerakkan data anda pada Windows, Linux.
 Import foto dari telefon melalui WI-FI dan banyak lagi.

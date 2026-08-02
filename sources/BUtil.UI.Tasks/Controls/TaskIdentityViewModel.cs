@@ -84,7 +84,7 @@ public class TaskIdentityViewModel : ObservableObject
     {
         PlatformSpecificExperience.Instance
             .SupportManager
-            .OpenIcons();
+            .OpenLink(ApplicationLinks.Icons);
     }
 
     #endregion

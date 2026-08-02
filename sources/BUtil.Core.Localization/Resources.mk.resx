@@ -1,5 +1,4 @@
 <root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -263,14 +262,14 @@
   <data name="Field_Folder_Validation_Empty" xml:space="preserve">
     <value>Папката не е наведена.</value>
   </data>
-  <data name="Field_Validation_NotSpecified" xml:space="preserve">
-    <value>{0} не е наведен.</value>
-  </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Папката не постои.</value>
   </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>Протокол:</value>
+  </data>
+  <data name="Field_Validation_NotSpecified" xml:space="preserve">
+    <value>{0} не е наведен.</value>
   </data>
   <data name="Field_Version" xml:space="preserve">
     <value>Верзија:</value>
@@ -332,14 +331,26 @@
   <data name="ImportMediaTask_Create" xml:space="preserve">
     <value>Задача за увоз на медиуми</value>
   </data>
+  <data name="ImportMediaTask_DeleteCopiedDataOnSourceMedia" xml:space="preserve">
+    <value>Избриши ги копираните податоци од изворниот медиум</value>
+  </data>
   <data name="ImportMediaTask_Edit_Title" xml:space="preserve">
     <value>Уреди задача за увоз на медиуми „{0}"</value>
+  </data>
+  <data name="ImportMediaTask_Field_FileExtensions" xml:space="preserve">
+    <value>Екстензије датотека:</value>
+  </data>
+  <data name="ImportMediaTask_Field_FileExtensions_Help" xml:space="preserve">
+    <value>Листа екстензија за увоз раздвојена зарезима (нпр. .jpg, .png, .mp3). Оставите празно да увезете све датотеке.</value>
   </data>
   <data name="ImportMediaTask_Field_OutputFolder" xml:space="preserve">
     <value>Излезна папка:</value>
   </data>
   <data name="ImportMediaTask_Field_TransformFileName" xml:space="preserve">
     <value>Трансформации на име на датотека:</value>
+  </data>
+  <data name="ImportMediaTask_Field_TransformFileName_Documentation" xml:space="preserve">
+    <value>Документација формата датума</value>
   </data>
   <data name="ImportMediaTask_Field_TransformFileName_Example" xml:space="preserve">
     <value>Пример:
@@ -366,17 +377,20 @@
 
 Видете ја веб-страницата на апликацијата за документација како да поставите пренос на датотеки преку WI-FI преку апликација FTP-сервер на телефонот.</value>
   </data>
-  <data name="ImportMediaTask_Storage_Help" xml:space="preserve">
-    <value>Наведете го изворот од кој ќе се увезуваат медиуми — на пример SD картичка, папка на камера или телефон преку FTPS.</value>
-  </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
     <value>Увези извор на податоци</value>
   </data>
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>Прескокни веќе увезени датотеки</value>
   </data>
-  <data name="ImportMediaTask_DeleteCopiedDataOnSourceMedia" xml:space="preserve">
-    <value>Избриши ги копираните податоци од изворниот медиум</value>
+  <data name="ImportMediaTask_SkipAlreadyImportedFiles_Help" xml:space="preserve">
+    <value>Када је укључено, апликација прескаче датотеке које већ постоје у одредишном фолдеру или су раније увезене. Имена раније увезених датотека се памте, па се датотека не обрађује поново чак и ако касније обришете њену копију из одредишног фолдера.</value>
+  </data>
+  <data name="ImportMediaTask_Storage_Help" xml:space="preserve">
+    <value>Наведете го изворот од кој ќе се увезуваат медиуми — на пример SD картичка, папка на камера или телефон преку FTPS.</value>
+  </data>
+  <data name="ImportMediaTask_Storage_Validation_TooBroad" xml:space="preserve">
+    <value>Изабрани фолдер изгледа као корен уређаја или почетни директоријум јер садржи неколико познатих медијских фолдера ({0}). Изаберите конкретнији фолдер, на пример "{1}".</value>
   </data>
   <data name="ImproveIt_Message" xml:space="preserve">
     <value>Настана неочекувана грешка.
@@ -463,9 +477,6 @@
   <data name="LeftMenu_What_Hint" xml:space="preserve">
     <value>Тука можете да додадете папки и датотеки што треба да се обработат.</value>
   </data>
-  <data name="WhatTask_Description" xml:space="preserve">
-    <value>Тука можете да ги наведете папките за кои сакате да направите резервна копија.</value>
-  </data>
   <data name="LeftMenu_What_Validation" xml:space="preserve">
     <value>Нема елементи за обработка.</value>
   </data>
@@ -474,9 +485,6 @@
   </data>
   <data name="LeftMenu_When_Help" xml:space="preserve">
     <value>Тука можете да поставите распоред. Распоредувачот може да ви помогне да го автоматизирате стартувањето на задачата.</value>
-  </data>
-  <data name="RunAtLogin_Label" xml:space="preserve">
-    <value>Стартувај при најава</value>
   </data>
   <data name="LeftMenu_When_Optional_Hint" xml:space="preserve">
     <value>Овој дел не е задолжителен. Ако го прескокнете, задачата ќе се извршува само кога ќе ја стартувате рачно.</value>
@@ -529,11 +537,11 @@
   <data name="Name_Field_Validation" xml:space="preserve">
     <value>Името е празно или содржи неподдржани знаци за патека.</value>
   </data>
-  <data name="Name_Field_Validation_ExceedsLimit" xml:space="preserve">
-    <value>Должината на името '{0}' го надминува ограничувањето за {1} знаци.</value>
-  </data>
   <data name="Name_Field_Validation_Duplicate" xml:space="preserve">
     <value>Задача со ова име веќе постои.</value>
+  </data>
+  <data name="Name_Field_Validation_ExceedsLimit" xml:space="preserve">
+    <value>Должината на името '{0}' го надминува ограничувањето за {1} знаци.</value>
   </data>
   <data name="Name_Title" xml:space="preserve">
     <value>Име</value>
@@ -590,6 +598,180 @@
   </data>
   <data name="RestoreFrom_Field_Validation_StateInvalid" xml:space="preserve">
     <value>Не може да се прочита состојбата.</value>
+  </data>
+  <data name="RunAtLogin_Label" xml:space="preserve">
+    <value>Стартувај при најава</value>
+  </data>
+  <data name="S3_Provider_AlibabaCloudOSS_Help" xml:space="preserve">
+    <value>Alibaba Cloud OSS — складирање на објекти компатибилно со S3 од Alibaba.
+
+1. Во конзолата за OSS (https://oss.console.aliyun.com/), креирајте кофа. Забележете го неговиот регион (на пр. oss-cn-hangzhou).
+2. Во RAM конзолата → Корисници → креирајте корисник → прикачете AliyunOSSFullAccess → креирајте AccessKey.
+   Копирајте ги ID на AccessKey (= Пристапен клуч) и AccessKey Secret (= Таен клуч).
+3. УРЛ на услугата: https://oss-&lt;REGION&gt;.aliyuncs.com (на пр. https://oss-cn-hangzhou.aliyuncs.com).
+4. Регион: на пр. oss-cn-hangzhou.</value>
+  </data>
+  <data name="S3_Provider_AWSS3_Help" xml:space="preserve">
+    <value>AWS S3 - оригинално складирање на предмети на Амазон.
+
+1. Отворете ја конзолата S3 (https://s3.console.aws.amazon.com/) и креирајте кофа. Забележете го неговиот регион (на пр. нас-исток-1).
+2. Отворете IAM → Корисници → креирајте корисник → прикачете ја политиката на AmazonS3FullAccess.
+3. Под Безбедносни ингеренции, креирајте клуч за пристап - копирајте го ID на клучот и Тајната.
+4. Пополнете: Кофа, клуч за пристап, таен клуч и регион.</value>
+  </data>
+  <data name="S3_Provider_BackblazeB2_Help" xml:space="preserve">
+    <value>Backblaze B2 — достапно складирање компатибилно со S3.
+
+1. Во Backblaze (https://www.backblaze.com/) → B2 Cloud Storage → Buckets, креирајте кофа.
+2. Одете во Копчиња за апликации → Додајте нов клуч за апликација, префрлете го во корпата.
+   Копирајте го ID на клучот (= Пристапен клуч) и applicationKey (= Таен клуч).
+3. УРЛ на услугата: крајната точка на вашата корпа е прикажана во деталите за корпата, на пр. https://s3.us-west-004.backblazeb2.com
+4. Регион: сегментот помеѓу „s3“. и „.backblazeb2.com“, на пр. нас-запад-004.</value>
+  </data>
+  <data name="S3_Provider_BaiduCloudBOS_Help" xml:space="preserve">
+    <value>Baidu Cloud BOS — складирање на објекти компатибилно со S3 од Baidu.
+
+1. Во конзолата BOS (https://console.bce.baidu.com/bos/), креирајте кофа. Забележете го неговиот регион (на пр. bj, gz, su).
+2. Одете во Безбедност → Пристапни клучеви — копирајте го вашиот ID на клучот за пристап и тајниот клуч за пристап.
+3. УРЛ на услугата: https://s3.&lt;REGION&gt;.bcebos.com (на пр. https://s3.bj.bcebos.com).
+4. Регион: на пр. бј.</value>
+  </data>
+  <data name="S3_Provider_CloudflareR2_Help" xml:space="preserve">
+    <value>Cloudflare R2 — складирање компатибилно со S3 со нула излез.
+
+1. Во Cloudflare Dashboard (https://dash.cloudflare.com/) → R2 → креирајте кофа.
+2. Одете во R2 → Управувајте со R2 API токени → Креирај API токен со Object Read &amp; Write.
+   Копирајте го ID на клучот за пристап и тајниот клуч за пристап.
+3. УРЛ на услугата: https://&lt;ACCOUNT_ID&gt;.r2.cloudflarestorage.com
+   ИД на вашата сметка се прикажува на страницата за преглед на R2.
+4. Пополнете: Кофа, пристапен клуч, Таен клуч и УРЛ на услугата. Регионот е автоматски поставен на „автоматски“.</value>
+  </data>
+  <data name="S3_Provider_CloudRuStorage_Help" xml:space="preserve">
+    <value>Cloud.ru (SberCloud) Складирање на објекти — складирање на OBS компатибилно со S3.
+
+1. Во Cloud.ru конзолата (https://cloud.ru/) → Услуга за складирање на објекти (OBS) → креирајте кофа.
+2. Одете во Мои акредитиви → Копчиња за пристап → Додај клуч за пристап.
+   Копирајте го клучот за пристап и тајниот клуч за пристап.
+3. Пополнете: Кофа, клуч за пристап, таен клуч и регион (на пр. ru-moscow-1).
+   УРЛ на услугата се пополнува автоматски.</value>
+  </data>
+  <data name="S3_Provider_Custom_Help" xml:space="preserve">
+    <value>MinIO или кој било сервер компатибилен со S3.
+
+1. Стартувајте го вашиот MinIO (или друг S3-компатибилен) сервер.
+2. Направете кофа преку MinIO конзолата или 'mc mb &lt;alias&gt;/&lt;bucket&gt;'.
+3. Креирајте клуч за пристап во MinIO конзолата → Пристапни клучеви (избегнувајте root ингеренции во производството).
+4. УРЛ на услугата: крајната точка на вашиот сервер, на пр. http://192.168.1.10:9000 или https://minio.example.com.
+5. Регион: која било вредност (на пр. us-east-1) - или оставете празно ако серверот не ја наметне.</value>
+  </data>
+  <data name="S3_Provider_DigitalOceanSpaces_Help" xml:space="preserve">
+    <value>DigitalOcean Spaces — складирање на објекти компатибилно со S3.
+
+1. Во Spaces (https://cloud.digitalocean.com/spaces), креирајте простор. Забележете го неговиот регион (на пр. nyc3).
+2. Одете во API → Spaces Keys → Generate New Key. Копирајте го клучот (= Пристапен клуч) и Тајната.
+3. УРЛ на услугата: https://&lt;REGION&gt;.digitaloceanspaces.com (на пр. https://nyc3.digitaloceanspaces.com).
+4. Регион: истиот краток код, на пр. nyc3.</value>
+  </data>
+  <data name="S3_Provider_GoogleCloudStorage_Help" xml:space="preserve">
+    <value>Google Cloud Storage — преку API за интероперабилност на S3.
+
+1. Во Google Cloud Console (https://console.cloud.google.com/storage), креирајте кофа.
+2. Одете во Складирање во облак → Поставки → Интероперабилност → креирајте клуч HMAC за сметка за услуга.
+   Копирајте го клучот за пристап и тајната.
+3. Пополнете: Кофа, Пристапен клуч (клуч HMAC), Таен клуч (тајна HMAC).
+   УРЛ на услугата и регионот се поставуваат автоматски.</value>
+  </data>
+  <data name="S3_Provider_HuaweiCloudOBS_Help" xml:space="preserve">
+    <value>Huawei Cloud OBS — складирање на објекти компатибилно со S3 од Huawei.
+
+1. Во OBS конзолата (https://console.huaweicloud.com/obs/), креирајте кофа. Забележете го неговиот регион (на пр. cn-север-4).
+2. Одете во Мои акредитиви → Копчиња за пристап → Креирај клуч за пристап.
+   Копирајте ги AK (= Пристапен клуч) и SK (= Таен клуч).
+3. УРЛ на услугата: https://obs.&lt;REGION&gt;.myhuaweicloud.com (на пр. https://obs.cn-north-4.myhuaweicloud.com).
+4. Регион: на пр. cn-север-4.</value>
+  </data>
+  <data name="S3_Provider_LinodeObjectStorage_Help" xml:space="preserve">
+    <value>Складирање на објекти Linode (Akamai) — складирање компатибилно со S3.
+
+1. Во Linode Cloud Manager (https://cloud.linode.com/object-storage/buckets), креирајте кофа. Забележете го неговиот кластер.
+2. Одете во Складирање на објекти → Копчиња за пристап → Креирај клуч за пристап со опсег до корпата.
+   Копирајте го клучот за пристап и тајниот клуч.
+3. УРЛ на услугата: https://&lt;CLUSTER&gt;.linodeobjects.com (на пр. https://us-east-1.linodeobjects.com).
+4. Регион: ист код на кластерот, на пр. нас-исток-1.</value>
+  </data>
+  <data name="S3_Provider_QiniuCloudKodo_Help" xml:space="preserve">
+    <value>Qiniu Cloud Kodo — складирање компатибилно со S3 од Qiniu.
+
+1. Во порталот Qiniu (https://portal.qiniu.com/kodo/bucket), креирајте кофа. Забележете го неговиот регион.
+2. Одете во Личен центар → Управување со клучеви — копирајте ги вашите AccessKey и SecretKey.
+3. УРЛ на услугата по регион:
+   Источна Кина: https://s3-cn-east-1.qiniucs.com
+   Северна Кина: https://s3-cn-north-1.qiniucs.com
+   Јужна Кина: https://s3-cn-south-1.qiniucs.com
+   Северна Америка: https://s3-us-north-1.qiniucs.com
+4. Регион: соодветен код, на пр. cn-исток-1.</value>
+  </data>
+  <data name="S3_Provider_ScalewayObjectStorage_Help" xml:space="preserve">
+    <value>Scaleway Object Storage — Европско складирање компатибилно со S3.
+
+1. Во Scaleway Console (https://console.scaleway.com/object-storage/buckets), креирајте кофа. Забележете го неговиот регион (на пр. fr-par).
+2. Одете во IAM → API Keys → Generate API Key with Object Storage дозволи за пишување.
+   Копирајте го клучот за пристап и тајниот клуч.
+3. УРЛ на услугата: https://s3.&lt;REGION&gt;.scw.cloud (на пр. https://s3.fr-par.scw.cloud).
+4. Регион: на пр. фр-пар, нл-амс, пл-вав.</value>
+  </data>
+  <data name="S3_Provider_SelectelStorage_Help" xml:space="preserve">
+    <value>Selectel Object Storage — Руско складирање компатибилно со S3.
+
+1. Во Selectel Panel (https://my.selectel.ru/) → Cloud Storage → креирајте контејнер (= кофа).
+2. Под Корисници и улоги, креирајте корисник на услуга со пристап до складирање → копчиња S3 → креирајте пар клучеви.
+   Копирајте го клучот за пристап и тајниот клуч.
+3. Пополнете: Кофа, Пристапен клуч, Таен клуч.
+   УРЛ на услугата се пополнува автоматски.</value>
+  </data>
+  <data name="S3_Provider_TencentCloudCOS_Help" xml:space="preserve">
+    <value>Tencent Cloud COS — складирање на објекти компатибилно со S3 од Tencent.
+
+1. Во COS конзолата (https://console.cloud.tencent.com/cos), креирајте кофа. Забележете ги AppId и регионот (на пр. ap-peijing).
+2. Во Управување со пристап → API клучеви → Креирај клуч.
+   Копирајте ги SecretId (= Клучот за пристап) и SecretKey (= Таен клуч).
+3. УРЛ на услугата: https://cos.&lt;REGION&gt;.myqcloud.com (на пр. https://cos.ap-beijing.myqcloud.com).
+4. Формат на името на кофата: &lt;име&gt;-&lt;AppId&gt; (на пр. mybucket-1250000000). Регион: на пр. ап-пекинг.</value>
+  </data>
+  <data name="S3_Provider_VKCloudStorage_Help" xml:space="preserve">
+    <value>VK Cloud Object Storage — складирање компатибилно со S3 од VK Cloud.
+
+1. Во VK Cloud Portal (https://msk.cloud.vk.com/) → Cloud Storage → креирајте кофа.
+2. Под вашата сметка → Копчиња за пристап → креирајте нов пар клучеви.
+   Копирајте го клучот за пристап и тајниот клуч.
+3. Пополнете: Кофа, клуч за пристап, таен клуч и регион доколку е потребно (на пр. ru-msk).
+   УРЛ на услугата се пополнува автоматски.</value>
+  </data>
+  <data name="S3_Provider_VolcanoEngineTOS_Help" xml:space="preserve">
+    <value>Volcano Engine TOS (ByteDance) — складирање компатибилно со S3.
+
+1. Во Volcano Engine Console (https://console.volcengine.com/tos), креирајте кофа. Забележете го неговиот регион (на пр. cn-пекинг).
+2. Одете во IAM → Пристапни копчиња → креирајте клуч.
+   Копирајте го ID на клучот за пристап и тајниот клуч за пристап.
+3. УРЛ на услугата: https://tos-s3-&lt;REGION&gt;.volces.com (на пр. https://tos-s3-cn-beijing.volces.com).
+4. Регион: на пр. cn-пекинг.</value>
+  </data>
+  <data name="S3_Provider_Wasabi_Help" xml:space="preserve">
+    <value>Васаби — складирање на топол облак без такси за излез.
+
+1. Во Wasabi Console (https://console.wasabisys.com/) → Buckets → Create Bucket. Изберете регион.
+2. Одете во Копчиња за пристап → Креирај нов клуч за пристап. Копирајте го клучот за пристап и тајниот клуч.
+3. Пополнете: Кофа, клуч за пристап, таен клуч и регион (на пр. us-east-1, eu-central-1).
+   УРЛ на услугата се пополнува автоматски.</value>
+  </data>
+  <data name="S3_Provider_YandexObjectStorage_Help" xml:space="preserve">
+    <value>Yandex Object Storage — Руско складирање облак компатибилно со S3.
+
+1. Во Yandex Cloud Console (https://console.yandex.cloud/) → Складирање на објекти → креирајте кофа.
+2. Одете во Сметки за услуги → создадете една со улогата на складирање.уредник → креирајте Статички клуч за пристап.
+   Копирајте го ID на клучот (= Пристапен клуч) и Тајниот клуч.
+3. Пополнете: Кофа, Пристапен клуч, Таен клуч.
+   УРЛ на услугата и регионот се поставуваат автоматски.</value>
   </data>
   <data name="Server_Field_Address" xml:space="preserve">
     <value>Име на серверот:</value>
@@ -988,177 +1170,6 @@ bin.
   <data name="User_Field_Validation" xml:space="preserve">
     <value>Корисникот не е наведен.</value>
   </data>
-  <data name="S3_Provider_AlibabaCloudOSS_Help" xml:space="preserve">
-    <value>Alibaba Cloud OSS — складирање на објекти компатибилно со S3 од Alibaba.
-
-1. Во конзолата за OSS (https://oss.console.aliyun.com/), креирајте кофа. Забележете го неговиот регион (на пр. oss-cn-hangzhou).
-2. Во RAM конзолата → Корисници → креирајте корисник → прикачете AliyunOSSFullAccess → креирајте AccessKey.
-   Копирајте ги ID на AccessKey (= Пристапен клуч) и AccessKey Secret (= Таен клуч).
-3. УРЛ на услугата: https://oss-&lt;REGION&gt;.aliyuncs.com (на пр. https://oss-cn-hangzhou.aliyuncs.com).
-4. Регион: на пр. oss-cn-hangzhou.</value>
-  </data>
-  <data name="S3_Provider_AWSS3_Help" xml:space="preserve">
-    <value>AWS S3 - оригинално складирање на предмети на Амазон.
-
-1. Отворете ја конзолата S3 (https://s3.console.aws.amazon.com/) и креирајте кофа. Забележете го неговиот регион (на пр. нас-исток-1).
-2. Отворете IAM → Корисници → креирајте корисник → прикачете ја политиката на AmazonS3FullAccess.
-3. Под Безбедносни ингеренции, креирајте клуч за пристап - копирајте го ID на клучот и Тајната.
-4. Пополнете: Кофа, клуч за пристап, таен клуч и регион.</value>
-  </data>
-  <data name="S3_Provider_BaiduCloudBOS_Help" xml:space="preserve">
-    <value>Baidu Cloud BOS — складирање на објекти компатибилно со S3 од Baidu.
-
-1. Во конзолата BOS (https://console.bce.baidu.com/bos/), креирајте кофа. Забележете го неговиот регион (на пр. bj, gz, su).
-2. Одете во Безбедност → Пристапни клучеви — копирајте го вашиот ID на клучот за пристап и тајниот клуч за пристап.
-3. УРЛ на услугата: https://s3.&lt;REGION&gt;.bcebos.com (на пр. https://s3.bj.bcebos.com).
-4. Регион: на пр. бј.</value>
-  </data>
-  <data name="S3_Provider_BackblazeB2_Help" xml:space="preserve">
-    <value>Backblaze B2 — достапно складирање компатибилно со S3.
-
-1. Во Backblaze (https://www.backblaze.com/) → B2 Cloud Storage → Buckets, креирајте кофа.
-2. Одете во Копчиња за апликации → Додајте нов клуч за апликација, префрлете го во корпата.
-   Копирајте го ID на клучот (= Пристапен клуч) и applicationKey (= Таен клуч).
-3. УРЛ на услугата: крајната точка на вашата корпа е прикажана во деталите за корпата, на пр. https://s3.us-west-004.backblazeb2.com
-4. Регион: сегментот помеѓу „s3“. и „.backblazeb2.com“, на пр. нас-запад-004.</value>
-  </data>
-  <data name="S3_Provider_CloudflareR2_Help" xml:space="preserve">
-    <value>Cloudflare R2 — складирање компатибилно со S3 со нула излез.
-
-1. Во Cloudflare Dashboard (https://dash.cloudflare.com/) → R2 → креирајте кофа.
-2. Одете во R2 → Управувајте со R2 API токени → Креирај API токен со Object Read &amp; Write.
-   Копирајте го ID на клучот за пристап и тајниот клуч за пристап.
-3. УРЛ на услугата: https://&lt;ACCOUNT_ID&gt;.r2.cloudflarestorage.com
-   ИД на вашата сметка се прикажува на страницата за преглед на R2.
-4. Пополнете: Кофа, пристапен клуч, Таен клуч и УРЛ на услугата. Регионот е автоматски поставен на „автоматски“.</value>
-  </data>
-  <data name="S3_Provider_CloudRuStorage_Help" xml:space="preserve">
-    <value>Cloud.ru (SberCloud) Складирање на објекти — складирање на OBS компатибилно со S3.
-
-1. Во Cloud.ru конзолата (https://cloud.ru/) → Услуга за складирање на објекти (OBS) → креирајте кофа.
-2. Одете во Мои акредитиви → Копчиња за пристап → Додај клуч за пристап.
-   Копирајте го клучот за пристап и тајниот клуч за пристап.
-3. Пополнете: Кофа, клуч за пристап, таен клуч и регион (на пр. ru-moscow-1).
-   УРЛ на услугата се пополнува автоматски.</value>
-  </data>
-  <data name="S3_Provider_Custom_Help" xml:space="preserve">
-    <value>MinIO или кој било сервер компатибилен со S3.
-
-1. Стартувајте го вашиот MinIO (или друг S3-компатибилен) сервер.
-2. Направете кофа преку MinIO конзолата или &apos;mc mb &lt;alias&gt;/&lt;bucket&gt;&apos;.
-3. Креирајте клуч за пристап во MinIO конзолата → Пристапни клучеви (избегнувајте root ингеренции во производството).
-4. УРЛ на услугата: крајната точка на вашиот сервер, на пр. http://192.168.1.10:9000 или https://minio.example.com.
-5. Регион: која било вредност (на пр. us-east-1) - или оставете празно ако серверот не ја наметне.</value>
-  </data>
-  <data name="S3_Provider_DigitalOceanSpaces_Help" xml:space="preserve">
-    <value>DigitalOcean Spaces — складирање на објекти компатибилно со S3.
-
-1. Во Spaces (https://cloud.digitalocean.com/spaces), креирајте простор. Забележете го неговиот регион (на пр. nyc3).
-2. Одете во API → Spaces Keys → Generate New Key. Копирајте го клучот (= Пристапен клуч) и Тајната.
-3. УРЛ на услугата: https://&lt;REGION&gt;.digitaloceanspaces.com (на пр. https://nyc3.digitaloceanspaces.com).
-4. Регион: истиот краток код, на пр. nyc3.</value>
-  </data>
-  <data name="S3_Provider_GoogleCloudStorage_Help" xml:space="preserve">
-    <value>Google Cloud Storage — преку API за интероперабилност на S3.
-
-1. Во Google Cloud Console (https://console.cloud.google.com/storage), креирајте кофа.
-2. Одете во Складирање во облак → Поставки → Интероперабилност → креирајте клуч HMAC за сметка за услуга.
-   Копирајте го клучот за пристап и тајната.
-3. Пополнете: Кофа, Пристапен клуч (клуч HMAC), Таен клуч (тајна HMAC).
-   УРЛ на услугата и регионот се поставуваат автоматски.</value>
-  </data>
-  <data name="S3_Provider_HuaweiCloudOBS_Help" xml:space="preserve">
-    <value>Huawei Cloud OBS — складирање на објекти компатибилно со S3 од Huawei.
-
-1. Во OBS конзолата (https://console.huaweicloud.com/obs/), креирајте кофа. Забележете го неговиот регион (на пр. cn-север-4).
-2. Одете во Мои акредитиви → Копчиња за пристап → Креирај клуч за пристап.
-   Копирајте ги AK (= Пристапен клуч) и SK (= Таен клуч).
-3. УРЛ на услугата: https://obs.&lt;REGION&gt;.myhuaweicloud.com (на пр. https://obs.cn-north-4.myhuaweicloud.com).
-4. Регион: на пр. cn-север-4.</value>
-  </data>
-  <data name="S3_Provider_LinodeObjectStorage_Help" xml:space="preserve">
-    <value>Складирање на објекти Linode (Akamai) — складирање компатибилно со S3.
-
-1. Во Linode Cloud Manager (https://cloud.linode.com/object-storage/buckets), креирајте кофа. Забележете го неговиот кластер.
-2. Одете во Складирање на објекти → Копчиња за пристап → Креирај клуч за пристап со опсег до корпата.
-   Копирајте го клучот за пристап и тајниот клуч.
-3. УРЛ на услугата: https://&lt;CLUSTER&gt;.linodeobjects.com (на пр. https://us-east-1.linodeobjects.com).
-4. Регион: ист код на кластерот, на пр. нас-исток-1.</value>
-  </data>
-  <data name="S3_Provider_QiniuCloudKodo_Help" xml:space="preserve">
-    <value>Qiniu Cloud Kodo — складирање компатибилно со S3 од Qiniu.
-
-1. Во порталот Qiniu (https://portal.qiniu.com/kodo/bucket), креирајте кофа. Забележете го неговиот регион.
-2. Одете во Личен центар → Управување со клучеви — копирајте ги вашите AccessKey и SecretKey.
-3. УРЛ на услугата по регион:
-   Источна Кина: https://s3-cn-east-1.qiniucs.com
-   Северна Кина: https://s3-cn-north-1.qiniucs.com
-   Јужна Кина: https://s3-cn-south-1.qiniucs.com
-   Северна Америка: https://s3-us-north-1.qiniucs.com
-4. Регион: соодветен код, на пр. cn-исток-1.</value>
-  </data>
-  <data name="S3_Provider_ScalewayObjectStorage_Help" xml:space="preserve">
-    <value>Scaleway Object Storage — Европско складирање компатибилно со S3.
-
-1. Во Scaleway Console (https://console.scaleway.com/object-storage/buckets), креирајте кофа. Забележете го неговиот регион (на пр. fr-par).
-2. Одете во IAM → API Keys → Generate API Key with Object Storage дозволи за пишување.
-   Копирајте го клучот за пристап и тајниот клуч.
-3. УРЛ на услугата: https://s3.&lt;REGION&gt;.scw.cloud (на пр. https://s3.fr-par.scw.cloud).
-4. Регион: на пр. фр-пар, нл-амс, пл-вав.</value>
-  </data>
-  <data name="S3_Provider_SelectelStorage_Help" xml:space="preserve">
-    <value>Selectel Object Storage — Руско складирање компатибилно со S3.
-
-1. Во Selectel Panel (https://my.selectel.ru/) → Cloud Storage → креирајте контејнер (= кофа).
-2. Под Корисници и улоги, креирајте корисник на услуга со пристап до складирање → копчиња S3 → креирајте пар клучеви.
-   Копирајте го клучот за пристап и тајниот клуч.
-3. Пополнете: Кофа, Пристапен клуч, Таен клуч.
-   УРЛ на услугата се пополнува автоматски.</value>
-  </data>
-  <data name="S3_Provider_TencentCloudCOS_Help" xml:space="preserve">
-    <value>Tencent Cloud COS — складирање на објекти компатибилно со S3 од Tencent.
-
-1. Во COS конзолата (https://console.cloud.tencent.com/cos), креирајте кофа. Забележете ги AppId и регионот (на пр. ap-peijing).
-2. Во Управување со пристап → API клучеви → Креирај клуч.
-   Копирајте ги SecretId (= Клучот за пристап) и SecretKey (= Таен клуч).
-3. УРЛ на услугата: https://cos.&lt;REGION&gt;.myqcloud.com (на пр. https://cos.ap-beijing.myqcloud.com).
-4. Формат на името на кофата: &lt;име&gt;-&lt;AppId&gt; (на пр. mybucket-1250000000). Регион: на пр. ап-пекинг.</value>
-  </data>
-  <data name="S3_Provider_VKCloudStorage_Help" xml:space="preserve">
-    <value>VK Cloud Object Storage — складирање компатибилно со S3 од VK Cloud.
-
-1. Во VK Cloud Portal (https://msk.cloud.vk.com/) → Cloud Storage → креирајте кофа.
-2. Под вашата сметка → Копчиња за пристап → креирајте нов пар клучеви.
-   Копирајте го клучот за пристап и тајниот клуч.
-3. Пополнете: Кофа, клуч за пристап, таен клуч и регион доколку е потребно (на пр. ru-msk).
-   УРЛ на услугата се пополнува автоматски.</value>
-  </data>
-  <data name="S3_Provider_VolcanoEngineTOS_Help" xml:space="preserve">
-    <value>Volcano Engine TOS (ByteDance) — складирање компатибилно со S3.
-
-1. Во Volcano Engine Console (https://console.volcengine.com/tos), креирајте кофа. Забележете го неговиот регион (на пр. cn-пекинг).
-2. Одете во IAM → Пристапни копчиња → креирајте клуч.
-   Копирајте го ID на клучот за пристап и тајниот клуч за пристап.
-3. УРЛ на услугата: https://tos-s3-&lt;REGION&gt;.volces.com (на пр. https://tos-s3-cn-beijing.volces.com).
-4. Регион: на пр. cn-пекинг.</value>
-  </data>
-  <data name="S3_Provider_Wasabi_Help" xml:space="preserve">
-    <value>Васаби — складирање на топол облак без такси за излез.
-
-1. Во Wasabi Console (https://console.wasabisys.com/) → Buckets → Create Bucket. Изберете регион.
-2. Одете во Копчиња за пристап → Креирај нов клуч за пристап. Копирајте го клучот за пристап и тајниот клуч.
-3. Пополнете: Кофа, клуч за пристап, таен клуч и регион (на пр. us-east-1, eu-central-1).
-   УРЛ на услугата се пополнува автоматски.</value>
-  </data>
-  <data name="S3_Provider_YandexObjectStorage_Help" xml:space="preserve">
-    <value>Yandex Object Storage — Руско складирање облак компатибилно со S3.
-
-1. Во Yandex Cloud Console (https://console.yandex.cloud/) → Складирање на објекти → креирајте кофа.
-2. Одете во Сметки за услуги → создадете една со улогата на складирање.уредник → креирајте Статички клуч за пристап.
-   Копирајте го ID на клучот (= Пристапен клуч) и Тајниот клуч.
-3. Пополнете: Кофа, Пристапен клуч, Таен клуч.
-   УРЛ на услугата и регионот се поставуваат автоматски.</value>
-  </data>
   <data name="WebDav_Preset_Box_Help" xml:space="preserve">
     <value>Box — претпријатие за складирање облак со поддршка за WebDAV.
 
@@ -1248,7 +1259,9 @@ bin.
 3. Внесете ја лозинката за апликацијата (не лозинката за вашата сметка на Yandex) како лозинка.
    Адресата на серверот, HTTPS и портата се конфигурираат автоматски.</value>
   </data>
-
+  <data name="WhatTask_Description" xml:space="preserve">
+    <value>Тука можете да ги наведете папките за кои сакате да направите резервна копија.</value>
+  </data>
   <data name="Winget_Description" xml:space="preserve">
     <value>Направете резервна копија/синхронизирајте ги вашите податоци на Windows, Linux.
 Увезете фотографии од телефонот преку WI-FI и повеќе.

@@ -86,7 +86,7 @@ internal class UpdateCheckExpanderViewModel : ObservableObject
     {
         PlatformSpecificExperience.Instance
             .SupportManager
-            .OpenLatestRelease();
+            .OpenLink(ApplicationLinks.LatestRelease);
     }
 
     private async Task CheckForUpdates()

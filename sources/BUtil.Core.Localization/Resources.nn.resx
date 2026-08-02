@@ -1,5 +1,4 @@
 <root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -263,14 +262,14 @@ Bruksscenario: Du kopierer data til ein ekstern tenar. Det er eit problem: ISP r
   <data name="Field_Folder_Validation_Empty" xml:space="preserve">
     <value>Mappe er ikkje oppgjeve.</value>
   </data>
-  <data name="Field_Validation_NotSpecified" xml:space="preserve">
-    <value>{0} er ikkje oppgjeve.</value>
-  </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Mappa finst ikkje.</value>
   </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>Protokoll:</value>
+  </data>
+  <data name="Field_Validation_NotSpecified" xml:space="preserve">
+    <value>{0} er ikkje oppgjeve.</value>
   </data>
   <data name="Field_Version" xml:space="preserve">
     <value>Versjon:</value>
@@ -332,14 +331,26 @@ Bruksscenario: Du kopierer data til ein ekstern tenar. Det er eit problem: ISP r
   <data name="ImportMediaTask_Create" xml:space="preserve">
     <value>Mediaimportoppgåve</value>
   </data>
+  <data name="ImportMediaTask_DeleteCopiedDataOnSourceMedia" xml:space="preserve">
+    <value>Slett kopierte data frå kjeldemediet</value>
+  </data>
   <data name="ImportMediaTask_Edit_Title" xml:space="preserve">
     <value>Rediger mediaimportoppgåve "{0}"</value>
+  </data>
+  <data name="ImportMediaTask_Field_FileExtensions" xml:space="preserve">
+    <value>Filendingar:</value>
+  </data>
+  <data name="ImportMediaTask_Field_FileExtensions_Help" xml:space="preserve">
+    <value>Kommaseparert liste over endingar som skal importerast (til dømes .jpg, .png, .mp3). Lat stå tom for å importere alle filer.</value>
   </data>
   <data name="ImportMediaTask_Field_OutputFolder" xml:space="preserve">
     <value>Utdatamappe:</value>
   </data>
   <data name="ImportMediaTask_Field_TransformFileName" xml:space="preserve">
     <value>Filnamntransformasjonar:</value>
+  </data>
+  <data name="ImportMediaTask_Field_TransformFileName_Documentation" xml:space="preserve">
+    <value>Dokumentasjon for datoformat</value>
   </data>
   <data name="ImportMediaTask_Field_TransformFileName_Example" xml:space="preserve">
     <value>Døme:
@@ -366,17 +377,20 @@ For å sjå alle alternativ, google "C# DateTime format".</value>
 
 Sjå applikasjonen si nettside for dokumentasjon om korleis du set opp filoverføring via WI-FI gjennom FTP-tenarapplikasjon på telefonen.</value>
   </data>
-  <data name="ImportMediaTask_Storage_Help" xml:space="preserve">
-    <value>Oppgi kjelda du vil importere medium frå — til dømes eit SD-kort, ei kameramappe, eller ein telefon via FTPS.</value>
-  </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
     <value>Importer datakjelde</value>
   </data>
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>Hopp over allereie importerte filer</value>
   </data>
-  <data name="ImportMediaTask_DeleteCopiedDataOnSourceMedia" xml:space="preserve">
-    <value>Slett kopierte data frå kjeldemediet</value>
+  <data name="ImportMediaTask_SkipAlreadyImportedFiles_Help" xml:space="preserve">
+    <value>Når dette er aktivert, hoppar programmet over filer som allereie finst i målmappa eller som er importerte tidlegare. Tidlegare importerte filnamn blir hugsa, så ei fil blir ikkje handsama på nytt sjølv om du seinare slettar kopien frå målmappa.</value>
+  </data>
+  <data name="ImportMediaTask_Storage_Help" xml:space="preserve">
+    <value>Oppgi kjelda du vil importere medium frå — til dømes eit SD-kort, ei kameramappe, eller ein telefon via FTPS.</value>
+  </data>
+  <data name="ImportMediaTask_Storage_Validation_TooBroad" xml:space="preserve">
+    <value>Den valde mappa ser ut som ei einings- eller heimerot fordi ho inneheld fleire kjende mediemapper ({0}). Vel ei meir spesifikk mappe, til dømes "{1}".</value>
   </data>
   <data name="ImproveIt_Message" xml:space="preserve">
     <value>Ein uventa feil oppstod.
@@ -463,9 +477,6 @@ Ver venleg og gjer eitt av følgjande:
   <data name="LeftMenu_What_Hint" xml:space="preserve">
     <value>Her kan du leggje til mapper og filer du treng å handsame.</value>
   </data>
-  <data name="WhatTask_Description" xml:space="preserve">
-    <value>Her kan du angi mappene du vil ta tryggleikskopi av.</value>
-  </data>
   <data name="LeftMenu_What_Validation" xml:space="preserve">
     <value>Ingen element å handsame.</value>
   </data>
@@ -474,9 +485,6 @@ Ver venleg og gjer eitt av følgjande:
   </data>
   <data name="LeftMenu_When_Help" xml:space="preserve">
     <value>Her kan du setje opp ein tidsplan. Tidsplanleggjaren kan hjelpe deg med å automatisere oppgåvestart.</value>
-  </data>
-  <data name="RunAtLogin_Label" xml:space="preserve">
-    <value>Køyr ved innlogging</value>
   </data>
   <data name="LeftMenu_When_Optional_Hint" xml:space="preserve">
     <value>Denne delen er valfri. Hvis du hoppar over han, køyrer oppgåva berre når du startar ho manuelt.</value>
@@ -529,11 +537,11 @@ Ver venleg og gjer eitt av følgjande:
   <data name="Name_Field_Validation" xml:space="preserve">
     <value>Namn er tomt eller inneheld ugyldige stiteiknteikn.</value>
   </data>
-  <data name="Name_Field_Validation_ExceedsLimit" xml:space="preserve">
-    <value>Lengda på namnet '{0}' overstig grensa med {1} teikn.</value>
-  </data>
   <data name="Name_Field_Validation_Duplicate" xml:space="preserve">
     <value>Ei oppgåve med dette namnet finst allereie.</value>
+  </data>
+  <data name="Name_Field_Validation_ExceedsLimit" xml:space="preserve">
+    <value>Lengda på namnet '{0}' overstig grensa med {1} teikn.</value>
   </data>
   <data name="Name_Title" xml:space="preserve">
     <value>Namn</value>
@@ -590,6 +598,180 @@ Peik til ein katalog som inneheld denne fila.</value>
   </data>
   <data name="RestoreFrom_Field_Validation_StateInvalid" xml:space="preserve">
     <value>Kan ikkje lese tilstand.</value>
+  </data>
+  <data name="RunAtLogin_Label" xml:space="preserve">
+    <value>Køyr ved innlogging</value>
+  </data>
+  <data name="S3_Provider_AlibabaCloudOSS_Help" xml:space="preserve">
+    <value>Alibaba Cloud OSS — S3-kompatibel objektlagring fra Alibaba.
+
+1. Lag en bøtte i OSS-konsollen (https://oss.console.aliyun.com/). Legg merke til regionen (f.eks. oss-cn-hangzhou).
+2. I RAM-konsollen → Brukere → opprett en bruker → legg ved AliyunOSSFullAccess → opprett en tilgangsnøkkel.
+   Kopier AccessKey ID (= Access Key) og AccessKey Secret (= Secret Key).
+3. Tjeneste-URL: https://oss-&lt;REGION&gt;.aliyuncs.com (f.eks. https://oss-cn-hangzhou.aliyuncs.com).
+4. Region: f.eks. oss-cn-hangzhou.</value>
+  </data>
+  <data name="S3_Provider_AWSS3_Help" xml:space="preserve">
+    <value>AWS S3 — Amazons originale objektlagring.
+
+1. Åpne S3-konsollen (https://s3.console.aws.amazon.com/) og lag en bøtte. Legg merke til regionen (f.eks. us-east-1).
+2. Åpne IAM → Brukere → opprett en bruker → legg ved AmazonS3FullAccess-policyen.
+3. Under Sikkerhetslegitimasjon, opprett en tilgangsnøkkel — kopier nøkkel-ID og hemmelig.
+4. Fyll ut: Bøtte, tilgangsnøkkel, hemmelig nøkkel og region.</value>
+  </data>
+  <data name="S3_Provider_BackblazeB2_Help" xml:space="preserve">
+    <value>Backblaze B2 — rimelig S3-kompatibel lagring.
+
+1. Lag en bøtte i Backblaze (https://www.backblaze.com/) → B2 Cloud Storage → Buckets.
+2. Gå til App-nøkler → Legg til en ny applikasjonsnøkkel, vis den i bøtten.
+   Kopier nøkkel-ID (= tilgangsnøkkel) og applikasjonsnøkkel (= hemmelig nøkkel).
+3. Tjeneste-URL: endepunktet til bøtten din vises i bøttedetaljer, f.eks. https://s3.us-west-004.backblazeb2.com
+4. Region: segmentet mellom 's3.' og '.backblazeb2.com', f.eks. us-vest-004.</value>
+  </data>
+  <data name="S3_Provider_BaiduCloudBOS_Help" xml:space="preserve">
+    <value>Baidu Cloud BOS — S3-kompatibel objektlagring fra Baidu.
+
+1. Lag en bøtte i BOS Console (https://console.bce.baidu.com/bos/). Legg merke til regionen (f.eks. bj, gz, su).
+2. Gå til Sikkerhet → Tilgangsnøkler — kopier din tilgangsnøkkel-ID og hemmelige tilgangsnøkkel.
+3. Tjeneste-URL: https://s3.&lt;REGION&gt;.bcebos.com (f.eks. https://s3.bj.bcebos.com).
+4. Region: f.eks. bj.</value>
+  </data>
+  <data name="S3_Provider_CloudflareR2_Help" xml:space="preserve">
+    <value>Cloudflare R2 — S3-kompatibel lagring med null utgang.
+
+1. I Cloudflare Dashboard (https://dash.cloudflare.com/) → R2 → lag en bøtte.
+2. Gå til R2 → Administrer R2 API-tokens → Opprett API-token med objektlesing og skriving.
+   Kopier tilgangsnøkkel-ID og hemmelig tilgangsnøkkel.
+3. Tjeneste-URL: https://&lt;ACCOUNT_ID&gt;.r2.cloudflarestorage.com
+   Konto-ID-en din vises på R2-oversiktssiden.
+4. Fyll ut: Bucket, Access Key, Secret Key og Service URL. Region settes automatisk til 'auto'.</value>
+  </data>
+  <data name="S3_Provider_CloudRuStorage_Help" xml:space="preserve">
+    <value>Cloud.ru (SberCloud) Object Storage — S3-kompatibel OBS-lagring.
+
+1. I Cloud.ru-konsollen (https://cloud.ru/) → Object Storage Service (OBS) → lag en bøtte.
+2. Gå til Min påloggingsinformasjon → Tilgangsnøkler → Legg til tilgangsnøkkel.
+   Kopier tilgangsnøkkelen og hemmelig tilgangsnøkkel.
+3. Fyll ut: bøtte, tilgangsnøkkel, hemmelig nøkkel og region (f.eks. ru-moscow-1).
+   Tjeneste URL fylles ut automatisk.</value>
+  </data>
+  <data name="S3_Provider_Custom_Help" xml:space="preserve">
+    <value>MinIO eller en hvilken som helst S3-kompatibel server.
+
+1. Start MinIO (eller annen S3-kompatibel) server.
+2. Lag en bøtte via MinIO-konsollen eller 'mc mb &lt;alias&gt;/&lt;bøtte&gt;'.
+3. Opprett en tilgangsnøkkel i MinIO-konsollen → Tilgangsnøkler (unngå rotlegitimasjon i produksjonen).
+4. Tjeneste-URL: serverendepunktet ditt, f.eks. http://192.168.1.10:9000 eller https://minio.example.com.
+5. Region: en hvilken som helst verdi (f.eks. us-east-1) – eller la den stå tom hvis serveren ikke håndhever den.</value>
+  </data>
+  <data name="S3_Provider_DigitalOceanSpaces_Help" xml:space="preserve">
+    <value>DigitalOcean Spaces — S3-kompatibel objektlagring.
+
+1. Opprett et mellomrom i Spaces (https://cloud.digitalocean.com/spaces). Legg merke til regionen (f.eks. nyc3).
+2. Gå til API → Mellomromsnøkler → Generer ny nøkkel. Kopier nøkkelen (= tilgangsnøkkel) og hemmelig.
+3. Tjeneste-URL: https://&lt;REGION&gt;.digitaloceanspaces.com (f.eks. https://nyc3.digitaloceanspaces.com).
+4. Region: samme kortkode, f.eks. nyc3.</value>
+  </data>
+  <data name="S3_Provider_GoogleCloudStorage_Help" xml:space="preserve">
+    <value>Google Cloud Storage – via S3 interoperability API.
+
+1. Lag en bøtte i Google Cloud Console (https://console.cloud.google.com/storage).
+2. Gå til Cloud Storage → Innstillinger → Interoperabilitet → opprett en HMAC-nøkkel for en tjenestekonto.
+   Kopier tilgangsnøkkelen og hemmeligheten.
+3. Fyll ut: Bucket, Access Key (HMAC key), Secret Key (HMAC secret).
+   Tjeneste-URL og region angis automatisk.</value>
+  </data>
+  <data name="S3_Provider_HuaweiCloudOBS_Help" xml:space="preserve">
+    <value>Huawei Cloud OBS — S3-kompatibel objektlagring fra Huawei.
+
+1. Lag en bøtte i OBS-konsollen (https://console.huaweicloud.com/obs/). Legg merke til regionen (f.eks. cn-nord-4).
+2. Gå til Min påloggingsinformasjon → Tilgangsnøkler → Opprett tilgangsnøkkel.
+   Kopier AK (= Access Key) og SK (= Secret Key).
+3. Tjeneste-URL: https://obs.&lt;REGION&gt;.myhuaweicloud.com (f.eks. https://obs.cn-north-4.myhuaweicloud.com).
+4. Region: f.eks. cn-nord-4.</value>
+  </data>
+  <data name="S3_Provider_LinodeObjectStorage_Help" xml:space="preserve">
+    <value>Linode (Akamai) Objektlagring — S3-kompatibel lagring.
+
+1. Lag en bøtte i Linode Cloud Manager (https://cloud.linode.com/object-storage/buckets). Legg merke til klyngen.
+2. Gå til Objektlagring → Tilgangsnøkler → Opprett en tilgangsnøkkel med rekkevidde til bøtten.
+   Kopier tilgangsnøkkelen og hemmelig nøkkel.
+3. Tjeneste-URL: https://&lt;CLUSTER&gt;.linodeobjects.com (f.eks. https://us-east-1.linodeobjects.com).
+4. Region: samme klyngekode, f.eks. us-øst-1.</value>
+  </data>
+  <data name="S3_Provider_QiniuCloudKodo_Help" xml:space="preserve">
+    <value>Qiniu Cloud Kodo — S3-kompatibel lagring fra Qiniu.
+
+1. Lag en bøtte i Qiniu-portalen (https://portal.qiniu.com/kodo/bucket). Legg merke til regionen.
+2. Gå til Personlig senter → Nøkkelhåndtering — kopier din AccessKey og SecretKey.
+3. Tjenestenettadresse etter region:
+   Øst-Kina: https://s3-cn-east-1.qiniucs.com
+   Nord-Kina: https://s3-cn-north-1.qiniucs.com
+   Sør-Kina: https://s3-cn-south-1.qiniucs.com
+   Nord-Amerika: https://s3-us-north-1.qiniucs.com
+4. Region: samsvarende kode, f.eks. cn-east-1.</value>
+  </data>
+  <data name="S3_Provider_ScalewayObjectStorage_Help" xml:space="preserve">
+    <value>Scaleway Object Storage — Europeisk S3-kompatibel lagring.
+
+1. Lag en bøtte i Scaleway-konsollen (https://console.scaleway.com/object-storage/buckets). Legg merke til regionen (f.eks. fr-par).
+2. Gå til IAM → API-nøkler → Generer API-nøkkel med skrivetillatelser for objektlagring.
+   Kopier tilgangsnøkkelen og hemmelig nøkkel.
+3. Tjeneste-URL: https://s3.&lt;REGION&gt;.scw.cloud (f.eks. https://s3.fr-par.scw.cloud).
+4. Region: f.eks. fr-par, nl-ams, pl-waw.</value>
+  </data>
+  <data name="S3_Provider_SelectelStorage_Help" xml:space="preserve">
+    <value>Selectel Object Storage — S3-kompatibel russisk lagring.
+
+1. I Selectel Panel (https://my.selectel.ru/) → Cloud Storage → lag en beholder (= bøtte).
+2. Under Brukere og roller, opprett en tjenestebruker med lagringstilgang → S3-nøkler → opprett et nøkkelpar.
+   Kopier tilgangsnøkkelen og hemmelig nøkkel.
+3. Fyll ut: Bøtte, tilgangsnøkkel, hemmelig nøkkel.
+   Tjeneste URL fylles ut automatisk.</value>
+  </data>
+  <data name="S3_Provider_TencentCloudCOS_Help" xml:space="preserve">
+    <value>Tencent Cloud COS — S3-kompatibel objektlagring fra Tencent.
+
+1. Lag en bøtte i COS-konsollen (https://console.cloud.tencent.com/cos). Legg merke til AppId og Region (f.eks. ap-beijing).
+2. I Access Management → API Keys → Create Key.
+   Kopier SecretId (= Access Key) og SecretKey (= Secret Key).
+3. Tjeneste-URL: https://cos.&lt;REGION&gt;.myqcloud.com (f.eks. https://cos.ap-beijing.myqcloud.com).
+4. Bøttenavnformat: &lt;navn&gt;-&lt;AppId&gt; (f.eks. mybucket-1250000000). Region: f.eks. ap-beijing.</value>
+  </data>
+  <data name="S3_Provider_VKCloudStorage_Help" xml:space="preserve">
+    <value>VK Cloud Object Storage — S3-kompatibel lagring fra VK Cloud.
+
+1. I VK Cloud Portal (https://msk.cloud.vk.com/) → Cloud Storage → lag en bøtte.
+2. Under kontoen din → Tilgangsnøkler → opprett et nytt nøkkelpar.
+   Kopier tilgangsnøkkelen og hemmelig nøkkel.
+3. Fyll ut: Bøtte, tilgangsnøkkel, hemmelig nøkkel og region om nødvendig (f.eks. ru-msk).
+   Tjeneste URL fylles ut automatisk.</value>
+  </data>
+  <data name="S3_Provider_VolcanoEngineTOS_Help" xml:space="preserve">
+    <value>Volcano Engine TOS (ByteDance) — S3-kompatibel lagring.
+
+1. Lag en bøtte i Volcano Engine Console (https://console.volcengine.com/tos). Legg merke til regionen (f.eks. cn-beijing).
+2. Gå til IAM → Tilgangsnøkler → opprett en nøkkel.
+   Kopier tilgangsnøkkel-ID og hemmelig tilgangsnøkkel.
+3. Tjeneste-URL: https://tos-s3-&lt;REGION&gt;.volces.com (f.eks. https://tos-s3-cn-beijing.volces.com).
+4. Region: f.eks. cn-beijing.</value>
+  </data>
+  <data name="S3_Provider_Wasabi_Help" xml:space="preserve">
+    <value>Wasabi – hot cloud-lagring uten utgangsgebyrer.
+
+1. I Wasabi-konsollen (https://console.wasabisys.com/) → Bøtter → Lag bøtte. Velg en region.
+2. Gå til tilgangsnøkler → Opprett ny tilgangsnøkkel. Kopier tilgangsnøkkelen og hemmelig nøkkel.
+3. Fyll ut: bøtte, tilgangsnøkkel, hemmelig nøkkel og region (f.eks. us-east-1, eu-central-1).
+   Tjeneste URL fylles ut automatisk.</value>
+  </data>
+  <data name="S3_Provider_YandexObjectStorage_Help" xml:space="preserve">
+    <value>Yandex Object Storage — S3-kompatibel russisk skylagring.
+
+1. I Yandex Cloud Console (https://console.yandex.cloud/) → Objektlagring → lag en bøtte.
+2. Gå til Tjenestekontoer → opprett en med rollen storage.editor → opprett en statisk tilgangsnøkkel.
+   Kopier nøkkel-ID (= tilgangsnøkkel) og hemmelig nøkkel.
+3. Fyll ut: Bøtte, tilgangsnøkkel, hemmelig nøkkel.
+   Tjeneste-URL og region angis automatisk.</value>
   </data>
   <data name="Server_Field_Address" xml:space="preserve">
     <value>Tenarnamn:</value>
@@ -988,177 +1170,6 @@ Sjå detaljert skildring i følgjande lenkje.</value>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>Brukar er ikkje oppgjeve.</value>
   </data>
-  <data name="S3_Provider_AlibabaCloudOSS_Help" xml:space="preserve">
-    <value>Alibaba Cloud OSS — S3-kompatibel objektlagring fra Alibaba.
-
-1. Lag en bøtte i OSS-konsollen (https://oss.console.aliyun.com/). Legg merke til regionen (f.eks. oss-cn-hangzhou).
-2. I RAM-konsollen → Brukere → opprett en bruker → legg ved AliyunOSSFullAccess → opprett en tilgangsnøkkel.
-   Kopier AccessKey ID (= Access Key) og AccessKey Secret (= Secret Key).
-3. Tjeneste-URL: https://oss-&lt;REGION&gt;.aliyuncs.com (f.eks. https://oss-cn-hangzhou.aliyuncs.com).
-4. Region: f.eks. oss-cn-hangzhou.</value>
-  </data>
-  <data name="S3_Provider_AWSS3_Help" xml:space="preserve">
-    <value>AWS S3 — Amazons originale objektlagring.
-
-1. Åpne S3-konsollen (https://s3.console.aws.amazon.com/) og lag en bøtte. Legg merke til regionen (f.eks. us-east-1).
-2. Åpne IAM → Brukere → opprett en bruker → legg ved AmazonS3FullAccess-policyen.
-3. Under Sikkerhetslegitimasjon, opprett en tilgangsnøkkel — kopier nøkkel-ID og hemmelig.
-4. Fyll ut: Bøtte, tilgangsnøkkel, hemmelig nøkkel og region.</value>
-  </data>
-  <data name="S3_Provider_BaiduCloudBOS_Help" xml:space="preserve">
-    <value>Baidu Cloud BOS — S3-kompatibel objektlagring fra Baidu.
-
-1. Lag en bøtte i BOS Console (https://console.bce.baidu.com/bos/). Legg merke til regionen (f.eks. bj, gz, su).
-2. Gå til Sikkerhet → Tilgangsnøkler — kopier din tilgangsnøkkel-ID og hemmelige tilgangsnøkkel.
-3. Tjeneste-URL: https://s3.&lt;REGION&gt;.bcebos.com (f.eks. https://s3.bj.bcebos.com).
-4. Region: f.eks. bj.</value>
-  </data>
-  <data name="S3_Provider_BackblazeB2_Help" xml:space="preserve">
-    <value>Backblaze B2 — rimelig S3-kompatibel lagring.
-
-1. Lag en bøtte i Backblaze (https://www.backblaze.com/) → B2 Cloud Storage → Buckets.
-2. Gå til App-nøkler → Legg til en ny applikasjonsnøkkel, vis den i bøtten.
-   Kopier nøkkel-ID (= tilgangsnøkkel) og applikasjonsnøkkel (= hemmelig nøkkel).
-3. Tjeneste-URL: endepunktet til bøtten din vises i bøttedetaljer, f.eks. https://s3.us-west-004.backblazeb2.com
-4. Region: segmentet mellom &apos;s3.&apos; og &apos;.backblazeb2.com&apos;, f.eks. us-vest-004.</value>
-  </data>
-  <data name="S3_Provider_CloudflareR2_Help" xml:space="preserve">
-    <value>Cloudflare R2 — S3-kompatibel lagring med null utgang.
-
-1. I Cloudflare Dashboard (https://dash.cloudflare.com/) → R2 → lag en bøtte.
-2. Gå til R2 → Administrer R2 API-tokens → Opprett API-token med objektlesing og skriving.
-   Kopier tilgangsnøkkel-ID og hemmelig tilgangsnøkkel.
-3. Tjeneste-URL: https://&lt;ACCOUNT_ID&gt;.r2.cloudflarestorage.com
-   Konto-ID-en din vises på R2-oversiktssiden.
-4. Fyll ut: Bucket, Access Key, Secret Key og Service URL. Region settes automatisk til &apos;auto&apos;.</value>
-  </data>
-  <data name="S3_Provider_CloudRuStorage_Help" xml:space="preserve">
-    <value>Cloud.ru (SberCloud) Object Storage — S3-kompatibel OBS-lagring.
-
-1. I Cloud.ru-konsollen (https://cloud.ru/) → Object Storage Service (OBS) → lag en bøtte.
-2. Gå til Min påloggingsinformasjon → Tilgangsnøkler → Legg til tilgangsnøkkel.
-   Kopier tilgangsnøkkelen og hemmelig tilgangsnøkkel.
-3. Fyll ut: bøtte, tilgangsnøkkel, hemmelig nøkkel og region (f.eks. ru-moscow-1).
-   Tjeneste URL fylles ut automatisk.</value>
-  </data>
-  <data name="S3_Provider_Custom_Help" xml:space="preserve">
-    <value>MinIO eller en hvilken som helst S3-kompatibel server.
-
-1. Start MinIO (eller annen S3-kompatibel) server.
-2. Lag en bøtte via MinIO-konsollen eller &apos;mc mb &lt;alias&gt;/&lt;bøtte&gt;&apos;.
-3. Opprett en tilgangsnøkkel i MinIO-konsollen → Tilgangsnøkler (unngå rotlegitimasjon i produksjonen).
-4. Tjeneste-URL: serverendepunktet ditt, f.eks. http://192.168.1.10:9000 eller https://minio.example.com.
-5. Region: en hvilken som helst verdi (f.eks. us-east-1) – eller la den stå tom hvis serveren ikke håndhever den.</value>
-  </data>
-  <data name="S3_Provider_DigitalOceanSpaces_Help" xml:space="preserve">
-    <value>DigitalOcean Spaces — S3-kompatibel objektlagring.
-
-1. Opprett et mellomrom i Spaces (https://cloud.digitalocean.com/spaces). Legg merke til regionen (f.eks. nyc3).
-2. Gå til API → Mellomromsnøkler → Generer ny nøkkel. Kopier nøkkelen (= tilgangsnøkkel) og hemmelig.
-3. Tjeneste-URL: https://&lt;REGION&gt;.digitaloceanspaces.com (f.eks. https://nyc3.digitaloceanspaces.com).
-4. Region: samme kortkode, f.eks. nyc3.</value>
-  </data>
-  <data name="S3_Provider_GoogleCloudStorage_Help" xml:space="preserve">
-    <value>Google Cloud Storage – via S3 interoperability API.
-
-1. Lag en bøtte i Google Cloud Console (https://console.cloud.google.com/storage).
-2. Gå til Cloud Storage → Innstillinger → Interoperabilitet → opprett en HMAC-nøkkel for en tjenestekonto.
-   Kopier tilgangsnøkkelen og hemmeligheten.
-3. Fyll ut: Bucket, Access Key (HMAC key), Secret Key (HMAC secret).
-   Tjeneste-URL og region angis automatisk.</value>
-  </data>
-  <data name="S3_Provider_HuaweiCloudOBS_Help" xml:space="preserve">
-    <value>Huawei Cloud OBS — S3-kompatibel objektlagring fra Huawei.
-
-1. Lag en bøtte i OBS-konsollen (https://console.huaweicloud.com/obs/). Legg merke til regionen (f.eks. cn-nord-4).
-2. Gå til Min påloggingsinformasjon → Tilgangsnøkler → Opprett tilgangsnøkkel.
-   Kopier AK (= Access Key) og SK (= Secret Key).
-3. Tjeneste-URL: https://obs.&lt;REGION&gt;.myhuaweicloud.com (f.eks. https://obs.cn-north-4.myhuaweicloud.com).
-4. Region: f.eks. cn-nord-4.</value>
-  </data>
-  <data name="S3_Provider_LinodeObjectStorage_Help" xml:space="preserve">
-    <value>Linode (Akamai) Objektlagring — S3-kompatibel lagring.
-
-1. Lag en bøtte i Linode Cloud Manager (https://cloud.linode.com/object-storage/buckets). Legg merke til klyngen.
-2. Gå til Objektlagring → Tilgangsnøkler → Opprett en tilgangsnøkkel med rekkevidde til bøtten.
-   Kopier tilgangsnøkkelen og hemmelig nøkkel.
-3. Tjeneste-URL: https://&lt;CLUSTER&gt;.linodeobjects.com (f.eks. https://us-east-1.linodeobjects.com).
-4. Region: samme klyngekode, f.eks. us-øst-1.</value>
-  </data>
-  <data name="S3_Provider_QiniuCloudKodo_Help" xml:space="preserve">
-    <value>Qiniu Cloud Kodo — S3-kompatibel lagring fra Qiniu.
-
-1. Lag en bøtte i Qiniu-portalen (https://portal.qiniu.com/kodo/bucket). Legg merke til regionen.
-2. Gå til Personlig senter → Nøkkelhåndtering — kopier din AccessKey og SecretKey.
-3. Tjenestenettadresse etter region:
-   Øst-Kina: https://s3-cn-east-1.qiniucs.com
-   Nord-Kina: https://s3-cn-north-1.qiniucs.com
-   Sør-Kina: https://s3-cn-south-1.qiniucs.com
-   Nord-Amerika: https://s3-us-north-1.qiniucs.com
-4. Region: samsvarende kode, f.eks. cn-east-1.</value>
-  </data>
-  <data name="S3_Provider_ScalewayObjectStorage_Help" xml:space="preserve">
-    <value>Scaleway Object Storage — Europeisk S3-kompatibel lagring.
-
-1. Lag en bøtte i Scaleway-konsollen (https://console.scaleway.com/object-storage/buckets). Legg merke til regionen (f.eks. fr-par).
-2. Gå til IAM → API-nøkler → Generer API-nøkkel med skrivetillatelser for objektlagring.
-   Kopier tilgangsnøkkelen og hemmelig nøkkel.
-3. Tjeneste-URL: https://s3.&lt;REGION&gt;.scw.cloud (f.eks. https://s3.fr-par.scw.cloud).
-4. Region: f.eks. fr-par, nl-ams, pl-waw.</value>
-  </data>
-  <data name="S3_Provider_SelectelStorage_Help" xml:space="preserve">
-    <value>Selectel Object Storage — S3-kompatibel russisk lagring.
-
-1. I Selectel Panel (https://my.selectel.ru/) → Cloud Storage → lag en beholder (= bøtte).
-2. Under Brukere og roller, opprett en tjenestebruker med lagringstilgang → S3-nøkler → opprett et nøkkelpar.
-   Kopier tilgangsnøkkelen og hemmelig nøkkel.
-3. Fyll ut: Bøtte, tilgangsnøkkel, hemmelig nøkkel.
-   Tjeneste URL fylles ut automatisk.</value>
-  </data>
-  <data name="S3_Provider_TencentCloudCOS_Help" xml:space="preserve">
-    <value>Tencent Cloud COS — S3-kompatibel objektlagring fra Tencent.
-
-1. Lag en bøtte i COS-konsollen (https://console.cloud.tencent.com/cos). Legg merke til AppId og Region (f.eks. ap-beijing).
-2. I Access Management → API Keys → Create Key.
-   Kopier SecretId (= Access Key) og SecretKey (= Secret Key).
-3. Tjeneste-URL: https://cos.&lt;REGION&gt;.myqcloud.com (f.eks. https://cos.ap-beijing.myqcloud.com).
-4. Bøttenavnformat: &lt;navn&gt;-&lt;AppId&gt; (f.eks. mybucket-1250000000). Region: f.eks. ap-beijing.</value>
-  </data>
-  <data name="S3_Provider_VKCloudStorage_Help" xml:space="preserve">
-    <value>VK Cloud Object Storage — S3-kompatibel lagring fra VK Cloud.
-
-1. I VK Cloud Portal (https://msk.cloud.vk.com/) → Cloud Storage → lag en bøtte.
-2. Under kontoen din → Tilgangsnøkler → opprett et nytt nøkkelpar.
-   Kopier tilgangsnøkkelen og hemmelig nøkkel.
-3. Fyll ut: Bøtte, tilgangsnøkkel, hemmelig nøkkel og region om nødvendig (f.eks. ru-msk).
-   Tjeneste URL fylles ut automatisk.</value>
-  </data>
-  <data name="S3_Provider_VolcanoEngineTOS_Help" xml:space="preserve">
-    <value>Volcano Engine TOS (ByteDance) — S3-kompatibel lagring.
-
-1. Lag en bøtte i Volcano Engine Console (https://console.volcengine.com/tos). Legg merke til regionen (f.eks. cn-beijing).
-2. Gå til IAM → Tilgangsnøkler → opprett en nøkkel.
-   Kopier tilgangsnøkkel-ID og hemmelig tilgangsnøkkel.
-3. Tjeneste-URL: https://tos-s3-&lt;REGION&gt;.volces.com (f.eks. https://tos-s3-cn-beijing.volces.com).
-4. Region: f.eks. cn-beijing.</value>
-  </data>
-  <data name="S3_Provider_Wasabi_Help" xml:space="preserve">
-    <value>Wasabi – hot cloud-lagring uten utgangsgebyrer.
-
-1. I Wasabi-konsollen (https://console.wasabisys.com/) → Bøtter → Lag bøtte. Velg en region.
-2. Gå til tilgangsnøkler → Opprett ny tilgangsnøkkel. Kopier tilgangsnøkkelen og hemmelig nøkkel.
-3. Fyll ut: bøtte, tilgangsnøkkel, hemmelig nøkkel og region (f.eks. us-east-1, eu-central-1).
-   Tjeneste URL fylles ut automatisk.</value>
-  </data>
-  <data name="S3_Provider_YandexObjectStorage_Help" xml:space="preserve">
-    <value>Yandex Object Storage — S3-kompatibel russisk skylagring.
-
-1. I Yandex Cloud Console (https://console.yandex.cloud/) → Objektlagring → lag en bøtte.
-2. Gå til Tjenestekontoer → opprett en med rollen storage.editor → opprett en statisk tilgangsnøkkel.
-   Kopier nøkkel-ID (= tilgangsnøkkel) og hemmelig nøkkel.
-3. Fyll ut: Bøtte, tilgangsnøkkel, hemmelig nøkkel.
-   Tjeneste-URL og region angis automatisk.</value>
-  </data>
   <data name="WebDav_Preset_Box_Help" xml:space="preserve">
     <value>Box — enterprise cloud storage med WebDAV-støtte.
 
@@ -1207,7 +1218,7 @@ Sjå detaljert skildring i følgjande lenkje.</value>
     <value>Mail.ru Cloud via WebDAV.
 
 1. Gå til account.mail.ru → Sikkerhet → App-passord → Opprett app-passord.
-   Velg &quot;Mail&quot; eller &quot;All&quot; som type, og kopier deretter det genererte passordet.
+   Velg "Mail" eller "All" som type, og kopier deretter det genererte passordet.
 2. Skriv inn Mail.ru-e-postadressen din som bruker.
 3. Skriv inn app-passordet som passord.
    Serveradresse, HTTPS, port og basisbane konfigureres automatisk.</value>
@@ -1242,13 +1253,15 @@ Sjå detaljert skildring i følgjande lenkje.</value>
   <data name="WebDav_Preset_YandexDisk_Help" xml:space="preserve">
     <value>Yandex Disk via WebDAV.
 
-1. Gå til id.yandex.com → Sikkerhet → App-passord → Opprett app-passord for &apos;WebDAV-tilgang&apos;.
+1. Gå til id.yandex.com → Sikkerhet → App-passord → Opprett app-passord for 'WebDAV-tilgang'.
    Kopier det genererte passordet – det vises bare én gang.
 2. Skriv inn din Yandex-pålogging som bruker.
 3. Skriv inn app-passordet (ikke passordet for Yandex-kontoen din) som passord.
    Serveradresse, HTTPS og port konfigureres automatisk.</value>
   </data>
-
+  <data name="WhatTask_Description" xml:space="preserve">
+    <value>Her kan du angi mappene du vil ta tryggleikskopi av.</value>
+  </data>
   <data name="Winget_Description" xml:space="preserve">
     <value>Sikkerheitskopier/synkroniser dataa dine på Windows, Linux.
 Importer bilete frå telefon via WI-FI og meir.

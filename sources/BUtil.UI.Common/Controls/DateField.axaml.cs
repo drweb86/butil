@@ -10,8 +10,8 @@ public partial class DateField : UserControl
     public static readonly StyledProperty<string?> LabelProperty =
         AvaloniaProperty.Register<DateField, string?>(nameof(Label));
 
-    public static readonly StyledProperty<DateTimeOffset?> SelectedDateProperty =
-        AvaloniaProperty.Register<DateField, DateTimeOffset?>(nameof(SelectedDate), defaultBindingMode: BindingMode.TwoWay);
+    public static readonly StyledProperty<DateTime?> SelectedDateProperty =
+        AvaloniaProperty.Register<DateField, DateTime?>(nameof(SelectedDate), defaultBindingMode: BindingMode.TwoWay);
 
     public static readonly StyledProperty<string?> HelpProperty =
         AvaloniaProperty.Register<DateField, string?>(nameof(Help));
@@ -25,7 +25,7 @@ public partial class DateField : UserControl
         set => SetValue(LabelProperty, value);
     }
 
-    public DateTimeOffset? SelectedDate
+    public DateTime? SelectedDate
     {
         get => GetValue(SelectedDateProperty);
         set => SetValue(SelectedDateProperty, value);

@@ -1,5 +1,4 @@
 <root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -263,14 +262,14 @@
   <data name="Field_Folder_Validation_Empty" xml:space="preserve">
     <value>फ़ोल्डर निर्दिष्ट नहीं है।</value>
   </data>
-  <data name="Field_Validation_NotSpecified" xml:space="preserve">
-    <value>{0} निर्दिष्ट नहीं है।</value>
-  </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>फ़ोल्डर मौजूद नहीं है।</value>
   </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>प्रोटोकॉल:</value>
+  </data>
+  <data name="Field_Validation_NotSpecified" xml:space="preserve">
+    <value>{0} निर्दिष्ट नहीं है।</value>
   </data>
   <data name="Field_Version" xml:space="preserve">
     <value>संस्करण:</value>
@@ -332,14 +331,26 @@
   <data name="ImportMediaTask_Create" xml:space="preserve">
     <value>मीडिया कार्य आयात करें</value>
   </data>
+  <data name="ImportMediaTask_DeleteCopiedDataOnSourceMedia" xml:space="preserve">
+    <value>स्रोत मीडिया से कॉपी किया गया डेटा हटाएं</value>
+  </data>
   <data name="ImportMediaTask_Edit_Title" xml:space="preserve">
     <value>"{0}" मीडिया आयात कार्य संपादित करें</value>
+  </data>
+  <data name="ImportMediaTask_Field_FileExtensions" xml:space="preserve">
+    <value>फ़ाइल एक्सटेंशन:</value>
+  </data>
+  <data name="ImportMediaTask_Field_FileExtensions_Help" xml:space="preserve">
+    <value>आयात करने के लिए एक्सटेंशन की अल्पविराम से अलग सूची (उदाहरण .jpg, .png, .mp3)। सभी फ़ाइलें आयात करने के लिए खाली छोड़ें।</value>
   </data>
   <data name="ImportMediaTask_Field_OutputFolder" xml:space="preserve">
     <value>आउटपुट फ़ोल्डर:</value>
   </data>
   <data name="ImportMediaTask_Field_TransformFileName" xml:space="preserve">
     <value>फ़ाइल नाम परिवर्तन:</value>
+  </data>
+  <data name="ImportMediaTask_Field_TransformFileName_Documentation" xml:space="preserve">
+    <value>दिनांक प्रारूप दस्तावेज़</value>
   </data>
   <data name="ImportMediaTask_Field_TransformFileName_Example" xml:space="preserve">
     <value>उदाहरण:
@@ -366,17 +377,20 @@
 
 फोन पर वाई-फाई के माध्यम से FTP सर्वर एप्लिकेशन के माध्यम से फ़ाइल ट्रांसमिशन सेटअप के लिए दस्तावेज़ीकरण देखने के लिए एप्लिकेशन वेबसाइट देखें।</value>
   </data>
-  <data name="ImportMediaTask_Storage_Help" xml:space="preserve">
-    <value>मीडिया आयात करने का स्रोत निर्दिष्ट करें — उदाहरण के लिए एक SD कार्ड, कैमरा फ़ोल्डर, या FTPS के माध्यम से फ़ोन।</value>
-  </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
     <value>डेटा स्रोत आयात करें</value>
   </data>
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>पहले से आयातित फ़ाइलों को छोड़ें</value>
   </data>
-  <data name="ImportMediaTask_DeleteCopiedDataOnSourceMedia" xml:space="preserve">
-    <value>स्रोत मीडिया से कॉपी किया गया डेटा हटाएं</value>
+  <data name="ImportMediaTask_SkipAlreadyImportedFiles_Help" xml:space="preserve">
+    <value>सक्षम होने पर, एप्लिकेशन उन फ़ाइलों को छोड़ देता है जो गंतव्य फ़ोल्डर में पहले से मौजूद हैं या पहले आयात की जा चुकी हैं। पहले आयातित फ़ाइल नाम याद रखे जाते हैं, इसलिए बाद में गंतव्य से उसकी प्रतिलिपि हटाने पर भी फ़ाइल फिर से संसाधित नहीं होती।</value>
+  </data>
+  <data name="ImportMediaTask_Storage_Help" xml:space="preserve">
+    <value>मीडिया आयात करने का स्रोत निर्दिष्ट करें — उदाहरण के लिए एक SD कार्ड, कैमरा फ़ोल्डर, या FTPS के माध्यम से फ़ोन।</value>
+  </data>
+  <data name="ImportMediaTask_Storage_Validation_TooBroad" xml:space="preserve">
+    <value>चयनित फ़ोल्डर डिवाइस या होम रूट जैसा लगता है क्योंकि इसमें कई ज्ञात मीडिया फ़ोल्डर ({0}) हैं। कृपया अधिक विशिष्ट फ़ोल्डर चुनें, उदाहरण के लिए "{1}"।</value>
   </data>
   <data name="ImproveIt_Message" xml:space="preserve">
     <value>एक अप्रत्याशित त्रुटि हुई।
@@ -463,9 +477,6 @@
   <data name="LeftMenu_What_Hint" xml:space="preserve">
     <value>यहाँ आप वे फोल्डर और फ़ाइलें जोड़ सकते हैं जिन्हें आप प्रोसेस करना चाहते हैं।</value>
   </data>
-  <data name="WhatTask_Description" xml:space="preserve">
-    <value>यहां आप उन फ़ोल्डरों को निर्दिष्ट कर सकते हैं जिनका आप बैकअप लेना चाहते हैं।</value>
-  </data>
   <data name="LeftMenu_What_Validation" xml:space="preserve">
     <value>प्रोसेस करने के लिए कोई आइटम नहीं।</value>
   </data>
@@ -477,9 +488,6 @@
   </data>
   <data name="LeftMenu_When_Optional_Hint" xml:space="preserve">
     <value>यह अनुभाग वैकल्पिक है। यदि आप इसे छोड़ देते हैं, तो कार्य केवल तभी चलेगा जब आप इसे मैन्युअल रूप से लॉन्च करेंगे।</value>
-  </data>
-  <data name="RunAtLogin_Label" xml:space="preserve">
-    <value>लॉगिन पर चलाएँ</value>
   </data>
   <data name="LeftMenu_Where" xml:space="preserve">
     <value>कहाँ?</value>
@@ -529,11 +537,11 @@
   <data name="Name_Field_Validation" xml:space="preserve">
     <value>नाम खाली है या उसमें असमर्थित पथ वर्ण शामिल हैं।</value>
   </data>
-  <data name="Name_Field_Validation_ExceedsLimit" xml:space="preserve">
-    <value>नाम '{0}' की लंबाई {1} चरित्रों से अधिक है।</value>
-  </data>
   <data name="Name_Field_Validation_Duplicate" xml:space="preserve">
     <value>इस नाम का कार्य पहले से मौजूद है।</value>
+  </data>
+  <data name="Name_Field_Validation_ExceedsLimit" xml:space="preserve">
+    <value>नाम '{0}' की लंबाई {1} चरित्रों से अधिक है।</value>
   </data>
   <data name="Name_Title" xml:space="preserve">
     <value>नाम</value>
@@ -590,6 +598,180 @@
   </data>
   <data name="RestoreFrom_Field_Validation_StateInvalid" xml:space="preserve">
     <value>स्थिति नहीं पढ़ सकते।</value>
+  </data>
+  <data name="RunAtLogin_Label" xml:space="preserve">
+    <value>लॉगिन पर चलाएँ</value>
+  </data>
+  <data name="S3_Provider_AlibabaCloudOSS_Help" xml:space="preserve">
+    <value>अलीबाबा क्लाउड ओएसएस - अलीबाबा से S3-संगत ऑब्जेक्ट स्टोरेज।
+
+1. OSS कंसोल (https://oss.console.aliyun.com/) में, एक बकेट बनाएं। इसके क्षेत्र पर ध्यान दें (उदाहरण के लिए oss-cn-हांग्जो)।
+2. RAM कंसोल में → उपयोगकर्ता → एक उपयोगकर्ता बनाएं → AliyunOSSFullAccess संलग्न करें → एक AccessKey बनाएं।
+   AccessKey ID (= Access Key) और AccessKey Secret (= Secret Key) की प्रतिलिपि बनाएँ।
+3. सेवा यूआरएल: https://oss-&lt;REGION&gt;.aliyuncs.com (उदाहरण के लिए https://oss-cn-hangzhou.aliyuncs.com)।
+4. क्षेत्र: उदा. ओस्स-सीएन-हांग्जो।</value>
+  </data>
+  <data name="S3_Provider_AWSS3_Help" xml:space="preserve">
+    <value>AWS S3 - अमेज़ॅन का मूल ऑब्जेक्ट स्टोरेज।
+
+1. S3 कंसोल (https://s3.console.aws.amazon.com/) खोलें और एक बकेट बनाएं। इसके क्षेत्र पर ध्यान दें (उदा. us-east-1)।
+2. IAM खोलें → उपयोगकर्ता → एक उपयोगकर्ता बनाएं → AmazonS3FullAccess नीति संलग्न करें।
+3. सुरक्षा क्रेडेंशियल के अंतर्गत, एक एक्सेस कुंजी बनाएं - कुंजी आईडी और गुप्त की प्रतिलिपि बनाएँ।
+4. भरें: बकेट, एक्सेस कुंजी, गुप्त कुंजी और क्षेत्र।</value>
+  </data>
+  <data name="S3_Provider_BackblazeB2_Help" xml:space="preserve">
+    <value>बैकब्लेज़ बी2 — किफायती एस3-संगत भंडारण।
+
+1. बैकब्लेज़ (https://www.backblaze.com/) → B2 क्लाउड स्टोरेज → बकेट में, एक बकेट बनाएं।
+2. ऐप कुंजी पर जाएं → एक नई एप्लिकेशन कुंजी जोड़ें, इसे बकेट में स्कोप करें।
+   keyID (= एक्सेस कुंजी) और एप्लिकेशनकी (= गुप्त कुंजी) की प्रतिलिपि बनाएँ।
+3. सेवा यूआरएल: आपके बकेट का समापन बिंदु बकेट विवरण में दिखाया गया है, उदाहरण के लिए। https://s3.us-west-004.backblazeb2.com
+4. क्षेत्र: 's3' के बीच का खंड. और '.backblazeb2.com', उदा. हमें-पश्चिम-004।</value>
+  </data>
+  <data name="S3_Provider_BaiduCloudBOS_Help" xml:space="preserve">
+    <value>Baidu क्लाउड बीओएस - Baidu से S3-संगत ऑब्जेक्ट स्टोरेज।
+
+1. बीओएस कंसोल (https://console.bce.baidu.com/bos/) में, एक बकेट बनाएं। इसके क्षेत्र पर ध्यान दें (उदाहरण के लिए bj, gz, su)।
+2. सुरक्षा → एक्सेस कुंजी पर जाएं - अपनी एक्सेस कुंजी आईडी और गुप्त एक्सेस कुंजी की प्रतिलिपि बनाएँ।
+3. सेवा यूआरएल: https://s3.&lt;REGION&gt;.bcebos.com (उदाहरण के लिए https://s3.bj.bcebos.com)।
+4. क्षेत्र: उदा. बी.जे.</value>
+  </data>
+  <data name="S3_Provider_CloudflareR2_Help" xml:space="preserve">
+    <value>क्लाउडफ्लेयर आर2 - शून्य-निकास एस3-संगत भंडारण।
+
+1. क्लाउडफ्लेयर डैशबोर्ड में (https://dash.cloudflare.com/) → R2 → एक बकेट बनाएं।
+2. R2 पर जाएं → R2 API टोकन प्रबंधित करें → ऑब्जेक्ट रीड और राइट के साथ API टोकन बनाएं।
+   एक्सेस कुंजी आईडी और गुप्त एक्सेस कुंजी की प्रतिलिपि बनाएँ।
+3. सेवा यूआरएल: https://&lt;ACCOUNT_ID&gt;.r2.cloudflarestorage.com
+   आपकी खाता आईडी R2 अवलोकन पृष्ठ पर दिखाई गई है।
+4. भरें: बकेट, एक्सेस कुंजी, गुप्त कुंजी और सेवा यूआरएल। क्षेत्र स्वचालित रूप से 'ऑटो' पर सेट हो जाता है।</value>
+  </data>
+  <data name="S3_Provider_CloudRuStorage_Help" xml:space="preserve">
+    <value>Cloud.ru (SberCloud) ऑब्जेक्ट स्टोरेज - S3-संगत OBS स्टोरेज।
+
+1. Cloud.ru कंसोल में (https://cloud.ru/) → ऑब्जेक्ट स्टोरेज सर्विस (OBS) → एक बकेट बनाएं।
+2. माई क्रेडेंशियल्स → एक्सेस कुंजी → एक्सेस कुंजी जोड़ें पर जाएं।
+   एक्सेस कुंजी और गुप्त एक्सेस कुंजी की प्रतिलिपि बनाएँ।
+3. भरें: बकेट, एक्सेस कुंजी, गुप्त कुंजी और क्षेत्र (उदाहरण के लिए आरयू-मॉस्को-1)।
+   सेवा URL स्वचालित रूप से भर जाता है.</value>
+  </data>
+  <data name="S3_Provider_Custom_Help" xml:space="preserve">
+    <value>MiniIO या कोई S3-संगत सर्वर।
+
+1. अपना MiniIO (या अन्य S3-संगत) सर्वर प्रारंभ करें।
+2. MiniIO कंसोल या 'mc mb &lt;alias&gt;/&lt;bucket&gt;' के माध्यम से एक बकेट बनाएं।
+3. मिनिओ कंसोल में एक एक्सेस कुंजी बनाएं → एक्सेस कुंजी (उत्पादन में रूट क्रेडेंशियल से बचें)।
+4. सेवा URL: आपका सर्वर समापन बिंदु, उदा. http://192.168.1.10:9000 या https://minio.example.com.
+5. क्षेत्र: कोई भी मान (उदाहरण के लिए यूएस-ईस्ट-1) - या यदि सर्वर इसे लागू नहीं करता है तो खाली छोड़ दें।</value>
+  </data>
+  <data name="S3_Provider_DigitalOceanSpaces_Help" xml:space="preserve">
+    <value>DigitalOcean Spaces - S3-संगत ऑब्जेक्ट भंडारण।
+
+1. स्पेस (https://cloud.digitalocean.com/spaces) में, एक स्पेस बनाएं। इसके क्षेत्र पर ध्यान दें (जैसे nyc3)।
+2. एपीआई → स्पेस कुंजियाँ → नई कुंजी जनरेट करें पर जाएँ। कुंजी (= एक्सेस कुंजी) और गुप्त की प्रतिलिपि बनाएँ।
+3. सेवा यूआरएल: https://&lt;REGION&gt;.digitaloceanspaces.com (उदाहरण के लिए https://nyc3.digitaloceanspaces.com)।
+4. क्षेत्र: वही संक्षिप्त कोड, उदा. nyc3.</value>
+  </data>
+  <data name="S3_Provider_GoogleCloudStorage_Help" xml:space="preserve">
+    <value>Google क्लाउड स्टोरेज - S3 इंटरऑपरेबिलिटी API के माध्यम से।
+
+1. Google क्लाउड कंसोल (https://console.cloud.google.com/storage) में, एक बकेट बनाएं।
+2. क्लाउड स्टोरेज → सेटिंग्स → इंटरऑपरेबिलिटी → सर्विस अकाउंट के लिए HMAC कुंजी बनाएं पर जाएं।
+   एक्सेस कुंजी और रहस्य की प्रतिलिपि बनाएँ।
+3. भरें: बकेट, एक्सेस कुंजी (HMAC कुंजी), गुप्त कुंजी (HMAC गुप्त)।
+   सेवा URL और क्षेत्र स्वचालित रूप से सेट हो जाते हैं।</value>
+  </data>
+  <data name="S3_Provider_HuaweiCloudOBS_Help" xml:space="preserve">
+    <value>हुआवेई क्लाउड ओबीएस - हुआवेई से एस3-संगत ऑब्जेक्ट स्टोरेज।
+
+1. ओबीएस कंसोल (https://console.huaweicloud.com/obs/) में, एक बकेट बनाएं। इसके क्षेत्र पर ध्यान दें (उदाहरण के लिए सीएन-नॉर्थ-4)।
+2. माई क्रेडेंशियल्स → एक्सेस कुंजी → एक्सेस कुंजी बनाएं पर जाएं।
+   AK (= एक्सेस कुंजी) और SK (= गुप्त कुंजी) की प्रतिलिपि बनाएँ।
+3. सेवा यूआरएल: https://obs.&lt;REGION&gt;.myhuaweicloud.com (उदाहरण के लिए https://obs.cn-north-4.myhuaweicloud.com)।
+4. क्षेत्र: उदा. सीएन-उत्तर-4.</value>
+  </data>
+  <data name="S3_Provider_LinodeObjectStorage_Help" xml:space="preserve">
+    <value>लिनोड (अकामाई) ऑब्जेक्ट स्टोरेज - S3-संगत स्टोरेज।
+
+1. लिनोड क्लाउड मैनेजर (https://cloud.linode.com/object-storage/buckets) में, एक बकेट बनाएं। इसके क्लस्टर पर ध्यान दें.
+2. ऑब्जेक्ट स्टोरेज पर जाएं → एक्सेस कुंजी → बकेट के दायरे में एक एक्सेस कुंजी बनाएं।
+   एक्सेस कुंजी और गुप्त कुंजी की प्रतिलिपि बनाएँ।
+3. सेवा यूआरएल: https://&lt;CLUSTER&gt;.linodeobjects.com (उदाहरण के लिए https://us-east-1.linodeobjects.com)।
+4. क्षेत्र: समान क्लस्टर कोड, उदा. हमें-पूर्व-1.</value>
+  </data>
+  <data name="S3_Provider_QiniuCloudKodo_Help" xml:space="preserve">
+    <value>Qiniu क्लाउड कोडो - Qiniu से S3-संगत भंडारण।
+
+1. Qiniu पोर्टल (https://portal.qiniu.com/kodo/bucket) में, एक बकेट बनाएं। इसके क्षेत्र पर ध्यान दें.
+2. पर्सनल सेंटर → कुंजी प्रबंधन पर जाएँ - अपनी AccessKey और SecretKey की प्रतिलिपि बनाएँ।
+3. क्षेत्र के अनुसार सेवा यूआरएल:
+   पूर्वी चीन: https://s3-cn-east-1.qiniucs.com
+   उत्तरी चीन: https://s3-cn-north-1.qiniucs.com
+   दक्षिण चीन: https://s3-cn-south-1.qiniucs.com
+   उत्तरी अमेरिका: https://s3-us-north-1.qiniucs.com
+4. क्षेत्र: मिलान कोड, उदा. सीएन-पूर्व-1.</value>
+  </data>
+  <data name="S3_Provider_ScalewayObjectStorage_Help" xml:space="preserve">
+    <value>स्केलवे ऑब्जेक्ट स्टोरेज - यूरोपीय S3-संगत स्टोरेज।
+
+1. स्केलवे कंसोल (https://console.scaleway.com/object-storage/buckets) में, एक बकेट बनाएं। इसके क्षेत्र पर ध्यान दें (उदाहरण के लिए fr-par)।
+2. IAM → API कुंजी → ऑब्जेक्ट स्टोरेज लिखने की अनुमति के साथ API कुंजी जेनरेट करें पर जाएं।
+   एक्सेस कुंजी और गुप्त कुंजी की प्रतिलिपि बनाएँ।
+3. सेवा यूआरएल: https://s3.&lt;REGION&gt;.scw.cloud (उदाहरण के लिए https://s3.fr-par.scw.cloud)।
+4. क्षेत्र: उदा. fr-par, nl-ams, pl-waw.</value>
+  </data>
+  <data name="S3_Provider_SelectelStorage_Help" xml:space="preserve">
+    <value>सेलेक्टेल ऑब्जेक्ट स्टोरेज - S3-संगत रूसी स्टोरेज।
+
+1. सेलेक्टेल पैनल में (https://my.selectel.ru/) → क्लाउड स्टोरेज → एक कंटेनर (= बकेट) बनाएं।
+2. उपयोगकर्ता और भूमिका के अंतर्गत, स्टोरेज एक्सेस के साथ एक सेवा उपयोगकर्ता बनाएं → S3 कुंजी → एक कुंजी जोड़ी बनाएं।
+   एक्सेस कुंजी और गुप्त कुंजी की प्रतिलिपि बनाएँ।
+3. भरें: बकेट, एक्सेस कुंजी, गुप्त कुंजी।
+   सेवा URL स्वचालित रूप से भर जाता है.</value>
+  </data>
+  <data name="S3_Provider_TencentCloudCOS_Help" xml:space="preserve">
+    <value>Tencent क्लाउड COS - Tencent से S3-संगत ऑब्जेक्ट स्टोरेज।
+
+1. COS कंसोल (https://console.cloud.tencent.com/cos) में, एक बकेट बनाएं। AppId और क्षेत्र (जैसे एपी-बीजिंग) पर ध्यान दें।
+2. एक्सेस मैनेजमेंट में → एपीआई कुंजी → कुंजी बनाएं।
+   SecretId (= एक्सेस कुंजी) और SecretKey (= गुप्त कुंजी) की प्रतिलिपि बनाएँ।
+3. सेवा यूआरएल: https://cos.&lt;REGION&gt;.myqcloud.com (जैसे https://cos.ap-beijing.myqcloud.com)।
+4. बकेट नाम प्रारूप: &lt;नाम&gt;-&lt;AppId&gt; (उदा. mybucket-1250000000)। क्षेत्र: उदा. एपी-बीजिंग।</value>
+  </data>
+  <data name="S3_Provider_VKCloudStorage_Help" xml:space="preserve">
+    <value>वीके क्लाउड ऑब्जेक्ट स्टोरेज - वीके क्लाउड से एस3-संगत स्टोरेज।
+
+1. वीके क्लाउड पोर्टल (https://msk.cloud.vk.com/) → क्लाउड स्टोरेज → एक बकेट बनाएं।
+2. अपने खाते के अंतर्गत → एक्सेस कुंजी → एक नई कुंजी जोड़ी बनाएं।
+   एक्सेस कुंजी और गुप्त कुंजी की प्रतिलिपि बनाएँ।
+3. भरें: यदि आवश्यक हो तो बकेट, एक्सेस कुंजी, गुप्त कुंजी और क्षेत्र (उदाहरण के लिए आरयू-एमएसके)।
+   सेवा URL स्वचालित रूप से भर जाता है.</value>
+  </data>
+  <data name="S3_Provider_VolcanoEngineTOS_Help" xml:space="preserve">
+    <value>ज्वालामुखी इंजन टीओएस (बाइटडांस) - एस3-संगत भंडारण।
+
+1. ज्वालामुखी इंजन कंसोल (https://console.volcengine.com/tos) में, एक बाल्टी बनाएं। इसके क्षेत्र पर ध्यान दें (जैसे सीएन-बीजिंग)।
+2. IAM पर जाएं → एक्सेस कुंजी → एक कुंजी बनाएं।
+   एक्सेस कुंजी आईडी और गुप्त एक्सेस कुंजी की प्रतिलिपि बनाएँ।
+3. सेवा यूआरएल: https://tos-s3-&lt;REGION&gt;.volces.com (उदाहरण के लिए https://tos-s3-cn-beijing.volces.com)।
+4. क्षेत्र: उदा. सीएन-बीजिंग।</value>
+  </data>
+  <data name="S3_Provider_Wasabi_Help" xml:space="preserve">
+    <value>वसाबी - बिना किसी निकास शुल्क के हॉट क्लाउड स्टोरेज।
+
+1. वसाबी कंसोल में (https://console.wasabisys.com/) → बकेट → बकेट बनाएं। एक क्षेत्र चुनें.
+2. एक्सेस कुंजी पर जाएं → नई एक्सेस कुंजी बनाएं। एक्सेस कुंजी और गुप्त कुंजी की प्रतिलिपि बनाएँ।
+3. भरें: बकेट, एक्सेस कुंजी, गुप्त कुंजी और क्षेत्र (उदाहरण के लिए यूएस-ईस्ट-1, ईयू-सेंट्रल-1)।
+   सेवा URL स्वचालित रूप से भर जाता है.</value>
+  </data>
+  <data name="S3_Provider_YandexObjectStorage_Help" xml:space="preserve">
+    <value>यांडेक्स ऑब्जेक्ट स्टोरेज - S3-संगत रूसी क्लाउड स्टोरेज।
+
+1. यांडेक्स क्लाउड कंसोल में (https://console.yandex.cloud/) → ऑब्जेक्ट स्टोरेज → एक बकेट बनाएं।
+2. सर्विस अकाउंट पर जाएं → स्टोरेज.एडिटर भूमिका के साथ एक बनाएं → एक स्टेटिक एक्सेस कुंजी बनाएं।
+   कुंजी आईडी (= एक्सेस कुंजी) और गुप्त कुंजी की प्रतिलिपि बनाएँ।
+3. भरें: बकेट, एक्सेस कुंजी, गुप्त कुंजी।
+   सेवा URL और क्षेत्र स्वचालित रूप से सेट हो जाते हैं।</value>
   </data>
   <data name="Server_Field_Address" xml:space="preserve">
     <value>सर्वर नाम:</value>
@@ -988,177 +1170,6 @@ bin.
   <data name="User_Field_Validation" xml:space="preserve">
     <value>उपयोगकर्ता निर्दिष्ट नहीं है।</value>
   </data>
-  <data name="S3_Provider_AlibabaCloudOSS_Help" xml:space="preserve">
-    <value>अलीबाबा क्लाउड ओएसएस - अलीबाबा से S3-संगत ऑब्जेक्ट स्टोरेज।
-
-1. OSS कंसोल (https://oss.console.aliyun.com/) में, एक बकेट बनाएं। इसके क्षेत्र पर ध्यान दें (उदाहरण के लिए oss-cn-हांग्जो)।
-2. RAM कंसोल में → उपयोगकर्ता → एक उपयोगकर्ता बनाएं → AliyunOSSFullAccess संलग्न करें → एक AccessKey बनाएं।
-   AccessKey ID (= Access Key) और AccessKey Secret (= Secret Key) की प्रतिलिपि बनाएँ।
-3. सेवा यूआरएल: https://oss-&lt;REGION&gt;.aliyuncs.com (उदाहरण के लिए https://oss-cn-hangzhou.aliyuncs.com)।
-4. क्षेत्र: उदा. ओस्स-सीएन-हांग्जो।</value>
-  </data>
-  <data name="S3_Provider_AWSS3_Help" xml:space="preserve">
-    <value>AWS S3 - अमेज़ॅन का मूल ऑब्जेक्ट स्टोरेज।
-
-1. S3 कंसोल (https://s3.console.aws.amazon.com/) खोलें और एक बकेट बनाएं। इसके क्षेत्र पर ध्यान दें (उदा. us-east-1)।
-2. IAM खोलें → उपयोगकर्ता → एक उपयोगकर्ता बनाएं → AmazonS3FullAccess नीति संलग्न करें।
-3. सुरक्षा क्रेडेंशियल के अंतर्गत, एक एक्सेस कुंजी बनाएं - कुंजी आईडी और गुप्त की प्रतिलिपि बनाएँ।
-4. भरें: बकेट, एक्सेस कुंजी, गुप्त कुंजी और क्षेत्र।</value>
-  </data>
-  <data name="S3_Provider_BaiduCloudBOS_Help" xml:space="preserve">
-    <value>Baidu क्लाउड बीओएस - Baidu से S3-संगत ऑब्जेक्ट स्टोरेज।
-
-1. बीओएस कंसोल (https://console.bce.baidu.com/bos/) में, एक बकेट बनाएं। इसके क्षेत्र पर ध्यान दें (उदाहरण के लिए bj, gz, su)।
-2. सुरक्षा → एक्सेस कुंजी पर जाएं - अपनी एक्सेस कुंजी आईडी और गुप्त एक्सेस कुंजी की प्रतिलिपि बनाएँ।
-3. सेवा यूआरएल: https://s3.&lt;REGION&gt;.bcebos.com (उदाहरण के लिए https://s3.bj.bcebos.com)।
-4. क्षेत्र: उदा. बी.जे.</value>
-  </data>
-  <data name="S3_Provider_BackblazeB2_Help" xml:space="preserve">
-    <value>बैकब्लेज़ बी2 — किफायती एस3-संगत भंडारण।
-
-1. बैकब्लेज़ (https://www.backblaze.com/) → B2 क्लाउड स्टोरेज → बकेट में, एक बकेट बनाएं।
-2. ऐप कुंजी पर जाएं → एक नई एप्लिकेशन कुंजी जोड़ें, इसे बकेट में स्कोप करें।
-   keyID (= एक्सेस कुंजी) और एप्लिकेशनकी (= गुप्त कुंजी) की प्रतिलिपि बनाएँ।
-3. सेवा यूआरएल: आपके बकेट का समापन बिंदु बकेट विवरण में दिखाया गया है, उदाहरण के लिए। https://s3.us-west-004.backblazeb2.com
-4. क्षेत्र: &apos;s3&apos; के बीच का खंड. और &apos;.backblazeb2.com&apos;, उदा. हमें-पश्चिम-004।</value>
-  </data>
-  <data name="S3_Provider_CloudflareR2_Help" xml:space="preserve">
-    <value>क्लाउडफ्लेयर आर2 - शून्य-निकास एस3-संगत भंडारण।
-
-1. क्लाउडफ्लेयर डैशबोर्ड में (https://dash.cloudflare.com/) → R2 → एक बकेट बनाएं।
-2. R2 पर जाएं → R2 API टोकन प्रबंधित करें → ऑब्जेक्ट रीड और राइट के साथ API टोकन बनाएं।
-   एक्सेस कुंजी आईडी और गुप्त एक्सेस कुंजी की प्रतिलिपि बनाएँ।
-3. सेवा यूआरएल: https://&lt;ACCOUNT_ID&gt;.r2.cloudflarestorage.com
-   आपकी खाता आईडी R2 अवलोकन पृष्ठ पर दिखाई गई है।
-4. भरें: बकेट, एक्सेस कुंजी, गुप्त कुंजी और सेवा यूआरएल। क्षेत्र स्वचालित रूप से &apos;ऑटो&apos; पर सेट हो जाता है।</value>
-  </data>
-  <data name="S3_Provider_CloudRuStorage_Help" xml:space="preserve">
-    <value>Cloud.ru (SberCloud) ऑब्जेक्ट स्टोरेज - S3-संगत OBS स्टोरेज।
-
-1. Cloud.ru कंसोल में (https://cloud.ru/) → ऑब्जेक्ट स्टोरेज सर्विस (OBS) → एक बकेट बनाएं।
-2. माई क्रेडेंशियल्स → एक्सेस कुंजी → एक्सेस कुंजी जोड़ें पर जाएं।
-   एक्सेस कुंजी और गुप्त एक्सेस कुंजी की प्रतिलिपि बनाएँ।
-3. भरें: बकेट, एक्सेस कुंजी, गुप्त कुंजी और क्षेत्र (उदाहरण के लिए आरयू-मॉस्को-1)।
-   सेवा URL स्वचालित रूप से भर जाता है.</value>
-  </data>
-  <data name="S3_Provider_Custom_Help" xml:space="preserve">
-    <value>MiniIO या कोई S3-संगत सर्वर।
-
-1. अपना MiniIO (या अन्य S3-संगत) सर्वर प्रारंभ करें।
-2. MiniIO कंसोल या &apos;mc mb &lt;alias&gt;/&lt;bucket&gt;&apos; के माध्यम से एक बकेट बनाएं।
-3. मिनिओ कंसोल में एक एक्सेस कुंजी बनाएं → एक्सेस कुंजी (उत्पादन में रूट क्रेडेंशियल से बचें)।
-4. सेवा URL: आपका सर्वर समापन बिंदु, उदा. http://192.168.1.10:9000 या https://minio.example.com.
-5. क्षेत्र: कोई भी मान (उदाहरण के लिए यूएस-ईस्ट-1) - या यदि सर्वर इसे लागू नहीं करता है तो खाली छोड़ दें।</value>
-  </data>
-  <data name="S3_Provider_DigitalOceanSpaces_Help" xml:space="preserve">
-    <value>DigitalOcean Spaces - S3-संगत ऑब्जेक्ट भंडारण।
-
-1. स्पेस (https://cloud.digitalocean.com/spaces) में, एक स्पेस बनाएं। इसके क्षेत्र पर ध्यान दें (जैसे nyc3)।
-2. एपीआई → स्पेस कुंजियाँ → नई कुंजी जनरेट करें पर जाएँ। कुंजी (= एक्सेस कुंजी) और गुप्त की प्रतिलिपि बनाएँ।
-3. सेवा यूआरएल: https://&lt;REGION&gt;.digitaloceanspaces.com (उदाहरण के लिए https://nyc3.digitaloceanspaces.com)।
-4. क्षेत्र: वही संक्षिप्त कोड, उदा. nyc3.</value>
-  </data>
-  <data name="S3_Provider_GoogleCloudStorage_Help" xml:space="preserve">
-    <value>Google क्लाउड स्टोरेज - S3 इंटरऑपरेबिलिटी API के माध्यम से।
-
-1. Google क्लाउड कंसोल (https://console.cloud.google.com/storage) में, एक बकेट बनाएं।
-2. क्लाउड स्टोरेज → सेटिंग्स → इंटरऑपरेबिलिटी → सर्विस अकाउंट के लिए HMAC कुंजी बनाएं पर जाएं।
-   एक्सेस कुंजी और रहस्य की प्रतिलिपि बनाएँ।
-3. भरें: बकेट, एक्सेस कुंजी (HMAC कुंजी), गुप्त कुंजी (HMAC गुप्त)।
-   सेवा URL और क्षेत्र स्वचालित रूप से सेट हो जाते हैं।</value>
-  </data>
-  <data name="S3_Provider_HuaweiCloudOBS_Help" xml:space="preserve">
-    <value>हुआवेई क्लाउड ओबीएस - हुआवेई से एस3-संगत ऑब्जेक्ट स्टोरेज।
-
-1. ओबीएस कंसोल (https://console.huaweicloud.com/obs/) में, एक बकेट बनाएं। इसके क्षेत्र पर ध्यान दें (उदाहरण के लिए सीएन-नॉर्थ-4)।
-2. माई क्रेडेंशियल्स → एक्सेस कुंजी → एक्सेस कुंजी बनाएं पर जाएं।
-   AK (= एक्सेस कुंजी) और SK (= गुप्त कुंजी) की प्रतिलिपि बनाएँ।
-3. सेवा यूआरएल: https://obs.&lt;REGION&gt;.myhuaweicloud.com (उदाहरण के लिए https://obs.cn-north-4.myhuaweicloud.com)।
-4. क्षेत्र: उदा. सीएन-उत्तर-4.</value>
-  </data>
-  <data name="S3_Provider_LinodeObjectStorage_Help" xml:space="preserve">
-    <value>लिनोड (अकामाई) ऑब्जेक्ट स्टोरेज - S3-संगत स्टोरेज।
-
-1. लिनोड क्लाउड मैनेजर (https://cloud.linode.com/object-storage/buckets) में, एक बकेट बनाएं। इसके क्लस्टर पर ध्यान दें.
-2. ऑब्जेक्ट स्टोरेज पर जाएं → एक्सेस कुंजी → बकेट के दायरे में एक एक्सेस कुंजी बनाएं।
-   एक्सेस कुंजी और गुप्त कुंजी की प्रतिलिपि बनाएँ।
-3. सेवा यूआरएल: https://&lt;CLUSTER&gt;.linodeobjects.com (उदाहरण के लिए https://us-east-1.linodeobjects.com)।
-4. क्षेत्र: समान क्लस्टर कोड, उदा. हमें-पूर्व-1.</value>
-  </data>
-  <data name="S3_Provider_QiniuCloudKodo_Help" xml:space="preserve">
-    <value>Qiniu क्लाउड कोडो - Qiniu से S3-संगत भंडारण।
-
-1. Qiniu पोर्टल (https://portal.qiniu.com/kodo/bucket) में, एक बकेट बनाएं। इसके क्षेत्र पर ध्यान दें.
-2. पर्सनल सेंटर → कुंजी प्रबंधन पर जाएँ - अपनी AccessKey और SecretKey की प्रतिलिपि बनाएँ।
-3. क्षेत्र के अनुसार सेवा यूआरएल:
-   पूर्वी चीन: https://s3-cn-east-1.qiniucs.com
-   उत्तरी चीन: https://s3-cn-north-1.qiniucs.com
-   दक्षिण चीन: https://s3-cn-south-1.qiniucs.com
-   उत्तरी अमेरिका: https://s3-us-north-1.qiniucs.com
-4. क्षेत्र: मिलान कोड, उदा. सीएन-पूर्व-1.</value>
-  </data>
-  <data name="S3_Provider_ScalewayObjectStorage_Help" xml:space="preserve">
-    <value>स्केलवे ऑब्जेक्ट स्टोरेज - यूरोपीय S3-संगत स्टोरेज।
-
-1. स्केलवे कंसोल (https://console.scaleway.com/object-storage/buckets) में, एक बकेट बनाएं। इसके क्षेत्र पर ध्यान दें (उदाहरण के लिए fr-par)।
-2. IAM → API कुंजी → ऑब्जेक्ट स्टोरेज लिखने की अनुमति के साथ API कुंजी जेनरेट करें पर जाएं।
-   एक्सेस कुंजी और गुप्त कुंजी की प्रतिलिपि बनाएँ।
-3. सेवा यूआरएल: https://s3.&lt;REGION&gt;.scw.cloud (उदाहरण के लिए https://s3.fr-par.scw.cloud)।
-4. क्षेत्र: उदा. fr-par, nl-ams, pl-waw.</value>
-  </data>
-  <data name="S3_Provider_SelectelStorage_Help" xml:space="preserve">
-    <value>सेलेक्टेल ऑब्जेक्ट स्टोरेज - S3-संगत रूसी स्टोरेज।
-
-1. सेलेक्टेल पैनल में (https://my.selectel.ru/) → क्लाउड स्टोरेज → एक कंटेनर (= बकेट) बनाएं।
-2. उपयोगकर्ता और भूमिका के अंतर्गत, स्टोरेज एक्सेस के साथ एक सेवा उपयोगकर्ता बनाएं → S3 कुंजी → एक कुंजी जोड़ी बनाएं।
-   एक्सेस कुंजी और गुप्त कुंजी की प्रतिलिपि बनाएँ।
-3. भरें: बकेट, एक्सेस कुंजी, गुप्त कुंजी।
-   सेवा URL स्वचालित रूप से भर जाता है.</value>
-  </data>
-  <data name="S3_Provider_TencentCloudCOS_Help" xml:space="preserve">
-    <value>Tencent क्लाउड COS - Tencent से S3-संगत ऑब्जेक्ट स्टोरेज।
-
-1. COS कंसोल (https://console.cloud.tencent.com/cos) में, एक बकेट बनाएं। AppId और क्षेत्र (जैसे एपी-बीजिंग) पर ध्यान दें।
-2. एक्सेस मैनेजमेंट में → एपीआई कुंजी → कुंजी बनाएं।
-   SecretId (= एक्सेस कुंजी) और SecretKey (= गुप्त कुंजी) की प्रतिलिपि बनाएँ।
-3. सेवा यूआरएल: https://cos.&lt;REGION&gt;.myqcloud.com (जैसे https://cos.ap-beijing.myqcloud.com)।
-4. बकेट नाम प्रारूप: &lt;नाम&gt;-&lt;AppId&gt; (उदा. mybucket-1250000000)। क्षेत्र: उदा. एपी-बीजिंग।</value>
-  </data>
-  <data name="S3_Provider_VKCloudStorage_Help" xml:space="preserve">
-    <value>वीके क्लाउड ऑब्जेक्ट स्टोरेज - वीके क्लाउड से एस3-संगत स्टोरेज।
-
-1. वीके क्लाउड पोर्टल (https://msk.cloud.vk.com/) → क्लाउड स्टोरेज → एक बकेट बनाएं।
-2. अपने खाते के अंतर्गत → एक्सेस कुंजी → एक नई कुंजी जोड़ी बनाएं।
-   एक्सेस कुंजी और गुप्त कुंजी की प्रतिलिपि बनाएँ।
-3. भरें: यदि आवश्यक हो तो बकेट, एक्सेस कुंजी, गुप्त कुंजी और क्षेत्र (उदाहरण के लिए आरयू-एमएसके)।
-   सेवा URL स्वचालित रूप से भर जाता है.</value>
-  </data>
-  <data name="S3_Provider_VolcanoEngineTOS_Help" xml:space="preserve">
-    <value>ज्वालामुखी इंजन टीओएस (बाइटडांस) - एस3-संगत भंडारण।
-
-1. ज्वालामुखी इंजन कंसोल (https://console.volcengine.com/tos) में, एक बाल्टी बनाएं। इसके क्षेत्र पर ध्यान दें (जैसे सीएन-बीजिंग)।
-2. IAM पर जाएं → एक्सेस कुंजी → एक कुंजी बनाएं।
-   एक्सेस कुंजी आईडी और गुप्त एक्सेस कुंजी की प्रतिलिपि बनाएँ।
-3. सेवा यूआरएल: https://tos-s3-&lt;REGION&gt;.volces.com (उदाहरण के लिए https://tos-s3-cn-beijing.volces.com)।
-4. क्षेत्र: उदा. सीएन-बीजिंग।</value>
-  </data>
-  <data name="S3_Provider_Wasabi_Help" xml:space="preserve">
-    <value>वसाबी - बिना किसी निकास शुल्क के हॉट क्लाउड स्टोरेज।
-
-1. वसाबी कंसोल में (https://console.wasabisys.com/) → बकेट → बकेट बनाएं। एक क्षेत्र चुनें.
-2. एक्सेस कुंजी पर जाएं → नई एक्सेस कुंजी बनाएं। एक्सेस कुंजी और गुप्त कुंजी की प्रतिलिपि बनाएँ।
-3. भरें: बकेट, एक्सेस कुंजी, गुप्त कुंजी और क्षेत्र (उदाहरण के लिए यूएस-ईस्ट-1, ईयू-सेंट्रल-1)।
-   सेवा URL स्वचालित रूप से भर जाता है.</value>
-  </data>
-  <data name="S3_Provider_YandexObjectStorage_Help" xml:space="preserve">
-    <value>यांडेक्स ऑब्जेक्ट स्टोरेज - S3-संगत रूसी क्लाउड स्टोरेज।
-
-1. यांडेक्स क्लाउड कंसोल में (https://console.yandex.cloud/) → ऑब्जेक्ट स्टोरेज → एक बकेट बनाएं।
-2. सर्विस अकाउंट पर जाएं → स्टोरेज.एडिटर भूमिका के साथ एक बनाएं → एक स्टेटिक एक्सेस कुंजी बनाएं।
-   कुंजी आईडी (= एक्सेस कुंजी) और गुप्त कुंजी की प्रतिलिपि बनाएँ।
-3. भरें: बकेट, एक्सेस कुंजी, गुप्त कुंजी।
-   सेवा URL और क्षेत्र स्वचालित रूप से सेट हो जाते हैं।</value>
-  </data>
   <data name="WebDav_Preset_Box_Help" xml:space="preserve">
     <value>बॉक्स - WebDAV समर्थन के साथ एंटरप्राइज़ क्लाउड स्टोरेज।
 
@@ -1207,7 +1218,7 @@ bin.
     <value>WebDAV के माध्यम से Mail.ru क्लाउड।
 
 1. account.mail.ru → सुरक्षा → ऐप पासवर्ड → ऐप पासवर्ड बनाएं पर जाएं।
-   प्रकार के रूप में &apos;मेल&apos; या &apos;सभी&apos; चुनें, फिर जेनरेट किया गया पासवर्ड कॉपी करें।
+   प्रकार के रूप में 'मेल' या 'सभी' चुनें, फिर जेनरेट किया गया पासवर्ड कॉपी करें।
 2. उपयोगकर्ता के रूप में अपना Mail.ru ईमेल पता दर्ज करें।
 3. ऐप पासवर्ड को पासवर्ड के रूप में दर्ज करें।
    सर्वर पता, HTTPS, पोर्ट और बेस पथ स्वचालित रूप से कॉन्फ़िगर किए जाते हैं।</value>
@@ -1242,13 +1253,15 @@ bin.
   <data name="WebDav_Preset_YandexDisk_Help" xml:space="preserve">
     <value>WebDAV के माध्यम से यांडेक्स डिस्क।
 
-1. id.yandex.com पर जाएं → सुरक्षा → ऐप पासवर्ड → &apos;WebDAV एक्सेस&apos; के लिए ऐप पासवर्ड बनाएं।
+1. id.yandex.com पर जाएं → सुरक्षा → ऐप पासवर्ड → 'WebDAV एक्सेस' के लिए ऐप पासवर्ड बनाएं।
    जनरेट किए गए पासवर्ड को कॉपी करें - यह केवल एक बार दिखाया जाता है।
 2. उपयोगकर्ता के रूप में अपना यांडेक्स लॉगिन दर्ज करें।
 3. पासवर्ड के रूप में ऐप पासवर्ड (आपके यांडेक्स खाते का पासवर्ड नहीं) दर्ज करें।
    सर्वर पता, HTTPS और पोर्ट स्वचालित रूप से कॉन्फ़िगर किए जाते हैं।</value>
   </data>
-
+  <data name="WhatTask_Description" xml:space="preserve">
+    <value>यहां आप उन फ़ोल्डरों को निर्दिष्ट कर सकते हैं जिनका आप बैकअप लेना चाहते हैं।</value>
+  </data>
   <data name="Winget_Description" xml:space="preserve">
     <value>Windows, Linux पर अपने डेटा का बैकअप/सिंक्रोनाइज़ करें।
 WI-FI के माध्यम से फोन से फोटो आयात करें और भी बहुत कुछ।

@@ -1,5 +1,4 @@
 <root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -263,14 +262,14 @@
   <data name="Field_Folder_Validation_Empty" xml:space="preserve">
     <value>Папка не ўказана.</value>
   </data>
-  <data name="Field_Validation_NotSpecified" xml:space="preserve">
-    <value>{0} не ўказаны.</value>
-  </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Папка не існуе.</value>
   </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>Пратакол:</value>
+  </data>
+  <data name="Field_Validation_NotSpecified" xml:space="preserve">
+    <value>{0} не ўказаны.</value>
   </data>
   <data name="Field_Version" xml:space="preserve">
     <value>Версія:</value>
@@ -332,14 +331,26 @@
   <data name="ImportMediaTask_Create" xml:space="preserve">
     <value>Задача імпарту медыя</value>
   </data>
+  <data name="ImportMediaTask_DeleteCopiedDataOnSourceMedia" xml:space="preserve">
+    <value>Выдаліць скапіраваныя даныя з зыходнага носьбіта</value>
+  </data>
   <data name="ImportMediaTask_Edit_Title" xml:space="preserve">
     <value>Рэдагаваць задачу імпарту медыя "{0}"</value>
+  </data>
+  <data name="ImportMediaTask_Field_FileExtensions" xml:space="preserve">
+    <value>Пашырэнні файлаў:</value>
+  </data>
+  <data name="ImportMediaTask_Field_FileExtensions_Help" xml:space="preserve">
+    <value>Спіс пашырэнняў для імпарту праз коску (напрыклад .jpg, .png, .mp3). Пакіньце пустым, каб імпартаваць усе файлы.</value>
   </data>
   <data name="ImportMediaTask_Field_OutputFolder" xml:space="preserve">
     <value>Папка вываду:</value>
   </data>
   <data name="ImportMediaTask_Field_TransformFileName" xml:space="preserve">
     <value>Пераўтварэнні імя файла:</value>
+  </data>
+  <data name="ImportMediaTask_Field_TransformFileName_Documentation" xml:space="preserve">
+    <value>Дакументацыя фармату даты</value>
   </data>
   <data name="ImportMediaTask_Field_TransformFileName_Example" xml:space="preserve">
     <value>Прыклад:
@@ -366,17 +377,20 @@
 
 Глядзіце вэб-сайт праграмы для дакументацыі па наладжванні перадачы файлаў праз WI-FI праз праграму FTP-сервера на тэлефоне.</value>
   </data>
-  <data name="ImportMediaTask_Storage_Help" xml:space="preserve">
-    <value>Вызначце крыніцу, з якой імпартаваць медыяфайлы, — напрыклад, SD-карту, папку камеры або тэлефон праз FTPS.</value>
-  </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
     <value>Імпарт крыніцы даных</value>
   </data>
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>Прапусціць ужо імпартаваныя файлы</value>
   </data>
-  <data name="ImportMediaTask_DeleteCopiedDataOnSourceMedia" xml:space="preserve">
-    <value>Выдаліць скапіраваныя даныя з зыходнага носьбіта</value>
+  <data name="ImportMediaTask_SkipAlreadyImportedFiles_Help" xml:space="preserve">
+    <value>Калі ўключана, праграма прапускае файлы, якія ўжо ёсць у папцы прызначэння або былі імпартаваны раней. Імёны раней імпартаваных файлаў запамінаюцца, таму файл не апрацоўваецца паўторна, нават калі вы пазней выдаліце яго копію з папкі прызначэння.</value>
+  </data>
+  <data name="ImportMediaTask_Storage_Help" xml:space="preserve">
+    <value>Вызначце крыніцу, з якой імпартаваць медыяфайлы, — напрыклад, SD-карту, папку камеры або тэлефон праз FTPS.</value>
+  </data>
+  <data name="ImportMediaTask_Storage_Validation_TooBroad" xml:space="preserve">
+    <value>Выбраная папка падобная на корань прылады або хатні каталог, бо змяшчае некалькі вядомых медыяпапак ({0}). Укажыце больш канкрэтную папку, напрыклад "{1}".</value>
   </data>
   <data name="ImproveIt_Message" xml:space="preserve">
     <value>Адбылася нечаканая памылка.
@@ -463,9 +477,6 @@
   <data name="LeftMenu_What_Hint" xml:space="preserve">
     <value>Тут вы можаце дадаць папкі і файлы, якія трэба апрацаваць.</value>
   </data>
-  <data name="WhatTask_Description" xml:space="preserve">
-    <value>Тут вы можаце ўказаць папкі, якія хочаце рэзервова капіяваць.</value>
-  </data>
   <data name="LeftMenu_What_Validation" xml:space="preserve">
     <value>Няма элементаў для апрацоўкі.</value>
   </data>
@@ -477,9 +488,6 @@
   </data>
   <data name="LeftMenu_When_Optional_Hint" xml:space="preserve">
     <value>Гэты раздзел неабавязковы. Калі вы яго прапусціце, заданне будзе працаваць толькі пры ручным запуску.</value>
-  </data>
-  <data name="RunAtLogin_Label" xml:space="preserve">
-    <value>Запуск пры ўваходзе</value>
   </data>
   <data name="LeftMenu_Where" xml:space="preserve">
     <value>Дзе?</value>
@@ -529,11 +537,11 @@
   <data name="Name_Field_Validation" xml:space="preserve">
     <value>Імя пустое або змяшчае непадтрымліваемыя сімвалы шляху.</value>
   </data>
-  <data name="Name_Field_Validation_ExceedsLimit" xml:space="preserve">
-    <value>Даўжыня імя '{0}' перавышае ліміт на {1} сімвалаў.</value>
-  </data>
   <data name="Name_Field_Validation_Duplicate" xml:space="preserve">
     <value>Задача з такой назвай ужо існуе.</value>
+  </data>
+  <data name="Name_Field_Validation_ExceedsLimit" xml:space="preserve">
+    <value>Даўжыня імя '{0}' перавышае ліміт на {1} сімвалаў.</value>
   </data>
   <data name="Name_Title" xml:space="preserve">
     <value>Імя</value>
@@ -590,6 +598,180 @@
   </data>
   <data name="RestoreFrom_Field_Validation_StateInvalid" xml:space="preserve">
     <value>Немагчыма прачытаць стан.</value>
+  </data>
+  <data name="RunAtLogin_Label" xml:space="preserve">
+    <value>Запуск пры ўваходзе</value>
+  </data>
+  <data name="S3_Provider_AlibabaCloudOSS_Help" xml:space="preserve">
+    <value>Alibaba Cloud OSS — S3-сумяшчальнае сховішча аб'ектаў ад Alibaba.
+
+1. У OSS Console (https://oss.console.aliyun.com/) стварыце вядро. Звярніце ўвагу на яго рэгіён (напрыклад, oss-cn-hangzhou).
+2. У RAM Console → Users → стварыць карыстальніка → далучыць AliyunOSSFullAccess → стварыць AccessKey.
+   Скапіруйце AccessKey ID (= Ключ доступу) і AccessKey Secret (= Сакрэтны ключ).
+3. URL службы: https://oss-&lt;REGION&gt;.aliyuncs.com (напрыклад, https://oss-cn-hangzhou.aliyuncs.com).
+4. Рэгіён: напр. oss-cn-ханчжоу.</value>
+  </data>
+  <data name="S3_Provider_AWSS3_Help" xml:space="preserve">
+    <value>AWS S3 — арыгінальнае сховішча аб'ектаў Amazon.
+
+1. Адкрыйце кансоль S3 (https://s3.console.aws.amazon.com/) і стварыце вядро. Звярніце ўвагу на яго рэгіён (напрыклад, us-east-1).
+2. Адкрыйце IAM → Карыстальнікі → стварыце карыстальніка → далучыце палітыку AmazonS3FullAccess.
+3. У раздзеле «Уліковыя дадзеныя бяспекі» стварыце ключ доступу — скапіруйце ідэнтыфікатар ключа і сакрэт.
+4. Запоўніце: Bucket, Access Key, Secret Key і Region.</value>
+  </data>
+  <data name="S3_Provider_BackblazeB2_Help" xml:space="preserve">
+    <value>Backblaze B2 — даступнае S3-сумяшчальнае сховішча.
+
+1. У Backblaze (https://www.backblaze.com/) → B2 Cloud Storage → Buckets стварыце вядро.
+2. Перайдзіце ў раздзел «Ключы прыкладанняў» → «Дадаць новы ключ прыкладання», перанясіце яго ў вядро.
+   Скапіруйце keyID (= ключ доступу) і applicationKey (= сакрэтны ключ).
+3. URL-адрас сэрвісу: канчатковая кропка вашага сегмента паказваецца ў дэталях сегмента, напрыклад. https://s3.us-west-004.backblazeb2.com
+4. Вобласць: сегмент паміж 's3.' і '.backblazeb2.com', напр. us-west-004.</value>
+  </data>
+  <data name="S3_Provider_BaiduCloudBOS_Help" xml:space="preserve">
+    <value>Baidu Cloud BOS — S3-сумяшчальнае сховішча аб'ектаў ад Baidu.
+
+1. У BOS Console (https://console.bce.baidu.com/bos/) стварыце вядро. Звярніце ўвагу на яго рэгіён (напрыклад, bj, gz, su).
+2. Перайдзіце ў Бяспека → Ключы доступу — скапіруйце свой ID ключа доступу і сакрэтны ключ доступу.
+3. URL службы: https://s3.&lt;REGION&gt;.bcebos.com (напрыклад, https://s3.bj.bcebos.com).
+4. Рэгіён: напр. bj.</value>
+  </data>
+  <data name="S3_Provider_CloudflareR2_Help" xml:space="preserve">
+    <value>Cloudflare R2 — S3-сумяшчальнае сховішча з нулявым выхадам.
+
+1. У Cloudflare Dashboard (https://dash.cloudflare.com/) → R2 → стварыце вядро.
+2. Перайдзіце да R2 → Кіраванне маркерамі API R2 → Стварэнне маркера API з чытаннем і запісам аб'екта.
+   Скапіруйце ідэнтыфікатар ключа доступу і сакрэтны ключ доступу.
+3. URL-адрас службы: https://&lt;ACCOUNT_ID&gt;.r2.cloudflarestorage.com
+   Ідэнтыфікатар вашага ўліковага запісу паказаны на старонцы агляду R2.
+4. Запоўніце: Bucket, Access Key, Secret Key і Service URL. Рэгіён аўтаматычна ўсталёўваецца на "аўтаматычны".</value>
+  </data>
+  <data name="S3_Provider_CloudRuStorage_Help" xml:space="preserve">
+    <value>Cloud.ru (SberCloud) Object Storage — S3-сумяшчальнае OBS-сховішча.
+
+1. У Cloud.ru Console (https://cloud.ru/) → Служба захоўвання аб'ектаў (OBS) → стварыце вядро.
+2. Перайдзіце ў Мае ўліковыя дадзеныя → Ключы доступу → Дадаць ключ доступу.
+   Скапіруйце ключ доступу і сакрэтны ключ доступу.
+3. Запоўніце: Bucket, Access Key, Secret Key і Region (напрыклад, ru-moscow-1).
+   URL сэрвісу запаўняецца аўтаматычна.</value>
+  </data>
+  <data name="S3_Provider_Custom_Help" xml:space="preserve">
+    <value>MinIO або любы S3-сумяшчальны сервер.
+
+1. Запусціце сервер MinIO (ці іншы S3-сумяшчальны).
+2. Стварыце вядро праз кансоль MinIO або «mc mb &lt;псеўданім&gt;/&lt;вядро&gt;».
+3. Стварыце ключ доступу ў MinIO Console → Ключы доступу (пазбягайце каранёвых уліковых дадзеных у вытворчасці).
+4. URL службы: канчатковы пункт вашага сервера, напр. http://192.168.1.10:9000 або https://minio.example.com.
+5. Рэгіён: любое значэнне (напрыклад, us-east-1) — або пакіньце пустым, калі сервер яго не выконвае.</value>
+  </data>
+  <data name="S3_Provider_DigitalOceanSpaces_Help" xml:space="preserve">
+    <value>DigitalOcean Spaces — S3-сумяшчальнае сховішча аб'ектаў.
+
+1. У Spaces (https://cloud.digitalocean.com/spaces) стварыце Spaces. Звярніце ўвагу на яго рэгіён (напрыклад, nyc3).
+2. Перайдзіце ў API → Ключы прабелаў → Стварыць новы ключ. Скапіруйце ключ (= ключ доступу) і сакрэт.
+3. URL службы: https://&lt;REGION&gt;.digitaloceanspaces.com (напрыклад, https://nyc3.digitaloceanspaces.com).
+4. Рэгіён: той жа кароткі код, напр. nyc3.</value>
+  </data>
+  <data name="S3_Provider_GoogleCloudStorage_Help" xml:space="preserve">
+    <value>Google Cloud Storage — праз API ўзаемадзеяння S3.
+
+1. У Google Cloud Console (https://console.cloud.google.com/storage) стварыце вядро.
+2. Перайдзіце ў Воблачнае сховішча → Налады → Сумяшчальнасць → стварыце ключ HMAC для ўліковага запісу службы.
+   Скапіруйце ключ доступу і сакрэт.
+3. Запоўніце: Bucket, Access Key (HMAC key), Secret Key (HMAC secret).
+   URL і рэгіён сэрвісу ўсталёўваюцца аўтаматычна.</value>
+  </data>
+  <data name="S3_Provider_HuaweiCloudOBS_Help" xml:space="preserve">
+    <value>Huawei Cloud OBS — S3-сумяшчальнае сховішча аб'ектаў ад Huawei.
+
+1. У OBS Console (https://console.huaweicloud.com/obs/) стварыце вядро. Звярніце ўвагу на яго рэгіён (напрыклад, cn-north-4).
+2. Перайдзіце ў Мае ўліковыя дадзеныя → Ключы доступу → Стварыць ключ доступу.
+   Скапіруйце AK (= ключ доступу) і SK (= сакрэтны ключ).
+3. URL службы: https://obs.&lt;REGION&gt;.myhuaweicloud.com (напрыклад, https://obs.cn-north-4.myhuaweicloud.com).
+4. Рэгіён: напр. пн-поўнач-4.</value>
+  </data>
+  <data name="S3_Provider_LinodeObjectStorage_Help" xml:space="preserve">
+    <value>Linode (Akamai) Object Storage — S3-сумяшчальнае сховішча.
+
+1. У Linode Cloud Manager (https://cloud.linode.com/object-storage/buckets) стварыце вядро. Звярніце ўвагу на яго кластар.
+2. Перайдзіце ў раздзел «Сховішча аб'ектаў» → «Ключы доступу» → «Стварыць ключ доступу» ў межах да вядра.
+   Скапіруйце ключ доступу і сакрэтны ключ.
+3. URL службы: https://&lt;CLUSTER&gt;.linodeobjects.com (напрыклад, https://us-east-1.linodeobjects.com).
+4. Рэгіён: той жа код кластара, напр. зша-ўсход-1.</value>
+  </data>
+  <data name="S3_Provider_QiniuCloudKodo_Help" xml:space="preserve">
+    <value>Qiniu Cloud Kodo — S3-сумяшчальнае сховішча ад Qiniu.
+
+1. На партале Qiniu (https://portal.qiniu.com/kodo/bucket) стварыце вядро. Звярніце ўвагу на яго рэгіён.
+2. Перайдзіце ў Асабісты цэнтр → Кіраванне ключамі — скапіруйце свой AccessKey і SecretKey.
+3. URL службы па рэгіёнах:
+   Усходні Кітай: https://s3-cn-east-1.qiniucs.com
+   Паўночны Кітай: https://s3-cn-north-1.qiniucs.com
+   Паўднёвы Кітай: https://s3-cn-south-1.qiniucs.com
+   Паўночная Амерыка: https://s3-us-north-1.qiniucs.com
+4. Рэгіён: адпаведны код, напр. cn-ўсход-1.</value>
+  </data>
+  <data name="S3_Provider_ScalewayObjectStorage_Help" xml:space="preserve">
+    <value>Scaleway Object Storage — еўрапейскае S3-сумяшчальнае сховішча.
+
+1. У Scaleway Console (https://console.scaleway.com/object-storage/buckets) стварыце вядро. Звярніце ўвагу на яго рэгіён (напрыклад, fr-par).
+2. Перайдзіце ў раздзел IAM → Ключы API → Стварыць ключ API з правамі запісу ў Object Storage.
+   Скапіруйце ключ доступу і сакрэтны ключ.
+3. URL службы: https://s3.&lt;REGION&gt;.scw.cloud (напрыклад, https://s3.fr-par.scw.cloud).
+4. Рэгіён: напр. fr-par, nl-ams, pl-waw.</value>
+  </data>
+  <data name="S3_Provider_SelectelStorage_Help" xml:space="preserve">
+    <value>Selectel Object Storage — S3-сумяшчальнае расійскае сховішча.
+
+1. У Selectel Panel (https://my.selectel.ru/) → Cloud Storage → стварыце кантэйнер (= вядро).
+2. У раздзеле «Карыстальнікі і ролі» стварыце карыстальніка службы з доступам да сховішча → Ключы S3 → стварыце пару ключоў.
+   Скапіруйце ключ доступу і сакрэтны ключ.
+3. Запоўніце: Bucket, Access Key, Secret Key.
+   URL сэрвісу запаўняецца аўтаматычна.</value>
+  </data>
+  <data name="S3_Provider_TencentCloudCOS_Help" xml:space="preserve">
+    <value>Tencent Cloud COS — S3-сумяшчальнае сховішча аб'ектаў ад Tencent.
+
+1. У COS Console (https://console.cloud.tencent.com/cos) стварыце вядро. Звярніце ўвагу на AppId і рэгіён (напрыклад, ap-beijing).
+2. У Кіраванне доступам → Ключы API → Стварыць ключ.
+   Скапіруйце SecretId (= ключ доступу) і SecretKey (= сакрэтны ключ).
+3. URL службы: https://cos.&lt;REGION&gt;.myqcloud.com (напрыклад, https://cos.ap-beijing.myqcloud.com).
+4. Фармат назвы кантэйнера: &lt;name&gt;-&lt;AppId&gt; (напрыклад, mybucket-1250000000). Рэгіён: напр. ап-пекін.</value>
+  </data>
+  <data name="S3_Provider_VKCloudStorage_Help" xml:space="preserve">
+    <value>VK Cloud Object Storage — S3-сумяшчальнае сховішча ад VK Cloud.
+
+1. На VK Cloud Portal (https://msk.cloud.vk.com/) → Воблачнае сховішча → стварыце вядро.
+2. Пад вашым уліковым запісам → Ключы доступу → стварыце новую пару ключоў.
+   Скапіруйце ключ доступу і сакрэтны ключ.
+3. Запоўніце: Bucket, Access Key, Secret Key і Region, калі патрабуецца (напрыклад, ru-msk).
+   URL сэрвісу запаўняецца аўтаматычна.</value>
+  </data>
+  <data name="S3_Provider_VolcanoEngineTOS_Help" xml:space="preserve">
+    <value>Volcano Engine TOS (ByteDance) — S3-сумяшчальнае сховішча.
+
+1. У Volcano Engine Console (https://console.volcengine.com/tos) стварыце вядро. Адзначце яго рэгіён (напрыклад, cn-beijing).
+2. Перайдзіце ў IAM → Ключы доступу → стварыць ключ.
+   Скапіруйце ідэнтыфікатар ключа доступу і сакрэтны ключ доступу.
+3. URL службы: https://tos-s3-&lt;REGION&gt;.volces.com (напрыклад, https://tos-s3-cn-beijing.volces.com).
+4. Рэгіён: напр. cn-пекін.</value>
+  </data>
+  <data name="S3_Provider_Wasabi_Help" xml:space="preserve">
+    <value>Wasabi — гарачае воблачнае сховішча без платы за выхад.
+
+1. У Wasabi Console (https://console.wasabisys.com/) → Кашы → Стварыць кошык. Выберыце рэгіён.
+2. Перайдзіце да Ключы доступу → Стварыць новы ключ доступу. Скапіруйце ключ доступу і сакрэтны ключ.
+3. Запоўніце: вядро, ключ доступу, сакрэтны ключ і рэгіён (напрыклад, us-east-1, eu-central-1).
+   URL сэрвісу запаўняецца аўтаматычна.</value>
+  </data>
+  <data name="S3_Provider_YandexObjectStorage_Help" xml:space="preserve">
+    <value>Yandex Object Storage — S3-сумяшчальнае расійскае воблачнае сховішча.
+
+1. У Yandex Cloud Console (https://console.yandex.cloud/) → Object Storage → стварыце вядро.
+2. Перайдзіце да сэрвісных уліковых запісаў → стварыце адзін з роляй storage.editor → стварыце статычны ключ доступу.
+   Скапіруйце ідэнтыфікатар ключа (= ключ доступу) і сакрэтны ключ.
+3. Запоўніце: Bucket, Access Key, Secret Key.
+   URL і рэгіён сэрвісу ўсталёўваюцца аўтаматычна.</value>
   </data>
   <data name="Server_Field_Address" xml:space="preserve">
     <value>Імя сервера:</value>
@@ -988,177 +1170,6 @@ bin.
   <data name="User_Field_Validation" xml:space="preserve">
     <value>Карыстальнік не ўказаны.</value>
   </data>
-  <data name="S3_Provider_AlibabaCloudOSS_Help" xml:space="preserve">
-    <value>Alibaba Cloud OSS — S3-сумяшчальнае сховішча аб&apos;ектаў ад Alibaba.
-
-1. У OSS Console (https://oss.console.aliyun.com/) стварыце вядро. Звярніце ўвагу на яго рэгіён (напрыклад, oss-cn-hangzhou).
-2. У RAM Console → Users → стварыць карыстальніка → далучыць AliyunOSSFullAccess → стварыць AccessKey.
-   Скапіруйце AccessKey ID (= Ключ доступу) і AccessKey Secret (= Сакрэтны ключ).
-3. URL службы: https://oss-&lt;REGION&gt;.aliyuncs.com (напрыклад, https://oss-cn-hangzhou.aliyuncs.com).
-4. Рэгіён: напр. oss-cn-ханчжоу.</value>
-  </data>
-  <data name="S3_Provider_AWSS3_Help" xml:space="preserve">
-    <value>AWS S3 — арыгінальнае сховішча аб&apos;ектаў Amazon.
-
-1. Адкрыйце кансоль S3 (https://s3.console.aws.amazon.com/) і стварыце вядро. Звярніце ўвагу на яго рэгіён (напрыклад, us-east-1).
-2. Адкрыйце IAM → Карыстальнікі → стварыце карыстальніка → далучыце палітыку AmazonS3FullAccess.
-3. У раздзеле «Уліковыя дадзеныя бяспекі» стварыце ключ доступу — скапіруйце ідэнтыфікатар ключа і сакрэт.
-4. Запоўніце: Bucket, Access Key, Secret Key і Region.</value>
-  </data>
-  <data name="S3_Provider_BaiduCloudBOS_Help" xml:space="preserve">
-    <value>Baidu Cloud BOS — S3-сумяшчальнае сховішча аб&apos;ектаў ад Baidu.
-
-1. У BOS Console (https://console.bce.baidu.com/bos/) стварыце вядро. Звярніце ўвагу на яго рэгіён (напрыклад, bj, gz, su).
-2. Перайдзіце ў Бяспека → Ключы доступу — скапіруйце свой ID ключа доступу і сакрэтны ключ доступу.
-3. URL службы: https://s3.&lt;REGION&gt;.bcebos.com (напрыклад, https://s3.bj.bcebos.com).
-4. Рэгіён: напр. bj.</value>
-  </data>
-  <data name="S3_Provider_BackblazeB2_Help" xml:space="preserve">
-    <value>Backblaze B2 — даступнае S3-сумяшчальнае сховішча.
-
-1. У Backblaze (https://www.backblaze.com/) → B2 Cloud Storage → Buckets стварыце вядро.
-2. Перайдзіце ў раздзел «Ключы прыкладанняў» → «Дадаць новы ключ прыкладання», перанясіце яго ў вядро.
-   Скапіруйце keyID (= ключ доступу) і applicationKey (= сакрэтны ключ).
-3. URL-адрас сэрвісу: канчатковая кропка вашага сегмента паказваецца ў дэталях сегмента, напрыклад. https://s3.us-west-004.backblazeb2.com
-4. Вобласць: сегмент паміж &apos;s3.&apos; і &apos;.backblazeb2.com&apos;, напр. us-west-004.</value>
-  </data>
-  <data name="S3_Provider_CloudflareR2_Help" xml:space="preserve">
-    <value>Cloudflare R2 — S3-сумяшчальнае сховішча з нулявым выхадам.
-
-1. У Cloudflare Dashboard (https://dash.cloudflare.com/) → R2 → стварыце вядро.
-2. Перайдзіце да R2 → Кіраванне маркерамі API R2 → Стварэнне маркера API з чытаннем і запісам аб&apos;екта.
-   Скапіруйце ідэнтыфікатар ключа доступу і сакрэтны ключ доступу.
-3. URL-адрас службы: https://&lt;ACCOUNT_ID&gt;.r2.cloudflarestorage.com
-   Ідэнтыфікатар вашага ўліковага запісу паказаны на старонцы агляду R2.
-4. Запоўніце: Bucket, Access Key, Secret Key і Service URL. Рэгіён аўтаматычна ўсталёўваецца на &quot;аўтаматычны&quot;.</value>
-  </data>
-  <data name="S3_Provider_CloudRuStorage_Help" xml:space="preserve">
-    <value>Cloud.ru (SberCloud) Object Storage — S3-сумяшчальнае OBS-сховішча.
-
-1. У Cloud.ru Console (https://cloud.ru/) → Служба захоўвання аб&apos;ектаў (OBS) → стварыце вядро.
-2. Перайдзіце ў Мае ўліковыя дадзеныя → Ключы доступу → Дадаць ключ доступу.
-   Скапіруйце ключ доступу і сакрэтны ключ доступу.
-3. Запоўніце: Bucket, Access Key, Secret Key і Region (напрыклад, ru-moscow-1).
-   URL сэрвісу запаўняецца аўтаматычна.</value>
-  </data>
-  <data name="S3_Provider_Custom_Help" xml:space="preserve">
-    <value>MinIO або любы S3-сумяшчальны сервер.
-
-1. Запусціце сервер MinIO (ці іншы S3-сумяшчальны).
-2. Стварыце вядро праз кансоль MinIO або «mc mb &lt;псеўданім&gt;/&lt;вядро&gt;».
-3. Стварыце ключ доступу ў MinIO Console → Ключы доступу (пазбягайце каранёвых уліковых дадзеных у вытворчасці).
-4. URL службы: канчатковы пункт вашага сервера, напр. http://192.168.1.10:9000 або https://minio.example.com.
-5. Рэгіён: любое значэнне (напрыклад, us-east-1) — або пакіньце пустым, калі сервер яго не выконвае.</value>
-  </data>
-  <data name="S3_Provider_DigitalOceanSpaces_Help" xml:space="preserve">
-    <value>DigitalOcean Spaces — S3-сумяшчальнае сховішча аб&apos;ектаў.
-
-1. У Spaces (https://cloud.digitalocean.com/spaces) стварыце Spaces. Звярніце ўвагу на яго рэгіён (напрыклад, nyc3).
-2. Перайдзіце ў API → Ключы прабелаў → Стварыць новы ключ. Скапіруйце ключ (= ключ доступу) і сакрэт.
-3. URL службы: https://&lt;REGION&gt;.digitaloceanspaces.com (напрыклад, https://nyc3.digitaloceanspaces.com).
-4. Рэгіён: той жа кароткі код, напр. nyc3.</value>
-  </data>
-  <data name="S3_Provider_GoogleCloudStorage_Help" xml:space="preserve">
-    <value>Google Cloud Storage — праз API ўзаемадзеяння S3.
-
-1. У Google Cloud Console (https://console.cloud.google.com/storage) стварыце вядро.
-2. Перайдзіце ў Воблачнае сховішча → Налады → Сумяшчальнасць → стварыце ключ HMAC для ўліковага запісу службы.
-   Скапіруйце ключ доступу і сакрэт.
-3. Запоўніце: Bucket, Access Key (HMAC key), Secret Key (HMAC secret).
-   URL і рэгіён сэрвісу ўсталёўваюцца аўтаматычна.</value>
-  </data>
-  <data name="S3_Provider_HuaweiCloudOBS_Help" xml:space="preserve">
-    <value>Huawei Cloud OBS — S3-сумяшчальнае сховішча аб&apos;ектаў ад Huawei.
-
-1. У OBS Console (https://console.huaweicloud.com/obs/) стварыце вядро. Звярніце ўвагу на яго рэгіён (напрыклад, cn-north-4).
-2. Перайдзіце ў Мае ўліковыя дадзеныя → Ключы доступу → Стварыць ключ доступу.
-   Скапіруйце AK (= ключ доступу) і SK (= сакрэтны ключ).
-3. URL службы: https://obs.&lt;REGION&gt;.myhuaweicloud.com (напрыклад, https://obs.cn-north-4.myhuaweicloud.com).
-4. Рэгіён: напр. пн-поўнач-4.</value>
-  </data>
-  <data name="S3_Provider_LinodeObjectStorage_Help" xml:space="preserve">
-    <value>Linode (Akamai) Object Storage — S3-сумяшчальнае сховішча.
-
-1. У Linode Cloud Manager (https://cloud.linode.com/object-storage/buckets) стварыце вядро. Звярніце ўвагу на яго кластар.
-2. Перайдзіце ў раздзел «Сховішча аб&apos;ектаў» → «Ключы доступу» → «Стварыць ключ доступу» ў межах да вядра.
-   Скапіруйце ключ доступу і сакрэтны ключ.
-3. URL службы: https://&lt;CLUSTER&gt;.linodeobjects.com (напрыклад, https://us-east-1.linodeobjects.com).
-4. Рэгіён: той жа код кластара, напр. зша-ўсход-1.</value>
-  </data>
-  <data name="S3_Provider_QiniuCloudKodo_Help" xml:space="preserve">
-    <value>Qiniu Cloud Kodo — S3-сумяшчальнае сховішча ад Qiniu.
-
-1. На партале Qiniu (https://portal.qiniu.com/kodo/bucket) стварыце вядро. Звярніце ўвагу на яго рэгіён.
-2. Перайдзіце ў Асабісты цэнтр → Кіраванне ключамі — скапіруйце свой AccessKey і SecretKey.
-3. URL службы па рэгіёнах:
-   Усходні Кітай: https://s3-cn-east-1.qiniucs.com
-   Паўночны Кітай: https://s3-cn-north-1.qiniucs.com
-   Паўднёвы Кітай: https://s3-cn-south-1.qiniucs.com
-   Паўночная Амерыка: https://s3-us-north-1.qiniucs.com
-4. Рэгіён: адпаведны код, напр. cn-ўсход-1.</value>
-  </data>
-  <data name="S3_Provider_ScalewayObjectStorage_Help" xml:space="preserve">
-    <value>Scaleway Object Storage — еўрапейскае S3-сумяшчальнае сховішча.
-
-1. У Scaleway Console (https://console.scaleway.com/object-storage/buckets) стварыце вядро. Звярніце ўвагу на яго рэгіён (напрыклад, fr-par).
-2. Перайдзіце ў раздзел IAM → Ключы API → Стварыць ключ API з правамі запісу ў Object Storage.
-   Скапіруйце ключ доступу і сакрэтны ключ.
-3. URL службы: https://s3.&lt;REGION&gt;.scw.cloud (напрыклад, https://s3.fr-par.scw.cloud).
-4. Рэгіён: напр. fr-par, nl-ams, pl-waw.</value>
-  </data>
-  <data name="S3_Provider_SelectelStorage_Help" xml:space="preserve">
-    <value>Selectel Object Storage — S3-сумяшчальнае расійскае сховішча.
-
-1. У Selectel Panel (https://my.selectel.ru/) → Cloud Storage → стварыце кантэйнер (= вядро).
-2. У раздзеле «Карыстальнікі і ролі» стварыце карыстальніка службы з доступам да сховішча → Ключы S3 → стварыце пару ключоў.
-   Скапіруйце ключ доступу і сакрэтны ключ.
-3. Запоўніце: Bucket, Access Key, Secret Key.
-   URL сэрвісу запаўняецца аўтаматычна.</value>
-  </data>
-  <data name="S3_Provider_TencentCloudCOS_Help" xml:space="preserve">
-    <value>Tencent Cloud COS — S3-сумяшчальнае сховішча аб&apos;ектаў ад Tencent.
-
-1. У COS Console (https://console.cloud.tencent.com/cos) стварыце вядро. Звярніце ўвагу на AppId і рэгіён (напрыклад, ap-beijing).
-2. У Кіраванне доступам → Ключы API → Стварыць ключ.
-   Скапіруйце SecretId (= ключ доступу) і SecretKey (= сакрэтны ключ).
-3. URL службы: https://cos.&lt;REGION&gt;.myqcloud.com (напрыклад, https://cos.ap-beijing.myqcloud.com).
-4. Фармат назвы кантэйнера: &lt;name&gt;-&lt;AppId&gt; (напрыклад, mybucket-1250000000). Рэгіён: напр. ап-пекін.</value>
-  </data>
-  <data name="S3_Provider_VKCloudStorage_Help" xml:space="preserve">
-    <value>VK Cloud Object Storage — S3-сумяшчальнае сховішча ад VK Cloud.
-
-1. На VK Cloud Portal (https://msk.cloud.vk.com/) → Воблачнае сховішча → стварыце вядро.
-2. Пад вашым уліковым запісам → Ключы доступу → стварыце новую пару ключоў.
-   Скапіруйце ключ доступу і сакрэтны ключ.
-3. Запоўніце: Bucket, Access Key, Secret Key і Region, калі патрабуецца (напрыклад, ru-msk).
-   URL сэрвісу запаўняецца аўтаматычна.</value>
-  </data>
-  <data name="S3_Provider_VolcanoEngineTOS_Help" xml:space="preserve">
-    <value>Volcano Engine TOS (ByteDance) — S3-сумяшчальнае сховішча.
-
-1. У Volcano Engine Console (https://console.volcengine.com/tos) стварыце вядро. Адзначце яго рэгіён (напрыклад, cn-beijing).
-2. Перайдзіце ў IAM → Ключы доступу → стварыць ключ.
-   Скапіруйце ідэнтыфікатар ключа доступу і сакрэтны ключ доступу.
-3. URL службы: https://tos-s3-&lt;REGION&gt;.volces.com (напрыклад, https://tos-s3-cn-beijing.volces.com).
-4. Рэгіён: напр. cn-пекін.</value>
-  </data>
-  <data name="S3_Provider_Wasabi_Help" xml:space="preserve">
-    <value>Wasabi — гарачае воблачнае сховішча без платы за выхад.
-
-1. У Wasabi Console (https://console.wasabisys.com/) → Кашы → Стварыць кошык. Выберыце рэгіён.
-2. Перайдзіце да Ключы доступу → Стварыць новы ключ доступу. Скапіруйце ключ доступу і сакрэтны ключ.
-3. Запоўніце: вядро, ключ доступу, сакрэтны ключ і рэгіён (напрыклад, us-east-1, eu-central-1).
-   URL сэрвісу запаўняецца аўтаматычна.</value>
-  </data>
-  <data name="S3_Provider_YandexObjectStorage_Help" xml:space="preserve">
-    <value>Yandex Object Storage — S3-сумяшчальнае расійскае воблачнае сховішча.
-
-1. У Yandex Cloud Console (https://console.yandex.cloud/) → Object Storage → стварыце вядро.
-2. Перайдзіце да сэрвісных уліковых запісаў → стварыце адзін з роляй storage.editor → стварыце статычны ключ доступу.
-   Скапіруйце ідэнтыфікатар ключа (= ключ доступу) і сакрэтны ключ.
-3. Запоўніце: Bucket, Access Key, Secret Key.
-   URL і рэгіён сэрвісу ўсталёўваюцца аўтаматычна.</value>
-  </data>
   <data name="WebDav_Preset_Box_Help" xml:space="preserve">
     <value>Box — карпаратыўнае воблачнае сховішча з падтрымкай WebDAV.
 
@@ -1248,7 +1259,9 @@ bin.
 3. Увядзіце пароль праграмы (а не пароль уліковага запісу Yandex) у якасці пароля.
    Адрас сервера, HTTPS і порт наладжваюцца аўтаматычна.</value>
   </data>
-
+  <data name="WhatTask_Description" xml:space="preserve">
+    <value>Тут вы можаце ўказаць папкі, якія хочаце рэзервова капіяваць.</value>
+  </data>
   <data name="Winget_Description" xml:space="preserve">
     <value>Рэзервовае капіяванне/сінхранізацыя вашых даных у Windows, Linux.
 Імпарт фота з тэлефона праз WI-FI і іншае.

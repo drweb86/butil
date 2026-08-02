@@ -1,5 +1,4 @@
 <root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -263,14 +262,14 @@
   <data name="Field_Folder_Validation_Empty" xml:space="preserve">
     <value>پوشه مشخص نشده است.</value>
   </data>
-  <data name="Field_Validation_NotSpecified" xml:space="preserve">
-    <value>{0} مشخص نشده است.</value>
-  </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>پوشه وجود ندارد.</value>
   </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>پروتکل:</value>
+  </data>
+  <data name="Field_Validation_NotSpecified" xml:space="preserve">
+    <value>{0} مشخص نشده است.</value>
   </data>
   <data name="Field_Version" xml:space="preserve">
     <value>نسخه:</value>
@@ -332,14 +331,26 @@
   <data name="ImportMediaTask_Create" xml:space="preserve">
     <value>وظیفه وارد کردن رسانه</value>
   </data>
+  <data name="ImportMediaTask_DeleteCopiedDataOnSourceMedia" xml:space="preserve">
+    <value>حذف داده‌های کپی‌شده از رسانه مبدأ</value>
+  </data>
   <data name="ImportMediaTask_Edit_Title" xml:space="preserve">
     <value>ویرایش وظیفه وارد کردن رسانه "{0}"</value>
+  </data>
+  <data name="ImportMediaTask_Field_FileExtensions" xml:space="preserve">
+    <value>امتدادات الملفات:</value>
+  </data>
+  <data name="ImportMediaTask_Field_FileExtensions_Help" xml:space="preserve">
+    <value>قائمة مفصولة بفواصل للامتدادات المطلوب استيرادها (مثل .jpg و.png و.mp3). اتركها فارغة لاستيراد كل الملفات.</value>
   </data>
   <data name="ImportMediaTask_Field_OutputFolder" xml:space="preserve">
     <value>پوشه خروجی:</value>
   </data>
   <data name="ImportMediaTask_Field_TransformFileName" xml:space="preserve">
     <value>تبدیل نام فایل:</value>
+  </data>
+  <data name="ImportMediaTask_Field_TransformFileName_Documentation" xml:space="preserve">
+    <value>وثائق تنسيق التاريخ</value>
   </data>
   <data name="ImportMediaTask_Field_TransformFileName_Example" xml:space="preserve">
     <value>مثال:
@@ -366,17 +377,20 @@
 
 برای مستندات نحوه تنظیم انتقال فایل از طریق WI-FI با استفاده از برنامه FTP Server در تلفن، به وب‌سایت برنامه مراجعه کنید.</value>
   </data>
-  <data name="ImportMediaTask_Storage_Help" xml:space="preserve">
-    <value>منبعی را که می‌خواهید رسانه از آن وارد شود مشخص کنید — برای مثال کارت SD، پوشه دوربین، یا گوشی از طریق FTPS.</value>
-  </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
     <value>وارد کردن منبع داده</value>
   </data>
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>رد کردن فایل‌های قبلاً وارد شده</value>
   </data>
-  <data name="ImportMediaTask_DeleteCopiedDataOnSourceMedia" xml:space="preserve">
-    <value>حذف داده‌های کپی‌شده از رسانه مبدأ</value>
+  <data name="ImportMediaTask_SkipAlreadyImportedFiles_Help" xml:space="preserve">
+    <value>عند التمكين، يتخطى التطبيق الملفات الموجودة بالفعل في مجلد الوجهة أو التي تم استيرادها سابقًا. يتم تذكر أسماء الملفات المستوردة سابقًا، لذلك لن تتم معالجة الملف مرة أخرى حتى إذا حذفت نسخته من مجلد الوجهة لاحقًا.</value>
+  </data>
+  <data name="ImportMediaTask_Storage_Help" xml:space="preserve">
+    <value>منبعی را که می‌خواهید رسانه از آن وارد شود مشخص کنید — برای مثال کارت SD، پوشه دوربین، یا گوشی از طریق FTPS.</value>
+  </data>
+  <data name="ImportMediaTask_Storage_Validation_TooBroad" xml:space="preserve">
+    <value>يبدو المجلد المحدد كجذر جهاز أو مجلد رئيسي لأنه يحتوي على عدة مجلدات وسائط معروفة ({0}). يرجى اختيار مجلد أكثر تحديدًا، على سبيل المثال "{1}".</value>
   </data>
   <data name="ImproveIt_Message" xml:space="preserve">
     <value>خطای غیرمنتظره‌ای رخ داد.
@@ -464,9 +478,6 @@
   <data name="LeftMenu_What_Hint" xml:space="preserve">
     <value>در اینجا می‌توانید پوشه‌ها و فایل‌هایی که نیاز به پردازش دارند را اضافه کنید.</value>
   </data>
-  <data name="WhatTask_Description" xml:space="preserve">
-    <value>در اینجا می‌توانید پوشه‌هایی را که می‌خواهید پشتیبان‌گیری شوند مشخص کنید.</value>
-  </data>
   <data name="LeftMenu_What_Validation" xml:space="preserve">
     <value>موردی برای پردازش وجود ندارد.</value>
   </data>
@@ -478,9 +489,6 @@
   </data>
   <data name="LeftMenu_When_Optional_Hint" xml:space="preserve">
     <value>این بخش اختیاری است. اگر از آن صرف‌نظر کنید، کار فقط زمانی اجرا می‌شود که آن را به‌صورت دستی راه‌اندازی کنید.</value>
-  </data>
-  <data name="RunAtLogin_Label" xml:space="preserve">
-    <value>اجرا هنگام ورود</value>
   </data>
   <data name="LeftMenu_Where" xml:space="preserve">
     <value>کجا؟</value>
@@ -530,11 +538,11 @@
   <data name="Name_Field_Validation" xml:space="preserve">
     <value>نام خالی است یا شامل نویسه‌های مسیر پشتیبانی‌نشده است.</value>
   </data>
-  <data name="Name_Field_Validation_ExceedsLimit" xml:space="preserve">
-    <value>طول نام '{0}' به اندازه {1} نویسه از حد مجاز فراتر رفته است.</value>
-  </data>
   <data name="Name_Field_Validation_Duplicate" xml:space="preserve">
     <value>یک وظیفه با این نام از قبل وجود دارد.</value>
+  </data>
+  <data name="Name_Field_Validation_ExceedsLimit" xml:space="preserve">
+    <value>طول نام '{0}' به اندازه {1} نویسه از حد مجاز فراتر رفته است.</value>
   </data>
   <data name="Name_Title" xml:space="preserve">
     <value>نام</value>
@@ -591,6 +599,180 @@
   </data>
   <data name="RestoreFrom_Field_Validation_StateInvalid" xml:space="preserve">
     <value>خواندن وضعیت امکان‌پذیر نیست.</value>
+  </data>
+  <data name="RunAtLogin_Label" xml:space="preserve">
+    <value>اجرا هنگام ورود</value>
+  </data>
+  <data name="S3_Provider_AlibabaCloudOSS_Help" xml:space="preserve">
+    <value>Alibaba Cloud OSS — ذخیره سازی اشیاء سازگار با S3 از Alibaba.
+
+1. در OSS Console (https://oss.console.aliyun.com/)، یک سطل ایجاد کنید. به منطقه آن توجه کنید (به عنوان مثال oss-cn-hangzhou).
+2. در RAM Console → Users → ایجاد کاربر → AliyunOSSFullAccess را ضمیمه کنید → AccessKey ایجاد کنید.
+   شناسه AccessKey (= کلید دسترسی) و AccessKey Secret (= کلید مخفی) را کپی کنید.
+3. نشانی وب سرویس: https://oss-&lt;REGION&gt;.aliyuncs.com (به عنوان مثال https://oss-cn-hangzhou.aliyuncs.com).
+4. منطقه: به عنوان مثال. oss-cn-hangzhou.</value>
+  </data>
+  <data name="S3_Provider_AWSS3_Help" xml:space="preserve">
+    <value>AWS S3 - ذخیره سازی اصلی اشیاء آمازون.
+
+1. کنسول S3 (https://s3.console.aws.amazon.com/) را باز کنید و یک سطل ایجاد کنید. به منطقه آن توجه کنید (مثلاً us-east-1).
+2. IAM → کاربران → ایجاد کاربر → خط مشی AmazonS3FullAccess را ضمیمه کنید.
+3. در قسمت اعتبارنامه های امنیتی، یک کلید دسترسی ایجاد کنید — شناسه کلید و راز را کپی کنید.
+4. پر کنید: سطل، کلید دسترسی، کلید مخفی، و منطقه.</value>
+  </data>
+  <data name="S3_Provider_BackblazeB2_Help" xml:space="preserve">
+    <value>Backblaze B2 - فضای ذخیره سازی مقرون به صرفه سازگار با S3.
+
+1. در Backblaze (https://www.backblaze.com/) → B2 Cloud Storage → Buckets، یک سطل ایجاد کنید.
+2. به App Keys → Add a New Application Key بروید، آن را در سطل قرار دهید.
+   شناسه کلید (= کلید دسترسی) و applicationKey (= کلید مخفی) را کپی کنید.
+3. URL سرویس: نقطه پایانی سطل شما در جزئیات سطل نشان داده شده است، به عنوان مثال. https://s3.us-west-004.backblazeb2.com
+4. منطقه: بخش بین 's3'. و '.backblazeb2.com'، به عنوان مثال. us-west-004.</value>
+  </data>
+  <data name="S3_Provider_BaiduCloudBOS_Help" xml:space="preserve">
+    <value>Baidu Cloud BOS — ذخیره سازی اشیاء سازگار با S3 از Baidu.
+
+1. در کنسول BOS (https://console.bce.baidu.com/bos/)، یک سطل ایجاد کنید. به منطقه آن توجه کنید (به عنوان مثال bj، gz، su).
+2. به امنیت → کلیدهای دسترسی بروید — شناسه کلید دسترسی و کلید دسترسی مخفی خود را کپی کنید.
+3. نشانی وب سرویس: https://s3.&lt;REGION&gt;.bcebos.com (به عنوان مثال https://s3.bj.bcebos.com).
+4. منطقه: به عنوان مثال. bj.</value>
+  </data>
+  <data name="S3_Provider_CloudflareR2_Help" xml:space="preserve">
+    <value>Cloudflare R2 - فضای ذخیره سازی سازگار با S3 با خروجی صفر.
+
+1. در داشبورد Cloudflare (https://dash.cloudflare.com/) → R2 → یک سطل ایجاد کنید.
+2. به R2 → Manage R2 API Tokens → Create API Token with Object Read &amp; Write بروید.
+   شناسه کلید دسترسی و کلید دسترسی مخفی را کپی کنید.
+3. آدرس سرویس: https://&lt;ACCOUNT_ID&gt;.r2.cloudflarestorage.com
+   شناسه حساب شما در صفحه نمای کلی R2 نشان داده شده است.
+4. پر کنید: سطل، کلید دسترسی، کلید مخفی، و URL خدمات. منطقه به طور خودکار روی "خودکار" تنظیم شده است.</value>
+  </data>
+  <data name="S3_Provider_CloudRuStorage_Help" xml:space="preserve">
+    <value>Cloud.ru (SberCloud) Object Storage — ذخیره سازی OBS سازگار با S3.
+
+1. در کنسول Cloud.ru (https://cloud.ru/) → سرویس ذخیره سازی اشیا (OBS) → یک سطل ایجاد کنید.
+2. به My Credentials → Access Keys → Add Access Key بروید.
+   کلید دسترسی و کلید دسترسی مخفی را کپی کنید.
+3. پر کنید: سطل، کلید دسترسی، کلید مخفی، و منطقه (به عنوان مثال ru-moscow-1).
+   URL سرویس به طور خودکار پر می شود.</value>
+  </data>
+  <data name="S3_Provider_Custom_Help" xml:space="preserve">
+    <value>MinIO یا هر سرور سازگار با S3.
+
+1. سرور MinIO (یا دیگر سازگار با S3) خود را راه اندازی کنید.
+2. یک سطل از طریق MinIO Console یا 'mc mb &lt;alias&gt;/&lt;bucket&gt;' ایجاد کنید.
+3. یک کلید دسترسی در MinIO Console → Access Keys ایجاد کنید.
+4. URL سرویس: نقطه پایانی سرور شما، به عنوان مثال. http://192.168.1.10:9000 یا https://minio.example.com.
+5. منطقه: هر مقدار (مثلاً us-east-1) - یا اگر سرور آن را اجرا نکرد، خالی بگذارید.</value>
+  </data>
+  <data name="S3_Provider_DigitalOceanSpaces_Help" xml:space="preserve">
+    <value>DigitalOcean Spaces - ذخیره سازی اشیاء سازگار با S3.
+
+1. در Spaces (https://cloud.digitalocean.com/spaces)، یک Space ایجاد کنید. به منطقه آن توجه کنید (به عنوان مثال nyc3).
+2. به API → Spaces Keys → Generate New Key بروید. کلید (= کلید دسترسی) و مخفی را کپی کنید.
+3. نشانی وب سرویس: https://&lt;REGION&gt;.digitaloceanspaces.com (به عنوان مثال https://nyc3.digitaloceanspaces.com).
+4. منطقه: همان کد کوتاه، به عنوان مثال. nyc3.</value>
+  </data>
+  <data name="S3_Provider_GoogleCloudStorage_Help" xml:space="preserve">
+    <value>Google Cloud Storage — از طریق S3 interoperability API.
+
+1. در Google Cloud Console (https://console.cloud.google.com/storage)، یک سطل ایجاد کنید.
+2. به Cloud Storage → Settings → Interoperability → ایجاد یک کلید HMAC برای یک حساب سرویس بروید.
+   کلید دسترسی و راز را کپی کنید.
+3. پر کنید: سطل، کلید دسترسی (کلید HMAC)، کلید مخفی (مخفی HMAC).
+   URL سرویس و منطقه به طور خودکار تنظیم می شوند.</value>
+  </data>
+  <data name="S3_Provider_HuaweiCloudOBS_Help" xml:space="preserve">
+    <value>Huawei Cloud OBS — ذخیره سازی اشیاء سازگار با S3 از Huawei.
+
+1. در کنسول OBS (https://console.huaweicloud.com/obs/)، یک سطل ایجاد کنید. به منطقه آن توجه کنید (به عنوان مثال cn-north-4).
+2. به My Credentials → Access Keys → Create Access Key بروید.
+   AK (= کلید دسترسی) و SK (= کلید مخفی) را کپی کنید.
+3. نشانی وب سرویس: https://obs.&lt;REGION&gt;.myhuaweicloud.com (به عنوان مثال https://obs.cn-north-4.myhuaweicloud.com).
+4. منطقه: به عنوان مثال. cn-شمالی-4.</value>
+  </data>
+  <data name="S3_Provider_LinodeObjectStorage_Help" xml:space="preserve">
+    <value>Linode (Akamai) Object Storage — ذخیره سازی سازگار با S3.
+
+1. در Linode Cloud Manager (https://cloud.linode.com/object-storage/buckets)، یک سطل ایجاد کنید. به خوشه آن توجه کنید.
+2. به Object Storage → Access Keys → Create a Access Key با محدوده سطل بروید.
+   کلید دسترسی و کلید مخفی را کپی کنید.
+3. نشانی وب سرویس: https://&lt;CLUSTER&gt;.linodeobjects.com (به عنوان مثال https://us-east-1.linodeobjects.com).
+4. منطقه: همان کد خوشه، به عنوان مثال. us-east-1.</value>
+  </data>
+  <data name="S3_Provider_QiniuCloudKodo_Help" xml:space="preserve">
+    <value>Qiniu Cloud Kodo — فضای ذخیره سازی سازگار با S3 از Qiniu.
+
+1. در Qiniu Portal (https://portal.qiniu.com/kodo/bucket)، یک سطل ایجاد کنید. به منطقه آن توجه کنید.
+2. به Personal Center → Key Management بروید — AccessKey و SecretKey خود را کپی کنید.
+3. URL خدمات بر اساس منطقه:
+   شرق چین: https://s3-cn-east-1.qiniucs.com
+   شمال چین: https://s3-cn-north-1.qiniucs.com
+   جنوب چین: https://s3-cn-south-1.qiniucs.com
+   آمریکای شمالی: https://s3-us-north-1.qiniucs.com
+4. منطقه: کد مطابق، به عنوان مثال. cn-east-1.</value>
+  </data>
+  <data name="S3_Provider_ScalewayObjectStorage_Help" xml:space="preserve">
+    <value>Scaleway Object Storage - فضای ذخیره سازی اروپایی سازگار با S3.
+
+1. در Scaleway Console (https://console.scaleway.com/object-storage/buckets)، یک سطل ایجاد کنید. به منطقه آن توجه کنید (به عنوان مثال fr-par).
+2. به IAM → API Keys → Generate API Key with Object Storage مجوز نوشتن بروید.
+   کلید دسترسی و کلید مخفی را کپی کنید.
+3. نشانی وب سرویس: https://s3.&lt;REGION&gt;.scw.cloud (به عنوان مثال https://s3.fr-par.scw.cloud).
+4. منطقه: به عنوان مثال. fr-par، nl-ams، pl-waw.</value>
+  </data>
+  <data name="S3_Provider_SelectelStorage_Help" xml:space="preserve">
+    <value>Selectel Object Storage - فضای ذخیره سازی روسی سازگار با S3.
+
+1. در Selectel Panel (https://my.selectel.ru/) → Cloud Storage → ایجاد یک ظرف (= سطل).
+2. در بخش Users &amp; Roles، یک کاربر سرویس با دسترسی ذخیره سازی → کلیدهای S3 → ایجاد یک جفت کلید ایجاد کنید.
+   کلید دسترسی و کلید مخفی را کپی کنید.
+3. پر کنید: سطل، کلید دسترسی، کلید مخفی.
+   URL سرویس به طور خودکار پر می شود.</value>
+  </data>
+  <data name="S3_Provider_TencentCloudCOS_Help" xml:space="preserve">
+    <value>Tencent Cloud COS — ذخیره سازی اشیاء سازگار با S3 از Tencent.
+
+1. در کنسول COS (https://console.cloud.tencent.com/cos)، یک سطل ایجاد کنید. به AppId و منطقه (به عنوان مثال ap-beijing) توجه کنید.
+2. در مدیریت دسترسی → کلیدهای API → ایجاد کلید.
+   SecretId (= کلید دسترسی) و SecretKey (= کلید مخفی) را کپی کنید.
+3. نشانی وب سرویس: https://cos.&lt;REGION&gt;.myqcloud.com (به عنوان مثال https://cos.ap-beijing.myqcloud.com).
+4. قالب نام سطل: &lt;name&gt;-&lt;AppId&gt; (به عنوان مثال mybucket-1250000000). منطقه: به عنوان مثال ap-peijing</value>
+  </data>
+  <data name="S3_Provider_VKCloudStorage_Help" xml:space="preserve">
+    <value>VK Cloud Object Storage — فضای ذخیره سازی سازگار با S3 از VK Cloud.
+
+1. در VK Cloud Portal (https://msk.cloud.vk.com/) → Cloud Storage → یک سطل ایجاد کنید.
+2. زیر حساب خود → کلیدهای دسترسی → یک جفت کلید جدید ایجاد کنید.
+   کلید دسترسی و کلید مخفی را کپی کنید.
+3. در صورت نیاز، سطل، کلید دسترسی، کلید مخفی و منطقه را پر کنید (به عنوان مثال ru-msk).
+   URL سرویس به طور خودکار پر می شود.</value>
+  </data>
+  <data name="S3_Provider_VolcanoEngineTOS_Help" xml:space="preserve">
+    <value>Volcano Engine TOS (ByteDance) - فضای ذخیره سازی سازگار با S3.
+
+1. در Volcano Engine Console (https://console.volcengine.com/tos)، یک سطل ایجاد کنید. به منطقه آن (به عنوان مثال cn-peijing) توجه کنید.
+2. به IAM → کلیدهای دسترسی → ایجاد کلید بروید.
+   شناسه کلید دسترسی و کلید دسترسی مخفی را کپی کنید.
+3. نشانی وب سرویس: https://tos-s3-&lt;REGION&gt;.volces.com (به عنوان مثال https://tos-s3-cn-beijing.volces.com).
+4. منطقه: به عنوان مثال. cn-peijing.</value>
+  </data>
+  <data name="S3_Provider_Wasabi_Help" xml:space="preserve">
+    <value>Wasabi - ذخیره سازی ابری داغ بدون هزینه خروج.
+
+1. در کنسول Wasabi (https://console.wasabisys.com/) → Buckets → Create Bucket. یک منطقه را انتخاب کنید.
+2. به کلیدهای دسترسی → ایجاد کلید دسترسی جدید بروید. کلید دسترسی و کلید مخفی را کپی کنید.
+3. پر کنید: سطل، کلید دسترسی، کلید مخفی، و منطقه (به عنوان مثال، us-east-1، eu-central-1).
+   URL سرویس به طور خودکار پر می شود.</value>
+  </data>
+  <data name="S3_Provider_YandexObjectStorage_Help" xml:space="preserve">
+    <value>Yandex Object Storage — فضای ذخیره سازی ابری روسی سازگار با S3.
+
+1. در Yandex Cloud Console (https://console.yandex.cloud/) → Object Storage → یک سطل ایجاد کنید.
+2. به Service Accounts بروید ← ایجاد یکی با نقش storage.editor → ایجاد یک کلید دسترسی Static.
+   شناسه کلید (= کلید دسترسی) و کلید مخفی را کپی کنید.
+3. پر کنید: سطل، کلید دسترسی، کلید مخفی.
+   URL سرویس و منطقه به طور خودکار تنظیم می شوند.</value>
   </data>
   <data name="Server_Field_Address" xml:space="preserve">
     <value>نام سرور:</value>
@@ -989,177 +1171,6 @@ bin.
   <data name="User_Field_Validation" xml:space="preserve">
     <value>کاربر مشخص نشده است.</value>
   </data>
-  <data name="S3_Provider_AlibabaCloudOSS_Help" xml:space="preserve">
-    <value>Alibaba Cloud OSS — ذخیره سازی اشیاء سازگار با S3 از Alibaba.
-
-1. در OSS Console (https://oss.console.aliyun.com/)، یک سطل ایجاد کنید. به منطقه آن توجه کنید (به عنوان مثال oss-cn-hangzhou).
-2. در RAM Console → Users → ایجاد کاربر → AliyunOSSFullAccess را ضمیمه کنید → AccessKey ایجاد کنید.
-   شناسه AccessKey (= کلید دسترسی) و AccessKey Secret (= کلید مخفی) را کپی کنید.
-3. نشانی وب سرویس: https://oss-&lt;REGION&gt;.aliyuncs.com (به عنوان مثال https://oss-cn-hangzhou.aliyuncs.com).
-4. منطقه: به عنوان مثال. oss-cn-hangzhou.</value>
-  </data>
-  <data name="S3_Provider_AWSS3_Help" xml:space="preserve">
-    <value>AWS S3 - ذخیره سازی اصلی اشیاء آمازون.
-
-1. کنسول S3 (https://s3.console.aws.amazon.com/) را باز کنید و یک سطل ایجاد کنید. به منطقه آن توجه کنید (مثلاً us-east-1).
-2. IAM → کاربران → ایجاد کاربر → خط مشی AmazonS3FullAccess را ضمیمه کنید.
-3. در قسمت اعتبارنامه های امنیتی، یک کلید دسترسی ایجاد کنید — شناسه کلید و راز را کپی کنید.
-4. پر کنید: سطل، کلید دسترسی، کلید مخفی، و منطقه.</value>
-  </data>
-  <data name="S3_Provider_BaiduCloudBOS_Help" xml:space="preserve">
-    <value>Baidu Cloud BOS — ذخیره سازی اشیاء سازگار با S3 از Baidu.
-
-1. در کنسول BOS (https://console.bce.baidu.com/bos/)، یک سطل ایجاد کنید. به منطقه آن توجه کنید (به عنوان مثال bj، gz، su).
-2. به امنیت → کلیدهای دسترسی بروید — شناسه کلید دسترسی و کلید دسترسی مخفی خود را کپی کنید.
-3. نشانی وب سرویس: https://s3.&lt;REGION&gt;.bcebos.com (به عنوان مثال https://s3.bj.bcebos.com).
-4. منطقه: به عنوان مثال. bj.</value>
-  </data>
-  <data name="S3_Provider_BackblazeB2_Help" xml:space="preserve">
-    <value>Backblaze B2 - فضای ذخیره سازی مقرون به صرفه سازگار با S3.
-
-1. در Backblaze (https://www.backblaze.com/) → B2 Cloud Storage → Buckets، یک سطل ایجاد کنید.
-2. به App Keys → Add a New Application Key بروید، آن را در سطل قرار دهید.
-   شناسه کلید (= کلید دسترسی) و applicationKey (= کلید مخفی) را کپی کنید.
-3. URL سرویس: نقطه پایانی سطل شما در جزئیات سطل نشان داده شده است، به عنوان مثال. https://s3.us-west-004.backblazeb2.com
-4. منطقه: بخش بین &apos;s3&apos;. و &apos;.backblazeb2.com&apos;، به عنوان مثال. us-west-004.</value>
-  </data>
-  <data name="S3_Provider_CloudflareR2_Help" xml:space="preserve">
-    <value>Cloudflare R2 - فضای ذخیره سازی سازگار با S3 با خروجی صفر.
-
-1. در داشبورد Cloudflare (https://dash.cloudflare.com/) → R2 → یک سطل ایجاد کنید.
-2. به R2 → Manage R2 API Tokens → Create API Token with Object Read &amp; Write بروید.
-   شناسه کلید دسترسی و کلید دسترسی مخفی را کپی کنید.
-3. آدرس سرویس: https://&lt;ACCOUNT_ID&gt;.r2.cloudflarestorage.com
-   شناسه حساب شما در صفحه نمای کلی R2 نشان داده شده است.
-4. پر کنید: سطل، کلید دسترسی، کلید مخفی، و URL خدمات. منطقه به طور خودکار روی &quot;خودکار&quot; تنظیم شده است.</value>
-  </data>
-  <data name="S3_Provider_CloudRuStorage_Help" xml:space="preserve">
-    <value>Cloud.ru (SberCloud) Object Storage — ذخیره سازی OBS سازگار با S3.
-
-1. در کنسول Cloud.ru (https://cloud.ru/) → سرویس ذخیره سازی اشیا (OBS) → یک سطل ایجاد کنید.
-2. به My Credentials → Access Keys → Add Access Key بروید.
-   کلید دسترسی و کلید دسترسی مخفی را کپی کنید.
-3. پر کنید: سطل، کلید دسترسی، کلید مخفی، و منطقه (به عنوان مثال ru-moscow-1).
-   URL سرویس به طور خودکار پر می شود.</value>
-  </data>
-  <data name="S3_Provider_Custom_Help" xml:space="preserve">
-    <value>MinIO یا هر سرور سازگار با S3.
-
-1. سرور MinIO (یا دیگر سازگار با S3) خود را راه اندازی کنید.
-2. یک سطل از طریق MinIO Console یا &apos;mc mb &lt;alias&gt;/&lt;bucket&gt;&apos; ایجاد کنید.
-3. یک کلید دسترسی در MinIO Console → Access Keys ایجاد کنید.
-4. URL سرویس: نقطه پایانی سرور شما، به عنوان مثال. http://192.168.1.10:9000 یا https://minio.example.com.
-5. منطقه: هر مقدار (مثلاً us-east-1) - یا اگر سرور آن را اجرا نکرد، خالی بگذارید.</value>
-  </data>
-  <data name="S3_Provider_DigitalOceanSpaces_Help" xml:space="preserve">
-    <value>DigitalOcean Spaces - ذخیره سازی اشیاء سازگار با S3.
-
-1. در Spaces (https://cloud.digitalocean.com/spaces)، یک Space ایجاد کنید. به منطقه آن توجه کنید (به عنوان مثال nyc3).
-2. به API → Spaces Keys → Generate New Key بروید. کلید (= کلید دسترسی) و مخفی را کپی کنید.
-3. نشانی وب سرویس: https://&lt;REGION&gt;.digitaloceanspaces.com (به عنوان مثال https://nyc3.digitaloceanspaces.com).
-4. منطقه: همان کد کوتاه، به عنوان مثال. nyc3.</value>
-  </data>
-  <data name="S3_Provider_GoogleCloudStorage_Help" xml:space="preserve">
-    <value>Google Cloud Storage — از طریق S3 interoperability API.
-
-1. در Google Cloud Console (https://console.cloud.google.com/storage)، یک سطل ایجاد کنید.
-2. به Cloud Storage → Settings → Interoperability → ایجاد یک کلید HMAC برای یک حساب سرویس بروید.
-   کلید دسترسی و راز را کپی کنید.
-3. پر کنید: سطل، کلید دسترسی (کلید HMAC)، کلید مخفی (مخفی HMAC).
-   URL سرویس و منطقه به طور خودکار تنظیم می شوند.</value>
-  </data>
-  <data name="S3_Provider_HuaweiCloudOBS_Help" xml:space="preserve">
-    <value>Huawei Cloud OBS — ذخیره سازی اشیاء سازگار با S3 از Huawei.
-
-1. در کنسول OBS (https://console.huaweicloud.com/obs/)، یک سطل ایجاد کنید. به منطقه آن توجه کنید (به عنوان مثال cn-north-4).
-2. به My Credentials → Access Keys → Create Access Key بروید.
-   AK (= کلید دسترسی) و SK (= کلید مخفی) را کپی کنید.
-3. نشانی وب سرویس: https://obs.&lt;REGION&gt;.myhuaweicloud.com (به عنوان مثال https://obs.cn-north-4.myhuaweicloud.com).
-4. منطقه: به عنوان مثال. cn-شمالی-4.</value>
-  </data>
-  <data name="S3_Provider_LinodeObjectStorage_Help" xml:space="preserve">
-    <value>Linode (Akamai) Object Storage — ذخیره سازی سازگار با S3.
-
-1. در Linode Cloud Manager (https://cloud.linode.com/object-storage/buckets)، یک سطل ایجاد کنید. به خوشه آن توجه کنید.
-2. به Object Storage → Access Keys → Create a Access Key با محدوده سطل بروید.
-   کلید دسترسی و کلید مخفی را کپی کنید.
-3. نشانی وب سرویس: https://&lt;CLUSTER&gt;.linodeobjects.com (به عنوان مثال https://us-east-1.linodeobjects.com).
-4. منطقه: همان کد خوشه، به عنوان مثال. us-east-1.</value>
-  </data>
-  <data name="S3_Provider_QiniuCloudKodo_Help" xml:space="preserve">
-    <value>Qiniu Cloud Kodo — فضای ذخیره سازی سازگار با S3 از Qiniu.
-
-1. در Qiniu Portal (https://portal.qiniu.com/kodo/bucket)، یک سطل ایجاد کنید. به منطقه آن توجه کنید.
-2. به Personal Center → Key Management بروید — AccessKey و SecretKey خود را کپی کنید.
-3. URL خدمات بر اساس منطقه:
-   شرق چین: https://s3-cn-east-1.qiniucs.com
-   شمال چین: https://s3-cn-north-1.qiniucs.com
-   جنوب چین: https://s3-cn-south-1.qiniucs.com
-   آمریکای شمالی: https://s3-us-north-1.qiniucs.com
-4. منطقه: کد مطابق، به عنوان مثال. cn-east-1.</value>
-  </data>
-  <data name="S3_Provider_ScalewayObjectStorage_Help" xml:space="preserve">
-    <value>Scaleway Object Storage - فضای ذخیره سازی اروپایی سازگار با S3.
-
-1. در Scaleway Console (https://console.scaleway.com/object-storage/buckets)، یک سطل ایجاد کنید. به منطقه آن توجه کنید (به عنوان مثال fr-par).
-2. به IAM → API Keys → Generate API Key with Object Storage مجوز نوشتن بروید.
-   کلید دسترسی و کلید مخفی را کپی کنید.
-3. نشانی وب سرویس: https://s3.&lt;REGION&gt;.scw.cloud (به عنوان مثال https://s3.fr-par.scw.cloud).
-4. منطقه: به عنوان مثال. fr-par، nl-ams، pl-waw.</value>
-  </data>
-  <data name="S3_Provider_SelectelStorage_Help" xml:space="preserve">
-    <value>Selectel Object Storage - فضای ذخیره سازی روسی سازگار با S3.
-
-1. در Selectel Panel (https://my.selectel.ru/) → Cloud Storage → ایجاد یک ظرف (= سطل).
-2. در بخش Users &amp; Roles، یک کاربر سرویس با دسترسی ذخیره سازی → کلیدهای S3 → ایجاد یک جفت کلید ایجاد کنید.
-   کلید دسترسی و کلید مخفی را کپی کنید.
-3. پر کنید: سطل، کلید دسترسی، کلید مخفی.
-   URL سرویس به طور خودکار پر می شود.</value>
-  </data>
-  <data name="S3_Provider_TencentCloudCOS_Help" xml:space="preserve">
-    <value>Tencent Cloud COS — ذخیره سازی اشیاء سازگار با S3 از Tencent.
-
-1. در کنسول COS (https://console.cloud.tencent.com/cos)، یک سطل ایجاد کنید. به AppId و منطقه (به عنوان مثال ap-beijing) توجه کنید.
-2. در مدیریت دسترسی → کلیدهای API → ایجاد کلید.
-   SecretId (= کلید دسترسی) و SecretKey (= کلید مخفی) را کپی کنید.
-3. نشانی وب سرویس: https://cos.&lt;REGION&gt;.myqcloud.com (به عنوان مثال https://cos.ap-beijing.myqcloud.com).
-4. قالب نام سطل: &lt;name&gt;-&lt;AppId&gt; (به عنوان مثال mybucket-1250000000). منطقه: به عنوان مثال ap-peijing</value>
-  </data>
-  <data name="S3_Provider_VKCloudStorage_Help" xml:space="preserve">
-    <value>VK Cloud Object Storage — فضای ذخیره سازی سازگار با S3 از VK Cloud.
-
-1. در VK Cloud Portal (https://msk.cloud.vk.com/) → Cloud Storage → یک سطل ایجاد کنید.
-2. زیر حساب خود → کلیدهای دسترسی → یک جفت کلید جدید ایجاد کنید.
-   کلید دسترسی و کلید مخفی را کپی کنید.
-3. در صورت نیاز، سطل، کلید دسترسی، کلید مخفی و منطقه را پر کنید (به عنوان مثال ru-msk).
-   URL سرویس به طور خودکار پر می شود.</value>
-  </data>
-  <data name="S3_Provider_VolcanoEngineTOS_Help" xml:space="preserve">
-    <value>Volcano Engine TOS (ByteDance) - فضای ذخیره سازی سازگار با S3.
-
-1. در Volcano Engine Console (https://console.volcengine.com/tos)، یک سطل ایجاد کنید. به منطقه آن (به عنوان مثال cn-peijing) توجه کنید.
-2. به IAM → کلیدهای دسترسی → ایجاد کلید بروید.
-   شناسه کلید دسترسی و کلید دسترسی مخفی را کپی کنید.
-3. نشانی وب سرویس: https://tos-s3-&lt;REGION&gt;.volces.com (به عنوان مثال https://tos-s3-cn-beijing.volces.com).
-4. منطقه: به عنوان مثال. cn-peijing.</value>
-  </data>
-  <data name="S3_Provider_Wasabi_Help" xml:space="preserve">
-    <value>Wasabi - ذخیره سازی ابری داغ بدون هزینه خروج.
-
-1. در کنسول Wasabi (https://console.wasabisys.com/) → Buckets → Create Bucket. یک منطقه را انتخاب کنید.
-2. به کلیدهای دسترسی → ایجاد کلید دسترسی جدید بروید. کلید دسترسی و کلید مخفی را کپی کنید.
-3. پر کنید: سطل، کلید دسترسی، کلید مخفی، و منطقه (به عنوان مثال، us-east-1، eu-central-1).
-   URL سرویس به طور خودکار پر می شود.</value>
-  </data>
-  <data name="S3_Provider_YandexObjectStorage_Help" xml:space="preserve">
-    <value>Yandex Object Storage — فضای ذخیره سازی ابری روسی سازگار با S3.
-
-1. در Yandex Cloud Console (https://console.yandex.cloud/) → Object Storage → یک سطل ایجاد کنید.
-2. به Service Accounts بروید ← ایجاد یکی با نقش storage.editor → ایجاد یک کلید دسترسی Static.
-   شناسه کلید (= کلید دسترسی) و کلید مخفی را کپی کنید.
-3. پر کنید: سطل، کلید دسترسی، کلید مخفی.
-   URL سرویس و منطقه به طور خودکار تنظیم می شوند.</value>
-  </data>
   <data name="WebDav_Preset_Box_Help" xml:space="preserve">
     <value>جعبه - ذخیره سازی ابری سازمانی با پشتیبانی از WebDAV.
 
@@ -1208,7 +1219,7 @@ bin.
     <value>Mail.ru Cloud از طریق WebDAV.
 
 1. به account.mail.ru → امنیت → رمزهای عبور برنامه → ایجاد رمز عبور برنامه بروید.
-   &quot;Mail&quot; یا &quot;All&quot; را به عنوان نوع انتخاب کنید، سپس رمز عبور ایجاد شده را کپی کنید.
+   "Mail" یا "All" را به عنوان نوع انتخاب کنید، سپس رمز عبور ایجاد شده را کپی کنید.
 2. آدرس ایمیل Mail.ru خود را به عنوان کاربر وارد کنید.
 3. رمز برنامه را به عنوان رمز عبور وارد کنید.
    آدرس سرور، HTTPS، پورت و مسیر پایه به صورت خودکار پیکربندی می شوند.</value>
@@ -1249,7 +1260,9 @@ bin.
 3. رمز عبور برنامه (نه رمز عبور حساب Yandex خود) را به عنوان رمز عبور وارد کنید.
    آدرس سرور، HTTPS و پورت به صورت خودکار پیکربندی می شوند.</value>
   </data>
-
+  <data name="WhatTask_Description" xml:space="preserve">
+    <value>در اینجا می‌توانید پوشه‌هایی را که می‌خواهید پشتیبان‌گیری شوند مشخص کنید.</value>
+  </data>
   <data name="Winget_Description" xml:space="preserve">
     <value>پشتیبان‌گیری/همگام‌سازی داده‌های شما در Windows، Linux.
 وارد کردن عکس‌ها از تلفن از طریق WI-FI و موارد دیگر.

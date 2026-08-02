@@ -1,5 +1,4 @@
 <root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -263,14 +262,14 @@ Kasutusjuht: kopeerite andmeid kaugserverisse. Probleem on selles, et ISP vähen
   <data name="Field_Folder_Validation_Empty" xml:space="preserve">
     <value>Kaust pole määratud.</value>
   </data>
-  <data name="Field_Validation_NotSpecified" xml:space="preserve">
-    <value>{0} pole määratud.</value>
-  </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Kausta ei ole olemas.</value>
   </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>Protokoll:</value>
+  </data>
+  <data name="Field_Validation_NotSpecified" xml:space="preserve">
+    <value>{0} pole määratud.</value>
   </data>
   <data name="Field_Version" xml:space="preserve">
     <value>Versioon:</value>
@@ -332,14 +331,26 @@ Kasutusjuht: kopeerite andmeid kaugserverisse. Probleem on selles, et ISP vähen
   <data name="ImportMediaTask_Create" xml:space="preserve">
     <value>Meedia importimise ülesanne</value>
   </data>
+  <data name="ImportMediaTask_DeleteCopiedDataOnSourceMedia" xml:space="preserve">
+    <value>Kustuta kopeeritud andmed lähtekandjalt</value>
+  </data>
   <data name="ImportMediaTask_Edit_Title" xml:space="preserve">
     <value>Muuda meediaimpordi ülesannet "{0}"</value>
+  </data>
+  <data name="ImportMediaTask_Field_FileExtensions" xml:space="preserve">
+    <value>Faililaiendid:</value>
+  </data>
+  <data name="ImportMediaTask_Field_FileExtensions_Help" xml:space="preserve">
+    <value>Imporditavate laiendite komadega eraldatud loend (näiteks .jpg, .png, .mp3). Jätke tühjaks, et importida kõik failid.</value>
   </data>
   <data name="ImportMediaTask_Field_OutputFolder" xml:space="preserve">
     <value>Väljundkaust:</value>
   </data>
   <data name="ImportMediaTask_Field_TransformFileName" xml:space="preserve">
     <value>Failinime teisendused:</value>
+  </data>
+  <data name="ImportMediaTask_Field_TransformFileName_Documentation" xml:space="preserve">
+    <value>Kuupäevavormingu dokumentatsioon</value>
   </data>
   <data name="ImportMediaTask_Field_TransformFileName_Example" xml:space="preserve">
     <value>Näide:
@@ -366,17 +377,20 @@ Kõigi valikute vaatamiseks otsige "C# DateTime format".</value>
 
 Vaadake rakenduse veebisaidilt juhiseid, kuidas seadistada failiedastust WI-FI kaudu FTP-serveri rakenduse abil telefonis.</value>
   </data>
-  <data name="ImportMediaTask_Storage_Help" xml:space="preserve">
-    <value>Määrake allikas, kust meediat importida — näiteks SD-kaart, kaamera kaust või telefon FTPS-i kaudu.</value>
-  </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
     <value>Impordi andmeallikas</value>
   </data>
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>Jäta juba imporditud failid vahele</value>
   </data>
-  <data name="ImportMediaTask_DeleteCopiedDataOnSourceMedia" xml:space="preserve">
-    <value>Kustuta kopeeritud andmed lähtekandjalt</value>
+  <data name="ImportMediaTask_SkipAlreadyImportedFiles_Help" xml:space="preserve">
+    <value>Kui see on lubatud, jätab rakendus vahele failid, mis on juba sihtkaustas või mis imporditi varem. Varem imporditud failinimed jäetakse meelde, nii et faili ei töödelda uuesti isegi kui kustutate hiljem selle koopia sihtkaustast.</value>
+  </data>
+  <data name="ImportMediaTask_Storage_Help" xml:space="preserve">
+    <value>Määrake allikas, kust meediat importida — näiteks SD-kaart, kaamera kaust või telefon FTPS-i kaudu.</value>
+  </data>
+  <data name="ImportMediaTask_Storage_Validation_TooBroad" xml:space="preserve">
+    <value>Valitud kaust näib olevat seadme või kodukausta juur, sest see sisaldab mitut tuntud meediakausta ({0}). Valige täpsem kaust, näiteks "{1}".</value>
   </data>
   <data name="ImproveIt_Message" xml:space="preserve">
     <value>Ilmnes ootamatu viga.
@@ -463,9 +477,6 @@ Palun tehke üks järgmistest:
   <data name="LeftMenu_What_Hint" xml:space="preserve">
     <value>Siin saate lisada kaustu ja faile, mida peate töötlema.</value>
   </data>
-  <data name="WhatTask_Description" xml:space="preserve">
-    <value>Siin saate määrata kaustad, mida soovite varundada.</value>
-  </data>
   <data name="LeftMenu_What_Validation" xml:space="preserve">
     <value>Töödeldavaid üksusi pole.</value>
   </data>
@@ -477,9 +488,6 @@ Palun tehke üks järgmistest:
   </data>
   <data name="LeftMenu_When_Optional_Hint" xml:space="preserve">
     <value>See jaotis on valikuline. Kui jätate selle vahele, käivitub ülesanne ainult siis, kui käivitate selle käsitsi.</value>
-  </data>
-  <data name="RunAtLogin_Label" xml:space="preserve">
-    <value>Käivita sisselogimisel</value>
   </data>
   <data name="LeftMenu_Where" xml:space="preserve">
     <value>Kuhu?</value>
@@ -529,11 +537,11 @@ Palun tehke üks järgmistest:
   <data name="Name_Field_Validation" xml:space="preserve">
     <value>Nimi on tühi või sisaldab toetamata teekonnatähemärke.</value>
   </data>
-  <data name="Name_Field_Validation_ExceedsLimit" xml:space="preserve">
-    <value>Nime '{0}' pikkus ületab piirangu {1} tähemärgi võrra.</value>
-  </data>
   <data name="Name_Field_Validation_Duplicate" xml:space="preserve">
     <value>Sellise nimega ülesanne on juba olemas.</value>
+  </data>
+  <data name="Name_Field_Validation_ExceedsLimit" xml:space="preserve">
+    <value>Nime '{0}' pikkus ületab piirangu {1} tähemärgi võrra.</value>
   </data>
   <data name="Name_Title" xml:space="preserve">
     <value>Nimi</value>
@@ -590,6 +598,180 @@ Osutage kataloogile, mis sisaldab seda faili.</value>
   </data>
   <data name="RestoreFrom_Field_Validation_StateInvalid" xml:space="preserve">
     <value>Olekut ei saa lugeda.</value>
+  </data>
+  <data name="RunAtLogin_Label" xml:space="preserve">
+    <value>Käivita sisselogimisel</value>
+  </data>
+  <data name="S3_Provider_AlibabaCloudOSS_Help" xml:space="preserve">
+    <value>Alibaba Cloud OSS – Alibaba S3-ühilduv objektide salvestusruum.
+
+1. Looge OSS-konsoolis (https://oss.console.aliyun.com/) ämber. Pange tähele selle piirkonda (nt oss-cn-hangzhou).
+2. RAM-konsool → Kasutajad → loo kasutaja → lisa AliyunOSSFullAccess → loo AccessKey.
+   Kopeerige AccessKey ID (= pääsuvõti) ja AccessKey saladus (= salajane võti).
+3. Teenuse URL: https://oss-&lt;REGION&gt;.aliyuncs.com (nt https://oss-cn-hangzhou.aliyuncs.com).
+4. Piirkond: nt. oss-cn-hangzhou.</value>
+  </data>
+  <data name="S3_Provider_AWSS3_Help" xml:space="preserve">
+    <value>AWS S3 – Amazoni algne objektide salvestusruum.
+
+1. Avage S3 konsool (https://s3.console.aws.amazon.com/) ja looge ämber. Pange tähele selle piirkonda (nt us-ida-1).
+2. Avage IAM → Kasutajad → looge kasutaja → lisage AmazonS3FullAccessi poliitika.
+3. Jaotises Turvamandaadid looge juurdepääsuvõti – kopeerige võtme ID ja saladus.
+4. Täitke: ämber, juurdepääsuvõti, salajane võti ja piirkond.</value>
+  </data>
+  <data name="S3_Provider_BackblazeB2_Help" xml:space="preserve">
+    <value>Backblaze B2 – taskukohane S3-ühilduv salvestusruum.
+
+1. Looge rakenduses Backblaze (https://www.backblaze.com/) → B2 Cloud Storage → Buckets ämber.
+2. Avage Rakenduse võtmed → Lisage uus rakenduse võti, määrake see ämbrisse.
+   Kopeerige võtme ID (= juurdepääsuvõti) ja rakenduse võti (= salajane võti).
+3. Teenuse URL: teie salve lõpp-punkt, mis kuvatakse ämbri üksikasjades, nt. https://s3.us-west-004.backblazeb2.com
+4. Piirkond: segment 's3' vahel. ja '.backblazeb2.com', nt. us-west-004.</value>
+  </data>
+  <data name="S3_Provider_BaiduCloudBOS_Help" xml:space="preserve">
+    <value>Baidu Cloud BOS – Baidu S3-ühilduv objektide salvestusruum.
+
+1. Looge BOS-konsoolis (https://console.bce.baidu.com/bos/) ämber. Pange tähele selle piirkonda (nt bj, gz, su).
+2. Avage Turvalisus → Pääsuvõtmed — kopeerige oma pääsuvõtme ID ja salajane pääsuvõti.
+3. Teenuse URL: https://s3.&lt;REGION&gt;.bcebos.com (nt https://s3.bj.bcebos.com).
+4. Piirkond: nt. bj.</value>
+  </data>
+  <data name="S3_Provider_CloudflareR2_Help" xml:space="preserve">
+    <value>Cloudflare R2 – nullväljapääsuga S3-ühilduv salvestusruum.
+
+1. Cloudflare'i armatuurlaual (https://dash.cloudflare.com/) → R2 → looge ämber.
+2. Avage R2 → Halda R2 API-märke → Loo API-luba koos objekti lugemise ja kirjutamisega.
+   Kopeerige juurdepääsuvõtme ID ja salajane juurdepääsuvõti.
+3. Teenuse URL: https://&lt;ACCOUNT_ID&gt;.r2.cloudflarestorage.com
+   Teie konto ID kuvatakse R2 ülevaatelehel.
+4. Täitke: ämber, juurdepääsuvõti, salajane võti ja teenuse URL. Piirkond seatakse automaatselt olekusse "automaatne".</value>
+  </data>
+  <data name="S3_Provider_CloudRuStorage_Help" xml:space="preserve">
+    <value>Cloud.ru (SberCloud) objektide salvestusruum — S3-ga ühilduv OBS-mälu.
+
+1. Cloud.ru konsoolis (https://cloud.ru/) → Object Storage Service (OBS) → looge ämber.
+2. Avage Minu mandaat → Pääsuvõtmed → Lisa pääsuvõti.
+   Kopeerige juurdepääsuvõti ja salajane juurdepääsuvõti.
+3. Täitke: ämber, juurdepääsuvõti, salajane võti ja piirkond (nt ru-moscow-1).
+   Teenuse URL täidetakse automaatselt.</value>
+  </data>
+  <data name="S3_Provider_Custom_Help" xml:space="preserve">
+    <value>MinIO või mis tahes S3-ga ühilduv server.
+
+1. Käivitage oma MinIO (või muu S3-ga ühilduv) server.
+2. Looge ämber MinIO konsooli või 'mc mb &lt;alias&gt;/&lt;bucket&gt;' kaudu.
+3. Looge pääsuvõti menüüs MinIO Console → Access Keys (vältige tootmises juurmandaate).
+4. Teenuse URL: teie serveri lõpp-punkt, nt. http://192.168.1.10:9000 või https://minio.example.com.
+5. Piirkond: mis tahes väärtus (nt us-east-1) — või jätke tühjaks, kui server seda ei jõusta.</value>
+  </data>
+  <data name="S3_Provider_DigitalOceanSpaces_Help" xml:space="preserve">
+    <value>DigitalOcean Spaces – S3-ühilduv objektide salvestusruum.
+
+1. Looge jaotises Spaces (https://cloud.digitalocean.com/spaces) ruum. Pange tähele selle piirkonda (nt nyc3).
+2. Avage API → Spaces Keys → Generate New Key. Kopeerige võti (= juurdepääsuvõti) ja saladus.
+3. Teenuse URL: https://&lt;REGION&gt;.digitaloceanspaces.com (nt https://nyc3.digitaloceanspaces.com).
+4. Piirkond: sama lühikood, nt. nyc3.</value>
+  </data>
+  <data name="S3_Provider_GoogleCloudStorage_Help" xml:space="preserve">
+    <value>Google Cloud Storage – S3 koostalitlusvõime API kaudu.
+
+1. Looge Google Cloud Console'is (https://console.cloud.google.com/storage) ämber.
+2. Avage Cloud Storage → Settings → Interoperability → looge teenusekonto jaoks HMAC-võti.
+   Kopeerige juurdepääsuvõti ja saladus.
+3. Täitke: ämber, juurdepääsuvõti (HMAC-võti), salajane võti (HMAC-saladus).
+   Teenuse URL ja piirkond määratakse automaatselt.</value>
+  </data>
+  <data name="S3_Provider_HuaweiCloudOBS_Help" xml:space="preserve">
+    <value>Huawei Cloud OBS — Huawei S3-ühilduv objektide salvestusruum.
+
+1. Looge OBS-konsoolis (https://console.huaweicloud.com/obs/) ämber. Pange tähele selle piirkonda (nt cn-north-4).
+2. Avage Minu mandaat → Pääsuvõtmed → Loo pääsuvõti.
+   Kopeerige AK (= juurdepääsuvõti) ja SK (= salajane võti).
+3. Teenuse URL: https://obs.&lt;REGION&gt;.myhuaweicloud.com (nt https://obs.cn-north-4.myhuaweicloud.com).
+4. Piirkond: nt. cn-north-4.</value>
+  </data>
+  <data name="S3_Provider_LinodeObjectStorage_Help" xml:space="preserve">
+    <value>Linode (Akamai) Object Storage — S3-ga ühilduv salvestusruum.
+
+1. Looge Linode Cloud Manageris (https://cloud.linode.com/object-storage/buckets) ämber. Pange tähele selle klastrit.
+2. Avage Objektide salvestusruum → Pääsuvõtmed → Loo ämbriga hõlmatud pääsuvõti.
+   Kopeerige juurdepääsuvõti ja salajane võti.
+3. Teenuse URL: https://&lt;CLUSTER&gt;.linodeobjects.com (nt https://us-east-1.linodeobjects.com).
+4. Piirkond: sama klastri kood, nt. us-ida-1.</value>
+  </data>
+  <data name="S3_Provider_QiniuCloudKodo_Help" xml:space="preserve">
+    <value>Qiniu Cloud Kodo — S3-ga ühilduv Qiniu salvestusruum.
+
+1. Looge Qiniu portaalis (https://portal.qiniu.com/kodo/bucket) ämber. Pange tähele selle piirkonda.
+2. Avage Personal Center → Key Management — kopeerige oma AccessKey ja SecretKey.
+3. Teenuse URL piirkonna järgi:
+   Ida-Hiina: https://s3-cn-east-1.qiniucs.com
+   Põhja-Hiina: https://s3-cn-north-1.qiniucs.com
+   Lõuna-Hiina: https://s3-cn-south-1.qiniucs.com
+   Põhja-Ameerika: https://s3-us-north-1.qiniucs.com
+4. Piirkond: sobiv kood, nt. cn-ida-1.</value>
+  </data>
+  <data name="S3_Provider_ScalewayObjectStorage_Help" xml:space="preserve">
+    <value>Scaleway Object Storage – Euroopa S3-ühilduv salvestusruum.
+
+1. Looge Scaleway konsoolis (https://console.scaleway.com/object-storage/buckets) ämber. Pange tähele selle piirkonda (nt fr-par).
+2. Avage IAM → API võtmed → Loo API võti objektisalvestuse kirjutamisõigustega.
+   Kopeerige juurdepääsuvõti ja salajane võti.
+3. Teenuse URL: https://s3.&lt;REGION&gt;.scw.cloud (nt https://s3.fr-par.scw.cloud).
+4. Piirkond: nt. fr-par, nl-ams, pl-waw.</value>
+  </data>
+  <data name="S3_Provider_SelectelStorage_Help" xml:space="preserve">
+    <value>Selectel Object Storage — S3-ga ühilduv vene salvestusruum.
+
+1. In Selectel Panel (https://my.selectel.ru/) → Cloud Storage → looge konteiner (= ämber).
+2. Jaotises Kasutajad ja rollid looge salvestusruumi juurdepääsuga teenusekasutaja → S3 võtmed → looge võtmepaar.
+   Kopeerige juurdepääsuvõti ja salajane võti.
+3. Täitke: ämber, juurdepääsuvõti, salajane võti.
+   Teenuse URL täidetakse automaatselt.</value>
+  </data>
+  <data name="S3_Provider_TencentCloudCOS_Help" xml:space="preserve">
+    <value>Tencent Cloud COS – S3-ühilduv objektide salvestusruum Tencentilt.
+
+1. Looge COS-konsoolis (https://console.cloud.tencent.com/cos) ämber. Pange tähele AppId ja piirkond (nt ap-peijing).
+2. In Access Management → API Keys → Create Key.
+   Kopeerige SecretId (= juurdepääsuvõti) ja SecretKey (= salajane võti).
+3. Teenuse URL: https://cos.&lt;REGION&gt;.myqcloud.com (nt https://cos.ap-beijing.myqcloud.com).
+4. Salve nimevorming: &lt;nimi&gt;-&lt;AppId&gt; (nt mybucket-1250000000). Piirkond: nt. ap-peking.</value>
+  </data>
+  <data name="S3_Provider_VKCloudStorage_Help" xml:space="preserve">
+    <value>VK Cloud Object Storage — S3-ga ühilduv salvestusruum VK Cloudist.
+
+1. VK pilveportaalis (https://msk.cloud.vk.com/) → Cloud Storage → looge ämber.
+2. Oma konto all → Pääsuvõtmed → looge uus võtmepaar.
+   Kopeerige juurdepääsuvõti ja salajane võti.
+3. Vajadusel täitke: ämber, juurdepääsuvõti, salajane võti ja piirkond (nt ru-msk).
+   Teenuse URL täidetakse automaatselt.</value>
+  </data>
+  <data name="S3_Provider_VolcanoEngineTOS_Help" xml:space="preserve">
+    <value>Volcano Engine TOS (ByteDance) – S3-ga ühilduv salvestusruum.
+
+1. Looge rakenduses Volcano Engine Console (https://console.volcengine.com/tos) ämber. Pange tähele selle piirkonda (nt cn-beijing).
+2. Avage IAM → Access Keys → looge võti.
+   Kopeerige juurdepääsuvõtme ID ja salajane juurdepääsuvõti.
+3. Teenuse URL: https://tos-s3-&lt;REGION&gt;.volces.com (nt https://tos-s3-cn-beijing.volces.com).
+4. Piirkond: nt. cn-peking.</value>
+  </data>
+  <data name="S3_Provider_Wasabi_Help" xml:space="preserve">
+    <value>Wasabi – kuuma pilvesalvestus ilma väljapääsutasudeta.
+
+1. Wasabi konsoolis (https://console.wasabisys.com/) → Ämbrid → Loo ämber. Valige piirkond.
+2. Avage Pääsuvõtmed → Loo uus pääsuvõti. Kopeerige juurdepääsuvõti ja salajane võti.
+3. Täitke: ämber, juurdepääsuvõti, salajane võti ja piirkond (nt us-east-1, eu-central-1).
+   Teenuse URL täidetakse automaatselt.</value>
+  </data>
+  <data name="S3_Provider_YandexObjectStorage_Help" xml:space="preserve">
+    <value>Yandex Object Storage — S3-ga ühilduv Venemaa pilvesalvestus.
+
+1. Yandexi pilvekonsoolis (https://console.yandex.cloud/) → Object Storage → looge ämber.
+2. Avage Teenuskontod → looge see rolliga storage.editor → looge staatiline juurdepääsuvõti.
+   Kopeerige võtme ID (= juurdepääsuvõti) ja salajane võti.
+3. Täitke: ämber, juurdepääsuvõti, salajane võti.
+   Teenuse URL ja piirkond määratakse automaatselt.</value>
   </data>
   <data name="Server_Field_Address" xml:space="preserve">
     <value>Serveri nimi:</value>
@@ -988,177 +1170,6 @@ Vaadake üksikasjalikku kirjeldust järgmisel lingil.</value>
   <data name="User_Field_Validation" xml:space="preserve">
     <value>Kasutaja pole määratud.</value>
   </data>
-  <data name="S3_Provider_AlibabaCloudOSS_Help" xml:space="preserve">
-    <value>Alibaba Cloud OSS – Alibaba S3-ühilduv objektide salvestusruum.
-
-1. Looge OSS-konsoolis (https://oss.console.aliyun.com/) ämber. Pange tähele selle piirkonda (nt oss-cn-hangzhou).
-2. RAM-konsool → Kasutajad → loo kasutaja → lisa AliyunOSSFullAccess → loo AccessKey.
-   Kopeerige AccessKey ID (= pääsuvõti) ja AccessKey saladus (= salajane võti).
-3. Teenuse URL: https://oss-&lt;REGION&gt;.aliyuncs.com (nt https://oss-cn-hangzhou.aliyuncs.com).
-4. Piirkond: nt. oss-cn-hangzhou.</value>
-  </data>
-  <data name="S3_Provider_AWSS3_Help" xml:space="preserve">
-    <value>AWS S3 – Amazoni algne objektide salvestusruum.
-
-1. Avage S3 konsool (https://s3.console.aws.amazon.com/) ja looge ämber. Pange tähele selle piirkonda (nt us-ida-1).
-2. Avage IAM → Kasutajad → looge kasutaja → lisage AmazonS3FullAccessi poliitika.
-3. Jaotises Turvamandaadid looge juurdepääsuvõti – kopeerige võtme ID ja saladus.
-4. Täitke: ämber, juurdepääsuvõti, salajane võti ja piirkond.</value>
-  </data>
-  <data name="S3_Provider_BaiduCloudBOS_Help" xml:space="preserve">
-    <value>Baidu Cloud BOS – Baidu S3-ühilduv objektide salvestusruum.
-
-1. Looge BOS-konsoolis (https://console.bce.baidu.com/bos/) ämber. Pange tähele selle piirkonda (nt bj, gz, su).
-2. Avage Turvalisus → Pääsuvõtmed — kopeerige oma pääsuvõtme ID ja salajane pääsuvõti.
-3. Teenuse URL: https://s3.&lt;REGION&gt;.bcebos.com (nt https://s3.bj.bcebos.com).
-4. Piirkond: nt. bj.</value>
-  </data>
-  <data name="S3_Provider_BackblazeB2_Help" xml:space="preserve">
-    <value>Backblaze B2 – taskukohane S3-ühilduv salvestusruum.
-
-1. Looge rakenduses Backblaze (https://www.backblaze.com/) → B2 Cloud Storage → Buckets ämber.
-2. Avage Rakenduse võtmed → Lisage uus rakenduse võti, määrake see ämbrisse.
-   Kopeerige võtme ID (= juurdepääsuvõti) ja rakenduse võti (= salajane võti).
-3. Teenuse URL: teie salve lõpp-punkt, mis kuvatakse ämbri üksikasjades, nt. https://s3.us-west-004.backblazeb2.com
-4. Piirkond: segment &apos;s3&apos; vahel. ja &apos;.backblazeb2.com&apos;, nt. us-west-004.</value>
-  </data>
-  <data name="S3_Provider_CloudflareR2_Help" xml:space="preserve">
-    <value>Cloudflare R2 – nullväljapääsuga S3-ühilduv salvestusruum.
-
-1. Cloudflare&apos;i armatuurlaual (https://dash.cloudflare.com/) → R2 → looge ämber.
-2. Avage R2 → Halda R2 API-märke → Loo API-luba koos objekti lugemise ja kirjutamisega.
-   Kopeerige juurdepääsuvõtme ID ja salajane juurdepääsuvõti.
-3. Teenuse URL: https://&lt;ACCOUNT_ID&gt;.r2.cloudflarestorage.com
-   Teie konto ID kuvatakse R2 ülevaatelehel.
-4. Täitke: ämber, juurdepääsuvõti, salajane võti ja teenuse URL. Piirkond seatakse automaatselt olekusse &quot;automaatne&quot;.</value>
-  </data>
-  <data name="S3_Provider_CloudRuStorage_Help" xml:space="preserve">
-    <value>Cloud.ru (SberCloud) objektide salvestusruum — S3-ga ühilduv OBS-mälu.
-
-1. Cloud.ru konsoolis (https://cloud.ru/) → Object Storage Service (OBS) → looge ämber.
-2. Avage Minu mandaat → Pääsuvõtmed → Lisa pääsuvõti.
-   Kopeerige juurdepääsuvõti ja salajane juurdepääsuvõti.
-3. Täitke: ämber, juurdepääsuvõti, salajane võti ja piirkond (nt ru-moscow-1).
-   Teenuse URL täidetakse automaatselt.</value>
-  </data>
-  <data name="S3_Provider_Custom_Help" xml:space="preserve">
-    <value>MinIO või mis tahes S3-ga ühilduv server.
-
-1. Käivitage oma MinIO (või muu S3-ga ühilduv) server.
-2. Looge ämber MinIO konsooli või &apos;mc mb &lt;alias&gt;/&lt;bucket&gt;&apos; kaudu.
-3. Looge pääsuvõti menüüs MinIO Console → Access Keys (vältige tootmises juurmandaate).
-4. Teenuse URL: teie serveri lõpp-punkt, nt. http://192.168.1.10:9000 või https://minio.example.com.
-5. Piirkond: mis tahes väärtus (nt us-east-1) — või jätke tühjaks, kui server seda ei jõusta.</value>
-  </data>
-  <data name="S3_Provider_DigitalOceanSpaces_Help" xml:space="preserve">
-    <value>DigitalOcean Spaces – S3-ühilduv objektide salvestusruum.
-
-1. Looge jaotises Spaces (https://cloud.digitalocean.com/spaces) ruum. Pange tähele selle piirkonda (nt nyc3).
-2. Avage API → Spaces Keys → Generate New Key. Kopeerige võti (= juurdepääsuvõti) ja saladus.
-3. Teenuse URL: https://&lt;REGION&gt;.digitaloceanspaces.com (nt https://nyc3.digitaloceanspaces.com).
-4. Piirkond: sama lühikood, nt. nyc3.</value>
-  </data>
-  <data name="S3_Provider_GoogleCloudStorage_Help" xml:space="preserve">
-    <value>Google Cloud Storage – S3 koostalitlusvõime API kaudu.
-
-1. Looge Google Cloud Console&apos;is (https://console.cloud.google.com/storage) ämber.
-2. Avage Cloud Storage → Settings → Interoperability → looge teenusekonto jaoks HMAC-võti.
-   Kopeerige juurdepääsuvõti ja saladus.
-3. Täitke: ämber, juurdepääsuvõti (HMAC-võti), salajane võti (HMAC-saladus).
-   Teenuse URL ja piirkond määratakse automaatselt.</value>
-  </data>
-  <data name="S3_Provider_HuaweiCloudOBS_Help" xml:space="preserve">
-    <value>Huawei Cloud OBS — Huawei S3-ühilduv objektide salvestusruum.
-
-1. Looge OBS-konsoolis (https://console.huaweicloud.com/obs/) ämber. Pange tähele selle piirkonda (nt cn-north-4).
-2. Avage Minu mandaat → Pääsuvõtmed → Loo pääsuvõti.
-   Kopeerige AK (= juurdepääsuvõti) ja SK (= salajane võti).
-3. Teenuse URL: https://obs.&lt;REGION&gt;.myhuaweicloud.com (nt https://obs.cn-north-4.myhuaweicloud.com).
-4. Piirkond: nt. cn-north-4.</value>
-  </data>
-  <data name="S3_Provider_LinodeObjectStorage_Help" xml:space="preserve">
-    <value>Linode (Akamai) Object Storage — S3-ga ühilduv salvestusruum.
-
-1. Looge Linode Cloud Manageris (https://cloud.linode.com/object-storage/buckets) ämber. Pange tähele selle klastrit.
-2. Avage Objektide salvestusruum → Pääsuvõtmed → Loo ämbriga hõlmatud pääsuvõti.
-   Kopeerige juurdepääsuvõti ja salajane võti.
-3. Teenuse URL: https://&lt;CLUSTER&gt;.linodeobjects.com (nt https://us-east-1.linodeobjects.com).
-4. Piirkond: sama klastri kood, nt. us-ida-1.</value>
-  </data>
-  <data name="S3_Provider_QiniuCloudKodo_Help" xml:space="preserve">
-    <value>Qiniu Cloud Kodo — S3-ga ühilduv Qiniu salvestusruum.
-
-1. Looge Qiniu portaalis (https://portal.qiniu.com/kodo/bucket) ämber. Pange tähele selle piirkonda.
-2. Avage Personal Center → Key Management — kopeerige oma AccessKey ja SecretKey.
-3. Teenuse URL piirkonna järgi:
-   Ida-Hiina: https://s3-cn-east-1.qiniucs.com
-   Põhja-Hiina: https://s3-cn-north-1.qiniucs.com
-   Lõuna-Hiina: https://s3-cn-south-1.qiniucs.com
-   Põhja-Ameerika: https://s3-us-north-1.qiniucs.com
-4. Piirkond: sobiv kood, nt. cn-ida-1.</value>
-  </data>
-  <data name="S3_Provider_ScalewayObjectStorage_Help" xml:space="preserve">
-    <value>Scaleway Object Storage – Euroopa S3-ühilduv salvestusruum.
-
-1. Looge Scaleway konsoolis (https://console.scaleway.com/object-storage/buckets) ämber. Pange tähele selle piirkonda (nt fr-par).
-2. Avage IAM → API võtmed → Loo API võti objektisalvestuse kirjutamisõigustega.
-   Kopeerige juurdepääsuvõti ja salajane võti.
-3. Teenuse URL: https://s3.&lt;REGION&gt;.scw.cloud (nt https://s3.fr-par.scw.cloud).
-4. Piirkond: nt. fr-par, nl-ams, pl-waw.</value>
-  </data>
-  <data name="S3_Provider_SelectelStorage_Help" xml:space="preserve">
-    <value>Selectel Object Storage — S3-ga ühilduv vene salvestusruum.
-
-1. In Selectel Panel (https://my.selectel.ru/) → Cloud Storage → looge konteiner (= ämber).
-2. Jaotises Kasutajad ja rollid looge salvestusruumi juurdepääsuga teenusekasutaja → S3 võtmed → looge võtmepaar.
-   Kopeerige juurdepääsuvõti ja salajane võti.
-3. Täitke: ämber, juurdepääsuvõti, salajane võti.
-   Teenuse URL täidetakse automaatselt.</value>
-  </data>
-  <data name="S3_Provider_TencentCloudCOS_Help" xml:space="preserve">
-    <value>Tencent Cloud COS – S3-ühilduv objektide salvestusruum Tencentilt.
-
-1. Looge COS-konsoolis (https://console.cloud.tencent.com/cos) ämber. Pange tähele AppId ja piirkond (nt ap-peijing).
-2. In Access Management → API Keys → Create Key.
-   Kopeerige SecretId (= juurdepääsuvõti) ja SecretKey (= salajane võti).
-3. Teenuse URL: https://cos.&lt;REGION&gt;.myqcloud.com (nt https://cos.ap-beijing.myqcloud.com).
-4. Salve nimevorming: &lt;nimi&gt;-&lt;AppId&gt; (nt mybucket-1250000000). Piirkond: nt. ap-peking.</value>
-  </data>
-  <data name="S3_Provider_VKCloudStorage_Help" xml:space="preserve">
-    <value>VK Cloud Object Storage — S3-ga ühilduv salvestusruum VK Cloudist.
-
-1. VK pilveportaalis (https://msk.cloud.vk.com/) → Cloud Storage → looge ämber.
-2. Oma konto all → Pääsuvõtmed → looge uus võtmepaar.
-   Kopeerige juurdepääsuvõti ja salajane võti.
-3. Vajadusel täitke: ämber, juurdepääsuvõti, salajane võti ja piirkond (nt ru-msk).
-   Teenuse URL täidetakse automaatselt.</value>
-  </data>
-  <data name="S3_Provider_VolcanoEngineTOS_Help" xml:space="preserve">
-    <value>Volcano Engine TOS (ByteDance) – S3-ga ühilduv salvestusruum.
-
-1. Looge rakenduses Volcano Engine Console (https://console.volcengine.com/tos) ämber. Pange tähele selle piirkonda (nt cn-beijing).
-2. Avage IAM → Access Keys → looge võti.
-   Kopeerige juurdepääsuvõtme ID ja salajane juurdepääsuvõti.
-3. Teenuse URL: https://tos-s3-&lt;REGION&gt;.volces.com (nt https://tos-s3-cn-beijing.volces.com).
-4. Piirkond: nt. cn-peking.</value>
-  </data>
-  <data name="S3_Provider_Wasabi_Help" xml:space="preserve">
-    <value>Wasabi – kuuma pilvesalvestus ilma väljapääsutasudeta.
-
-1. Wasabi konsoolis (https://console.wasabisys.com/) → Ämbrid → Loo ämber. Valige piirkond.
-2. Avage Pääsuvõtmed → Loo uus pääsuvõti. Kopeerige juurdepääsuvõti ja salajane võti.
-3. Täitke: ämber, juurdepääsuvõti, salajane võti ja piirkond (nt us-east-1, eu-central-1).
-   Teenuse URL täidetakse automaatselt.</value>
-  </data>
-  <data name="S3_Provider_YandexObjectStorage_Help" xml:space="preserve">
-    <value>Yandex Object Storage — S3-ga ühilduv Venemaa pilvesalvestus.
-
-1. Yandexi pilvekonsoolis (https://console.yandex.cloud/) → Object Storage → looge ämber.
-2. Avage Teenuskontod → looge see rolliga storage.editor → looge staatiline juurdepääsuvõti.
-   Kopeerige võtme ID (= juurdepääsuvõti) ja salajane võti.
-3. Täitke: ämber, juurdepääsuvõti, salajane võti.
-   Teenuse URL ja piirkond määratakse automaatselt.</value>
-  </data>
   <data name="WebDav_Preset_Box_Help" xml:space="preserve">
     <value>Box – ettevõtte pilvesalvestus koos WebDAV-toega.
 
@@ -1182,8 +1193,8 @@ Vaadake üksikasjalikku kirjeldust järgmisel lingil.</value>
 
 1. Logige sisse aadressil hidrive.ionos.com → Seaded → Rakendused ja ühendatud teenused → WebDAV.
    Või pääsege WebDAV-ile otse oma olemasolevate mandaatidega juurde.
-2. Sisestage kasutajaks oma HiDrive&apos;i kasutajanimi.
-3. Sisestage parooliks oma HiDrive&apos;i parool.
+2. Sisestage kasutajaks oma HiDrive'i kasutajanimi.
+3. Sisestage parooliks oma HiDrive'i parool.
    Serveri aadress, HTTPS, port ja baastee konfigureeritakse automaatselt.</value>
   </data>
   <data name="WebDav_Preset_Jianguoyun_Help" xml:space="preserve">
@@ -1207,7 +1218,7 @@ Vaadake üksikasjalikku kirjeldust järgmisel lingil.</value>
     <value>Mail.ru pilv WebDAV-i kaudu.
 
 1. Avage account.mail.ru → Turvalisus → Rakenduste paroolid → Loo rakenduse parool.
-   Valige tüübiks &quot;Mail&quot; või &quot;Kõik&quot;, seejärel kopeerige loodud parool.
+   Valige tüübiks "Mail" või "Kõik", seejärel kopeerige loodud parool.
 2. Sisestage kasutajaks oma Mail.ru e-posti aadress.
 3. Sisestage paroolina rakenduse parool.
    Serveri aadress, HTTPS, port ja baastee konfigureeritakse automaatselt.</value>
@@ -1248,7 +1259,9 @@ Vaadake üksikasjalikku kirjeldust järgmisel lingil.</value>
 3. Sisestage parooliks rakenduse parool (mitte oma Yandexi konto parool).
    Serveri aadress, HTTPS ja port konfigureeritakse automaatselt.</value>
   </data>
-
+  <data name="WhatTask_Description" xml:space="preserve">
+    <value>Siin saate määrata kaustad, mida soovite varundada.</value>
+  </data>
   <data name="Winget_Description" xml:space="preserve">
     <value>Varundage/sünkroniseerige oma andmeid Windows-is, Linux-is.
 Importige fotosid telefonist WI-FI kaudu ja palju muud.

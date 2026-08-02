@@ -7,8 +7,8 @@
 	<StackPanel>
 		<TextBlock Margin="0 0 0 8"
 				   Text="{Binding #Root.Label}" />
-		<DatePicker HorizontalAlignment="Stretch"
-					SelectedDate="{Binding #Root.SelectedDate, Mode=TwoWay}" />
+		<CalendarDatePicker HorizontalAlignment="Stretch"
+						   SelectedDate="{Binding #Root.SelectedDate, Mode=TwoWay}" />
 		<TextBlock Margin="0 8 0 0"
 				IsVisible="{Binding #Root.Help, Converter={x:Static StringConverters.IsNotNullOrEmpty}}"
 				Text="{Binding #Root.Help}"
