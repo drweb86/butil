@@ -1,4 +1,4 @@
-<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -109,13 +109,13 @@
     <value>వెర్షన్‌ను ఎంచుకోండి</value>
   </data>
   <data name="BackupVersion_Storage_TitleWithSize" xml:space="preserve">
-    <value>(అన్ని వెర్షన్లు నిల్వలో {0} స్థానం బలంగా occupye)</value>
+    <value>మొత్తం ఆక్రమించిన నిల్వ: {0}.</value>
   </data>
   <data name="BackupVersion_Versions_Title" xml:space="preserve">
     <value>వెర్షన్లు</value>
   </data>
   <data name="BackupVersion_Viewer_Help" xml:space="preserve">
-    <value>మీరు పునరుద్ధరించాలనుకుంటున్న ఫైలు లేదా ఫోల్డర్‌ని చెట్టులో ఎంచుకోండి మరియు "పునరుద్ధరించండి" పై క్లిక్ చేయండి.</value>
+    <value>మీరు ఎంచుకున్న వెర్షన్‌లో ఉన్నట్లుగా ఫైల్‌లను చూస్తున్నారు. ఫైల్, ఫోల్డర్ లేదా నిల్వ అంశాన్ని ఎంచుకుని, ఆపై పునరుద్ధరించు క్లిక్ చేయండి.</value>
   </data>
   <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
     <value>సర్వర్‌కు కనెక్షన్ ఊహించని విధంగా ముగించబడింది (క్లయింట్ మరియు సర్వర్‌లోని పాస్‌వర్డ్‌లు ఒకటేనా?)</value>
@@ -280,6 +280,9 @@
   </data>
   <data name="Field_Version" xml:space="preserve">
     <value>వెర్షన్:</value>
+  </data>
+  <data name="Field_Version_Help" xml:space="preserve">
+    <value>ఈ జాబిత అందుబాటులో ఉన్న బ్యాకప్ వెర్షన్‌లను చూపుతుంది. మీరు వెర్షన్‌ను ఎంచుకుంటే, క్రింది ఫైల్‌లు ఆ వెర్షన్ స్థితిని చూపుతాయి.</value>
   </data>
   <data name="File_Deleting" xml:space="preserve">
     <value>తొలగిస్తున్న "{0}"</value>
@@ -971,6 +974,9 @@
   <data name="Task_Restore" xml:space="preserve">
     <value>పునరుద్ధరించు</value>
   </data>
+  <data name="Task_Restore_Selected" xml:space="preserve">
+    <value>{0} పునరుద్ధరించు...</value>
+  </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>మీరు పునరుద్ధరించాలనుకుంటున్న బ్యాకప్ ఉన్న నిల్వను పేర్కొనండి. బ్యాకప్ సృష్టించినప్పుడు ఉపయోగించిన అదే సెట్టింగ్‌లను ఉపయోగించండి.</value>
   </data>
@@ -1161,10 +1167,16 @@
     <value>ఫోల్డర్‌ను సర్వర్‌కు అప్‌లోడ్ చేయండి</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
-    <value>ఇప్పటికే ఉన్న ఫైళ్ళను తిరిగి రాస్తూ ఫోల్డర్ కంటెంట్‌ను అప్‌లోడ్ చేయవచ్చు.</value>
+    <value>మీరు ఫోల్డర్ కంటెంట్‌ను సర్వర్‌కు అప్‌లోడ్ చేయవచ్చు. డిఫాల్ట్‌గా గమ్యస్థానంలో ఉన్న ఫైల్‌లు ఓవర్‌రైట్ చేయబడతాయి.</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles" xml:space="preserve">
+    <value>ఉన్న ఫైల్‌లను ఓవర్‌రైట్ చేయవద్దు</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles_Help" xml:space="preserve">
+    <value>ప్రారంభించినప్పుడు, గమ్యస్థానంలో ఇప్పటికే ఉన్న ఫైల్‌లు ఓవర్‌రైట్ చేయకుండా దాటవేయబడతాయి.</value>
   </data>
   <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
-    <value>ఫోల్డర్ కంటెంట్ అప్‌లోడ్ చేయబడే గమ్య నిల్వను పేర్కొనండి. గమ్యంలో ఇప్పటికే ఉన్న ఫైళ్లు ఓవర్‌రైట్ చేయబడతాయి.</value>
+    <value>ఫోల్డర్ కంటెంట్ అప్‌లోడ్ చేయబడే గమ్యస్థాన నిల్వను పేర్కొనండి.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>URL:</value>

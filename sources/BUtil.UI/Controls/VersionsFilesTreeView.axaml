@@ -7,24 +7,24 @@
              mc:Ignorable="d"
              x:Class="BUtil.UI.Controls.VersionsFilesTreeView"
 			 x:Name="Root"
-			 x:DataType="cvm:VersionsListViewModel">
+			 x:DataType="cvm:RestoreVersionsViewModel">
 	<Expander Classes="TaskSection" HorizontalAlignment="Stretch" IsExpanded="True" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="Transparent"
-			  IsEnabled="{Binding !ParentViewModel.TaskExecuterViewModel.TaskNotCompleted}">
+			  IsEnabled="{Binding IsInteractionEnabled}">
 		<Expander.Header>
 			<decor:ExpanderHeader Icon="💾" Text="{Binding BackupVersion_Files_Title}" />
 		</Expander.Header>
 		<StackPanel>
 			<TextBlock TextWrapping="Wrap" Margin="0 0 0 8" Text="{Binding BackupVersion_Viewer_Help}" />
-			<TextBox
-				Text="{Binding SearchText}"
-				PlaceholderText="{Binding SearchTextBoxWatermark}"
-				Margin="0 0 0 8"
-				VerticalContentAlignment="Center" />
 			<decor:IconButton
 				Icon="💾"
 				Text="{Binding RestoreSelectedText}"
 				IsEnabled="{Binding IsRestoreEnabled}"
 				Command="{Binding #Root.BrowseRestoreFolderAsync}" />
+			<TextBox
+				Text="{Binding SearchText}"
+				PlaceholderText="{Binding SearchTextBoxWatermark}"
+				Margin="0 0 0 8"
+				VerticalContentAlignment="Center" />
 			<TreeView
 				ItemsSource="{Binding Nodes}"
 				SelectionMode="Single"

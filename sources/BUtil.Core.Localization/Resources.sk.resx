@@ -1,4 +1,4 @@
-<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -114,13 +114,13 @@ Zmeny odstránenej verzie sa stanú súčasťou verzie „{1}".</value>
     <value>VYBERTE VERZIU</value>
   </data>
   <data name="BackupVersion_Storage_TitleWithSize" xml:space="preserve">
-    <value>(všetky verzie zaberajú v úložisku {0})</value>
+    <value>Celkové obsadené úložisko: {0}.</value>
   </data>
   <data name="BackupVersion_Versions_Title" xml:space="preserve">
     <value>VERZIE</value>
   </data>
   <data name="BackupVersion_Viewer_Help" xml:space="preserve">
-    <value>Vyberte súbor alebo priečinok, ktorý chcete obnoviť v strome, a kliknite na „Obnoviť".</value>
+    <value>Vidíte súbory tak, ako boli vo vybranej verzii. Vyberte súbor, priečinok alebo položku úložiska a kliknite na Obnoviť.</value>
   </data>
   <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
     <value>Spojenie so serverom bolo neočakávane ukončené (Sú heslá na klientovi a serveri rovnaké?)</value>
@@ -285,6 +285,9 @@ Scenár použitia: Kopírujete dáta na vzdialený server. Problém: ISP znižuj
   </data>
   <data name="Field_Version" xml:space="preserve">
     <value>Verzia:</value>
+  </data>
+  <data name="Field_Version_Help" xml:space="preserve">
+    <value>Tento zoznam zobrazuje dostupné verzie záloh. Po výbere verzie súbory nižšie ukazujú stav tejto verzie.</value>
   </data>
   <data name="File_Deleting" xml:space="preserve">
     <value>Odstraňovanie „{0}"</value>
@@ -978,6 +981,9 @@ Pozrite si podrobný popis na nasledujúcom odkaze.</value>
   <data name="Task_Restore" xml:space="preserve">
     <value>Obnoviť</value>
   </data>
+  <data name="Task_Restore_Selected" xml:space="preserve">
+    <value>Obnoviť {0}...</value>
+  </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>Zadajte úložisko, ktoré obsahuje zálohu, ktorú chcete obnoviť. Použite rovnaké nastavenia ako pri vytváraní zálohy.</value>
   </data>
@@ -1168,10 +1174,16 @@ Pozrite si podrobný popis na nasledujúcom odkaze.</value>
     <value>Nahrať priečinok na server</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
-    <value>Môžete nahrať obsah priečinka s prepísaním už existujúcich súborov.</value>
+    <value>Môžete nahrať obsah priečinka na server. Predvolene sa existujúce cieľové súbory prepíšu.</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles" xml:space="preserve">
+    <value>Neprepisovať existujúce súbory</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles_Help" xml:space="preserve">
+    <value>Ak je zapnuté, súbory, ktoré už v cieli existujú, sa preskočia namiesto prepísania.</value>
   </data>
   <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
-    <value>Zadajte cieľové úložisko, do ktorého sa nahrá obsah priečinka. Existujúce súbory v cieli budú prepísané.</value>
+    <value>Zadajte cieľové úložisko, kam sa nahrá obsah priečinka.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>URL:</value>

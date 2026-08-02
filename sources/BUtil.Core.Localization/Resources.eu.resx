@@ -1,4 +1,4 @@
-<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -114,13 +114,13 @@ Ezabatutako bertsio-aldaketak "{1}" bertsioaren zati bihurtuko dira.</value>
     <value>HAUTATU BERTSIOA</value>
   </data>
   <data name="BackupVersion_Storage_TitleWithSize" xml:space="preserve">
-    <value>(Bertsio guztiek {0} biltegian hartzen dute)</value>
+    <value>Okupatutako biltegiratze osoa: {0}.</value>
   </data>
   <data name="BackupVersion_Versions_Title" xml:space="preserve">
     <value>BERTSIOAK</value>
   </data>
   <data name="BackupVersion_Viewer_Help" xml:space="preserve">
-    <value>Hautatu zuhaitzean leheneratu nahi duzun fitxategia edo karpeta eta egin klik "Berreskuratu".</value>
+    <value>Hautatutako bertsioan zeuden bezala ikusten dituzu fitxategiak. Aukeratu fitxategi, karpeta edo biltegiratze-elementu bat, eta egin klik Berreskuratu botoian.</value>
   </data>
   <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
     <value>Zerbitzariarekiko konexioa ustekabean amaitu zen (Bezeroaren eta zerbitzariaren pasahitzak berdinak al dira?)</value>
@@ -285,6 +285,9 @@ Erabilera eszenatokia: datuak urruneko zerbitzarian kopiatzen dituzu. Arazo bat 
   </data>
   <data name="Field_Version" xml:space="preserve">
     <value>Bertsioa:</value>
+  </data>
+  <data name="Field_Version_Help" xml:space="preserve">
+    <value>Zerrenda honek erabilgarri dauden babeskopia-bertsioak erakusten ditu. Bertsio bat hautatzen duzunean, beheko fitxategiek bertsio horren egoera erakusten dute.</value>
   </data>
   <data name="File_Deleting" xml:space="preserve">
     <value>"{0}" ezabatzen</value>
@@ -978,6 +981,9 @@ See detailed description in the following link.</value>
   <data name="Task_Restore" xml:space="preserve">
     <value>Berreskuratu</value>
   </data>
+  <data name="Task_Restore_Selected" xml:space="preserve">
+    <value>Berreskuratu {0}...</value>
+  </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>Zehaztu leheneratu nahi duzun babeskopia duen biltegia. Erabili babeskopia sortu zenean erabilitako ezarpen berberak.</value>
   </data>
@@ -1168,10 +1174,16 @@ See detailed description in the following link.</value>
     <value>Karpeta zerbitzarira igo</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
-    <value>Karpeten edukia karga dezakezu lehendik dauden fitxategiak gainidatziz.</value>
+    <value>Karpetaren edukia zerbitzarira igo dezakezu. Lehenespenez, lehendik dauden helmugako fitxategiak gainidazten dira.</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles" xml:space="preserve">
+    <value>Ez gainidatzi lehendik dauden fitxategiak</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles_Help" xml:space="preserve">
+    <value>Gaituta dagoenean, helmugan jada dauden fitxategiak saltatzen dira, gainidatzi beharrean.</value>
   </data>
   <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
-    <value>Zehaztu karpetaren edukia igoko den helburuko biltegia. Helburuan dauden fitxategiak gainidatzi egingo dira.</value>
+    <value>Zehaztu karpetaren edukia igoko den helmugako biltegiratzea.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>Url:</value>

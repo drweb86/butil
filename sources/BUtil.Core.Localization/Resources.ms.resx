@@ -1,4 +1,4 @@
-<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -114,13 +114,13 @@ Perubahan versi yang dipadam akan menjadi sebahagian daripada versi "{1}".</valu
     <value>PILIH VERSI</value>
   </data>
   <data name="BackupVersion_Storage_TitleWithSize" xml:space="preserve">
-    <value>(semua versi menduduki {0} pada storan)</value>
+    <value>Jumlah storan yang digunakan: {0}.</value>
   </data>
   <data name="BackupVersion_Versions_Title" xml:space="preserve">
     <value>VERSI</value>
   </data>
   <data name="BackupVersion_Viewer_Help" xml:space="preserve">
-    <value>Pilih fail atau folder yang ingin anda pulihkan dalam pepohon dan klik "Pulihkan".</value>
+    <value>Anda melihat fail seperti pada versi yang dipilih. Pilih fail, folder atau item storan, kemudian klik Pulihkan.</value>
   </data>
   <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
     <value>Sambungan ke pelayan terputus secara tidak dijangka (Adakah kata laluan pada Klien dan Pelayan sama?)</value>
@@ -285,6 +285,9 @@ Senario penggunaan: Anda menyalin data ke pelayan jauh. Terdapat masalah: ISP me
   </data>
   <data name="Field_Version" xml:space="preserve">
     <value>Versi:</value>
+  </data>
+  <data name="Field_Version_Help" xml:space="preserve">
+    <value>Senarai ini menunjukkan versi sandaran yang tersedia. Apabila anda memilih versi, fail di bawah menunjukkan keadaan versi tersebut.</value>
   </data>
   <data name="File_Deleting" xml:space="preserve">
     <value>Memadamkan "{0}"</value>
@@ -978,6 +981,9 @@ Lihat penerangan terperinci di pautan berikut.</value>
   <data name="Task_Restore" xml:space="preserve">
     <value>Pulihkan</value>
   </data>
+  <data name="Task_Restore_Selected" xml:space="preserve">
+    <value>Pulihkan {0}...</value>
+  </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>Nyatakan storan yang mengandungi sandaran yang anda ingin pulihkan. Gunakan tetapan yang sama seperti semasa sandaran dicipta.</value>
   </data>
@@ -1168,10 +1174,16 @@ Lihat penerangan terperinci di pautan berikut.</value>
     <value>Muat naik folder ke pelayan</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
-    <value>Anda boleh memuat naik kandungan folder dengan menimpa fail yang sudah wujud.</value>
+    <value>Anda boleh memuat naik kandungan folder ke pelayan. Secara lalai, fail destinasi sedia ada ditindih.</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles" xml:space="preserve">
+    <value>Jangan tindih fail sedia ada</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles_Help" xml:space="preserve">
+    <value>Apabila didayakan, fail yang sudah wujud di destinasi dilangkau dan bukannya ditindih.</value>
   </data>
   <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
-    <value>Nyatakan storan destinasi tempat kandungan folder akan dimuat naik. Fail sedia ada di destinasi akan ditulis ganti.</value>
+    <value>Nyatakan storan destinasi tempat kandungan folder akan dimuat naik.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>URL:</value>

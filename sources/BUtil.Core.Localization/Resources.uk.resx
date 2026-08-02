@@ -1,4 +1,4 @@
-<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -114,13 +114,13 @@
     <value>ВИБЕРІТЬ ВЕРСІЮ</value>
   </data>
   <data name="BackupVersion_Storage_TitleWithSize" xml:space="preserve">
-    <value>(всі версії займають у сховищі {0})</value>
+    <value>Усього зайнято у сховищі: {0}.</value>
   </data>
   <data name="BackupVersion_Versions_Title" xml:space="preserve">
     <value>ВЕРСІЇ</value>
   </data>
   <data name="BackupVersion_Viewer_Help" xml:space="preserve">
-    <value>Виберіть файл або папку, яку потрібно відновити, і натисніть "Відновити".</value>
+    <value>Ви бачите файли такими, якими вони були у вибраній версії. Виберіть файл, папку або елемент сховища, потім натисніть Відновити.</value>
   </data>
   <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
     <value>З'єднання з сервером неочікувано перервано (Чи співпадають паролі на Клієнті та Сервері?)</value>
@@ -285,6 +285,9 @@
   </data>
   <data name="Field_Version" xml:space="preserve">
     <value>Версія:</value>
+  </data>
+  <data name="Field_Version_Help" xml:space="preserve">
+    <value>У цьому списку показано доступні версії резервних копій. Після вибору версії файли нижче відображають стан цієї версії.</value>
   </data>
   <data name="File_Deleting" xml:space="preserve">
     <value>Видалення "{0}"</value>
@@ -979,6 +982,9 @@ bin.
   <data name="Task_Restore" xml:space="preserve">
     <value>Відновити</value>
   </data>
+  <data name="Task_Restore_Selected" xml:space="preserve">
+    <value>Відновити {0}...</value>
+  </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>Вкажіть сховище, яке містить резервну копію, яку ви хочете відновити. Використовуйте ті самі налаштування, що й під час створення резервної копії.</value>
   </data>
@@ -1169,10 +1175,16 @@ bin.
     <value>Завантажити папку на сервер</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
-    <value>Ви можете завантажити вміст теки з перезаписом уже існуючих файлів.</value>
+    <value>Ви можете завантажити вміст папки на сервер. За замовчуванням наявні файли призначення перезаписуються.</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles" xml:space="preserve">
+    <value>Не перезаписувати наявні файли</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles_Help" xml:space="preserve">
+    <value>Якщо увімкнено, файли, які вже є в призначенні, пропускаються замість перезапису.</value>
   </data>
   <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
-    <value>Вкажіть цільове сховище, куди буде завантажено вміст папки. Наявні файли у місці призначення буде перезаписано.</value>
+    <value>Укажіть сховище призначення, куди буде завантажено вміст папки.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>Url:</value>

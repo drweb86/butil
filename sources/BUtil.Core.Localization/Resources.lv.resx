@@ -1,4 +1,4 @@
-<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -114,13 +114,13 @@ Dzēstās versijas izmaiņas kļūs par versijas „{1}" daļu.</value>
     <value>IZVĒLIETIES VERSIJU</value>
   </data>
   <data name="BackupVersion_Storage_TitleWithSize" xml:space="preserve">
-    <value>(visas versijas aizņem krātuvē {0})</value>
+    <value>Kopējā aizņemtā krātuve: {0}.</value>
   </data>
   <data name="BackupVersion_Versions_Title" xml:space="preserve">
     <value>VERSIJAS</value>
   </data>
   <data name="BackupVersion_Viewer_Help" xml:space="preserve">
-    <value>Izvēlieties failu vai mapi, kuru vēlaties atjaunot kokā, un noklikšķiniet uz „Atjaunot".</value>
+    <value>Jūs redzat failus tādus, kādi tie bija atlasītajā versijā. Izvēlieties failu, mapi vai krātuves vienumu un pēc tam noklikšķiniet uz Atjaunot.</value>
   </data>
   <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
     <value>Savienojums ar serveri tika negaidīti pārtraukts (Vai klienta un servera paroles ir vienādas?)</value>
@@ -285,6 +285,9 @@ Lietošanas scenārijs: Jūs kopējat datus uz attālo serveri. Problēma: inter
   </data>
   <data name="Field_Version" xml:space="preserve">
     <value>Versija:</value>
+  </data>
+  <data name="Field_Version_Help" xml:space="preserve">
+    <value>Šis saraksts rāda pieejamās dublējuma versijas. Atlasot versiju, zemāk esošie faili rāda šīs versijas stāvokli.</value>
   </data>
   <data name="File_Deleting" xml:space="preserve">
     <value>Dzēš „{0}"</value>
@@ -978,6 +981,9 @@ Skatiet detalizētu aprakstu šajā saitē.</value>
   <data name="Task_Restore" xml:space="preserve">
     <value>Atjaunot</value>
   </data>
+  <data name="Task_Restore_Selected" xml:space="preserve">
+    <value>Atjaunot {0}...</value>
+  </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>Norādiet krātuvi, kurā ir dublējums, ko vēlaties atjaunot. Izmantojiet tos pašus iestatījumus, kas bija spēkā, izveidojot dublējumu.</value>
   </data>
@@ -1168,10 +1174,16 @@ Skatiet detalizētu aprakstu šajā saitē.</value>
     <value>Augšupielādēt mapi serverī</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
-    <value>Jūs varat augšupielādēt mapes saturu, pārrakstot jau esošos failus.</value>
+    <value>Varat augšupielādēt mapes saturu serverī. Pēc noklusējuma esošie galamērķa faili tiek pārrakstīti.</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles" xml:space="preserve">
+    <value>Nepārrakstīt esošos failus</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles_Help" xml:space="preserve">
+    <value>Kad iespējots, faili, kas jau pastāv galamērķī, tiek izlaisti, nevis pārrakstīti.</value>
   </data>
   <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
-    <value>Norādiet mērķa krātuvi, uz kuru tiks augšupielādēts mapes saturs. Esošie faili galamērķī tiks pārrakstīti.</value>
+    <value>Norādiet galamērķa krātuvi, kurā tiks augšupielādēts mapes saturs.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>URL:</value>

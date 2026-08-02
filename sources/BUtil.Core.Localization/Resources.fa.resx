@@ -1,4 +1,4 @@
-<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -114,13 +114,13 @@
     <value>انتخاب نسخه</value>
   </data>
   <data name="BackupVersion_Storage_TitleWithSize" xml:space="preserve">
-    <value>(همه نسخه‌ها در فضای ذخیره‌سازی {0} اشغال می‌کنند)</value>
+    <value>کل فضای ذخیره‌سازی اشغال‌شده: {0}.</value>
   </data>
   <data name="BackupVersion_Versions_Title" xml:space="preserve">
     <value>نسخه‌ها</value>
   </data>
   <data name="BackupVersion_Viewer_Help" xml:space="preserve">
-    <value>فایل یا پوشه‌ای که می‌خواهید بازیابی کنید را در درخت انتخاب کرده و روی "بازیابی" کلیک کنید.</value>
+    <value>فایل‌ها را همان‌طور که در نسخه انتخاب‌شده بودند می‌بینید. یک فایل، پوشه یا مورد ذخیره‌سازی را انتخاب کنید، سپس روی بازیابی کلیک کنید.</value>
   </data>
   <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
     <value>اتصال به سرور به‌طور غیرمنتظره قطع شد (آیا رمزهای عبور در کلاینت و سرور یکسان هستند؟)</value>
@@ -285,6 +285,9 @@
   </data>
   <data name="Field_Version" xml:space="preserve">
     <value>نسخه:</value>
+  </data>
+  <data name="Field_Version_Help" xml:space="preserve">
+    <value>این فهرست نسخه‌های پشتیبان موجود را نشان می‌دهد. وقتی نسخه‌ای را انتخاب می‌کنید، فایل‌های پایین وضعیت آن نسخه را نشان می‌دهند.</value>
   </data>
   <data name="File_Deleting" xml:space="preserve">
     <value>حذف "{0}"</value>
@@ -979,6 +982,9 @@ bin.
   <data name="Task_Restore" xml:space="preserve">
     <value>بازیابی</value>
   </data>
+  <data name="Task_Restore_Selected" xml:space="preserve">
+    <value>بازیابی {0}...</value>
+  </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>فضای ذخیره‌سازی حاوی پشتیبانی که می‌خواهید بازیابی کنید را مشخص کنید. از همان تنظیماتی استفاده کنید که هنگام ایجاد پشتیبان استفاده شده بود.</value>
   </data>
@@ -1169,10 +1175,16 @@ bin.
     <value>آپلود پوشه به سرور</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
-    <value>می‌توانید محتویات پوشه را با بازنویسی فایل‌های موجود آپلود کنید.</value>
+    <value>می‌توانید محتوای پوشه را به سرور بارگذاری کنید. به‌طور پیش‌فرض فایل‌های موجود در مقصد بازنویسی می‌شوند.</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles" xml:space="preserve">
+    <value>فایل‌های موجود را بازنویسی نکن</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles_Help" xml:space="preserve">
+    <value>وقتی فعال باشد، فایل‌هایی که از قبل در مقصد وجود دارند به‌جای بازنویسی نادیده گرفته می‌شوند.</value>
   </data>
   <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
-    <value>فضای ذخیره‌سازی مقصد را که محتوای پوشه در آن بارگذاری می‌شود مشخص کنید. فایل‌های موجود در مقصد بازنویسی خواهند شد.</value>
+    <value>فضای ذخیره‌سازی مقصدی را که محتوای پوشه در آن بارگذاری می‌شود مشخص کنید.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>Url:</value>

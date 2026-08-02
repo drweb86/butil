@@ -1,4 +1,4 @@
-<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -114,13 +114,13 @@ Bydd newidiadau fersiwn sydd wedi'u dileu yn dod yn rhan o fersiwn "{1}".</value
     <value>FERSIWN DETHOL</value>
   </data>
   <data name="BackupVersion_Storage_TitleWithSize" xml:space="preserve">
-    <value>(pob fersiwn yn meddiannu ar storfa {0})</value>
+    <value>Cyfanswm y storfa a ddefnyddir: {0}.</value>
   </data>
   <data name="BackupVersion_Versions_Title" xml:space="preserve">
     <value>FERSIYNAU</value>
   </data>
   <data name="BackupVersion_Viewer_Help" xml:space="preserve">
-    <value>Dewiswch ffeil neu ffolder rydych chi am ei adfer yn y goeden a chlicio "Adfer".</value>
+    <value>Rydych yn gweld ffeiliau fel yr oeddent yn y fersiwn a ddewiswyd. Dewiswch ffeil, ffolder neu eitem storfa, yna cliciwch Adfer.</value>
   </data>
   <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
     <value>Daeth cysylltiad â gweinydd i ben yn annisgwyl (A yw cyfrineiriau ar y Cleient a'r Gweinyddwr yr un peth?)</value>
@@ -285,6 +285,9 @@ Senario defnydd: Rydych chi'n copïo data i'r gweinydd pell. Mae yna broblem: ma
   </data>
   <data name="Field_Version" xml:space="preserve">
     <value>Fersiwn:</value>
+  </data>
+  <data name="Field_Version_Help" xml:space="preserve">
+    <value>Mae'r rhestr hon yn dangos fersiynau gwneud copi wrth gefn sydd ar gael. Pan ddewiswch fersiwn, mae'r ffeiliau isod yn dangos cyflwr y fersiwn honno.</value>
   </data>
   <data name="File_Deleting" xml:space="preserve">
     <value>Wrthi'n dileu "{0}"</value>
@@ -978,6 +981,9 @@ See detailed description in the following link.</value>
   <data name="Task_Restore" xml:space="preserve">
     <value>Adfer</value>
   </data>
+  <data name="Task_Restore_Selected" xml:space="preserve">
+    <value>Adfer {0}...</value>
+  </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>Nodwch y storfa sy'n cynnwys y copi wrth gefn rydych am ei adfer. Defnyddiwch yr un gosodiadau ag pan grëwyd y copi wrth gefn.</value>
   </data>
@@ -1168,10 +1174,16 @@ See detailed description in the following link.</value>
     <value>Llwytho ffolder i fyny i'r gweinydd</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
-    <value>Gallwch uwchlwytho cynnwys ffolder gyda throsysgrifo ffeiliau sydd eisoes yn bodoli.</value>
+    <value>Gallwch uwchlwytho cynnwys ffolder i'r gweinydd. Yn ddiofyn, caiff ffeiliau cyrchfan sy'n bodoli eu trosysgrifo.</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles" xml:space="preserve">
+    <value>Peidiwch â throsysgrifo ffeiliau sy'n bodoli</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles_Help" xml:space="preserve">
+    <value>Pan fydd wedi'i alluogi, caiff ffeiliau sydd eisoes yn bodoli yn y cyrchfan eu hepgor yn hytrach na'u trosysgrifo.</value>
   </data>
   <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
-    <value>Nodwch y storfa gyrchfan lle bydd cynnwys y ffolder yn cael ei lwytho i fyny. Bydd ffeiliau presennol yn y gyrchfan yn cael eu trosysgrifo.</value>
+    <value>Nodwch y storfa gyrchfan lle bydd cynnwys y ffolder yn cael ei uwchlwytho.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>URL:</value>

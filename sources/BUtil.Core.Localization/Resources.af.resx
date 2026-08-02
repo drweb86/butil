@@ -1,4 +1,4 @@
-<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -114,13 +114,13 @@ Geskrapde weergaweveranderinge sal deel word van weergawe "{1}".</value>
     <value>KIES WEERGAWE</value>
   </data>
   <data name="BackupVersion_Storage_TitleWithSize" xml:space="preserve">
-    <value>(alle weergawes neem berging in beslag {0})</value>
+    <value>Totale bergingsruimte in gebruik: {0}.</value>
   </data>
   <data name="BackupVersion_Versions_Title" xml:space="preserve">
     <value>VERSIES</value>
   </data>
   <data name="BackupVersion_Viewer_Help" xml:space="preserve">
-    <value>Kies lêer of gids wat jy wil herstel in boom en klik "Herstel".</value>
+    <value>Jy sien lêers soos hulle in die gekose weergawe was. Kies 'n lêer, gids of bergingsitem, en klik dan Herstel.</value>
   </data>
   <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
     <value>Verbinding met bediener is onverwags beëindig (Is wagwoorde op kliënt en bediener dieselfde?)</value>
@@ -285,6 +285,9 @@ Gebruik scenario: Jy kopieer data na afgeleë bediener. Daar is 'n probleem: ISP
   </data>
   <data name="Field_Version" xml:space="preserve">
     <value>Weergawe:</value>
+  </data>
+  <data name="Field_Version_Help" xml:space="preserve">
+    <value>Hierdie lys wys beskikbare rugsteunweergawes. Wanneer jy 'n weergawe kies, wys die lêers hieronder die toestand van daardie weergawe.</value>
   </data>
   <data name="File_Deleting" xml:space="preserve">
     <value>Vee tans "{0}" uit</value>
@@ -978,6 +981,9 @@ See detailed description in the following link.</value>
   <data name="Task_Restore" xml:space="preserve">
     <value>Herstel</value>
   </data>
+  <data name="Task_Restore_Selected" xml:space="preserve">
+    <value>Herstel {0}...</value>
+  </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>Spesifiseer die berging wat die rugsteun bevat wat u wil herstel. Gebruik dieselfde instellings as toe die rugsteun geskep is.</value>
   </data>
@@ -1168,10 +1174,16 @@ See detailed description in the following link.</value>
     <value>Laai gids op na bediener</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
-    <value>U kan vouerinhoud oplaai deur reeds bestaande lêers te oorskryf.</value>
+    <value>Jy kan gidsinhoud na die bediener oplaai. By verstek word bestaande bestemmingslêers oorskryf.</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles" xml:space="preserve">
+    <value>Moenie bestaande lêers oorskryf nie</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles_Help" xml:space="preserve">
+    <value>Wanneer geaktiveer, word lêers wat reeds by die bestemming bestaan oorgeslaan in plaas van oorskryf te word.</value>
   </data>
   <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
-    <value>Spesifiseer die bestemmingsberging waarheen die inhoud van die lêergids opgelaai sal word. Bestaande lêers by die bestemming sal oorskryf word.</value>
+    <value>Spesifiseer die bestemmingsberging waarheen gidsinhoud opgelaai sal word.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>Url:</value>

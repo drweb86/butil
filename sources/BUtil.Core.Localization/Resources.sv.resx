@@ -1,4 +1,4 @@
-<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -114,13 +114,13 @@ eller varningar har registrerats.</value>
     <value>VÄLJ VERSION</value>
   </data>
   <data name="BackupVersion_Storage_TitleWithSize" xml:space="preserve">
-    <value>(alla versioner upptar {0} på lagringen)</value>
+    <value>Totalt upptagen lagring: {0}.</value>
   </data>
   <data name="BackupVersion_Versions_Title" xml:space="preserve">
     <value>VERSIONER</value>
   </data>
   <data name="BackupVersion_Viewer_Help" xml:space="preserve">
-    <value>Välj filen eller mappen du vill återställa i trädet och klicka på "Återställ".</value>
+    <value>Du ser filer som de var i den valda versionen. Välj en fil, mapp eller lagringspost och klicka sedan på Återställ.</value>
   </data>
   <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
     <value>Anslutningen till servern avbröts oväntat (Är lösenorden på klient och server desamma?)</value>
@@ -285,6 +285,9 @@ Användningsscenario: Du kopierar data till en fjärrserver. Det finns ett probl
   </data>
   <data name="Field_Version" xml:space="preserve">
     <value>Version:</value>
+  </data>
+  <data name="Field_Version_Help" xml:space="preserve">
+    <value>Den här listan visar tillgängliga säkerhetskopieringsversioner. När du väljer en version visar filerna nedan tillståndet för den versionen.</value>
   </data>
   <data name="File_Deleting" xml:space="preserve">
     <value>Tar bort "{0}"</value>
@@ -978,6 +981,9 @@ Se detaljerad beskrivning i följande länk.</value>
   <data name="Task_Restore" xml:space="preserve">
     <value>Återställ</value>
   </data>
+  <data name="Task_Restore_Selected" xml:space="preserve">
+    <value>Återställ {0}...</value>
+  </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>Ange lagringsplatsen som innehåller säkerhetskopian du vill återställa. Använd samma inställningar som när säkerhetskopian skapades.</value>
   </data>
@@ -1168,10 +1174,16 @@ Se detaljerad beskrivning i följande länk.</value>
     <value>Ladda upp mapp till server</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
-    <value>Du kan ladda upp mappinnehåll och skriva över redan befintliga filer.</value>
+    <value>Du kan ladda upp mappinnehåll till servern. Som standard skrivs befintliga destinationsfiler över.</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles" xml:space="preserve">
+    <value>Skriv inte över befintliga filer</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles_Help" xml:space="preserve">
+    <value>När det är aktiverat hoppas filer som redan finns på destinationen över i stället för att skrivas över.</value>
   </data>
   <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
-    <value>Ange mållagringsplatsen dit mappinnehållet laddas upp. Befintliga filer på destinationen skrivs över.</value>
+    <value>Ange destinationslagringen dit mappinnehållet ska laddas upp.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>Url:</value>

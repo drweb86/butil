@@ -1,4 +1,4 @@
-<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -114,13 +114,13 @@
     <value>ВЕРСИОНЫ САЙЛА</value>
   </data>
   <data name="BackupVersion_Storage_TitleWithSize" xml:space="preserve">
-    <value>(барлык версияләр storage 0 storage саклауны били)</value>
+    <value>Барлык биләнгән саклау: {0}.</value>
   </data>
   <data name="BackupVersion_Versions_Title" xml:space="preserve">
     <value>ВЕРСИОНЛАР</value>
   </data>
   <data name="BackupVersion_Viewer_Help" xml:space="preserve">
-    <value>Агачта торгызырга теләгән файл яки папканы сайлагыз һәм "Реставрация" төймәсенә басыгыз.</value>
+    <value>Сез файлларны сайланган версиядәге кебек күрәсез. Файл, папка яки саклау элементын сайлагыз, аннары Реставрация төймәсенә басыгыз.</value>
   </data>
   <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
     <value>Көтмәгәндә серверга тоташу туктатылды (Клиент һәм Сервердагы серсүзләр бер үкме?)</value>
@@ -285,6 +285,9 @@
   </data>
   <data name="Field_Version" xml:space="preserve">
     <value>Вариант:</value>
+  </data>
+  <data name="Field_Version_Help" xml:space="preserve">
+    <value>Бу исемлектә мөмкин булган резерв күчермә версияләре күрсәтелә. Версияне сайлагач, астагы файллар шул версиянең хәлен күрсәтә.</value>
   </data>
   <data name="File_Deleting" xml:space="preserve">
     <value>"{0}" бетерү</value>
@@ -978,6 +981,9 @@ See detailed description in the following link.</value>
   <data name="Task_Restore" xml:space="preserve">
     <value>Реставрация</value>
   </data>
+  <data name="Task_Restore_Selected" xml:space="preserve">
+    <value>{0} реставрациясе...</value>
+  </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>Сез кайтарырга теләгән резерв күчермә булган саклагычны күрсәтегез. Резерв күчермә ясалганда кулланылган шул ук көйләүләрне кулланыгыз.</value>
   </data>
@@ -1168,10 +1174,16 @@ See detailed description in the following link.</value>
     <value>Папканы серверга йөкләү</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
-    <value>Сез инде булган файлларны яңадан язу белән папка эчтәлеген йөкли аласыз.</value>
+    <value>Сез папка эчтәлеген серверга йөкли аласыз. Үзлегеннән булган максат файллар өстеннән языла.</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles" xml:space="preserve">
+    <value>Булган файлларны өстеннән язмаска</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles_Help" xml:space="preserve">
+    <value>Кабызылганда, максатта инде булган файллар өстеннән язылу урынына калдырыла.</value>
   </data>
   <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
-    <value>Папка эчтәлеге йөкләнәчәк максатчан саклагычны күрсәтегез. Максатта булган файллар өстенә язылачак.</value>
+    <value>Папка эчтәлеге йөкләнәчәк максат саклавын күрсәтегез.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>Url:</value>

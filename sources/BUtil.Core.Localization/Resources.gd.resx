@@ -1,4 +1,4 @@
-<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -114,13 +114,13 @@ Bidh atharraichean tionndaidh a chaidh a sguabadh às mar phàirt de dhreach "{1
     <value>ROINN ROGHAINN</value>
   </data>
   <data name="BackupVersion_Storage_TitleWithSize" xml:space="preserve">
-    <value>(tha a h-uile tionndadh ann an stòradh {0})</value>
+    <value>Àite-stòraidh iomlan a thathar a’ cleachdadh: {0}.</value>
   </data>
   <data name="BackupVersion_Versions_Title" xml:space="preserve">
     <value>LAOIDHEAN</value>
   </data>
   <data name="BackupVersion_Viewer_Help" xml:space="preserve">
-    <value>Tagh am faidhle no am pasgan a tha thu airson a thoirt air ais ann an craobh agus briog air "ath".</value>
+    <value>Chì thu faidhlichean mar a bha iad anns an tionndadh a chaidh a thaghadh. Tagh faidhle, pasgan no nì stòraidh, an uair sin briog air Ath-bheothaich.</value>
   </data>
   <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
     <value>Chaidh ceangal ris an fhrithealaiche a thoirt gu crìch gun dùil (A bheil na faclan-faire air Client and Server mar an ceudna?)</value>
@@ -285,6 +285,9 @@ Suidheachadh cleachdaidh: Bidh thu a’ dèanamh lethbhreac den dàta gu frithea
   </data>
   <data name="Field_Version" xml:space="preserve">
     <value>Tionndadh:</value>
+  </data>
+  <data name="Field_Version_Help" xml:space="preserve">
+    <value>Tha an liosta seo a’ sealltainn tionndaidhean cùl-taic a tha ri fhaighinn. Nuair a thaghas tu tionndadh, tha na faidhlichean gu h-ìosal a’ sealltainn staid an tionndaidh sin.</value>
   </data>
   <data name="File_Deleting" xml:space="preserve">
     <value>A' sguabadh às "{0}"</value>
@@ -978,6 +981,9 @@ See detailed description in the following link.</value>
   <data name="Task_Restore" xml:space="preserve">
     <value>Ath-bheothaich</value>
   </data>
+  <data name="Task_Restore_Selected" xml:space="preserve">
+    <value>Ath-bheothaich {0}...</value>
+  </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>Sònraich an stòradh anns a bheil an lethbhreac-glèidhidh a tha thu airson aiseag. Cleachd na h-aon roghainnean 's a bha ann nuair a chaidh an lethbhreac-glèidhidh a chruthachadh.</value>
   </data>
@@ -1168,10 +1174,16 @@ See detailed description in the following link.</value>
     <value>Luchdaich suas pasgan gu frithealaiche</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
-    <value>Faodaidh tu susbaint pasgan a luchdachadh suas le ath-sgrìobhadh air faidhlichean a tha ann mu thràth.</value>
+    <value>’S urrainn dhut susbaint pasgain a luchdachadh suas chun an fhrithealaiche. Gu bunaiteach thèid faidhlichean ceann-uidhe a tha ann mu thràth a sgrìobhadh thairis.</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles" xml:space="preserve">
+    <value>Na sgrìobh thairis air faidhlichean a tha ann mu thràth</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles_Help" xml:space="preserve">
+    <value>Nuair a tha e air a chomasachadh, thèid faidhlichean a tha ann mu thràth aig a’ cheann-uidhe a leigeil seachad an àite a bhith air an sgrìobhadh thairis.</value>
   </data>
   <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
-    <value>Sònraich an stòradh ceann-uidhe far an tèid susbaint a' phasgain a luchdachadh suas. Thèid faidhlichean a tha ann mu thràth aig a' cheann-uidhe a sgrìobhadh thairis.</value>
+    <value>Sònraich an stòras ceann-uidhe far an tèid susbaint a’ phasgain a luchdachadh suas.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>Url:</value>

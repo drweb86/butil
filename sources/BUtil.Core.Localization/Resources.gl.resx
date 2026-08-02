@@ -1,4 +1,4 @@
-<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -114,13 +114,13 @@ Os cambios de versión eliminados pasarán a formar parte da versión "{1}".</va
     <value>SELECCIONAR VERSIÓN</value>
   </data>
   <data name="BackupVersion_Storage_TitleWithSize" xml:space="preserve">
-    <value>(todas as versións ocupan o almacenamento {0})</value>
+    <value>Almacenamento total ocupado: {0}.</value>
   </data>
   <data name="BackupVersion_Versions_Title" xml:space="preserve">
     <value>VERSIÓNS</value>
   </data>
   <data name="BackupVersion_Viewer_Help" xml:space="preserve">
-    <value>Seleccione o ficheiro ou cartafol que quere restaurar na árbore e prema en "Restaurar".</value>
+    <value>Ves os ficheiros tal como estaban na versión seleccionada. Escolle un ficheiro, cartafol ou elemento de almacenamento e fai clic en Restaurar.</value>
   </data>
   <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
     <value>A conexión ao servidor rematouse de forma inesperada (os contrasinais do cliente e do servidor son iguais?)</value>
@@ -285,6 +285,9 @@ Escenario de uso: copia os datos ao servidor remoto. Hai un problema: o ISP redu
   </data>
   <data name="Field_Version" xml:space="preserve">
     <value>Versión:</value>
+  </data>
+  <data name="Field_Version_Help" xml:space="preserve">
+    <value>Esta lista mostra as versións de copia de seguridade dispoñibles. Ao seleccionar unha versión, os ficheiros de abaixo mostran o estado desa versión.</value>
   </data>
   <data name="File_Deleting" xml:space="preserve">
     <value>Eliminando "{0}"</value>
@@ -978,6 +981,9 @@ See detailed description in the following link.</value>
   <data name="Task_Restore" xml:space="preserve">
     <value>Restaurar</value>
   </data>
+  <data name="Task_Restore_Selected" xml:space="preserve">
+    <value>Restaurar {0}...</value>
+  </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>Especifique o almacenamento que contén a copia de seguridade que quere restaurar. Use a mesma configuración que cando se creou a copia de seguridade.</value>
   </data>
@@ -1168,10 +1174,16 @@ See detailed description in the following link.</value>
     <value>Cargar cartafol ao servidor</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
-    <value>Podes cargar o contido do cartafol sobrescribindo os ficheiros xa existentes.</value>
+    <value>Podes cargar o contido dun cartafol no servidor. De forma predeterminada sobrescríbense os ficheiros de destino existentes.</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles" xml:space="preserve">
+    <value>Non sobrescribir os ficheiros existentes</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles_Help" xml:space="preserve">
+    <value>Cando está activado, os ficheiros que xa existen no destino omitense en lugar de sobrescribirse.</value>
   </data>
   <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
-    <value>Especifique o almacenamento de destino ao que se subirá o contido do cartafol. Os ficheiros existentes no destino serán sobrescritos.</value>
+    <value>Especifica o almacenamento de destino onde se cargará o contido do cartafol.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>URL:</value>

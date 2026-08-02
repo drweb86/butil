@@ -15,7 +15,7 @@ public partial class VersionsFilesTreeView : UserControl
     public async Task BrowseRestoreFolderAsync()
     {
         var root = TopLevel.GetTopLevel(this) ?? throw new NullReferenceException("Invalid Owner");
-        var dataContext = DataContext as VersionsListViewModel ?? throw new NullReferenceException();
+        var dataContext = DataContext as RestoreVersionsViewModel ?? throw new NullReferenceException();
         if (dataContext.SelectedNode == null)
             return;
 

@@ -1,4 +1,4 @@
-<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -114,13 +114,13 @@ Ndryshimet e versionit të fshirë do të bëhen pjesë e versionit "{1}".</valu
     <value>ZGJIDH VERSIONIN</value>
   </data>
   <data name="BackupVersion_Storage_TitleWithSize" xml:space="preserve">
-    <value>(të gjitha versionet zënë {0} në ruajtje)</value>
+    <value>Hapësira totale e zënë e ruajtjes: {0}.</value>
   </data>
   <data name="BackupVersion_Versions_Title" xml:space="preserve">
     <value>VERSIONET</value>
   </data>
   <data name="BackupVersion_Viewer_Help" xml:space="preserve">
-    <value>Zgjidhni skedarin ose dosjen që dëshironi të riktheni në pemë dhe klikoni "Rikthe".</value>
+    <value>Shihni skedarët siç ishin në versionin e zgjedhur. Zgjidhni një skedar, dosje ose element ruajtjeje, pastaj klikoni Rikthe.</value>
   </data>
   <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
     <value>Lidhja me serverin u ndërpre papritmas (A janë fjalëkalimet në Klient dhe Server të njëjta?)</value>
@@ -285,6 +285,9 @@ Skenari i përdorimit: Ju kopjoni të dhëna në një server të largët. Ka nj�
   </data>
   <data name="Field_Version" xml:space="preserve">
     <value>Versioni:</value>
+  </data>
+  <data name="Field_Version_Help" xml:space="preserve">
+    <value>Kjo listë tregon versionet e disponueshme të kopjes rezervë. Kur zgjidhni një version, skedarët më poshtë tregojnë gjendjen e atij versioni.</value>
   </data>
   <data name="File_Deleting" xml:space="preserve">
     <value>Fshirja e "{0}"</value>
@@ -978,6 +981,9 @@ Shihni përshkrimin e detajuar në lidhjen vijuese.</value>
   <data name="Task_Restore" xml:space="preserve">
     <value>Rikthe</value>
   </data>
+  <data name="Task_Restore_Selected" xml:space="preserve">
+    <value>Rikthe {0}...</value>
+  </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>Specifikoni hapësirën e ruajtjes që përmban kopjen rezervë që dëshironi të rikthe. Përdorni të njëjtat cilësime si kur u krijua kopja rezervë.</value>
   </data>
@@ -1168,10 +1174,16 @@ Shihni përshkrimin e detajuar në lidhjen vijuese.</value>
     <value>Ngarko dosjen në server</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
-    <value>Mund të ngarkoni përmbajtjen e dosjes duke mbishkruar skedarët ekzistues.</value>
+    <value>Mund të ngarkoni përmbajtjen e dosjes në server. Si parazgjedhje, skedarët ekzistues të destinacionit mbishkruhen.</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles" xml:space="preserve">
+    <value>Mos i mbishkruaj skedarët ekzistues</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles_Help" xml:space="preserve">
+    <value>Kur aktivizohet, skedarët që ekzistojnë tashmë në destinacion anashkalohen në vend që të mbishkruhen.</value>
   </data>
   <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
-    <value>Specifikoni hapësirën e ruajtjes së destinacionit ku do të ngarkohet përmbajtja e dosjes. Skedarët ekzistues në destinacion do të mbishkruhen.</value>
+    <value>Specifikoni ruajtjen e destinacionit ku do të ngarkohet përmbajtja e dosjes.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>URL:</value>

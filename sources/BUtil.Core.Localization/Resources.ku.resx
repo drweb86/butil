@@ -1,4 +1,4 @@
-<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -114,13 +114,13 @@ Guheztinên guhertoya jêbirî dê bibin beşek ji guhertoya "{1}".</value>
     <value>GUHERTOYÊ HILBIJÊRE</value>
   </data>
   <data name="BackupVersion_Storage_TitleWithSize" xml:space="preserve">
-    <value>(hemû guhertoyan li ser hilanînê {0} digirin)</value>
+    <value>Tevahiya cîhê hilanînê yê dagirtî: {0}.</value>
   </data>
   <data name="BackupVersion_Versions_Title" xml:space="preserve">
     <value>GUHERTOYAN</value>
   </data>
   <data name="BackupVersion_Viewer_Help" xml:space="preserve">
-    <value>Di darê de pel an peldankê hilbijêrin ku hûn dixwazin vegerînin û "Vegerîne" bikirtînin.</value>
+    <value>Hûn pelan wekî ku di guhertoya hilbijartî de bûn dibînin. Pelek, peldankek an hêmanek hilanînê hilbijêrin, paşê li Vegerîne bitikînin.</value>
   </data>
   <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
     <value>Girêdana bi serverê re ji nişka ve hat birîn (Ma şîfreyên Client û Serverê yek in?)</value>
@@ -285,6 +285,9 @@ Senaryoya bikaranînê: Hûn daneyan li serverek dûr kopî dikin. Pirsgirêk he
   </data>
   <data name="Field_Version" xml:space="preserve">
     <value>Guhertoyan:</value>
+  </data>
+  <data name="Field_Version_Help" xml:space="preserve">
+    <value>Ev lîste guhertoyên backup ên berdest nîşan dide. Dema ku hûn guhertoyek hilbijêrin, pelên jêrîn rewşa wê guhertoyê nîşan didin.</value>
   </data>
   <data name="File_Deleting" xml:space="preserve">
     <value>Jêbirina "{0}"</value>
@@ -979,6 +982,9 @@ Ji bo danasîna berfireh lînka jêrîn bibînin.</value>
   <data name="Task_Restore" xml:space="preserve">
     <value>Vegerîne</value>
   </data>
+  <data name="Task_Restore_Selected" xml:space="preserve">
+    <value>Vegerîne {0}...</value>
+  </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>Hilanîna ku yedeka ku hûn dixwazin vegerînin lê ye diyar bikin. Heman mîhengên ku dema yedek hate afirandin bikar bînin.</value>
   </data>
@@ -1169,10 +1175,16 @@ Ji bo danasîna berfireh lînka jêrîn bibînin.</value>
     <value>Peldankê li serverê bar bike</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
-    <value>Hûn dikarin naveroka peldankê bi nivîsandina li ser pelên heyî bar bikin.</value>
+    <value>Hûn dikarin naveroka peldankê li sererverê bar bikin. Bi awayê standard pelên armanc ên heyî tên serjêkirin.</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles" xml:space="preserve">
+    <value>Pelên heyî serjê neke</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles_Help" xml:space="preserve">
+    <value>Dema çalak be, pelên ku jixwe li armancê hene têne derbas kirin li şûna ku werin serjêkirin.</value>
   </data>
   <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
-    <value>Hilanîna armanc a ku naveroka peldankê lê were barkirin diyar bikin. Pelên heyî yên li armancê dê werin nivîsandin.</value>
+    <value>Cîhê hilanînê yê armancê diyar bike ku naveroka peldankê lê were barkirin.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>Url:</value>

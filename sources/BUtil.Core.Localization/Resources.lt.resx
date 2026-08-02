@@ -1,4 +1,4 @@
-<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -114,13 +114,13 @@ Ištrintos versijos pakeitimai taps versijos „{1}" dalimi.</value>
     <value>PASIRINKITE VERSIJĄ</value>
   </data>
   <data name="BackupVersion_Storage_TitleWithSize" xml:space="preserve">
-    <value>(visos versijos užima saugykloje {0})</value>
+    <value>Iš viso užimta saugykla: {0}.</value>
   </data>
   <data name="BackupVersion_Versions_Title" xml:space="preserve">
     <value>VERSIJOS</value>
   </data>
   <data name="BackupVersion_Viewer_Help" xml:space="preserve">
-    <value>Pasirinkite failą arba aplanką, kurį norite atkurti medyje, ir paspauskite „Atkurti".</value>
+    <value>Matote failus tokius, kokie jie buvo pasirinktoje versijoje. Pasirinkite failą, aplanką arba saugyklos elementą, tada spustelėkite Atkurti.</value>
   </data>
   <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
     <value>Ryšys su serveriu buvo netikėtai nutrauktas (Ar kliento ir serverio slaptažodžiai vienodi?)</value>
@@ -285,6 +285,9 @@ Naudojimo scenarijus: Kopijuojate duomenis į nuotolinį serverį. Problema: int
   </data>
   <data name="Field_Version" xml:space="preserve">
     <value>Versija:</value>
+  </data>
+  <data name="Field_Version_Help" xml:space="preserve">
+    <value>Šiame sąraše rodomos galimos atsarginių kopijų versijos. Pasirinkus versiją, toliau pateikiami failai rodo tos versijos būseną.</value>
   </data>
   <data name="File_Deleting" xml:space="preserve">
     <value>Trinamas „{0}"</value>
@@ -978,6 +981,9 @@ bin.
   <data name="Task_Restore" xml:space="preserve">
     <value>Atkurti</value>
   </data>
+  <data name="Task_Restore_Selected" xml:space="preserve">
+    <value>Atkurti {0}...</value>
+  </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>Nurodykite saugyklą, kurioje yra atsarginė kopija, kurią norite atkurti. Naudokite tuos pačius nustatymus, kurie buvo naudojami kuriant atsarginę kopiją.</value>
   </data>
@@ -1168,10 +1174,16 @@ bin.
     <value>Įkelti aplanką į serverį</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
-    <value>Galite įkelti aplanko turinį perrašydami jau esančius failus.</value>
+    <value>Galite įkelti aplanko turinį į serverį. Pagal numatytuosius nustatymus esami paskirties failai perrašomi.</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles" xml:space="preserve">
+    <value>Neperrašyti esamų failų</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles_Help" xml:space="preserve">
+    <value>Kai įjungta, failai, kurie jau yra paskirties vietoje, praleidžiami, o ne perrašomi.</value>
   </data>
   <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
-    <value>Nurodykite paskirties saugyklą, į kurią bus įkeltas aplanko turinys. Esami failai paskirties vietoje bus perrašyti.</value>
+    <value>Nurodykite paskirties saugyklą, į kurią bus įkeltas aplanko turinys.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>URL:</value>

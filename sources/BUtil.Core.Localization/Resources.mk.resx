@@ -1,4 +1,4 @@
-<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -114,13 +114,13 @@
     <value>ИЗБЕРЕТЕ ВЕРЗИЈА</value>
   </data>
   <data name="BackupVersion_Storage_TitleWithSize" xml:space="preserve">
-    <value>(сите верзии зафаќаат {0} на складиштето)</value>
+    <value>Вкупно зафатен простор за складирање: {0}.</value>
   </data>
   <data name="BackupVersion_Versions_Title" xml:space="preserve">
     <value>ВЕРЗИИ</value>
   </data>
   <data name="BackupVersion_Viewer_Help" xml:space="preserve">
-    <value>Изберете ја датотеката или папката што сакате да ја вратите во стеблото и кликнете „Врати".</value>
+    <value>Ги гледате датотеките како што биле во избраната верзија. Изберете датотека, папка или ставка од складиштето, па кликнете Врати.</value>
   </data>
   <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
     <value>Врската со серверот неочекувано се прекина (Дали лозинките на клиентот и серверот се исти?)</value>
@@ -285,6 +285,9 @@
   </data>
   <data name="Field_Version" xml:space="preserve">
     <value>Верзија:</value>
+  </data>
+  <data name="Field_Version_Help" xml:space="preserve">
+    <value>Оваа листа ги прикажува достапните верзии на резервни копии. Кога избирате верзија, датотеките подолу ја прикажуваат состојбата на таа верзија.</value>
   </data>
   <data name="File_Deleting" xml:space="preserve">
     <value>Бришење на „{0}"</value>
@@ -978,6 +981,9 @@ bin.
   <data name="Task_Restore" xml:space="preserve">
     <value>Врати</value>
   </data>
+  <data name="Task_Restore_Selected" xml:space="preserve">
+    <value>Врати {0}...</value>
+  </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>Наведете го складиштето кое ја содржи резервната копија што сакате да ја вратите. Користете ги истите поставки како кога била создадена резервната копија.</value>
   </data>
@@ -1168,10 +1174,16 @@ bin.
     <value>Прикачи папка на сервер</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
-    <value>Можете да ја прикачите содржината на папката со препишување на веќе постоечките датотеки.</value>
+    <value>Можете да ја поставите содржината на папката на серверот. По правило постоечките датотеки на одредиштето се презапишуваат.</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles" xml:space="preserve">
+    <value>Не презапишувај постоечки датотеки</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles_Help" xml:space="preserve">
+    <value>Кога е овозможено, датотеките што веќе постојат на одредиштето се прескокнуваат наместо да се презапишат.</value>
   </data>
   <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
-    <value>Наведете го одредишното складиште каде што ќе се преземе содржината на папката. Постоечките датотеки на одредиштето ќе бидат заменети.</value>
+    <value>Наведете го одредишното складиште каде ќе се постави содржината на папката.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>URL:</value>

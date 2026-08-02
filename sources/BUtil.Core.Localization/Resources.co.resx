@@ -1,4 +1,4 @@
-<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -114,13 +114,13 @@ I cambiamenti di versione eliminati diventeranu parte di a versione "{1}".</valu
     <value>SELEZIONA VERSIONE</value>
   </data>
   <data name="BackupVersion_Storage_TitleWithSize" xml:space="preserve">
-    <value>(tutte e versioni occupanu u almacenamentu {0})</value>
+    <value>Spaziu di magazzinu totale occupatu: {0}.</value>
   </data>
   <data name="BackupVersion_Versions_Title" xml:space="preserve">
     <value>VERSIONI</value>
   </data>
   <data name="BackupVersion_Viewer_Help" xml:space="preserve">
-    <value>Selezziunate u schedariu o u cartulare chì vulete ritruvà in l'arburu è cliccate "Risturà".</value>
+    <value>Vede i schedarii cum'elli eranu in a versione selezionata. Sceglite un schedariu, una cartella o un elementu di magazzinu, dopu cliccate Risturà.</value>
   </data>
   <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
     <value>A cunnessione à u servitore hè stata terminata inaspettatamente (I password in Client è Server sò listessi?)</value>
@@ -285,6 +285,9 @@ Scenariu d'usu: Copiate i dati à u servitore remotu. Ci hè un prublema: l'ISP 
   </data>
   <data name="Field_Version" xml:space="preserve">
     <value>Versione:</value>
+  </data>
+  <data name="Field_Version_Help" xml:space="preserve">
+    <value>Sta lista mostra e versioni di salvaguardia dispunibule. Quandu selezziunate una versione, i schedarii sottu mostranu u statu di quella versione.</value>
   </data>
   <data name="File_Deleting" xml:space="preserve">
     <value>Sguassendu "{0}"</value>
@@ -978,6 +981,9 @@ See detailed description in the following link.</value>
   <data name="Task_Restore" xml:space="preserve">
     <value>Risturà</value>
   </data>
+  <data name="Task_Restore_Selected" xml:space="preserve">
+    <value>Risturà {0}...</value>
+  </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>Specificate l'almacenamentu chì cuntene a salvaguardia chì vulete risturà. Utilizate e listesse impostazioni ch'è quandu a salvaguardia hè stata creata.</value>
   </data>
@@ -1168,10 +1174,16 @@ See detailed description in the following link.</value>
     <value>Caricate u cartulare à u servitore</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
-    <value>Pudete carricà u cuntenutu di u cartulare cù sovrascrittura di i fugliali esistenti.</value>
+    <value>Pudete caricà u cuntenutu di una cartella nantu à u servitore. Per difettu i schedarii di destinazione esistenti sò sovrascritti.</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles" xml:space="preserve">
+    <value>Ùn surrascrive micca i schedarii esistenti</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles_Help" xml:space="preserve">
+    <value>Quandu hè attivatu, i schedarii chì esistenu digià à a destinazione sò saltati invece d'esse sovrascritti.</value>
   </data>
   <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
-    <value>Specificate l'almacenamentu di destinazione induve seranu caricati i cuntenuti di a cartella. I schedarii esistenti in a destinazione seranu rimpiazzati.</value>
+    <value>Specificate u magazzinu di destinazione induve u cuntenutu di a cartella serà caricatu.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>Url:</value>

@@ -1,4 +1,4 @@
-<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -114,13 +114,13 @@
     <value>ΕΠΙΛΟΓΗ ΕΚΔΟΣΗΣ</value>
   </data>
   <data name="BackupVersion_Storage_TitleWithSize" xml:space="preserve">
-    <value>(όλες οι εκδόσεις καταλαμβάνουν στον αποθηκευτικό χώρο {0})</value>
+    <value>Συνολικός κατειλημμένος χώρος αποθήκευσης: {0}.</value>
   </data>
   <data name="BackupVersion_Versions_Title" xml:space="preserve">
     <value>ΕΚΔΟΣΕΙΣ</value>
   </data>
   <data name="BackupVersion_Viewer_Help" xml:space="preserve">
-    <value>Επιλέξτε αρχείο ή φάκελο που θέλετε να επαναφέρετε στο δέντρο και κάντε κλικ στο "Επαναφορά".</value>
+    <value>Βλέπετε τα αρχεία όπως ήταν στην επιλεγμένη έκδοση. Επιλέξτε ένα αρχείο, φάκελο ή στοιχείο αποθήκευσης και κάντε κλικ στην Επαναφορά.</value>
   </data>
   <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
     <value>Η σύνδεση με τον διακομιστή διακόπηκε απροσδόκητα (Είναι οι κωδικοί πρόσβασης σε Πελάτη και Διακομιστή ίδιοι;)</value>
@@ -285,6 +285,9 @@
   </data>
   <data name="Field_Version" xml:space="preserve">
     <value>Έκδοση:</value>
+  </data>
+  <data name="Field_Version_Help" xml:space="preserve">
+    <value>Αυτή η λίστα εμφανίζει τις διαθέσιμες εκδόσεις αντιγράφων ασφαλείας. Όταν επιλέγετε μια έκδοση, τα αρχεία παρακάτω εμφανίζουν την κατάσταση αυτής της έκδοσης.</value>
   </data>
   <data name="File_Deleting" xml:space="preserve">
     <value>Διαγραφή "{0}"</value>
@@ -978,6 +981,9 @@ bin.
   <data name="Task_Restore" xml:space="preserve">
     <value>Επαναφορά</value>
   </data>
+  <data name="Task_Restore_Selected" xml:space="preserve">
+    <value>Επαναφορά {0}...</value>
+  </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>Καθορίστε τον αποθηκευτικό χώρο που περιέχει το αντίγραφο ασφαλείας που θέλετε να επαναφέρετε. Χρησιμοποιήστε τις ίδιες ρυθμίσεις που ίσχυαν κατά τη δημιουργία του αντιγράφου ασφαλείας.</value>
   </data>
@@ -1168,10 +1174,16 @@ bin.
     <value>Μεταφόρτωση φακέλου στον διακομιστή</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
-    <value>Μπορείτε να μεταφορτώσετε τα περιεχόμενα φακέλου αντικαθιστώντας τα ήδη υπάρχοντα αρχεία.</value>
+    <value>Μπορείτε να ανεβάσετε τα περιεχόμενα φακέλου στον διακομιστή. Από προεπιλογή τα υπάρχοντα αρχεία προορισμού αντικαθίστανται.</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles" xml:space="preserve">
+    <value>Να μην αντικαθίστανται τα υπάρχοντα αρχεία</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles_Help" xml:space="preserve">
+    <value>Όταν είναι ενεργοποιημένο, τα αρχεία που υπάρχουν ήδη στον προορισμό παραλείπονται αντί να αντικαθίστανται.</value>
   </data>
   <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
-    <value>Καθορίστε τον αποθηκευτικό χώρο προορισμού όπου θα μεταφορτωθεί το περιεχόμενο του φακέλου. Τα υπάρχοντα αρχεία στον προορισμό θα αντικατασταθούν.</value>
+    <value>Καθορίστε τον χώρο αποθήκευσης προορισμού όπου θα ανεβούν τα περιεχόμενα του φακέλου.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>Url:</value>

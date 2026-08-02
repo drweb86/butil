@@ -1,4 +1,4 @@
-<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -114,13 +114,13 @@ Le modifiche alla versione eliminata diventeranno parte della versione "{1}".</v
     <value>SELEZIONA VERSIONE</value>
   </data>
   <data name="BackupVersion_Storage_TitleWithSize" xml:space="preserve">
-    <value>(tutte le versioni occupano spazio di archiviazione {0})</value>
+    <value>Spazio di archiviazione totale occupato: {0}.</value>
   </data>
   <data name="BackupVersion_Versions_Title" xml:space="preserve">
     <value>VERSIONI</value>
   </data>
   <data name="BackupVersion_Viewer_Help" xml:space="preserve">
-    <value>Seleziona nella struttura il file o la cartella da ripristinare e "Ripristina".</value>
+    <value>Vedi i file come erano nella versione selezionata. Scegli un file, una cartella o un elemento di archiviazione, quindi fai clic su Ripristina.</value>
   </data>
   <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
     <value>Connessione al server terminata inaspettatamente (le password per client e server sono identiche?)</value>
@@ -287,6 +287,9 @@ Le modifiche alla versione eliminata diventeranno parte della versione "{1}".</v
   </data>
   <data name="Field_Version" xml:space="preserve">
     <value>Versione:</value>
+  </data>
+  <data name="Field_Version_Help" xml:space="preserve">
+    <value>Questo elenco mostra le versioni di backup disponibili. Quando selezioni una versione, i file sottostanti mostrano lo stato di quella versione.</value>
   </data>
   <data name="File_Deleting" xml:space="preserve">
     <value>Eliminazione di "{0}"</value>
@@ -984,6 +987,9 @@ Sceglie una delle seguenti opzioni:
   <data name="Task_Restore" xml:space="preserve">
     <value>Ripristina</value>
   </data>
+  <data name="Task_Restore_Selected" xml:space="preserve">
+    <value>Ripristina {0}...</value>
+  </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>Specifica l'archivio che contiene il backup che desideri ripristinare. Utilizza le stesse impostazioni utilizzate al momento della creazione del backup.</value>
   </data>
@@ -1176,10 +1182,16 @@ Sceglie una delle seguenti opzioni:
     <value>Carica cartella sul server</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
-    <value>Puoi caricare il contenuto della cartella sovrascrivendo i file già esistenti.</value>
+    <value>Puoi caricare il contenuto di una cartella sul server. Per impostazione predefinita i file di destinazione esistenti vengono sovrascritti.</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles" xml:space="preserve">
+    <value>Non sovrascrivere i file esistenti</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles_Help" xml:space="preserve">
+    <value>Se abilitato, i file già presenti nella destinazione vengono saltati invece di essere sovrascritti.</value>
   </data>
   <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
-    <value>Specifica l'archivio di destinazione in cui verrà caricato il contenuto della cartella. I file esistenti nella destinazione verranno sovrascritti.</value>
+    <value>Specifica l'archiviazione di destinazione in cui verrà caricato il contenuto della cartella.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>URL:</value>

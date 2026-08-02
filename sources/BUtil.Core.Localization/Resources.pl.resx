@@ -1,4 +1,4 @@
-<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -114,13 +114,13 @@ Zmiany z usuniętej wersji staną się częścią wersji "{1}".</value>
     <value>WYBIERZ WERSJĘ</value>
   </data>
   <data name="BackupVersion_Storage_TitleWithSize" xml:space="preserve">
-    <value>(wszystkie wersje zajmują w magazynie {0})</value>
+    <value>Całkowicie zajęte miejsce w magazynie: {0}.</value>
   </data>
   <data name="BackupVersion_Versions_Title" xml:space="preserve">
     <value>WERSJE</value>
   </data>
   <data name="BackupVersion_Viewer_Help" xml:space="preserve">
-    <value>Wybierz plik lub folder, który chcesz przywrócić w drzewie, i kliknij "Przywróć".</value>
+    <value>Widzisz pliki tak, jak wyglądały w wybranej wersji. Wybierz plik, folder lub element magazynu, a następnie kliknij Przywróć.</value>
   </data>
   <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
     <value>Połączenie z serwerem zostało nieoczekiwanie przerwane (Czy hasła na kliencie i serwerze są takie same?)</value>
@@ -285,6 +285,9 @@ Scenariusz użycia: Kopiujesz dane na zdalny serwer. Jest problem: dostawca inte
   </data>
   <data name="Field_Version" xml:space="preserve">
     <value>Wersja:</value>
+  </data>
+  <data name="Field_Version_Help" xml:space="preserve">
+    <value>Ta lista pokazuje dostępne wersje kopii zapasowych. Po wybraniu wersji pliki poniżej pokazują stan tej wersji.</value>
   </data>
   <data name="File_Deleting" xml:space="preserve">
     <value>Usuwanie "{0}"</value>
@@ -978,6 +981,9 @@ Szczegółowy opis znajdziesz pod poniższym linkiem.</value>
   <data name="Task_Restore" xml:space="preserve">
     <value>Przywróć</value>
   </data>
+  <data name="Task_Restore_Selected" xml:space="preserve">
+    <value>Przywróć {0}...</value>
+  </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>Wskaż magazyn zawierający kopię zapasową, którą chcesz przywrócić. Użyj tych samych ustawień, co podczas tworzenia kopii zapasowej.</value>
   </data>
@@ -1168,10 +1174,16 @@ Szczegółowy opis znajdziesz pod poniższym linkiem.</value>
     <value>Prześlij folder na serwer</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
-    <value>Możesz przesłać zawartość folderu, nadpisując istniejące pliki.</value>
+    <value>Możesz przesłać zawartość folderu na serwer. Domyślnie istniejące pliki docelowe są nadpisywane.</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles" xml:space="preserve">
+    <value>Nie nadpisuj istniejących plików</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles_Help" xml:space="preserve">
+    <value>Gdy włączone, pliki, które już istnieją w miejscu docelowym, są pomijane zamiast nadpisywane.</value>
   </data>
   <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
-    <value>Wskaż magazyn docelowy, do którego zostanie przesłana zawartość folderu. Istniejące pliki w miejscu docelowym zostaną nadpisane.</value>
+    <value>Określ magazyn docelowy, do którego zostanie przesłana zawartość folderu.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>Url:</value>

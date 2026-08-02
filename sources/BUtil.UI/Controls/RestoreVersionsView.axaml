@@ -1,0 +1,103 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="clr-namespace:BUtil.UI.Controls"
+	xmlns:controls="using:BUtil.UI.Controls"
+	xmlns:decor="clr-namespace:BUtil.UI.Controls;assembly=BUtil.UI.Common"
+    xmlns:v="clr-namespace:BUtil.UI.Controls"
+    mc:Ignorable="d"
+	d:DesignWidth="800"
+	d:DesignHeight="450"
+    x:Class="BUtil.UI.Controls.RestoreVersionsView"
+	x:DataType="vm:RestoreVersionsViewModel">
+	<UserControl.Resources>
+		<vm:BitmapAssetValueConverter x:Key="variableImage"/>
+	</UserControl.Resources>
+	<Grid>
+		<decor:ViewDecoration Kind="Restore" />
+		<ScrollViewer
+				ScrollViewer.VerticalScrollBarVisibility="Visible"
+				ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+			<StackPanel Classes="FormContent" Spacing="8">
+				<controls:TaskExecuterView DataContext="{Binding TaskExecuterViewModel}" IsVisible="{Binding $parent[v:RestoreVersionsView].((vm:RestoreVersionsViewModel)DataContext).TaskExecuterViewModel, Converter={x:Static ObjectConverters.IsNotNull}}" />
+				<decor:DropdownField
+					IsEnabled="{Binding IsInteractionEnabled}"
+					Label="{Binding Field_Version}"
+					ItemsSource="{Binding Versions}"
+					SelectedItem="{Binding SelectedVersion}"
+					DisplayMember="Title"
+					ActionIcon="🗙"
+					ActionText="{Binding BackupVersion_Button_Delete}"
+					ActionCommand="{Binding DeleteBackupVersionCommand}"
+					ActionIsEnabled="{Binding IsDeleteBackupVersionEnabled}"
+					Help="{Binding VersionFieldHelp}" />
+
+				<controls:VersionsFilesTreeView DataContext="{Binding}" />
+
+				<Expander Classes="TaskSection" HorizontalAlignment="Stretch" IsExpanded="False" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="Transparent" IsEnabled="{Binding IsInteractionEnabled}" >
+					<Expander.Header>
+						<WrapPanel Orientation="Horizontal" Margin="0 8 0 8">
+							<Image Width="16" Height="16" Source="/Assets/CrystalClear_EveraldoCoelho_Storages48x48.png" VerticalAlignment="Center" />
+							<TextBlock Margin="8 0 8 0" Text="{Binding BackupVersion_Changes_Title}" VerticalAlignment="Center" />
+						</WrapPanel>
+					</Expander.Header>
+					<ItemsRepeater ItemsSource="{Binding FileChangeViewItems}">
+						<ItemsRepeater.ItemTemplate>
+							<DataTemplate>
+								<WrapPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
+									<TextBlock
+										Text="{Binding Icon}"
+										VerticalAlignment="Center"
+										Margin="0 0 4 0" />
+									<TextBlock
+										Text="{Binding Path=Title}"
+										TextWrapping="Wrap"
+										VerticalAlignment="Center" />
+								</WrapPanel>
+							</DataTemplate>
+						</ItemsRepeater.ItemTemplate>
+					</ItemsRepeater>
+				</Expander>
+
+				<Expander Classes="TaskSection" HorizontalAlignment="Stretch" IsExpanded="False" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="Transparent"
+						  IsVisible="{Binding SelectedFileIsVisible}">
+					<Expander.Header>
+						<WrapPanel Orientation="Horizontal" Margin="0 8 0 8">
+							<Image Width="16" Height="16" Source="/Assets/CrystalClear_FileNew.png" VerticalAlignment="Center" />
+							<TextBlock Margin="8 0 8 0" Text="{Binding BackupVersion_FileVersion_Title}" VerticalAlignment="Center" />
+						</WrapPanel>
+					</Expander.Header>
+					<ItemsRepeater ItemsSource="{Binding BlameViewItems}">
+						<ItemsRepeater.ItemTemplate>
+							<DataTemplate>
+								<WrapPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
+									<TextBlock
+										Text="{Binding Icon}"
+										VerticalAlignment="Center"
+										Margin="0 0 4 0" />
+									<TextBlock
+										Text="{Binding Path=Title}"
+										TextWrapping="Wrap"
+										VerticalAlignment="Center" />
+								</WrapPanel>
+							</DataTemplate>
+						</ItemsRepeater.ItemTemplate>
+					</ItemsRepeater>
+				</Expander>
+
+				<decor:DialogButtons
+					IsPrimaryVisible="False"
+					CancelText="{Binding Button_Close}"
+					CancelCommand="{Binding CloseCommand}" />
+			</StackPanel>
+		</ScrollViewer>
+		<decor:ConfirmPanel
+			ZIndex="10"
+			Message="{Binding ConfirmMessage}"
+			ConfirmText="{Binding Button_OK}"
+			ConfirmCommand="{Binding ConfirmDeleteBackupVersionCommand}"
+			CancelText="{Binding Button_Cancel}"
+			CancelCommand="{Binding CancelConfirmCommand}" />
+	</Grid>
+</UserControl>

@@ -1,4 +1,4 @@
-<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -108,13 +108,13 @@
     <value>সংস্করণ নির্বাচন করুন</value>
   </data>
   <data name="BackupVersion_Storage_TitleWithSize" xml:space="preserve">
-    <value>(সমস্ত সংস্করণ সংরক্ষণের {0} জায়গা দখল করে)</value>
+    <value>মোট ব্যবহৃত সংরক্ষণস্থান: {0}।</value>
   </data>
   <data name="BackupVersion_Versions_Title" xml:space="preserve">
     <value>সংস্করণ</value>
   </data>
   <data name="BackupVersion_Viewer_Help" xml:space="preserve">
-    <value>আপনার পুনরুদ্ধার করতে চান এমন ফাইল বা ফোল্ডারটি গাছের মধ্যে নির্বাচন করুন এবং "পুনরুদ্ধার" এ ক্লিক করুন।</value>
+    <value>আপনি নির্বাচিত সংস্করণে যেমন ছিল তেমন ফাইল দেখছেন। একটি ফাইল, ফোল্ডার বা স্টোরেজ আইটেম বেছে নিন, তারপর পুনরুদ্ধার করুন-এ ক্লিক করুন।</value>
   </data>
   <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
     <value>সার্ভারের সাথে সংযোগ অপ্রত্যাশিতভাবে শেষ হয়েছে (ক্লায়েন্ট এবং সার্ভারের পাসওয়ার্ড কি একই?)</value>
@@ -279,6 +279,9 @@
   </data>
   <data name="Field_Version" xml:space="preserve">
     <value>সংস্করণ:</value>
+  </data>
+  <data name="Field_Version_Help" xml:space="preserve">
+    <value>এই তালিকায় উপলব্ধ ব্যাকআপ সংস্করণগুলি দেখানো হয়। আপনি একটি সংস্করণ নির্বাচন করলে, নিচের ফাইলগুলি সেই সংস্করণের অবস্থা দেখায়।</value>
   </data>
   <data name="File_Deleting" xml:space="preserve">
     <value>মুছা হচ্ছে "{0}"</value>
@@ -972,6 +975,9 @@
   <data name="Task_Restore" xml:space="preserve">
     <value>পুনরুদ্ধার করুন</value>
   </data>
+  <data name="Task_Restore_Selected" xml:space="preserve">
+    <value>{0} পুনরুদ্ধার করুন...</value>
+  </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>যে ব্যাকআপটি পুনরুদ্ধার করতে চান তা ধারণকারী স্টোরেজ নির্দিষ্ট করুন। ব্যাকআপ তৈরির সময় ব্যবহৃত একই সেটিংস ব্যবহার করুন।</value>
   </data>
@@ -1162,10 +1168,16 @@
     <value>সার্ভারে ফোল্ডার আপলোড করুন</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
-    <value>আপনি পূর্বে বিদ্যমান ফাইলগুলি ওভাররাইট করে ফোল্ডারের বিষয়বস্তু আপলোড করতে পারেন।</value>
+    <value>আপনি ফোল্ডারের বিষয়বস্তু সার্ভারে আপলোড করতে পারেন। ডিফল্টভাবে গন্তব্যে বিদ্যমান ফাইলগুলি ওভাররাইট করা হয়।</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles" xml:space="preserve">
+    <value>বিদ্যমান ফাইল ওভাররাইট করবেন না</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles_Help" xml:space="preserve">
+    <value>সক্রিয় থাকলে, গন্তব্যে ইতিমধ্যে বিদ্যমান ফাইলগুলি ওভাররাইট না করে এড়িয়ে যাওয়া হয়।</value>
   </data>
   <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
-    <value>গন্তব্য স্টোরেজ নির্দিষ্ট করুন যেখানে ফোল্ডারের বিষয়বস্তু আপলোড করা হবে। গন্তব্যে বিদ্যমান ফাইলগুলো ওভাররাইট করা হবে।</value>
+    <value>গন্তব্য সংরক্ষণস্থান নির্দিষ্ট করুন যেখানে ফোল্ডারের বিষয়বস্তু আপলোড করা হবে।</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>ইউআরএল:</value>

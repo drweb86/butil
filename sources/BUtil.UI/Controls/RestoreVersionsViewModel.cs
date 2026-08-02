@@ -1,40 +1,65 @@
-using BUtil.Interop.Tasks;
 using Avalonia.Media;
 using Avalonia.Threading;
 using BUtil.Core.ConfigurationFileModels.V2;
-using BUtil.Core.TasksTree.States;
-using BUtil.Tasks.IncrementalBackup;
-using BUtil.Interop.Tasks.Events;
 using BUtil.Core.Localization;
 using BUtil.Core.Misc;
 using BUtil.Core.State;
+using BUtil.Core.TasksTree.States;
+using BUtil.Interop.Tasks;
+using BUtil.Interop.Tasks.Events;
 using BUtil.Tasks.Common.States;
 using BUtil.Tasks.Common.Storage;
-using CommunityToolkit.Mvvm.ComponentModel;
+using BUtil.Tasks.IncrementalBackup;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 
 namespace BUtil.UI.Controls;
 
-public class VersionsListViewModel(RestoreViewModel restoreViewModel) : ObservableObject
+public class RestoreVersionsViewModel : ViewModelBase
 {
-    public RestoreViewModel ParentViewModel { get; } = restoreViewModel;
+    private IncrementalBackupState? _state;
+    private IStorageSettingsV2? _storageOptions;
+    private string _password = string.Empty;
+    private static readonly char[] _separators = ['\\', '/'];
+    private const int AutoExpandMaxFileResults = 15;
+    private List<FileTreeNode> _allNodes = [];
 
-    #region Labels
+    public RestoreVersionsViewModel(IncrementalBackupState state, IStorageSettingsV2 storageOptions, string password)
+    {
+        WindowTitle = Resources.Task_Restore;
+        PropertyChanged += OnOwnPropertyChanged;
+        Initialize(state, storageOptions, password);
+    }
 
-    public static string Field_Version => Resources.Field_Version;
-    public static string BackupVersion_Changes_Title => Resources.BackupVersion_Changes_Title;
-    public static string BackupVersion_Files_Title => Resources.BackupVersion_Files_Title;
-    public static string Task_Restore => Resources.Task_Restore;
-    public static string BackupVersion_Viewer_Help => Resources.BackupVersion_Viewer_Help;
-    public static string BackupVersion_Button_Delete => Resources.BackupVersion_Button_Delete;
-    public static string SearchTextBoxWatermark => MainWindowViewModel.SearchTextBoxWatermark;
-    public static string Button_OK => Resources.Button_OK;
-    public static string Button_Cancel => Resources.Button_Cancel;
+    #region TaskExecuterViewModel
+
+    private TaskExecuterViewModel? _taskExecuterViewModel;
+
+    public TaskExecuterViewModel? TaskExecuterViewModel
+    {
+        get => _taskExecuterViewModel;
+        set
+        {
+            if (value == _taskExecuterViewModel)
+                return;
+            if (_taskExecuterViewModel != null)
+                _taskExecuterViewModel.PropertyChanged -= OnTaskExecuterPropertyChanged;
+            _taskExecuterViewModel = value;
+            if (_taskExecuterViewModel != null)
+                _taskExecuterViewModel.PropertyChanged += OnTaskExecuterPropertyChanged;
+            OnPropertyChanged(nameof(TaskExecuterViewModel));
+            OnPropertyChanged(nameof(IsInteractionEnabled));
+        }
+    }
 
     #endregion
+
+    public bool IsInteractionEnabled => TaskExecuterViewModel is not { TaskNotCompleted: true };
+
+    public SolidColorBrush HeaderBackground { get; } = ColorPalette.GetBrush(SemanticColor.HeaderBackground);
 
     public string VersionFieldHelp =>
         string.IsNullOrEmpty(StorageSize)
@@ -66,35 +91,13 @@ public class VersionsListViewModel(RestoreViewModel restoreViewModel) : Observab
 
     #endregion
 
-    #region SearchText
-
-    private string _searchText = string.Empty;
-
-    public string SearchText
-    {
-        get => _searchText;
-        set
-        {
-            if (value == _searchText)
-                return;
-            _searchText = value;
-            OnPropertyChanged(nameof(SearchText));
-            ApplyFilter();
-        }
-    }
-
-    #endregion
-
     #region SelectedNode
 
     private FileTreeNode? _selectedNode;
 
     public FileTreeNode? SelectedNode
     {
-        get
-        {
-            return _selectedNode;
-        }
+        get => _selectedNode;
         set
         {
             if (value == _selectedNode)
@@ -109,7 +112,7 @@ public class VersionsListViewModel(RestoreViewModel restoreViewModel) : Observab
             if (_selectedNode != null && _selectedNode.StorageFile != null)
             {
                 SelectedFileIsVisible = true;
-                BackupVersion_FileVersion_Title = string.Format(BUtil.Core.Localization.Resources.BackupVersion_FileVersion_Title, System.IO.Path.GetFileName(_selectedNode.StorageFile.FileState.FileName));
+                BackupVersion_FileVersion_Title = string.Format(Resources.BackupVersion_FileVersion_Title, System.IO.Path.GetFileName(_selectedNode.StorageFile.FileState.FileName));
                 InitBlameForSelectedFile();
             }
             else
@@ -131,10 +134,7 @@ public class VersionsListViewModel(RestoreViewModel restoreViewModel) : Observab
 
     public ObservableCollection<BlameViewItem> BlameViewItems
     {
-        get
-        {
-            return _blameViewItems;
-        }
+        get => _blameViewItems;
         set
         {
             if (value == _blameViewItems)
@@ -152,10 +152,7 @@ public class VersionsListViewModel(RestoreViewModel restoreViewModel) : Observab
 
     public bool SelectedFileIsVisible
     {
-        get
-        {
-            return _selectedFileIsVisible;
-        }
+        get => _selectedFileIsVisible;
         set
         {
             if (value == _selectedFileIsVisible)
@@ -173,10 +170,7 @@ public class VersionsListViewModel(RestoreViewModel restoreViewModel) : Observab
 
     public bool IsDeleteBackupVersionEnabled
     {
-        get
-        {
-            return _isDeleteBackupVersionEnabled;
-        }
+        get => _isDeleteBackupVersionEnabled;
         set
         {
             if (value == _isDeleteBackupVersionEnabled)
@@ -194,10 +188,7 @@ public class VersionsListViewModel(RestoreViewModel restoreViewModel) : Observab
 
     public string? BackupVersion_FileVersion_Title
     {
-        get
-        {
-            return _backupVersion_FileVersion_Title;
-        }
+        get => _backupVersion_FileVersion_Title;
         set
         {
             if (value == _backupVersion_FileVersion_Title)
@@ -215,10 +206,7 @@ public class VersionsListViewModel(RestoreViewModel restoreViewModel) : Observab
 
     public VersionViewItem SelectedVersion
     {
-        get
-        {
-            return _selectedVersion;
-        }
+        get => _selectedVersion;
         set
         {
             if (value == _selectedVersion)
@@ -239,10 +227,7 @@ public class VersionsListViewModel(RestoreViewModel restoreViewModel) : Observab
 
     public ObservableCollection<VersionViewItem> Versions
     {
-        get
-        {
-            return _versions;
-        }
+        get => _versions;
         set
         {
             if (value == _versions)
@@ -260,10 +245,7 @@ public class VersionsListViewModel(RestoreViewModel restoreViewModel) : Observab
 
     public string StorageSize
     {
-        get
-        {
-            return _storageSize;
-        }
+        get => _storageSize;
         set
         {
             if (value == _storageSize)
@@ -282,10 +264,7 @@ public class VersionsListViewModel(RestoreViewModel restoreViewModel) : Observab
 
     public ObservableCollection<FileChangeViewItem> FileChangeViewItems
     {
-        get
-        {
-            return _fileChangeViewItems;
-        }
+        get => _fileChangeViewItems;
         set
         {
             if (value == _fileChangeViewItems)
@@ -297,18 +276,13 @@ public class VersionsListViewModel(RestoreViewModel restoreViewModel) : Observab
 
     #endregion
 
-    #region Files
-
-    private List<FileTreeNode> _allNodes = [];
+    #region Nodes
 
     private ObservableCollection<FileTreeNode> _nodes = [];
 
     public ObservableCollection<FileTreeNode> Nodes
     {
-        get
-        {
-            return _nodes;
-        }
+        get => _nodes;
         set
         {
             if (value == _nodes)
@@ -320,14 +294,7 @@ public class VersionsListViewModel(RestoreViewModel restoreViewModel) : Observab
 
     #endregion
 
-    public SolidColorBrush HeaderBackground { get; } = ColorPalette.GetBrush(SemanticColor.HeaderBackground);
-
-    private IncrementalBackupState? _state;
-    private IStorageSettingsV2? _storageOptions;
-    private string _password = string.Empty;
-    private static readonly char[] _separators = ['\\', '/'];
-
-    public void Initialize(IncrementalBackupState state, IStorageSettingsV2 storageOptions, string password)
+    private void Initialize(IncrementalBackupState state, IStorageSettingsV2 storageOptions, string password)
     {
         _state = state;
         _storageOptions = storageOptions;
@@ -352,7 +319,19 @@ public class VersionsListViewModel(RestoreViewModel restoreViewModel) : Observab
             .Select(x => x.First().StorageFileNameSize)
             .Sum();
 
-        StorageSize = string.Format(BUtil.Core.Localization.Resources.BackupVersion_Storage_TitleWithSize, SizeHelper.BytesToString(storageSize));
+        StorageSize = string.Format(Resources.BackupVersion_Storage_TitleWithSize, SizeHelper.BytesToString(storageSize));
+    }
+
+    private void OnOwnPropertyChanged(object? sender, PropertyChangedEventArgs e)
+    {
+        if (e.PropertyName == nameof(SearchText))
+            ApplyFilter();
+    }
+
+    private void OnTaskExecuterPropertyChanged(object? sender, PropertyChangedEventArgs e)
+    {
+        if (e.PropertyName == nameof(TaskExecuterViewModel.TaskNotCompleted))
+            OnPropertyChanged(nameof(IsInteractionEnabled));
     }
 
     private void OnVersionChanged()
@@ -361,11 +340,8 @@ public class VersionsListViewModel(RestoreViewModel restoreViewModel) : Observab
         if (version == null || _state == null)
             return;
 
-        if (_searchText != string.Empty)
-        {
-            _searchText = string.Empty;
-            OnPropertyChanged(nameof(SearchText));
-        }
+        if (SearchText != string.Empty)
+            SearchText = string.Empty;
         IsDeleteBackupVersionEnabled = Versions != null && Versions[0] != version;
 
         SelectedFileIsVisible = false;
@@ -416,7 +392,6 @@ public class VersionsListViewModel(RestoreViewModel restoreViewModel) : Observab
         return result;
     }
 
-
     private static List<Tuple<SourceItemV2, List<StorageFile>>> GetTreeViewFiles(
         IncrementalBackupState state,
         VersionState selectedVersion)
@@ -459,8 +434,6 @@ public class VersionsListViewModel(RestoreViewModel restoreViewModel) : Observab
 
         ApplyFilter();
     }
-
-    private const int AutoExpandMaxFileResults = 15;
 
     private void ApplyFilter()
     {
@@ -543,7 +516,6 @@ public class VersionsListViewModel(RestoreViewModel restoreViewModel) : Observab
         }
     }
 
-
     private static FileTreeNode? FindNode(ObservableCollection<FileTreeNode> nodes, string p)
     {
         for (int i = 0; i < nodes.Count; i++)
@@ -564,6 +536,13 @@ public class VersionsListViewModel(RestoreViewModel restoreViewModel) : Observab
     }
 
     #region Commands
+
+#pragma warning disable CA1822 // Mark members as static
+    public void CloseCommand()
+#pragma warning restore CA1822 // Mark members as static
+    {
+        WindowManager.SwitchView(new TasksViewModel());
+    }
 
     public void DeleteBackupVersionCommand()
     {
@@ -591,7 +570,7 @@ public class VersionsListViewModel(RestoreViewModel restoreViewModel) : Observab
         var closestFreshVersion = Versions[Versions.IndexOf(versionToDelete) - 1];
         ConfirmMessage = null;
 
-        ParentViewModel.TaskExecuterViewModel = new TaskExecuterViewModel(
+        TaskExecuterViewModel = new TaskExecuterViewModel(
             new TaskEvents(),
             Resources.Task_Restore,
             (log, taskEvents, onGetLastMinuteMessage) => new DeleteIncrementalBackupVersionrRootTask(log, taskEvents, _state, new IncrementalBackupModelOptionsV2() { Password = _password }, SelectedVersion.Version, _storageOptions, onGetLastMinuteMessage),
@@ -603,11 +582,11 @@ public class VersionsListViewModel(RestoreViewModel restoreViewModel) : Observab
                     Dispatcher.UIThread.Invoke(() =>
                     {
                         SelectedVersion = closestFreshVersion;
-                        ParentViewModel.TaskExecuterViewModel!.IsCollapsed = true;
+                        TaskExecuterViewModel!.IsCollapsed = true;
                     });
                 }
             });
-        ParentViewModel.TaskExecuterViewModel.StartTaskCommand();
+        TaskExecuterViewModel.StartTaskCommand();
     }
 
     public void CancelConfirmCommand()
@@ -628,7 +607,7 @@ public class VersionsListViewModel(RestoreViewModel restoreViewModel) : Observab
         if (SelectedNode.StorageFile != null)
             storageFiles.Add(SelectedNode.StorageFile);
 
-        ParentViewModel.TaskExecuterViewModel = new TaskExecuterViewModel(
+        TaskExecuterViewModel = new TaskExecuterViewModel(
             new TaskEvents(),
             Resources.Task_Restore,
             (log, taskEvents, onGetLastMinuteMessage) => new WriteStorageFilesToSourceFileRootTask(log, taskEvents, _storageOptions!, SelectedNode.SourceItem, storageFiles, destinationFolder, onGetLastMinuteMessage),
@@ -636,10 +615,10 @@ public class VersionsListViewModel(RestoreViewModel restoreViewModel) : Observab
             {
                 if (isOk)
                 {
-                    ParentViewModel.TaskExecuterViewModel!.IsCollapsed = true;
+                    TaskExecuterViewModel!.IsCollapsed = true;
                 }
             });
-        ParentViewModel.TaskExecuterViewModel.StartTaskCommand();
+        TaskExecuterViewModel.StartTaskCommand();
     }
 
     private IEnumerable<FileTreeNode> GetChildren(FileTreeNode Parent)
@@ -692,6 +671,21 @@ public class VersionsListViewModel(RestoreViewModel restoreViewModel) : Observab
 
         BlameViewItems = items;
     }
+
+    #endregion
+
+    #region Labels
+
+    public static string Field_Version => Resources.Field_Version;
+    public static string BackupVersion_Changes_Title => Resources.BackupVersion_Changes_Title;
+    public static string BackupVersion_Files_Title => Resources.BackupVersion_Files_Title;
+    public static string Task_Restore => Resources.Task_Restore;
+    public static string BackupVersion_Viewer_Help => Resources.BackupVersion_Viewer_Help;
+    public static string BackupVersion_Button_Delete => Resources.BackupVersion_Button_Delete;
+    public static string SearchTextBoxWatermark => MainWindowViewModel.SearchTextBoxWatermark;
+    public static string Button_OK => Resources.Button_OK;
+    public static string Button_Cancel => Resources.Button_Cancel;
+    public static string Button_Close => Resources.Button_Close;
 
     #endregion
 }

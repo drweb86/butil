@@ -1,4 +1,4 @@
-<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -114,13 +114,13 @@ Endringar frå sletta versjon vert ein del av versjon "{1}".</value>
     <value>VEL VERSJON</value>
   </data>
   <data name="BackupVersion_Storage_TitleWithSize" xml:space="preserve">
-    <value>(alle versjonar tek opp på lagring {0})</value>
+    <value>Totalt oppteken lagringsplass: {0}.</value>
   </data>
   <data name="BackupVersion_Versions_Title" xml:space="preserve">
     <value>VERSJONAR</value>
   </data>
   <data name="BackupVersion_Viewer_Help" xml:space="preserve">
-    <value>Vel fila eller mappa du vil gjenopprette i treet, og klikk "Gjenopprett".</value>
+    <value>Du ser filer slik dei var i den valde versjonen. Vel ei fil, ei mappe eller eit lagringselement, og klikk deretter Gjenopprett.</value>
   </data>
   <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
     <value>Tilkoplinga til tenaren vart uventa avbroten (Er passorda på klient og tenar like?)</value>
@@ -285,6 +285,9 @@ Bruksscenario: Du kopierer data til ein ekstern tenar. Det er eit problem: ISP r
   </data>
   <data name="Field_Version" xml:space="preserve">
     <value>Versjon:</value>
+  </data>
+  <data name="Field_Version_Help" xml:space="preserve">
+    <value>Denne lista viser tilgjengelege tryggleikskopiversjonar. Når du vel ein versjon, viser filene nedanfor tilstanden for den versjonen.</value>
   </data>
   <data name="File_Deleting" xml:space="preserve">
     <value>Slettar "{0}"</value>
@@ -978,6 +981,9 @@ Sjå detaljert skildring i følgjande lenkje.</value>
   <data name="Task_Restore" xml:space="preserve">
     <value>Gjenopprett</value>
   </data>
+  <data name="Task_Restore_Selected" xml:space="preserve">
+    <value>Gjenopprett {0}...</value>
+  </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>Oppgi lagringsplassen som inneheld tryggingskopien du vil gjenopprette. Bruk dei same innstillingane som då tryggingskopien vart oppretta.</value>
   </data>
@@ -1168,10 +1174,16 @@ Sjå detaljert skildring i følgjande lenkje.</value>
     <value>Last opp mappe til tenar</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
-    <value>Du kan laste opp mappeinnhald med overskriving av eksisterande filer.</value>
+    <value>Du kan lasta opp mappeinnhald til tenaren. Som standard vert eksisterande målfiler overskrivne.</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles" xml:space="preserve">
+    <value>Ikkje overskriv eksisterande filer</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles_Help" xml:space="preserve">
+    <value>Når dette er aktivert, vert filer som allereie finst på målet hoppa over i staden for å verta overskrivne.</value>
   </data>
   <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
-    <value>Oppgi mållagringsplassen der mappeinnhaldet vert lasta opp. Eksisterande filer på målstaden vert overskrivne.</value>
+    <value>Oppgje mållageret der mappeinnhaldet skal lastast opp.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>URL:</value>

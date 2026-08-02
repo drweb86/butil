@@ -1,4 +1,4 @@
-<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -114,13 +114,13 @@
     <value>בחר גרסה</value>
   </data>
   <data name="BackupVersion_Storage_TitleWithSize" xml:space="preserve">
-    <value>(כל הגרסאות תופסות באחסון {0})</value>
+    <value>שטח האחסון הכולל התפוס: {0}.</value>
   </data>
   <data name="BackupVersion_Versions_Title" xml:space="preserve">
     <value>גרסאות</value>
   </data>
   <data name="BackupVersion_Viewer_Help" xml:space="preserve">
-    <value>בחר קובץ או תיקייה שברצונך לשחזר בעץ ולחץ על "שחזר".</value>
+    <value>אתה רואה קבצים כפי שהיו בגרסה שנבחרה. בחר קובץ, תיקיה או פריט אחסון, ואז לחץ על שחזר.</value>
   </data>
   <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
     <value>החיבור לשרת נותק באופן בלתי צפוי (האם הסיסמאות בלקוח ובשרת זהות?)</value>
@@ -285,6 +285,9 @@
   </data>
   <data name="Field_Version" xml:space="preserve">
     <value>גרסה:</value>
+  </data>
+  <data name="Field_Version_Help" xml:space="preserve">
+    <value>רשימה זו מציגה את גרסאות הגיבוי הזמינות. כאשר בוחרים גרסה, הקבצים למטה מציגים את מצב הגרסה הזו.</value>
   </data>
   <data name="File_Deleting" xml:space="preserve">
     <value>מוחק "{0}"</value>
@@ -978,6 +981,9 @@ bin.
   <data name="Task_Restore" xml:space="preserve">
     <value>שחזר</value>
   </data>
+  <data name="Task_Restore_Selected" xml:space="preserve">
+    <value>שחזר את {0}...</value>
+  </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>ציינו את מיקום האחסון המכיל את הגיבוי שברצונכם לשחזר. השתמשו באותן הגדרות שבהן נעשה שימוש בעת יצירת הגיבוי.</value>
   </data>
@@ -1168,10 +1174,16 @@ bin.
     <value>העלה תיקייה לשרת</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
-    <value>באפשרותך להעלות תוכן תיקייה תוך דריסת קבצים קיימים.</value>
+    <value>ניתן להעלות את תוכן התיקייה לשרת. כברירת מחדל קבצי היעד הקיימים נדרסים.</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles" xml:space="preserve">
+    <value>אל תדרוס קבצים קיימים</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles_Help" xml:space="preserve">
+    <value>כאשר האפשרות מופעלת, קבצים שכבר קיימים ביעד מדולגים במקום להידרס.</value>
   </data>
   <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
-    <value>ציינו את אחסון היעד שאליו יועלה תוכן התיקייה. קבצים קיימים ביעד יידרסו.</value>
+    <value>ציין את אחסון היעד שאליו יועלה תוכן התיקייה.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>Url:</value>

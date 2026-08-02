@@ -1,4 +1,4 @@
-<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -109,13 +109,13 @@
     <value>バージョンを選択</value>
   </data>
   <data name="BackupVersion_Storage_TitleWithSize" xml:space="preserve">
-    <value>(すべてのバージョンはストレージ上に {0} を占有しています)</value>
+    <value>使用中のストレージ合計: {0}。</value>
   </data>
   <data name="BackupVersion_Versions_Title" xml:space="preserve">
     <value>バージョン</value>
   </data>
   <data name="BackupVersion_Viewer_Help" xml:space="preserve">
-    <value>復元したいファイルまたはフォルダーをツリーで選択し、「復元」をクリックしてください。</value>
+    <value>選択したバージョン当時のファイルが表示されています。ファイル、フォルダー、またはストレージ項目を選び、「復元」をクリックしてください。</value>
   </data>
   <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
     <value>サーバーへの接続が予期せず終了しました（クライアントとサーバーのパスワードは同じですか？）</value>
@@ -280,6 +280,9 @@
   </data>
   <data name="Field_Version" xml:space="preserve">
     <value>バージョン:</value>
+  </data>
+  <data name="Field_Version_Help" xml:space="preserve">
+    <value>この一覧には利用可能なバックアップ バージョンが表示されます。バージョンを選択すると、下のファイルがそのバージョンの状態を示します。</value>
   </data>
   <data name="File_Deleting" xml:space="preserve">
     <value>「{0}」を削除中</value>
@@ -962,6 +965,9 @@ bin.
   <data name="Task_Restore" xml:space="preserve">
     <value>復元</value>
   </data>
+  <data name="Task_Restore_Selected" xml:space="preserve">
+    <value>{0} を復元...</value>
+  </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>復元したいバックアップが含まれているストレージを指定してください。バックアップ作成時と同じ設定を使用してください。</value>
   </data>
@@ -1152,10 +1158,16 @@ bin.
     <value>フォルダをサーバーにアップロード</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
-    <value>既存のファイルを上書きしてフォルダの内容をアップロードできます。</value>
+    <value>フォルダーの内容をサーバーにアップロードできます。既定では、既存の宛先ファイルは上書きされます。</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles" xml:space="preserve">
+    <value>既存のファイルを上書きしない</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles_Help" xml:space="preserve">
+    <value>有効にすると、宛先に既にあるファイルは上書きされずスキップされます。</value>
   </data>
   <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
-    <value>フォルダの内容がアップロードされる保存先ストレージを指定してください。保存先に既存のファイルがある場合は上書きされます。</value>
+    <value>フォルダーの内容をアップロードする宛先ストレージを指定してください。</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>URL:</value>

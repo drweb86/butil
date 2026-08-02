@@ -1,4 +1,4 @@
-<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -114,13 +114,13 @@
     <value>АБРАЦЬ ВЕРСІЮ</value>
   </data>
   <data name="BackupVersion_Storage_TitleWithSize" xml:space="preserve">
-    <value>(усе версіі займаюць у сховішчы {0})</value>
+    <value>Агульны заняты аб'ём сховішча: {0}.</value>
   </data>
   <data name="BackupVersion_Versions_Title" xml:space="preserve">
     <value>ВЕРСІІ</value>
   </data>
   <data name="BackupVersion_Viewer_Help" xml:space="preserve">
-    <value>Абярыце файл або папку, якую вы жадаеце аднавіць у дрэве, і націсніце "Аднавіць".</value>
+    <value>Вы бачыце файлы такімі, якімі яны былі ў абранай версіі. Выберыце файл, папку або элемент сховішча, затым націсніце Аднавіць.</value>
   </data>
   <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
     <value>Злучэнне з серверам нечакана спынена (Ці аднолькавыя паролі на кліенце і серверы?)</value>
@@ -285,6 +285,9 @@
   </data>
   <data name="Field_Version" xml:space="preserve">
     <value>Версія:</value>
+  </data>
+  <data name="Field_Version_Help" xml:space="preserve">
+    <value>Гэты спіс паказвае даступныя версіі рэзервовых копій. Калі вы выбіраеце версію, файлы ніжэй паказваюць стан гэтай версіі.</value>
   </data>
   <data name="File_Deleting" xml:space="preserve">
     <value>Выдаленне "{0}"</value>
@@ -978,6 +981,9 @@ bin.
   <data name="Task_Restore" xml:space="preserve">
     <value>Аднавіць</value>
   </data>
+  <data name="Task_Restore_Selected" xml:space="preserve">
+    <value>Аднавіць {0}...</value>
+  </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>Вызначце сховішча, якое змяшчае рэзервовую копію, якую вы хочаце аднавіць. Выкарыстоўвайце тыя ж налады, што і пры стварэнні рэзервовай копіі.</value>
   </data>
@@ -1168,10 +1174,16 @@ bin.
     <value>Загрузіць папку на сервер</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
-    <value>Вы можаце загрузіць змесціва папкі з перазапісам ужо існуючых файлаў.</value>
+    <value>Вы можаце загрузіць змесціва папкі на сервер. Па змаўчанні існуючыя файлы прызначэння перазапісваюцца.</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles" xml:space="preserve">
+    <value>Не перазапісваць існуючыя файлы</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles_Help" xml:space="preserve">
+    <value>Калі ўключана, файлы, якія ўжо існуюць у месцы прызначэння, прапускаюцца замест перазапісу.</value>
   </data>
   <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
-    <value>Вызначце мэтавае сховішча, куды будзе загружацца змесціва папкі. Існуючыя файлы ў мэтавым месцы будуць перазапісаны.</value>
+    <value>Укажыце сховішча прызначэння, куды будзе загружана змесціва папкі.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>URL:</value>

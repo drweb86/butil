@@ -1,4 +1,4 @@
-<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -111,13 +111,13 @@
     <value>PILIH VERSI</value>
   </data>
   <data name="BackupVersion_Storage_TitleWithSize" xml:space="preserve">
-    <value>(semua versi memakan penyimpanan {0})</value>
+    <value>Total penyimpanan yang digunakan: {0}.</value>
   </data>
   <data name="BackupVersion_Versions_Title" xml:space="preserve">
     <value>VERSI</value>
   </data>
   <data name="BackupVersion_Viewer_Help" xml:space="preserve">
-    <value>Pilih file atau folder yang ingin Anda pulihkan di pohon dan klik "Pulihkan".</value>
+    <value>Anda melihat file seperti pada versi yang dipilih. Pilih file, folder, atau item penyimpanan, lalu klik Pulihkan.</value>
   </data>
   <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
     <value>Koneksi ke server terputus secara tidak terduga (Apakah password di Klien dan Server sama?)</value>
@@ -282,6 +282,9 @@
   </data>
   <data name="Field_Version" xml:space="preserve">
     <value>Versi:</value>
+  </data>
+  <data name="Field_Version_Help" xml:space="preserve">
+    <value>Daftar ini menampilkan versi cadangan yang tersedia. Saat Anda memilih versi, file di bawah menampilkan status versi tersebut.</value>
   </data>
   <data name="File_Deleting" xml:space="preserve">
     <value>Menghapus "{0}"</value>
@@ -975,6 +978,9 @@ Silakan:
   <data name="Task_Restore" xml:space="preserve">
     <value>Pulihkan</value>
   </data>
+  <data name="Task_Restore_Selected" xml:space="preserve">
+    <value>Pulihkan {0}...</value>
+  </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>Tentukan penyimpanan yang berisi cadangan yang ingin Anda pulihkan. Gunakan pengaturan yang sama seperti saat cadangan dibuat.</value>
   </data>
@@ -1165,10 +1171,16 @@ Silakan:
     <value>Unggah folder ke server</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
-    <value>Anda dapat mengunggah isi folder dengan menimpa file yang sudah ada.</value>
+    <value>Anda dapat mengunggah isi folder ke server. Secara default, file tujuan yang sudah ada akan ditimpa.</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles" xml:space="preserve">
+    <value>Jangan timpa file yang sudah ada</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles_Help" xml:space="preserve">
+    <value>Jika diaktifkan, file yang sudah ada di tujuan akan dilewati alih-alih ditimpa.</value>
   </data>
   <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
-    <value>Tentukan penyimpanan tujuan tempat konten folder akan diunggah. File yang sudah ada di tujuan akan ditimpa.</value>
+    <value>Tentukan penyimpanan tujuan tempat isi folder akan diunggah.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>Url:</value>

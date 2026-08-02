@@ -1,4 +1,4 @@
-<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -114,13 +114,13 @@
     <value>اختر النسخة</value>
   </data>
   <data name="BackupVersion_Storage_TitleWithSize" xml:space="preserve">
-    <value>(تشغل جميع الإصدارات في التخزين {0})</value>
+    <value>إجمالي مساحة التخزين المستخدمة: {0}.</value>
   </data>
   <data name="BackupVersion_Versions_Title" xml:space="preserve">
     <value>الإصدارات</value>
   </data>
   <data name="BackupVersion_Viewer_Help" xml:space="preserve">
-    <value>حدد الملف أو المجلد الذي تريد استعادته من الشجرة وانقر على "استعادة".</value>
+    <value>ترى الملفات كما كانت في الإصدار المحدد. اختر ملفًا أو مجلدًا أو عنصر تخزين، ثم انقر استعادة.</value>
   </data>
   <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
     <value>تم إنهاء الاتصال بالخادم بشكل غير متوقع (هل كلمات المرور على العميل والخادم متطابقة؟)</value>
@@ -285,6 +285,9 @@
   </data>
   <data name="Field_Version" xml:space="preserve">
     <value>إصدار:</value>
+  </data>
+  <data name="Field_Version_Help" xml:space="preserve">
+    <value>تعرض هذه القائمة إصدارات النسخ الاحتياطي المتاحة. عند تحديد إصدار، تُظهر الملفات أدناه حالة ذلك الإصدار.</value>
   </data>
   <data name="File_Deleting" xml:space="preserve">
     <value>حذف "{0}"</value>
@@ -978,6 +981,9 @@ bin.
   <data name="Task_Restore" xml:space="preserve">
     <value>استعادة</value>
   </data>
+  <data name="Task_Restore_Selected" xml:space="preserve">
+    <value>استعادة {0}...</value>
+  </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>حدد التخزين الذي يحتوي على النسخة الاحتياطية التي تريد استعادتها. استخدم نفس الإعدادات التي كانت مستخدمة عند إنشاء النسخة الاحتياطية.</value>
   </data>
@@ -1168,10 +1174,16 @@ bin.
     <value>رفع المجلد إلى الخادم</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
-    <value>يمكنك رفع محتويات المجلد مع الكتابة فوق الملفات الموجودة مسبقًا.</value>
+    <value>يمكنك رفع محتويات المجلد إلى الخادم. بشكل افتراضي يتم استبدال الملفات الموجودة في الوجهة.</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles" xml:space="preserve">
+    <value>عدم استبدال الملفات الموجودة</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles_Help" xml:space="preserve">
+    <value>عند التمكين، يتم تخطي الملفات الموجودة بالفعل في الوجهة بدلاً من استبدالها.</value>
   </data>
   <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
-    <value>حدد مساحة التخزين الوجهة التي سيتم تحميل محتويات المجلد إليها. سيتم استبدال الملفات الموجودة في الوجهة.</value>
+    <value>حدد مخزن الوجهة الذي سيتم رفع محتويات المجلد إليه.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>الرابط:</value>

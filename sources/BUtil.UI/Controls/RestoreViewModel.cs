@@ -27,26 +27,7 @@ public class RestoreViewModel : ViewModelBase
             if (e.PropertyName == nameof(EncryptionTaskViewModel.Password))
                 FormErrorsText = null;
         };
-        VersionsListViewModel = new VersionsListViewModel(this);
     }
-
-    #region IsSetupVisible
-
-    private bool _isSetupVisible = true;
-
-    public bool IsSetupVisible
-    {
-        get => _isSetupVisible;
-        set
-        {
-            if (value == _isSetupVisible)
-                return;
-            _isSetupVisible = value;
-            OnPropertyChanged(nameof(IsSetupVisible));
-        }
-    }
-
-    #endregion
 
     #region FormErrorsText
 
@@ -87,8 +68,6 @@ public class RestoreViewModel : ViewModelBase
     public StorageViewModel StorageViewModel { get; }
     public EncryptionTaskViewModel EncryptionTaskViewModel { get; }
 
-    public VersionsListViewModel VersionsListViewModel { get; }
-
     #region Commands
 
 #pragma warning disable CA1822 // Mark members as static
@@ -128,9 +107,10 @@ public class RestoreViewModel : ViewModelBase
             {
                 if (isOk)
                 {
-                    IsSetupVisible = false;
-                    TaskExecuterViewModel!.IsCollapsed = true;
-                    VersionsListViewModel.Initialize(openIncrementalBackupTask.StorageState!, storageOptions, EncryptionTaskViewModel.Password);
+                    WindowManager.SwitchView(new RestoreVersionsViewModel(
+                        openIncrementalBackupTask.StorageState!,
+                        storageOptions,
+                        EncryptionTaskViewModel.Password));
                 }
             });
 

@@ -1,4 +1,4 @@
-<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -114,13 +114,13 @@ Forigitaj versioŝanĝoj fariĝos parto de versio "{1}".</value>
     <value>ELEKTU VERSION</value>
   </data>
   <data name="BackupVersion_Storage_TitleWithSize" xml:space="preserve">
-    <value>(ĉiuj versioj okupas sur stokado {0})</value>
+    <value>Tuta okupata konservejo: {0}.</value>
   </data>
   <data name="BackupVersion_Versions_Title" xml:space="preserve">
     <value>VERSIOJ</value>
   </data>
   <data name="BackupVersion_Viewer_Help" xml:space="preserve">
-    <value>Elektu dosieron aŭ dosierujon, kiun vi volas restarigi en arbo, kaj alklaku "Restarigi".</value>
+    <value>Vi vidas dosierojn kiel ili estis en la elektita versio. Elektu dosieron, dosierujon aŭ konservejan eron, poste alklaku Restarigi.</value>
   </data>
   <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
     <value>Konekto al servilo estis neatendite ĉesigita (Ĉu pasvortoj ĉe Kliento kaj Servilo estas samaj?)</value>
@@ -285,6 +285,9 @@ Scenaro de uzado: Vi kopias datumojn al fora servilo. Estas problemo: ISP malpli
   </data>
   <data name="Field_Version" xml:space="preserve">
     <value>Versio:</value>
+  </data>
+  <data name="Field_Version_Help" xml:space="preserve">
+    <value>Ĉi tiu listo montras haveblajn sekurkopajn versiojn. Kiam vi elektas version, la dosieroj sube montras la staton de tiu versio.</value>
   </data>
   <data name="File_Deleting" xml:space="preserve">
     <value>Forigante "{0}"</value>
@@ -978,6 +981,9 @@ See detailed description in the following link.</value>
   <data name="Task_Restore" xml:space="preserve">
     <value>Restarigi</value>
   </data>
+  <data name="Task_Restore_Selected" xml:space="preserve">
+    <value>Restarigi {0}...</value>
+  </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>Specifu la konservejon, kiu enhavas la sekurkopion, kiun vi volas restaŭri. Uzu la samajn agordojn kiel kiam la sekurkopio estis kreita.</value>
   </data>
@@ -1168,10 +1174,16 @@ See detailed description in the following link.</value>
     <value>Alŝutu dosierujon al servilo</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
-    <value>Vi povas alŝuti dosierujojn kun anstataŭigo de jam ekzistantaj dosieroj.</value>
+    <value>Vi povas alŝuti dosierujan enhavon al la servilo. Defaŭlte ekzistantaj celdosieroj estas superskribitaj.</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles" xml:space="preserve">
+    <value>Ne superskribi ekzistantajn dosierojn</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles_Help" xml:space="preserve">
+    <value>Kiam ebligita, dosieroj kiuj jam ekzistas ĉe la celo estas preterpasitaj anstataŭ superskribitaj.</value>
   </data>
   <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
-    <value>Specifu la celan konservejon, al kiu la enhavo de la dosierujo estos alŝutita. Ekzistantaj dosieroj ĉe la celo estos anstataŭigitaj.</value>
+    <value>Specifu la celkonservejon, kien la dosieruja enhavo estos alŝutita.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>Url:</value>

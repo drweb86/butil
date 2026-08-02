@@ -1,4 +1,4 @@
-<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -114,13 +114,13 @@
     <value>نسخه وټاکئ</value>
   </data>
   <data name="BackupVersion_Storage_TitleWithSize" xml:space="preserve">
-    <value>(ټولې نسخې په ذخیرې کې ځای لري {0})</value>
+    <value>ټول اشغال شوی ذخیره: {0}.</value>
   </data>
   <data name="BackupVersion_Versions_Title" xml:space="preserve">
     <value>نسخه</value>
   </data>
   <data name="BackupVersion_Viewer_Help" xml:space="preserve">
-    <value>هغه فایل یا فولډر غوره کړئ چې تاسو یې غواړئ په ونې کې بحال کړئ او "بیارغونې" کلیک وکړئ.</value>
+    <value>تاسو فایلونه هغسې وینئ لکه څنګه چې په ټاکل شوې نسخه کې وو. فایل، فولډر یا د ذخیرې توکی وټاکئ، بیا بیا رغول کلیک وکړئ.</value>
   </data>
   <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
     <value>د سرور سره پیوستون په ناڅاپي ډول وتړل شو (ایا د پیرودونکي او سرور پاسورډونه یو شان دي؟)</value>
@@ -285,6 +285,9 @@
   </data>
   <data name="Field_Version" xml:space="preserve">
     <value>نسخه:</value>
+  </data>
+  <data name="Field_Version_Help" xml:space="preserve">
+    <value>دا لیست شته بیک اپ نسخې ښیې. کله چې تاسو یوه نسخه وټاکئ، لاندې فایلونه د هغې نسخې حالت ښیې.</value>
   </data>
   <data name="File_Deleting" xml:space="preserve">
     <value>ړنګول "{0}"</value>
@@ -978,6 +981,9 @@ See detailed description in the following link.</value>
   <data name="Task_Restore" xml:space="preserve">
     <value>بیا رغول</value>
   </data>
+  <data name="Task_Restore_Selected" xml:space="preserve">
+    <value>{0} بیا رغول...</value>
+  </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>هغه زیرمه ځای وټاکئ چې هغه بیک اپ لري چې تاسو یې بیرته راستنول غواړئ. هماغه امستنې وکاروئ چې د بیک اپ جوړولو پر مهال کارول شوې وې.</value>
   </data>
@@ -1168,10 +1174,16 @@ See detailed description in the following link.</value>
     <value>سرور ته فولډر اپلوډ کړئ</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
-    <value>تاسو کولی شئ د فولډر مینځپانګې د دمخه موجود فایلونو له سره لیکلو سره اپلوډ کړئ.</value>
+    <value>تاسو کولی شئ د فولډر مینځپانګه سرور ته پورته کړئ. په ډیفالټ ډول موجود منزل فایلونه له سره لیکل کیږي.</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles" xml:space="preserve">
+    <value>موجود فایلونه مه لیکئ بیا</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles_Help" xml:space="preserve">
+    <value>کله چې فعال وي، هغه فایلونه چې دمخه په منزل کې شتون لري د بیا لیکلو پر ځای پریښودل کیږي.</value>
   </data>
   <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
-    <value>د منزل هغه زیرمه ځای وټاکئ چې د فولډر منځپانګه به هلته اپلوډ شي. په منزل کې موجود فایلونه به بیا ولیکل شي.</value>
+    <value>د منزل ذخیره مشخصه کړئ چیرې چې د فولډر مینځپانګه به پورته شي.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>یو آر ایل:</value>

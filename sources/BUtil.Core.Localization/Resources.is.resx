@@ -1,4 +1,4 @@
-<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -114,13 +114,13 @@ Breytingar á eyddri útgáfu verða hluti af útgáfu "{1}".</value>
     <value>VELJA ÚTGÁFU</value>
   </data>
   <data name="BackupVersion_Storage_TitleWithSize" xml:space="preserve">
-    <value>(allar útgáfur taka {0} á geymslu)</value>
+    <value>Heildargeymsla í notkun: {0}.</value>
   </data>
   <data name="BackupVersion_Versions_Title" xml:space="preserve">
     <value>ÚTGÁFUR</value>
   </data>
   <data name="BackupVersion_Viewer_Help" xml:space="preserve">
-    <value>Veldu skrá eða möppu sem þú vilt endurheimta í trénu og smelltu á "Endurheimta".</value>
+    <value>Þú sérð skrár eins og þær voru í völdu útgáfunni. Veldu skrá, möppu eða geymsluhlut og smelltu síðan á Endurheimta.</value>
   </data>
   <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
     <value>Tenging við þjón rofnaði óvænt (Eru lykilorð á biðlara og þjóni þau sömu?)</value>
@@ -285,6 +285,9 @@ Notkunardæmi: Þú afritar gögn á fjarlægan þjón. Vandamál er: Netþjónu
   </data>
   <data name="Field_Version" xml:space="preserve">
     <value>Útgáfa:</value>
+  </data>
+  <data name="Field_Version_Help" xml:space="preserve">
+    <value>Þessi listi sýnir tiltækar öryggisafritsútgáfur. Þegar þú velur útgáfu sýna skrárnar fyrir neðan ástand þeirrar útgáfu.</value>
   </data>
   <data name="File_Deleting" xml:space="preserve">
     <value>Eyði "{0}"</value>
@@ -978,6 +981,9 @@ Sjá nákvæma lýsingu á eftirfarandi tengli.</value>
   <data name="Task_Restore" xml:space="preserve">
     <value>Endurheimta</value>
   </data>
+  <data name="Task_Restore_Selected" xml:space="preserve">
+    <value>Endurheimta {0}...</value>
+  </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>Tilgreindu geymsluna sem inniheldur afritið sem þú vilt endurheimta. Notaðu sömu stillingar og þegar afritið var búið til.</value>
   </data>
@@ -1168,10 +1174,16 @@ Sjá nákvæma lýsingu á eftirfarandi tengli.</value>
     <value>Hlaða möppu á þjón</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
-    <value>Þú getur hlaðið upp innihaldi möppu og skrifað yfir skrár sem þegar eru til.</value>
+    <value>Þú getur hlaðið innihaldi möppu upp á þjóninn. Sjálfgefið er að núverandi áfangaskrár séu yfirskrifaðar.</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles" xml:space="preserve">
+    <value>Ekki yfirskrifa núverandi skrár</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles_Help" xml:space="preserve">
+    <value>Þegar þetta er virkt eru skrár sem þegar eru til á áfangastað numdar framhjá í stað þess að vera yfirskrifaðar.</value>
   </data>
   <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
-    <value>Tilgreindu úttaksgeymsluna sem innihald möppunnar verður hlaðið upp í. Núverandi skrár á áfangastað verða yfirskrifaðar.</value>
+    <value>Tilgreindu áfangageymsluna þar sem innihald möppunnar verður hlaðið upp.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>Url:</value>

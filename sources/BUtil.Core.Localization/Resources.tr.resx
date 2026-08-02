@@ -1,4 +1,4 @@
-<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -111,13 +111,13 @@ Silinen sürümdeki değişiklikler "{1}" sürümünün bir parçası olacak.</v
     <value>SÜRÜM SEÇİN</value>
   </data>
   <data name="BackupVersion_Storage_TitleWithSize" xml:space="preserve">
-    <value>(tüm sürümler depolamada {0} yer kaplar)</value>
+    <value>Toplam kullanılan depolama: {0}.</value>
   </data>
   <data name="BackupVersion_Versions_Title" xml:space="preserve">
     <value>SÜRÜMLER</value>
   </data>
   <data name="BackupVersion_Viewer_Help" xml:space="preserve">
-    <value>Ağaçta geri yüklemek istediğiniz dosya veya klasörü seçin ve "Geri Yükle"ye tıklayın.</value>
+    <value>Dosyaları seçilen sürümdeki halleriyle görürsünüz. Bir dosya, klasör veya depolama öğesi seçin, ardından Geri Yükle’ye tıklayın.</value>
   </data>
   <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
     <value>Sunucu bağlantısı beklenmedik şekilde sonlandırıldı (İstemci ve Sunucu şifreleri aynı mı?)</value>
@@ -282,6 +282,9 @@ Kullanım senaryosu: Verileri uzak sunucuya kopyalıyorsunuz. Bir sorun var: ISS
   </data>
   <data name="Field_Version" xml:space="preserve">
     <value>Sürüm:</value>
+  </data>
+  <data name="Field_Version_Help" xml:space="preserve">
+    <value>Bu liste kullanılabilir yedekleme sürümlerini gösterir. Bir sürüm seçtiğinizde, aşağıdaki dosyalar o sürümün durumunu gösterir.</value>
   </data>
   <data name="File_Deleting" xml:space="preserve">
     <value>Siliniyor "{0}"</value>
@@ -975,6 +978,9 @@ Aşağıdaki bağlantıda detaylı açıklama bulun.</value>
   <data name="Task_Restore" xml:space="preserve">
     <value>Geri yükle</value>
   </data>
+  <data name="Task_Restore_Selected" xml:space="preserve">
+    <value>{0} geri yükle...</value>
+  </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>Geri yüklemek istediğiniz yedeği içeren depolama alanını belirtin. Yedek oluşturulduğunda kullanılan aynı ayarları kullanın.</value>
   </data>
@@ -1165,10 +1171,16 @@ Aşağıdaki bağlantıda detaylı açıklama bulun.</value>
     <value>Klasörü sunucuya yükle</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
-    <value>Zaten var olan dosyaların üzerine yazarak klasör içeriğini yükleyebilirsiniz.</value>
+    <value>Klasör içeriğini sunucuya yükleyebilirsiniz. Varsayılan olarak mevcut hedef dosyaların üzerine yazılır.</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles" xml:space="preserve">
+    <value>Mevcut dosyaların üzerine yazma</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles_Help" xml:space="preserve">
+    <value>Etkinleştirildiğinde, hedefte zaten var olan dosyalar üzerine yazılmak yerine atlanır.</value>
   </data>
   <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
-    <value>Klasör içeriğinin yükleneceği hedef depolama alanını belirtin. Hedefteki mevcut dosyaların üzerine yazılacaktır.</value>
+    <value>Klasör içeriğinin yükleneceği hedef depolamayı belirtin.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>Url:</value>

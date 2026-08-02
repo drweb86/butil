@@ -1,4 +1,4 @@
-<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -114,13 +114,13 @@ Poistetun version muutokset tulevat osaksi versiota "{1}".</value>
     <value>VALITSE VERSIO</value>
   </data>
   <data name="BackupVersion_Storage_TitleWithSize" xml:space="preserve">
-    <value>(kaikki versiot vievät tallennustilaa {0})</value>
+    <value>Käytetty tallennustila yhteensä: {0}.</value>
   </data>
   <data name="BackupVersion_Versions_Title" xml:space="preserve">
     <value>VERSIOT</value>
   </data>
   <data name="BackupVersion_Viewer_Help" xml:space="preserve">
-    <value>Valitse puusta tiedosto tai kansio, jonka haluat palauttaa, ja napsauta "Palauta".</value>
+    <value>Näet tiedostot sellaisina kuin ne olivat valitussa versiossa. Valitse tiedosto, kansio tai tallennuskohde ja napsauta sitten Palauta.</value>
   </data>
   <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
     <value>Yhteys palvelimeen katkesi odottamattomasti (Ovatko asiakkaan ja palvelimen salasanat samat?)</value>
@@ -285,6 +285,9 @@ Käyttöskenaario: Kopioit tietoja etäpalvelimelle. Ongelma: ISP laskee latausn
   </data>
   <data name="Field_Version" xml:space="preserve">
     <value>Versio:</value>
+  </data>
+  <data name="Field_Version_Help" xml:space="preserve">
+    <value>Tämä luettelo näyttää käytettävissä olevat varmuuskopioversiot. Kun valitset version, alla olevat tiedostot näyttävät kyseisen version tilan.</value>
   </data>
   <data name="File_Deleting" xml:space="preserve">
     <value>Poistetaan "{0}"</value>
@@ -978,6 +981,9 @@ Katso yksityiskohtainen kuvaus seuraavasta linkistä.</value>
   <data name="Task_Restore" xml:space="preserve">
     <value>Palauta</value>
   </data>
+  <data name="Task_Restore_Selected" xml:space="preserve">
+    <value>Palauta {0}...</value>
+  </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>Määritä tallennustila, joka sisältää palautettavan varmuuskopion. Käytä samoja asetuksia kuin varmuuskopiota luotaessa.</value>
   </data>
@@ -1168,10 +1174,16 @@ Katso yksityiskohtainen kuvaus seuraavasta linkistä.</value>
     <value>Lataa kansio palvelimelle</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
-    <value>Voit ladata kansion sisällön korvaten jo olemassa olevat tiedostot.</value>
+    <value>Voit ladata kansion sisällön palvelimelle. Oletuksena olemassa olevat kohdetiedostot korvataan.</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles" xml:space="preserve">
+    <value>Älä korvaa olemassa olevia tiedostoja</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles_Help" xml:space="preserve">
+    <value>Kun tämä on käytössä, kohteessa jo olevat tiedostot ohitetaan sen sijaan, että ne korvattaisiin.</value>
   </data>
   <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
-    <value>Määritä kohdetallennustila, johon kansion sisältö ladataan. Kohteessa olevat olemassa olevat tiedostot korvataan.</value>
+    <value>Määritä kohdetallennustila, johon kansion sisältö ladataan.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>Url:</value>

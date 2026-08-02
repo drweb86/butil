@@ -1,4 +1,4 @@
-<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -114,13 +114,13 @@ Deleted version changes will become part of version "{1}".</value>
     <value>SELECT VERSION</value>
   </data>
   <data name="BackupVersion_Storage_TitleWithSize" xml:space="preserve">
-    <value>(all versions occupy on storage {0})</value>
+    <value>Almacenamientu total ocupáu: {0}.</value>
   </data>
   <data name="BackupVersion_Versions_Title" xml:space="preserve">
     <value>VERSIONS</value>
   </data>
   <data name="BackupVersion_Viewer_Help" xml:space="preserve">
-    <value>Select file or folder you want to restore in tree and click "Restore".</value>
+    <value>Ves los ficheros como taben na versión escoyida. Escueyi un ficheru, carpeta o elementu d'almacenamientu, dempués calca Restaurar.</value>
   </data>
   <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
     <value>Connection to server was unexpectedly terminated (Are passwords on Client and Server are the same?)</value>
@@ -285,6 +285,9 @@ Usage scenario: You copy data to remote server. There's a problem: ISP drops upl
   </data>
   <data name="Field_Version" xml:space="preserve">
     <value>Version:</value>
+  </data>
+  <data name="Field_Version_Help" xml:space="preserve">
+    <value>Esta llista amuesa les versiones de respaldu disponibles. Al escoyer una versión, los ficheros d'abaxo amuesen l'estáu d'esa versión.</value>
   </data>
   <data name="File_Deleting" xml:space="preserve">
     <value>Deleting "{0}"</value>
@@ -978,6 +981,9 @@ See detailed description in the following link.</value>
   <data name="Task_Restore" xml:space="preserve">
     <value>Restore</value>
   </data>
+  <data name="Task_Restore_Selected" xml:space="preserve">
+    <value>Restaurar {0}...</value>
+  </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>Especifica l'almacenamientu que caltién la copia de seguridá que quies restaurar. Usa la mesma configuración qu'había cuando se creó la copia de seguridá.</value>
   </data>
@@ -1168,10 +1174,16 @@ See detailed description in the following link.</value>
     <value>Upload folder to server</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
-    <value>You can upload folder contents with overwriting already existing files.</value>
+    <value>Pues xubir el conteníu d'una carpeta al sirvidor. Por defeutu sobrescríbense los ficheros de destín existentes.</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles" xml:space="preserve">
+    <value>Nun sobrescribir los ficheros existentes</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles_Help" xml:space="preserve">
+    <value>Cuando ta activao, los ficheros que yá esisten nel destín omítense en cuenta de sobrescribise.</value>
   </data>
   <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
-    <value>Especifica l'almacenamientu de destín au se xubirán los conteníos de la carpeta. Los ficheros esistentes nel destín sobrescribiránse.</value>
+    <value>Especifica l'almacenamientu de destín onde se xubirá'l conteníu de la carpeta.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>Url:</value>

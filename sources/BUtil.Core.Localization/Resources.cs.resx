@@ -1,4 +1,4 @@
-<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -114,13 +114,13 @@ Změny smazané verze se stanou součástí verze „{1}".</value>
     <value>VYBRAT VERZI</value>
   </data>
   <data name="BackupVersion_Storage_TitleWithSize" xml:space="preserve">
-    <value>(všechny verze zabírají v úložišti {0})</value>
+    <value>Celkové obsazené úložiště: {0}.</value>
   </data>
   <data name="BackupVersion_Versions_Title" xml:space="preserve">
     <value>VERZE</value>
   </data>
   <data name="BackupVersion_Viewer_Help" xml:space="preserve">
-    <value>Vyberte soubor nebo složku, kterou chcete obnovit ve stromu, a klikněte na „Obnovit".</value>
+    <value>Vidíte soubory tak, jak byly ve vybrané verzi. Vyberte soubor, složku nebo položku úložiště a klikněte na Obnovit.</value>
   </data>
   <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
     <value>Připojení k serveru bylo neočekávaně ukončeno (Jsou hesla na klientu a serveru stejná?)</value>
@@ -285,6 +285,9 @@ Scénář použití: Kopírujete data na vzdálený server. Problém: Poskytovat
   </data>
   <data name="Field_Version" xml:space="preserve">
     <value>Verze:</value>
+  </data>
+  <data name="Field_Version_Help" xml:space="preserve">
+    <value>Tento seznam zobrazuje dostupné verze záloh. Po výběru verze soubory níže ukazují stav této verze.</value>
   </data>
   <data name="File_Deleting" xml:space="preserve">
     <value>Mazání „{0}"</value>
@@ -978,6 +981,9 @@ Podrobný popis naleznete v následujícím odkazu.</value>
   <data name="Task_Restore" xml:space="preserve">
     <value>Obnovit</value>
   </data>
+  <data name="Task_Restore_Selected" xml:space="preserve">
+    <value>Obnovit {0}...</value>
+  </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>Zadejte úložiště, které obsahuje zálohu, kterou chcete obnovit. Použijte stejná nastavení jako při vytváření zálohy.</value>
   </data>
@@ -1168,10 +1174,16 @@ Podrobný popis naleznete v následujícím odkazu.</value>
     <value>Nahrát složku na server</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
-    <value>Můžete nahrát obsah složky s přepsáním již existujících souborů.</value>
+    <value>Můžete nahrát obsah složky na server. Ve výchozím nastavení se existující cílové soubory přepisují.</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles" xml:space="preserve">
+    <value>Nepřepisovat existující soubory</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles_Help" xml:space="preserve">
+    <value>Pokud je zapnuto, soubory, které již v cíli existují, se přeskočí místo přepsání.</value>
   </data>
   <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
-    <value>Zadejte cílové úložiště, do kterého se nahraje obsah složky. Existující soubory v cíli budou přepsány.</value>
+    <value>Zadejte cílové úložiště, kam bude nahrán obsah složky.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>Url:</value>

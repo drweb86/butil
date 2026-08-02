@@ -1,4 +1,4 @@
-<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -114,13 +114,13 @@ Die Änderungen der gelöschten Version werden Teil der Version "{1}".</value>
     <value>VERSION AUSWÄHLEN</value>
   </data>
   <data name="BackupVersion_Storage_TitleWithSize" xml:space="preserve">
-    <value>(alle Versionen belegen auf dem Speicher {0})</value>
+    <value>Gesamter belegter Speicherplatz: {0}.</value>
   </data>
   <data name="BackupVersion_Versions_Title" xml:space="preserve">
     <value>VERSIONEN</value>
   </data>
   <data name="BackupVersion_Viewer_Help" xml:space="preserve">
-    <value>Wählen Sie die Datei oder den Ordner, den Sie im Baum wiederherstellen möchten, und klicken Sie auf "Wiederherstellen".</value>
+    <value>Sie sehen Dateien so, wie sie in der ausgewählten Version waren. Wählen Sie eine Datei, einen Ordner oder ein Speicherelement aus, und klicken Sie dann auf Wiederherstellen.</value>
   </data>
   <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
     <value>Verbindung zum Server wurde unerwartet beendet (Sind Client/Server-Passwörter identisch?)</value>
@@ -285,6 +285,9 @@ Anwendungsszenario: Sie kopieren Daten auf einen entfernten Server. Es gibt ein 
   </data>
   <data name="Field_Version" xml:space="preserve">
     <value>Version:</value>
+  </data>
+  <data name="Field_Version_Help" xml:space="preserve">
+    <value>Diese Liste zeigt verfügbare Sicherungsversionen. Wenn Sie eine Version auswählen, zeigen die Dateien darunter den Zustand dieser Version.</value>
   </data>
   <data name="File_Deleting" xml:space="preserve">
     <value>Löschen von "{0}"</value>
@@ -978,6 +981,9 @@ Siehe detaillierte Beschreibung im folgenden Link.</value>
   <data name="Task_Restore" xml:space="preserve">
     <value>Wiederherstellen</value>
   </data>
+  <data name="Task_Restore_Selected" xml:space="preserve">
+    <value>{0} wiederherstellen...</value>
+  </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>Geben Sie den Speicherort an, der die wiederherzustellende Sicherung enthält. Verwenden Sie dieselben Einstellungen wie bei der Erstellung der Sicherung.</value>
   </data>
@@ -1168,10 +1174,16 @@ Siehe detaillierte Beschreibung im folgenden Link.</value>
     <value>Ordner auf Server hochladen</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
-    <value>Sie können Ordnerinhalte hochladen und dabei bereits vorhandene Dateien überschreiben.</value>
+    <value>Sie können den Inhalt eines Ordners auf den Server hochladen. Standardmäßig werden vorhandene Zieldateien überschrieben.</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles" xml:space="preserve">
+    <value>Vorhandene Dateien nicht überschreiben</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles_Help" xml:space="preserve">
+    <value>Wenn aktiviert, werden Dateien, die am Ziel bereits vorhanden sind, übersprungen, statt überschrieben zu werden.</value>
   </data>
   <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
-    <value>Geben Sie den Zielspeicherort an, in den der Ordnerinhalt hochgeladen wird. Vorhandene Dateien am Ziel werden überschrieben.</value>
+    <value>Geben Sie den Zielspeicher an, in den der Ordnerinhalt hochgeladen wird.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>Url:</value>

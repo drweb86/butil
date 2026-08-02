@@ -1,4 +1,4 @@
-<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -114,13 +114,13 @@ As alterações de versão excluídas passarão a fazer parte da versão "{1}".<
     <value>SELECIONE A VERSÃO</value>
   </data>
   <data name="BackupVersion_Storage_TitleWithSize" xml:space="preserve">
-    <value>(todas as versões ocupam armazenamento {0})</value>
+    <value>Armazenamento total ocupado: {0}.</value>
   </data>
   <data name="BackupVersion_Versions_Title" xml:space="preserve">
     <value>VERSÕES</value>
   </data>
   <data name="BackupVersion_Viewer_Help" xml:space="preserve">
-    <value>Selecione o arquivo ou pasta que deseja restaurar na árvore e clique em “Restaurar”.</value>
+    <value>Vê os ficheiros tal como estavam na versão selecionada. Escolha um ficheiro, pasta ou item de armazenamento e clique em Restaurar.</value>
   </data>
   <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
     <value>A conexão com o servidor foi encerrada inesperadamente (as senhas do cliente e do servidor são iguais?)</value>
@@ -285,6 +285,9 @@ Cenário de uso: você copia dados para um servidor remoto. Há um problema: o I
   </data>
   <data name="Field_Version" xml:space="preserve">
     <value>Versão:</value>
+  </data>
+  <data name="Field_Version_Help" xml:space="preserve">
+    <value>Esta lista mostra as versões de cópia de segurança disponíveis. Ao selecionar uma versão, os ficheiros abaixo mostram o estado dessa versão.</value>
   </data>
   <data name="File_Deleting" xml:space="preserve">
     <value>Excluindo "{0}"</value>
@@ -978,6 +981,9 @@ See detailed description in the following link.</value>
   <data name="Task_Restore" xml:space="preserve">
     <value>Restaurar</value>
   </data>
+  <data name="Task_Restore_Selected" xml:space="preserve">
+    <value>Restaurar {0}...</value>
+  </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>Especifique o armazenamento que contém a cópia de segurança que pretende restaurar. Utilize as mesmas definições que foram usadas quando a cópia de segurança foi criada.</value>
   </data>
@@ -1168,10 +1174,16 @@ See detailed description in the following link.</value>
     <value>Carregar pasta para o servidor</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
-    <value>Você pode fazer upload do conteúdo da pasta substituindo arquivos já existentes.</value>
+    <value>Pode carregar o conteúdo de uma pasta para o servidor. Por predefinição, os ficheiros de destino existentes são substituídos.</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles" xml:space="preserve">
+    <value>Não substituir ficheiros existentes</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles_Help" xml:space="preserve">
+    <value>Quando ativado, os ficheiros que já existem no destino são ignorados em vez de serem substituídos.</value>
   </data>
   <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
-    <value>Especifique o armazenamento de destino para onde será carregado o conteúdo da pasta. Os ficheiros já existentes no destino serão substituídos.</value>
+    <value>Especifique o armazenamento de destino para onde o conteúdo da pasta será carregado.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>URL:</value>

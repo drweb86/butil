@@ -1,4 +1,4 @@
-<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -114,13 +114,13 @@ Promene obrisane verzije postaće deo verzije „{1}".</value>
     <value>IZABERITE VERZIJU</value>
   </data>
   <data name="BackupVersion_Storage_TitleWithSize" xml:space="preserve">
-    <value>(sve verzije zauzimaju u skladištu {0})</value>
+    <value>Ukupno zauzeto skladište: {0}.</value>
   </data>
   <data name="BackupVersion_Versions_Title" xml:space="preserve">
     <value>VERZIJE</value>
   </data>
   <data name="BackupVersion_Viewer_Help" xml:space="preserve">
-    <value>Izaberite datoteku ili fasciklu koju želite da vratite u stablu i kliknite na „Vrati".</value>
+    <value>Vidite datoteke kakve su bile u izabranoj verziji. Izaberite datoteku, fasciklu ili stavku skladišta, zatim kliknite Vrati.</value>
   </data>
   <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
     <value>Veza sa serverom je neočekivano prekinuta (Da li su lozinke na klijentu i serveru iste?)</value>
@@ -285,6 +285,9 @@ Scenario korišćenja: Kopirate podatke na udaljeni server. Problem: provajder s
   </data>
   <data name="Field_Version" xml:space="preserve">
     <value>Verzija:</value>
+  </data>
+  <data name="Field_Version_Help" xml:space="preserve">
+    <value>Ova lista prikazuje dostupne verzije rezervnih kopija. Kada izaberete verziju, datoteke ispod prikazuju stanje te verzije.</value>
   </data>
   <data name="File_Deleting" xml:space="preserve">
     <value>Brisanje „{0}"</value>
@@ -978,6 +981,9 @@ Pogledajte detaljan opis na sledećem linku.</value>
   <data name="Task_Restore" xml:space="preserve">
     <value>Vrati</value>
   </data>
+  <data name="Task_Restore_Selected" xml:space="preserve">
+    <value>Vrati {0}...</value>
+  </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>Navedite skladište koje sadrži rezervnu kopiju koju želite da vratite. Koristite ista podešavanja kao kada je rezervna kopija napravljena.</value>
   </data>
@@ -1168,10 +1174,16 @@ Pogledajte detaljan opis na sledećem linku.</value>
     <value>Otpremi fasciklu na server</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
-    <value>Možete otpremiti sadržaj fascikle uz prepisivanje već postojećih datoteka.</value>
+    <value>Možete otpremiti sadržaj fascikle na server. Podrazumevano se postojeće odredišne datoteke prepisuju.</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles" xml:space="preserve">
+    <value>Ne prepisuj postojeće datoteke</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles_Help" xml:space="preserve">
+    <value>Kada je omogućeno, datoteke koje već postoje na odredištu se preskaču umesto da se prepišu.</value>
   </data>
   <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
-    <value>Navedite odredišno skladište u koje će se otpremiti sadržaj fascikle. Postojeće datoteke na odredištu biće prepisane.</value>
+    <value>Navedite odredišno skladište na koje će se otpremiti sadržaj fascikle.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>URL:</value>

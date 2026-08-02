@@ -1,4 +1,4 @@
-<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -114,13 +114,13 @@ Verwijderde versiewijzigingen worden onderdeel van versie "{1}".</value>
     <value>VERSIE SELECTEREN</value>
   </data>
   <data name="BackupVersion_Storage_TitleWithSize" xml:space="preserve">
-    <value>(alle versies nemen op de opslag {0} in beslag)</value>
+    <value>Totale bezette opslagruimte: {0}.</value>
   </data>
   <data name="BackupVersion_Versions_Title" xml:space="preserve">
     <value>VERSIES</value>
   </data>
   <data name="BackupVersion_Viewer_Help" xml:space="preserve">
-    <value>Selecteer het bestand of de map die u wilt herstellen in de boomstructuur en klik op "Herstellen".</value>
+    <value>U ziet bestanden zoals ze waren in de geselecteerde versie. Kies een bestand, map of opslagitem en klik vervolgens op Herstellen.</value>
   </data>
   <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
     <value>Verbinding met server is onverwacht verbroken (Zijn de wachtwoorden op client en server hetzelfde?)</value>
@@ -285,6 +285,9 @@ Gebruiksscenario: U kopieert gegevens naar een externe server. Er is een problee
   </data>
   <data name="Field_Version" xml:space="preserve">
     <value>Versie:</value>
+  </data>
+  <data name="Field_Version_Help" xml:space="preserve">
+    <value>Deze lijst toont beschikbare back-upversies. Wanneer u een versie selecteert, tonen de bestanden hieronder de status van die versie.</value>
   </data>
   <data name="File_Deleting" xml:space="preserve">
     <value>Verwijderen van "{0}"</value>
@@ -978,6 +981,9 @@ Zie gedetailleerde beschrijving via de volgende link.</value>
   <data name="Task_Restore" xml:space="preserve">
     <value>Herstellen</value>
   </data>
+  <data name="Task_Restore_Selected" xml:space="preserve">
+    <value>{0} herstellen...</value>
+  </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>Geef de opslag op die de back-up bevat die u wilt herstellen. Gebruik dezelfde instellingen als toen de back-up werd gemaakt.</value>
   </data>
@@ -1168,10 +1174,16 @@ Zie gedetailleerde beschrijving via de volgende link.</value>
     <value>Map uploaden naar server</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
-    <value>U kunt mapinhoud uploaden waarbij bestaande bestanden worden overschreven.</value>
+    <value>U kunt mapinhoud naar de server uploaden. Standaard worden bestaande bestemmingsbestanden overschreven.</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles" xml:space="preserve">
+    <value>Bestaande bestanden niet overschrijven</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles_Help" xml:space="preserve">
+    <value>Indien ingeschakeld worden bestanden die al op de bestemming bestaan overgeslagen in plaats van overschreven.</value>
   </data>
   <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
-    <value>Geef de doelopslag op waarnaar de inhoud van de map wordt geüpload. Bestaande bestanden op de bestemming worden overschreven.</value>
+    <value>Geef de bestemmingsopslag op waar de mapinhoud naartoe wordt geüpload.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>Url:</value>

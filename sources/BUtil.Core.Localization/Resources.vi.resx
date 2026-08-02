@@ -1,4 +1,4 @@
-<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -111,13 +111,13 @@ Những thay đổi của phiên bản đã xóa sẽ trở thành một phần 
     <value>CHỌN PHIÊN BẢN</value>
   </data>
   <data name="BackupVersion_Storage_TitleWithSize" xml:space="preserve">
-    <value>(tất cả các phiên bản chiếm {0} trên bộ nhớ)</value>
+    <value>Tổng dung lượng lưu trữ đã dùng: {0}.</value>
   </data>
   <data name="BackupVersion_Versions_Title" xml:space="preserve">
     <value>CÁC PHIÊN BẢN</value>
   </data>
   <data name="BackupVersion_Viewer_Help" xml:space="preserve">
-    <value>Chọn tập tin hoặc thư mục bạn muốn khôi phục trong cây và nhấp vào "Khôi phục".</value>
+    <value>Bạn thấy các tệp như chúng có trong phiên bản đã chọn. Chọn một tệp, thư mục hoặc mục lưu trữ, rồi nhấp Khôi phục.</value>
   </data>
   <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
     <value>Kết nối đến máy chủ bị ngắt đột ngột (Mật khẩu trên Máy khách và Máy chủ có giống nhau không?)</value>
@@ -282,6 +282,9 @@ Kịch bản sử dụng: Bạn sao chép dữ liệu đến máy chủ từ xa.
   </data>
   <data name="Field_Version" xml:space="preserve">
     <value>Phiên bản:</value>
+  </data>
+  <data name="Field_Version_Help" xml:space="preserve">
+    <value>Danh sách này hiển thị các phiên bản sao lưu khả dụng. Khi bạn chọn một phiên bản, các tệp bên dưới hiển thị trạng thái của phiên bản đó.</value>
   </data>
   <data name="File_Deleting" xml:space="preserve">
     <value>Đang xóa "{0}"</value>
@@ -975,6 +978,9 @@ Xem mô tả chi tiết trong liên kết sau.</value>
   <data name="Task_Restore" xml:space="preserve">
     <value>Khôi phục</value>
   </data>
+  <data name="Task_Restore_Selected" xml:space="preserve">
+    <value>Khôi phục {0}...</value>
+  </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>Chỉ định vị trí lưu trữ chứa bản sao lưu mà bạn muốn khôi phục. Sử dụng cùng cài đặt như khi bản sao lưu được tạo.</value>
   </data>
@@ -1165,10 +1171,16 @@ Xem mô tả chi tiết trong liên kết sau.</value>
     <value>Tải thư mục lên máy chủ</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
-    <value>Bạn có thể tải lên nội dung thư mục và ghi đè lên các tệp đã tồn tại.</value>
+    <value>Bạn có thể tải nội dung thư mục lên máy chủ. Theo mặc định, các tệp đích hiện có sẽ bị ghi đè.</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles" xml:space="preserve">
+    <value>Không ghi đè tệp hiện có</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles_Help" xml:space="preserve">
+    <value>Khi được bật, các tệp đã tồn tại ở đích sẽ bị bỏ qua thay vì bị ghi đè.</value>
   </data>
   <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
-    <value>Chỉ định vị trí lưu trữ đích nơi nội dung thư mục sẽ được tải lên. Các tệp hiện có tại đích sẽ bị ghi đè.</value>
+    <value>Chỉ định kho lưu trữ đích nơi nội dung thư mục sẽ được tải lên.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>Url:</value>

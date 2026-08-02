@@ -1,4 +1,4 @@
-<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -108,13 +108,13 @@
     <value>選擇版本</value>
   </data>
   <data name="BackupVersion_Storage_TitleWithSize" xml:space="preserve">
-    <value>(所有版本佔用存儲 {0})</value>
+    <value>總共用咗嘅儲存空間：{0}。</value>
   </data>
   <data name="BackupVersion_Versions_Title" xml:space="preserve">
     <value>版本</value>
   </data>
   <data name="BackupVersion_Viewer_Help" xml:space="preserve">
-    <value>請喺樹形結構中選擇你想恢復嘅文件或文件夾，然後點擊「恢復」。</value>
+    <value>你睇到嘅係所選版本當時嘅檔案。揀一個檔案、資料夾或者儲存項目，然後撳「恢復」。</value>
   </data>
   <data name="BUtilClientConnectTask_Title" xml:space="preserve">
     <value>連接到IP {0}同埠{1}嘅伺服器</value>
@@ -303,6 +303,9 @@
   </data>
   <data name="Field_Version" xml:space="preserve">
     <value>版本：</value>
+  </data>
+  <data name="Field_Version_Help" xml:space="preserve">
+    <value>呢個清單顯示可用嘅備份版本。你揀咗某個版本之後，下面嘅檔案會顯示嗰個版本嘅狀態。</value>
   </data>
   <data name="File_Deleting" xml:space="preserve">
     <value>刪除 "{0}"</value>
@@ -995,6 +998,9 @@ bin。
   <data name="Task_Restore" xml:space="preserve">
     <value>恢復</value>
   </data>
+  <data name="Task_Restore_Selected" xml:space="preserve">
+    <value>恢復 {0}...</value>
+  </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>指定包含你想還原嘅備份嘅儲存空間。用返同備份建立嗰陣一樣嘅設定。</value>
   </data>
@@ -1185,10 +1191,16 @@ bin。
     <value>上傳資料夾到伺服器</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
-    <value>你可以上傳文件夾內容，並覆蓋已經存在嘅檔案。</value>
+    <value>你可以將資料夾內容上載去伺服器。預設會覆寫目的地已經存在嘅檔案。</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles" xml:space="preserve">
+    <value>唔好覆寫已有檔案</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles_Help" xml:space="preserve">
+    <value>開啟之後，目的地已經存在嘅檔案會跳過，唔會被覆寫。</value>
   </data>
   <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
-    <value>指定資料夾內容會上傳到嘅目標儲存空間。目標入面已經存在嘅檔案會畀覆蓋。</value>
+    <value>指定要上載資料夾內容嘅目的地儲存。</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>網址：</value>

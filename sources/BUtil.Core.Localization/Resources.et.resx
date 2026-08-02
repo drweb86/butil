@@ -1,4 +1,4 @@
-<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -114,13 +114,13 @@ Kustutatud versiooni muudatused saavad osaks versioonist "{1}".</value>
     <value>VALI VERSIOON</value>
   </data>
   <data name="BackupVersion_Storage_TitleWithSize" xml:space="preserve">
-    <value>(kõik versioonid hõivavad hoidlas {0})</value>
+    <value>Hõivatud salvestusruum kokku: {0}.</value>
   </data>
   <data name="BackupVersion_Versions_Title" xml:space="preserve">
     <value>VERSIOONID</value>
   </data>
   <data name="BackupVersion_Viewer_Help" xml:space="preserve">
-    <value>Valige fail või kaust, mida soovite puus taastada, ja klõpsake "Taasta".</value>
+    <value>Näete faile sellistena, nagu need olid valitud versioonis. Valige fail, kaust või salvestuselement ja klõpsake nuppu Taasta.</value>
   </data>
   <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
     <value>Ühendus serveriga katkes ootamatult (Kas kliendi ja serveri paroolid on samad?)</value>
@@ -285,6 +285,9 @@ Kasutusjuht: kopeerite andmeid kaugserverisse. Probleem on selles, et ISP vähen
   </data>
   <data name="Field_Version" xml:space="preserve">
     <value>Versioon:</value>
+  </data>
+  <data name="Field_Version_Help" xml:space="preserve">
+    <value>See loend näitab saadaolevaid varukoopiaversioone. Versiooni valimisel näitavad allpool olevad failid selle versiooni olekut.</value>
   </data>
   <data name="File_Deleting" xml:space="preserve">
     <value>Kustutamine "{0}"</value>
@@ -978,6 +981,9 @@ Vaadake üksikasjalikku kirjeldust järgmisel lingil.</value>
   <data name="Task_Restore" xml:space="preserve">
     <value>Taasta</value>
   </data>
+  <data name="Task_Restore_Selected" xml:space="preserve">
+    <value>Taasta {0}...</value>
+  </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>Määrake salvestuskoht, mis sisaldab taastatavat varukoopiat. Kasutage samu sätteid, mis olid varukoopia loomise ajal.</value>
   </data>
@@ -1168,10 +1174,16 @@ Vaadake üksikasjalikku kirjeldust järgmisel lingil.</value>
     <value>Laadi kaust serverisse</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
-    <value>Saate laadida kausta sisu üles, kirjutades olemasolevad failid üle.</value>
+    <value>Saate kausta sisu serverisse üles laadida. Vaikimisi kirjutatakse olemasolevad sihtfailid üle.</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles" xml:space="preserve">
+    <value>Ära kirjuta olemasolevaid faile üle</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles_Help" xml:space="preserve">
+    <value>Kui see on lubatud, jäetakse sihtkohas juba olemasolevad failid vahele, selle asemel et need üle kirjutada.</value>
   </data>
   <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
-    <value>Määrake sihtkoha salvestusruum, kuhu kausta sisu üles laaditakse. Sihtkohas olemasolevad failid kirjutatakse üle.</value>
+    <value>Määrake sihtsalvesti, kuhu kausta sisu üles laaditakse.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>URL:</value>

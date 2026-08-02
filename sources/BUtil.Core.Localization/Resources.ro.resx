@@ -1,4 +1,4 @@
-<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -114,13 +114,13 @@ Modificările versiunii șterse vor deveni parte din versiunea „{1}".</value>
     <value>SELECTARE VERSIUNE</value>
   </data>
   <data name="BackupVersion_Storage_TitleWithSize" xml:space="preserve">
-    <value>(toate versiunile ocupă pe stocare {0})</value>
+    <value>Spațiu de stocare total ocupat: {0}.</value>
   </data>
   <data name="BackupVersion_Versions_Title" xml:space="preserve">
     <value>VERSIUNI</value>
   </data>
   <data name="BackupVersion_Viewer_Help" xml:space="preserve">
-    <value>Selectați fișierul sau folderul pe care doriți să îl restaurați din arbore și faceți clic pe „Restaurare".</value>
+    <value>Vedeți fișierele așa cum erau în versiunea selectată. Alegeți un fișier, un folder sau un element de stocare, apoi faceți clic pe Restaurare.</value>
   </data>
   <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
     <value>Conexiunea la server a fost terminată neașteptat (Parolele de pe Client și Server sunt identice?)</value>
@@ -285,6 +285,9 @@ Scenariu de utilizare: Copiați date pe un server la distanță. Există o probl
   </data>
   <data name="Field_Version" xml:space="preserve">
     <value>Versiune:</value>
+  </data>
+  <data name="Field_Version_Help" xml:space="preserve">
+    <value>Această listă afișează versiunile de backup disponibile. Când selectați o versiune, fișierele de mai jos arată starea acelei versiuni.</value>
   </data>
   <data name="File_Deleting" xml:space="preserve">
     <value>Se șterge „{0}"</value>
@@ -978,6 +981,9 @@ Consultați descrierea detaliată în următorul link.</value>
   <data name="Task_Restore" xml:space="preserve">
     <value>Restaurare</value>
   </data>
+  <data name="Task_Restore_Selected" xml:space="preserve">
+    <value>Restaurare {0}...</value>
+  </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>Specificați spațiul de stocare care conține copia de rezervă pe care doriți să o restaurați. Utilizați aceleași setări ca la momentul creării copiei de rezervă.</value>
   </data>
@@ -1168,10 +1174,16 @@ Consultați descrierea detaliată în următorul link.</value>
     <value>Încărcare folder pe server</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
-    <value>Puteți încărca conținutul folderului suprascriind fișierele deja existente.</value>
+    <value>Puteți încărca conținutul unui folder pe server. Implicit, fișierele de destinație existente sunt suprascrise.</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles" xml:space="preserve">
+    <value>Nu suprascrieți fișierele existente</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles_Help" xml:space="preserve">
+    <value>Când este activată, fișierele care există deja la destinație sunt omise în loc să fie suprascrise.</value>
   </data>
   <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
-    <value>Specificați spațiul de stocare de destinație în care va fi încărcat conținutul folderului. Fișierele existente la destinație vor fi suprascrise.</value>
+    <value>Specificați stocarea de destinație unde va fi încărcat conținutul folderului.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>Url:</value>

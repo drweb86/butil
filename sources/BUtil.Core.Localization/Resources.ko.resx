@@ -1,4 +1,4 @@
-<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -114,13 +114,13 @@
     <value>버전 선택</value>
   </data>
   <data name="BackupVersion_Storage_TitleWithSize" xml:space="preserve">
-    <value>(모든 버전이 저장소에서 {0}을(를) 차지합니다)</value>
+    <value>사용된 총 저장 공간: {0}.</value>
   </data>
   <data name="BackupVersion_Versions_Title" xml:space="preserve">
     <value>버전</value>
   </data>
   <data name="BackupVersion_Viewer_Help" xml:space="preserve">
-    <value>트리에서 복원할 파일이나 폴더를 선택하고 "복원"을 클릭하세요.</value>
+    <value>선택한 버전에 있던 그대로의 파일이 표시됩니다. 파일, 폴더 또는 저장소 항목을 선택한 다음 복원을 클릭하세요.</value>
   </data>
   <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
     <value>서버 연결이 예기치 않게 종료되었습니다 (클라이언트와 서버의 암호가 동일합니까?)</value>
@@ -285,6 +285,9 @@
   </data>
   <data name="Field_Version" xml:space="preserve">
     <value>버전:</value>
+  </data>
+  <data name="Field_Version_Help" xml:space="preserve">
+    <value>이 목록에는 사용 가능한 백업 버전이 표시됩니다. 버전을 선택하면 아래 파일에 해당 버전의 상태가 표시됩니다.</value>
   </data>
   <data name="File_Deleting" xml:space="preserve">
     <value>"{0}" 삭제 중</value>
@@ -979,6 +982,9 @@ bin.
   <data name="Task_Restore" xml:space="preserve">
     <value>복원</value>
   </data>
+  <data name="Task_Restore_Selected" xml:space="preserve">
+    <value>{0} 복원...</value>
+  </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>복원하려는 백업이 포함된 저장소를 지정하세요. 백업을 생성할 때와 동일한 설정을 사용하세요.</value>
   </data>
@@ -1169,10 +1175,16 @@ bin.
     <value>서버에 폴더 업로드</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
-    <value>기존 파일을 덮어쓰면서 폴더 내용을 업로드할 수 있습니다.</value>
+    <value>폴더 내용을 서버에 업로드할 수 있습니다. 기본적으로 기존 대상 파일은 덮어씁니다.</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles" xml:space="preserve">
+    <value>기존 파일을 덮어쓰지 않음</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles_Help" xml:space="preserve">
+    <value>사용하도록 설정하면 대상에 이미 있는 파일은 덮어쓰지 않고 건너뜁니다.</value>
   </data>
   <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
-    <value>폴더 내용이 업로드될 대상 저장소를 지정하세요. 대상에 있는 기존 파일은 덮어쓰기됩니다.</value>
+    <value>폴더 내용을 업로드할 대상 저장소를 지정하세요.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>Url:</value>

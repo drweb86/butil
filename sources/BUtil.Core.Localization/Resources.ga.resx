@@ -1,4 +1,4 @@
-<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -114,13 +114,13 @@ Déanfar athruithe ar leagan scriosta mar chuid den leagan "{1}".</value>
     <value>ROGHNAIGH LÉACHT</value>
   </data>
   <data name="BackupVersion_Storage_TitleWithSize" xml:space="preserve">
-    <value>(tá gach leagan á áitiú ar stóras {0})</value>
+    <value>Stóras iomlán áitithe: {0}.</value>
   </data>
   <data name="BackupVersion_Versions_Title" xml:space="preserve">
     <value>LÉANNA</value>
   </data>
   <data name="BackupVersion_Viewer_Help" xml:space="preserve">
-    <value>Roghnaigh comhad nó fillteán mian leat a chur ar ais sa chrann agus cliceáil "Athchóirigh".</value>
+    <value>Feiceann tú comhaid mar a bhí siad sa leagan roghnaithe. Roghnaigh comhad, fillteán nó mír stórais, ansin cliceáil Athchóirigh.</value>
   </data>
   <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
     <value>Cuireadh deireadh leis an gceangal leis an bhfreastalaí gan choinne (An mar a chéile na pasfhocail ar an gCliant agus ar an bhFreastalaí?)</value>
@@ -285,6 +285,9 @@ Cás úsáide: Déanann tú sonraí a chóipeáil chuig an gcianfhreastalaí. T�
   </data>
   <data name="Field_Version" xml:space="preserve">
     <value>Leagan:</value>
+  </data>
+  <data name="Field_Version_Help" xml:space="preserve">
+    <value>Taispeánann an liosta seo na leaganacha cúltaca atá ar fáil. Nuair a roghnaíonn tú leagan, taispeánann na comhaid thíos staid an leagain sin.</value>
   </data>
   <data name="File_Deleting" xml:space="preserve">
     <value>"{0}" á scriosadh</value>
@@ -978,6 +981,9 @@ See detailed description in the following link.</value>
   <data name="Task_Restore" xml:space="preserve">
     <value>Athchóirigh</value>
   </data>
+  <data name="Task_Restore_Selected" xml:space="preserve">
+    <value>Athchóirigh {0}...</value>
+  </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>Sonraigh an stóras ina bhfuil an cúltaca ar mhaith leat a athchóiriú. Úsáid na socruithe céanna a bhí ann nuair a cruthaíodh an cúltaca.</value>
   </data>
@@ -1168,10 +1174,16 @@ See detailed description in the following link.</value>
     <value>Íoslódáil an fillteán leis an bhfreastalaí</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
-    <value>Is féidir leat ábhar fillteáin a uaslódáil agus comhaid atá ann cheana a fhorscríobh.</value>
+    <value>Is féidir leat ábhar fillteáin a uaslódáil chuig an bhfreastalaí. De réir réamhshocraithe forscríobhtar comhaid cheannascríbe atá ann cheana.</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles" xml:space="preserve">
+    <value>Ná forscríobh comhaid atá ann cheana</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles_Help" xml:space="preserve">
+    <value>Nuair atá sé cumasaithe, scipeáiltear comhaid atá ann cheana ag an gceannascríbh in ionad iad a fhorscríobh.</value>
   </data>
   <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
-    <value>Sonraigh an stóras ceann scríbe ina n-uaslódálfar ábhar an fhillteáin. Forscríobhfar comhaid atá ann cheana sa cheann scríbe.</value>
+    <value>Sonraigh an stóras ceannascríbe ina n-uaslódálfar ábhar an fhillteáin.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>URL:</value>

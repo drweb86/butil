@@ -1,4 +1,4 @@
-<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -114,13 +114,13 @@ O'chirilgan versiya o'zgarishlari "{1}" versiyasining qismi bo'ladi.</value>
     <value>VERSIYANI TANLANG</value>
   </data>
   <data name="BackupVersion_Storage_TitleWithSize" xml:space="preserve">
-    <value>(barcha versiyalar xotirada {0} egallaydi)</value>
+    <value>Jami band qilingan xotira: {0}.</value>
   </data>
   <data name="BackupVersion_Versions_Title" xml:space="preserve">
     <value>VERSIYALAR</value>
   </data>
   <data name="BackupVersion_Viewer_Help" xml:space="preserve">
-    <value>Daraxtdan tiklash kerak bo'lgan fayl yoki papkani tanlang va "Tiklash" tugmasini bosing.</value>
+    <value>Fayllarni tanlangan versiyadagi holatida ko‘rasiz. Fayl, papka yoki xotira elementini tanlang, so‘ng Tiklash tugmasini bosing.</value>
   </data>
   <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
     <value>Serverga ulanish kutilmaganda uzildi (Client va Serverning parollari bir xilmi?)</value>
@@ -285,6 +285,9 @@ Foydalanish stsenariysi: Siz masofaviy serverga ma'lumotlarni nusxalaysiz. Muamm
   </data>
   <data name="Field_Version" xml:space="preserve">
     <value>Versiya:</value>
+  </data>
+  <data name="Field_Version_Help" xml:space="preserve">
+    <value>Bu ro‘yxat mavjud zaxira versiyalarini ko‘rsatadi. Versiyani tanlaganingizda, pastdagi fayllar shu versiya holatini ko‘rsatadi.</value>
   </data>
   <data name="File_Deleting" xml:space="preserve">
     <value>"{0}" o'chirilmoqda</value>
@@ -979,6 +982,9 @@ Batafsil tavsifni quyidagi havoladan ko'ring.</value>
   <data name="Task_Restore" xml:space="preserve">
     <value>Tiklash</value>
   </data>
+  <data name="Task_Restore_Selected" xml:space="preserve">
+    <value>{0} ni tiklash...</value>
+  </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>Tiklamoqchi bo'lgan zaxira nusxangiz joylashgan saqlash joyini belgilang. Zaxira nusxa yaratilganda ishlatilgan sozlamalarning aynan o'zidan foydalaning.</value>
   </data>
@@ -1169,10 +1175,16 @@ Batafsil tavsifni quyidagi havoladan ko'ring.</value>
     <value>Papkani serverga yuklash</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
-    <value>Siz papka tarkibini mavjud fayllarni qayta yozish orqali yuklashingiz mumkin.</value>
+    <value>Papka tarkibini serverga yuklashingiz mumkin. Sukut bo‘yicha mavjud manzil fayllari qayta yoziladi.</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles" xml:space="preserve">
+    <value>Mavjud fayllarni qayta yozmang</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles_Help" xml:space="preserve">
+    <value>Yoqilganda, manzilda allaqachon mavjud fayllar qayta yozilmasdan o‘tkazib yuboriladi.</value>
   </data>
   <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
-    <value>Papka tarkibi yuklanadigan manzil saqlash joyini belgilang. Manzilda mavjud fayllar ustidan yoziladi.</value>
+    <value>Papka tarkibi yuklanadigan manzil xotirasini belgilang.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>Url:</value>

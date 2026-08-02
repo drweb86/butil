@@ -1,4 +1,4 @@
-<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -114,13 +114,13 @@ Geläschte Versiounsännerunge ginn Deel vun der Versioun "{1}".</value>
     <value>SELECT VERSIOUN</value>
   </data>
   <data name="BackupVersion_Storage_TitleWithSize" xml:space="preserve">
-    <value>(all Versioune besetzen de Späicher {0})</value>
+    <value>Total belegte Späicherplaz: {0}.</value>
   </data>
   <data name="BackupVersion_Versions_Title" xml:space="preserve">
     <value>VERSIOUNEN</value>
   </data>
   <data name="BackupVersion_Viewer_Help" xml:space="preserve">
-    <value>Wielt Datei oder Dossier Dir wëllt am Bam restauréieren a klickt op "Restauréieren".</value>
+    <value>Dir gesitt Dateien esou wéi se an der ausgewielter Versioun waren. Wielt eng Datei, e Dossier oder e Späicherelement, a klickt dann op Restauréieren.</value>
   </data>
   <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
     <value>D'Verbindung mam Server gouf onerwaart ofgeschloss (Sinn Passwierder op Client a Server déiselwecht?)</value>
@@ -285,6 +285,9 @@ Benotzungsszenario: Dir kopéiert Daten op Remote Server. Et gëtt e Problem: IS
   </data>
   <data name="Field_Version" xml:space="preserve">
     <value>Versioun:</value>
+  </data>
+  <data name="Field_Version_Help" xml:space="preserve">
+    <value>Dës Lëscht weist verfügbar Sécherungskopie-Versiounen. Wann Dir eng Versioun auswielt, weisen d'Dateien ënnendrënner den Zoustand vun där Versioun.</value>
   </data>
   <data name="File_Deleting" xml:space="preserve">
     <value>"{0}" läschen</value>
@@ -978,6 +981,9 @@ See detailed description in the following link.</value>
   <data name="Task_Restore" xml:space="preserve">
     <value>Restauréieren</value>
   </data>
+  <data name="Task_Restore_Selected" xml:space="preserve">
+    <value>{0} restauréieren...</value>
+  </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>Gitt d'Späicherplaz un, déi de Backup enthält, deen Dir wëllt restauréieren. Benotzt déiselwecht Astellungen wéi wéi de Backup erstallt gouf.</value>
   </data>
@@ -1168,10 +1174,16 @@ See detailed description in the following link.</value>
     <value>Eroplueden Dossier ze Server</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
-    <value>Dir kënnt Dossier Inhalt eropluede mat scho existéierende Dateien iwwerschreiwe.</value>
+    <value>Dir kënnt den Inhalt vun engem Dossier op de Server eroplueden. Standardméisseg ginn existéierend Zieldateien iwwerschriwwen.</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles" xml:space="preserve">
+    <value>Existéierend Dateien net iwwerschreiwen</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles_Help" xml:space="preserve">
+    <value>Wann aktivéiert, ginn Dateien déi schonn um Zil existéieren iwwersprongen amplaz iwwerschriwwen ze ginn.</value>
   </data>
   <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
-    <value>Gitt d'Zilspäicherplaz un, wouhin den Inhalt vum Dossier eropgeluede gëtt. Bestehend Fichieren um Zil ginn iwwerschriwwen.</value>
+    <value>Gitt den Zielspäicher un, wou den Dossierinhalt eropgeluede gëtt.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>URL:</value>

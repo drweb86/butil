@@ -1,4 +1,4 @@
-<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -114,13 +114,13 @@ eller advarsler.</value>
     <value>VÆLG VERSION</value>
   </data>
   <data name="BackupVersion_Storage_TitleWithSize" xml:space="preserve">
-    <value>(alle versioner optager {0} på lageret)</value>
+    <value>Samlet optaget lagerplads: {0}.</value>
   </data>
   <data name="BackupVersion_Versions_Title" xml:space="preserve">
     <value>VERSIONER</value>
   </data>
   <data name="BackupVersion_Viewer_Help" xml:space="preserve">
-    <value>Vælg den fil eller mappe, du vil gendanne, i træet og klik på "Gendan".</value>
+    <value>Du ser filer, som de var i den valgte version. Vælg en fil, mappe eller lagerenhed, og klik derefter på Gendan.</value>
   </data>
   <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
     <value>Forbindelsen til serveren blev uventet afbrudt (Er adgangskoderne på klient og server ens?)</value>
@@ -285,6 +285,9 @@ Brugsscenarie: Du kopierer data til en fjernserver. Der er et problem: Internetu
   </data>
   <data name="Field_Version" xml:space="preserve">
     <value>Version:</value>
+  </data>
+  <data name="Field_Version_Help" xml:space="preserve">
+    <value>Denne liste viser tilgængelige sikkerhedskopiversioner. Når du vælger en version, viser filerne nedenfor tilstanden for den version.</value>
   </data>
   <data name="File_Deleting" xml:space="preserve">
     <value>Sletter "{0}"</value>
@@ -978,6 +981,9 @@ Se detaljeret beskrivelse i følgende link.</value>
   <data name="Task_Restore" xml:space="preserve">
     <value>Gendan</value>
   </data>
+  <data name="Task_Restore_Selected" xml:space="preserve">
+    <value>Gendan {0}...</value>
+  </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>Angiv den lagerplacering, der indeholder den sikkerhedskopi, du vil gendanne. Brug de samme indstillinger som da sikkerhedskopien blev oprettet.</value>
   </data>
@@ -1168,10 +1174,16 @@ Se detaljeret beskrivelse i følgende link.</value>
     <value>Upload mappe til server</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
-    <value>Du kan uploade mappeindhold og overskrive allerede eksisterende filer.</value>
+    <value>Du kan uploade mappeindhold til serveren. Som standard overskrives eksisterende destinationsfiler.</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles" xml:space="preserve">
+    <value>Overskriv ikke eksisterende filer</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles_Help" xml:space="preserve">
+    <value>Når det er aktiveret, springes filer, der allerede findes på destinationen, over i stedet for at blive overskrevet.</value>
   </data>
   <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
-    <value>Angiv den destinationslagerplacering, hvor mappens indhold uploades til. Eksisterende filer på destinationen bliver overskrevet.</value>
+    <value>Angiv destinationslageret, hvor mappeindholdet skal uploades.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>Url:</value>

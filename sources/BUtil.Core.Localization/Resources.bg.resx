@@ -1,4 +1,4 @@
-<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -114,13 +114,13 @@
     <value>ИЗБЕРЕТЕ ВЕРСИЯ</value>
   </data>
   <data name="BackupVersion_Storage_TitleWithSize" xml:space="preserve">
-    <value>(всички версии заемат в хранилището {0})</value>
+    <value>Общо заета памет за съхранение: {0}.</value>
   </data>
   <data name="BackupVersion_Versions_Title" xml:space="preserve">
     <value>ВЕРСИИ</value>
   </data>
   <data name="BackupVersion_Viewer_Help" xml:space="preserve">
-    <value>Изберете файл или папка, които искате да възстановите в дървото, и натиснете „Възстановяване".</value>
+    <value>Виждате файловете така, както са били в избраната версия. Изберете файл, папка или елемент от хранилището, след което щракнете върху Възстановяване.</value>
   </data>
   <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
     <value>Връзката със сървъра беше неочаквано прекъсната (Еднакви ли са паролите на клиента и сървъра?)</value>
@@ -285,6 +285,9 @@
   </data>
   <data name="Field_Version" xml:space="preserve">
     <value>Версия:</value>
+  </data>
+  <data name="Field_Version_Help" xml:space="preserve">
+    <value>Този списък показва наличните версии на резервни копия. Когато изберете версия, файловете по-долу показват състоянието на тази версия.</value>
   </data>
   <data name="File_Deleting" xml:space="preserve">
     <value>Изтриване на „{0}"</value>
@@ -978,6 +981,9 @@ bin.
   <data name="Task_Restore" xml:space="preserve">
     <value>Възстановяване</value>
   </data>
+  <data name="Task_Restore_Selected" xml:space="preserve">
+    <value>Възстановяване на {0}...</value>
+  </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>Посочете хранилището, съдържащо резервното копие, което искате да възстановите. Използвайте същите настройки, както при създаването на резервното копие.</value>
   </data>
@@ -1168,10 +1174,16 @@ bin.
     <value>Качване на папка на сървър</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
-    <value>Можете да качите съдържанието на папка с презаписване на вече съществуващи файлове.</value>
+    <value>Можете да качите съдържанието на папка на сървъра. По подразбиране съществуващите файлове в местоназначението се презаписват.</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles" xml:space="preserve">
+    <value>Да не се презаписват съществуващите файлове</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles_Help" xml:space="preserve">
+    <value>Когато е активирано, файловете, които вече съществуват в местоназначението, се пропускат вместо да се презаписват.</value>
   </data>
   <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
-    <value>Посочете целевото хранилище, в което ще се качва съдържанието на папката. Съществуващите файлове в местоназначението ще бъдат презаписани.</value>
+    <value>Посочете хранилището за местоназначение, където ще бъде качено съдържанието на папката.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>URL:</value>

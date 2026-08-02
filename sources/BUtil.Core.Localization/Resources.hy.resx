@@ -1,4 +1,4 @@
-<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -114,13 +114,13 @@
     <value>ԸՆՏՐԵԼ ՏԱՐԲԵՐԱԿ</value>
   </data>
   <data name="BackupVersion_Storage_TitleWithSize" xml:space="preserve">
-    <value>(բոլոր տարբերակները զբաղեցնում են {0} պահեստը)</value>
+    <value>Ընդհանուր զբաղեցրած պահեստը՝ {0}։</value>
   </data>
   <data name="BackupVersion_Versions_Title" xml:space="preserve">
     <value>ՏԱՐԲԵՐԱԿՆԵՐ</value>
   </data>
   <data name="BackupVersion_Viewer_Help" xml:space="preserve">
-    <value>Ընտրեք ֆայլը կամ թղթապանակը, որը ցանկանում եք վերականգնել ծառի մեջ և սեղմեք «Վերականգնել»:</value>
+    <value>Դուք տեսնում եք ֆայլերը այնպես, ինչպես դրանք եղել են ընտրված տարբերակում։ Ընտրեք ֆայլ, թղթապանակ կամ պահեստի տարր, ապա սեղմեք Վերականգնել։</value>
   </data>
   <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
     <value>Սերվերի հետ կապը անսպասելիորեն դադարեցվել է (Արդյո՞ք հաճախորդի և սերվերի գաղտնաբառերը նույնն են:)</value>
@@ -285,6 +285,9 @@
   </data>
   <data name="Field_Version" xml:space="preserve">
     <value>Տարբերակ:</value>
+  </data>
+  <data name="Field_Version_Help" xml:space="preserve">
+    <value>Այս ցանկը ցույց է տալիս հասանելի պահուստային տարբերակները։ Երբ ընտրում եք տարբերակ, ներքևի ֆայլերը ցույց են տալիս այդ տարբերակի վիճակը։</value>
   </data>
   <data name="File_Deleting" xml:space="preserve">
     <value>«{0}»-ի ջնջում</value>
@@ -978,6 +981,9 @@ bin.
   <data name="Task_Restore" xml:space="preserve">
     <value>Վերականգնել</value>
   </data>
+  <data name="Task_Restore_Selected" xml:space="preserve">
+    <value>Վերականգնել {0}...</value>
+  </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>Նշեք պահեստը, որը պարունակում է վերականգնել ցանկացած պահուստը։ Օգտագործեք նույն կարգավորումները, ինչ պահուստը ստեղծելիս էին։</value>
   </data>
@@ -1168,10 +1174,16 @@ bin.
     <value>Վերբեռնեք թղթապանակը սերվեր</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
-    <value>Դուք կարող եք վերբեռնել թղթապանակի բովանդակությունը՝ վերագրելով արդեն գոյություն ունեցող ֆայլերը:</value>
+    <value>Կարող եք վերբեռնել թղթապանակի պարունակությունը սերվեր։ Լռելյայնորեն գոյություն ունեցող նպատակակետի ֆայլերը վերագրվում են։</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles" xml:space="preserve">
+    <value>Չվերագրել գոյություն ունեցող ֆայլերը</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles_Help" xml:space="preserve">
+    <value>Միացված լինելու դեպքում նպատակակետում արդեն գոյություն ունեցող ֆայլերը բաց են թողնվում՝ վերագրման փոխարեն։</value>
   </data>
   <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
-    <value>Նշեք նպատակակետի պահեստը, որտեղ կվերբեռնվի պանակի պարունակությունը։ Նպատակակետում առկա ֆայլերը կվերագրվեն։</value>
+    <value>Նշեք նպատակակետի պահեստը, որտեղ կվերբեռնվի թղթապանակի պարունակությունը։</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>URL:</value>

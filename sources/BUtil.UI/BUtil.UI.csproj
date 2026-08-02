@@ -24,9 +24,6 @@
     <None Remove="Assets\CrystalClear_EveraldoCoelho_Schedule48x48.png" />
     <None Remove="Assets\CrystalClear_EveraldoCoelho_Storages48x48.png" />
     <None Remove="Assets\CrystalClear_FileNew.png" />
-    <None Remove="Assets\VC-Created.png" />
-    <None Remove="Assets\VC-Deleted.png" />
-    <None Remove="Assets\VC-Updated.png" />
     <None Remove="Assets\www.wefunction.com_FunctionFreeIconSet_cross_48.png" />
     <None Remove="Assets\www.wefunction.com_FunctionFreeIconSet_Folder_48.png" />
   </ItemGroup>
@@ -58,12 +55,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <AvaloniaXaml Update="Controls\VersionsListView.axaml">
-      <SubType>Designer</SubType>
-    </AvaloniaXaml>
-  </ItemGroup>
-
-  <ItemGroup>
     <Compile Update="Controls\HackerDecorationCanvas.axaml.cs">
       <DependentUpon>HackerDecorationCanvas.axaml</DependentUpon>
     </Compile>
@@ -76,15 +67,14 @@
     <Compile Update="Controls\TaskCard.axaml.cs">
       <DependentUpon>TaskCard.axaml</DependentUpon>
     </Compile>
-    <Compile Update="Controls\VersionsListView.axaml.cs">
-      <SubType>Code</SubType>
-      <DependentUpon>VersionsListView.axaml</DependentUpon>
-    </Compile>
     <Compile Update="Controls\UpdateCheckExpanderView.axaml.cs">
       <DependentUpon>UpdateCheckExpanderView.axaml</DependentUpon>
     </Compile>
     <Compile Update="Controls\RestoreView.axaml.cs">
       <DependentUpon>RestoreView.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Controls\RestoreVersionsView.axaml.cs">
+      <DependentUpon>RestoreVersionsView.axaml</DependentUpon>
     </Compile>
     <Compile Update="Controls\TasksView.axaml.cs">
       <DependentUpon>TasksView.axaml</DependentUpon>

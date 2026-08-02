@@ -1,4 +1,4 @@
-<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -111,13 +111,13 @@
     <value>आवृत्ती निवडा</value>
   </data>
   <data name="BackupVersion_Storage_TitleWithSize" xml:space="preserve">
-    <value>(सर्व आवृत्त्या संग्रहात {0} जागा घेतात)</value>
+    <value>एकूण व्यापलेले संग्रहण: {0}.</value>
   </data>
   <data name="BackupVersion_Versions_Title" xml:space="preserve">
     <value>आवृत्त्या</value>
   </data>
   <data name="BackupVersion_Viewer_Help" xml:space="preserve">
-    <value>तुम्हाला पुनर्स्थापन करायची असलेली फाइल किंवा फोल्डर ट्रीमध्ये निवडा आणि "पुनर्स्थापन करा" वर क्लिक करा.</value>
+    <value>तुम्ही निवडलेल्या आवृत्तीतील फाइल्स पाहत आहात. फाइल, फोल्डर किंवा संग्रहण आयटम निवडा, नंतर पुनर्स्थापित करा वर क्लिक करा.</value>
   </data>
   <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
     <value>सर्व्हरशी कनेक्शन अनपेक्षितपणे समाप्त झाले (क्लायंट आणि सर्व्हरवरील पासवर्ड समान आहेत का?)</value>
@@ -282,6 +282,9 @@
   </data>
   <data name="Field_Version" xml:space="preserve">
     <value>आवृत्ती:</value>
+  </data>
+  <data name="Field_Version_Help" xml:space="preserve">
+    <value>ही यादी उपलब्ध बॅकअप आवृत्त्या दर्शवते. आवृत्ती निवडल्यावर खालील फाइल्स त्या आवृत्तीची स्थिती दर्शवतात.</value>
   </data>
   <data name="File_Deleting" xml:space="preserve">
     <value>हटवणे "{0}"</value>
@@ -975,6 +978,9 @@
   <data name="Task_Restore" xml:space="preserve">
     <value>पुनर्स्थापित करा</value>
   </data>
+  <data name="Task_Restore_Selected" xml:space="preserve">
+    <value>{0} पुनर्स्थापित करा...</value>
+  </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>तुम्हाला पुनर्संचयित करायचा असलेला बॅकअप असलेले स्टोरेज निर्दिष्ट करा. बॅकअप तयार करताना वापरलेल्या समान सेटिंग्ज वापरा.</value>
   </data>
@@ -1165,10 +1171,16 @@
     <value>फोल्डर सर्व्हरवर अपलोड करा</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
-    <value>आधीपासून अस्तित्वात असलेल्या फाइल्सवर लिहून फोल्डरमधील मजकूर अपलोड करू शकता.</value>
+    <value>तुम्ही फोल्डरची सामग्री सर्व्हरवर अपलोड करू शकता. डीफॉल्टनुसार गंतव्यस्थानी असलेल्या विद्यमान फाइल्स अधिलिखित केल्या जातात.</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles" xml:space="preserve">
+    <value>विद्यमान फाइल्स अधिलिखित करू नका</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles_Help" xml:space="preserve">
+    <value>सक्षम केल्यावर, गंतव्यस्थानी आधीच असलेल्या फाइल्स अधिलिखित करण्याऐवजी वगळल्या जातात.</value>
   </data>
   <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
-    <value>फोल्डरची सामग्री अपलोड केली जाईल असे गंतव्य स्टोरेज निर्दिष्ट करा. गंतव्यस्थानातील विद्यमान फाइल्स अधिलिखित केल्या जातील.</value>
+    <value>ज्या गंतव्य संग्रहणात फोल्डरची सामग्री अपलोड केली जाईल ते निर्दिष्ट करा.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>यूआरएल:</value>

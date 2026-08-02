@@ -1,4 +1,4 @@
-<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -113,13 +113,13 @@
     <value>选择版本</value>
   </data>
   <data name="BackupVersion_Storage_TitleWithSize" xml:space="preserve">
-    <value>（所有版本占用存储空间 {0}）</value>
+    <value>占用的存储空间总计：{0}。</value>
   </data>
   <data name="BackupVersion_Versions_Title" xml:space="preserve">
     <value>版本</value>
   </data>
   <data name="BackupVersion_Viewer_Help" xml:space="preserve">
-    <value>在树中选择您要还原的文件或文件夹，然后单击“还原”。</value>
+    <value>您看到的是所选版本中的文件状态。选择文件、文件夹或存储项，然后单击“还原”。</value>
   </data>
   <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
     <value>服务器连接意外终止（客户端和服务器密码是否相同？）</value>
@@ -284,6 +284,9 @@
   </data>
   <data name="Field_Version" xml:space="preserve">
     <value>版本:</value>
+  </data>
+  <data name="Field_Version_Help" xml:space="preserve">
+    <value>此列表显示可用的备份版本。选择某个版本后，下方文件将显示该版本的状态。</value>
   </data>
   <data name="File_Deleting" xml:space="preserve">
     <value>正在删除“{0}”</value>
@@ -977,6 +980,9 @@ bin。
   <data name="Task_Restore" xml:space="preserve">
     <value>恢复</value>
   </data>
+  <data name="Task_Restore_Selected" xml:space="preserve">
+    <value>还原 {0}...</value>
+  </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>指定包含要还原的备份的存储位置。请使用创建备份时所用的相同设置。</value>
   </data>
@@ -1167,10 +1173,16 @@ bin。
     <value>上传文件夹到服务器</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
-    <value>您可以上传文件夹内容，并覆盖已经存在的文件。</value>
+    <value>您可以将文件夹内容上传到服务器。默认情况下会覆盖目标位置的现有文件。</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles" xml:space="preserve">
+    <value>不覆盖现有文件</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles_Help" xml:space="preserve">
+    <value>启用后，目标位置已存在的文件将被跳过，而不是被覆盖。</value>
   </data>
   <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
-    <value>指定要将文件夹内容上传到的目标存储位置。目标位置中已存在的文件将被覆盖。</value>
+    <value>指定将要上传文件夹内容的目标存储。</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>网址:</value>

@@ -6,11 +6,11 @@ namespace BUtil.UI.Controls;
 public class BlameViewItem(VersionState versionState, ChangeState state)
 {
     public string Title { get; } = versionState.BackupDateUtc.ToString();
-    public string ImageSource { get; } = state switch
+    public string Icon { get; } = state switch
     {
-        ChangeState.Created => "/Assets/VC-Created.png",
-        ChangeState.Deleted => "/Assets/VC-Deleted.png",
-        ChangeState.Updated => "/Assets/VC-Updated.png",
+        ChangeState.Created => "✨",
+        ChangeState.Updated => "✏️",
+        ChangeState.Deleted => "🗑️",
         _ => throw new ArgumentOutOfRangeException(nameof(state)),
     };
 }

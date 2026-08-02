@@ -1,4 +1,4 @@
-<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -114,13 +114,13 @@ Les changements de version supprimés feront partie de la version "{1}".</value>
     <value>SÉLECTIONNER LA VERSION</value>
   </data>
   <data name="BackupVersion_Storage_TitleWithSize" xml:space="preserve">
-    <value>(toutes les versions occupent sur le stockage {0})</value>
+    <value>Espace de stockage total occupé : {0}.</value>
   </data>
   <data name="BackupVersion_Versions_Title" xml:space="preserve">
     <value>VERSIONS</value>
   </data>
   <data name="BackupVersion_Viewer_Help" xml:space="preserve">
-    <value>Sélectionnez le fichier ou le dossier que vous voulez restaurer dans l'arborescence et cliquez sur "Restaurer".</value>
+    <value>Vous voyez les fichiers tels qu’ils étaient dans la version sélectionnée. Choisissez un fichier, un dossier ou un élément de stockage, puis cliquez sur Restaurer.</value>
   </data>
   <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
     <value>Connexion interrompue (Les mots de passe client/serveur sont-ils identiques ?)</value>
@@ -286,6 +286,9 @@ Il y a un problème : le fournisseur d'accès réduit la vitesse d'upload après
   </data>
   <data name="Field_Version" xml:space="preserve">
     <value>Version :</value>
+  </data>
+  <data name="Field_Version_Help" xml:space="preserve">
+    <value>Cette liste affiche les versions de sauvegarde disponibles. Lorsque vous sélectionnez une version, les fichiers ci-dessous montrent l’état de cette version.</value>
   </data>
   <data name="File_Deleting" xml:space="preserve">
     <value>Suppression de "{0}"</value>
@@ -976,6 +979,9 @@ Consultez la description détaillée dans le lien suivant.</value>
   <data name="Task_Restore" xml:space="preserve">
     <value>Restaurer</value>
   </data>
+  <data name="Task_Restore_Selected" xml:space="preserve">
+    <value>Restaurer {0}...</value>
+  </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>Indiquez le stockage contenant la sauvegarde que vous souhaitez restaurer. Utilisez les mêmes paramètres que lors de la création de la sauvegarde.</value>
   </data>
@@ -1166,10 +1172,16 @@ Consultez la description détaillée dans le lien suivant.</value>
     <value>Téléverser le dossier vers le serveur</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
-    <value>Vous pouvez téléverser le contenu du dossier en écrasant les fichiers déjà existants.</value>
+    <value>Vous pouvez téléverser le contenu d’un dossier vers le serveur. Par défaut, les fichiers de destination existants sont écrasés.</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles" xml:space="preserve">
+    <value>Ne pas écraser les fichiers existants</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles_Help" xml:space="preserve">
+    <value>Lorsque cette option est activée, les fichiers déjà présents à la destination sont ignorés au lieu d’être écrasés.</value>
   </data>
   <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
-    <value>Indiquez le stockage de destination vers lequel le contenu du dossier sera téléchargé. Les fichiers existants à destination seront écrasés.</value>
+    <value>Indiquez le stockage de destination où le contenu du dossier sera téléversé.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>Url :</value>

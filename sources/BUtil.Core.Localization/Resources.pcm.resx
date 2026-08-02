@@ -1,4 +1,4 @@
-<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -111,13 +111,13 @@
     <value>SELECT VERSION</value>
   </data>
   <data name="BackupVersion_Storage_TitleWithSize" xml:space="preserve">
-    <value>(all versions dey occupy storage {0})</value>
+    <value>Total storage wey e dey take: {0}.</value>
   </data>
   <data name="BackupVersion_Versions_Title" xml:space="preserve">
     <value>VERSIONS</value>
   </data>
   <data name="BackupVersion_Viewer_Help" xml:space="preserve">
-    <value>Select file or folder wey you wan restore for tree and click "Restore".</value>
+    <value>You dey see files as dem be for di version wey you select. Choose file, folder, or storage item, den click Restore.</value>
   </data>
   <data name="BUtilServer_Error_ConnectionAborted" xml:space="preserve">
     <value>Connection to server don cut by imself (Client and Server password be d same?)</value>
@@ -282,6 +282,9 @@
   </data>
   <data name="Field_Version" xml:space="preserve">
     <value>Version:</value>
+  </data>
+  <data name="Field_Version_Help" xml:space="preserve">
+    <value>Dis list show backup versions wey dey available. When you select one version, di files for down go show how dat version be.</value>
   </data>
   <data name="File_Deleting" xml:space="preserve">
     <value>Deleting "{0}"</value>
@@ -975,6 +978,9 @@ Abeg do one of dese:
   <data name="Task_Restore" xml:space="preserve">
     <value>Restore</value>
   </data>
+  <data name="Task_Restore_Selected" xml:space="preserve">
+    <value>Restore {0}...</value>
+  </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>Choose the storage wey get the backup wey you wan restore. Use the same settings wey you use when you first create the backup.</value>
   </data>
@@ -1165,10 +1171,16 @@ Abeg do one of dese:
     <value>Upload folder go server</value>
   </data>
   <data name="UploadFolderTask_Help" xml:space="preserve">
-    <value>You fit upload wetin dey inside folder, e go overwrite files wey dey before.</value>
+    <value>You fit upload folder contents go di server. By default, files wey don dey for destination go overwrite.</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles" xml:space="preserve">
+    <value>No overwrite files wey don dey</value>
+  </data>
+  <data name="UploadFolderTask_SkipExistingFiles_Help" xml:space="preserve">
+    <value>If e dey on, files wey don dey for destination go skip instead of overwrite.</value>
   </data>
   <data name="UploadFolderTask_Storage_Help" xml:space="preserve">
-    <value>Choose where you wan upload the folder content go. If file dey there already, e go overwrite am.</value>
+    <value>Tell di destination storage where folder contents go upload.</value>
   </data>
   <data name="Url_Field" xml:space="preserve">
     <value>Url:</value>
