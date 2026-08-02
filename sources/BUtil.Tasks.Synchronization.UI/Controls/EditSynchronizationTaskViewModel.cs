@@ -55,6 +55,13 @@ public class EditSynchronizationTaskViewModel : BUtil.UI.Controls.ViewModelBase
                 FormErrorsText = null;
         };
         What = new BUtil.UI.Controls.SynchronizationWhatViewModel(model.LocalFolder, model.SynchronizationMode, isNew);
+        What.PropertyChanged += (_, e) =>
+        {
+            if (e.PropertyName is nameof(BUtil.UI.Controls.SynchronizationWhatViewModel.Folder)
+                or nameof(BUtil.UI.Controls.SynchronizationWhatViewModel.SynchronizationMode)
+                or nameof(BUtil.UI.Controls.SynchronizationWhatViewModel.Error))
+                FormErrorsText = null;
+        };
     }
 
     public bool IsNew { get; set; }
@@ -97,6 +104,8 @@ public class EditSynchronizationTaskViewModel : BUtil.UI.Controls.ViewModelBase
         var errors = new List<string>();
         if (!TaskIdentityViewModel.Validate(IsNew ? null : _taskName))
             errors.Add($"{Resources.Name_Title}: {TaskIdentityViewModel.NameError}");
+        if (!What.Validate())
+            errors.Add($"{Resources.LeftMenu_What}: {What.Error}");
         if (!EncryptionTaskViewModel.Validate())
             errors.Add($"{Resources.LeftMenu_Encryption}: {EncryptionTaskViewModel.PasswordError}");
         if (!StorageViewModel.Validate())

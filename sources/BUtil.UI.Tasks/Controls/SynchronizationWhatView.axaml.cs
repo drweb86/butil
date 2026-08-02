@@ -1,5 +1,4 @@
 using Avalonia.Controls;
-using Avalonia.Interactivity;
 using Avalonia.Platform.Storage;
 using System;
 using System.Threading.Tasks;
@@ -11,15 +10,17 @@ public partial class SynchronizationWhatView : UserControl
     public SynchronizationWhatView()
     {
         InitializeComponent();
-        this.DataContext = new SynchronizationWhatViewModel("the folder", BUtil.Tasks.Synchronization.SynchronizationTaskModelMode.TwoWay);
+        DataContextChanged += OnDataContextChanged;
+        DataContext = new SynchronizationWhatViewModel("the folder", BUtil.Tasks.Synchronization.SynchronizationTaskModelMode.TwoWay);
     }
 
-    public void BrowseCommand(object? sender, RoutedEventArgs args)
+    private void OnDataContextChanged(object? sender, EventArgs e)
     {
-        _ = BrowseCommandInternal();
+        if (DataContext is SynchronizationWhatViewModel viewModel)
+            viewModel.BrowseFolderAsync = BrowseFolderAsync;
     }
 
-    private async Task BrowseCommandInternal()
+    private async Task BrowseFolderAsync()
     {
         var root = TopLevel.GetTopLevel(this) ?? throw new NullReferenceException("Invalid Owner");
         var dataContext = DataContext as SynchronizationWhatViewModel ?? throw new NullReferenceException();
@@ -34,7 +35,7 @@ public partial class SynchronizationWhatView : UserControl
         }
         var folders = await root.StorageProvider.OpenFolderPickerAsync(new FolderPickerOpenOptions()
         {
-            Title = BUtil.Core.Localization.Resources.ImportMediaTask_Field_OutputFolder,
+            Title = BUtil.Core.Localization.Resources.Field_Folder,
             SuggestedStartLocation = startLocation,
             AllowMultiple = false
         });
