@@ -11,6 +11,7 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Avalonia" Version="12.1.1" />
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.2" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="../BUtil.Tasks.BUtilClient/BUtil.Tasks.BUtilClient.csproj" />
@@ -22,6 +23,9 @@
   <ItemGroup>
     <Compile Update="Controls\EditBUtilServerClientTaskView.axaml.cs">
       <DependentUpon>EditBUtilServerClientTaskView.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Controls\FolderSectionView.axaml.cs">
+      <DependentUpon>FolderSectionView.axaml</DependentUpon>
     </Compile>
   </ItemGroup>
 </Project>

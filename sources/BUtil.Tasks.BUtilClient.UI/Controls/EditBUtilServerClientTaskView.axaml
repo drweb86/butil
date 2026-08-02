@@ -32,7 +32,7 @@
 			<StackPanel Spacing="8" Classes="FormContent">
 				<decor:FormHeader Text="{Binding WindowTitle}" />
 				<tasks:TaskIdentityView DataContext="{Binding TaskIdentityViewModel}" />
-				<controls:FolderSectionView DataContext="{Binding FolderSectionViewModel}" />
+				<vm:FolderSectionView DataContext="{Binding FolderSectionViewModel}" />
 				<controls:StorageView DataContext="{Binding StorageViewModel}"/>
 				<controls:WhenTaskView DataContext="{Binding WhenTaskViewModel}" />
 				<decor:DialogButtons

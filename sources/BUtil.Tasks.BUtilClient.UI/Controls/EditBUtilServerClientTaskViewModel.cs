@@ -40,7 +40,13 @@ public class EditBUtilServerClientTaskViewModel : BUtil.UI.Controls.ViewModelBas
         var schedule = PlatformSpecificExperience.Instance.GetTaskSchedulerService();
         WhenTaskViewModel = new BUtil.UI.Controls.WhenTaskViewModel(isNew ? new ScheduleInfo() : schedule.GetSchedule(taskName) ?? new ScheduleInfo(), isNew);
 
-        FolderSectionViewModel = new BUtil.UI.Controls.FolderSectionViewModel(model.Folder, isNew);
+        FolderSectionViewModel = new FolderSectionViewModel(model.Folder, isNew);
+        FolderSectionViewModel.PropertyChanged += (_, e) =>
+        {
+            if (e.PropertyName is nameof(FolderSectionViewModel.Folder)
+                or nameof(FolderSectionViewModel.Error))
+                FormErrorsText = null;
+        };
         StorageViewModel = new BUtil.UI.Controls.StorageViewModel(model.To, Resources.LeftMenu_Where, isNew, Resources.UploadFolderTask_Storage_Help);
         StorageViewModel.PropertyChanged += (_, e) =>
         {
@@ -54,7 +60,7 @@ public class EditBUtilServerClientTaskViewModel : BUtil.UI.Controls.ViewModelBas
     public bool IsNew { get; set; }
     public TaskIdentityViewModel TaskIdentityViewModel { get; }
     public BUtil.UI.Controls.WhenTaskViewModel WhenTaskViewModel { get; }
-    public BUtil.UI.Controls.FolderSectionViewModel FolderSectionViewModel { get; }
+    public FolderSectionViewModel FolderSectionViewModel { get; }
     public BUtil.UI.Controls.StorageViewModel StorageViewModel { get; }
 
     #region FormErrorsText
@@ -90,6 +96,8 @@ public class EditBUtilServerClientTaskViewModel : BUtil.UI.Controls.ViewModelBas
         var errors = new List<string>();
         if (!TaskIdentityViewModel.Validate(IsNew ? null : _taskName))
             errors.Add($"{Resources.Name_Title}: {TaskIdentityViewModel.NameError}");
+        if (!FolderSectionViewModel.Validate())
+            errors.Add($"{Resources.LeftMenu_What}: {FolderSectionViewModel.Error}");
         if (!StorageViewModel.Validate())
             errors.Add($"{StorageViewModel.Title}: {StorageViewModel.Error}");
         if (errors.Count > 0)

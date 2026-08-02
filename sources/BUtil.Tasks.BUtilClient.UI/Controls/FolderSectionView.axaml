@@ -1,0 +1,24 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:cvm="clr-namespace:BUtil.Tasks.BUtilClient.UI.Controls;assembly=BUtil.Tasks.BUtilClient.UI"
+			 xmlns:decor="clr-namespace:BUtil.UI.Controls;assembly=BUtil.UI.Common"
+             mc:Ignorable="d"
+             x:Class="BUtil.Tasks.BUtilClient.UI.Controls.FolderSectionView"
+			 x:DataType="cvm:FolderSectionViewModel">
+	<Expander Classes="TaskSection" HorizontalAlignment="Stretch" IsExpanded="{Binding IsExpanded}" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+		<Expander.Header>
+			<decor:ExpanderHeader Icon="📁" Text="{Binding LeftMenu_What}" />
+		</Expander.Header>
+		<StackPanel>
+			<decor:TextFieldWithAction
+				Label="{Binding Field_Folder}"
+				Text="{Binding Folder}"
+				ActionIcon="📂"
+				ActionText="{Binding Field_Folder_Browse}"
+				ActionCommand="{Binding BrowseFolderCommand}"
+				Error="{Binding FolderError}" />
+		</StackPanel>
+	</Expander>
+</UserControl>

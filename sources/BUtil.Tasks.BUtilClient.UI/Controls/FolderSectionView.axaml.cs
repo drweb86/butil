@@ -1,32 +1,41 @@
 using Avalonia.Controls;
-using Avalonia.Interactivity;
 using Avalonia.Platform.Storage;
 using System;
 using System.Threading.Tasks;
 
-namespace BUtil.UI.Controls;
+namespace BUtil.Tasks.BUtilClient.UI.Controls;
 
 public partial class FolderSectionView : UserControl
 {
     public FolderSectionView()
     {
         InitializeComponent();
-        this.DataContext = new FolderSectionViewModel("the folder");
+        DataContextChanged += OnDataContextChanged;
+        DataContext = new FolderSectionViewModel("the folder");
     }
 
-    public void BrowseCommand(object? sender, RoutedEventArgs args)
+    private void OnDataContextChanged(object? sender, EventArgs e)
     {
-        _ = BrowseCommandInternal();
+        if (DataContext is FolderSectionViewModel viewModel)
+            viewModel.BrowseFolderAsync = BrowseFolderAsync;
     }
 
-    private async Task BrowseCommandInternal()
+    private async Task BrowseFolderAsync()
     {
         var root = TopLevel.GetTopLevel(this) ?? throw new NullReferenceException("Invalid Owner");
         var dataContext = DataContext as FolderSectionViewModel ?? throw new NullReferenceException();
-        var startLocation = await root.StorageProvider.TryGetFolderFromPathAsync(dataContext.Folder);
+        IStorageFolder? startLocation = null;
+        try
+        {
+            startLocation = await root.StorageProvider.TryGetFolderFromPathAsync(dataContext.Folder);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine("Error: " + e.Message);
+        }
         var folders = await root.StorageProvider.OpenFolderPickerAsync(new FolderPickerOpenOptions()
         {
-            Title = BUtil.Core.Localization.Resources.ImportMediaTask_Field_OutputFolder,
+            Title = BUtil.Core.Localization.Resources.Field_Folder,
             SuggestedStartLocation = startLocation,
             AllowMultiple = false
         });
