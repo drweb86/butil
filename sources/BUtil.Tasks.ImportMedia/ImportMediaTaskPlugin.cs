@@ -1,11 +1,8 @@
 using BUtil.Core.ConfigurationFileModels.V2;
-using BUtil.Core.FileSystem;
 using BUtil.Core.Localization;
 using BUtil.Core.Storages;
 using BUtil.Core.TasksTree.ImportMedia;
-using BUtil.Core.TasksTree.MediaSyncBackupModel;
 using BUtil.Interop.Tasks;
-using System.IO;
 
 namespace BUtil.Tasks.ImportMedia;
 
@@ -27,20 +24,22 @@ public static class ImportMediaTaskPlugin
                 if (sourceError != null)
                     return sourceError;
 
-                if (string.IsNullOrWhiteSpace(options.TransformFileName))
-                    return Resources.ImportMediaTask_Field_TransformFileName_Validation_Empty;
-
                 try
                 {
-                    var str = DateTokenReplacer.ParseString(options.TransformFileName, DateTime.Now);
-                    using var tempFolder = new TempFolder();
-                    var fullPath = Path.Combine(tempFolder.Folder, str);
-                    Directory.CreateDirectory(fullPath);
+                    using var sourceStorage = StorageFactory.Create(log, options.From, true, 1);
+                    var tooBroad = ImportMediaSourceFolderGuard.TryGetTooBroadFolderError(
+                        sourceStorage.GetFolders(string.Empty));
+                    if (tooBroad != null)
+                        return tooBroad;
                 }
                 catch
                 {
-                    return Resources.ImportMediaTask_Field_TransformFileName_Validation_Invalid;
+                    // StorageFactory.Test already succeeded; folder listing failures are non-fatal here.
                 }
+
+                var transformError = ImportMediaTransformFileName.Validate(options.TransformFileName);
+                if (transformError != null)
+                    return transformError;
 
                 return null;
             });

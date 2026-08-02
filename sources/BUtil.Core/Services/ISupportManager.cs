@@ -14,6 +14,7 @@ public interface ISupportManager
 
     void OpenLatestRelease();
     void OpenIcons();
+    void OpenLink(string url);
     bool CanOpenLink { get; }
     bool SupportsSmileIcons { get; }
 }

@@ -1,5 +1,4 @@
 using Avalonia.Controls;
-using Avalonia.Interactivity;
 using Avalonia.Platform.Storage;
 using System;
 using System.Threading.Tasks;
@@ -11,15 +10,24 @@ public partial class ImportMediaTaskWhereTaskView : UserControl
     public ImportMediaTaskWhereTaskView()
     {
         InitializeComponent();
-        this.DataContext = new ImportMediaTaskWhereTaskViewModel("the folder", false, false, "transoform file name", null);
+        DataContextChanged += OnDataContextChanged;
+        DataContext = new ImportMediaTaskWhereTaskViewModel(
+            "the folder",
+            false,
+            false,
+            "transform file name",
+            null,
+            null,
+            isNew: true);
     }
 
-    public void BrowseCommand(object? sender, RoutedEventArgs args)
+    private void OnDataContextChanged(object? sender, EventArgs e)
     {
-        _ = BrowseCommandInternal();
+        if (DataContext is ImportMediaTaskWhereTaskViewModel viewModel)
+            viewModel.BrowseOutputFolderAsync = BrowseOutputFolderAsync;
     }
 
-    private async Task BrowseCommandInternal()
+    private async Task BrowseOutputFolderAsync()
     {
         var root = TopLevel.GetTopLevel(this) ?? throw new NullReferenceException("Invalid Owner");
         var dataContext = DataContext as ImportMediaTaskWhereTaskViewModel ?? throw new NullReferenceException();

@@ -51,7 +51,10 @@ class ImportFilesTask : SequentialBuTask
 
     private List<ImportSingleFileTask> ImportFiles(IStorage toStorage, IStorage fromStorage, string[] fromStorageFiles, ImportMediaState state, List<BuTask> allTasks)
     {
-        var fromStorageFilesToProcess = fromStorageFiles.Where(x => !state.Files.Contains(x)).ToList();
+        var fromStorageFilesToProcess = fromStorageFiles
+            .Where(x => !state.Files.Contains(x))
+            .Where(x => ImportMediaFileExtensions.Matches(x, _options.FileExtensions))
+            .ToList();
 
         var importTasks = fromStorageFilesToProcess
             .Select(x => new ImportSingleFileTask(Events, _options.FileLastWriteTimeMin, x, fromStorage, toStorage, _options.TransformFileName, _getStateOfSourceItemTask.SourceItemState ?? throw new InvalidOperationException(), _commonServicesIoc))

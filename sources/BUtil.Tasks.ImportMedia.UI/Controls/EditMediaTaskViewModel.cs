@@ -35,7 +35,23 @@ public class EditMediaTaskViewModel : BUtil.UI.Controls.ViewModelBase
         SetWindowTitleForEdit(taskName, isNew);
         var model = (ImportMediaTaskModelOptionsV2)task.Model;
 
-        ImportMediaTaskWhereTaskViewModel = new BUtil.UI.Controls.ImportMediaTaskWhereTaskViewModel(model.DestinationFolder, model.SkipAlreadyImportedFiles, model.DeleteCopiedDataOnSourceMedia, model.TransformFileName, model.FileLastWriteTimeMin, isNew);
+        ImportMediaTaskWhereTaskViewModel = new BUtil.UI.Controls.ImportMediaTaskWhereTaskViewModel(
+            model.DestinationFolder,
+            model.SkipAlreadyImportedFiles,
+            model.DeleteCopiedDataOnSourceMedia,
+            model.TransformFileName,
+            model.FileLastWriteTimeMin,
+            model.FileExtensions,
+            isNew,
+            isNew);
+        ImportMediaTaskWhereTaskViewModel.PropertyChanged += (_, e) =>
+        {
+            if (e.PropertyName is nameof(BUtil.UI.Controls.ImportMediaTaskWhereTaskViewModel.OutputFolder)
+                or nameof(BUtil.UI.Controls.ImportMediaTaskWhereTaskViewModel.TransformFileName)
+                or nameof(BUtil.UI.Controls.ImportMediaTaskWhereTaskViewModel.FileExtensionsText)
+                or nameof(BUtil.UI.Controls.ImportMediaTaskWhereTaskViewModel.Error))
+                FormErrorsText = null;
+        };
         SourceTaskViewModel = new BUtil.UI.Controls.StorageViewModel(model.From, Resources.LeftMenu_What, isNew, Resources.ImportMediaTask_Storage_Help);
         SourceTaskViewModel.PropertyChanged += (_, e) =>
         {
@@ -91,12 +107,15 @@ public class EditMediaTaskViewModel : BUtil.UI.Controls.ViewModelBase
             errors.Add($"{Resources.Name_Title}: {TaskIdentityViewModel.NameError}");
         if (!SourceTaskViewModel.Validate())
             errors.Add($"{SourceTaskViewModel.Title}: {SourceTaskViewModel.Error}");
+        if (!ImportMediaTaskWhereTaskViewModel.Validate())
+            errors.Add($"{Resources.LeftMenu_Where}: {ImportMediaTaskWhereTaskViewModel.Error}");
         if (errors.Count > 0)
         {
             FormErrorsText = string.Join(Environment.NewLine, errors);
             return;
         }
 
+        var fileExtensions = ImportMediaTaskWhereTaskViewModel.GetFileExtensions();
         var newTask = new TaskV2
         {
             Name = TaskIdentityViewModel.Name.TrimEnd(),
@@ -107,6 +126,7 @@ public class EditMediaTaskViewModel : BUtil.UI.Controls.ViewModelBase
                 DeleteCopiedDataOnSourceMedia = ImportMediaTaskWhereTaskViewModel.DeleteCopiedDataOnSourceMedia,
                 FileLastWriteTimeMin = ImportMediaTaskWhereTaskViewModel.FileLastWriteTimeMin?.DateTime ?? null,
                 TransformFileName = ImportMediaTaskWhereTaskViewModel.TransformFileName,
+                FileExtensions = fileExtensions.Count == 0 ? null : fileExtensions,
                 From = SourceTaskViewModel.GetStorageSettings()
             }
         };

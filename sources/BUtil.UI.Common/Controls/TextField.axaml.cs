@@ -20,6 +20,9 @@ public partial class TextField : UserControl
     public static readonly StyledProperty<string?> ErrorProperty =
         AvaloniaProperty.Register<TextField, string?>(nameof(Error));
 
+    public static readonly StyledProperty<string?> HelpProperty =
+        AvaloniaProperty.Register<TextField, string?>(nameof(Help));
+
     public string? Label
     {
         get => GetValue(LabelProperty);
@@ -48,6 +51,12 @@ public partial class TextField : UserControl
     {
         get => GetValue(ErrorProperty);
         set => SetValue(ErrorProperty, value);
+    }
+
+    public string? Help
+    {
+        get => GetValue(HelpProperty);
+        set => SetValue(HelpProperty, value);
     }
 
     public TextField()

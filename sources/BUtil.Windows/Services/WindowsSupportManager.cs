@@ -52,6 +52,11 @@ public class WindowsSupportManager : ISupportManager
     {
         ProcessHelper.ShellExecute(ApplicationLinks.Icons);
     }
+
+    public void OpenLink(string url)
+    {
+        ProcessHelper.ShellExecute(url);
+    }
     #endregion
 
     #region Scripts

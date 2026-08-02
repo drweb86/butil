@@ -80,6 +80,10 @@ internal sealed class FakeCrossPlatformExperience : CrossPlatformExperience
         public void OpenLatestRelease()
         {
         }
+
+        public void OpenLink(string url)
+        {
+        }
     }
 
     private sealed class FakeFolderService : IFolderService

@@ -13,5 +13,10 @@ public class ImportMediaTaskModelOptionsV2 : ITaskModelOptionsV2
     public bool SkipAlreadyImportedFiles { get; set; } = true;
     public bool DeleteCopiedDataOnSourceMedia { get; set; }
 
+    /// <summary>
+    /// File extensions to import (including the leading dot). Null or empty means all files (legacy tasks).
+    /// </summary>
+    public List<string>? FileExtensions { get; set; }
+
     public DateTime? FileLastWriteTimeMin { get; set; }
 }

@@ -397,8 +397,17 @@ Usage scenario: You copy data to remote server. There's a problem: ISP drops upl
   <data name="ImportMediaTask_Field_OutputFolder" xml:space="preserve">
     <value>Output folder:</value>
   </data>
+  <data name="ImportMediaTask_Field_FileExtensions" xml:space="preserve">
+    <value>File extensions:</value>
+  </data>
+  <data name="ImportMediaTask_Field_FileExtensions_Help" xml:space="preserve">
+    <value>Comma-separated list of extensions to import (for example .jpg, .png, .mp3). Leave empty to import all files.</value>
+  </data>
   <data name="ImportMediaTask_Field_TransformFileName" xml:space="preserve">
     <value>File name transformations:</value>
+  </data>
+  <data name="ImportMediaTask_Field_TransformFileName_Documentation" xml:space="preserve">
+    <value>Date format docs</value>
   </data>
   <data name="ImportMediaTask_Field_TransformFileName_Example" xml:space="preserve">
     <value>Example:
@@ -428,11 +437,17 @@ See application web-site for documentation how to setup file transmission via WI
   <data name="ImportMediaTask_Storage_Help" xml:space="preserve">
     <value>Specify the source to import media from — for example an SD card, camera folder, or phone over FTPS.</value>
   </data>
+  <data name="ImportMediaTask_Storage_Validation_TooBroad" xml:space="preserve">
+    <value>The selected folder looks like a device or home root because it contains several known media folders ({0}). Please choose a more specific folder, for example "{1}".</value>
+  </data>
   <data name="ImportMediaTask_ImportDataSource" xml:space="preserve">
     <value>Import data source</value>
   </data>
   <data name="ImportMediaTask_SkipAlreadyImportedFiles" xml:space="preserve">
     <value>Skip already imported files</value>
+  </data>
+  <data name="ImportMediaTask_SkipAlreadyImportedFiles_Help" xml:space="preserve">
+    <value>When enabled, the application skips files that already exist in the destination or that were imported earlier. Previously imported file names are remembered, so a file is not processed again even if you delete its copy from the destination later.</value>
   </data>
   <data name="ImportMediaTask_DeleteCopiedDataOnSourceMedia" xml:space="preserve">
     <value>Delete copied data on source media</value>

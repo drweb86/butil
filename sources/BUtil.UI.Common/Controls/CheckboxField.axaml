@@ -1,15 +1,12 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 			 xmlns:decor="clr-namespace:BUtil.UI.Controls;assembly=BUtil.UI.Common"
-             x:Class="BUtil.UI.Controls.TextField"
+             x:Class="BUtil.UI.Controls.CheckboxField"
              x:Name="Root"
              Margin="0 8 0 8">
 	<StackPanel>
-		<TextBlock Margin="0 0 0 8"
-				   Text="{Binding #Root.Label}" />
-		<TextBox Text="{Binding #Root.Text, Mode=TwoWay}"
-				 PlaceholderText="{Binding #Root.Placeholder}"
-				 PasswordChar="{Binding #Root.PasswordChar}" />
+		<CheckBox IsChecked="{Binding #Root.IsChecked, Mode=TwoWay}"
+				  Content="{Binding #Root.Label}" />
 		<TextBlock Margin="0 8 0 0"
 				IsVisible="{Binding #Root.Help, Converter={x:Static StringConverters.IsNotNullOrEmpty}}"
 				Text="{Binding #Root.Help}"

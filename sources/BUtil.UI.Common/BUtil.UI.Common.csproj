@@ -27,6 +27,12 @@
     <Compile Update="Controls\TextField.axaml.cs">
       <DependentUpon>TextField.axaml</DependentUpon>
     </Compile>
+    <Compile Update="Controls\CheckboxField.axaml.cs">
+      <DependentUpon>CheckboxField.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Controls\DateField.axaml.cs">
+      <DependentUpon>DateField.axaml</DependentUpon>
+    </Compile>
     <Compile Update="Controls\DropdownField.axaml.cs">
       <DependentUpon>DropdownField.axaml</DependentUpon>
     </Compile>

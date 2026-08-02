@@ -109,6 +109,11 @@ public class SupportManager : ISupportManager
     {
         ProcessHelper.ShellExecute(ApplicationLinks.Icons);
     }
+
+    public void OpenLink(string url)
+    {
+        ProcessHelper.ShellExecute(url);
+    }
     #endregion
 
     public bool CanLaunchScripts { get => true; }

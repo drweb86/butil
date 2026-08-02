@@ -896,11 +896,38 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to File extensions:.
+        /// </summary>
+        public static string ImportMediaTask_Field_FileExtensions {
+            get {
+                return ResourceManager.GetString("ImportMediaTask_Field_FileExtensions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Comma-separated list of extensions to import (for example .jpg, .png, .mp3). Leave empty to import all files..
+        /// </summary>
+        public static string ImportMediaTask_Field_FileExtensions_Help {
+            get {
+                return ResourceManager.GetString("ImportMediaTask_Field_FileExtensions_Help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to File name transformations:.
         /// </summary>
         public static string ImportMediaTask_Field_TransformFileName {
             get {
                 return ResourceManager.GetString("ImportMediaTask_Field_TransformFileName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date format docs.
+        /// </summary>
+        public static string ImportMediaTask_Field_TransformFileName_Documentation {
+            get {
+                return ResourceManager.GetString("ImportMediaTask_Field_TransformFileName_Documentation", resourceCulture);
             }
         }
         
@@ -984,11 +1011,29 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to When enabled, the application skips files that already exist in the destination or that were imported earlier. Previously imported file names are remembered, so a file is not processed again even if you delete its copy from the destination later..
+        /// </summary>
+        public static string ImportMediaTask_SkipAlreadyImportedFiles_Help {
+            get {
+                return ResourceManager.GetString("ImportMediaTask_SkipAlreadyImportedFiles_Help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Specify the source to import media from — for example an SD card, camera folder, or phone over FTPS..
         /// </summary>
         public static string ImportMediaTask_Storage_Help {
             get {
                 return ResourceManager.GetString("ImportMediaTask_Storage_Help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The selected folder looks like a device or home root because it contains several known media folders ({0}). Please choose a more specific folder, for example &quot;{1}&quot;..
+        /// </summary>
+        public static string ImportMediaTask_Storage_Validation_TooBroad {
+            get {
+                return ResourceManager.GetString("ImportMediaTask_Storage_Validation_TooBroad", resourceCulture);
             }
         }
         
