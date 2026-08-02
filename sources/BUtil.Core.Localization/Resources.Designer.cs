@@ -590,11 +590,20 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Duration (minutes, 0 - infinite):.
+        ///   Looks up a localized string similar to Duration:.
         /// </summary>
         public static string DurationMinutes_Field {
             get {
                 return ResourceManager.GetString("DurationMinutes_Field", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to How long the server will stay active, in minutes. Use 0 for no time limit (unlimited)..
+        /// </summary>
+        public static string DurationMinutes_Field_Help {
+            get {
+                return ResourceManager.GetString("DurationMinutes_Field_Help", resourceCulture);
             }
         }
         
@@ -667,6 +676,33 @@ namespace BUtil.Core.Localization {
         public static string Field_Folder_Validation_NotExist {
             get {
                 return ResourceManager.GetString("Field_Folder_Validation_NotExist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Folder access:.
+        /// </summary>
+        public static string FolderAccess_Field {
+            get {
+                return ResourceManager.GetString("FolderAccess_Field", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Read only.
+        /// </summary>
+        public static string FolderAccess_Field_ReadOnly {
+            get {
+                return ResourceManager.GetString("FolderAccess_Field_ReadOnly", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Read and write.
+        /// </summary>
+        public static string FolderAccess_Field_ReadWrite {
+            get {
+                return ResourceManager.GetString("FolderAccess_Field_ReadWrite", resourceCulture);
             }
         }
         
@@ -833,7 +869,16 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You can share any folder for read-write access via FTPS protocol (explicit encryption with self-signed certificate) inside your local area network..
+        ///   Looks up a localized string similar to FTPS server.
+        /// </summary>
+        public static string FtpsServerConfiguration_Title {
+            get {
+                return ResourceManager.GetString("FtpsServerConfiguration_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Set up an FTPS server that runs on this computer. It uses explicit encryption with a self-signed certificate and shares the selected folder. While the server is running, you can connect to it from any FTPS client on your local network..
         /// </summary>
         public static string FtpsServerTask_Help {
             get {

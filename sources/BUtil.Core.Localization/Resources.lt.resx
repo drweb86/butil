@@ -239,7 +239,10 @@ Naudojimo scenarijus: Kopijuojate duomenis į nuotolinį serverį. Problema: int
     <value>Katalogas „{0}" neegzistuoja.</value>
   </data>
   <data name="DurationMinutes_Field" xml:space="preserve">
-    <value>Trukmė (minutės, 0 - begalybė):</value>
+    <value>Trukmė:</value>
+  </data>
+  <data name="DurationMinutes_Field_Help" xml:space="preserve">
+    <value>Kiek ilgai serveris liks aktyvus, minutėmis. Naudokite 0, jei nėra laiko limito (neribota).</value>
   </data>
   <data name="Field_Device" xml:space="preserve">
     <value>Įrenginys:</value>
@@ -264,6 +267,15 @@ Naudojimo scenarijus: Kopijuojate duomenis į nuotolinį serverį. Problema: int
   </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Aplankas neegzistuoja.</value>
+  </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>Prieiga prie aplanko:</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>Tik skaityti</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>Skaityti ir rašyti</value>
   </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>Protokolas:</value>
@@ -319,8 +331,11 @@ Naudojimo scenarijus: Kopijuojate duomenis į nuotolinį serverį. Problema: int
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>Bendrinti aplanką per tinklą (FTPS serveris)</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>FTPS serveris</value>
+  </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
-    <value>Galite bendrinti bet kurį aplanką skaitymo ir rašymo prieigai per FTPS protokolą (aiškus šifravimas su savęs pasirašytu sertifikatu) jūsų vietiniame tinkle.</value>
+    <value>Nustatykite FTPS serverį, kuris veikia šiame kompiuteryje. Jis naudoja aiškų šifravimą su savęs pasirašytu sertifikatu ir bendrina pasirinktą aplanką. Kol serveris veikia, galite prie jo prisijungti iš bet kurio FTPS kliento vietiniame tinkle.</value>
   </data>
   <data name="Icons_Help_Link" xml:space="preserve">
     <value>Pridėkite simbolio piktogramą prie savo teksto</value>

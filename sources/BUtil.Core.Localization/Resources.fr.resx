@@ -240,7 +240,10 @@ Il y a un problème : le fournisseur d'accès réduit la vitesse d'upload après
     <value>Le répertoire "{0}" n'existe pas.</value>
   </data>
   <data name="DurationMinutes_Field" xml:space="preserve">
-    <value>Durée (minutes, 0 - infini) :</value>
+    <value>Durée :</value>
+  </data>
+  <data name="DurationMinutes_Field_Help" xml:space="preserve">
+    <value>Combien de temps le serveur restera actif, en minutes. Utilisez 0 pour aucune limite de temps (illimité).</value>
   </data>
   <data name="Field_Device" xml:space="preserve">
     <value>Appareil :</value>
@@ -265,6 +268,15 @@ Il y a un problème : le fournisseur d'accès réduit la vitesse d'upload après
   </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Le dossier n'existe pas.</value>
+  </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>Accès au dossier :</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>Lecture seule</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>Lecture et écriture</value>
   </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>Protocole :</value>
@@ -320,8 +332,11 @@ Il y a un problème : le fournisseur d'accès réduit la vitesse d'upload après
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>Partager le dossier sur le réseau (serveur FTPS)</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>Serveur FTPS</value>
+  </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
-    <value>Vous pouvez partager n'importe quel dossier en accès lecture-écriture via le protocole FTPS (chiffrement explicite avec certificat auto-signé) au sein de votre réseau local.</value>
+    <value>Configurez un serveur FTPS qui s'exécute sur cet ordinateur. Il utilise le chiffrement explicite avec un certificat auto-signé et partage le dossier sélectionné. Tant que le serveur est en cours d'exécution, vous pouvez vous y connecter depuis n'importe quel client FTPS de votre réseau local.</value>
   </data>
   <data name="Icons_Help_Link" xml:space="preserve">
     <value>Ajouter une icône de caractère à votre texte</value>

@@ -239,7 +239,10 @@ Brugsscenarie: Du kopierer data til en fjernserver. Der er et problem: Internetu
     <value>Mappen "{0}" findes ikke.</value>
   </data>
   <data name="DurationMinutes_Field" xml:space="preserve">
-    <value>Varighed (minutter, 0 - uendelig):</value>
+    <value>Varighed:</value>
+  </data>
+  <data name="DurationMinutes_Field_Help" xml:space="preserve">
+    <value>Hvor længe serveren forbliver aktiv, i minutter. Brug 0 for ingen tidsbegrænsning (ubegrænset).</value>
   </data>
   <data name="Field_Device" xml:space="preserve">
     <value>Enhed:</value>
@@ -264,6 +267,15 @@ Brugsscenarie: Du kopierer data til en fjernserver. Der er et problem: Internetu
   </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Mappen findes ikke.</value>
+  </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>Mappeadgang:</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>Skrivebeskyttet</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>Læse og skrive</value>
   </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>Protokol:</value>
@@ -319,8 +331,11 @@ Brugsscenarie: Du kopierer data til en fjernserver. Der er et problem: Internetu
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>Del mappe over netværk (FTPS-server)</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>FTPS-server</value>
+  </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
-    <value>Du kan dele enhver mappe med læse-skriveadgang via FTPS-protokollen (eksplicit kryptering med selvunderskrevet certifikat) i dit lokale netværk.</value>
+    <value>Konfigurer en FTPS-server, der kører på denne computer. Den bruger eksplicit kryptering med et selvunderskrevet certifikat og deler den valgte mappe. Mens serveren kører, kan du oprette forbindelse til den fra enhver FTPS-klient på dit lokale netværk.</value>
   </data>
   <data name="Icons_Help_Link" xml:space="preserve">
     <value>Tilføj et tegnikon til din tekst</value>

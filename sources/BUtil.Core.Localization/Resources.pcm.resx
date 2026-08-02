@@ -236,7 +236,10 @@
     <value>Directory "{0}" no dey exist.</value>
   </data>
   <data name="DurationMinutes_Field" xml:space="preserve">
-    <value>How long (minute, from 0 go forever):</value>
+    <value>How long:</value>
+  </data>
+  <data name="DurationMinutes_Field_Help" xml:space="preserve">
+    <value>How long di server go dey active, for minutes. Use 0 if e no get time limit (unlimited).</value>
   </data>
   <data name="Field_Device" xml:space="preserve">
     <value>Device:</value>
@@ -261,6 +264,15 @@
   </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Folder no dey exist.</value>
+  </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>Folder access:</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>Read only</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>Read and write</value>
   </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>Protocol:</value>
@@ -316,8 +328,11 @@
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>Share folder for network (FTPS Server)</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>FTPS Server</value>
+  </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
-    <value>You fit share any folder wey dey for read-write access by FTPS protocol (encryption wit self sign certificate) inside your LAN.</value>
+    <value>Set up FTPS server wey go run for dis computer. E dey use explicit encryption wit self-signed certificate and e go share di folder wey you select. Anytime di server dey run, you fit connect am from any FTPS client for your local network.</value>
   </data>
   <data name="Icons_Help_Link" xml:space="preserve">
     <value>Add character icon to your text</value>

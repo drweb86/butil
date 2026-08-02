@@ -239,7 +239,10 @@ Escenari d'ús: copieu dades al servidor remot. Hi ha un problema: l'ISP baixa l
     <value>El directori "{0}" no existeix.</value>
   </data>
   <data name="DurationMinutes_Field" xml:space="preserve">
-    <value>Durada (minuts, 0 - infinit):</value>
+    <value>Durada:</value>
+  </data>
+  <data name="DurationMinutes_Field_Help" xml:space="preserve">
+    <value>Quant de temps romandrà actiu el servidor, en minuts. Utilitzeu 0 per a cap límit de temps (il·limitat).</value>
   </data>
   <data name="Field_Device" xml:space="preserve">
     <value>Dispositiu:</value>
@@ -264,6 +267,15 @@ Escenari d'ús: copieu dades al servidor remot. Hi ha un problema: l'ISP baixa l
   </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>La carpeta no existeix.</value>
+  </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>Accés a la carpeta:</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>Només lectura</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>Lectura i escriptura</value>
   </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>Protocol:</value>
@@ -319,8 +331,11 @@ Escenari d'ús: copieu dades al servidor remot. Hi ha un problema: l'ISP baixa l
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>Compartir carpeta a la xarxa (servidor FTPS)</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>Servidor FTPS</value>
+  </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
-    <value>Podeu compartir qualsevol carpeta per a l'accés de lectura i escriptura mitjançant el protocol FTPS (xifratge explícit amb certificat autofirmat) dins de la vostra xarxa d'àrea local.</value>
+    <value>Configureu un servidor FTPS que s'executi en aquest ordinador. Utilitza xifratge explícit amb un certificat autofirmat i comparteix la carpeta seleccionada. Mentre el servidor estigui en funcionament, us hi podeu connectar des de qualsevol client FTPS de la vostra xarxa local.</value>
   </data>
   <data name="Icons_Help_Link" xml:space="preserve">
     <value>Afegeix una icona de caràcter al teu text</value>

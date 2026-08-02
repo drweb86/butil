@@ -239,7 +239,10 @@
     <value>הספרייה "{0}" לא קיימת.</value>
   </data>
   <data name="DurationMinutes_Field" xml:space="preserve">
-    <value>משך (דקות, 0 - אינסופי):</value>
+    <value>משך:</value>
+  </data>
+  <data name="DurationMinutes_Field_Help" xml:space="preserve">
+    <value>כמה זמן השרת יישאר פעיל, בדקות. השתמש ב-0 ללא מגבלת זמן (ללא הגבלה).</value>
   </data>
   <data name="Field_Device" xml:space="preserve">
     <value>התקן:</value>
@@ -264,6 +267,15 @@
   </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>התיקייה לא קיימת.</value>
+  </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>גישה לתיקייה:</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>קריאה בלבד</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>קריאה וכתיבה</value>
   </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>פרוטוקול:</value>
@@ -319,8 +331,11 @@
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>שתף תיקייה ברשת (שרת FTPS)</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>שרת FTPS</value>
+  </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
-    <value>באפשרותך לשתף כל תיקייה עם גישת קריאה-כתיבה באמצעות פרוטוקול FTPS (הצפנה מפורשת עם אישור חתום עצמית) בתוך הרשת המקומית שלך.</value>
+    <value>הגדר שרת FTPS שפועל במחשב זה. הוא משתמש בהצפנה מפורשת עם אישור חתום עצמית ומשתף את התיקייה שנבחרה. כל עוד השרת פועל, ניתן להתחבר אליו מכל לקוח FTPS ברשת המקומית שלך.</value>
   </data>
   <data name="Icons_Help_Link" xml:space="preserve">
     <value>הוסף סמל תו לטקסט שלך</value>

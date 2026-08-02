@@ -239,7 +239,10 @@ Skenari i përdorimit: Ju kopjoni të dhëna në një server të largët. Ka nj�
     <value>Drejtoria "{0}" nuk ekziston.</value>
   </data>
   <data name="DurationMinutes_Field" xml:space="preserve">
-    <value>Kohëzgjatja (minuta, 0 - e pafundme):</value>
+    <value>Kohëzgjatja:</value>
+  </data>
+  <data name="DurationMinutes_Field_Help" xml:space="preserve">
+    <value>Sa kohë do të mbetet aktiv serveri, në minuta. Përdorni 0 për pa kufizim kohe (i pakufizuar).</value>
   </data>
   <data name="Field_Device" xml:space="preserve">
     <value>Pajisja:</value>
@@ -264,6 +267,15 @@ Skenari i përdorimit: Ju kopjoni të dhëna në një server të largët. Ka nj�
   </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Dosja nuk ekziston.</value>
+  </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>Aksesi i dosjes:</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>Vetëm lexim</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>Lexim dhe shkrim</value>
   </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>Protokolli:</value>
@@ -319,8 +331,11 @@ Skenari i përdorimit: Ju kopjoni të dhëna në një server të largët. Ka nj�
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>Ndaj dosjen përmes rrjetit (Server FTPS)</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>Server FTPS</value>
+  </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
-    <value>Mund të ndani çdo dosje me akses lexim-shkrim përmes protokollit FTPS (kriptim eksplicit me certifikatë të vetënënshkruar) brenda rrjetit tuaj lokal.</value>
+    <value>Konfiguroni një server FTPS që ekzekutohet në këtë kompjuter. Ai përdor kriptim eksplicit me një certifikatë të vetënënshkruar dhe ndan dosjen e zgjedhur. Ndërsa serveri është në punë, mund të lidheni me të nga çdo klient FTPS në rrjetin tuaj lokal.</value>
   </data>
   <data name="Icons_Help_Link" xml:space="preserve">
     <value>Shto ikonë karakteri në tekstin tuaj</value>

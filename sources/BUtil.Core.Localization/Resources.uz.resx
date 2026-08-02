@@ -239,7 +239,10 @@ Foydalanish stsenariysi: Siz masofaviy serverga ma'lumotlarni nusxalaysiz. Muamm
     <value>"{0}" katalogi mavjud emas.</value>
   </data>
   <data name="DurationMinutes_Field" xml:space="preserve">
-    <value>Davomiylik (daqiqa, 0 - cheksiz):</value>
+    <value>Davomiylik:</value>
+  </data>
+  <data name="DurationMinutes_Field_Help" xml:space="preserve">
+    <value>Server qancha vaqt faol bo‘lib turadi, daqiqalarda. Vaqt chegarasi bo‘lmasa (cheksiz) 0 dan foydalaning.</value>
   </data>
   <data name="Field_Device" xml:space="preserve">
     <value>Qurilma:</value>
@@ -264,6 +267,15 @@ Foydalanish stsenariysi: Siz masofaviy serverga ma'lumotlarni nusxalaysiz. Muamm
   </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Papka mavjud emas.</value>
+  </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>Papkaga kirish:</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>Faqat o‘qish</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>O‘qish va yozish</value>
   </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>Protokol:</value>
@@ -319,8 +331,11 @@ Foydalanish stsenariysi: Siz masofaviy serverga ma'lumotlarni nusxalaysiz. Muamm
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>Papkani tarmoq orqali ulashish (FTPS server)</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>FTPS server</value>
+  </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
-    <value>Siz istalgan papkani FTPS protokoli orqali (o'z-o'zini imzolagan sertifikat bilan aniq shifrlash) mahalliy tarmoqda o'qish-yozish huquqi bilan ulashishingiz mumkin.</value>
+    <value>Ushbu kompyuterda ishlaydigan FTPS serverini sozlang. U o‘z-o‘zini imzolagan sertifikat bilan aniq shifrlashdan foydalanadi va tanlangan papkani ulashadi. Server ishlayotganda mahalliy tarmog‘ingizdagi istalgan FTPS mijozidan ulanishingiz mumkin.</value>
   </data>
   <data name="Icons_Help_Link" xml:space="preserve">
     <value>Matningizga belgi qo'shing</value>

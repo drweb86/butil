@@ -239,7 +239,10 @@ Benotzungsszenario: Dir kopéiert Daten op Remote Server. Et gëtt e Problem: IS
     <value>Verzeechnes "{0}" gëtt et net.</value>
   </data>
   <data name="DurationMinutes_Field" xml:space="preserve">
-    <value>Dauer (Minuten, 0 - onendlech):</value>
+    <value>Dauer:</value>
+  </data>
+  <data name="DurationMinutes_Field_Help" xml:space="preserve">
+    <value>Wéi laang de Server aktiv bleift, a Minutten. Benotzt 0 fir keng Zäitlimitéierung (onlimitéiert).</value>
   </data>
   <data name="Field_Device" xml:space="preserve">
     <value>Apparat:</value>
@@ -264,6 +267,15 @@ Benotzungsszenario: Dir kopéiert Daten op Remote Server. Et gëtt e Problem: IS
   </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Dossier existéiert net.</value>
+  </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>Dossierzougang:</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>Nëmme liesen</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>Liesen a schreiwen</value>
   </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>Protokoll:</value>
@@ -319,8 +331,11 @@ Benotzungsszenario: Dir kopéiert Daten op Remote Server. Et gëtt e Problem: IS
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>Deelen Dossier iwwer Netzwierk (FTPS Server)</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>FTPS-Server</value>
+  </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
-    <value>Dir kënnt all Dossier fir Lies-Schreiwe Zougang iwwer FTPS Protokoll deelen (explizit Verschlësselung mat selbst ënnerschriwwenen Zertifika) an Ärem lokalen Netzwierk.</value>
+    <value>Riicht en FTPS-Server an, deen op dësem Computer leeft. Hie benotzt explizit Verschlësselung mat engem selbst ënnerschriwwenen Zertifikat a deelt den ausgewielten Dossier. Während de Server leeft, kënnt Dir Iech vun engem FTPS-Client an Ärem lokalen Netzwierk domat verbannen.</value>
   </data>
   <data name="Icons_Help_Link" xml:space="preserve">
     <value>Füügt Charakterikon an Ären Text</value>

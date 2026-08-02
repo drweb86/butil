@@ -241,7 +241,10 @@ Le modifiche alla versione eliminata diventeranno parte della versione "{1}".</v
     <value>La cartella "{0}" non esiste.</value>
   </data>
   <data name="DurationMinutes_Field" xml:space="preserve">
-    <value>Durata (minuti, 0 - infinito):</value>
+    <value>Durata:</value>
+  </data>
+  <data name="DurationMinutes_Field_Help" xml:space="preserve">
+    <value>Per quanto tempo il server rimarrà attivo, in minuti. Usa 0 per nessun limite di tempo (illimitato).</value>
   </data>
   <data name="Field_Device" xml:space="preserve">
     <value>Dispositivo:</value>
@@ -266,6 +269,15 @@ Le modifiche alla versione eliminata diventeranno parte della versione "{1}".</v
   </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>La cartella non esiste.</value>
+  </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>Accesso alla cartella:</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>Solo lettura</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>Lettura e scrittura</value>
   </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>Protocollo:</value>
@@ -321,8 +333,11 @@ Le modifiche alla versione eliminata diventeranno parte della versione "{1}".</v
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>Condividi cartella in rete (Server FTPS)</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>Server FTPS</value>
+  </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
-    <value>Puoi condividere qualsiasi cartella per l'accesso in lettura-scrittura tramite il protocollo FTPS (crittografia esplicita con certificato auto firmato) all'interno della rete locale.</value>
+    <value>Configura un server FTPS che viene eseguito su questo computer. Usa la crittografia esplicita con un certificato autofirmato e condivide la cartella selezionata. Mentre il server è in esecuzione, puoi connetterti da qualsiasi client FTPS sulla rete locale.</value>
   </data>
   <data name="Icons_Help_Link" xml:space="preserve">
     <value>Aggiungi icona carattere al testo</value>

@@ -236,7 +236,10 @@ Kullanım senaryosu: Verileri uzak sunucuya kopyalıyorsunuz. Bir sorun var: ISS
     <value>Klasör "{0}" mevcut değil.</value>
   </data>
   <data name="DurationMinutes_Field" xml:space="preserve">
-    <value>Süre (dakika, 0 - sonsuz):</value>
+    <value>Süre:</value>
+  </data>
+  <data name="DurationMinutes_Field_Help" xml:space="preserve">
+    <value>Sunucunun kaГ§ dakika aktif kalacaДџД±. Zaman sД±nД±rД± olmamasД± (sД±nД±rsД±z) iГ§in 0 kullanД±n.</value>
   </data>
   <data name="Field_Device" xml:space="preserve">
     <value>Aygıt:</value>
@@ -261,6 +264,15 @@ Kullanım senaryosu: Verileri uzak sunucuya kopyalıyorsunuz. Bir sorun var: ISS
   </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Klasör mevcut değil.</value>
+  </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>KlasГ¶r eriЕџimi:</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>Salt okunur</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>Okuma ve yazma</value>
   </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>Protokol:</value>
@@ -316,8 +328,11 @@ Kullanım senaryosu: Verileri uzak sunucuya kopyalıyorsunuz. Bir sorun var: ISS
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>Ağ üzerinden klasörü paylaş (FTPS Sunucusu)</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>FTPS sunucusu</value>
+  </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
-    <value>Yerel ağınız içinde herhangi bir klasörü FTPS protokolü (kendinden imzalı sertifikalı açık şifreleme) ile okuma-yazma erişimi için paylaşabilirsiniz.</value>
+    <value>Bu bilgisayarda Г§alД±Еџan bir FTPS sunucusu kurun. Kendinden imzalД± sertifikalД± aГ§Д±k Еџifreleme kullanД±r ve seГ§ilen klasГ¶rГј paylaЕџД±r. Sunucu Г§alД±ЕџД±rken yerel aДџД±nД±zdaki herhangi bir FTPS istemcisinden baДџlanabilirsiniz.</value>
   </data>
   <data name="Icons_Help_Link" xml:space="preserve">
     <value>Metnine karakter simgesi ekle</value>

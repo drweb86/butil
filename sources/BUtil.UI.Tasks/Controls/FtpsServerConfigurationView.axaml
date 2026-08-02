@@ -1,0 +1,51 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:cvm="clr-namespace:BUtil.UI.Controls;assembly=BUtil.UI.Tasks"
+			 xmlns:decor="clr-namespace:BUtil.UI.Controls;assembly=BUtil.UI.Common"
+             mc:Ignorable="d"
+             x:Class="BUtil.UI.Controls.FtpsServerConfigurationView"
+			 x:DataType="cvm:FtpsServerConfigurationViewModel">
+	<Expander Classes="TaskSection" HorizontalAlignment="Stretch" IsExpanded="{Binding IsExpanded}" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+		<Expander.Header>
+			<decor:ExpanderHeader Icon="🖧" Text="{Binding FtpsServerConfiguration_Title}" />
+		</Expander.Header>
+		<StackPanel>
+			<TextBlock Text="{Binding FtpsServerTask_Help}"
+			           TextWrapping="Wrap"
+			           Margin="0 0 0 8" />
+			<decor:NumericUpDownField
+				Label="{Binding Server_Field_Port}"
+				Minimum="{Binding PortMinimum}"
+				Maximum="65535"
+				Value="{Binding Port}"
+				Error="{Binding PortError}" />
+			<decor:TextField
+				Label="{Binding User_Field}"
+				Text="{Binding FtpsUser}"
+				Error="{Binding FtpsUserError}" />
+			<decor:TextField
+				Label="{Binding Password_Field}"
+				PasswordChar="*"
+				Text="{Binding FtpsPassword}"
+				Error="{Binding FtpsPasswordError}" />
+			<decor:TextFieldWithAction
+				Label="{Binding Field_Folder}"
+				Text="{Binding Folder}"
+				ActionIcon="📂"
+				ActionText="{Binding Field_Folder_Browse}"
+				ActionCommand="{Binding BrowseFolderCommand}"
+				Error="{Binding FolderError}" />
+			<decor:DropdownField
+				Label="{Binding FolderAccess_Field}"
+				ItemsSource="{Binding FolderAccessOptions}"
+				SelectedItem="{Binding SelectedFolderAccess}" />
+			<decor:NumericUpDownField
+				Label="{Binding DurationMinutes_Field}"
+				Minimum="0"
+				Value="{Binding DurationMinutes}"
+				Help="{Binding DurationMinutes_Field_Help}" />
+		</StackPanel>
+	</Expander>
+</UserControl>

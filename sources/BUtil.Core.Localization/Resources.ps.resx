@@ -239,7 +239,10 @@
     <value>لارښود "{0}" شتون نلري.</value>
   </data>
   <data name="DurationMinutes_Field" xml:space="preserve">
-    <value>موده (دقیقې، 0 - لامحدود):</value>
+    <value>موده:</value>
+  </data>
+  <data name="DurationMinutes_Field_Help" xml:space="preserve">
+    <value>سرور به څومره وخت فعال پاتې شي، په دقیقو کې. د وخت حد نه لرلو (لامحدود) لپاره 0 وکاروئ.</value>
   </data>
   <data name="Field_Device" xml:space="preserve">
     <value>وسیله:</value>
@@ -264,6 +267,15 @@
   </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>فولډر شتون نلري.</value>
+  </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>د فولډر لاسرسی:</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>یوازې لوستل</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>لوستل او لیکل</value>
   </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>پروتوکول:</value>
@@ -319,8 +331,11 @@
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>په شبکه کې فولډر شریک کړئ (FTPS سرور)</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>د FTPS سرور</value>
+  </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
-    <value>تاسو کولی شئ د خپل سیمه ایز شبکې دننه د FTPS پروتوکول (د ځان لاسلیک شوي سند سره څرګند کوډ) له لارې د لوستلو لیکلو لاسرسي لپاره هر فولډر شریک کړئ.</value>
+    <value>یو FTPS سرور تنظیم کړئ چې په دې کمپیوټر کې چلیږي. دا د ځان لاسلیک شوي سند سره څرګند کوډ کاروي او ټاکل شوی فولډر شری کوي. پداسې حال کې چې سرور چلیږي، تاسو کولی شئ په خپل سیمه ایز شبکه کې له هر FTPS پیرودونکي څخه ورسره وصل شئ.</value>
   </data>
   <data name="Icons_Help_Link" xml:space="preserve">
     <value>خپل متن ته د کرکټر نښه اضافه کړئ</value>

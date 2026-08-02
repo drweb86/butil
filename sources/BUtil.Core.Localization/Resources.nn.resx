@@ -239,7 +239,10 @@ Bruksscenario: Du kopierer data til ein ekstern tenar. Det er eit problem: ISP r
     <value>Katalogen "{0}" finst ikkje.</value>
   </data>
   <data name="DurationMinutes_Field" xml:space="preserve">
-    <value>Varigheit (minutt, 0 - uendeleg):</value>
+    <value>Varigheit:</value>
+  </data>
+  <data name="DurationMinutes_Field_Help" xml:space="preserve">
+    <value>Kor lenge tenaren held seg aktiv, i minutt. Bruk 0 for ingen tidsavgrensing (ubegrensa).</value>
   </data>
   <data name="Field_Device" xml:space="preserve">
     <value>Eining:</value>
@@ -264,6 +267,15 @@ Bruksscenario: Du kopierer data til ein ekstern tenar. Det er eit problem: ISP r
   </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Mappa finst ikkje.</value>
+  </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>Mappetilgang:</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>Berre lesing</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>Lesing og skriving</value>
   </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>Protokoll:</value>
@@ -319,8 +331,11 @@ Bruksscenario: Du kopierer data til ein ekstern tenar. Det er eit problem: ISP r
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>Del mappe over nettverk (FTPS-tenar)</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>FTPS-tenar</value>
+  </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
-    <value>Du kan dele kva mappe som helst med lese- og skrivetilgang via FTPS-protokoll (eksplisitt kryptering med sjølvsignert sertifikat) i det lokale nettverket ditt.</value>
+    <value>Set opp ein FTPS-tenar som køyrer på denne datamaskina. Han brukar eksplisitt kryptering med eit sjølvsignert sertifikat og deler den valde mappa. Medan tenaren køyrer, kan du kopla til han frå ein kvar FTPS-klient på det lokale nettverket.</value>
   </data>
   <data name="Icons_Help_Link" xml:space="preserve">
     <value>Legg til eit teiknikon i teksten din</value>

@@ -232,7 +232,10 @@
     <value>ڈائریکٹری "{0}" موجود نہیں۔</value>
   </data>
   <data name="DurationMinutes_Field" xml:space="preserve">
-    <value>مدت (منٹ، 0 سے لے کر لامحدود):</value>
+    <value>مدت:</value>
+  </data>
+  <data name="DurationMinutes_Field_Help" xml:space="preserve">
+    <value>سرور کتنی دیر تک فعال رہے گا، منٹوں میں۔ کوئی وقتی حد نہ ہو (لامحدود) تو 0 استعمال کریں۔</value>
   </data>
   <data name="Field_Device" xml:space="preserve">
     <value>آلہ:</value>
@@ -257,6 +260,15 @@
   </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>فولڈر موجود نہیں۔</value>
+  </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>فولڈر تک رسائی:</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>صرف پڑھنے کے لیے</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>پڑھنا اور لکھنا</value>
   </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>پروٹوکول:</value>
@@ -312,8 +324,11 @@
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>نیٹ ورک پر فولڈر شیئر کریں (FTPS سرور)</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>FTPS سرور</value>
+  </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
-    <value>آپ اپنے لوکل ایریا نیٹ ورک کے اندر کسی بھی فولڈر کو FTPS پروٹوکول (خود دستخط شدہ سرٹیفکیٹ کے ساتھ واضح خفیہ کاری) کے ذریعے پڑھنے-لکھنے کی رسائی کے لیے شیئر کر سکتے ہیں۔</value>
+    <value>اس کمپیوٹر پر چلنے والا FTPS سرور سیٹ اپ کریں۔ یہ خود دستخط شدہ سرٹیفکیٹ کے ساتھ واضح خفیہ کاری استعمال کرتا ہے اور منتخب فولڈر شیئر کرتا ہے۔ سرور چلتے وقت آپ اپنے مقامی نیٹ ورک پر کسی بھی FTPS کلائنٹ سے اس سے منسلک ہو سکتے ہیں۔</value>
   </data>
   <data name="Icons_Help_Link" xml:space="preserve">
     <value>اپنے متن میں کردار کا آئیکن شامل کریں</value>

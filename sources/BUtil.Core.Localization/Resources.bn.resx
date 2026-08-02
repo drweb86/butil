@@ -233,7 +233,10 @@
     <value>ডিরেক্টরি "{0}" অস্তিত্ব নেই।</value>
   </data>
   <data name="DurationMinutes_Field" xml:space="preserve">
-    <value>সময় (মিনিট, ০ - অনন্ত):</value>
+    <value>সময়:</value>
+  </data>
+  <data name="DurationMinutes_Field_Help" xml:space="preserve">
+    <value>সার্ভার কতক্ষণ সক্রিয় থাকবে, মিনিটে। কোনো সময়সীমা না থাকলে (সীমাহীন) ০ ব্যবহার করুন।</value>
   </data>
   <data name="Field_Device" xml:space="preserve">
     <value>ডিভাইস:</value>
@@ -258,6 +261,15 @@
   </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>ফোল্ডার বিদ্যমান নয়।</value>
+  </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>ফোল্ডার অ্যাক্সেস:</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>শুধুমাত্র পঠন</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>পঠন ও লেখন</value>
   </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>প্রোটোকল:</value>
@@ -313,8 +325,11 @@
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>নেটওয়ার্কে ফোল্ডার শেয়ার করুন (FTPS সার্ভার)</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>FTPS সার্ভার</value>
+  </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
-    <value>আপনি আপনার লোকাল এরিয়া নেটওয়ার্কের মধ্যে যেকোনো ফোল্ডারকে FTPS প্রোটোকল (সেলফ-সাইনড সার্টিফিকেট সহ এক্সপ্লিসিট এনক্রিপশন) এর মাধ্যমে পঠন-লেখন অ্যাক্সেসের জন্য শেয়ার করতে পারেন।</value>
+    <value>এই কম্পিউটারে চলবে এমন একটি FTPS সার্ভার সেট আপ করুন। এটি সেলফ-সাইনড সার্টিফিকেটসহ এক্সপ্লিসিট এনক্রিপশন ব্যবহার করে এবং নির্বাচিত ফোল্ডার শেয়ার করে। সার্ভার চলাকালীন আপনি আপনার লোকাল নেটওয়ার্কের যেকোনো FTPS ক্লায়েন্ট থেকে এতে সংযুক্ত হতে পারেন।</value>
   </data>
   <data name="Icons_Help_Link" xml:space="preserve">
     <value>আপনার টেক্সটের সাথে চরিত্র আইকন যুক্ত করুন</value>

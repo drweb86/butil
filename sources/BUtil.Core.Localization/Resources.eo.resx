@@ -239,7 +239,10 @@ Scenaro de uzado: Vi kopias datumojn al fora servilo. Estas problemo: ISP malpli
     <value>Dosierujo "{0}" ne ekzistas.</value>
   </data>
   <data name="DurationMinutes_Field" xml:space="preserve">
-    <value>Daŭro (minutoj, 0 - senfina):</value>
+    <value>Daŭro:</value>
+  </data>
+  <data name="DurationMinutes_Field_Help" xml:space="preserve">
+    <value>Kiom longe la servilo restos aktiva, en minutoj. Uzu 0 por neniu tempolimo (senlima).</value>
   </data>
   <data name="Field_Device" xml:space="preserve">
     <value>Aparato:</value>
@@ -264,6 +267,15 @@ Scenaro de uzado: Vi kopias datumojn al fora servilo. Estas problemo: ISP malpli
   </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Dosierujo ne ekzistas.</value>
+  </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>Dosieruja aliro:</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>Nur legado</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>Legado kaj skribo</value>
   </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>Protokolo:</value>
@@ -319,8 +331,11 @@ Scenaro de uzado: Vi kopias datumojn al fora servilo. Estas problemo: ISP malpli
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>Kunhavigi dosierujon per reto (FTPS-Servilo)</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>FTPS-servilo</value>
+  </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
-    <value>Vi povas dividi ajnan dosierujon por lego-skriba aliro per FTPS-protokolo (eksplicita ĉifrado kun memsubskribita atestilo) ene de via loka reto.</value>
+    <value>Agordu FTPS-servilon, kiu funkcias sur ĉi tiu komputilo. Ĝi uzas eksplicitan ĉifradon kun memsubskribita atestilo kaj kunhavigas la elektitan dosierujon. Dum la servilo funkcias, vi povas konektiĝi al ĝi el iu ajn FTPS-kliento en via loka reto.</value>
   </data>
   <data name="Icons_Help_Link" xml:space="preserve">
     <value>Aldonu signan ikonon al via teksto</value>

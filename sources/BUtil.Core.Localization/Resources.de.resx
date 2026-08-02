@@ -239,7 +239,10 @@ Anwendungsszenario: Sie kopieren Daten auf einen entfernten Server. Es gibt ein 
     <value>Verzeichnis "{0}" existiert nicht.</value>
   </data>
   <data name="DurationMinutes_Field" xml:space="preserve">
-    <value>Dauer (Minuten, 0 bis unendlich):</value>
+    <value>Dauer:</value>
+  </data>
+  <data name="DurationMinutes_Field_Help" xml:space="preserve">
+    <value>Wie lange der Server aktiv bleibt, in Minuten. Verwenden Sie 0 für kein Zeitlimit (unbegrenzt).</value>
   </data>
   <data name="Field_Device" xml:space="preserve">
     <value>Gerät:</value>
@@ -264,6 +267,15 @@ Anwendungsszenario: Sie kopieren Daten auf einen entfernten Server. Es gibt ein 
   </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Ordner existiert nicht.</value>
+  </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>Ordnerzugriff:</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>Nur Lesen</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>Lesen und Schreiben</value>
   </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>Protokoll:</value>
@@ -319,8 +331,11 @@ Anwendungsszenario: Sie kopieren Daten auf einen entfernten Server. Es gibt ein 
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>Ordner über Netzwerk teilen (FTPS-Server)</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>FTPS-Server</value>
+  </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
-    <value>Sie können jeden Ordner mit Lese- und Schreibzugriff über das FTPS-Protokoll (explizite Verschlüsselung mit selbstsigniertem Zertifikat) in Ihrem lokalen Netzwerk freigeben.</value>
+    <value>Richten Sie einen FTPS-Server ein, der auf diesem Computer läuft. Er verwendet explizite Verschlüsselung mit einem selbstsignierten Zertifikat und gibt den ausgewählten Ordner frei. Während der Server läuft, können Sie sich von jedem FTPS-Client in Ihrem lokalen Netzwerk damit verbinden.</value>
   </data>
   <data name="Icons_Help_Link" xml:space="preserve">
     <value>Fügen Sie ein Charakter-Icon zu Ihrem Text hinzu</value>

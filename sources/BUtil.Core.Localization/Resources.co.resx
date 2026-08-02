@@ -239,7 +239,10 @@ Scenariu d'usu: Copiate i dati à u servitore remotu. Ci hè un prublema: l'ISP 
     <value>U repertoriu "{0}" ùn esiste micca.</value>
   </data>
   <data name="DurationMinutes_Field" xml:space="preserve">
-    <value>Durata (minuti, 0 - infinitu):</value>
+    <value>Durata:</value>
+  </data>
+  <data name="DurationMinutes_Field_Help" xml:space="preserve">
+    <value>Quantu tempu u servitore resterà attivu, in minuti. Aduprate 0 per nisuna limita di tempu (illimitatu).</value>
   </data>
   <data name="Field_Device" xml:space="preserve">
     <value>Dispositivu:</value>
@@ -264,6 +267,15 @@ Scenariu d'usu: Copiate i dati à u servitore remotu. Ci hè un prublema: l'ISP 
   </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>U cartulare ùn esiste micca.</value>
+  </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>Accessu à u cartulare:</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>Solu lettura</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>Lettura è scrittura</value>
   </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>Protocolu:</value>
@@ -319,8 +331,11 @@ Scenariu d'usu: Copiate i dati à u servitore remotu. Ci hè un prublema: l'ISP 
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>Condividi u cartulare nantu à a reta (Server FTPS)</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>Servitore FTPS</value>
+  </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
-    <value>Pudete sparte qualsiasi cartulare per l'accessu di lettura-scrittura per via di u protocolu FTPS (cifrazione esplicita cù certificatu autofirmatu) in a vostra rete locale.</value>
+    <value>Cunfigurate un servitore FTPS chì funziona nantu à stu urdinatore. Adupra una cifrazione esplicita cù un certificatu autofirmatu è sparte u cartulare sceltu. Mentri u servitore hè in funzione, pudete cunnettesi da qualsiasi cliente FTPS nantu à a vostra rete lucale.</value>
   </data>
   <data name="Icons_Help_Link" xml:space="preserve">
     <value>Aghjunghjite l'icona di caratteri à u vostru testu</value>

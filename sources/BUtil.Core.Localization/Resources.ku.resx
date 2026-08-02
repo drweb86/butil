@@ -239,7 +239,10 @@ Senaryoya bikaranînê: Hûn daneyan li serverek dûr kopî dikin. Pirsgirêk he
     <value>Peldanka "{0}" tune ye.</value>
   </data>
   <data name="DurationMinutes_Field" xml:space="preserve">
-    <value>Dirêjahî (deqîqe, 0 - bêsînor):</value>
+    <value>Dirêjahî:</value>
+  </data>
+  <data name="DurationMinutes_Field_Help" xml:space="preserve">
+    <value>Server dê çiqas dirêj çalak bimîne, bi deqîqeyan. Ji bo sînorê demê tune (bêsnor) 0 bikar bînin.</value>
   </data>
   <data name="Field_Device" xml:space="preserve">
     <value>Amûr:</value>
@@ -264,6 +267,15 @@ Senaryoya bikaranînê: Hûn daneyan li serverek dûr kopî dikin. Pirsgirêk he
   </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Peldank tune ye.</value>
+  </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>Gihîştina peldankê:</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>Tenê xwendin</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>Xwendin û nivîsandin</value>
   </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>Protokol:</value>
@@ -319,8 +331,11 @@ Senaryoya bikaranînê: Hûn daneyan li serverek dûr kopî dikin. Pirsgirêk he
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>Peldankê li ser torê parve bike (Servera FTPS)</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>Servera FTPS</value>
+  </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
-    <value>Hûn dikarin her peldankê bi destûra xwendin-nivîsandinê bi protokola FTPS (şîfrekirina eşkere bi sertîfîkaya xwe-îmzakirî) di tora xweya herêmî de parve bikin.</value>
+    <value>Servereke FTPS saz bikin ku li ser vî komputerî dixebite. Ew şîfrekirina eşkere bi sertîfîkaya xwe-îmzakkirî bikar tîne û peldanka hilbijartî parve dike. Dema ku server dixebite, hûn dikarin ji her xerîdareke FTPS li ser tora xwe ya herêmî pê ve girêbidin.</value>
   </data>
   <data name="Icons_Help_Link" xml:space="preserve">
     <value>Karakterek îkonê li nivîsa xwe zêde bikin</value>

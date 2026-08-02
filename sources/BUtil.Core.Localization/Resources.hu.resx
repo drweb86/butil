@@ -239,7 +239,10 @@ Használati eset: Adatokat másol egy távoli kiszolgálóra. Probléma: az inte
     <value>A(z) „{0}" könyvtár nem létezik.</value>
   </data>
   <data name="DurationMinutes_Field" xml:space="preserve">
-    <value>Időtartam (perc, 0 - végtelen):</value>
+    <value>Időtartam:</value>
+  </data>
+  <data name="DurationMinutes_Field_Help" xml:space="preserve">
+    <value>Mennyi ideig marad aktív a kiszolgáló, percben. Használjon 0-t, ha nincs időkorlát (korlátlan).</value>
   </data>
   <data name="Field_Device" xml:space="preserve">
     <value>Eszköz:</value>
@@ -264,6 +267,15 @@ Használati eset: Adatokat másol egy távoli kiszolgálóra. Probléma: az inte
   </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>A mappa nem létezik.</value>
+  </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>Mappa-hozzáférés:</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>Csak olvasható</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>Olvasás és írás</value>
   </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>Protokoll:</value>
@@ -319,8 +331,11 @@ Használati eset: Adatokat másol egy távoli kiszolgálóra. Probléma: az inte
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>Mappa megosztása hálózaton (FTPS kiszolgáló)</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>FTPS kiszolgáló</value>
+  </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
-    <value>Bármely mappát megoszthat olvasási-írási hozzáféréssel az FTPS protokollon keresztül (explicit titkosítás önaláírt tanúsítvánnyal) a helyi hálózaton belül.</value>
+    <value>Állítson be egy FTPS kiszolgálót, amely ezen a számítógépen fut. Explicit titkosítást használ önaláírt tanúsítvánnyal, és megosztja a kiválasztott mappát. Amíg a kiszolgáló fut, a helyi hálózat bármely FTPS klienséről csatlakozhat hozzá.</value>
   </data>
   <data name="Icons_Help_Link" xml:space="preserve">
     <value>Karakter ikon hozzáadása a szöveghez</value>

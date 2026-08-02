@@ -239,7 +239,10 @@ Kasutusjuht: kopeerite andmeid kaugserverisse. Probleem on selles, et ISP vähen
     <value>Kataloogi "{0}" ei ole olemas.</value>
   </data>
   <data name="DurationMinutes_Field" xml:space="preserve">
-    <value>Kestus (minutid, 0 - lõpmatu):</value>
+    <value>Kestus:</value>
+  </data>
+  <data name="DurationMinutes_Field_Help" xml:space="preserve">
+    <value>Kui kaua server aktiivsena püsib, minutites. Kasutage 0 ajalimiidi puudumiseks (piiramatu).</value>
   </data>
   <data name="Field_Device" xml:space="preserve">
     <value>Seade:</value>
@@ -264,6 +267,15 @@ Kasutusjuht: kopeerite andmeid kaugserverisse. Probleem on selles, et ISP vähen
   </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Kausta ei ole olemas.</value>
+  </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>Kausta juurdepääs:</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>Ainult lugemine</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>Lugemine ja kirjutamine</value>
   </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>Protokoll:</value>
@@ -319,8 +331,11 @@ Kasutusjuht: kopeerite andmeid kaugserverisse. Probleem on selles, et ISP vähen
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>Jaga kausta võrgu kaudu (FTPS-server)</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>FTPS-server</value>
+  </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
-    <value>Saate jagada mis tahes kausta lugemis- ja kirjutamisõigusega FTPS-protokolli kaudu (eksplitsiitne krüpteerimine iseallkirjastatud sertifikaadiga) oma kohtvõrgus.</value>
+    <value>Seadistage FTPS-server, mis töötab selles arvutis. See kasutab eksplitsiitset krüpteerimist iseallkirjastatud sertifikaadiga ja jagab valitud kausta. Seni kuni server töötab, saate sellega ühenduda mis tahes FTPS-kliendist oma kohtvõrgus.</value>
   </data>
   <data name="Icons_Help_Link" xml:space="preserve">
     <value>Lisage oma tekstile tähemärgiikoon</value>

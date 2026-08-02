@@ -239,7 +239,10 @@ Cenário de uso: você copia dados para um servidor remoto. Há um problema: o I
     <value>O diretório "{0}" não existe.</value>
   </data>
   <data name="DurationMinutes_Field" xml:space="preserve">
-    <value>Duração (minutos, 0 - infinito):</value>
+    <value>Duração:</value>
+  </data>
+  <data name="DurationMinutes_Field_Help" xml:space="preserve">
+    <value>Por quanto tempo o servidor permanecerá ativo, em minutos. Use 0 para sem limite de tempo (ilimitado).</value>
   </data>
   <data name="Field_Device" xml:space="preserve">
     <value>Dispositivo:</value>
@@ -264,6 +267,15 @@ Cenário de uso: você copia dados para um servidor remoto. Há um problema: o I
   </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>A pasta não existe.</value>
+  </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>Acesso à pasta:</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>Somente leitura</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>Leitura e gravação</value>
   </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>Protocolo:</value>
@@ -319,8 +331,11 @@ Cenário de uso: você copia dados para um servidor remoto. Há um problema: o I
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>Compartilhar pasta pela rede (servidor FTPS)</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>Servidor FTPS</value>
+  </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
-    <value>Você pode compartilhar qualquer pasta para acesso de leitura e gravação via protocolo FTPS (criptografia explícita com certificado autoassinado) dentro de sua rede local.</value>
+    <value>Configure um servidor FTPS que é executado neste computador. Ele usa criptografia explícita com um certificado autoassinado e compartilha a pasta selecionada. Enquanto o servidor estiver em execução, você pode se conectar a ele a partir de qualquer cliente FTPS na sua rede local.</value>
   </data>
   <data name="Icons_Help_Link" xml:space="preserve">
     <value>Adicione o ícone do personagem ao seu texto</value>

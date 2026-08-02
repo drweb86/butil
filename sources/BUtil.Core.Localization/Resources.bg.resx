@@ -239,7 +239,10 @@
     <value>Директория „{0}" не съществува.</value>
   </data>
   <data name="DurationMinutes_Field" xml:space="preserve">
-    <value>Продължителност (минути, 0 - безкрайно):</value>
+    <value>Продължителност:</value>
+  </data>
+  <data name="DurationMinutes_Field_Help" xml:space="preserve">
+    <value>Колко дълго сървърът ще остане активен, в минути. Използвайте 0 за без времево ограничение (неограничено).</value>
   </data>
   <data name="Field_Device" xml:space="preserve">
     <value>Устройство:</value>
@@ -264,6 +267,15 @@
   </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Папката не съществува.</value>
+  </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>Достъп до папката:</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>Само четене</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>Четене и запис</value>
   </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>Протокол:</value>
@@ -319,8 +331,11 @@
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>Споделяне на папка по мрежа (FTPS сървър)</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>FTPS сървър</value>
+  </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
-    <value>Можете да споделите всяка папка за четене и запис чрез FTPS протокол (явно криптиране със самоподписан сертификат) във вашата локална мрежа.</value>
+    <value>Настройте FTPS сървър, който работи на този компютър. Той използва явно криптиране със самоподписан сертификат и споделя избраната папка. Докато сървърът работи, можете да се свържете с него от всеки FTPS клиент в локалната ви мрежа.</value>
   </data>
   <data name="Icons_Help_Link" xml:space="preserve">
     <value>Добавете символна икона към вашия текст</value>

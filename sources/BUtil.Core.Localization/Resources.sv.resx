@@ -239,7 +239,10 @@ Användningsscenario: Du kopierar data till en fjärrserver. Det finns ett probl
     <value>Katalogen "{0}" finns inte.</value>
   </data>
   <data name="DurationMinutes_Field" xml:space="preserve">
-    <value>Varaktighet (minuter, 0 - oändlig):</value>
+    <value>Varaktighet:</value>
+  </data>
+  <data name="DurationMinutes_Field_Help" xml:space="preserve">
+    <value>Hur länge servern förblir aktiv, i minuter. Använd 0 för ingen tidsgräns (obegränsat).</value>
   </data>
   <data name="Field_Device" xml:space="preserve">
     <value>Enhet:</value>
@@ -264,6 +267,15 @@ Användningsscenario: Du kopierar data till en fjärrserver. Det finns ett probl
   </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Mappen finns inte.</value>
+  </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>Mappåtkomst:</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>Skrivskyddad</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>Läs och skriv</value>
   </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>Protokoll:</value>
@@ -319,8 +331,11 @@ Användningsscenario: Du kopierar data till en fjärrserver. Det finns ett probl
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>Dela mapp över nätverk (FTPS-server)</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>FTPS-server</value>
+  </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
-    <value>Du kan dela vilken mapp som helst med läs-skrivåtkomst via FTPS-protokollet (explicit kryptering med självsignerat certifikat) inom ditt lokala nätverk.</value>
+    <value>Konfigurera en FTPS-server som körs på den här datorn. Den använder explicit kryptering med ett självsignerat certifikat och delar den valda mappen. Medan servern körs kan du ansluta till den från valfri FTPS-klient i ditt lokala nätverk.</value>
   </data>
   <data name="Icons_Help_Link" xml:space="preserve">
     <value>Lägg till en teckenikon i din text</value>

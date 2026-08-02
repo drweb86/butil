@@ -239,7 +239,10 @@ Scenariu de utilizare: Copiați date pe un server la distanță. Există o probl
     <value>Directorul „{0}" nu există.</value>
   </data>
   <data name="DurationMinutes_Field" xml:space="preserve">
-    <value>Durată (minute, 0 - infinit):</value>
+    <value>Durată:</value>
+  </data>
+  <data name="DurationMinutes_Field_Help" xml:space="preserve">
+    <value>Cât timp va rămâne activ serverul, în minute. Folosiți 0 pentru fără limită de timp (nelimitat).</value>
   </data>
   <data name="Field_Device" xml:space="preserve">
     <value>Dispozitiv:</value>
@@ -264,6 +267,15 @@ Scenariu de utilizare: Copiați date pe un server la distanță. Există o probl
   </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Folderul nu există.</value>
+  </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>Acces la folder:</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>Doar citire</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>Citire și scriere</value>
   </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>Protocol:</value>
@@ -319,8 +331,11 @@ Scenariu de utilizare: Copiați date pe un server la distanță. Există o probl
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>Partajare folder prin rețea (Server FTPS)</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>Server FTPS</value>
+  </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
-    <value>Puteți partaja orice folder cu acces citire-scriere prin protocolul FTPS (criptare explicită cu certificat autosemnat) în rețeaua dvs. locală.</value>
+    <value>Configurați un server FTPS care rulează pe acest computer. Folosește criptare explicită cu un certificat autosemnat și partajează folderul selectat. În timp ce serverul rulează, vă puteți conecta la el de pe orice client FTPS din rețeaua locală.</value>
   </data>
   <data name="Icons_Help_Link" xml:space="preserve">
     <value>Adăugați o pictogramă de caracter la textul dvs.</value>

@@ -239,7 +239,10 @@ Scenarij korištenja: Kopirate podatke na udaljeni poslužitelj. Problem: ISP sm
     <value>Direktorij „{0}" ne postoji.</value>
   </data>
   <data name="DurationMinutes_Field" xml:space="preserve">
-    <value>Trajanje (minute, 0 - beskonačno):</value>
+    <value>Trajanje:</value>
+  </data>
+  <data name="DurationMinutes_Field_Help" xml:space="preserve">
+    <value>Koliko dugo će poslužitelj ostati aktivan, u minutama. Koristite 0 za bez vremenskog ograničenja (neograničeno).</value>
   </data>
   <data name="Field_Device" xml:space="preserve">
     <value>Uređaj:</value>
@@ -264,6 +267,15 @@ Scenarij korištenja: Kopirate podatke na udaljeni poslužitelj. Problem: ISP sm
   </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Mapa ne postoji.</value>
+  </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>Pristup mapi:</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>Samo čitanje</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>Čitanje i pisanje</value>
   </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>Protokol:</value>
@@ -319,8 +331,11 @@ Scenarij korištenja: Kopirate podatke na udaljeni poslužitelj. Problem: ISP sm
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>Dijeli mapu preko mreže (FTPS poslužitelj)</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>FTPS poslužitelj</value>
+  </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
-    <value>Možete dijeliti bilo koju mapu za čitanje i pisanje putem FTPS protokola (eksplicitna enkripcija sa samopotpisanim certifikatom) unutar vaše lokalne mreže.</value>
+    <value>Postavite FTPS poslužitelj koji radi na ovom računalu. Koristi eksplicitnu enkripciju sa samopotpisanim certifikatom i dijeli odabranu mapu. Dok poslužitelj radi, možete se povezati s njim s bilo kojeg FTPS klijenta u lokalnoj mreži.</value>
   </data>
   <data name="Icons_Help_Link" xml:space="preserve">
     <value>Dodajte znakovnu ikonu u svoj tekst</value>

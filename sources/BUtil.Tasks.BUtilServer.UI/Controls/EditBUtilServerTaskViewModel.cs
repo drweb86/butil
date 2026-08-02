@@ -11,6 +11,7 @@ using BUtil.Core.Services;
 using BUtil.UI;
 using BUtil.UI.Tasks.Controls;
 using System;
+using System.Collections.Generic;
 
 namespace BUtil.Tasks.BUtilServer.UI.Controls;
 
@@ -37,13 +38,24 @@ public class EditBUtilServerTaskViewModel : BUtil.UI.Controls.ViewModelBase
         var model = (BUtilServerModelOptionsV2)task.Model;
         var schedule = PlatformSpecificExperience.Instance.GetTaskSchedulerService();
         WhenTaskViewModel = new BUtil.UI.Controls.WhenTaskViewModel(isNew ? new ScheduleInfo() : schedule.GetSchedule(taskName) ?? new ScheduleInfo(), isNew);
-        FolderAndPortSectionViewModel = new BUtil.UI.Controls.FolderAndPortSectionViewModel(model.Port, model.Username, model.Password, model.Folder, model.DurationMinutes, isNew);
+        FtpsServerConfigurationViewModel = new BUtil.UI.Controls.FtpsServerConfigurationViewModel(model.Port, model.Username, model.Password, model.Folder, model.DurationMinutes, model.FolderAccess, isNew);
+        FtpsServerConfigurationViewModel.PropertyChanged += (_, e) =>
+        {
+            if (e.PropertyName is nameof(BUtil.UI.Controls.FtpsServerConfigurationViewModel.Port)
+                or nameof(BUtil.UI.Controls.FtpsServerConfigurationViewModel.FtpsUser)
+                or nameof(BUtil.UI.Controls.FtpsServerConfigurationViewModel.FtpsPassword)
+                or nameof(BUtil.UI.Controls.FtpsServerConfigurationViewModel.Folder)
+                or nameof(BUtil.UI.Controls.FtpsServerConfigurationViewModel.FolderAccess)
+                or nameof(BUtil.UI.Controls.FtpsServerConfigurationViewModel.DurationMinutes)
+                or nameof(BUtil.UI.Controls.FtpsServerConfigurationViewModel.Error))
+                FormErrorsText = null;
+        };
     }
 
     public bool IsNew { get; set; }
     public TaskIdentityViewModel TaskIdentityViewModel { get; }
     public BUtil.UI.Controls.WhenTaskViewModel WhenTaskViewModel { get; }
-    public BUtil.UI.Controls.FolderAndPortSectionViewModel FolderAndPortSectionViewModel { get; }
+    public BUtil.UI.Controls.FtpsServerConfigurationViewModel FtpsServerConfigurationViewModel { get; }
 
     #region FormErrorsText
 
@@ -75,9 +87,14 @@ public class EditBUtilServerTaskViewModel : BUtil.UI.Controls.ViewModelBase
     public void ButtonOkCommand()
     {
         FormErrorsText = null;
+        var errors = new List<string>();
         if (!TaskIdentityViewModel.Validate(IsNew ? null : _taskName))
+            errors.Add($"{Resources.Name_Title}: {TaskIdentityViewModel.NameError}");
+        if (!FtpsServerConfigurationViewModel.Validate())
+            errors.Add($"{Resources.FtpsServerConfiguration_Title}: {FtpsServerConfigurationViewModel.Error}");
+        if (errors.Count > 0)
         {
-            FormErrorsText = $"{Resources.Name_Title}: {TaskIdentityViewModel.NameError}";
+            FormErrorsText = string.Join(Environment.NewLine, errors);
             return;
         }
 
@@ -85,11 +102,12 @@ public class EditBUtilServerTaskViewModel : BUtil.UI.Controls.ViewModelBase
         {
             Name = TaskIdentityViewModel.Name.TrimEnd(),
             Model = new BUtilServerModelOptionsV2(
-                FolderAndPortSectionViewModel.Port,
-                FolderAndPortSectionViewModel.FtpsUser!,
-                FolderAndPortSectionViewModel.FtpsPassword!,
-                FolderAndPortSectionViewModel.Folder,
-                FolderAndPortSectionViewModel.DurationMinutes)
+                (int)FtpsServerConfigurationViewModel.Port,
+                FtpsServerConfigurationViewModel.FtpsUser!,
+                FtpsServerConfigurationViewModel.FtpsPassword!,
+                FtpsServerConfigurationViewModel.Folder,
+                FtpsServerConfigurationViewModel.DurationMinutes,
+                FtpsServerConfigurationViewModel.FolderAccess)
         };
 
         if (!TaskV2Validator.TryValidate(newTask, true, IsNew ? null : _taskName, out var error))

@@ -234,7 +234,10 @@
     <value>ディレクトリ「{0}」は存在しません。</value>
   </data>
   <data name="DurationMinutes_Field" xml:space="preserve">
-    <value>期間（分、0 ～ 無限）:</value>
+    <value>期間:</value>
+  </data>
+  <data name="DurationMinutes_Field_Help" xml:space="preserve">
+    <value>サーバーがアクティブなままになる時間（分）。時間制限なし（無制限）の場合は 0 を使用します。</value>
   </data>
   <data name="Field_Device" xml:space="preserve">
     <value>デバイス:</value>
@@ -259,6 +262,15 @@
   </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>フォルダーが存在しません。</value>
+  </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>フォルダーのアクセス権:</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>読み取り専用</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>読み取りと書き込み</value>
   </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>プロトコル:</value>
@@ -314,8 +326,11 @@
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>ネットワーク上でフォルダを共有（FTPSサーバー）</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>FTPSサーバー</value>
+  </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
-    <value>ローカルエリアネットワーク内で任意のフォルダをFTPSプロトコル（自己署名証明書による明示的な暗号化）で読み書きアクセス可能に共有できます。</value>
+    <value>このコンピューターで動作する FTPS サーバーを設定します。自己署名証明書による明示的な暗号化を使用し、選択したフォルダーを共有します。サーバーの実行中は、ローカルネットワーク上の任意の FTPS クライアントから接続できます。</value>
   </data>
   <data name="Icons_Help_Link" xml:space="preserve">
     <value>テキストにキャラクターアイコンを追加</value>

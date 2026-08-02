@@ -239,7 +239,10 @@ Scenariusz użycia: Kopiujesz dane na zdalny serwer. Jest problem: dostawca inte
     <value>Katalog "{0}" nie istnieje.</value>
   </data>
   <data name="DurationMinutes_Field" xml:space="preserve">
-    <value>Czas trwania (minuty, 0 - nieskończony):</value>
+    <value>Czas trwania:</value>
+  </data>
+  <data name="DurationMinutes_Field_Help" xml:space="preserve">
+    <value>Jak długo serwer pozostanie aktywny, w minutach. Użyj 0, aby nie ustawiać limitu czasu (bez ograniczeń).</value>
   </data>
   <data name="Field_Device" xml:space="preserve">
     <value>Urządzenie:</value>
@@ -264,6 +267,15 @@ Scenariusz użycia: Kopiujesz dane na zdalny serwer. Jest problem: dostawca inte
   </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Folder nie istnieje.</value>
+  </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>Dostęp do folderu:</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>Tylko do odczytu</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>Odczyt i zapis</value>
   </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>Protokół:</value>
@@ -319,8 +331,11 @@ Scenariusz użycia: Kopiujesz dane na zdalny serwer. Jest problem: dostawca inte
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>Udostępnij folder w sieci (serwer FTPS)</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>Serwer FTPS</value>
+  </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
-    <value>Możesz udostępnić dowolny folder z dostępem do odczytu i zapisu przez protokół FTPS (jawne szyfrowanie z certyfikatem samopodpisanym) w sieci lokalnej.</value>
+    <value>Skonfiguruj serwer FTPS działający na tym komputerze. Używa jawnego szyfrowania z certyfikatem samopodpisanym i udostępnia wybrany folder. Gdy serwer działa, możesz połączyć się z nim z dowolnego klienta FTPS w sieci lokalnej.</value>
   </data>
   <data name="Icons_Help_Link" xml:space="preserve">
     <value>Dodaj ikonę znaku do tekstu</value>

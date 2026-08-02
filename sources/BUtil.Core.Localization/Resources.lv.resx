@@ -239,7 +239,10 @@ Lietošanas scenārijs: Jūs kopējat datus uz attālo serveri. Problēma: inter
     <value>Direktorija „{0}" neeksistē.</value>
   </data>
   <data name="DurationMinutes_Field" xml:space="preserve">
-    <value>Ilgums (minūtes, 0 - bezgalīgs):</value>
+    <value>Ilgums:</value>
+  </data>
+  <data name="DurationMinutes_Field_Help" xml:space="preserve">
+    <value>Cik ilgi serveris paliks aktīvs, minūtēs. Izmantojiet 0, ja nav laika ierobežojuma (neierobežoti).</value>
   </data>
   <data name="Field_Device" xml:space="preserve">
     <value>Ierīce:</value>
@@ -264,6 +267,15 @@ Lietošanas scenārijs: Jūs kopējat datus uz attālo serveri. Problēma: inter
   </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Mape neeksistē.</value>
+  </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>Piekļuve mapei:</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>Tikai lasīt</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>Lasīt un rakstīt</value>
   </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>Protokols:</value>
@@ -319,8 +331,11 @@ Lietošanas scenārijs: Jūs kopējat datus uz attālo serveri. Problēma: inter
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>Koplietot mapi tīklā (FTPS serveris)</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>FTPS serveris</value>
+  </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
-    <value>Jūs varat koplietot jebkuru mapi lasīšanas un rakstīšanas piekļuvei, izmantojot FTPS protokolu (tieša šifrēšana ar pašparakstītu sertifikātu) jūsu lokālajā tīklā.</value>
+    <value>Iestatiet FTPS serveri, kas darbojas šajā datorā. Tas izmanto tiešu šifrēšanu ar paša parakstītu sertifikātu un koplieto atlasīto mapi. Kamēr serveris darbojas, varat tam pievienoties no jebkura FTPS klienta lokālajā tīklā.</value>
   </data>
   <data name="Icons_Help_Link" xml:space="preserve">
     <value>Pievienojiet rakstzīmju ikonu savam tekstam</value>

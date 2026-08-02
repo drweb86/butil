@@ -239,7 +239,10 @@
     <value>დირექტორია „{0}" არ არსებობს.</value>
   </data>
   <data name="DurationMinutes_Field" xml:space="preserve">
-    <value>ხანგრძლივობა (წუთები, 0 - უსასრულო):</value>
+    <value>ხანგრძლივობა:</value>
+  </data>
+  <data name="DurationMinutes_Field_Help" xml:space="preserve">
+    <value>რამდენ ხანს დარჩება სერვერი აქტიური, წუთებში. გამოიყენეთ 0 დროის ლიმიტის გარეშე (შეუზღუდავი).</value>
   </data>
   <data name="Field_Device" xml:space="preserve">
     <value>მოწყობილობა:</value>
@@ -264,6 +267,15 @@
   </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>საქაღალდე არ არსებობს.</value>
+  </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>საქაღალდის წვდომა:</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>მხოლოდ წაკითხვა</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>წაკითხვა და ჩაწერა</value>
   </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>პროტოკოლი:</value>
@@ -319,8 +331,11 @@
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>საქაღალდის გაზიარება ქსელით (FTPS სერვერი)</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>FTPS სერვერი</value>
+  </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
-    <value>შეგიძლიათ გააზიაროთ ნებისმიერი საქაღალდე წაკითხვა-ჩაწერის წვდომით FTPS პროტოკოლით (აშკარა დაშიფვრა თვით-ხელმოწერილი სერტიფიკატით) თქვენს ლოკალურ ქსელში.</value>
+    <value>დააყენეთ FTPS სერვერი, რომელიც ამ კომპიუტერზე მუშაობს. ის იყენებს აშკარა დაშიფვრას თვით-ხელმოწერილი სერტიფიკატით და აზიარებს არჩეულ საქაღალდეს. სერვერის მუშაობისას შეგიძლიათ დაუკავშირდეთ მას თქვენი ლოკალური ქსელის ნებისმიერი FTPS კლიენტიდან.</value>
   </data>
   <data name="Icons_Help_Link" xml:space="preserve">
     <value>დაამატეთ სიმბოლოს ხატულა თქვენს ტექსტში</value>

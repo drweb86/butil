@@ -239,7 +239,10 @@ Scenarij uporabe: Kopirate podatke na oddaljeni strežnik. Težava: ponudnik int
     <value>Imenik „{0}" ne obstaja.</value>
   </data>
   <data name="DurationMinutes_Field" xml:space="preserve">
-    <value>Trajanje (minute, 0 - neskončno):</value>
+    <value>Trajanje:</value>
+  </data>
+  <data name="DurationMinutes_Field_Help" xml:space="preserve">
+    <value>Kako dolgo bo strežnik ostal aktiven, v minutah. Uporabite 0 za brez časovne omejitve (neomejeno).</value>
   </data>
   <data name="Field_Device" xml:space="preserve">
     <value>Naprava:</value>
@@ -264,6 +267,15 @@ Scenarij uporabe: Kopirate podatke na oddaljeni strežnik. Težava: ponudnik int
   </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Mapa ne obstaja.</value>
+  </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>Dostop do mape:</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>Samo za branje</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>Branje in pisanje</value>
   </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>Protokol:</value>
@@ -319,8 +331,11 @@ Scenarij uporabe: Kopirate podatke na oddaljeni strežnik. Težava: ponudnik int
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>Deli mapo prek omrežja (FTPS strežnik)</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>FTPS strežnik</value>
+  </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
-    <value>Lahko delite katero koli mapo za branje in pisanje prek FTPS protokola (eksplicitno šifriranje s samopodpisanim certifikatom) v vašem lokalnem omrežju.</value>
+    <value>Nastavite FTPS strežnik, ki teče na tem računalniku. Uporablja eksplicitno šifriranje s samopodpisanim potrdilom in deli izbrano mapo. Medtem ko strežnik deluje, se lahko nanj povežete iz katerega koli odjemalca FTPS v lokalnem omrežju.</value>
   </data>
   <data name="Icons_Help_Link" xml:space="preserve">
     <value>Dodajte znakovno ikono v svoje besedilo</value>

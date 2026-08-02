@@ -32,7 +32,7 @@
 			<StackPanel Spacing="8" Classes="FormContent">
 				<decor:FormHeader Text="{Binding WindowTitle}" />
 				<tasks:TaskIdentityView DataContext="{Binding TaskIdentityViewModel}" />
-				<controls:FolderAndPortSectionView DataContext="{Binding FolderAndPortSectionViewModel}" />
+				<controls:FtpsServerConfigurationView DataContext="{Binding FtpsServerConfigurationViewModel}" />
 				<controls:WhenTaskView DataContext="{Binding WhenTaskViewModel}" />
 				<decor:DialogButtons
 					PrimaryText="{Binding Button_OK}"

@@ -239,7 +239,10 @@
     <value>Папку "{0}" не знайдено.</value>
   </data>
   <data name="DurationMinutes_Field" xml:space="preserve">
-    <value>Тривалість (хвилини, 0 - нескінченність):</value>
+    <value>Тривалість:</value>
+  </data>
+  <data name="DurationMinutes_Field_Help" xml:space="preserve">
+    <value>Як довго сервер залишатиметься активним, у хвилинах. Вкажіть 0, щоб не обмежувати час (без обмежень).</value>
   </data>
   <data name="Field_Device" xml:space="preserve">
     <value>Пристрій:</value>
@@ -264,6 +267,15 @@
   </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Папки не існує.</value>
+  </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>Доступ до папки:</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>Лише читання</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>Читання та запис</value>
   </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>Протокол:</value>
@@ -319,8 +331,11 @@
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>Поділитися папкою в мережі (FTPS-сервер)</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>FTPS-сервер</value>
+  </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
-    <value>Ви можете надати спільний доступ до будь-якої теки для читання та запису через протокол FTPS (явне шифрування з самопідписаним сертифікатом) у вашій локальній мережі.</value>
+    <value>Налаштуйте FTPS-сервер, який працює на цьому комп’ютері. Він використовує явне шифрування з самопідписаним сертифікатом і надає спільний доступ до вибраної папки. Поки сервер запущено, ви можете підключатися до нього з будь-якого FTPS-клієнта у вашій локальній мережі.</value>
   </data>
   <data name="Icons_Help_Link" xml:space="preserve">
     <value>Додати піктограми-символи до тексту</value>

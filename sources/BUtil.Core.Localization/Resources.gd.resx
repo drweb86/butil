@@ -239,7 +239,10 @@ Suidheachadh cleachdaidh: Bidh thu a’ dèanamh lethbhreac den dàta gu frithea
     <value>Chan eil eòlaire "{0}" ann.</value>
   </data>
   <data name="DurationMinutes_Field" xml:space="preserve">
-    <value>Ùine (mionaidean, 0 - gun chrìoch):</value>
+    <value>Ùine:</value>
+  </data>
+  <data name="DurationMinutes_Field_Help" xml:space="preserve">
+    <value>Dè cho fada 's a dh'fhanas am frithealaiche gnìomhach, ann am mionaidean. Cleachd 0 airson gun chrìoch ùine (gun chrìch).</value>
   </data>
   <data name="Field_Device" xml:space="preserve">
     <value>Inneal:</value>
@@ -264,6 +267,15 @@ Suidheachadh cleachdaidh: Bidh thu a’ dèanamh lethbhreac den dàta gu frithea
   </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Chan eil pasgan ann.</value>
+  </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>Inntrigeadh pasgain:</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>Leughadh a-mhàin</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>Leughadh is sgrìobhadh</value>
   </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>Pròtacal:</value>
@@ -319,8 +331,11 @@ Suidheachadh cleachdaidh: Bidh thu a’ dèanamh lethbhreac den dàta gu frithea
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>Roinn pasgan thairis air lìonra (Frithealaiche FTPS)</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>Frithealaiche FTPS</value>
+  </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
-    <value>Faodaidh tu pasgan sam bith airson ruigsinneachd leughadh-sgrìobhaidh a cho-roinn tro phròtacal FTPS (crioptachadh soilleir le teisteanas fèin-shoidhnichte) taobh a-staigh lìonra na sgìre ionadail agad.</value>
+    <value>Suidhich frithealaiche FTPS a tha a' ruith air a' choimpiutair seo. Cleachdaidh e crioptachadh soilleir le teisteanas fèin-ainmichte agus roinnidh e am pasgan a thagh thu. Fhad 's a tha am frithealaiche a' ruith, 's urrainn dhut ceangal a dhèanamh ris bho chliant FTPS sam bith air an lìonra ionadail agad.</value>
   </data>
   <data name="Icons_Help_Link" xml:space="preserve">
     <value>Cuir ìomhaigh caractar ris an teacsa agad</value>

@@ -238,7 +238,10 @@
     <value>கோப்புறை "{0}" இல்லை.</value>
   </data>
   <data name="DurationMinutes_Field" xml:space="preserve">
-    <value>கால அளவு (நிமிடங்கள், 0 - முடிவிலி):</value>
+    <value>கால அளவு:</value>
+  </data>
+  <data name="DurationMinutes_Field_Help" xml:space="preserve">
+    <value>சேவையகம் எவ்வளவு நேரம் செயலில் இருக்கும் என்பது, நிமிடங்களில். நேர வரம்பு இல்லாமல் (வரம்பற்றது) இருக்க 0 ஐப் பயன்படுத்தவும்.</value>
   </data>
   <data name="Field_Device" xml:space="preserve">
     <value>மாதிரி:</value>
@@ -263,6 +266,15 @@
   </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>கோப்பகம் இல்லை.</value>
+  </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>கோப்புறை அணுகல்:</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>படிக்க மட்டும்</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>படித்தல் மற்றும் எழுதுதல்</value>
   </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>முறையில்:</value>
@@ -318,8 +330,11 @@
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>நெட்வொர்க்கில் கோப்புறையை பகிரவும் (FTPS சர்வர்)</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>FTPS சேவையகம்</value>
+  </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
-    <value>உங்கள் உள்ளூர் பகுதி நெட்வொர்க்கில் எந்தக் கோப்புறையையும் FTPS நெறிமுறை (சுய-கையொப்பமிடப்பட்ட சான்றிதழுடன் வெளிப்படையான குறியாக்கம்) மூலம் படித்தல்-எழுதும் அணுகலுக்காகப் பகிரலாம்.</value>
+    <value>இந்த கணினியில் இயங்கும் FTPS சேவையகத்தை அமைக்கவும். இது சுய-கையொப்பமிடப்பட்ட சான்றிதழுடன் வெளிப்படையான குறியாக்கத்தைப் பயன்படுத்தி, தேர்ந்தெடுக்கப்பட்ட கோப்புறையைப் பகிர்கிறது. சேவையகம் இயங்கும் போது, உங்கள் உள்ளூர் பிணையத்தில் உள்ள எந்த FTPS கிளையண்டிலிருந்தும் இணைக்கலாம்.</value>
   </data>
   <data name="Icons_Help_Link" xml:space="preserve">
     <value>உங்கள் உரையில் எழுத்தாளர் அடையாளத்தைச் சேர்க்கவும்</value>

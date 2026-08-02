@@ -239,7 +239,10 @@ Usage scenario: You copy data to remote server. There's a problem: ISP drops upl
     <value>Directory "{0}" does not exist.</value>
   </data>
   <data name="DurationMinutes_Field" xml:space="preserve">
-    <value>Duration (minutes, 0 - infinite):</value>
+    <value>Duration:</value>
+  </data>
+  <data name="DurationMinutes_Field_Help" xml:space="preserve">
+    <value>How long the server will stay active, in minutes. Use 0 for no time limit (unlimited).</value>
   </data>
   <data name="Field_Device" xml:space="preserve">
     <value>Device:</value>
@@ -264,6 +267,15 @@ Usage scenario: You copy data to remote server. There's a problem: ISP drops upl
   </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Folder does not exist.</value>
+  </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>Folder access:</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>Read only</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>Read and write</value>
   </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>Protocol:</value>
@@ -319,8 +331,11 @@ Usage scenario: You copy data to remote server. There's a problem: ISP drops upl
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>Share folder over network (FTPS Server)</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>FTPS server</value>
+  </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
-    <value>You can share any folder for read-write access via FTPS protocol (explicit encryption with self-signed certificate) inside your local area network.</value>
+    <value>Set up an FTPS server that runs on this computer. It uses explicit encryption with a self-signed certificate and shares the selected folder. While the server is running, you can connect to it from any FTPS client on your local network.</value>
   </data>
   <data name="Icons_Help_Link" xml:space="preserve">
     <value>Add character icon to your text</value>

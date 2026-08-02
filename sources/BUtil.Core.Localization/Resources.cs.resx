@@ -239,7 +239,10 @@ Scénář použití: Kopírujete data na vzdálený server. Problém: Poskytovat
     <value>Adresář „{0}" neexistuje.</value>
   </data>
   <data name="DurationMinutes_Field" xml:space="preserve">
-    <value>Trvání (minuty, 0 - neomezeně):</value>
+    <value>Trvání:</value>
+  </data>
+  <data name="DurationMinutes_Field_Help" xml:space="preserve">
+    <value>Jak dlouho zůstane server aktivní, v minutách. Použijte 0 pro žádný časový limit (neomezeně).</value>
   </data>
   <data name="Field_Device" xml:space="preserve">
     <value>Zařízení:</value>
@@ -264,6 +267,15 @@ Scénář použití: Kopírujete data na vzdálený server. Problém: Poskytovat
   </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Složka neexistuje.</value>
+  </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>Přístup ke složce:</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>Pouze pro čtení</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>Čtení a zápis</value>
   </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>Protokol:</value>
@@ -319,8 +331,11 @@ Scénář použití: Kopírujete data na vzdálený server. Problém: Poskytovat
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>Sdílet složku přes síť (FTPS server)</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>FTPS server</value>
+  </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
-    <value>Můžete sdílet jakoukoli složku s přístupem pro čtení a zápis přes protokol FTPS (explicitní šifrování s certifikátem podepsaným vlastním klíčem) ve vaší místní síti.</value>
+    <value>Nastavte FTPS server, který běží na tomto počítači. Používá explicitní šifrování se samopodpisovaným certifikátem a sdílí vybranou složku. Dokud server běží, můžete se k němu připojit z libovolného FTPS klienta ve vaší místní síti.</value>
   </data>
   <data name="Icons_Help_Link" xml:space="preserve">
     <value>Přidejte znakovou ikonu do svého textu</value>

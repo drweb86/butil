@@ -239,7 +239,10 @@ Notkunardæmi: Þú afritar gögn á fjarlægan þjón. Vandamál er: Netþjónu
     <value>Mappa "{0}" er ekki til.</value>
   </data>
   <data name="DurationMinutes_Field" xml:space="preserve">
-    <value>Tímalengd (mínútur, 0 - óendanlegt):</value>
+    <value>Tímalengd:</value>
+  </data>
+  <data name="DurationMinutes_Field_Help" xml:space="preserve">
+    <value>Hversu lengi þjónninn helst virkur, í mínútum. Notaðu 0 fyrir enga tímamörk (ótakmarkað).</value>
   </data>
   <data name="Field_Device" xml:space="preserve">
     <value>Tæki:</value>
@@ -264,6 +267,15 @@ Notkunardæmi: Þú afritar gögn á fjarlægan þjón. Vandamál er: Netþjónu
   </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Mappa er ekki til.</value>
+  </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>Aðgangur að möppu:</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>Aðeins lestur</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>Lestur og skrif</value>
   </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>Samskiptaregla:</value>
@@ -319,8 +331,11 @@ Notkunardæmi: Þú afritar gögn á fjarlægan þjón. Vandamál er: Netþjónu
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>Deila möppu yfir net (FTPS þjónn)</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>FTPS þjónn</value>
+  </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
-    <value>Þú getur deilt hvaða möppu sem er með les- og skrifaðgangi í gegnum FTPS samskiptareglu (beinlínis dulkóðun með sjálfundirrituðu vottorði) á staðarnetinu þínu.</value>
+    <value>Settu upp FTPS þjón sem keyrir á þessari tölvu. Hann notar beinlínis dulkóðun með sjálfundirrituðu vottorði og deilir völdu möppunni. Meðan þjónninn er í gangi geturðu tengst honum frá hvaða FTPS biðlara sem er á staðarnetinu þínu.</value>
   </data>
   <data name="Icons_Help_Link" xml:space="preserve">
     <value>Bæta stafatákni við textann þinn</value>

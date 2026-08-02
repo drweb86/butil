@@ -239,7 +239,10 @@
     <value>دایرکتوری "{0}" وجود ندارد.</value>
   </data>
   <data name="DurationMinutes_Field" xml:space="preserve">
-    <value>مدت (دقیقه، 0 - بی‌نهایت):</value>
+    <value>مدت:</value>
+  </data>
+  <data name="DurationMinutes_Field_Help" xml:space="preserve">
+    <value>مدت زمانی که سرور فعال می‌ماند، بر حسب دقیقه. برای بدون محدودیت زمانی (نامحدود) از ۰ استفاده کنید.</value>
   </data>
   <data name="Field_Device" xml:space="preserve">
     <value>دستگاه:</value>
@@ -264,6 +267,15 @@
   </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>پوشه وجود ندارد.</value>
+  </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>دسترسی پوشه:</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>فقط خواندنی</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>خواندن و نوشتن</value>
   </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>پروتکل:</value>
@@ -319,8 +331,11 @@
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>اشتراک‌گذاری پوشه از طریق شبکه (سرور FTPS)</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>سرور FTPS</value>
+  </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
-    <value>می‌توانید هر پوشه‌ای را با دسترسی خواندن و نوشتن از طریق پروتکل FTPS (رمزنگاری صریح با گواهی خودامضا) در شبکه محلی خود به اشتراک بگذارید.</value>
+    <value>یک سرور FTPS راه‌اندازی کنید که روی این رایانه اجرا می‌شود. از رمزنگاری صریح با گواهی خودامضا استفاده می‌کند و پوشه انتخاب‌شده را به اشتراک می‌گذارد. تا وقتی سرور در حال اجراست، می‌توانید از هر کلاینت FTPS در شبکه محلی خود به آن متصل شوید.</value>
   </data>
   <data name="Icons_Help_Link" xml:space="preserve">
     <value>نماد کاراکتر به متن خود اضافه کنید</value>

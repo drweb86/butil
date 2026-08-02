@@ -239,7 +239,10 @@
     <value>निर्देशिका "{0}" मौजूद नहीं है।</value>
   </data>
   <data name="DurationMinutes_Field" xml:space="preserve">
-    <value>अवधि (मिनट, 0 - अनंत):</value>
+    <value>अवधि:</value>
+  </data>
+  <data name="DurationMinutes_Field_Help" xml:space="preserve">
+    <value>सर्वर कितनी देर तक सक्रिय रहेगा, मिनटों में। कोई समय सीमा न हो (असीमित) तो 0 उपयोग करें।</value>
   </data>
   <data name="Field_Device" xml:space="preserve">
     <value>डिवाइस:</value>
@@ -264,6 +267,15 @@
   </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>फ़ोल्डर मौजूद नहीं है।</value>
+  </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>फ़ोल्डर पहुँच:</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>केवल पढ़ने के लिए</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>पढ़ना और लिखना</value>
   </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>प्रोटोकॉल:</value>
@@ -319,8 +331,11 @@
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>नेटवर्क पर फ़ोल्डर साझा करें (FTPS सर्वर)</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>FTPS सर्वर</value>
+  </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
-    <value>आप अपने लोकल एरिया नेटवर्क के अंदर किसी भी फ़ोल्डर को FTPS प्रोटोकॉल (स्व-हस्ताक्षरित प्रमाणपत्र के साथ स्पष्ट एन्क्रिप्शन) के माध्यम से पढ़ने-लिखने की पहुंच के लिए साझा कर सकते हैं।</value>
+    <value>इस कंप्यूटर पर चलने वाला FTPS सर्वर सेट अप करें। यह स्व-हस्ताक्षरित प्रमाणपत्र के साथ स्पष्ट एन्क्रिप्शन का उपयोग करता है और चयनित फ़ोल्डर साझा करता है। सर्वर चलते समय आप अपने स्थानीय नेटवर्क पर किसी भी FTPS क्लाइंट से इससे कनेक्ट कर सकते हैं।</value>
   </data>
   <data name="Icons_Help_Link" xml:space="preserve">
     <value>अपने पाठ में चरित्र आइकन जोड़ें</value>

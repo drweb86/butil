@@ -239,7 +239,10 @@
     <value>Дырэкторыя "{0}" не існуе.</value>
   </data>
   <data name="DurationMinutes_Field" xml:space="preserve">
-    <value>Працягласць (хвіліны, 0 - бясконца):</value>
+    <value>Працягласць:</value>
+  </data>
+  <data name="DurationMinutes_Field_Help" xml:space="preserve">
+    <value>Як доўга сервер будзе заставацца актыўным, у хвілінах. Выкарыстоўвайце 0 для адсутнасці абмежавання часу (неабмежавана).</value>
   </data>
   <data name="Field_Device" xml:space="preserve">
     <value>Прылада:</value>
@@ -264,6 +267,15 @@
   </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Папка не існуе.</value>
+  </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>Доступ да папкі:</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>Толькі чытанне</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>Чытанне і запіс</value>
   </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>Пратакол:</value>
@@ -319,8 +331,11 @@
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>Абагуліць папку па сетцы (FTPS сервер)</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>FTPS-сервер</value>
+  </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
-    <value>Вы можаце абагуліць любую папку для чытання і запісу праз пратакол FTPS (яўнае шыфраванне з самападпісаным сертыфікатам) у вашай лакальнай сетцы.</value>
+    <value>Наладзьце FTPS-сервер, які працуе на гэтым камп'ютары. Ён выкарыстоўвае яўнае шыфраванне з самападпісаным сертыфікатам і абагульвае выбраную папку. Пакуль сервер працуе, вы можаце падключыцца да яго з любога FTPS-кліента ў вашай лакальнай сетцы.</value>
   </data>
   <data name="Icons_Help_Link" xml:space="preserve">
     <value>Дадайце сімвальны значок да вашага тэксту</value>

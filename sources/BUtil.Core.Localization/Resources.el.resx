@@ -239,7 +239,10 @@
     <value>Ο κατάλογος "{0}" δεν υπάρχει.</value>
   </data>
   <data name="DurationMinutes_Field" xml:space="preserve">
-    <value>Διάρκεια (λεπτά, 0 - άπειρο):</value>
+    <value>Διάρκεια:</value>
+  </data>
+  <data name="DurationMinutes_Field_Help" xml:space="preserve">
+    <value>Πόσο καιρό θα παραμείνει ενεργός ο διακομιστής, σε λεπτά. Χρησιμοποιήστε 0 για κανένα χρονικό όριο (απεριόριστα).</value>
   </data>
   <data name="Field_Device" xml:space="preserve">
     <value>Συσκευή:</value>
@@ -264,6 +267,15 @@
   </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Ο φάκελος δεν υπάρχει.</value>
+  </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>Πρόσβαση φακέλου:</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>Μόνο ανάγνωση</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>Ανάγνωση και εγγραφή</value>
   </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>Πρωτόκολλο:</value>
@@ -319,8 +331,11 @@
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>Κοινή χρήση φακέλου μέσω δικτύου (Διακομιστής FTPS)</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>Διακομιστής FTPS</value>
+  </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
-    <value>Μπορείτε να μοιραστείτε οποιονδήποτε φάκελο για πρόσβαση ανάγνωσης-εγγραφής μέσω πρωτοκόλλου FTPS (ρητή κρυπτογράφηση με αυτο-υπογεγραμμένο πιστοποιητικό) μέσα στο τοπικό σας δίκτυο.</value>
+    <value>Ρυθμίστε έναν διακομιστή FTPS που εκτελείται σε αυτόν τον υπολογιστή. Χρησιμοποιεί ρητή κρυπτογράφηση με αυτο-υπογεγραμμένο πιστοποιητικό και κοινοποιεί τον επιλεγμένο φάκελο. Ενώ ο διακομιστής εκτελείται, μπορείτε να συνδεθείτε σε αυτόν από οποιονδήποτε πελάτη FTPS στο τοπικό σας δίκτυο.</value>
   </data>
   <data name="Icons_Help_Link" xml:space="preserve">
     <value>Προσθέστε εικονίδιο χαρακτήρα στο κείμενό σας</value>

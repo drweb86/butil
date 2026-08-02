@@ -239,7 +239,10 @@
     <value>«{0}» գրացուցակը գոյություն չունի:</value>
   </data>
   <data name="DurationMinutes_Field" xml:space="preserve">
-    <value>Տևողությունը (րոպե, 0 - անսահման):</value>
+    <value>Տևողությունը:</value>
+  </data>
+  <data name="DurationMinutes_Field_Help" xml:space="preserve">
+    <value>Որքան ժամանակ սերվերը կմնա ակտիվ՝ րոպեներով։ Օգտագործեք 0՝ ժամանակի սահմանափակում չունենալու համար (անսահմանափակ)։</value>
   </data>
   <data name="Field_Device" xml:space="preserve">
     <value>Սարքը:</value>
@@ -264,6 +267,15 @@
   </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Թղթապանակ գոյություն չունի:</value>
+  </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>Թղթապանակի հասանելիություն՝</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>Միայն կարդալ</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>Կարդալ և գրել</value>
   </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>Արձանագրություն:</value>
@@ -319,8 +331,11 @@
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>Համօգտագործել պանակը ցանցի միջոցով (FTPS սերվեր)</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>FTPS սերվեր</value>
+  </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
-    <value>Դուք կարող եք համօգտագործել ցանկացած թղթապանակ՝ կարդալու-գրելու հասանելիության համար FTPS արձանագրության միջոցով (բացահայտ գաղտնագրում ինքնաստորագրված վկայականով) ձեր տեղական ցանցի ներսում:</value>
+    <value>Կարգավորեք FTPS սերվեր, որը աշխատում է այս համակարգչում։ Այն օգտագործում է բացահայտ գաղտնագրում ինքնաստորագրված վկայականով և համօգտագործում է ընտրված թղթապանակը։ Մինչ սերվերը աշխատում է, կարող եք միանալ դրան ձեր տեղական ցանցի ցանկացած FTPS հաճախորդից։</value>
   </data>
   <data name="Icons_Help_Link" xml:space="preserve">
     <value>Ավելացրեք նիշերի պատկերակ ձեր տեքստին</value>

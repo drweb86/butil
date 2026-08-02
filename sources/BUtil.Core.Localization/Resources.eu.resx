@@ -239,7 +239,10 @@ Erabilera eszenatokia: datuak urruneko zerbitzarian kopiatzen dituzu. Arazo bat 
     <value>"{0}" direktorioa ez dago.</value>
   </data>
   <data name="DurationMinutes_Field" xml:space="preserve">
-    <value>Iraupena (minutuak, 0 - infinitua):</value>
+    <value>Iraupena:</value>
+  </data>
+  <data name="DurationMinutes_Field_Help" xml:space="preserve">
+    <value>Zenbat denbora egongo den zerbitzaria aktibo, minututan. Erabili 0 denbora-mugarik gabe (mugagabea).</value>
   </data>
   <data name="Field_Device" xml:space="preserve">
     <value>Gailua:</value>
@@ -264,6 +267,15 @@ Erabilera eszenatokia: datuak urruneko zerbitzarian kopiatzen dituzu. Arazo bat 
   </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Karpeta ez da existitzen.</value>
+  </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>Karpetarako sarbidea:</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>Irakurtzeko soilik</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>Irakurri eta idatzi</value>
   </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>Protokoloa:</value>
@@ -319,8 +331,11 @@ Erabilera eszenatokia: datuak urruneko zerbitzarian kopiatzen dituzu. Arazo bat 
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>Partekatu karpeta sarean (FTPS zerbitzaria)</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>FTPS zerbitzaria</value>
+  </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
-    <value>Irakurketa-idazketarako edozein karpeta parteka dezakezu FTPS protokoloaren bidez (zifratze esplizitua norberak sinatutako ziurtagiriarekin) zure sare lokalaren barruan.</value>
+    <value>Konfiguratu ordenagailu honetan exekutatzen den FTPS zerbitzari bat. Zifratze esplizitua erabiltzen du norberak sinatutako ziurtagiriarekin eta hautatutako karpeta partekatzen du. Zerbitzaria martxan dagoen bitartean, zure sare lokaleko edozein FTPS bezerotatik konekta zaitezke.</value>
   </data>
   <data name="Icons_Help_Link" xml:space="preserve">
     <value>Gehitu karaktere ikonoa zure testuari</value>

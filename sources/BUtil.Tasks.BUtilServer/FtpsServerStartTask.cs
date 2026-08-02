@@ -29,7 +29,7 @@ internal class FtpsServerStartTask(FtpsServerIoc ioc, TaskEvents events, BUtilSe
                         Password = options.Password,
                         Folder = options.Folder,
                         Read = true,
-                        Write = true
+                        Write = options.FolderAccess == BUtilServerFolderAccess.ReadWrite
                     }
                 ]
             },

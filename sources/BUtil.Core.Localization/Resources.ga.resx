@@ -239,7 +239,10 @@ Cás úsáide: Déanann tú sonraí a chóipeáil chuig an gcianfhreastalaí. T�
     <value>Níl eolaire "{0}" ann.</value>
   </data>
   <data name="DurationMinutes_Field" xml:space="preserve">
-    <value>Fad (nóiméad, 0 - gan teorainn):</value>
+    <value>Fad:</value>
+  </data>
+  <data name="DurationMinutes_Field_Help" xml:space="preserve">
+    <value>Cá fhad a fhanfaidh an freastalaí gníomhach, i nóiméid. Úsáid 0 le haghaidh gan teorainn ama (neamhtheoranta).</value>
   </data>
   <data name="Field_Device" xml:space="preserve">
     <value>Gléas:</value>
@@ -264,6 +267,15 @@ Cás úsáide: Déanann tú sonraí a chóipeáil chuig an gcianfhreastalaí. T�
   </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Níl fillteán ann.</value>
+  </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>Rochtain ar an bhfillteán:</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>Léamh amháin</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>Léamh agus scríobh</value>
   </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>Prótacal:</value>
@@ -319,8 +331,11 @@ Cás úsáide: Déanann tú sonraí a chóipeáil chuig an gcianfhreastalaí. T�
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>Comhroinn fillteán thar líonra (Freastalaí FTPS)</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>Freastalaí FTPS</value>
+  </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
-    <value>Is féidir leat aon fhillteán le haghaidh rochtain inléite-scríofa a roinnt trí phrótacal FTPS (criptiú follasach le teastas féin-shínithe) laistigh de do líonra ceantair áitiúil.</value>
+    <value>Socraigh freastalaí FTPS a ritheann ar an ríomhaire seo. Úsáideann sé criptiú follasach le deimhniú féinsínithe agus roinneann sé an fillteán roghnaithe. Fad is atá an freastalaí ag rith, is féidir leat ceangal leis ó aon chliant FTPS ar do líonra áitiúil.</value>
   </data>
   <data name="Icons_Help_Link" xml:space="preserve">
     <value>Cuir deilbhín carachtair le do théacs</value>

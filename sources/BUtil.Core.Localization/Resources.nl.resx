@@ -239,7 +239,10 @@ Gebruiksscenario: U kopieert gegevens naar een externe server. Er is een problee
     <value>Map "{0}" bestaat niet.</value>
   </data>
   <data name="DurationMinutes_Field" xml:space="preserve">
-    <value>Duur (minuten, 0 - oneindig):</value>
+    <value>Duur:</value>
+  </data>
+  <data name="DurationMinutes_Field_Help" xml:space="preserve">
+    <value>Hoe lang de server actief blijft, in minuten. Gebruik 0 voor geen tijdslimiet (onbeperkt).</value>
   </data>
   <data name="Field_Device" xml:space="preserve">
     <value>Apparaat:</value>
@@ -264,6 +267,15 @@ Gebruiksscenario: U kopieert gegevens naar een externe server. Er is een problee
   </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Map bestaat niet.</value>
+  </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>Maptoegang:</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>Alleen-lezen</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>Lezen en schrijven</value>
   </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>Protocol:</value>
@@ -319,8 +331,11 @@ Gebruiksscenario: U kopieert gegevens naar een externe server. Er is een problee
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>Map delen via netwerk (FTPS-server)</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>FTPS-server</value>
+  </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
-    <value>U kunt elke map delen met lees-schrijftoegang via het FTPS-protocol (expliciete versleuteling met zelfondertekend certificaat) binnen uw lokale netwerk.</value>
+    <value>Stel een FTPS-server in die op deze computer draait. Deze gebruikt expliciete versleuteling met een zelfondertekend certificaat en deelt de geselecteerde map. Terwijl de server actief is, kunt u er vanuit elke FTPS-client op uw lokale netwerk verbinding mee maken.</value>
   </data>
   <data name="Icons_Help_Link" xml:space="preserve">
     <value>Voeg een tekenpictogram toe aan uw tekst</value>

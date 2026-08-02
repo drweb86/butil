@@ -239,7 +239,10 @@
     <value>ไดเรกทอรี "{0}" ไม่มีอยู่</value>
   </data>
   <data name="DurationMinutes_Field" xml:space="preserve">
-    <value>ระยะเวลา (นาที, 0 - ไม่จำกัด):</value>
+    <value>ระยะเวลา:</value>
+  </data>
+  <data name="DurationMinutes_Field_Help" xml:space="preserve">
+    <value>เซิร์ฟเวอร์จะยังคงทำงานนานเท่าใด เป็นนาที ใช้ 0 หากไม่จำกัดเวลา (ไม่จำกัด)</value>
   </data>
   <data name="Field_Device" xml:space="preserve">
     <value>อุปกรณ์:</value>
@@ -264,6 +267,15 @@
   </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>โฟลเดอร์ไม่มีอยู่</value>
+  </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>การเข้าถึงโฟลเดอร์:</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>อ่านอย่างเดียว</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>อ่านและเขียน</value>
   </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>โปรโตคอล:</value>
@@ -319,8 +331,11 @@
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>แชร์โฟลเดอร์ผ่านเครือข่าย (เซิร์ฟเวอร์ FTPS)</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>เซิร์ฟเวอร์ FTPS</value>
+  </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
-    <value>คุณสามารถแชร์โฟลเดอร์ใดก็ได้สำหรับการเข้าถึงแบบอ่าน-เขียนผ่านโปรโตคอล FTPS (การเข้ารหัสแบบชัดแจ้งด้วยใบรับรองที่ลงนามเอง) ภายในเครือข่ายท้องถิ่นของคุณ</value>
+    <value>ตั้งค่าเซิร์ฟเวอร์ FTPS ที่ทำงานบนคอมพิวเตอร์เครื่องนี้ โดยใช้การเข้ารหัสแบบชัดแจ้งด้วยใบรับรองที่ลงนามเอง และแชร์โฟลเดอร์ที่เลือก ในขณะที่เซิร์ฟเวอร์ทำงาน คุณสามารถเชื่อมต่อจากไคลเอนต์ FTPS ใดก็ได้บนเครือข่ายท้องถิ่นของคุณ</value>
   </data>
   <data name="Icons_Help_Link" xml:space="preserve">
     <value>เพิ่มไอคอนตัวอักษรลงในข้อความของคุณ</value>

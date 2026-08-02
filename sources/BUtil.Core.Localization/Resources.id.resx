@@ -236,7 +236,10 @@
     <value>Direktori "{0}" tidak ada.</value>
   </data>
   <data name="DurationMinutes_Field" xml:space="preserve">
-    <value>Durasi (menit, 0 - tak terhingga):</value>
+    <value>Durasi:</value>
+  </data>
+  <data name="DurationMinutes_Field_Help" xml:space="preserve">
+    <value>Berapa lama server akan tetap aktif, dalam menit. Gunakan 0 untuk tanpa batas waktu (tak terbatas).</value>
   </data>
   <data name="Field_Device" xml:space="preserve">
     <value>Perangkat:</value>
@@ -261,6 +264,15 @@
   </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Folder tidak ada.</value>
+  </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>Akses folder:</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>Hanya baca</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>Baca dan tulis</value>
   </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>Protokol:</value>
@@ -316,8 +328,11 @@
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>Bagikan folder melalui jaringan (Server FTPS)</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>Server FTPS</value>
+  </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
-    <value>Anda dapat membagikan folder apa pun untuk akses baca-tulis melalui protokol FTPS (enkripsi eksplisit dengan sertifikat tandatangan sendiri) di dalam jaringan area lokal Anda.</value>
+    <value>Siapkan server FTPS yang berjalan di komputer ini. Server ini menggunakan enkripsi eksplisit dengan sertifikat tandatangan sendiri dan membagikan folder yang dipilih. Saat server berjalan, Anda dapat terhubung kepadanya dari klien FTPS mana pun di jaringan lokal Anda.</value>
   </data>
   <data name="Icons_Help_Link" xml:space="preserve">
     <value>Tambahkan ikon karakter ke teks Anda</value>

@@ -239,7 +239,10 @@ Käyttöskenaario: Kopioit tietoja etäpalvelimelle. Ongelma: ISP laskee latausn
     <value>Hakemistoa "{0}" ei löydy.</value>
   </data>
   <data name="DurationMinutes_Field" xml:space="preserve">
-    <value>Kesto (minuuttia, 0 - ääretön):</value>
+    <value>Kesto:</value>
+  </data>
+  <data name="DurationMinutes_Field_Help" xml:space="preserve">
+    <value>Kuinka kauan palvelin pysyy aktiivisena, minuuteissa. Käytä arvoa 0, jos aikarajaa ei ole (rajoittamaton).</value>
   </data>
   <data name="Field_Device" xml:space="preserve">
     <value>Laite:</value>
@@ -264,6 +267,15 @@ Käyttöskenaario: Kopioit tietoja etäpalvelimelle. Ongelma: ISP laskee latausn
   </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Kansiota ei löydy.</value>
+  </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>Kansion käyttöoikeus:</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>Vain luku</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>Luku ja kirjoitus</value>
   </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>Protokolla:</value>
@@ -319,8 +331,11 @@ Käyttöskenaario: Kopioit tietoja etäpalvelimelle. Ongelma: ISP laskee latausn
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>Jaa kansio verkon kautta (FTPS-palvelin)</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>FTPS-palvelin</value>
+  </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
-    <value>Voit jakaa minkä tahansa kansion luku- ja kirjoitusoikeuksin FTPS-protokollan kautta (eksplisiittinen salaus itse allekirjoitetulla varmenteella) lähiverkossasi.</value>
+    <value>Määritä FTPS-palvelin, joka toimii tällä tietokoneella. Se käyttää eksplisiittistä salausta itse allekirjoitetulla varmenteella ja jakaa valitun kansion. Palvelimen ollessa käynnissä voit muodostaa siihen yhteyden mistä tahansa FTPS-asiakkaasta lähiverkossasi.</value>
   </data>
   <data name="Icons_Help_Link" xml:space="preserve">
     <value>Lisää merkkikuvake tekstiisi</value>

@@ -239,7 +239,10 @@ Scenario korišćenja: Kopirate podatke na udaljeni server. Problem: provajder s
     <value>Direktorijum „{0}" ne postoji.</value>
   </data>
   <data name="DurationMinutes_Field" xml:space="preserve">
-    <value>Trajanje (minuti, 0 - beskonačno):</value>
+    <value>Trajanje:</value>
+  </data>
+  <data name="DurationMinutes_Field_Help" xml:space="preserve">
+    <value>Koliko dugo će server ostati aktivan, u minutima. Koristite 0 za bez vremenskog ograničenja (neograničeno).</value>
   </data>
   <data name="Field_Device" xml:space="preserve">
     <value>Uređaj:</value>
@@ -264,6 +267,15 @@ Scenario korišćenja: Kopirate podatke na udaljeni server. Problem: provajder s
   </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Fascikla ne postoji.</value>
+  </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>Pristup fascikli:</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>Samo čitanje</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>Čitanje i pisanje</value>
   </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>Protokol:</value>
@@ -319,8 +331,11 @@ Scenario korišćenja: Kopirate podatke na udaljeni server. Problem: provajder s
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>Deli fasciklu preko mreže (FTPS server)</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>FTPS server</value>
+  </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
-    <value>Možete deliti bilo koju fasciklu za čitanje i pisanje putem FTPS protokola (eksplicitno šifrovanje sa samopotpisanim sertifikatom) unutar vaše lokalne mreže.</value>
+    <value>Podesite FTPS server koji radi na ovom računaru. Koristi eksplicitno šifrovanje sa samopotpisanim sertifikatom i deli izabranu fasciklu. Dok server radi, možete se povezati sa njim sa bilo kog FTPS klijenta u vašoj lokalnoj mreži.</value>
   </data>
   <data name="Icons_Help_Link" xml:space="preserve">
     <value>Dodajte znakovnu ikonu u svoj tekst</value>

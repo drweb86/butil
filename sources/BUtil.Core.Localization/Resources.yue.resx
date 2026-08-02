@@ -257,7 +257,10 @@
     <value>目錄「{0}」不存在。</value>
   </data>
   <data name="DurationMinutes_Field" xml:space="preserve">
-    <value>持續時間（分鐘，0 至無限）:</value>
+    <value>持續時間：</value>
+  </data>
+  <data name="DurationMinutes_Field_Help" xml:space="preserve">
+    <value>伺服器會維持運作幾耐（以分鐘計）。如果唔想有時間限制（無限），就用 0。</value>
   </data>
   <data name="Field_Device" xml:space="preserve">
     <value>設備：</value>
@@ -282,6 +285,15 @@
   </data>
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>資料夾不存在。</value>
+  </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>資料夾存取權限：</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>唯讀</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>讀寫</value>
   </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>協議：</value>
@@ -337,8 +349,11 @@
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>通過網絡分享資料夾（FTPS 伺服器）</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>FTPS 伺服器</value>
+  </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
-    <value>你可以透過 FTPS 協議（使用自簽署證書的顯式加密），喺你嘅區域網絡內分享任何文件夾以供讀寫存取。</value>
+    <value>設定喺呢部電腦上面運行嘅 FTPS 伺服器。佢會用自簽署證書做顯式加密，同埋分享你揀嘅資料夾。伺服器運行緊嘅時候，你可以喺區域網絡入面用任何 FTPS 用戶端連過去。</value>
   </data>
   <data name="Icons_Help_Link" xml:space="preserve">
     <value>將字符圖標添加到您的文本中</value>
