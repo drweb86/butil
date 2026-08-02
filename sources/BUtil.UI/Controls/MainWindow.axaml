@@ -3,9 +3,7 @@
         xmlns:vm="using:BUtil.UI.Controls"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:views="clr-namespace:BUtil.UI.Controls;assembly=BUtil.UI.Common"
 		xmlns:controls="clr-namespace:BUtil.UI.Controls"
-		xmlns:dialogHost="clr-namespace:DialogHostAvalonia;assembly=DialogHost.Avalonia"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="BUtil.UI.Controls.MainWindow"
         Icon="/Assets/butil.ico"
@@ -24,96 +22,52 @@
 			<Setter Property="IsVisible" Value="{Binding !$parent[Window].ExtendClientAreaToDecorationsHint}" />
 		</Style>
 	</Window.Styles>
-	<dialogHost:DialogHost
-		CloseOnClickAway="True"
-		MinHeight="{Binding $parent.Height}"
-		Height="{Binding $parent.Height}"
-		MaxHeight="{Binding $parent.Height}"
-		IsMultipleDialogsEnabled="True">
-		<dialogHost:DialogHost.DataTemplates>
-			<DataTemplate DataType="views:DialogViewModel">
-				<StackPanel Margin="8 8 8 8">
-					<TextBlock IsVisible="{Binding Header, Converter={x:Static StringConverters.IsNotNullOrEmpty}}" TextAlignment="Center" Text="{Binding Header}" Margin="8 8 8 8" />
-					<TextBox MaxHeight="300"
-							 AcceptsReturn="True"
-							 TextWrapping="Wrap"
-							 Text="{Binding Message}"
-							 Margin="8 8 8 8"
-							 IsReadOnly="True"
-							 BorderThickness="0" />
-					<WrapPanel HorizontalAlignment="Right">
-						<Button Margin="8 8 8 8"
-								MinHeight="32"
-								MinWidth="140"
-								HorizontalContentAlignment="Center"
-								VerticalContentAlignment="Center"
-								Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=dialogHost:DialogHost}, Path=CloseDialogCommand}"
-								CommandParameter="{Binding Button1Arg}"
-								Content="{Binding Button1Text}"
-								IsDefault="True"
-						/>
-						<Button Margin="8 8 8 8"
-								MinHeight="32"
-								MinWidth="140"
-								HorizontalContentAlignment="Center"
-								VerticalContentAlignment="Center"
-								IsVisible="{Binding Button2Visible}"
-								Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=dialogHost:DialogHost}, Path=CloseDialogCommand}"
-								CommandParameter="{Binding Button2Arg}"
-								Content="{Binding Button2Text}"
-								IsCancel="True"
-						/>
-					</WrapPanel>
-				</StackPanel>
-			</DataTemplate>
-		</dialogHost:DialogHost.DataTemplates>
-		<Grid>
-			<Grid.RowDefinitions>
-				<RowDefinition Height="Auto" />
-				<RowDefinition Height="Auto" />
-				<RowDefinition Height="*" />
-			</Grid.RowDefinitions>
-			<StackPanel Grid.Row="0" Orientation="Horizontal" Margin="4 4 0 0">
-				<Menu WindowDecorationProperties.ElementRole="DecorationsElement">
-					<MenuItem>
-						<MenuItem.Header>
-							<StackPanel Orientation="Horizontal">
-								<Image Width="16" Height="16" Source="/Assets/butil.ico" VerticalAlignment="Center" />
-								<TextBlock Text="{Binding CurrentPage.WindowTitle}" Margin="8 0 0 0" VerticalAlignment="Center" />
-							</StackPanel>
-						</MenuItem.Header>
-						<MenuItem Header="{Binding AppVersionAndSiteLink}" Command="{Binding GoToWebsiteCommand}" />
-						<MenuItem Header="{Binding Theme_Title}" IsVisible="{Binding CurrentPage.IsFullMenuVisible}">
-							<MenuItem Header="{Binding Theme_Value_Dark}" Command="{Binding GoDarkSide}" />
-							<MenuItem Header="{Binding Theme_Value_Light}" Command="{Binding GoLightSide}" />
-						</MenuItem>
-						<MenuItem Header="{Binding Other_Menu_Title}">
-							<MenuItem Command="{Binding OpenLogsCommand}" Header="{Binding LogFile_BrowseLogsFolder}" />
-							<MenuItem Header="{Binding TechnicalTool_Menu_DecryptAes256}" Command="{Binding TechnicalToolDecryptAes256Command}" IsVisible="{Binding CurrentPage.IsFullMenuVisible}"/>
-							<MenuItem Header="{Binding TechnicalTool_Menu_EncryptAes256}" Command="{Binding TechnicalToolEncryptAes256Command}" IsVisible="{Binding CurrentPage.IsFullMenuVisible}"/>
-							<MenuItem Header="{Binding TechnicalTool_Menu_DecompressBrotli}" Command="{Binding TechnicalToolDecompressBrotliCommand}" IsVisible="{Binding CurrentPage.IsFullMenuVisible}"/>
-							<MenuItem Header="{Binding TechnicalTool_Menu_CompressBrotli}" Command="{Binding TechnicalToolCompressBrotliCommand}" IsVisible="{Binding CurrentPage.IsFullMenuVisible}"/>
-						</MenuItem>
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="*" />
+		</Grid.RowDefinitions>
+		<StackPanel Grid.Row="0" Orientation="Horizontal" Margin="4 4 0 0">
+			<Menu WindowDecorationProperties.ElementRole="DecorationsElement">
+				<MenuItem>
+					<MenuItem.Header>
+						<StackPanel Orientation="Horizontal">
+							<Image Width="16" Height="16" Source="/Assets/butil.ico" VerticalAlignment="Center" />
+							<TextBlock Text="{Binding CurrentPage.WindowTitle}" Margin="8 0 0 0" VerticalAlignment="Center" />
+						</StackPanel>
+					</MenuItem.Header>
+					<MenuItem Header="{Binding AppVersionAndSiteLink}" Command="{Binding GoToWebsiteCommand}" />
+					<MenuItem Header="{Binding Theme_Title}" IsVisible="{Binding CurrentPage.IsFullMenuVisible}">
+						<MenuItem Header="{Binding Theme_Value_Dark}" Command="{Binding GoDarkSide}" />
+						<MenuItem Header="{Binding Theme_Value_Light}" Command="{Binding GoLightSide}" />
 					</MenuItem>
-					<MenuItem FontWeight="Bold" Header="{Binding Task_Create}" IsVisible="{Binding CurrentPage.IsFullMenuVisible}" ItemsSource="{Binding TaskCreateMenuItems}" />
-					<MenuItem Command="{Binding RestoreCommand}" IsVisible="{Binding CurrentPage.IsFullMenuVisible}" Header="{Binding Task_Restore}" />
-				</Menu>
-				<TextBox
-					IsVisible="{Binding CurrentPage.IsFullMenuVisible}"
-					Text="{Binding CurrentPage.SearchText}"
-					PlaceholderText="{Binding SearchTextBoxWatermark}"
-					MinWidth="160"
-					VerticalAlignment="Center"
-					Margin="4 4 0 0"
-					VerticalContentAlignment="Center"
-					WindowDecorationProperties.ElementRole="DecorationsElement" />
-			</StackPanel>
-			<controls:UpdateCheckExpanderView
-				Grid.Row="1"
-				HorizontalAlignment="Stretch"
-				ScrollViewer.HorizontalScrollBarVisibility="Disabled"
-			/>
-			<TransitioningContentControl Grid.Row="2" Content="{Binding CurrentPage}" Background="{Binding WindowBackground}" />
-		</Grid>
-	</dialogHost:DialogHost>
+					<MenuItem Header="{Binding Other_Menu_Title}">
+						<MenuItem Command="{Binding OpenLogsCommand}" Header="{Binding LogFile_BrowseLogsFolder}" />
+						<MenuItem Header="{Binding TechnicalTool_Menu_DecryptAes256}" Command="{Binding TechnicalToolDecryptAes256Command}" IsVisible="{Binding CurrentPage.IsFullMenuVisible}"/>
+						<MenuItem Header="{Binding TechnicalTool_Menu_EncryptAes256}" Command="{Binding TechnicalToolEncryptAes256Command}" IsVisible="{Binding CurrentPage.IsFullMenuVisible}"/>
+						<MenuItem Header="{Binding TechnicalTool_Menu_DecompressBrotli}" Command="{Binding TechnicalToolDecompressBrotliCommand}" IsVisible="{Binding CurrentPage.IsFullMenuVisible}"/>
+						<MenuItem Header="{Binding TechnicalTool_Menu_CompressBrotli}" Command="{Binding TechnicalToolCompressBrotliCommand}" IsVisible="{Binding CurrentPage.IsFullMenuVisible}"/>
+					</MenuItem>
+				</MenuItem>
+				<MenuItem FontWeight="Bold" Header="{Binding Task_Create}" IsVisible="{Binding CurrentPage.IsFullMenuVisible}" ItemsSource="{Binding TaskCreateMenuItems}" />
+				<MenuItem Command="{Binding RestoreCommand}" IsVisible="{Binding CurrentPage.IsFullMenuVisible}" Header="{Binding Task_Restore}" />
+			</Menu>
+			<TextBox
+				IsVisible="{Binding CurrentPage.IsFullMenuVisible}"
+				Text="{Binding CurrentPage.SearchText}"
+				PlaceholderText="{Binding SearchTextBoxWatermark}"
+				MinWidth="160"
+				VerticalAlignment="Center"
+				Margin="4 4 0 0"
+				VerticalContentAlignment="Center"
+				WindowDecorationProperties.ElementRole="DecorationsElement" />
+		</StackPanel>
+		<controls:UpdateCheckExpanderView
+			Grid.Row="1"
+			HorizontalAlignment="Stretch"
+			ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+		/>
+		<TransitioningContentControl Grid.Row="2" Content="{Binding CurrentPage}" Background="{Binding WindowBackground}" />
+	</Grid>
 </Window>

@@ -15,7 +15,6 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace BUtil.UI.Controls;
 
@@ -32,6 +31,26 @@ public class VersionsListViewModel(RestoreViewModel restoreViewModel) : Observab
     public static string BackupVersion_Viewer_Help => Resources.BackupVersion_Viewer_Help;
     public static string BackupVersion_Button_Delete => Resources.BackupVersion_Button_Delete;
     public static string SearchTextBoxWatermark => MainWindowViewModel.SearchTextBoxWatermark;
+    public static string Button_OK => Resources.Button_OK;
+    public static string Button_Cancel => Resources.Button_Cancel;
+
+    #endregion
+
+    #region ConfirmMessage
+
+    private string? _confirmMessage;
+
+    public string? ConfirmMessage
+    {
+        get => _confirmMessage;
+        set
+        {
+            if (value == _confirmMessage)
+                return;
+            _confirmMessage = value;
+            OnPropertyChanged(nameof(ConfirmMessage));
+        }
+    }
 
     #endregion
 
@@ -192,6 +211,7 @@ public class VersionsListViewModel(RestoreViewModel restoreViewModel) : Observab
                 return;
             _selectedVersion = value;
             OnPropertyChanged(nameof(SelectedVersion));
+            ConfirmMessage = null;
             if (value != null)
                 OnVersionChanged();
         }
@@ -530,7 +550,7 @@ public class VersionsListViewModel(RestoreViewModel restoreViewModel) : Observab
 
     #region Commands
 
-    public async Task DeleteBackupVersionCommand()
+    public void DeleteBackupVersionCommand()
     {
         var versionToDelete = SelectedVersion;
         if (_state == null ||
@@ -540,10 +560,21 @@ public class VersionsListViewModel(RestoreViewModel restoreViewModel) : Observab
         }
 
         var closestFreshVersion = Versions[Versions.IndexOf(versionToDelete) - 1];
-        if (!await Messages.ShowYesNoDialog(string.Format(Resources.BackupVersion_Delete_Confirm, versionToDelete.Title, closestFreshVersion.Title)))
+        ConfirmMessage = string.Format(Resources.BackupVersion_Delete_Confirm, versionToDelete.Title, closestFreshVersion.Title);
+    }
+
+    public void ConfirmDeleteBackupVersionCommand()
+    {
+        var versionToDelete = SelectedVersion;
+        if (_state == null ||
+            _storageOptions == null ||
+            string.IsNullOrEmpty(ConfirmMessage))
         {
             return;
         }
+
+        var closestFreshVersion = Versions[Versions.IndexOf(versionToDelete) - 1];
+        ConfirmMessage = null;
 
         ParentViewModel.TaskExecuterViewModel = new TaskExecuterViewModel(
             new TaskEvents(),
@@ -562,6 +593,11 @@ public class VersionsListViewModel(RestoreViewModel restoreViewModel) : Observab
                 }
             });
         ParentViewModel.TaskExecuterViewModel.StartTaskCommand();
+    }
+
+    public void CancelConfirmCommand()
+    {
+        ConfirmMessage = null;
     }
 
     public void RecoverTo(string destinationFolder)

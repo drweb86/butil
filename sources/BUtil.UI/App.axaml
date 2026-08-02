@@ -1,14 +1,12 @@
 <Application xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              x:Class="BUtil.UI.App"
-             xmlns:local="using:BUtil.UI"
-			 xmlns:dialogHostAvalonia="clr-namespace:DialogHostAvalonia;assembly=DialogHost.Avalonia">
+             xmlns:local="using:BUtil.UI">
     <Application.DataTemplates>
         <local:ViewLocator/>
     </Application.DataTemplates>
     <Application.Styles>
         <FluentTheme />
-		<dialogHostAvalonia:DialogHostStyles />
 		<StyleInclude Source="avares://BUtil.UI/Themes/TaskSectionExpander.axaml" />
 		<StyleInclude Source="avares://BUtil.UI/Themes/FormContent.axaml" />
     </Application.Styles>

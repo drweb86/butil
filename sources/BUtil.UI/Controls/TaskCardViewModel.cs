@@ -12,7 +12,6 @@ using CommunityToolkit.Mvvm.ComponentModel;
 using System;
 using System.Collections.ObjectModel;
 using System.IO;
-using System.Threading.Tasks;
 
 namespace BUtil.UI.Controls;
 
@@ -49,6 +48,26 @@ public class TaskCardViewModel(
     public static string Task_Edit => Resources.Task_Edit;
     public static string Task_Restore => Resources.Task_Restore;
     public static string Task_OpenLog => Resources.Task_OpenLog;
+    public static string Button_OK => Resources.Button_OK;
+    public static string Button_Cancel => Resources.Button_Cancel;
+
+    #region ConfirmMessage
+
+    private string? _confirmMessage;
+
+    public string? ConfirmMessage
+    {
+        get => _confirmMessage;
+        set
+        {
+            if (value == _confirmMessage)
+                return;
+            _confirmMessage = value;
+            OnPropertyChanged(nameof(ConfirmMessage));
+        }
+    }
+
+    #endregion
 
     #region Commands
 
@@ -85,17 +104,25 @@ public class TaskCardViewModel(
             _reloadTasks?.Invoke();
     }
 
-    public async Task TaskDeleteCommand()
+    public void TaskDeleteCommand()
     {
-        if (!await Messages.ShowYesNoDialog(string.Format(Resources.Task_Delete_Confirm, Name)))
-            return;
+        ConfirmMessage = string.Format(Resources.Task_Delete_Confirm, Name);
+    }
 
+    public void ConfirmDeleteCommand()
+    {
+        ConfirmMessage = null;
         new TaskStore(new LocalFileSystem())
             .Delete(Name);
         LogService.DeleteLogs(Name);
         ImportMediaFileService.DeleteState(Name);
         PlatformSpecificExperience.Instance.GetTaskSchedulerService().Unschedule(Name);
         _items.Remove(this);
+    }
+
+    public void CancelConfirmCommand()
+    {
+        ConfirmMessage = null;
     }
 
     #endregion

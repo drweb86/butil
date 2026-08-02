@@ -3,6 +3,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 			 xmlns:cvm="clr-namespace:BUtil.UI.Controls"
+			 xmlns:decor="clr-namespace:BUtil.UI.Controls;assembly=BUtil.UI.Common"
              mc:Ignorable="d"
              x:Class="BUtil.UI.Controls.TaskCard"
 			 x:DataType="cvm:TaskCardViewModel"
@@ -129,5 +130,13 @@
 				</Button>
 			</StackPanel>
 		</Grid>
+
+		<decor:ConfirmPanel
+			ZIndex="10"
+			Message="{Binding ConfirmMessage}"
+			ConfirmText="{Binding Button_OK}"
+			ConfirmCommand="{Binding ConfirmDeleteCommand}"
+			CancelText="{Binding Button_Cancel}"
+			CancelCommand="{Binding CancelConfirmCommand}" />
 	</Grid>
 </UserControl>

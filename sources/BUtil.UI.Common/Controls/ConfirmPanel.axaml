@@ -1,0 +1,47 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="BUtil.UI.Controls.ConfirmPanel"
+             x:Name="Root"
+             IsVisible="{Binding #Root.Message, Converter={x:Static StringConverters.IsNotNullOrEmpty}}">
+	<UserControl.Styles>
+		<Style Selector="Button">
+			<Setter Property="MinWidth" Value="88" />
+			<Setter Property="HorizontalContentAlignment" Value="Center" />
+			<Setter Property="Padding" Value="12 6" />
+			<Setter Property="CornerRadius" Value="4" />
+		</Style>
+	</UserControl.Styles>
+	<Border Background="#66000000"
+			IsHitTestVisible="True"
+			HorizontalAlignment="Stretch"
+			VerticalAlignment="Stretch">
+		<Border HorizontalAlignment="Center"
+				VerticalAlignment="Center"
+				Margin="16"
+				MaxWidth="360"
+				MinWidth="220"
+				Padding="14 12"
+				CornerRadius="10"
+				BorderThickness="1"
+				BorderBrush="{DynamicResource SystemControlForegroundBaseMediumLowBrush}"
+				Background="{DynamicResource SystemControlBackgroundChromeMediumBrush}"
+				BoxShadow="0 8 24 0 #66000000">
+			<StackPanel Spacing="12">
+				<TextBlock Text="{Binding #Root.Message}"
+						   TextWrapping="Wrap"
+						   LineHeight="20" />
+				<StackPanel Orientation="Horizontal"
+							HorizontalAlignment="Right"
+							Spacing="8">
+					<Button IsDefault="True"
+							Classes="accent"
+							Content="{Binding #Root.ConfirmText}"
+							Command="{Binding #Root.ConfirmCommand}" />
+					<Button IsCancel="True"
+							Content="{Binding #Root.CancelText}"
+							Command="{Binding #Root.CancelCommand}" />
+				</StackPanel>
+			</StackPanel>
+		</Border>
+	</Border>
+</UserControl>
