@@ -108,16 +108,13 @@ public class RestoreVersionsViewModel : ViewModelBase
             if (_selectedNode != null)
                 _selectedNode.IsSelected = true;
 
-            SelectedFileIsVisible = true;
             if (_selectedNode != null && _selectedNode.StorageFile != null)
             {
-                SelectedFileIsVisible = true;
                 BackupVersion_FileVersion_Title = string.Format(Resources.BackupVersion_FileVersion_Title, System.IO.Path.GetFileName(_selectedNode.StorageFile.FileState.FileName));
                 InitBlameForSelectedFile();
             }
             else
             {
-                SelectedFileIsVisible = false;
                 BackupVersion_FileVersion_Title = null;
             }
             OnPropertyChanged(nameof(SelectedNode));
@@ -141,24 +138,6 @@ public class RestoreVersionsViewModel : ViewModelBase
                 return;
             _blameViewItems = value;
             OnPropertyChanged(nameof(BlameViewItems));
-        }
-    }
-
-    #endregion
-
-    #region SelectedFileIsVisible
-
-    private bool _selectedFileIsVisible;
-
-    public bool SelectedFileIsVisible
-    {
-        get => _selectedFileIsVisible;
-        set
-        {
-            if (value == _selectedFileIsVisible)
-                return;
-            _selectedFileIsVisible = value;
-            OnPropertyChanged(nameof(SelectedFileIsVisible));
         }
     }
 
@@ -344,7 +323,7 @@ public class RestoreVersionsViewModel : ViewModelBase
             SearchText = string.Empty;
         IsDeleteBackupVersionEnabled = Versions != null && Versions[0] != version;
 
-        SelectedFileIsVisible = false;
+        BackupVersion_FileVersion_Title = null;
         var changes = GetChangesViewItems(version.Version);
         var treeViewFiles = GetTreeViewFiles(_state, version.Version);
         RefreshChanges(changes);

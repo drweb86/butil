@@ -60,31 +60,9 @@
 					</ItemsRepeater>
 				</Expander>
 
-				<Expander Classes="TaskSection" HorizontalAlignment="Stretch" IsExpanded="False" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="Transparent"
-						  IsVisible="{Binding SelectedFileIsVisible}">
-					<Expander.Header>
-						<WrapPanel Orientation="Horizontal" Margin="0 8 0 8">
-							<Image Width="16" Height="16" Source="/Assets/CrystalClear_FileNew.png" VerticalAlignment="Center" />
-							<TextBlock Margin="8 0 8 0" Text="{Binding BackupVersion_FileVersion_Title}" VerticalAlignment="Center" />
-						</WrapPanel>
-					</Expander.Header>
-					<ItemsRepeater ItemsSource="{Binding BlameViewItems}">
-						<ItemsRepeater.ItemTemplate>
-							<DataTemplate>
-								<WrapPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
-									<TextBlock
-										Text="{Binding Icon}"
-										VerticalAlignment="Center"
-										Margin="0 0 4 0" />
-									<TextBlock
-										Text="{Binding Path=Title}"
-										TextWrapping="Wrap"
-										VerticalAlignment="Center" />
-								</WrapPanel>
-							</DataTemplate>
-						</ItemsRepeater.ItemTemplate>
-					</ItemsRepeater>
-				</Expander>
+				<controls:RestoreFileBlameSection
+					Title="{Binding BackupVersion_FileVersion_Title}"
+					Items="{Binding BlameViewItems}" />
 
 				<decor:DialogButtons
 					IsPrimaryVisible="False"

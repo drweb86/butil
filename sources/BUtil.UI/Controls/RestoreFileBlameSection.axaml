@@ -1,0 +1,33 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:cvm="clr-namespace:BUtil.UI.Controls"
+             xmlns:decor="clr-namespace:BUtil.UI.Controls;assembly=BUtil.UI.Common"
+             mc:Ignorable="d"
+             x:Class="BUtil.UI.Controls.RestoreFileBlameSection"
+             x:Name="Root"
+             x:DataType="cvm:RestoreFileBlameSection"
+             IsVisible="{Binding #Root.Title, Converter={x:Static StringConverters.IsNotNullOrEmpty}}">
+	<Expander Classes="TaskSection" HorizontalAlignment="Stretch" IsExpanded="False" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="Transparent">
+		<Expander.Header>
+			<decor:ExpanderHeader Icon="📄" Text="{Binding #Root.Title}" />
+		</Expander.Header>
+		<ItemsRepeater ItemsSource="{Binding #Root.Items}">
+			<ItemsRepeater.ItemTemplate>
+				<DataTemplate x:DataType="cvm:BlameViewItem">
+					<WrapPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
+						<TextBlock
+							Text="{Binding Icon}"
+							VerticalAlignment="Center"
+							Margin="0 0 4 0" />
+						<TextBlock
+							Text="{Binding Title}"
+							TextWrapping="Wrap"
+							VerticalAlignment="Center" />
+					</WrapPanel>
+				</DataTemplate>
+			</ItemsRepeater.ItemTemplate>
+		</ItemsRepeater>
+	</Expander>
+</UserControl>
