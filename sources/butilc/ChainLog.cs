@@ -4,11 +4,11 @@ using System.Collections.Generic;
 
 namespace butilc;
 
-class ChainLog(string taskName) : ILog
+class ChainLog(string taskName, LogBase consoleLog) : ILog
 {
     private readonly List<LogBase> _logs = [
             new FileLog(taskName),
-            new ConsoleLog()
+            consoleLog
         ];
 
     public void Open() => ForEachSafe(x => x.Open());

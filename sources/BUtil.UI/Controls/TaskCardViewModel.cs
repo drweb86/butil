@@ -36,7 +36,13 @@ public class TaskCardViewModel(
     public SolidColorBrush SuccessForegroundColorBrush { get; } = ColorPalette.GetBrush(SemanticColor.Success);
     public SolidColorBrush ForegroundWindowFontAccented { get; } = ColorPalette.GetBrush(SemanticColor.ForegroundWindowFontAccented);
 
-    public bool IsNotStarted { get; } = status == ProcessingStatus.NotStarted;
+    public bool IsNotStarted
+    {
+        get
+        {
+            return !IsSuccess && !IsError;
+        }
+    }
     public bool IsSuccess { get; } = status == ProcessingStatus.FinishedSuccesfully;
     public bool IsError { get; } = status == ProcessingStatus.FinishedWithErrors;
 

@@ -5,11 +5,11 @@
 - FTPS Server: it is possible to set shared folder access.
 - Upload folder: it is possible to skip existing files copy.
 - Import media: it is possible to set extensions of files to copy.
+- Console: reduced amount of messages that tool is producing.
 
 ## Changes
 - Some libraries were updated.
 - Update UX.
-- Restoration: clearer backup-location label, help texts, and section icons.
 
 # 2026.07.15
 

@@ -215,7 +215,9 @@ class Controller
             PlatformSpecificExperience.Instance.GetConsoleWindowService()?.Hide();
         }
 
-        ILog log = _hideConsole ? new FileLog(_taskName) : new ChainLog(_taskName);
+        var events = new BUtil.Interop.Tasks.Events.TaskEvents();
+        var progressConsoleLog = _hideConsole ? null : new ProgressConsoleLog(events);
+        ILog log = _hideConsole ? new FileLog(_taskName) : new ChainLog(_taskName, progressConsoleLog!);
         string? lastMinuteMessage = null;
         bool isSuccess = false;
         log.Open();
@@ -234,15 +236,16 @@ class Controller
                 Environment.Exit(-1);
             }
 
-            var actualTask = TaskProviderRegistry.Create(log, task, new BUtil.Interop.Tasks.Events.TaskEvents(), x => lastMinuteMessage = x);
+            var actualTask = TaskProviderRegistry.Create(log, task, events, x => lastMinuteMessage = x);
+            progressConsoleLog?.Attach(actualTask);
             actualTask.Execute();
             isSuccess = actualTask.IsSuccess;
-            if (lastMinuteMessage != null)
-                Console.WriteLine(lastMinuteMessage);
         }
         finally
         {
             log.Close(isSuccess);
+            if (lastMinuteMessage != null)
+                Console.WriteLine(lastMinuteMessage);
         }
         PlatformSpecificExperience.Instance.SessionService.DoTask(_powerTask);
     }

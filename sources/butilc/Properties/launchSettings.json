@@ -1,7 +1,8 @@
 {
   "profiles": {
     "butilc": {
-      "commandName": "Project"
+      "commandName": "Project",
+      "commandLineArgs": "Task=test"
     }
   }
 }
