@@ -10,6 +10,7 @@ using BUtil.Interop.Tasks.Events;
 using BUtil.Tasks.Common.States;
 using BUtil.Tasks.Common.Storage;
 using BUtil.Tasks.IncrementalBackup;
+using CommunityToolkit.Mvvm.Input;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -30,9 +31,12 @@ public class RestoreVersionsViewModel : ViewModelBase
     public RestoreVersionsViewModel(IncrementalBackupState state, IStorageSettingsV2 storageOptions, string password)
     {
         WindowTitle = Resources.Task_Restore;
+        RestoreCommand = new RelayCommand<string>(RecoverTo);
         PropertyChanged += OnOwnPropertyChanged;
         Initialize(state, storageOptions, password);
     }
+
+    public IRelayCommand<string> RestoreCommand { get; }
 
     #region TaskExecuterViewModel
 
@@ -65,13 +69,6 @@ public class RestoreVersionsViewModel : ViewModelBase
         string.IsNullOrEmpty(StorageSize)
             ? Resources.Field_Version_Help
             : $"{Resources.Field_Version_Help} {StorageSize}";
-
-    public string RestoreSelectedText =>
-        SelectedNode == null
-            ? Resources.Task_Restore
-            : string.Format(Resources.Task_Restore_Selected, SelectedNode.Target);
-
-    public bool IsRestoreEnabled => SelectedNode != null;
 
     #region ConfirmMessage
 
@@ -118,8 +115,6 @@ public class RestoreVersionsViewModel : ViewModelBase
                 BackupVersion_FileVersion_Title = null;
             }
             OnPropertyChanged(nameof(SelectedNode));
-            OnPropertyChanged(nameof(RestoreSelectedText));
-            OnPropertyChanged(nameof(IsRestoreEnabled));
         }
     }
 
@@ -573,9 +568,9 @@ public class RestoreVersionsViewModel : ViewModelBase
         ConfirmMessage = null;
     }
 
-    public void RecoverTo(string destinationFolder)
+    private void RecoverTo(string? destinationFolder)
     {
-        if (SelectedNode == null)
+        if (SelectedNode == null || string.IsNullOrEmpty(destinationFolder))
             return;
 
         var storageFiles = GetChildren(SelectedNode)
@@ -657,11 +652,7 @@ public class RestoreVersionsViewModel : ViewModelBase
 
     public static string Field_Version => Resources.Field_Version;
     public static string BackupVersion_Changes_Title => Resources.BackupVersion_Changes_Title;
-    public static string BackupVersion_Files_Title => Resources.BackupVersion_Files_Title;
-    public static string Task_Restore => Resources.Task_Restore;
-    public static string BackupVersion_Viewer_Help => Resources.BackupVersion_Viewer_Help;
     public static string BackupVersion_Button_Delete => Resources.BackupVersion_Button_Delete;
-    public static string SearchTextBoxWatermark => MainWindowViewModel.SearchTextBoxWatermark;
     public static string Button_OK => Resources.Button_OK;
     public static string Button_Cancel => Resources.Button_Cancel;
     public static string Button_Close => Resources.Button_Close;

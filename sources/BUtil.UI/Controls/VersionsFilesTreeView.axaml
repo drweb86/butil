@@ -7,28 +7,27 @@
              mc:Ignorable="d"
              x:Class="BUtil.UI.Controls.VersionsFilesTreeView"
 			 x:Name="Root"
-			 x:DataType="cvm:RestoreVersionsViewModel">
-	<Expander Classes="TaskSection" HorizontalAlignment="Stretch" IsExpanded="True" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="Transparent"
-			  IsEnabled="{Binding IsInteractionEnabled}">
+			 x:DataType="cvm:VersionsFilesTreeView">
+	<Expander Classes="TaskSection" HorizontalAlignment="Stretch" IsExpanded="True" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="Transparent">
 		<Expander.Header>
-			<decor:ExpanderHeader Icon="💾" Text="{Binding BackupVersion_Files_Title}" />
+			<decor:ExpanderHeader Icon="💾" Text="{Binding #Root.Title}" />
 		</Expander.Header>
 		<StackPanel>
-			<TextBlock TextWrapping="Wrap" Margin="0 0 0 8" Text="{Binding BackupVersion_Viewer_Help}" />
+			<TextBlock TextWrapping="Wrap" Margin="0 0 0 8" Text="{Binding #Root.Help}" />
 			<decor:IconButton
 				Icon="💾"
-				Text="{Binding RestoreSelectedText}"
-				IsEnabled="{Binding IsRestoreEnabled}"
+				Text="{Binding #Root.RestoreText}"
+				IsEnabled="{Binding #Root.IsRestoreEnabled}"
 				Command="{Binding #Root.BrowseRestoreFolderAsync}" />
 			<TextBox
-				Text="{Binding SearchText}"
-				PlaceholderText="{Binding SearchTextBoxWatermark}"
+				Text="{Binding #Root.SearchText}"
+				PlaceholderText="{Binding #Root.SearchPlaceholder}"
 				Margin="0 0 0 8"
 				VerticalContentAlignment="Center" />
 			<TreeView
-				ItemsSource="{Binding Nodes}"
+				ItemsSource="{Binding #Root.Nodes}"
 				SelectionMode="Single"
-				SelectedItem="{Binding SelectedNode}"
+				SelectedItem="{Binding #Root.SelectedNode}"
 				HorizontalAlignment="Stretch">
 				<TreeView.Styles>
 					<Style Selector="TreeViewItem" x:DataType="cvm:FileTreeNode">
@@ -36,7 +35,7 @@
 					</Style>
 				</TreeView.Styles>
 				<TreeView.ItemTemplate>
-					<TreeDataTemplate ItemsSource="{Binding Nodes}">
+					<TreeDataTemplate ItemsSource="{Binding Nodes}" DataType="cvm:FileTreeNode">
 						<StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" Spacing="4">
 							<TextBlock
 								VerticalAlignment="Center"

@@ -1,8 +1,5 @@
-using Avalonia.Media.Imaging;
-using Avalonia.Platform;
 using BUtil.Core;
 using BUtil.Core.Localization;
-using BUtil.Interop.Tasks;
 using CommunityToolkit.Mvvm.Input;
 using System;
 using System.Collections.ObjectModel;
@@ -22,17 +19,8 @@ public class SourceItemV2ViewModel
         Target = target;
         IsFolder = isFolder;
         _items = items;
-        var src = !isFolder ? "/Assets/CrystalClear_FileNew.png" : "/Assets/www.wefunction.com_FunctionFreeIconSet_Folder_48.png";
-        IconSource = LoadFromResource(new Uri("avares://BUtil.UI" + src));
         SourceItemOpenInExplorerCommand = new RelayCommand(OpenInExplorer, () => CanOpenLink);
         TaskDeleteCommand = new RelayCommand(Delete);
-    }
-
-    public Bitmap? IconSource { get; }
-
-    private static Bitmap LoadFromResource(Uri resourceUri)
-    {
-        return new Bitmap(AssetLoader.Open(resourceUri));
     }
 
     public string Target { get; set; }
