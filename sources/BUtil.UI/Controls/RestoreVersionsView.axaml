@@ -24,7 +24,7 @@
 					ItemsSource="{Binding Versions}"
 					SelectedItem="{Binding SelectedVersion}"
 					DisplayMember="Title"
-					ActionIcon="🗙"
+					ActionIcon="❌"
 					ActionText="{Binding BackupVersion_Button_Delete}"
 					ActionCommand="{Binding DeleteBackupVersionCommand}"
 					ActionIsEnabled="{Binding IsDeleteBackupVersionEnabled}"

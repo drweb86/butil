@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -90,6 +90,9 @@
   <data name="BackupVersion_Button_Delete" xml:space="preserve">
     <value>Обриши верзију</value>
   </data>
+  <data name="BackupVersion_Changes_Help" xml:space="preserve">
+    <value>Испод су промене изабране верзије. {0} креирано, {1} ажурирано, {2} обрисано.</value>
+  </data>
   <data name="BackupVersion_Changes_Title" xml:space="preserve">
     <value>Промене</value>
   </data>
@@ -100,6 +103,9 @@
   </data>
   <data name="BackupVersion_Files_Title" xml:space="preserve">
     <value>Датотеке</value>
+  </data>
+  <data name="BackupVersion_FileVersion_Help" xml:space="preserve">
+    <value>Испод видите листу верзија за изабрану датотеку у којима је датотека креирана, ажурирана или обрисана.</value>
   </data>
   <data name="BackupVersion_FileVersion_Title" xml:space="preserve">
     <value>Дневник: {0}</value>
@@ -268,15 +274,6 @@
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Фасцикла не постоји.</value>
   </data>
-  <data name="FolderAccess_Field" xml:space="preserve">
-    <value>Приступ фасцикли:</value>
-  </data>
-  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
-    <value>Само читање</value>
-  </data>
-  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
-    <value>Читање и писање</value>
-  </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>Протокол:</value>
   </data>
@@ -319,6 +316,15 @@
   <data name="FingerPrintSHA256_Field_Validation_Empty" xml:space="preserve">
     <value>Отисак SHA-256 није наведен.</value>
   </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>Приступ фасцикли:</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>Само читање</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>Читање и писање</value>
+  </data>
   <data name="Ftps_Encryption_Option_Explicit" xml:space="preserve">
     <value>Експлицитно</value>
   </data>
@@ -328,14 +334,14 @@
   <data name="Ftps_Field_Encryption" xml:space="preserve">
     <value>SSL/TTS шифровање:</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>FTPS сервер</value>
+  </data>
   <data name="FtpsServerStartTask_Name" xml:space="preserve">
     <value>Покрени FTPS сервер</value>
   </data>
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>Дели фасциклу преко мреже (FTPS сервер)</value>
-  </data>
-  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
-    <value>FTPS сервер</value>
   </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
     <value>Подесите FTPS сервер који ради на овом рачунару. Користи експлицитно шифровање са самопотписаним сертификатом и дели изабрану фасциклу. Док сервер ради, можете се повезати са њим са било ког FTPS клијента у вашој локалној мрежи.</value>
@@ -986,6 +992,9 @@ bin.
   </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>Наведите складиште које садржи резервну копију коју желите да вратите. Користите иста подешавања као када је резервна копија направљена.</value>
+  </data>
+  <data name="Task_Restore_Storage_Title" xml:space="preserve">
+    <value>Локација резервне копије</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>Неуспешно (погледајте отворени записник)</value>

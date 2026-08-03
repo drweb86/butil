@@ -10,7 +10,7 @@
 			 x:DataType="cvm:VersionsFilesTreeView">
 	<Expander Classes="TaskSection" HorizontalAlignment="Stretch" IsExpanded="True" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="Transparent">
 		<Expander.Header>
-			<decor:ExpanderHeader Icon="💾" Text="{Binding #Root.Title}" />
+			<decor:ExpanderHeader Icon="🗄" Text="{Binding #Root.Title}" />
 		</Expander.Header>
 		<StackPanel>
 			<TextBlock TextWrapping="Wrap" Margin="0 0 0 8" Text="{Binding #Root.Help}" />

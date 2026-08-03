@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -90,6 +90,9 @@ aŭ avertoj estos registritaj.</value>
   <data name="BackupVersion_Button_Delete" xml:space="preserve">
     <value>Delete version</value>
   </data>
+  <data name="BackupVersion_Changes_Help" xml:space="preserve">
+    <value>Sube estas la ŝanĝoj de la elektita versio. {0} kreita, {1} ĝisdatigita, {2} forigita.</value>
+  </data>
   <data name="BackupVersion_Changes_Title" xml:space="preserve">
     <value>Ŝanĝoj</value>
   </data>
@@ -100,6 +103,9 @@ Forigitaj versioŝanĝoj fariĝos parto de versio "{1}".</value>
   </data>
   <data name="BackupVersion_Files_Title" xml:space="preserve">
     <value>Dosieroj</value>
+  </data>
+  <data name="BackupVersion_FileVersion_Help" xml:space="preserve">
+    <value>Sube vi vidas la liston de versioj por la elektita dosiero, kie la dosiero estis kreita, ĝisdatigita aŭ forigita.</value>
   </data>
   <data name="BackupVersion_FileVersion_Title" xml:space="preserve">
     <value>Ĵurnalo: {0}</value>
@@ -268,15 +274,6 @@ Scenaro de uzado: Vi kopias datumojn al fora servilo. Estas problemo: ISP malpli
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Dosierujo ne ekzistas.</value>
   </data>
-  <data name="FolderAccess_Field" xml:space="preserve">
-    <value>Dosieruja aliro:</value>
-  </data>
-  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
-    <value>Nur legado</value>
-  </data>
-  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
-    <value>Legado kaj skribo</value>
-  </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>Protokolo:</value>
   </data>
@@ -319,6 +316,15 @@ Scenaro de uzado: Vi kopias datumojn al fora servilo. Estas problemo: ISP malpli
   <data name="FingerPrintSHA256_Field_Validation_Empty" xml:space="preserve">
     <value>Fingrospuro SHA-256 ne estas specifita.</value>
   </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>Dosieruja aliro:</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>Nur legado</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>Legado kaj skribo</value>
+  </data>
   <data name="Ftps_Encryption_Option_Explicit" xml:space="preserve">
     <value>Eksplicita</value>
   </data>
@@ -328,14 +334,14 @@ Scenaro de uzado: Vi kopias datumojn al fora servilo. Estas problemo: ISP malpli
   <data name="Ftps_Field_Encryption" xml:space="preserve">
     <value>SSL/TTS-ĉifrado:</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>FTPS-servilo</value>
+  </data>
   <data name="FtpsServerStartTask_Name" xml:space="preserve">
     <value>Komencu FTPS-servilon</value>
   </data>
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>Kunhavigi dosierujon per reto (FTPS-Servilo)</value>
-  </data>
-  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
-    <value>FTPS-servilo</value>
   </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
     <value>Agordu FTPS-servilon, kiu funkcias sur ĉi tiu komputilo. Ĝi uzas eksplicitan ĉifradon kun memsubskribita atestilo kaj kunhavigas la elektitan dosierujon. Dum la servilo funkcias, vi povas konektiĝi al ĝi el iu ajn FTPS-kliento en via loka reto.</value>
@@ -986,6 +992,9 @@ See detailed description in the following link.</value>
   </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>Specifu la konservejon, kiu enhavas la sekurkopion, kiun vi volas restaŭri. Uzu la samajn agordojn kiel kiam la sekurkopio estis kreita.</value>
+  </data>
+  <data name="Task_Restore_Storage_Title" xml:space="preserve">
+    <value>Loko de la sekurkopio</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>Malsukcesis (vidu malfermitan protokolon)</value>

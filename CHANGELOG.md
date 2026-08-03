@@ -1,10 +1,15 @@
-﻿# 2026.07.21
+﻿# 2026.08.03
 (unpublished)
+
+## New Features
+- FTPS Server: it is possible to set shared folder access.
+- Upload folder: it is possible to skip existing files copy.
+- Import media: it is possible to set extensions of files to copy.
 
 ## Changes
 - Some libraries were updated.
-- Encryption, Compress/Decompress technical views was improved visually.
-- Technical tools, Expanders, When?, Encruption views became better visually.
+- Update UX.
+- Restoration: clearer backup-location label, help texts, and section icons.
 
 # 2026.07.15
 

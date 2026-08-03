@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -90,6 +90,9 @@ eða viðvaranir verða skráðar.</value>
   <data name="BackupVersion_Button_Delete" xml:space="preserve">
     <value>Eyða útgáfu</value>
   </data>
+  <data name="BackupVersion_Changes_Help" xml:space="preserve">
+    <value>Hér fyrir neðan eru breytingar á valinni útgáfu. {0} búið til, {1} uppfært, {2} eytt.</value>
+  </data>
   <data name="BackupVersion_Changes_Title" xml:space="preserve">
     <value>Breytingar</value>
   </data>
@@ -100,6 +103,9 @@ Breytingar á eyddri útgáfu verða hluti af útgáfu "{1}".</value>
   </data>
   <data name="BackupVersion_Files_Title" xml:space="preserve">
     <value>Skrár</value>
+  </data>
+  <data name="BackupVersion_FileVersion_Help" xml:space="preserve">
+    <value>Hér fyrir neðan sérðu lista yfir útgáfur af völdu skrá þar sem skráin var búin til, uppfærð eða eytt.</value>
   </data>
   <data name="BackupVersion_FileVersion_Title" xml:space="preserve">
     <value>Dagbók: {0}</value>
@@ -268,15 +274,6 @@ Notkunardæmi: Þú afritar gögn á fjarlægan þjón. Vandamál er: Netþjónu
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Mappa er ekki til.</value>
   </data>
-  <data name="FolderAccess_Field" xml:space="preserve">
-    <value>Aðgangur að möppu:</value>
-  </data>
-  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
-    <value>Aðeins lestur</value>
-  </data>
-  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
-    <value>Lestur og skrif</value>
-  </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>Samskiptaregla:</value>
   </data>
@@ -319,6 +316,15 @@ Notkunardæmi: Þú afritar gögn á fjarlægan þjón. Vandamál er: Netþjónu
   <data name="FingerPrintSHA256_Field_Validation_Empty" xml:space="preserve">
     <value>Fingrafar SHA-256 er ekki tilgreint.</value>
   </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>Aðgangur að möppu:</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>Aðeins lestur</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>Lestur og skrif</value>
+  </data>
   <data name="Ftps_Encryption_Option_Explicit" xml:space="preserve">
     <value>Beinlínis</value>
   </data>
@@ -328,14 +334,14 @@ Notkunardæmi: Þú afritar gögn á fjarlægan þjón. Vandamál er: Netþjónu
   <data name="Ftps_Field_Encryption" xml:space="preserve">
     <value>SSL/TTS dulkóðun:</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>FTPS þjónn</value>
+  </data>
   <data name="FtpsServerStartTask_Name" xml:space="preserve">
     <value>Ræsa FTPS þjón</value>
   </data>
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>Deila möppu yfir net (FTPS þjónn)</value>
-  </data>
-  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
-    <value>FTPS þjónn</value>
   </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
     <value>Settu upp FTPS þjón sem keyrir á þessari tölvu. Hann notar beinlínis dulkóðun með sjálfundirrituðu vottorði og deilir völdu möppunni. Meðan þjónninn er í gangi geturðu tengst honum frá hvaða FTPS biðlara sem er á staðarnetinu þínu.</value>
@@ -986,6 +992,9 @@ Sjá nákvæma lýsingu á eftirfarandi tengli.</value>
   </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>Tilgreindu geymsluna sem inniheldur afritið sem þú vilt endurheimta. Notaðu sömu stillingar og þegar afritið var búið til.</value>
+  </data>
+  <data name="Task_Restore_Storage_Title" xml:space="preserve">
+    <value>Staðsetning öryggisafrits</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>Mistókst (sjá opna atvikaskrá)</value>

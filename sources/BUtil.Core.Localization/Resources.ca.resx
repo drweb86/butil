@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -90,6 +90,9 @@ o es registraran avisos.</value>
   <data name="BackupVersion_Button_Delete" xml:space="preserve">
     <value>Delete version</value>
   </data>
+  <data name="BackupVersion_Changes_Help" xml:space="preserve">
+    <value>A continuació es mostren els canvis de la versió seleccionada. {0} creat, {1} actualitzat, {2} suprimit.</value>
+  </data>
   <data name="BackupVersion_Changes_Title" xml:space="preserve">
     <value>Canvis</value>
   </data>
@@ -100,6 +103,9 @@ Els canvis de versió suprimits passaran a formar part de la versió "{1}".</val
   </data>
   <data name="BackupVersion_Files_Title" xml:space="preserve">
     <value>Fitxers</value>
+  </data>
+  <data name="BackupVersion_FileVersion_Help" xml:space="preserve">
+    <value>A continuació veieu la llista de versions del fitxer seleccionat on el fitxer s'ha creat, actualitzat o suprimit.</value>
   </data>
   <data name="BackupVersion_FileVersion_Title" xml:space="preserve">
     <value>Diari: {0}</value>
@@ -268,15 +274,6 @@ Escenari d'ús: copieu dades al servidor remot. Hi ha un problema: l'ISP baixa l
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>La carpeta no existeix.</value>
   </data>
-  <data name="FolderAccess_Field" xml:space="preserve">
-    <value>Accés a la carpeta:</value>
-  </data>
-  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
-    <value>Només lectura</value>
-  </data>
-  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
-    <value>Lectura i escriptura</value>
-  </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>Protocol:</value>
   </data>
@@ -319,6 +316,15 @@ Escenari d'ús: copieu dades al servidor remot. Hi ha un problema: l'ISP baixa l
   <data name="FingerPrintSHA256_Field_Validation_Empty" xml:space="preserve">
     <value>L'empremta digital SHA-256 no està especificada.</value>
   </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>Accés a la carpeta:</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>Només lectura</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>Lectura i escriptura</value>
+  </data>
   <data name="Ftps_Encryption_Option_Explicit" xml:space="preserve">
     <value>Explícit</value>
   </data>
@@ -328,14 +334,14 @@ Escenari d'ús: copieu dades al servidor remot. Hi ha un problema: l'ISP baixa l
   <data name="Ftps_Field_Encryption" xml:space="preserve">
     <value>Xifratge SSL/TTS:</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>Servidor FTPS</value>
+  </data>
   <data name="FtpsServerStartTask_Name" xml:space="preserve">
     <value>Inicieu el servidor FTPS</value>
   </data>
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>Compartir carpeta a la xarxa (servidor FTPS)</value>
-  </data>
-  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
-    <value>Servidor FTPS</value>
   </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
     <value>Configureu un servidor FTPS que s'executi en aquest ordinador. Utilitza xifratge explícit amb un certificat autofirmat i comparteix la carpeta seleccionada. Mentre el servidor estigui en funcionament, us hi podeu connectar des de qualsevol client FTPS de la vostra xarxa local.</value>
@@ -986,6 +992,9 @@ See detailed description in the following link.</value>
   </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>Especifiqueu l'emmagatzematge que conté la còpia de seguretat que voleu restaurar. Utilitzeu la mateixa configuració que quan es va crear la còpia de seguretat.</value>
+  </data>
+  <data name="Task_Restore_Storage_Title" xml:space="preserve">
+    <value>Ubicació de la còpia de seguretat</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>Ha fallat (vegeu el registre obert)</value>

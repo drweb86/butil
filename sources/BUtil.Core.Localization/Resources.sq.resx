@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -90,6 +90,9 @@ gabime ose paralajmërime.</value>
   <data name="BackupVersion_Button_Delete" xml:space="preserve">
     <value>Fshi versionin</value>
   </data>
+  <data name="BackupVersion_Changes_Help" xml:space="preserve">
+    <value>Më poshtë janë ndryshimet e versionit të zgjedhur. {0} u krijua, {1} u përditësua, {2} u fshi.</value>
+  </data>
   <data name="BackupVersion_Changes_Title" xml:space="preserve">
     <value>Ndryshimet</value>
   </data>
@@ -100,6 +103,9 @@ Ndryshimet e versionit të fshirë do të bëhen pjesë e versionit "{1}".</valu
   </data>
   <data name="BackupVersion_Files_Title" xml:space="preserve">
     <value>Skedarë</value>
+  </data>
+  <data name="BackupVersion_FileVersion_Help" xml:space="preserve">
+    <value>Më poshtë shihni listën e versioneve për skedarin e zgjedhur ku skedari u krijua, u përditësua ose u fshi.</value>
   </data>
   <data name="BackupVersion_FileVersion_Title" xml:space="preserve">
     <value>Ditar: {0}</value>
@@ -268,15 +274,6 @@ Skenari i përdorimit: Ju kopjoni të dhëna në një server të largët. Ka nj�
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Dosja nuk ekziston.</value>
   </data>
-  <data name="FolderAccess_Field" xml:space="preserve">
-    <value>Aksesi i dosjes:</value>
-  </data>
-  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
-    <value>Vetëm lexim</value>
-  </data>
-  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
-    <value>Lexim dhe shkrim</value>
-  </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>Protokolli:</value>
   </data>
@@ -319,6 +316,15 @@ Skenari i përdorimit: Ju kopjoni të dhëna në një server të largët. Ka nj�
   <data name="FingerPrintSHA256_Field_Validation_Empty" xml:space="preserve">
     <value>Gjurmë gishti SHA-256 nuk është specifikuar.</value>
   </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>Aksesi i dosjes:</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>Vetëm lexim</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>Lexim dhe shkrim</value>
+  </data>
   <data name="Ftps_Encryption_Option_Explicit" xml:space="preserve">
     <value>Eksplicite</value>
   </data>
@@ -328,14 +334,14 @@ Skenari i përdorimit: Ju kopjoni të dhëna në një server të largët. Ka nj�
   <data name="Ftps_Field_Encryption" xml:space="preserve">
     <value>Kriptimi SSL/TTS:</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>Server FTPS</value>
+  </data>
   <data name="FtpsServerStartTask_Name" xml:space="preserve">
     <value>Nis serverin FTPS</value>
   </data>
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>Ndaj dosjen përmes rrjetit (Server FTPS)</value>
-  </data>
-  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
-    <value>Server FTPS</value>
   </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
     <value>Konfiguroni një server FTPS që ekzekutohet në këtë kompjuter. Ai përdor kriptim eksplicit me një certifikatë të vetënënshkruar dhe ndan dosjen e zgjedhur. Ndërsa serveri është në punë, mund të lidheni me të nga çdo klient FTPS në rrjetin tuaj lokal.</value>
@@ -986,6 +992,9 @@ Shihni përshkrimin e detajuar në lidhjen vijuese.</value>
   </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>Specifikoni hapësirën e ruajtjes që përmban kopjen rezervë që dëshironi të rikthe. Përdorni të njëjtat cilësime si kur u krijua kopja rezervë.</value>
+  </data>
+  <data name="Task_Restore_Storage_Title" xml:space="preserve">
+    <value>Vendndodhja e kopjes rezervë</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>Dështoi (shihni regjistrin e hapur)</value>

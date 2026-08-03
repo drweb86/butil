@@ -415,6 +415,7 @@ public class RestoreVersionsViewModel : ViewModelBase
         if (string.IsNullOrEmpty(filter))
         {
             SetExpansion(_allNodes, expanded: false);
+            ExpandRootLevel(_allNodes);
             Nodes = new ObservableCollection<FileTreeNode>(_allNodes);
             return;
         }
@@ -450,6 +451,15 @@ public class RestoreVersionsViewModel : ViewModelBase
             if (node.Nodes.Count > 0)
                 node.IsExpanded = expanded;
             SetExpansion(node.Nodes, expanded);
+        }
+    }
+
+    private static void ExpandRootLevel(IEnumerable<FileTreeNode> nodes)
+    {
+        foreach (var node in nodes)
+        {
+            if (node.Nodes.Count > 0)
+                node.IsExpanded = true;
         }
     }
 

@@ -1,6 +1,7 @@
 using Avalonia;
 using Avalonia.Controls;
 using System.Collections;
+using Loc = BUtil.Core.Localization.Resources;
 
 namespace BUtil.UI.Controls;
 
@@ -17,6 +18,8 @@ public partial class RestoreFileBlameSection : UserControl
         get => GetValue(TitleProperty);
         set => SetValue(TitleProperty, value);
     }
+
+    public string Help { get; } = Loc.BackupVersion_FileVersion_Help;
 
     public IEnumerable? Items
     {

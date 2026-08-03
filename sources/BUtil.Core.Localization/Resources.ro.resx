@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -90,6 +90,9 @@ erori sau avertismente.</value>
   <data name="BackupVersion_Button_Delete" xml:space="preserve">
     <value>Stergere versiune</value>
   </data>
+  <data name="BackupVersion_Changes_Help" xml:space="preserve">
+    <value>Mai jos sunt modificările versiunii selectate. {0} creat, {1} actualizat, {2} șters.</value>
+  </data>
   <data name="BackupVersion_Changes_Title" xml:space="preserve">
     <value>Modificări</value>
   </data>
@@ -100,6 +103,9 @@ Modificările versiunii șterse vor deveni parte din versiunea „{1}".</value>
   </data>
   <data name="BackupVersion_Files_Title" xml:space="preserve">
     <value>Fișiere</value>
+  </data>
+  <data name="BackupVersion_FileVersion_Help" xml:space="preserve">
+    <value>Mai jos vedeți lista versiunilor fișierului selectat în care fișierul a fost creat, actualizat sau șters.</value>
   </data>
   <data name="BackupVersion_FileVersion_Title" xml:space="preserve">
     <value>Jurnal: {0}</value>
@@ -268,15 +274,6 @@ Scenariu de utilizare: Copiați date pe un server la distanță. Există o probl
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Folderul nu există.</value>
   </data>
-  <data name="FolderAccess_Field" xml:space="preserve">
-    <value>Acces la folder:</value>
-  </data>
-  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
-    <value>Doar citire</value>
-  </data>
-  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
-    <value>Citire și scriere</value>
-  </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>Protocol:</value>
   </data>
@@ -319,6 +316,15 @@ Scenariu de utilizare: Copiați date pe un server la distanță. Există o probl
   <data name="FingerPrintSHA256_Field_Validation_Empty" xml:space="preserve">
     <value>Amprenta SHA-256 nu este specificată.</value>
   </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>Acces la folder:</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>Doar citire</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>Citire și scriere</value>
+  </data>
   <data name="Ftps_Encryption_Option_Explicit" xml:space="preserve">
     <value>Explicit</value>
   </data>
@@ -328,14 +334,14 @@ Scenariu de utilizare: Copiați date pe un server la distanță. Există o probl
   <data name="Ftps_Field_Encryption" xml:space="preserve">
     <value>Criptare SSL/TTS:</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>Server FTPS</value>
+  </data>
   <data name="FtpsServerStartTask_Name" xml:space="preserve">
     <value>Pornire server FTPS</value>
   </data>
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>Partajare folder prin rețea (Server FTPS)</value>
-  </data>
-  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
-    <value>Server FTPS</value>
   </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
     <value>Configurați un server FTPS care rulează pe acest computer. Folosește criptare explicită cu un certificat autosemnat și partajează folderul selectat. În timp ce serverul rulează, vă puteți conecta la el de pe orice client FTPS din rețeaua locală.</value>
@@ -986,6 +992,9 @@ Consultați descrierea detaliată în următorul link.</value>
   </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>Specificați spațiul de stocare care conține copia de rezervă pe care doriți să o restaurați. Utilizați aceleași setări ca la momentul creării copiei de rezervă.</value>
+  </data>
+  <data name="Task_Restore_Storage_Title" xml:space="preserve">
+    <value>Locația copiei de rezervă</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>Eșuat (vezi jurnalul deschis)</value>

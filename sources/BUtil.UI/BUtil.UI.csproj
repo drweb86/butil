@@ -18,12 +18,8 @@
   <ItemGroup>
     <None Remove="Assets\butil.ico" />
     <None Remove="Assets\CrystalClear_EveraldoCoelho_BackupTask48x48.png" />
-    <None Remove="Assets\CrystalClear_EveraldoCoelho_OtherOptions48x48.png" />
     <None Remove="Assets\CrystalClear_EveraldoCoelho_Password48x48.png" />
-    <None Remove="Assets\CrystalClear_EveraldoCoelho_Refresh48x48.png" />
     <None Remove="Assets\CrystalClear_EveraldoCoelho_Schedule48x48.png" />
-    <None Remove="Assets\CrystalClear_FileNew.png" />
-    <None Remove="Assets\www.wefunction.com_FunctionFreeIconSet_cross_48.png" />
   </ItemGroup>
 
   <ItemGroup>

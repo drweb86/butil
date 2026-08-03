@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -90,6 +90,9 @@ nó clárófar rabhaidh.</value>
   <data name="BackupVersion_Button_Delete" xml:space="preserve">
     <value>Delete version</value>
   </data>
+  <data name="BackupVersion_Changes_Help" xml:space="preserve">
+    <value>Thíos tá athruithe an leagain roghnaithe. {0} cruthaithe, {1} nuashonraithe, {2} scriosta.</value>
+  </data>
   <data name="BackupVersion_Changes_Title" xml:space="preserve">
     <value>Athruithe</value>
   </data>
@@ -100,6 +103,9 @@ Déanfar athruithe ar leagan scriosta mar chuid den leagan "{1}".</value>
   </data>
   <data name="BackupVersion_Files_Title" xml:space="preserve">
     <value>Comhaid</value>
+  </data>
+  <data name="BackupVersion_FileVersion_Help" xml:space="preserve">
+    <value>Thíos feiceann tú liosta na leaganacha den chomhad roghnaithe inar cruthaíodh, nuashonraíodh nó scriosadh an comhad.</value>
   </data>
   <data name="BackupVersion_FileVersion_Title" xml:space="preserve">
     <value>Iris: {0}</value>
@@ -268,15 +274,6 @@ Cás úsáide: Déanann tú sonraí a chóipeáil chuig an gcianfhreastalaí. T�
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Níl fillteán ann.</value>
   </data>
-  <data name="FolderAccess_Field" xml:space="preserve">
-    <value>Rochtain ar an bhfillteán:</value>
-  </data>
-  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
-    <value>Léamh amháin</value>
-  </data>
-  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
-    <value>Léamh agus scríobh</value>
-  </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>Prótacal:</value>
   </data>
@@ -319,6 +316,15 @@ Cás úsáide: Déanann tú sonraí a chóipeáil chuig an gcianfhreastalaí. T�
   <data name="FingerPrintSHA256_Field_Validation_Empty" xml:space="preserve">
     <value>Níl méarloirg SHA-256 sonraithe.</value>
   </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>Rochtain ar an bhfillteán:</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>Léamh amháin</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>Léamh agus scríobh</value>
+  </data>
   <data name="Ftps_Encryption_Option_Explicit" xml:space="preserve">
     <value>follasach</value>
   </data>
@@ -328,14 +334,14 @@ Cás úsáide: Déanann tú sonraí a chóipeáil chuig an gcianfhreastalaí. T�
   <data name="Ftps_Field_Encryption" xml:space="preserve">
     <value>Criptiú SSL/TTS:</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>Freastalaí FTPS</value>
+  </data>
   <data name="FtpsServerStartTask_Name" xml:space="preserve">
     <value>Tosaigh freastalaí FTPS</value>
   </data>
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>Comhroinn fillteán thar líonra (Freastalaí FTPS)</value>
-  </data>
-  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
-    <value>Freastalaí FTPS</value>
   </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
     <value>Socraigh freastalaí FTPS a ritheann ar an ríomhaire seo. Úsáideann sé criptiú follasach le deimhniú féinsínithe agus roinneann sé an fillteán roghnaithe. Fad is atá an freastalaí ag rith, is féidir leat ceangal leis ó aon chliant FTPS ar do líonra áitiúil.</value>
@@ -986,6 +992,9 @@ See detailed description in the following link.</value>
   </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>Sonraigh an stóras ina bhfuil an cúltaca ar mhaith leat a athchóiriú. Úsáid na socruithe céanna a bhí ann nuair a cruthaíodh an cúltaca.</value>
+  </data>
+  <data name="Task_Restore_Storage_Title" xml:space="preserve">
+    <value>Suíomh an chúltaca</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>Theip (féach loga oscailte)</value>

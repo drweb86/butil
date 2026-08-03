@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -87,6 +87,9 @@
   <data name="BackupVersion_Button_Delete" xml:space="preserve">
     <value>Delete version</value>
   </data>
+  <data name="BackupVersion_Changes_Help" xml:space="preserve">
+    <value>Di changes for di version wey you select dey below. {0} create, {1} update, {2} delete.</value>
+  </data>
   <data name="BackupVersion_Changes_Title" xml:space="preserve">
     <value>Changes</value>
   </data>
@@ -97,6 +100,9 @@
   </data>
   <data name="BackupVersion_Files_Title" xml:space="preserve">
     <value>Files</value>
+  </data>
+  <data name="BackupVersion_FileVersion_Help" xml:space="preserve">
+    <value>Below you go see di list of versions for di file wey you select where dem create, update or delete di file.</value>
   </data>
   <data name="BackupVersion_FileVersion_Title" xml:space="preserve">
     <value>Journal: {0}</value>
@@ -265,15 +271,6 @@
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Folder no dey exist.</value>
   </data>
-  <data name="FolderAccess_Field" xml:space="preserve">
-    <value>Folder access:</value>
-  </data>
-  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
-    <value>Read only</value>
-  </data>
-  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
-    <value>Read and write</value>
-  </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>Protocol:</value>
   </data>
@@ -316,6 +313,15 @@
   <data name="FingerPrintSHA256_Field_Validation_Empty" xml:space="preserve">
     <value>Dem no put SHA-256 fingaprint.</value>
   </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>Folder access:</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>Read only</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>Read and write</value>
+  </data>
   <data name="Ftps_Encryption_Option_Explicit" xml:space="preserve">
     <value>Explicit</value>
   </data>
@@ -325,14 +331,14 @@
   <data name="Ftps_Field_Encryption" xml:space="preserve">
     <value>SSL/TLS encryption:</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>FTPS Server</value>
+  </data>
   <data name="FtpsServerStartTask_Name" xml:space="preserve">
     <value>Start FTPS Server</value>
   </data>
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>Share folder for network (FTPS Server)</value>
-  </data>
-  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
-    <value>FTPS Server</value>
   </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
     <value>Set up FTPS server wey go run for dis computer. E dey use explicit encryption wit self-signed certificate and e go share di folder wey you select. Anytime di server dey run, you fit connect am from any FTPS client for your local network.</value>
@@ -983,6 +989,9 @@ Abeg do one of dese:
   </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>Choose the storage wey get the backup wey you wan restore. Use the same settings wey you use when you first create the backup.</value>
+  </data>
+  <data name="Task_Restore_Storage_Title" xml:space="preserve">
+    <value>Backup location</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>Failed (see opened log)</value>

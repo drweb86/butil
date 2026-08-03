@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -90,6 +90,9 @@
   <data name="BackupVersion_Button_Delete" xml:space="preserve">
     <value>刪除版本</value>
   </data>
+  <data name="BackupVersion_Changes_Help" xml:space="preserve">
+    <value>以下是所選版本的變更。{0} 已建立，{1} 已更新，{2} 已刪除。</value>
+  </data>
   <data name="BackupVersion_Changes_Title" xml:space="preserve">
     <value>變更</value>
   </data>
@@ -100,6 +103,9 @@
   </data>
   <data name="BackupVersion_Files_Title" xml:space="preserve">
     <value>檔案</value>
+  </data>
+  <data name="BackupVersion_FileVersion_Help" xml:space="preserve">
+    <value>以下是所選檔案被建立、更新或刪除的版本清單。</value>
   </data>
   <data name="BackupVersion_FileVersion_Title" xml:space="preserve">
     <value>日誌：{0}</value>
@@ -268,15 +274,6 @@
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>資料夾不存在。</value>
   </data>
-  <data name="FolderAccess_Field" xml:space="preserve">
-    <value>資料夾存取權限：</value>
-  </data>
-  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
-    <value>唯讀</value>
-  </data>
-  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
-    <value>讀寫</value>
-  </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>通訊協定：</value>
   </data>
@@ -319,6 +316,15 @@
   <data name="FingerPrintSHA256_Field_Validation_Empty" xml:space="preserve">
     <value>未指定 SHA-256 指紋。</value>
   </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>資料夾存取權限：</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>唯讀</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>讀寫</value>
+  </data>
   <data name="Ftps_Encryption_Option_Explicit" xml:space="preserve">
     <value>顯式</value>
   </data>
@@ -328,14 +334,14 @@
   <data name="Ftps_Field_Encryption" xml:space="preserve">
     <value>SSL/TTS 加密：</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>FTPS 伺服器</value>
+  </data>
   <data name="FtpsServerStartTask_Name" xml:space="preserve">
     <value>啟動 FTPS 伺服器</value>
   </data>
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>透過網路分享資料夾（FTPS 伺服器）</value>
-  </data>
-  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
-    <value>FTPS 伺服器</value>
   </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
     <value>設定在此電腦上執行的 FTPS 伺服器。它使用含自簽憑證的顯式加密，並分享所選資料夾。伺服器執行期間，您可以從區域網路中的任何 FTPS 用戶端進行連線。</value>
@@ -986,6 +992,9 @@ bin。
   </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>指定包含要還原之備份的儲存位置。請使用建立備份時所用的相同設定。</value>
+  </data>
+  <data name="Task_Restore_Storage_Title" xml:space="preserve">
+    <value>備份位置</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>失敗（請查看已開啟的記錄）</value>

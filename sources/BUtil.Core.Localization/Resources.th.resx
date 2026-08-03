@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -90,6 +90,9 @@
   <data name="BackupVersion_Button_Delete" xml:space="preserve">
     <value>ลบเวอร์ชัน</value>
   </data>
+  <data name="BackupVersion_Changes_Help" xml:space="preserve">
+    <value>ด้านล่างคือการเปลี่ยนแปลงของเวอร์ชันที่เลือก {0} สร้างแล้ว {1} อัปเดตแล้ว {2} ลบแล้ว</value>
+  </data>
   <data name="BackupVersion_Changes_Title" xml:space="preserve">
     <value>การเปลี่ยนแปลง</value>
   </data>
@@ -100,6 +103,9 @@
   </data>
   <data name="BackupVersion_Files_Title" xml:space="preserve">
     <value>ไฟล์</value>
+  </data>
+  <data name="BackupVersion_FileVersion_Help" xml:space="preserve">
+    <value>ด้านล่างคือรายการเวอร์ชันของไฟล์ที่เลือกซึ่งไฟล์ถูกสร้าง อัปเดต หรือลบ</value>
   </data>
   <data name="BackupVersion_FileVersion_Title" xml:space="preserve">
     <value>บันทึก: {0}</value>
@@ -268,15 +274,6 @@
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>โฟลเดอร์ไม่มีอยู่</value>
   </data>
-  <data name="FolderAccess_Field" xml:space="preserve">
-    <value>การเข้าถึงโฟลเดอร์:</value>
-  </data>
-  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
-    <value>อ่านอย่างเดียว</value>
-  </data>
-  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
-    <value>อ่านและเขียน</value>
-  </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>โปรโตคอล:</value>
   </data>
@@ -319,6 +316,15 @@
   <data name="FingerPrintSHA256_Field_Validation_Empty" xml:space="preserve">
     <value>ไม่ได้ระบุลายนิ้วมือ SHA-256</value>
   </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>การเข้าถึงโฟลเดอร์:</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>อ่านอย่างเดียว</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>อ่านและเขียน</value>
+  </data>
   <data name="Ftps_Encryption_Option_Explicit" xml:space="preserve">
     <value>แบบชัดแจ้ง</value>
   </data>
@@ -328,14 +334,14 @@
   <data name="Ftps_Field_Encryption" xml:space="preserve">
     <value>การเข้ารหัส SSL/TTS:</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>เซิร์ฟเวอร์ FTPS</value>
+  </data>
   <data name="FtpsServerStartTask_Name" xml:space="preserve">
     <value>เริ่มเซิร์ฟเวอร์ FTPS</value>
   </data>
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>แชร์โฟลเดอร์ผ่านเครือข่าย (เซิร์ฟเวอร์ FTPS)</value>
-  </data>
-  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
-    <value>เซิร์ฟเวอร์ FTPS</value>
   </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
     <value>ตั้งค่าเซิร์ฟเวอร์ FTPS ที่ทำงานบนคอมพิวเตอร์เครื่องนี้ โดยใช้การเข้ารหัสแบบชัดแจ้งด้วยใบรับรองที่ลงนามเอง และแชร์โฟลเดอร์ที่เลือก ในขณะที่เซิร์ฟเวอร์ทำงาน คุณสามารถเชื่อมต่อจากไคลเอนต์ FTPS ใดก็ได้บนเครือข่ายท้องถิ่นของคุณ</value>
@@ -986,6 +992,9 @@ bin
   </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>ระบุพื้นที่จัดเก็บที่มีข้อมูลสำรองที่คุณต้องการกู้คืน ใช้การตั้งค่าเดียวกับตอนที่สร้างข้อมูลสำรอง</value>
+  </data>
+  <data name="Task_Restore_Storage_Title" xml:space="preserve">
+    <value>ตำแหน่งข้อมูลสำรอง</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>ล้มเหลว (ดูบันทึกที่เปิดอยู่)</value>

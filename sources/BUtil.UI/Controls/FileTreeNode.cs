@@ -25,7 +25,7 @@ public class FileTreeNode : ObservableObject
         }
         else
         {
-            Icon = "💾";
+            Icon = "📁";
             Target = sourceItem.Target;
         }
     }

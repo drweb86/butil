@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -87,6 +87,9 @@
   <data name="BackupVersion_Button_Delete" xml:space="preserve">
     <value>பதிப்பை நீக்கு</value>
   </data>
+  <data name="BackupVersion_Changes_Help" xml:space="preserve">
+    <value>தேர்ந்தெடுத்த பதிப்பின் மாற்றங்கள் கீழே உள்ளன. {0} உருவாக்கப்பட்டது, {1} புதுப்பிக்கப்பட்டது, {2} நீக்கப்பட்டது.</value>
+  </data>
   <data name="BackupVersion_Changes_Title" xml:space="preserve">
     <value>மாற்றங்கள்</value>
   </data>
@@ -97,6 +100,9 @@
   </data>
   <data name="BackupVersion_Files_Title" xml:space="preserve">
     <value>கோப்புகள்</value>
+  </data>
+  <data name="BackupVersion_FileVersion_Help" xml:space="preserve">
+    <value>தேர்ந்தெடுத்த கோப்பு உருவாக்கப்பட்ட, புதுப்பிக்கப்பட்ட அல்லது நீக்கப்பட்ட பதிப்புகளின் பட்டியலை கீழே காணலாம்.</value>
   </data>
   <data name="BackupVersion_FileVersion_Title" xml:space="preserve">
     <value>ஜர்னல்: {0}</value>
@@ -267,15 +273,6 @@
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>கோப்பகம் இல்லை.</value>
   </data>
-  <data name="FolderAccess_Field" xml:space="preserve">
-    <value>கோப்புறை அணுகல்:</value>
-  </data>
-  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
-    <value>படிக்க மட்டும்</value>
-  </data>
-  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
-    <value>படித்தல் மற்றும் எழுதுதல்</value>
-  </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>முறையில்:</value>
   </data>
@@ -318,6 +315,15 @@
   <data name="FingerPrintSHA256_Field_Validation_Empty" xml:space="preserve">
     <value>கைரேகை SHA-256 குறிப்பிடப்படவில்லை.</value>
   </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>கோப்புறை அணுகல்:</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>படிக்க மட்டும்</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>படித்தல் மற்றும் எழுதுதல்</value>
+  </data>
   <data name="Ftps_Encryption_Option_Explicit" xml:space="preserve">
     <value>கனமளிக்கப்பட்ட</value>
   </data>
@@ -327,14 +333,14 @@
   <data name="Ftps_Field_Encryption" xml:space="preserve">
     <value>SSL/TTS குறியாக்கம்:</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>FTPS சேவையகம்</value>
+  </data>
   <data name="FtpsServerStartTask_Name" xml:space="preserve">
     <value>FTPS சர்வரைத் தொடங்கு</value>
   </data>
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>நெட்வொர்க்கில் கோப்புறையை பகிரவும் (FTPS சர்வர்)</value>
-  </data>
-  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
-    <value>FTPS சேவையகம்</value>
   </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
     <value>இந்த கணினியில் இயங்கும் FTPS சேவையகத்தை அமைக்கவும். இது சுய-கையொப்பமிடப்பட்ட சான்றிதழுடன் வெளிப்படையான குறியாக்கத்தைப் பயன்படுத்தி, தேர்ந்தெடுக்கப்பட்ட கோப்புறையைப் பகிர்கிறது. சேவையகம் இயங்கும் போது, உங்கள் உள்ளூர் பிணையத்தில் உள்ள எந்த FTPS கிளையண்டிலிருந்தும் இணைக்கலாம்.</value>
@@ -985,6 +991,9 @@ bin.
   </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>நீங்கள் மீட்டெடுக்க விரும்பும் காப்பு உள்ள சேமிப்பகத்தை குறிப்பிடவும். காப்பு உருவாக்கப்பட்டபோது பயன்படுத்தப்பட்ட அதே அமைப்புகளைப் பயன்படுத்தவும்.</value>
+  </data>
+  <data name="Task_Restore_Storage_Title" xml:space="preserve">
+    <value>காப்புப்பிரதி இடம்</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>ஏற்கனவே தோல்வியுற்றது (தோன்றிய பதிவைப் பாருங்கள்)</value>

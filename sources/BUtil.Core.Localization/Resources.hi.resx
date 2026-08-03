@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -90,6 +90,9 @@
   <data name="BackupVersion_Button_Delete" xml:space="preserve">
     <value>संस्करण हटाएं</value>
   </data>
+  <data name="BackupVersion_Changes_Help" xml:space="preserve">
+    <value>नीचे चयनित संस्करण के परिवर्तन दिए गए हैं। {0} बनाया गया, {1} अपडेट किया गया, {2} हटाया गया।</value>
+  </data>
   <data name="BackupVersion_Changes_Title" xml:space="preserve">
     <value>परिवर्तन</value>
   </data>
@@ -100,6 +103,9 @@
   </data>
   <data name="BackupVersion_Files_Title" xml:space="preserve">
     <value>फ़ाइलें</value>
+  </data>
+  <data name="BackupVersion_FileVersion_Help" xml:space="preserve">
+    <value>नीचे चयनित फ़ाइल के उन संस्करणों की सूची दी गई है जहाँ फ़ाइल बनाई, अपडेट या हटाई गई थी।</value>
   </data>
   <data name="BackupVersion_FileVersion_Title" xml:space="preserve">
     <value>पत्रिका: {0}</value>
@@ -268,15 +274,6 @@
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>फ़ोल्डर मौजूद नहीं है।</value>
   </data>
-  <data name="FolderAccess_Field" xml:space="preserve">
-    <value>फ़ोल्डर पहुँच:</value>
-  </data>
-  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
-    <value>केवल पढ़ने के लिए</value>
-  </data>
-  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
-    <value>पढ़ना और लिखना</value>
-  </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>प्रोटोकॉल:</value>
   </data>
@@ -319,6 +316,15 @@
   <data name="FingerPrintSHA256_Field_Validation_Empty" xml:space="preserve">
     <value>फिंगरप्रिंट SHA-256 निर्दिष्ट नहीं है।</value>
   </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>फ़ोल्डर पहुँच:</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>केवल पढ़ने के लिए</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>पढ़ना और लिखना</value>
+  </data>
   <data name="Ftps_Encryption_Option_Explicit" xml:space="preserve">
     <value>स्पष्ट</value>
   </data>
@@ -328,14 +334,14 @@
   <data name="Ftps_Field_Encryption" xml:space="preserve">
     <value>SSL/TTS एन्क्रिप्शन:</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>FTPS सर्वर</value>
+  </data>
   <data name="FtpsServerStartTask_Name" xml:space="preserve">
     <value>FTPS सर्वर प्रारंभ करें</value>
   </data>
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>नेटवर्क पर फ़ोल्डर साझा करें (FTPS सर्वर)</value>
-  </data>
-  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
-    <value>FTPS सर्वर</value>
   </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
     <value>इस कंप्यूटर पर चलने वाला FTPS सर्वर सेट अप करें। यह स्व-हस्ताक्षरित प्रमाणपत्र के साथ स्पष्ट एन्क्रिप्शन का उपयोग करता है और चयनित फ़ोल्डर साझा करता है। सर्वर चलते समय आप अपने स्थानीय नेटवर्क पर किसी भी FTPS क्लाइंट से इससे कनेक्ट कर सकते हैं।</value>
@@ -986,6 +992,9 @@ bin.
   </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>उस संग्रहण को निर्दिष्ट करें जिसमें वह बैकअप है जिसे आप पुनर्स्थापित करना चाहते हैं। बैकअप बनाते समय उपयोग की गई समान सेटिंग्स का उपयोग करें।</value>
+  </data>
+  <data name="Task_Restore_Storage_Title" xml:space="preserve">
+    <value>बैकअप स्थान</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>असफल (खुले हुए लॉग को देखें)</value>

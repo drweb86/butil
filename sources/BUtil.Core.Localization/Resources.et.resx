@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -90,6 +90,9 @@ vigu või hoiatusi.</value>
   <data name="BackupVersion_Button_Delete" xml:space="preserve">
     <value>Kustuta versioon</value>
   </data>
+  <data name="BackupVersion_Changes_Help" xml:space="preserve">
+    <value>Allpool on valitud versiooni muudatused. {0} loodud, {1} uuendatud, {2} kustutatud.</value>
+  </data>
   <data name="BackupVersion_Changes_Title" xml:space="preserve">
     <value>Muudatused</value>
   </data>
@@ -100,6 +103,9 @@ Kustutatud versiooni muudatused saavad osaks versioonist "{1}".</value>
   </data>
   <data name="BackupVersion_Files_Title" xml:space="preserve">
     <value>Failid</value>
+  </data>
+  <data name="BackupVersion_FileVersion_Help" xml:space="preserve">
+    <value>Allpool näete valitud faili versioonide loendit, kus fail loodi, uuendati või kustutati.</value>
   </data>
   <data name="BackupVersion_FileVersion_Title" xml:space="preserve">
     <value>Žurnaal: {0}</value>
@@ -268,15 +274,6 @@ Kasutusjuht: kopeerite andmeid kaugserverisse. Probleem on selles, et ISP vähen
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Kausta ei ole olemas.</value>
   </data>
-  <data name="FolderAccess_Field" xml:space="preserve">
-    <value>Kausta juurdepääs:</value>
-  </data>
-  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
-    <value>Ainult lugemine</value>
-  </data>
-  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
-    <value>Lugemine ja kirjutamine</value>
-  </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>Protokoll:</value>
   </data>
@@ -319,6 +316,15 @@ Kasutusjuht: kopeerite andmeid kaugserverisse. Probleem on selles, et ISP vähen
   <data name="FingerPrintSHA256_Field_Validation_Empty" xml:space="preserve">
     <value>SHA-256 sõrmejälg pole määratud.</value>
   </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>Kausta juurdepääs:</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>Ainult lugemine</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>Lugemine ja kirjutamine</value>
+  </data>
   <data name="Ftps_Encryption_Option_Explicit" xml:space="preserve">
     <value>Eksplitsiitne</value>
   </data>
@@ -328,14 +334,14 @@ Kasutusjuht: kopeerite andmeid kaugserverisse. Probleem on selles, et ISP vähen
   <data name="Ftps_Field_Encryption" xml:space="preserve">
     <value>SSL/TTS krüpteerimine:</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>FTPS-server</value>
+  </data>
   <data name="FtpsServerStartTask_Name" xml:space="preserve">
     <value>Käivita FTPS-server</value>
   </data>
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>Jaga kausta võrgu kaudu (FTPS-server)</value>
-  </data>
-  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
-    <value>FTPS-server</value>
   </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
     <value>Seadistage FTPS-server, mis töötab selles arvutis. See kasutab eksplitsiitset krüpteerimist iseallkirjastatud sertifikaadiga ja jagab valitud kausta. Seni kuni server töötab, saate sellega ühenduda mis tahes FTPS-kliendist oma kohtvõrgus.</value>
@@ -986,6 +992,9 @@ Vaadake üksikasjalikku kirjeldust järgmisel lingil.</value>
   </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>Määrake salvestuskoht, mis sisaldab taastatavat varukoopiat. Kasutage samu sätteid, mis olid varukoopia loomise ajal.</value>
+  </data>
+  <data name="Task_Restore_Storage_Title" xml:space="preserve">
+    <value>Varukoopia asukoht</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>Ebaõnnestus (vaadake avatud logi)</value>

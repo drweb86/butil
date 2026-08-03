@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -90,6 +90,9 @@
   <data name="BackupVersion_Button_Delete" xml:space="preserve">
     <value>حذف نسخه</value>
   </data>
+  <data name="BackupVersion_Changes_Help" xml:space="preserve">
+    <value>در زیر تغییرات نسخه انتخاب‌شده آمده است. {0} ایجاد شده، {1} به‌روز شده، {2} حذف شده.</value>
+  </data>
   <data name="BackupVersion_Changes_Title" xml:space="preserve">
     <value>تغییرات</value>
   </data>
@@ -100,6 +103,9 @@
   </data>
   <data name="BackupVersion_Files_Title" xml:space="preserve">
     <value>فایل‌ها</value>
+  </data>
+  <data name="BackupVersion_FileVersion_Help" xml:space="preserve">
+    <value>در زیر فهرست نسخه‌های پرونده انتخاب‌شده را می‌بینید که در آن‌ها پرونده ایجاد، به‌روز یا حذف شده است.</value>
   </data>
   <data name="BackupVersion_FileVersion_Title" xml:space="preserve">
     <value>ژورنال: {0}</value>
@@ -268,15 +274,6 @@
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>پوشه وجود ندارد.</value>
   </data>
-  <data name="FolderAccess_Field" xml:space="preserve">
-    <value>دسترسی پوشه:</value>
-  </data>
-  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
-    <value>فقط خواندنی</value>
-  </data>
-  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
-    <value>خواندن و نوشتن</value>
-  </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>پروتکل:</value>
   </data>
@@ -319,6 +316,15 @@
   <data name="FingerPrintSHA256_Field_Validation_Empty" xml:space="preserve">
     <value>اثر انگشت SHA-256 مشخص نشده است.</value>
   </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>دسترسی پوشه:</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>فقط خواندنی</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>خواندن و نوشتن</value>
+  </data>
   <data name="Ftps_Encryption_Option_Explicit" xml:space="preserve">
     <value>صریح</value>
   </data>
@@ -328,14 +334,14 @@
   <data name="Ftps_Field_Encryption" xml:space="preserve">
     <value>رمزنگاری SSL/TTS:</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>سرور FTPS</value>
+  </data>
   <data name="FtpsServerStartTask_Name" xml:space="preserve">
     <value>راه‌اندازی سرور FTPS</value>
   </data>
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>اشتراک‌گذاری پوشه از طریق شبکه (سرور FTPS)</value>
-  </data>
-  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
-    <value>سرور FTPS</value>
   </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
     <value>یک سرور FTPS راه‌اندازی کنید که روی این رایانه اجرا می‌شود. از رمزنگاری صریح با گواهی خودامضا استفاده می‌کند و پوشه انتخاب‌شده را به اشتراک می‌گذارد. تا وقتی سرور در حال اجراست، می‌توانید از هر کلاینت FTPS در شبکه محلی خود به آن متصل شوید.</value>
@@ -987,6 +993,9 @@ bin.
   </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>فضای ذخیره‌سازی حاوی پشتیبانی که می‌خواهید بازیابی کنید را مشخص کنید. از همان تنظیماتی استفاده کنید که هنگام ایجاد پشتیبان استفاده شده بود.</value>
+  </data>
+  <data name="Task_Restore_Storage_Title" xml:space="preserve">
+    <value>محل پشتیبان</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>ناموفق (گزارش باز شده را ببینید)</value>

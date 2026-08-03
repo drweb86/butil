@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -90,6 +90,9 @@ eller varningar har registrerats.</value>
   <data name="BackupVersion_Button_Delete" xml:space="preserve">
     <value>Ta bort version</value>
   </data>
+  <data name="BackupVersion_Changes_Help" xml:space="preserve">
+    <value>Nedan visas ändringarna i den valda versionen. {0} skapad, {1} uppdaterad, {2} borttagen.</value>
+  </data>
   <data name="BackupVersion_Changes_Title" xml:space="preserve">
     <value>Ändringar</value>
   </data>
@@ -100,6 +103,9 @@ eller varningar har registrerats.</value>
   </data>
   <data name="BackupVersion_Files_Title" xml:space="preserve">
     <value>Filer</value>
+  </data>
+  <data name="BackupVersion_FileVersion_Help" xml:space="preserve">
+    <value>Nedan ser du listan över versioner för den valda filen där filen skapades, uppdaterades eller togs bort.</value>
   </data>
   <data name="BackupVersion_FileVersion_Title" xml:space="preserve">
     <value>Journal: {0}</value>
@@ -268,15 +274,6 @@ Användningsscenario: Du kopierar data till en fjärrserver. Det finns ett probl
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Mappen finns inte.</value>
   </data>
-  <data name="FolderAccess_Field" xml:space="preserve">
-    <value>Mappåtkomst:</value>
-  </data>
-  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
-    <value>Skrivskyddad</value>
-  </data>
-  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
-    <value>Läs och skriv</value>
-  </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>Protokoll:</value>
   </data>
@@ -319,6 +316,15 @@ Användningsscenario: Du kopierar data till en fjärrserver. Det finns ett probl
   <data name="FingerPrintSHA256_Field_Validation_Empty" xml:space="preserve">
     <value>SHA-256 fingeravtryck är inte angivet.</value>
   </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>Mappåtkomst:</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>Skrivskyddad</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>Läs och skriv</value>
+  </data>
   <data name="Ftps_Encryption_Option_Explicit" xml:space="preserve">
     <value>Explicit</value>
   </data>
@@ -328,14 +334,14 @@ Användningsscenario: Du kopierar data till en fjärrserver. Det finns ett probl
   <data name="Ftps_Field_Encryption" xml:space="preserve">
     <value>SSL/TTS-kryptering:</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>FTPS-server</value>
+  </data>
   <data name="FtpsServerStartTask_Name" xml:space="preserve">
     <value>Starta FTPS-server</value>
   </data>
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>Dela mapp över nätverk (FTPS-server)</value>
-  </data>
-  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
-    <value>FTPS-server</value>
   </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
     <value>Konfigurera en FTPS-server som körs på den här datorn. Den använder explicit kryptering med ett självsignerat certifikat och delar den valda mappen. Medan servern körs kan du ansluta till den från valfri FTPS-klient i ditt lokala nätverk.</value>
@@ -986,6 +992,9 @@ Se detaljerad beskrivning i följande länk.</value>
   </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>Ange lagringsplatsen som innehåller säkerhetskopian du vill återställa. Använd samma inställningar som när säkerhetskopian skapades.</value>
+  </data>
+  <data name="Task_Restore_Storage_Title" xml:space="preserve">
+    <value>Säkerhetskopians plats</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>Misslyckades (se öppnad logg)</value>

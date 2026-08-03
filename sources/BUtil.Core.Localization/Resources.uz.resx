@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -90,6 +90,9 @@ hisobot ko'rsatiladi.</value>
   <data name="BackupVersion_Button_Delete" xml:space="preserve">
     <value>Versiyani o'chirish</value>
   </data>
+  <data name="BackupVersion_Changes_Help" xml:space="preserve">
+    <value>Quyida tanlangan versiyadagi o‘zgarishlar ko‘rsatilgan. {0} yaratilgan, {1} yangilangan, {2} o‘chirilgan.</value>
+  </data>
   <data name="BackupVersion_Changes_Title" xml:space="preserve">
     <value>O'zgarishlar</value>
   </data>
@@ -100,6 +103,9 @@ O'chirilgan versiya o'zgarishlari "{1}" versiyasining qismi bo'ladi.</value>
   </data>
   <data name="BackupVersion_Files_Title" xml:space="preserve">
     <value>Fayllar</value>
+  </data>
+  <data name="BackupVersion_FileVersion_Help" xml:space="preserve">
+    <value>Quyida tanlangan fayl yaratilgan, yangilangan yoki o‘chirilgan versiyalar ro‘yxati ko‘rsatilgan.</value>
   </data>
   <data name="BackupVersion_FileVersion_Title" xml:space="preserve">
     <value>Jurnal: {0}</value>
@@ -268,15 +274,6 @@ Foydalanish stsenariysi: Siz masofaviy serverga ma'lumotlarni nusxalaysiz. Muamm
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Papka mavjud emas.</value>
   </data>
-  <data name="FolderAccess_Field" xml:space="preserve">
-    <value>Papkaga kirish:</value>
-  </data>
-  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
-    <value>Faqat o‘qish</value>
-  </data>
-  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
-    <value>O‘qish va yozish</value>
-  </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>Protokol:</value>
   </data>
@@ -319,6 +316,15 @@ Foydalanish stsenariysi: Siz masofaviy serverga ma'lumotlarni nusxalaysiz. Muamm
   <data name="FingerPrintSHA256_Field_Validation_Empty" xml:space="preserve">
     <value>SHA-256 barmoq izi ko'rsatilmagan.</value>
   </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>Papkaga kirish:</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>Faqat o‘qish</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>O‘qish va yozish</value>
+  </data>
   <data name="Ftps_Encryption_Option_Explicit" xml:space="preserve">
     <value>Aniq</value>
   </data>
@@ -328,14 +334,14 @@ Foydalanish stsenariysi: Siz masofaviy serverga ma'lumotlarni nusxalaysiz. Muamm
   <data name="Ftps_Field_Encryption" xml:space="preserve">
     <value>SSL/TTS shifrlash:</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>FTPS server</value>
+  </data>
   <data name="FtpsServerStartTask_Name" xml:space="preserve">
     <value>FTPS serverni ishga tushirish</value>
   </data>
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>Papkani tarmoq orqali ulashish (FTPS server)</value>
-  </data>
-  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
-    <value>FTPS server</value>
   </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
     <value>Ushbu kompyuterda ishlaydigan FTPS serverini sozlang. U o‘z-o‘zini imzolagan sertifikat bilan aniq shifrlashdan foydalanadi va tanlangan papkani ulashadi. Server ishlayotganda mahalliy tarmog‘ingizdagi istalgan FTPS mijozidan ulanishingiz mumkin.</value>
@@ -987,6 +993,9 @@ Batafsil tavsifni quyidagi havoladan ko'ring.</value>
   </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>Tiklamoqchi bo'lgan zaxira nusxangiz joylashgan saqlash joyini belgilang. Zaxira nusxa yaratilganda ishlatilgan sozlamalarning aynan o'zidan foydalaning.</value>
+  </data>
+  <data name="Task_Restore_Storage_Title" xml:space="preserve">
+    <value>Zaxira nusxa joylashuvi</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>Muvaffaqiyatsiz (ochilgan logni ko'ring)</value>

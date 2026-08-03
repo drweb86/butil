@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -90,6 +90,9 @@ užregistruotų klaidų ar įspėjimų.</value>
   <data name="BackupVersion_Button_Delete" xml:space="preserve">
     <value>Ištrinti versiją</value>
   </data>
+  <data name="BackupVersion_Changes_Help" xml:space="preserve">
+    <value>Žemiau pateikiami pasirinktos versijos pakeitimai. {0} sukurta, {1} atnaujinta, {2} ištrinta.</value>
+  </data>
   <data name="BackupVersion_Changes_Title" xml:space="preserve">
     <value>Pakeitimai</value>
   </data>
@@ -100,6 +103,9 @@ Ištrintos versijos pakeitimai taps versijos „{1}" dalimi.</value>
   </data>
   <data name="BackupVersion_Files_Title" xml:space="preserve">
     <value>Failai</value>
+  </data>
+  <data name="BackupVersion_FileVersion_Help" xml:space="preserve">
+    <value>Žemiau matote pasirinkto failo versijų sąrašą, kuriose failas buvo sukurtas, atnaujintas arba ištrintas.</value>
   </data>
   <data name="BackupVersion_FileVersion_Title" xml:space="preserve">
     <value>Žurnalas: {0}</value>
@@ -268,15 +274,6 @@ Naudojimo scenarijus: Kopijuojate duomenis į nuotolinį serverį. Problema: int
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Aplankas neegzistuoja.</value>
   </data>
-  <data name="FolderAccess_Field" xml:space="preserve">
-    <value>Prieiga prie aplanko:</value>
-  </data>
-  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
-    <value>Tik skaityti</value>
-  </data>
-  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
-    <value>Skaityti ir rašyti</value>
-  </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>Protokolas:</value>
   </data>
@@ -319,6 +316,15 @@ Naudojimo scenarijus: Kopijuojate duomenis į nuotolinį serverį. Problema: int
   <data name="FingerPrintSHA256_Field_Validation_Empty" xml:space="preserve">
     <value>SHA-256 pirštų atspaudas nenurodytas.</value>
   </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>Prieiga prie aplanko:</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>Tik skaityti</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>Skaityti ir rašyti</value>
+  </data>
   <data name="Ftps_Encryption_Option_Explicit" xml:space="preserve">
     <value>Aiškus</value>
   </data>
@@ -328,14 +334,14 @@ Naudojimo scenarijus: Kopijuojate duomenis į nuotolinį serverį. Problema: int
   <data name="Ftps_Field_Encryption" xml:space="preserve">
     <value>SSL/TTS šifravimas:</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>FTPS serveris</value>
+  </data>
   <data name="FtpsServerStartTask_Name" xml:space="preserve">
     <value>Paleisti FTPS serverį</value>
   </data>
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>Bendrinti aplanką per tinklą (FTPS serveris)</value>
-  </data>
-  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
-    <value>FTPS serveris</value>
   </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
     <value>Nustatykite FTPS serverį, kuris veikia šiame kompiuteryje. Jis naudoja aiškų šifravimą su savęs pasirašytu sertifikatu ir bendrina pasirinktą aplanką. Kol serveris veikia, galite prie jo prisijungti iš bet kurio FTPS kliento vietiniame tinkle.</value>
@@ -986,6 +992,9 @@ bin.
   </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>Nurodykite saugyklą, kurioje yra atsarginė kopija, kurią norite atkurti. Naudokite tuos pačius nustatymus, kurie buvo naudojami kuriant atsarginę kopiją.</value>
+  </data>
+  <data name="Task_Restore_Storage_Title" xml:space="preserve">
+    <value>Atsarginės kopijos vieta</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>Nepavyko (žiūrėkite atidarytą žurnalą)</value>

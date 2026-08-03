@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -90,6 +90,9 @@
   <data name="BackupVersion_Button_Delete" xml:space="preserve">
     <value>Хувилбарыг устгах</value>
   </data>
+  <data name="BackupVersion_Changes_Help" xml:space="preserve">
+    <value>Доор сонгосон хувилбарын өөрчлөлтүүд байна. {0} үүсгэсэн, {1} шинэчилсэн, {2} устгасан.</value>
+  </data>
   <data name="BackupVersion_Changes_Title" xml:space="preserve">
     <value>Өөрчлөлтүүд</value>
   </data>
@@ -100,6 +103,9 @@
   </data>
   <data name="BackupVersion_Files_Title" xml:space="preserve">
     <value>Файлууд</value>
+  </data>
+  <data name="BackupVersion_FileVersion_Help" xml:space="preserve">
+    <value>Доор сонгосон файлын үүсгэсэн, шинэчилсэн эсвэл устгасан хувилбаруудын жагсаалтыг харна.</value>
   </data>
   <data name="BackupVersion_FileVersion_Title" xml:space="preserve">
     <value>Тэмдэглэл: {0}</value>
@@ -268,15 +274,6 @@
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Хавтас олдсонгүй.</value>
   </data>
-  <data name="FolderAccess_Field" xml:space="preserve">
-    <value>Хавтсын хандалт:</value>
-  </data>
-  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
-    <value>Зөвхөн унших</value>
-  </data>
-  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
-    <value>Унших ба бичих</value>
-  </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>Протокол:</value>
   </data>
@@ -319,6 +316,15 @@
   <data name="FingerPrintSHA256_Field_Validation_Empty" xml:space="preserve">
     <value>SHA-256 хурууны хээ заагдаагүй байна.</value>
   </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>Хавтсын хандалт:</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>Зөвхөн унших</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>Унших ба бичих</value>
+  </data>
   <data name="Ftps_Encryption_Option_Explicit" xml:space="preserve">
     <value>Тодорхой</value>
   </data>
@@ -328,14 +334,14 @@
   <data name="Ftps_Field_Encryption" xml:space="preserve">
     <value>SSL/TTS шифрлэлт:</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>FTPS сервер</value>
+  </data>
   <data name="FtpsServerStartTask_Name" xml:space="preserve">
     <value>FTPS серверийг эхлүүлэх</value>
   </data>
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>Хавтсыг сүлжээгээр хуваалцах (FTPS сервер)</value>
-  </data>
-  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
-    <value>FTPS сервер</value>
   </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
     <value>Энэ компьютер дээр ажиллах FTPS серверийг тохируулна. Энэ нь өөрийн гарын үсгийн гэрчилгээтэй тодорхой шифрлэлт ашиглаж, сонгосон хавтсыг хуваалцана. Сервер ажиллаж байх үед та дотоод сүлжээнийхээ аль ч FTPS клиентээс холбогдож болно.</value>
@@ -987,6 +993,9 @@ bin.
   </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>Сэргээхийг хүсэж буй нөөшлөлтийг агуулсан хадгалалтыг зааж өгнө үү. Нөөшлөлт үүсгэх үед ашигласантай ижил тохиргоог ашиглана уу.</value>
+  </data>
+  <data name="Task_Restore_Storage_Title" xml:space="preserve">
+    <value>Нөөцлөлтийн байршил</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>Амжилтгүй (нээгдсэн логийг харна уу)</value>

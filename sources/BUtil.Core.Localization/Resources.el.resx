@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -90,6 +90,9 @@
   <data name="BackupVersion_Button_Delete" xml:space="preserve">
     <value>Διαγραφή έκδοσης</value>
   </data>
+  <data name="BackupVersion_Changes_Help" xml:space="preserve">
+    <value>Παρακάτω εμφανίζονται οι αλλαγές της επιλεγμένης έκδοσης. {0} δημιουργήθηκε, {1} ενημερώθηκε, {2} διαγράφηκε.</value>
+  </data>
   <data name="BackupVersion_Changes_Title" xml:space="preserve">
     <value>Αλλαγές</value>
   </data>
@@ -100,6 +103,9 @@
   </data>
   <data name="BackupVersion_Files_Title" xml:space="preserve">
     <value>Αρχεία</value>
+  </data>
+  <data name="BackupVersion_FileVersion_Help" xml:space="preserve">
+    <value>Παρακάτω βλέπετε τη λίστα εκδόσεων για το επιλεγμένο αρχείο στις οποίες το αρχείο δημιουργήθηκε, ενημερώθηκε ή διαγράφηκε.</value>
   </data>
   <data name="BackupVersion_FileVersion_Title" xml:space="preserve">
     <value>Ημερολόγιο: {0}</value>
@@ -268,15 +274,6 @@
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Ο φάκελος δεν υπάρχει.</value>
   </data>
-  <data name="FolderAccess_Field" xml:space="preserve">
-    <value>Πρόσβαση φακέλου:</value>
-  </data>
-  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
-    <value>Μόνο ανάγνωση</value>
-  </data>
-  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
-    <value>Ανάγνωση και εγγραφή</value>
-  </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>Πρωτόκολλο:</value>
   </data>
@@ -319,6 +316,15 @@
   <data name="FingerPrintSHA256_Field_Validation_Empty" xml:space="preserve">
     <value>Το αποτύπωμα SHA-256 δεν έχει καθοριστεί.</value>
   </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>Πρόσβαση φακέλου:</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>Μόνο ανάγνωση</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>Ανάγνωση και εγγραφή</value>
+  </data>
   <data name="Ftps_Encryption_Option_Explicit" xml:space="preserve">
     <value>Ρητή</value>
   </data>
@@ -328,14 +334,14 @@
   <data name="Ftps_Field_Encryption" xml:space="preserve">
     <value>Κρυπτογράφηση SSL/TTS:</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>Διακομιστής FTPS</value>
+  </data>
   <data name="FtpsServerStartTask_Name" xml:space="preserve">
     <value>Εκκίνηση διακομιστή FTPS</value>
   </data>
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>Κοινή χρήση φακέλου μέσω δικτύου (Διακομιστής FTPS)</value>
-  </data>
-  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
-    <value>Διακομιστής FTPS</value>
   </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
     <value>Ρυθμίστε έναν διακομιστή FTPS που εκτελείται σε αυτόν τον υπολογιστή. Χρησιμοποιεί ρητή κρυπτογράφηση με αυτο-υπογεγραμμένο πιστοποιητικό και κοινοποιεί τον επιλεγμένο φάκελο. Ενώ ο διακομιστής εκτελείται, μπορείτε να συνδεθείτε σε αυτόν από οποιονδήποτε πελάτη FTPS στο τοπικό σας δίκτυο.</value>
@@ -986,6 +992,9 @@ bin.
   </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>Καθορίστε τον αποθηκευτικό χώρο που περιέχει το αντίγραφο ασφαλείας που θέλετε να επαναφέρετε. Χρησιμοποιήστε τις ίδιες ρυθμίσεις που ίσχυαν κατά τη δημιουργία του αντιγράφου ασφαλείας.</value>
+  </data>
+  <data name="Task_Restore_Storage_Title" xml:space="preserve">
+    <value>Τοποθεσία αντιγράφου ασφαλείας</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>Απέτυχε (δείτε το ανοιγμένο αρχείο καταγραφής)</value>

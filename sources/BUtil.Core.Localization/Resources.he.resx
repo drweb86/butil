@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -90,6 +90,9 @@
   <data name="BackupVersion_Button_Delete" xml:space="preserve">
     <value>מחק גרסה</value>
   </data>
+  <data name="BackupVersion_Changes_Help" xml:space="preserve">
+    <value>להלן השינויים של הגרסה שנבחרה. {0} נוצר, {1} עודכן, {2} נמחק.</value>
+  </data>
   <data name="BackupVersion_Changes_Title" xml:space="preserve">
     <value>שינויים</value>
   </data>
@@ -100,6 +103,9 @@
   </data>
   <data name="BackupVersion_Files_Title" xml:space="preserve">
     <value>קבצים</value>
+  </data>
+  <data name="BackupVersion_FileVersion_Help" xml:space="preserve">
+    <value>להלן רשימת הגרסאות של הקובץ שנבחר שבהן הקובץ נוצר, עודכן או נמחק.</value>
   </data>
   <data name="BackupVersion_FileVersion_Title" xml:space="preserve">
     <value>יומן: {0}</value>
@@ -268,15 +274,6 @@
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>התיקייה לא קיימת.</value>
   </data>
-  <data name="FolderAccess_Field" xml:space="preserve">
-    <value>גישה לתיקייה:</value>
-  </data>
-  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
-    <value>קריאה בלבד</value>
-  </data>
-  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
-    <value>קריאה וכתיבה</value>
-  </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>פרוטוקול:</value>
   </data>
@@ -319,6 +316,15 @@
   <data name="FingerPrintSHA256_Field_Validation_Empty" xml:space="preserve">
     <value>טביעת אצבע SHA-256 לא צוינה.</value>
   </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>גישה לתיקייה:</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>קריאה בלבד</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>קריאה וכתיבה</value>
+  </data>
   <data name="Ftps_Encryption_Option_Explicit" xml:space="preserve">
     <value>מפורש</value>
   </data>
@@ -328,14 +334,14 @@
   <data name="Ftps_Field_Encryption" xml:space="preserve">
     <value>הצפנת SSL/TTS:</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>שרת FTPS</value>
+  </data>
   <data name="FtpsServerStartTask_Name" xml:space="preserve">
     <value>הפעל שרת FTPS</value>
   </data>
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>שתף תיקייה ברשת (שרת FTPS)</value>
-  </data>
-  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
-    <value>שרת FTPS</value>
   </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
     <value>הגדר שרת FTPS שפועל במחשב זה. הוא משתמש בהצפנה מפורשת עם אישור חתום עצמית ומשתף את התיקייה שנבחרה. כל עוד השרת פועל, ניתן להתחבר אליו מכל לקוח FTPS ברשת המקומית שלך.</value>
@@ -986,6 +992,9 @@ bin.
   </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>ציינו את מיקום האחסון המכיל את הגיבוי שברצונכם לשחזר. השתמשו באותן הגדרות שבהן נעשה שימוש בעת יצירת הגיבוי.</value>
+  </data>
+  <data name="Task_Restore_Storage_Title" xml:space="preserve">
+    <value>מיקום הגיבוי</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>נכשל (ראה יומן פתוח)</value>

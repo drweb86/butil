@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -90,6 +90,9 @@ eller advarsler.</value>
   <data name="BackupVersion_Button_Delete" xml:space="preserve">
     <value>Slet version</value>
   </data>
+  <data name="BackupVersion_Changes_Help" xml:space="preserve">
+    <value>Nedenfor er ændringerne i den valgte version. {0} oprettet, {1} opdateret, {2} slettet.</value>
+  </data>
   <data name="BackupVersion_Changes_Title" xml:space="preserve">
     <value>Ændringer</value>
   </data>
@@ -100,6 +103,9 @@ eller advarsler.</value>
   </data>
   <data name="BackupVersion_Files_Title" xml:space="preserve">
     <value>Filer</value>
+  </data>
+  <data name="BackupVersion_FileVersion_Help" xml:space="preserve">
+    <value>Nedenfor ser du listen over versioner for den valgte fil, hvor filen blev oprettet, opdateret eller slettet.</value>
   </data>
   <data name="BackupVersion_FileVersion_Title" xml:space="preserve">
     <value>Journal: {0}</value>
@@ -268,15 +274,6 @@ Brugsscenarie: Du kopierer data til en fjernserver. Der er et problem: Internetu
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Mappen findes ikke.</value>
   </data>
-  <data name="FolderAccess_Field" xml:space="preserve">
-    <value>Mappeadgang:</value>
-  </data>
-  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
-    <value>Skrivebeskyttet</value>
-  </data>
-  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
-    <value>Læse og skrive</value>
-  </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>Protokol:</value>
   </data>
@@ -319,6 +316,15 @@ Brugsscenarie: Du kopierer data til en fjernserver. Der er et problem: Internetu
   <data name="FingerPrintSHA256_Field_Validation_Empty" xml:space="preserve">
     <value>SHA-256 fingeraftryk er ikke angivet.</value>
   </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>Mappeadgang:</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>Skrivebeskyttet</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>Læse og skrive</value>
+  </data>
   <data name="Ftps_Encryption_Option_Explicit" xml:space="preserve">
     <value>Eksplicit</value>
   </data>
@@ -328,14 +334,14 @@ Brugsscenarie: Du kopierer data til en fjernserver. Der er et problem: Internetu
   <data name="Ftps_Field_Encryption" xml:space="preserve">
     <value>SSL/TTS-kryptering:</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>FTPS-server</value>
+  </data>
   <data name="FtpsServerStartTask_Name" xml:space="preserve">
     <value>Start FTPS-server</value>
   </data>
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>Del mappe over netværk (FTPS-server)</value>
-  </data>
-  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
-    <value>FTPS-server</value>
   </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
     <value>Konfigurer en FTPS-server, der kører på denne computer. Den bruger eksplicit kryptering med et selvunderskrevet certifikat og deler den valgte mappe. Mens serveren kører, kan du oprette forbindelse til den fra enhver FTPS-klient på dit lokale netværk.</value>
@@ -986,6 +992,9 @@ Se detaljeret beskrivelse i følgende link.</value>
   </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>Angiv den lagerplacering, der indeholder den sikkerhedskopi, du vil gendanne. Brug de samme indstillinger som da sikkerhedskopien blev oprettet.</value>
+  </data>
+  <data name="Task_Restore_Storage_Title" xml:space="preserve">
+    <value>Sikkerhedskopiens placering</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>Mislykket (se åbnet log)</value>

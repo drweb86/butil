@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -90,6 +90,9 @@ neu bydd rhybuddion yn cael eu cofrestru.</value>
   <data name="BackupVersion_Button_Delete" xml:space="preserve">
     <value>Delete version</value>
   </data>
+  <data name="BackupVersion_Changes_Help" xml:space="preserve">
+    <value>Isod mae newidiadau'r fersiwn a ddewiswyd. {0} wedi'i greu, {1} wedi'i ddiweddaru, {2} wedi'i dileu.</value>
+  </data>
   <data name="BackupVersion_Changes_Title" xml:space="preserve">
     <value>Newidiadau</value>
   </data>
@@ -100,6 +103,9 @@ Bydd newidiadau fersiwn sydd wedi'u dileu yn dod yn rhan o fersiwn "{1}".</value
   </data>
   <data name="BackupVersion_Files_Title" xml:space="preserve">
     <value>Ffeiliau</value>
+  </data>
+  <data name="BackupVersion_FileVersion_Help" xml:space="preserve">
+    <value>Isod gwelwch restr o fersiynau ar gyfer y ffeil a ddewiswyd lle crëwyd, diweddarwyd neu dilewyd y ffeil.</value>
   </data>
   <data name="BackupVersion_FileVersion_Title" xml:space="preserve">
     <value>Dyddlyfr: {0}</value>
@@ -268,15 +274,6 @@ Senario defnydd: Rydych chi'n copïo data i'r gweinydd pell. Mae yna broblem: ma
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Nid yw ffolder yn bodoli.</value>
   </data>
-  <data name="FolderAccess_Field" xml:space="preserve">
-    <value>Mynediad i'r ffolder:</value>
-  </data>
-  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
-    <value>Darllen yn unig</value>
-  </data>
-  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
-    <value>Darllen ac ysgrifennu</value>
-  </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>Protocol:</value>
   </data>
@@ -319,6 +316,15 @@ Senario defnydd: Rydych chi'n copïo data i'r gweinydd pell. Mae yna broblem: ma
   <data name="FingerPrintSHA256_Field_Validation_Empty" xml:space="preserve">
     <value>Nid yw olion bysedd SHA-256 wedi'i nodi.</value>
   </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>Mynediad i'r ffolder:</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>Darllen yn unig</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>Darllen ac ysgrifennu</value>
+  </data>
   <data name="Ftps_Encryption_Option_Explicit" xml:space="preserve">
     <value>Eglur</value>
   </data>
@@ -328,14 +334,14 @@ Senario defnydd: Rydych chi'n copïo data i'r gweinydd pell. Mae yna broblem: ma
   <data name="Ftps_Field_Encryption" xml:space="preserve">
     <value>Amgryptio SSL/TTS:</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>Gweinydd FTPS</value>
+  </data>
   <data name="FtpsServerStartTask_Name" xml:space="preserve">
     <value>Cychwyn gweinydd FTPS</value>
   </data>
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>Rhannu ffolder dros rwydwaith (Gweinydd FTPS)</value>
-  </data>
-  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
-    <value>Gweinydd FTPS</value>
   </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
     <value>Gosodwch weinydd FTPS sy'n rhedeg ar y cyfrifiadur hwn. Mae'n defnyddio amgryptio eglur gyda thystysgrif hunan-lofnodedig ac yn rhannu'r ffolder a ddewiswyd. Tra bod y gweinydd yn rhedeg, gallwch gysylltu ag ef o unrhyw gleient FTPS ar eich rhwydwaith lleol.</value>
@@ -986,6 +992,9 @@ See detailed description in the following link.</value>
   </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>Nodwch y storfa sy'n cynnwys y copi wrth gefn rydych am ei adfer. Defnyddiwch yr un gosodiadau ag pan grëwyd y copi wrth gefn.</value>
+  </data>
+  <data name="Task_Restore_Storage_Title" xml:space="preserve">
+    <value>Lleoliad y copi wrth gefn</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>Wedi methu (gweler y log a agorwyd)</value>

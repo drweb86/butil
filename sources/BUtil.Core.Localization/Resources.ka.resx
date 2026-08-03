@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -90,6 +90,9 @@
   <data name="BackupVersion_Button_Delete" xml:space="preserve">
     <value>ვერსიის წაშლა</value>
   </data>
+  <data name="BackupVersion_Changes_Help" xml:space="preserve">
+    <value>ქვემოთ მოცემულია არჩეული ვერსიის ცვლილებები. {0} შექმნილი, {1} განახლებული, {2} წაშლილი.</value>
+  </data>
   <data name="BackupVersion_Changes_Title" xml:space="preserve">
     <value>ცვლილებები</value>
   </data>
@@ -100,6 +103,9 @@
   </data>
   <data name="BackupVersion_Files_Title" xml:space="preserve">
     <value>ფაილები</value>
+  </data>
+  <data name="BackupVersion_FileVersion_Help" xml:space="preserve">
+    <value>ქვემოთ ხედავთ არჩეული ფაილის ვერსიების სიას, სადაც ფაილი შეიქმნა, განახლდა ან წაიშალა.</value>
   </data>
   <data name="BackupVersion_FileVersion_Title" xml:space="preserve">
     <value>ჟურნალი: {0}</value>
@@ -268,15 +274,6 @@
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>საქაღალდე არ არსებობს.</value>
   </data>
-  <data name="FolderAccess_Field" xml:space="preserve">
-    <value>საქაღალდის წვდომა:</value>
-  </data>
-  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
-    <value>მხოლოდ წაკითხვა</value>
-  </data>
-  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
-    <value>წაკითხვა და ჩაწერა</value>
-  </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>პროტოკოლი:</value>
   </data>
@@ -319,6 +316,15 @@
   <data name="FingerPrintSHA256_Field_Validation_Empty" xml:space="preserve">
     <value>SHA-256 თითის ანაბეჭდი მითითებული არ არის.</value>
   </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>საქაღალდის წვდომა:</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>მხოლოდ წაკითხვა</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>წაკითხვა და ჩაწერა</value>
+  </data>
   <data name="Ftps_Encryption_Option_Explicit" xml:space="preserve">
     <value>აშკარა</value>
   </data>
@@ -328,14 +334,14 @@
   <data name="Ftps_Field_Encryption" xml:space="preserve">
     <value>SSL/TTS დაშიფვრა:</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>FTPS სერვერი</value>
+  </data>
   <data name="FtpsServerStartTask_Name" xml:space="preserve">
     <value>FTPS სერვერის გაშვება</value>
   </data>
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>საქაღალდის გაზიარება ქსელით (FTPS სერვერი)</value>
-  </data>
-  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
-    <value>FTPS სერვერი</value>
   </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
     <value>დააყენეთ FTPS სერვერი, რომელიც ამ კომპიუტერზე მუშაობს. ის იყენებს აშკარა დაშიფვრას თვით-ხელმოწერილი სერტიფიკატით და აზიარებს არჩეულ საქაღალდეს. სერვერის მუშაობისას შეგიძლიათ დაუკავშირდეთ მას თქვენი ლოკალური ქსელის ნებისმიერი FTPS კლიენტიდან.</value>
@@ -986,6 +992,9 @@ bin.
   </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>მიუთითეთ საცავი, რომელიც შეიცავს იმ სარეზერვო ასლს, რომლის აღდგენაც გსურთ. გამოიყენეთ იგივე პარამეტრები, რაც სარეზერვო ასლის შექმნისას გქონდათ.</value>
+  </data>
+  <data name="Task_Restore_Storage_Title" xml:space="preserve">
+    <value>სარეზერვო ასლის მდებარეობა</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>ვერ მოხერხდა (იხილეთ გახსნილი ჟურნალი)</value>

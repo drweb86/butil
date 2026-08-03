@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -90,6 +90,9 @@ no thèid rabhaidhean a chlàradh.</value>
   <data name="BackupVersion_Button_Delete" xml:space="preserve">
     <value>Delete version</value>
   </data>
+  <data name="BackupVersion_Changes_Help" xml:space="preserve">
+    <value>Gu h-ìosal tha na h-atharrachaidhean den tionndadh a chaidh a thaghadh. {0} air a chruthachadh, {1} air ùrachadh, {2} air a sguabadh às.</value>
+  </data>
   <data name="BackupVersion_Changes_Title" xml:space="preserve">
     <value>Atharrachaidhean</value>
   </data>
@@ -100,6 +103,9 @@ Bidh atharraichean tionndaidh a chaidh a sguabadh às mar phàirt de dhreach "{1
   </data>
   <data name="BackupVersion_Files_Title" xml:space="preserve">
     <value>Faidhlichean</value>
+  </data>
+  <data name="BackupVersion_FileVersion_Help" xml:space="preserve">
+    <value>Gu h-ìosal chì thu liosta nan tionndaidhean airson an fhaidhle a chaidh a thaghadh far an deach am faidhle a chruthachadh, ùrachadh no sguabadh às.</value>
   </data>
   <data name="BackupVersion_FileVersion_Title" xml:space="preserve">
     <value>Leabhar-latha: {0}</value>
@@ -268,15 +274,6 @@ Suidheachadh cleachdaidh: Bidh thu a’ dèanamh lethbhreac den dàta gu frithea
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Chan eil pasgan ann.</value>
   </data>
-  <data name="FolderAccess_Field" xml:space="preserve">
-    <value>Inntrigeadh pasgain:</value>
-  </data>
-  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
-    <value>Leughadh a-mhàin</value>
-  </data>
-  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
-    <value>Leughadh is sgrìobhadh</value>
-  </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>Pròtacal:</value>
   </data>
@@ -319,6 +316,15 @@ Suidheachadh cleachdaidh: Bidh thu a’ dèanamh lethbhreac den dàta gu frithea
   <data name="FingerPrintSHA256_Field_Validation_Empty" xml:space="preserve">
     <value>Chan eil lorgan-meòir SHA-256 air a shònrachadh.</value>
   </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>Inntrigeadh pasgain:</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>Leughadh a-mhàin</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>Leughadh is sgrìobhadh</value>
+  </data>
   <data name="Ftps_Encryption_Option_Explicit" xml:space="preserve">
     <value>Gu follaiseach</value>
   </data>
@@ -328,14 +334,14 @@ Suidheachadh cleachdaidh: Bidh thu a’ dèanamh lethbhreac den dàta gu frithea
   <data name="Ftps_Field_Encryption" xml:space="preserve">
     <value>Crioptachadh SSL/TTS:</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>Frithealaiche FTPS</value>
+  </data>
   <data name="FtpsServerStartTask_Name" xml:space="preserve">
     <value>Tòisich am frithealaiche FTPS</value>
   </data>
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>Roinn pasgan thairis air lìonra (Frithealaiche FTPS)</value>
-  </data>
-  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
-    <value>Frithealaiche FTPS</value>
   </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
     <value>Suidhich frithealaiche FTPS a tha a' ruith air a' choimpiutair seo. Cleachdaidh e crioptachadh soilleir le teisteanas fèin-ainmichte agus roinnidh e am pasgan a thagh thu. Fhad 's a tha am frithealaiche a' ruith, 's urrainn dhut ceangal a dhèanamh ris bho chliant FTPS sam bith air an lìonra ionadail agad.</value>
@@ -986,6 +992,9 @@ See detailed description in the following link.</value>
   </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>Sònraich an stòradh anns a bheil an lethbhreac-glèidhidh a tha thu airson aiseag. Cleachd na h-aon roghainnean 's a bha ann nuair a chaidh an lethbhreac-glèidhidh a chruthachadh.</value>
+  </data>
+  <data name="Task_Restore_Storage_Title" xml:space="preserve">
+    <value>Àite a' chùl-taic</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>Dh'fhàillig (faic an loga fosgailte)</value>

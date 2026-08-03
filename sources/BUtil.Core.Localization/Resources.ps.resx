@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -90,6 +90,9 @@
   <data name="BackupVersion_Button_Delete" xml:space="preserve">
     <value>Delete version</value>
   </data>
+  <data name="BackupVersion_Changes_Help" xml:space="preserve">
+    <value>لاندې د ټاکل شوې نسخې بدلونونه دي. {0} جوړ شوی، {1} تازه شوی، {2} ړنګ شوی.</value>
+  </data>
   <data name="BackupVersion_Changes_Title" xml:space="preserve">
     <value>بدلونونه</value>
   </data>
@@ -100,6 +103,9 @@
   </data>
   <data name="BackupVersion_Files_Title" xml:space="preserve">
     <value>فایلونه</value>
+  </data>
+  <data name="BackupVersion_FileVersion_Help" xml:space="preserve">
+    <value>لاندې د ټاکل شوې فایل د هغو نسخو لیست وینئ چې په کې فایل جوړ، تازه یا ړنګ شوی دی.</value>
   </data>
   <data name="BackupVersion_FileVersion_Title" xml:space="preserve">
     <value>ژورنال: {0}</value>
@@ -268,15 +274,6 @@
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>فولډر شتون نلري.</value>
   </data>
-  <data name="FolderAccess_Field" xml:space="preserve">
-    <value>د فولډر لاسرسی:</value>
-  </data>
-  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
-    <value>یوازې لوستل</value>
-  </data>
-  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
-    <value>لوستل او لیکل</value>
-  </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>پروتوکول:</value>
   </data>
@@ -319,6 +316,15 @@
   <data name="FingerPrintSHA256_Field_Validation_Empty" xml:space="preserve">
     <value>د ګوتو نښې SHA-256 نه دی مشخص شوی.</value>
   </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>د فولډر لاسرسی:</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>یوازې لوستل</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>لوستل او لیکل</value>
+  </data>
   <data name="Ftps_Encryption_Option_Explicit" xml:space="preserve">
     <value>ښکاره</value>
   </data>
@@ -328,14 +334,14 @@
   <data name="Ftps_Field_Encryption" xml:space="preserve">
     <value>SSL/TTS کوډ کول:</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>د FTPS سرور</value>
+  </data>
   <data name="FtpsServerStartTask_Name" xml:space="preserve">
     <value>د FTPS سرور پیل کړئ</value>
   </data>
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>په شبکه کې فولډر شریک کړئ (FTPS سرور)</value>
-  </data>
-  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
-    <value>د FTPS سرور</value>
   </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
     <value>یو FTPS سرور تنظیم کړئ چې په دې کمپیوټر کې چلیږي. دا د ځان لاسلیک شوي سند سره څرګند کوډ کاروي او ټاکل شوی فولډر شری کوي. پداسې حال کې چې سرور چلیږي، تاسو کولی شئ په خپل سیمه ایز شبکه کې له هر FTPS پیرودونکي څخه ورسره وصل شئ.</value>
@@ -986,6 +992,9 @@ See detailed description in the following link.</value>
   </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>هغه زیرمه ځای وټاکئ چې هغه بیک اپ لري چې تاسو یې بیرته راستنول غواړئ. هماغه امستنې وکاروئ چې د بیک اپ جوړولو پر مهال کارول شوې وې.</value>
+  </data>
+  <data name="Task_Restore_Storage_Title" xml:space="preserve">
+    <value>د بیک اپ ځای</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>ناکام شوی (پرانستل شوی لاګ وګورئ)</value>

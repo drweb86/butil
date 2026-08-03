@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -90,6 +90,9 @@ greške ili upozorenja.</value>
   <data name="BackupVersion_Button_Delete" xml:space="preserve">
     <value>Obriši verziju</value>
   </data>
+  <data name="BackupVersion_Changes_Help" xml:space="preserve">
+    <value>Ispod su promjene odabrane verzije. {0} kreirano, {1} ažurirano, {2} obrisano.</value>
+  </data>
   <data name="BackupVersion_Changes_Title" xml:space="preserve">
     <value>Promjene</value>
   </data>
@@ -100,6 +103,9 @@ Promjene obrisane verzije postat će dio verzije "{1}".</value>
   </data>
   <data name="BackupVersion_Files_Title" xml:space="preserve">
     <value>Datoteke</value>
+  </data>
+  <data name="BackupVersion_FileVersion_Help" xml:space="preserve">
+    <value>Ispod vidite listu verzija za odabranu datoteku u kojima je datoteka kreirana, ažurirana ili obrisana.</value>
   </data>
   <data name="BackupVersion_FileVersion_Title" xml:space="preserve">
     <value>Dnevnik: {0}</value>
@@ -268,15 +274,6 @@ Scenarij korištenja: Kopirate podatke na udaljeni server. Postoji problem: ISP 
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Folder ne postoji.</value>
   </data>
-  <data name="FolderAccess_Field" xml:space="preserve">
-    <value>Pristup folderu:</value>
-  </data>
-  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
-    <value>Samo čitanje</value>
-  </data>
-  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
-    <value>Čitanje i pisanje</value>
-  </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>Protokol:</value>
   </data>
@@ -319,6 +316,15 @@ Scenarij korištenja: Kopirate podatke na udaljeni server. Postoji problem: ISP 
   <data name="FingerPrintSHA256_Field_Validation_Empty" xml:space="preserve">
     <value>Otisak SHA-256 nije naveden.</value>
   </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>Pristup folderu:</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>Samo čitanje</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>Čitanje i pisanje</value>
+  </data>
   <data name="Ftps_Encryption_Option_Explicit" xml:space="preserve">
     <value>Eksplicitno</value>
   </data>
@@ -328,14 +334,14 @@ Scenarij korištenja: Kopirate podatke na udaljeni server. Postoji problem: ISP 
   <data name="Ftps_Field_Encryption" xml:space="preserve">
     <value>SSL/TTS enkripcija:</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>FTPS server</value>
+  </data>
   <data name="FtpsServerStartTask_Name" xml:space="preserve">
     <value>Pokreni FTPS server</value>
   </data>
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>Dijeli folder preko mreže (FTPS server)</value>
-  </data>
-  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
-    <value>FTPS server</value>
   </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
     <value>Postavite FTPS server koji radi na ovom računaru. Koristi eksplicitnu enkripciju sa samopotpisanim certifikatom i dijeli odabrani folder. Dok server radi, možete se povezati s njim s bilo kojeg FTPS klijenta u vašoj lokalnoj mreži.</value>
@@ -986,6 +992,9 @@ Pogledajte detaljan opis na sljedećem linku.</value>
   </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>Odredite pohranu koja sadrži sigurnosnu kopiju koju želite vratiti. Koristite ista podešavanja kao kada je sigurnosna kopija napravljena.</value>
+  </data>
+  <data name="Task_Restore_Storage_Title" xml:space="preserve">
+    <value>Lokacija rezervne kopije</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>Neuspješno (pogledajte otvoreni dnevnik)</value>

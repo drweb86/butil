@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -90,6 +90,9 @@
   <data name="BackupVersion_Button_Delete" xml:space="preserve">
     <value>Выдаліць версію</value>
   </data>
+  <data name="BackupVersion_Changes_Help" xml:space="preserve">
+    <value>Ніжэй паказаны змены выбранай версіі. {0} створана, {1} абноўлена, {2} выдалена.</value>
+  </data>
   <data name="BackupVersion_Changes_Title" xml:space="preserve">
     <value>Змены</value>
   </data>
@@ -100,6 +103,9 @@
   </data>
   <data name="BackupVersion_Files_Title" xml:space="preserve">
     <value>Файлы</value>
+  </data>
+  <data name="BackupVersion_FileVersion_Help" xml:space="preserve">
+    <value>Ніжэй паказаны спіс версій выбранага файла, дзе файл быў створаны, абноўлены або выдалены.</value>
   </data>
   <data name="BackupVersion_FileVersion_Title" xml:space="preserve">
     <value>Журнал: {0}</value>
@@ -268,15 +274,6 @@
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Папка не існуе.</value>
   </data>
-  <data name="FolderAccess_Field" xml:space="preserve">
-    <value>Доступ да папкі:</value>
-  </data>
-  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
-    <value>Толькі чытанне</value>
-  </data>
-  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
-    <value>Чытанне і запіс</value>
-  </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>Пратакол:</value>
   </data>
@@ -319,6 +316,15 @@
   <data name="FingerPrintSHA256_Field_Validation_Empty" xml:space="preserve">
     <value>Адбітак SHA-256 не ўказаны.</value>
   </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>Доступ да папкі:</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>Толькі чытанне</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>Чытанне і запіс</value>
+  </data>
   <data name="Ftps_Encryption_Option_Explicit" xml:space="preserve">
     <value>Яўны</value>
   </data>
@@ -328,14 +334,14 @@
   <data name="Ftps_Field_Encryption" xml:space="preserve">
     <value>SSL/TTS шыфраванне:</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>FTPS-сервер</value>
+  </data>
   <data name="FtpsServerStartTask_Name" xml:space="preserve">
     <value>Запусціць FTPS сервер</value>
   </data>
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>Абагуліць папку па сетцы (FTPS сервер)</value>
-  </data>
-  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
-    <value>FTPS-сервер</value>
   </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
     <value>Наладзьце FTPS-сервер, які працуе на гэтым камп'ютары. Ён выкарыстоўвае яўнае шыфраванне з самападпісаным сертыфікатам і абагульвае выбраную папку. Пакуль сервер працуе, вы можаце падключыцца да яго з любога FTPS-кліента ў вашай лакальнай сетцы.</value>
@@ -986,6 +992,9 @@ bin.
   </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>Вызначце сховішча, якое змяшчае рэзервовую копію, якую вы хочаце аднавіць. Выкарыстоўвайце тыя ж налады, што і пры стварэнні рэзервовай копіі.</value>
+  </data>
+  <data name="Task_Restore_Storage_Title" xml:space="preserve">
+    <value>Размяшчэнне рэзервовай копіі</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>Не атрымалася (глядзіце адкрыты журнал)</value>

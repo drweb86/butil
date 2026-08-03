@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -90,6 +90,9 @@ tai varoituksia on kirjattu.</value>
   <data name="BackupVersion_Button_Delete" xml:space="preserve">
     <value>Poista versio</value>
   </data>
+  <data name="BackupVersion_Changes_Help" xml:space="preserve">
+    <value>Alla ovat valitun version muutokset. {0} luotu, {1} päivitetty, {2} poistettu.</value>
+  </data>
   <data name="BackupVersion_Changes_Title" xml:space="preserve">
     <value>Muutokset</value>
   </data>
@@ -100,6 +103,9 @@ Poistetun version muutokset tulevat osaksi versiota "{1}".</value>
   </data>
   <data name="BackupVersion_Files_Title" xml:space="preserve">
     <value>Tiedostot</value>
+  </data>
+  <data name="BackupVersion_FileVersion_Help" xml:space="preserve">
+    <value>Alla näet luettelon valitun tiedoston versioista, joissa tiedosto luotiin, päivitettiin tai poistettiin.</value>
   </data>
   <data name="BackupVersion_FileVersion_Title" xml:space="preserve">
     <value>Päiväkirja: {0}</value>
@@ -268,15 +274,6 @@ Käyttöskenaario: Kopioit tietoja etäpalvelimelle. Ongelma: ISP laskee latausn
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Kansiota ei löydy.</value>
   </data>
-  <data name="FolderAccess_Field" xml:space="preserve">
-    <value>Kansion käyttöoikeus:</value>
-  </data>
-  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
-    <value>Vain luku</value>
-  </data>
-  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
-    <value>Luku ja kirjoitus</value>
-  </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>Protokolla:</value>
   </data>
@@ -319,6 +316,15 @@ Käyttöskenaario: Kopioit tietoja etäpalvelimelle. Ongelma: ISP laskee latausn
   <data name="FingerPrintSHA256_Field_Validation_Empty" xml:space="preserve">
     <value>SHA-256-sormenjälkeä ei ole määritetty.</value>
   </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>Kansion käyttöoikeus:</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>Vain luku</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>Luku ja kirjoitus</value>
+  </data>
   <data name="Ftps_Encryption_Option_Explicit" xml:space="preserve">
     <value>Eksplisiittinen</value>
   </data>
@@ -328,14 +334,14 @@ Käyttöskenaario: Kopioit tietoja etäpalvelimelle. Ongelma: ISP laskee latausn
   <data name="Ftps_Field_Encryption" xml:space="preserve">
     <value>SSL/TTS-salaus:</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>FTPS-palvelin</value>
+  </data>
   <data name="FtpsServerStartTask_Name" xml:space="preserve">
     <value>Käynnistä FTPS-palvelin</value>
   </data>
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>Jaa kansio verkon kautta (FTPS-palvelin)</value>
-  </data>
-  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
-    <value>FTPS-palvelin</value>
   </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
     <value>Määritä FTPS-palvelin, joka toimii tällä tietokoneella. Se käyttää eksplisiittistä salausta itse allekirjoitetulla varmenteella ja jakaa valitun kansion. Palvelimen ollessa käynnissä voit muodostaa siihen yhteyden mistä tahansa FTPS-asiakkaasta lähiverkossasi.</value>
@@ -986,6 +992,9 @@ Katso yksityiskohtainen kuvaus seuraavasta linkistä.</value>
   </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>Määritä tallennustila, joka sisältää palautettavan varmuuskopion. Käytä samoja asetuksia kuin varmuuskopiota luotaessa.</value>
+  </data>
+  <data name="Task_Restore_Storage_Title" xml:space="preserve">
+    <value>Varmuuskopion sijainti</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>Epäonnistui (katso avattu loki)</value>

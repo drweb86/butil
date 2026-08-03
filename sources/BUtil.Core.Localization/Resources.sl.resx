@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -90,6 +90,9 @@ zabeležene napake ali opozorila.</value>
   <data name="BackupVersion_Button_Delete" xml:space="preserve">
     <value>Izbriši različico</value>
   </data>
+  <data name="BackupVersion_Changes_Help" xml:space="preserve">
+    <value>Spodaj so spremembe izbrane različice. {0} ustvarjeno, {1} posodobljeno, {2} izbrisano.</value>
+  </data>
   <data name="BackupVersion_Changes_Title" xml:space="preserve">
     <value>Spremembe</value>
   </data>
@@ -100,6 +103,9 @@ Spremembe izbrisane različice bodo postale del različice „{1}".</value>
   </data>
   <data name="BackupVersion_Files_Title" xml:space="preserve">
     <value>Datoteke</value>
+  </data>
+  <data name="BackupVersion_FileVersion_Help" xml:space="preserve">
+    <value>Spodaj vidite seznam različic izbrane datoteke, v katerih je bila datoteka ustvarjena, posodobljena ali izbrisana.</value>
   </data>
   <data name="BackupVersion_FileVersion_Title" xml:space="preserve">
     <value>Dnevnik: {0}</value>
@@ -268,15 +274,6 @@ Scenarij uporabe: Kopirate podatke na oddaljeni strežnik. Težava: ponudnik int
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Mapa ne obstaja.</value>
   </data>
-  <data name="FolderAccess_Field" xml:space="preserve">
-    <value>Dostop do mape:</value>
-  </data>
-  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
-    <value>Samo za branje</value>
-  </data>
-  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
-    <value>Branje in pisanje</value>
-  </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>Protokol:</value>
   </data>
@@ -319,6 +316,15 @@ Scenarij uporabe: Kopirate podatke na oddaljeni strežnik. Težava: ponudnik int
   <data name="FingerPrintSHA256_Field_Validation_Empty" xml:space="preserve">
     <value>Prstni odtis SHA-256 ni naveden.</value>
   </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>Dostop do mape:</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>Samo za branje</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>Branje in pisanje</value>
+  </data>
   <data name="Ftps_Encryption_Option_Explicit" xml:space="preserve">
     <value>Eksplicitno</value>
   </data>
@@ -328,14 +334,14 @@ Scenarij uporabe: Kopirate podatke na oddaljeni strežnik. Težava: ponudnik int
   <data name="Ftps_Field_Encryption" xml:space="preserve">
     <value>SSL/TTS šifriranje:</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>FTPS strežnik</value>
+  </data>
   <data name="FtpsServerStartTask_Name" xml:space="preserve">
     <value>Zaženi FTPS strežnik</value>
   </data>
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>Deli mapo prek omrežja (FTPS strežnik)</value>
-  </data>
-  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
-    <value>FTPS strežnik</value>
   </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
     <value>Nastavite FTPS strežnik, ki teče na tem računalniku. Uporablja eksplicitno šifriranje s samopodpisanim potrdilom in deli izbrano mapo. Medtem ko strežnik deluje, se lahko nanj povežete iz katerega koli odjemalca FTPS v lokalnem omrežju.</value>
@@ -986,6 +992,9 @@ Glejte podroben opis na naslednji povezavi.</value>
   </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>Navedite shrambo, ki vsebuje varnostno kopijo, ki jo želite obnoviti. Uporabite enake nastavitve, kot so bile uporabljene pri ustvarjanju varnostne kopije.</value>
+  </data>
+  <data name="Task_Restore_Storage_Title" xml:space="preserve">
+    <value>Mesto varnostne kopije</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>Neuspešno (glejte odprti dnevnik)</value>

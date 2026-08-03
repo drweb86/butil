@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -87,6 +87,9 @@
   <data name="BackupVersion_Button_Delete" xml:space="preserve">
     <value>バージョンを削除</value>
   </data>
+  <data name="BackupVersion_Changes_Help" xml:space="preserve">
+    <value>選択したバージョンの変更内容は以下のとおりです。{0} 作成、{1} 更新、{2} 削除。</value>
+  </data>
   <data name="BackupVersion_Changes_Title" xml:space="preserve">
     <value>変更点</value>
   </data>
@@ -95,6 +98,9 @@
   </data>
   <data name="BackupVersion_Files_Title" xml:space="preserve">
     <value>ファイル</value>
+  </data>
+  <data name="BackupVersion_FileVersion_Help" xml:space="preserve">
+    <value>以下は、選択したファイルが作成・更新・削除されたバージョンの一覧です。</value>
   </data>
   <data name="BackupVersion_FileVersion_Title" xml:space="preserve">
     <value>ジャーナル: {0}</value>
@@ -263,15 +269,6 @@
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>フォルダーが存在しません。</value>
   </data>
-  <data name="FolderAccess_Field" xml:space="preserve">
-    <value>フォルダーのアクセス権:</value>
-  </data>
-  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
-    <value>読み取り専用</value>
-  </data>
-  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
-    <value>読み取りと書き込み</value>
-  </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>プロトコル:</value>
   </data>
@@ -314,6 +311,15 @@
   <data name="FingerPrintSHA256_Field_Validation_Empty" xml:space="preserve">
     <value>SHA-256フィンガープリントが指定されていません。</value>
   </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>フォルダーのアクセス権:</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>読み取り専用</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>読み取りと書き込み</value>
+  </data>
   <data name="Ftps_Encryption_Option_Explicit" xml:space="preserve">
     <value>エクスプリシット</value>
   </data>
@@ -323,14 +329,14 @@
   <data name="Ftps_Field_Encryption" xml:space="preserve">
     <value>SSL/TTS暗号化:</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>FTPSサーバー</value>
+  </data>
   <data name="FtpsServerStartTask_Name" xml:space="preserve">
     <value>FTPSサーバーを開始</value>
   </data>
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>ネットワーク上でフォルダを共有（FTPSサーバー）</value>
-  </data>
-  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
-    <value>FTPSサーバー</value>
   </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
     <value>このコンピューターで動作する FTPS サーバーを設定します。自己署名証明書による明示的な暗号化を使用し、選択したフォルダーを共有します。サーバーの実行中は、ローカルネットワーク上の任意の FTPS クライアントから接続できます。</value>
@@ -970,6 +976,9 @@ bin.
   </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>復元したいバックアップが含まれているストレージを指定してください。バックアップ作成時と同じ設定を使用してください。</value>
+  </data>
+  <data name="Task_Restore_Storage_Title" xml:space="preserve">
+    <value>バックアップの場所</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>失敗しました（開いたログを参照）</value>

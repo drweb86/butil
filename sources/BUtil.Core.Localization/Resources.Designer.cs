@@ -154,6 +154,15 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Below are the changes of the selected version. {0} created, {1} updated, {2} deleted..
+        /// </summary>
+        public static string BackupVersion_Changes_Help {
+            get {
+                return ResourceManager.GetString("BackupVersion_Changes_Help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Changes.
         /// </summary>
         public static string BackupVersion_Changes_Title {
@@ -179,6 +188,15 @@ namespace BUtil.Core.Localization {
         public static string BackupVersion_Files_Title {
             get {
                 return ResourceManager.GetString("BackupVersion_Files_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Below you see the list of versions for the selected file where the file was created, updated, or deleted..
+        /// </summary>
+        public static string BackupVersion_FileVersion_Help {
+            get {
+                return ResourceManager.GetString("BackupVersion_FileVersion_Help", resourceCulture);
             }
         }
         
@@ -2532,6 +2550,15 @@ namespace BUtil.Core.Localization {
         public static string Task_Restore_Storage_Help {
             get {
                 return ResourceManager.GetString("Task_Restore_Storage_Help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Backup location.
+        /// </summary>
+        public static string Task_Restore_Storage_Title {
+            get {
+                return ResourceManager.GetString("Task_Restore_Storage_Title", resourceCulture);
             }
         }
         

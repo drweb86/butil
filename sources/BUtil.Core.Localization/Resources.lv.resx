@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -90,6 +90,9 @@ reģistrētas kļūdas vai brīdinājumi.</value>
   <data name="BackupVersion_Button_Delete" xml:space="preserve">
     <value>Dzēst versiju</value>
   </data>
+  <data name="BackupVersion_Changes_Help" xml:space="preserve">
+    <value>Zemāk ir atlasītās versijas izmaiņas. {0} izveidots, {1} atjaunināts, {2} dzēsts.</value>
+  </data>
   <data name="BackupVersion_Changes_Title" xml:space="preserve">
     <value>Izmaiņas</value>
   </data>
@@ -100,6 +103,9 @@ Dzēstās versijas izmaiņas kļūs par versijas „{1}" daļu.</value>
   </data>
   <data name="BackupVersion_Files_Title" xml:space="preserve">
     <value>Faili</value>
+  </data>
+  <data name="BackupVersion_FileVersion_Help" xml:space="preserve">
+    <value>Zemāk redzat atlasītā faila versiju sarakstu, kurās fails tika izveidots, atjaunināts vai dzēsts.</value>
   </data>
   <data name="BackupVersion_FileVersion_Title" xml:space="preserve">
     <value>Žurnāls: {0}</value>
@@ -268,15 +274,6 @@ Lietošanas scenārijs: Jūs kopējat datus uz attālo serveri. Problēma: inter
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Mape neeksistē.</value>
   </data>
-  <data name="FolderAccess_Field" xml:space="preserve">
-    <value>Piekļuve mapei:</value>
-  </data>
-  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
-    <value>Tikai lasīt</value>
-  </data>
-  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
-    <value>Lasīt un rakstīt</value>
-  </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>Protokols:</value>
   </data>
@@ -319,6 +316,15 @@ Lietošanas scenārijs: Jūs kopējat datus uz attālo serveri. Problēma: inter
   <data name="FingerPrintSHA256_Field_Validation_Empty" xml:space="preserve">
     <value>SHA-256 pirkstu nospiedums nav norādīts.</value>
   </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>Piekļuve mapei:</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>Tikai lasīt</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>Lasīt un rakstīt</value>
+  </data>
   <data name="Ftps_Encryption_Option_Explicit" xml:space="preserve">
     <value>Tiešs</value>
   </data>
@@ -328,14 +334,14 @@ Lietošanas scenārijs: Jūs kopējat datus uz attālo serveri. Problēma: inter
   <data name="Ftps_Field_Encryption" xml:space="preserve">
     <value>SSL/TTS šifrēšana:</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>FTPS serveris</value>
+  </data>
   <data name="FtpsServerStartTask_Name" xml:space="preserve">
     <value>Palaist FTPS serveri</value>
   </data>
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>Koplietot mapi tīklā (FTPS serveris)</value>
-  </data>
-  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
-    <value>FTPS serveris</value>
   </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
     <value>Iestatiet FTPS serveri, kas darbojas šajā datorā. Tas izmanto tiešu šifrēšanu ar paša parakstītu sertifikātu un koplieto atlasīto mapi. Kamēr serveris darbojas, varat tam pievienoties no jebkura FTPS klienta lokālajā tīklā.</value>
@@ -986,6 +992,9 @@ Skatiet detalizētu aprakstu šajā saitē.</value>
   </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>Norādiet krātuvi, kurā ir dublējums, ko vēlaties atjaunot. Izmantojiet tos pašus iestatījumus, kas bija spēkā, izveidojot dublējumu.</value>
+  </data>
+  <data name="Task_Restore_Storage_Title" xml:space="preserve">
+    <value>Dublējuma atrašanās vieta</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>Neizdevās (skatiet atvērto žurnālu)</value>

@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -90,6 +90,9 @@
   <data name="BackupVersion_Button_Delete" xml:space="preserve">
     <value>Ջնջել տարբերակը</value>
   </data>
+  <data name="BackupVersion_Changes_Help" xml:space="preserve">
+    <value>Ստորև ներկայացված են ընտրված տարբերակի փոփոխությունները։ {0} ստեղծված, {1} թարմացված, {2} ջնջված։</value>
+  </data>
   <data name="BackupVersion_Changes_Title" xml:space="preserve">
     <value>Փոփոխություններ</value>
   </data>
@@ -100,6 +103,9 @@
   </data>
   <data name="BackupVersion_Files_Title" xml:space="preserve">
     <value>Ֆայլեր</value>
+  </data>
+  <data name="BackupVersion_FileVersion_Help" xml:space="preserve">
+    <value>Ստորև տեսնում եք ընտրված ֆայլի տարբերակների ցանկը, որտեղ ֆայլը ստեղծվել, թարմացվել կամ ջնջվել է։</value>
   </data>
   <data name="BackupVersion_FileVersion_Title" xml:space="preserve">
     <value>Ամսագիր՝ {0}</value>
@@ -268,15 +274,6 @@
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Թղթապանակ գոյություն չունի:</value>
   </data>
-  <data name="FolderAccess_Field" xml:space="preserve">
-    <value>Թղթապանակի հասանելիություն՝</value>
-  </data>
-  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
-    <value>Միայն կարդալ</value>
-  </data>
-  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
-    <value>Կարդալ և գրել</value>
-  </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>Արձանագրություն:</value>
   </data>
@@ -319,6 +316,15 @@
   <data name="FingerPrintSHA256_Field_Validation_Empty" xml:space="preserve">
     <value>Մատնահետք SHA-256-ը նշված չէ:</value>
   </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>Թղթապանակի հասանելիություն՝</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>Միայն կարդալ</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>Կարդալ և գրել</value>
+  </data>
   <data name="Ftps_Encryption_Option_Explicit" xml:space="preserve">
     <value>Բացահայտ</value>
   </data>
@@ -328,14 +334,14 @@
   <data name="Ftps_Field_Encryption" xml:space="preserve">
     <value>SSL/TTS կոդավորումը.</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>FTPS սերվեր</value>
+  </data>
   <data name="FtpsServerStartTask_Name" xml:space="preserve">
     <value>Գործարկել FTPS սերվերը</value>
   </data>
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>Համօգտագործել պանակը ցանցի միջոցով (FTPS սերվեր)</value>
-  </data>
-  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
-    <value>FTPS սերվեր</value>
   </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
     <value>Կարգավորեք FTPS սերվեր, որը աշխատում է այս համակարգչում։ Այն օգտագործում է բացահայտ գաղտնագրում ինքնաստորագրված վկայականով և համօգտագործում է ընտրված թղթապանակը։ Մինչ սերվերը աշխատում է, կարող եք միանալ դրան ձեր տեղական ցանցի ցանկացած FTPS հաճախորդից։</value>
@@ -986,6 +992,9 @@ bin.
   </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>Նշեք պահեստը, որը պարունակում է վերականգնել ցանկացած պահուստը։ Օգտագործեք նույն կարգավորումները, ինչ պահուստը ստեղծելիս էին։</value>
+  </data>
+  <data name="Task_Restore_Storage_Title" xml:space="preserve">
+    <value>Պահուստի տեղադրությունը</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>Չհաջողվեց (տես բացված մատյան)</value>

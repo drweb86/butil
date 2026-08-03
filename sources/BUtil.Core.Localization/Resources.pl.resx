@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -90,6 +90,9 @@ jakiekolwiek błędy lub ostrzeżenia.</value>
   <data name="BackupVersion_Button_Delete" xml:space="preserve">
     <value>Usuń wersję</value>
   </data>
+  <data name="BackupVersion_Changes_Help" xml:space="preserve">
+    <value>Poniżej znajdują się zmiany wybranej wersji. {0} utworzony, {1} zaktualizowany, {2} usunięty.</value>
+  </data>
   <data name="BackupVersion_Changes_Title" xml:space="preserve">
     <value>Zmiany</value>
   </data>
@@ -100,6 +103,9 @@ Zmiany z usuniętej wersji staną się częścią wersji "{1}".</value>
   </data>
   <data name="BackupVersion_Files_Title" xml:space="preserve">
     <value>Pliki</value>
+  </data>
+  <data name="BackupVersion_FileVersion_Help" xml:space="preserve">
+    <value>Poniżej widzisz listę wersji wybranego pliku, w których plik został utworzony, zaktualizowany lub usunięty.</value>
   </data>
   <data name="BackupVersion_FileVersion_Title" xml:space="preserve">
     <value>Dziennik: {0}</value>
@@ -268,15 +274,6 @@ Scenariusz użycia: Kopiujesz dane na zdalny serwer. Jest problem: dostawca inte
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Folder nie istnieje.</value>
   </data>
-  <data name="FolderAccess_Field" xml:space="preserve">
-    <value>Dostęp do folderu:</value>
-  </data>
-  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
-    <value>Tylko do odczytu</value>
-  </data>
-  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
-    <value>Odczyt i zapis</value>
-  </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>Protokół:</value>
   </data>
@@ -319,6 +316,15 @@ Scenariusz użycia: Kopiujesz dane na zdalny serwer. Jest problem: dostawca inte
   <data name="FingerPrintSHA256_Field_Validation_Empty" xml:space="preserve">
     <value>Odcisk palca SHA-256 nie został określony.</value>
   </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>Dostęp do folderu:</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>Tylko do odczytu</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>Odczyt i zapis</value>
+  </data>
   <data name="Ftps_Encryption_Option_Explicit" xml:space="preserve">
     <value>Jawne</value>
   </data>
@@ -328,14 +334,14 @@ Scenariusz użycia: Kopiujesz dane na zdalny serwer. Jest problem: dostawca inte
   <data name="Ftps_Field_Encryption" xml:space="preserve">
     <value>Szyfrowanie SSL/TTS:</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>Serwer FTPS</value>
+  </data>
   <data name="FtpsServerStartTask_Name" xml:space="preserve">
     <value>Uruchom serwer FTPS</value>
   </data>
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>Udostępnij folder w sieci (serwer FTPS)</value>
-  </data>
-  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
-    <value>Serwer FTPS</value>
   </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
     <value>Skonfiguruj serwer FTPS działający na tym komputerze. Używa jawnego szyfrowania z certyfikatem samopodpisanym i udostępnia wybrany folder. Gdy serwer działa, możesz połączyć się z nim z dowolnego klienta FTPS w sieci lokalnej.</value>
@@ -986,6 +992,9 @@ Szczegółowy opis znajdziesz pod poniższym linkiem.</value>
   </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>Wskaż magazyn zawierający kopię zapasową, którą chcesz przywrócić. Użyj tych samych ustawień, co podczas tworzenia kopii zapasowej.</value>
+  </data>
+  <data name="Task_Restore_Storage_Title" xml:space="preserve">
+    <value>Lokalizacja kopii zapasowej</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>Niepowodzenie (zobacz otwarty dziennik)</value>

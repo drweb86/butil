@@ -10,7 +10,7 @@
              x:DataType="cvm:StorageViewModel">
 	<Expander Classes="TaskSection" HorizontalAlignment="Stretch" IsExpanded="{Binding IsExpanded}" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
 		<Expander.Header>
-			<decor:ExpanderHeader Icon="💾" Text="{Binding Title}" />
+			<decor:ExpanderHeader Icon="{Binding Icon}" Text="{Binding Title}" />
 		</Expander.Header>
 		<StackPanel Spacing="4" Margin="0 4 0 0">
 

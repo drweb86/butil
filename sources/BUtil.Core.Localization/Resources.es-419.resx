@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -90,6 +90,9 @@ o avisos quedarán registrados.</value>
   <data name="BackupVersion_Button_Delete" xml:space="preserve">
     <value>Delete version</value>
   </data>
+  <data name="BackupVersion_Changes_Help" xml:space="preserve">
+    <value>A continuación se muestran los cambios de la versión seleccionada. {0} creado, {1} actualizado, {2} eliminado.</value>
+  </data>
   <data name="BackupVersion_Changes_Title" xml:space="preserve">
     <value>Cambios</value>
   </data>
@@ -100,6 +103,9 @@ Los cambios de versión eliminados pasarán a formar parte de la versión "{1}".
   </data>
   <data name="BackupVersion_Files_Title" xml:space="preserve">
     <value>Archivos</value>
+  </data>
+  <data name="BackupVersion_FileVersion_Help" xml:space="preserve">
+    <value>A continuación se muestra la lista de versiones del archivo seleccionado en las que el archivo se creó, actualizó o eliminó.</value>
   </data>
   <data name="BackupVersion_FileVersion_Title" xml:space="preserve">
     <value>Diario: {0}</value>
@@ -268,15 +274,6 @@ Escenario de uso: copia datos al servidor remoto. Hay un problema: el ISP reduce
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>La carpeta no existe.</value>
   </data>
-  <data name="FolderAccess_Field" xml:space="preserve">
-    <value>Acceso a la carpeta:</value>
-  </data>
-  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
-    <value>Solo lectura</value>
-  </data>
-  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
-    <value>Lectura y escritura</value>
-  </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>Protocolo:</value>
   </data>
@@ -319,6 +316,15 @@ Escenario de uso: copia datos al servidor remoto. Hay un problema: el ISP reduce
   <data name="FingerPrintSHA256_Field_Validation_Empty" xml:space="preserve">
     <value>La huella digital SHA-256 no está especificada.</value>
   </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>Acceso a la carpeta:</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>Solo lectura</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>Lectura y escritura</value>
+  </data>
   <data name="Ftps_Encryption_Option_Explicit" xml:space="preserve">
     <value>Explícito</value>
   </data>
@@ -328,14 +334,14 @@ Escenario de uso: copia datos al servidor remoto. Hay un problema: el ISP reduce
   <data name="Ftps_Field_Encryption" xml:space="preserve">
     <value>Cifrado SSL/TTS:</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>Servidor FTPS</value>
+  </data>
   <data name="FtpsServerStartTask_Name" xml:space="preserve">
     <value>Iniciar servidor FTPS</value>
   </data>
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>Compartir carpeta a través de la red (servidor FTPS)</value>
-  </data>
-  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
-    <value>Servidor FTPS</value>
   </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
     <value>Configure un servidor FTPS que se ejecute en esta computadora. Usa cifrado explícito con un certificado autofirmado y comparte la carpeta seleccionada. Mientras el servidor esté en ejecución, puede conectarse a él desde cualquier cliente FTPS en su red local.</value>
@@ -986,6 +992,9 @@ See detailed description in the following link.</value>
   </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>Especifica el almacenamiento que contiene la copia de seguridad que deseas restaurar. Usa la misma configuración que cuando se creó la copia de seguridad.</value>
+  </data>
+  <data name="Task_Restore_Storage_Title" xml:space="preserve">
+    <value>Ubicación de la copia de seguridad</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>Error (ver registro abierto)</value>

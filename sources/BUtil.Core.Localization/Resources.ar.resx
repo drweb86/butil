@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -90,6 +90,9 @@
   <data name="BackupVersion_Button_Delete" xml:space="preserve">
     <value>حذف الإصدار</value>
   </data>
+  <data name="BackupVersion_Changes_Help" xml:space="preserve">
+    <value>فيما يلي تغييرات الإصدار المحدد. {0} تم الإنشاء، {1} تم التحديث، {2} تم الحذف.</value>
+  </data>
   <data name="BackupVersion_Changes_Title" xml:space="preserve">
     <value>التغييرات</value>
   </data>
@@ -100,6 +103,9 @@
   </data>
   <data name="BackupVersion_Files_Title" xml:space="preserve">
     <value>الملفات</value>
+  </data>
+  <data name="BackupVersion_FileVersion_Help" xml:space="preserve">
+    <value>فيما يلي قائمة الإصدارات للملف المحدد حيث تم إنشاء الملف أو تحديثه أو حذفه.</value>
   </data>
   <data name="BackupVersion_FileVersion_Title" xml:space="preserve">
     <value>سجل: {0}</value>
@@ -268,15 +274,6 @@
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>المجلد غير موجود.</value>
   </data>
-  <data name="FolderAccess_Field" xml:space="preserve">
-    <value>الوصول إلى المجلد:</value>
-  </data>
-  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
-    <value>للقراءة فقط</value>
-  </data>
-  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
-    <value>قراءة وكتابة</value>
-  </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>البروتوكول:</value>
   </data>
@@ -319,6 +316,15 @@
   <data name="FingerPrintSHA256_Field_Validation_Empty" xml:space="preserve">
     <value>بصمة SHA-256 غير محددة.</value>
   </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>الوصول إلى المجلد:</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>للقراءة فقط</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>قراءة وكتابة</value>
+  </data>
   <data name="Ftps_Encryption_Option_Explicit" xml:space="preserve">
     <value>صريح</value>
   </data>
@@ -328,14 +334,14 @@
   <data name="Ftps_Field_Encryption" xml:space="preserve">
     <value>تشفير SSL/TLS:</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>خادم FTPS</value>
+  </data>
   <data name="FtpsServerStartTask_Name" xml:space="preserve">
     <value>بدء خادم FTPS</value>
   </data>
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>مشاركة المجلد عبر الشبكة (خادم FTPS)</value>
-  </data>
-  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
-    <value>خادم FTPS</value>
   </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
     <value>قم بإعداد خادم FTPS يعمل على هذا الكمبيوتر. يستخدم التشفير الصريح بشهادة ذاتية التوقيع ويشارك المجلد المحدد. أثناء تشغيل الخادم، يمكنك الاتصال به من أي عميل FTPS على شبكتك المحلية.</value>
@@ -986,6 +992,9 @@ bin.
   </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>حدد التخزين الذي يحتوي على النسخة الاحتياطية التي تريد استعادتها. استخدم نفس الإعدادات التي كانت مستخدمة عند إنشاء النسخة الاحتياطية.</value>
+  </data>
+  <data name="Task_Restore_Storage_Title" xml:space="preserve">
+    <value>موقع النسخة الاحتياطية</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>فشل (راجع السجل المفتوح)</value>

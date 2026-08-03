@@ -31,11 +31,12 @@ public sealed class StorageProviderItem
 
 public class StorageViewModel : ObservableObject
 {
-    public StorageViewModel(IStorageSettingsV2 storageSettings, string title, bool isExpanded = false, string? help = null)
+    public StorageViewModel(IStorageSettingsV2 storageSettings, string title, bool isExpanded = false, string? help = null, string icon = "💾")
     {
         IsExpanded = isExpanded;
         Title = title;
         Help = help;
+        Icon = icon;
 
         Providers = new ObservableCollection<StorageProviderItem>(
             StorageProviderRegistry.GetProviders().Select(entry => new StorageProviderItem(entry)));
@@ -206,6 +207,7 @@ public class StorageViewModel : ObservableObject
 
     public string Title { get; }
     public string? Help { get; }
+    public string Icon { get; }
     public bool IsExpanded { get; }
     public bool CanLaunchScripts { get; } = PlatformSpecificExperience.Instance.SupportManager.CanLaunchScripts;
     public ObservableCollection<StorageProviderItem> Providers { get; }

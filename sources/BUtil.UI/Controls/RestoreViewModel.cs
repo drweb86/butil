@@ -13,7 +13,7 @@ public class RestoreViewModel : ViewModelBase
     {
         WindowTitle = Resources.Task_Restore;
 
-        StorageViewModel = new StorageViewModel(storageSettingsV2 ?? new FolderStorageSettingsV2(), Resources.Task_Restore, help: Resources.Task_Restore_Storage_Help);
+        StorageViewModel = new StorageViewModel(storageSettingsV2 ?? new FolderStorageSettingsV2(), Resources.Task_Restore_Storage_Title, help: Resources.Task_Restore_Storage_Help, icon: "🗄");
         StorageViewModel.PropertyChanged += (_, e) =>
         {
             if (e.PropertyName is nameof(StorageViewModel.SelectedProvider)

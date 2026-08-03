@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -90,6 +90,9 @@ edo abisuak erregistratuko dira.</value>
   <data name="BackupVersion_Button_Delete" xml:space="preserve">
     <value>Delete version</value>
   </data>
+  <data name="BackupVersion_Changes_Help" xml:space="preserve">
+    <value>Jarraian hautatutako bertsioaren aldaketak daude. {0} sortua, {1} eguneratua, {2} ezabatua.</value>
+  </data>
   <data name="BackupVersion_Changes_Title" xml:space="preserve">
     <value>Aldaketak</value>
   </data>
@@ -100,6 +103,9 @@ Ezabatutako bertsio-aldaketak "{1}" bertsioaren zati bihurtuko dira.</value>
   </data>
   <data name="BackupVersion_Files_Title" xml:space="preserve">
     <value>Fitxategiak</value>
+  </data>
+  <data name="BackupVersion_FileVersion_Help" xml:space="preserve">
+    <value>Jarraian hautatutako fitxategiaren bertsioen zerrenda ikusten duzu, non fitxategia sortu, eguneratu edo ezabatu zen.</value>
   </data>
   <data name="BackupVersion_FileVersion_Title" xml:space="preserve">
     <value>Aldizkaria: {0}</value>
@@ -268,15 +274,6 @@ Erabilera eszenatokia: datuak urruneko zerbitzarian kopiatzen dituzu. Arazo bat 
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Karpeta ez da existitzen.</value>
   </data>
-  <data name="FolderAccess_Field" xml:space="preserve">
-    <value>Karpetarako sarbidea:</value>
-  </data>
-  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
-    <value>Irakurtzeko soilik</value>
-  </data>
-  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
-    <value>Irakurri eta idatzi</value>
-  </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>Protokoloa:</value>
   </data>
@@ -319,6 +316,15 @@ Erabilera eszenatokia: datuak urruneko zerbitzarian kopiatzen dituzu. Arazo bat 
   <data name="FingerPrintSHA256_Field_Validation_Empty" xml:space="preserve">
     <value>SHA-256 hatz-marka ez dago zehaztuta.</value>
   </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>Karpetarako sarbidea:</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>Irakurtzeko soilik</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>Irakurri eta idatzi</value>
+  </data>
   <data name="Ftps_Encryption_Option_Explicit" xml:space="preserve">
     <value>Esplizitua</value>
   </data>
@@ -328,14 +334,14 @@ Erabilera eszenatokia: datuak urruneko zerbitzarian kopiatzen dituzu. Arazo bat 
   <data name="Ftps_Field_Encryption" xml:space="preserve">
     <value>SSL/TTS enkriptatzea:</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>FTPS zerbitzaria</value>
+  </data>
   <data name="FtpsServerStartTask_Name" xml:space="preserve">
     <value>Hasi FTPS zerbitzaria</value>
   </data>
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>Partekatu karpeta sarean (FTPS zerbitzaria)</value>
-  </data>
-  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
-    <value>FTPS zerbitzaria</value>
   </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
     <value>Konfiguratu ordenagailu honetan exekutatzen den FTPS zerbitzari bat. Zifratze esplizitua erabiltzen du norberak sinatutako ziurtagiriarekin eta hautatutako karpeta partekatzen du. Zerbitzaria martxan dagoen bitartean, zure sare lokaleko edozein FTPS bezerotatik konekta zaitezke.</value>
@@ -986,6 +992,9 @@ See detailed description in the following link.</value>
   </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>Zehaztu leheneratu nahi duzun babeskopia duen biltegia. Erabili babeskopia sortu zenean erabilitako ezarpen berberak.</value>
+  </data>
+  <data name="Task_Restore_Storage_Title" xml:space="preserve">
+    <value>Babeskopiaren kokapena</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>Huts egin du (ikusi irekitako erregistroa)</value>

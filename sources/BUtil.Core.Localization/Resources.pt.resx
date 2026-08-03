@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -90,6 +90,9 @@ ou aviso for registrado.</value>
   <data name="BackupVersion_Button_Delete" xml:space="preserve">
     <value>Excluir versão</value>
   </data>
+  <data name="BackupVersion_Changes_Help" xml:space="preserve">
+    <value>Abaixo estão as alterações da versão selecionada. {0} criado, {1} atualizado, {2} excluído.</value>
+  </data>
   <data name="BackupVersion_Changes_Title" xml:space="preserve">
     <value>Alterações</value>
   </data>
@@ -100,6 +103,9 @@ As alterações da versão excluída se tornarão parte da versão "{1}".</value
   </data>
   <data name="BackupVersion_Files_Title" xml:space="preserve">
     <value>Arquivos</value>
+  </data>
+  <data name="BackupVersion_FileVersion_Help" xml:space="preserve">
+    <value>Abaixo você vê a lista de versões do arquivo selecionado em que o arquivo foi criado, atualizado ou excluído.</value>
   </data>
   <data name="BackupVersion_FileVersion_Title" xml:space="preserve">
     <value>Jornal: {0}</value>
@@ -268,15 +274,6 @@ Cenário de uso: Você copia dados para um servidor remoto. Há um problema: o I
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>A pasta não existe.</value>
   </data>
-  <data name="FolderAccess_Field" xml:space="preserve">
-    <value>Acesso à pasta:</value>
-  </data>
-  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
-    <value>Apenas leitura</value>
-  </data>
-  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
-    <value>Leitura e escrita</value>
-  </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>Protocolo:</value>
   </data>
@@ -319,6 +316,15 @@ Cenário de uso: Você copia dados para um servidor remoto. Há um problema: o I
   <data name="FingerPrintSHA256_Field_Validation_Empty" xml:space="preserve">
     <value>A impressão digital SHA-256 não foi especificada.</value>
   </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>Acesso à pasta:</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>Apenas leitura</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>Leitura e escrita</value>
+  </data>
   <data name="Ftps_Encryption_Option_Explicit" xml:space="preserve">
     <value>Explícito</value>
   </data>
@@ -328,14 +334,14 @@ Cenário de uso: Você copia dados para um servidor remoto. Há um problema: o I
   <data name="Ftps_Field_Encryption" xml:space="preserve">
     <value>Criptografia SSL/TTS:</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>Servidor FTPS</value>
+  </data>
   <data name="FtpsServerStartTask_Name" xml:space="preserve">
     <value>Iniciar servidor FTPS</value>
   </data>
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>Partilhar pasta na rede (Servidor FTPS)</value>
-  </data>
-  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
-    <value>Servidor FTPS</value>
   </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
     <value>Configure um servidor FTPS que é executado neste computador. Utiliza encriptação explícita com um certificado autoassinado e partilha a pasta selecionada. Enquanto o servidor estiver em execução, pode ligar-se a ele a partir de qualquer cliente FTPS na sua rede local.</value>
@@ -986,6 +992,9 @@ Veja a descrição detalhada no seguinte link.</value>
   </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>Especifique o armazenamento que contém o backup que deseja restaurar. Use as mesmas configurações utilizadas quando o backup foi criado.</value>
+  </data>
+  <data name="Task_Restore_Storage_Title" xml:space="preserve">
+    <value>Local do backup</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>Falhou (veja o log aberto)</value>

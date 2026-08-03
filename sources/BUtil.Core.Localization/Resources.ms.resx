@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -90,6 +90,9 @@ atau amaran direkodkan.</value>
   <data name="BackupVersion_Button_Delete" xml:space="preserve">
     <value>Padam versi</value>
   </data>
+  <data name="BackupVersion_Changes_Help" xml:space="preserve">
+    <value>Di bawah ialah perubahan versi yang dipilih. {0} dicipta, {1} dikemas kini, {2} dipadam.</value>
+  </data>
   <data name="BackupVersion_Changes_Title" xml:space="preserve">
     <value>Perubahan</value>
   </data>
@@ -100,6 +103,9 @@ Perubahan versi yang dipadam akan menjadi sebahagian daripada versi "{1}".</valu
   </data>
   <data name="BackupVersion_Files_Title" xml:space="preserve">
     <value>Fail</value>
+  </data>
+  <data name="BackupVersion_FileVersion_Help" xml:space="preserve">
+    <value>Di bawah anda melihat senarai versi untuk fail yang dipilih di mana fail itu dicipta, dikemas kini atau dipadam.</value>
   </data>
   <data name="BackupVersion_FileVersion_Title" xml:space="preserve">
     <value>Jurnal: {0}</value>
@@ -268,15 +274,6 @@ Senario penggunaan: Anda menyalin data ke pelayan jauh. Terdapat masalah: ISP me
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Folder tidak wujud.</value>
   </data>
-  <data name="FolderAccess_Field" xml:space="preserve">
-    <value>Akses folder:</value>
-  </data>
-  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
-    <value>Baca sahaja</value>
-  </data>
-  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
-    <value>Baca dan tulis</value>
-  </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>Protokol:</value>
   </data>
@@ -319,6 +316,15 @@ Senario penggunaan: Anda menyalin data ke pelayan jauh. Terdapat masalah: ISP me
   <data name="FingerPrintSHA256_Field_Validation_Empty" xml:space="preserve">
     <value>Cap jari SHA-256 tidak dinyatakan.</value>
   </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>Akses folder:</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>Baca sahaja</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>Baca dan tulis</value>
+  </data>
   <data name="Ftps_Encryption_Option_Explicit" xml:space="preserve">
     <value>Eksplisit</value>
   </data>
@@ -328,14 +334,14 @@ Senario penggunaan: Anda menyalin data ke pelayan jauh. Terdapat masalah: ISP me
   <data name="Ftps_Field_Encryption" xml:space="preserve">
     <value>Penyulitan SSL/TTS:</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>Pelayan FTPS</value>
+  </data>
   <data name="FtpsServerStartTask_Name" xml:space="preserve">
     <value>Mulakan pelayan FTPS</value>
   </data>
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>Kongsi folder melalui rangkaian (Pelayan FTPS)</value>
-  </data>
-  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
-    <value>Pelayan FTPS</value>
   </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
     <value>Sediakan pelayan FTPS yang berjalan pada komputer ini. Ia menggunakan penyulitan eksplisit dengan sijil tandatangan sendiri dan berkongsi folder yang dipilih. Semasa pelayan berjalan, anda boleh menyambung kepadanya dari mana-mana klien FTPS pada rangkaian tempatan anda.</value>
@@ -986,6 +992,9 @@ Lihat penerangan terperinci di pautan berikut.</value>
   </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>Nyatakan storan yang mengandungi sandaran yang anda ingin pulihkan. Gunakan tetapan yang sama seperti semasa sandaran dicipta.</value>
+  </data>
+  <data name="Task_Restore_Storage_Title" xml:space="preserve">
+    <value>Lokasi sandaran</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>Gagal (lihat log yang dibuka)</value>

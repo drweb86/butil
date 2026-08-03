@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -90,6 +90,9 @@ ou rexistraranse avisos.</value>
   <data name="BackupVersion_Button_Delete" xml:space="preserve">
     <value>Delete version</value>
   </data>
+  <data name="BackupVersion_Changes_Help" xml:space="preserve">
+    <value>A continuación móstranse os cambios da versión seleccionada. {0} creado, {1} actualizado, {2} eliminado.</value>
+  </data>
   <data name="BackupVersion_Changes_Title" xml:space="preserve">
     <value>Cambios</value>
   </data>
@@ -100,6 +103,9 @@ Os cambios de versión eliminados pasarán a formar parte da versión "{1}".</va
   </data>
   <data name="BackupVersion_Files_Title" xml:space="preserve">
     <value>Arquivos</value>
+  </data>
+  <data name="BackupVersion_FileVersion_Help" xml:space="preserve">
+    <value>A continuación ves a lista de versións do ficheiro seleccionado nas que o ficheiro se creou, actualizou ou eliminou.</value>
   </data>
   <data name="BackupVersion_FileVersion_Title" xml:space="preserve">
     <value>Xornal: {0}</value>
@@ -268,15 +274,6 @@ Escenario de uso: copia os datos ao servidor remoto. Hai un problema: o ISP redu
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>O cartafol non existe.</value>
   </data>
-  <data name="FolderAccess_Field" xml:space="preserve">
-    <value>Acceso ao cartafol:</value>
-  </data>
-  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
-    <value>Só lectura</value>
-  </data>
-  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
-    <value>Lectura e escritura</value>
-  </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>Protocolo:</value>
   </data>
@@ -319,6 +316,15 @@ Escenario de uso: copia os datos ao servidor remoto. Hai un problema: o ISP redu
   <data name="FingerPrintSHA256_Field_Validation_Empty" xml:space="preserve">
     <value>Non se especifica a impresión dixital SHA-256.</value>
   </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>Acceso ao cartafol:</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>Só lectura</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>Lectura e escritura</value>
+  </data>
   <data name="Ftps_Encryption_Option_Explicit" xml:space="preserve">
     <value>Explícito</value>
   </data>
@@ -328,14 +334,14 @@ Escenario de uso: copia os datos ao servidor remoto. Hai un problema: o ISP redu
   <data name="Ftps_Field_Encryption" xml:space="preserve">
     <value>Cifrado SSL/TTS:</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>Servidor FTPS</value>
+  </data>
   <data name="FtpsServerStartTask_Name" xml:space="preserve">
     <value>Inicia o servidor FTPS</value>
   </data>
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>Compartir cartafol na rede (servidor FTPS)</value>
-  </data>
-  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
-    <value>Servidor FTPS</value>
   </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
     <value>Configure un servidor FTPS que se execute neste computador. Usa cifrado explícito cun certificado autoasinado e comparte o cartafol seleccionado. Mentres o servidor estea en execución, pode conectarse a el desde calquera cliente FTPS da súa rede local.</value>
@@ -986,6 +992,9 @@ See detailed description in the following link.</value>
   </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>Especifique o almacenamento que contén a copia de seguridade que quere restaurar. Use a mesma configuración que cando se creou a copia de seguridade.</value>
+  </data>
+  <data name="Task_Restore_Storage_Title" xml:space="preserve">
+    <value>Localización da copia de seguridade</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>Fallou (ver rexistro aberto)</value>

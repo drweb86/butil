@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -90,6 +90,9 @@
   <data name="BackupVersion_Button_Delete" xml:space="preserve">
     <value>Elimina versione</value>
   </data>
+  <data name="BackupVersion_Changes_Help" xml:space="preserve">
+    <value>Di seguito sono riportate le modifiche della versione selezionata. {0} creato, {1} aggiornato, {2} eliminato.</value>
+  </data>
   <data name="BackupVersion_Changes_Title" xml:space="preserve">
     <value>Modifiche</value>
   </data>
@@ -100,6 +103,9 @@ Le modifiche alla versione eliminata diventeranno parte della versione "{1}".</v
   </data>
   <data name="BackupVersion_Files_Title" xml:space="preserve">
     <value>File</value>
+  </data>
+  <data name="BackupVersion_FileVersion_Help" xml:space="preserve">
+    <value>Di seguito vedi l'elenco delle versioni del file selezionato in cui il file è stato creato, aggiornato o eliminato.</value>
   </data>
   <data name="BackupVersion_FileVersion_Title" xml:space="preserve">
     <value>Diario: {0}</value>
@@ -270,15 +276,6 @@ Le modifiche alla versione eliminata diventeranno parte della versione "{1}".</v
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>La cartella non esiste.</value>
   </data>
-  <data name="FolderAccess_Field" xml:space="preserve">
-    <value>Accesso alla cartella:</value>
-  </data>
-  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
-    <value>Solo lettura</value>
-  </data>
-  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
-    <value>Lettura e scrittura</value>
-  </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>Protocollo:</value>
   </data>
@@ -321,6 +318,15 @@ Le modifiche alla versione eliminata diventeranno parte della versione "{1}".</v
   <data name="FingerPrintSHA256_Field_Validation_Empty" xml:space="preserve">
     <value>Firma SHA-256 non specificata.</value>
   </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>Accesso alla cartella:</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>Solo lettura</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>Lettura e scrittura</value>
+  </data>
   <data name="Ftps_Encryption_Option_Explicit" xml:space="preserve">
     <value>Esplicita</value>
   </data>
@@ -330,14 +336,14 @@ Le modifiche alla versione eliminata diventeranno parte della versione "{1}".</v
   <data name="Ftps_Field_Encryption" xml:space="preserve">
     <value>Criptazione SSL/TTS:</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>Server FTPS</value>
+  </data>
   <data name="FtpsServerStartTask_Name" xml:space="preserve">
     <value>Avvia server FTPS</value>
   </data>
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>Condividi cartella in rete (Server FTPS)</value>
-  </data>
-  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
-    <value>Server FTPS</value>
   </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
     <value>Configura un server FTPS che viene eseguito su questo computer. Usa la crittografia esplicita con un certificato autofirmato e condivide la cartella selezionata. Mentre il server è in esecuzione, puoi connetterti da qualsiasi client FTPS sulla rete locale.</value>
@@ -992,6 +998,9 @@ Sceglie una delle seguenti opzioni:
   </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>Specifica l'archivio che contiene il backup che desideri ripristinare. Utilizza le stesse impostazioni utilizzate al momento della creazione del backup.</value>
+  </data>
+  <data name="Task_Restore_Storage_Title" xml:space="preserve">
+    <value>Posizione del backup</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>Non riuscita (vedi registro aperto)</value>

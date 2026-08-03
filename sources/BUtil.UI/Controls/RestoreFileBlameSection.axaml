@@ -13,21 +13,28 @@
 		<Expander.Header>
 			<decor:ExpanderHeader Icon="📄" Text="{Binding #Root.Title}" />
 		</Expander.Header>
-		<ItemsRepeater ItemsSource="{Binding #Root.Items}">
-			<ItemsRepeater.ItemTemplate>
-				<DataTemplate x:DataType="cvm:BlameViewItem">
-					<WrapPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
-						<TextBlock
-							Text="{Binding Icon}"
-							VerticalAlignment="Center"
-							Margin="0 0 4 0" />
-						<TextBlock
-							Text="{Binding Title}"
-							TextWrapping="Wrap"
-							VerticalAlignment="Center" />
-					</WrapPanel>
-				</DataTemplate>
-			</ItemsRepeater.ItemTemplate>
-		</ItemsRepeater>
+		<StackPanel>
+			<TextBlock
+				Text="{Binding #Root.Help}"
+				TextWrapping="Wrap"
+				Margin="0 0 0 8"
+				IsVisible="{Binding #Root.Help, Converter={x:Static StringConverters.IsNotNullOrEmpty}}" />
+			<ItemsRepeater ItemsSource="{Binding #Root.Items}">
+				<ItemsRepeater.ItemTemplate>
+					<DataTemplate x:DataType="cvm:BlameViewItem">
+						<WrapPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
+							<TextBlock
+								Text="{Binding Icon}"
+								VerticalAlignment="Center"
+								Margin="0 0 4 0" />
+							<TextBlock
+								Text="{Binding Title}"
+								TextWrapping="Wrap"
+								VerticalAlignment="Center" />
+						</WrapPanel>
+					</DataTemplate>
+				</ItemsRepeater.ItemTemplate>
+			</ItemsRepeater>
+		</StackPanel>
 	</Expander>
 </UserControl>

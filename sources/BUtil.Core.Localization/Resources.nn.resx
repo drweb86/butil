@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -90,6 +90,9 @@ feil eller åtvaringar.</value>
   <data name="BackupVersion_Button_Delete" xml:space="preserve">
     <value>Slett versjon</value>
   </data>
+  <data name="BackupVersion_Changes_Help" xml:space="preserve">
+    <value>Nedanfor er endringane i den valde versjonen. {0} oppretta, {1} oppdatert, {2} sletta.</value>
+  </data>
   <data name="BackupVersion_Changes_Title" xml:space="preserve">
     <value>Endringar</value>
   </data>
@@ -100,6 +103,9 @@ Endringar frå sletta versjon vert ein del av versjon "{1}".</value>
   </data>
   <data name="BackupVersion_Files_Title" xml:space="preserve">
     <value>Filer</value>
+  </data>
+  <data name="BackupVersion_FileVersion_Help" xml:space="preserve">
+    <value>Nedanfor ser du lista over versjonar for den valde fila der fila vart oppretta, oppdatert eller sletta.</value>
   </data>
   <data name="BackupVersion_FileVersion_Title" xml:space="preserve">
     <value>Journal: {0}</value>
@@ -268,15 +274,6 @@ Bruksscenario: Du kopierer data til ein ekstern tenar. Det er eit problem: ISP r
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Mappa finst ikkje.</value>
   </data>
-  <data name="FolderAccess_Field" xml:space="preserve">
-    <value>Mappetilgang:</value>
-  </data>
-  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
-    <value>Berre lesing</value>
-  </data>
-  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
-    <value>Lesing og skriving</value>
-  </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>Protokoll:</value>
   </data>
@@ -319,6 +316,15 @@ Bruksscenario: Du kopierer data til ein ekstern tenar. Det er eit problem: ISP r
   <data name="FingerPrintSHA256_Field_Validation_Empty" xml:space="preserve">
     <value>SHA-256-fingeravtrykk er ikkje oppgjeve.</value>
   </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>Mappetilgang:</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>Berre lesing</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>Lesing og skriving</value>
+  </data>
   <data name="Ftps_Encryption_Option_Explicit" xml:space="preserve">
     <value>Eksplisitt</value>
   </data>
@@ -328,14 +334,14 @@ Bruksscenario: Du kopierer data til ein ekstern tenar. Det er eit problem: ISP r
   <data name="Ftps_Field_Encryption" xml:space="preserve">
     <value>SSL/TTS-kryptering:</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>FTPS-tenar</value>
+  </data>
   <data name="FtpsServerStartTask_Name" xml:space="preserve">
     <value>Start FTPS-tenar</value>
   </data>
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>Del mappe over nettverk (FTPS-tenar)</value>
-  </data>
-  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
-    <value>FTPS-tenar</value>
   </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
     <value>Set opp ein FTPS-tenar som køyrer på denne datamaskina. Han brukar eksplisitt kryptering med eit sjølvsignert sertifikat og deler den valde mappa. Medan tenaren køyrer, kan du kopla til han frå ein kvar FTPS-klient på det lokale nettverket.</value>
@@ -986,6 +992,9 @@ Sjå detaljert skildring i følgjande lenkje.</value>
   </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>Oppgi lagringsplassen som inneheld tryggingskopien du vil gjenopprette. Bruk dei same innstillingane som då tryggingskopien vart oppretta.</value>
+  </data>
+  <data name="Task_Restore_Storage_Title" xml:space="preserve">
+    <value>Plasseringa til tryggleikskopien</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>Mislukkast (sjå opna logg)</value>

@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -90,6 +90,9 @@ système si des erreurs ou des avertissements sont enregistrés.</value>
   <data name="BackupVersion_Button_Delete" xml:space="preserve">
     <value>Supprimer la version</value>
   </data>
+  <data name="BackupVersion_Changes_Help" xml:space="preserve">
+    <value>Ci-dessous figurent les modifications de la version sélectionnée. {0} créé, {1} mis à jour, {2} supprimé.</value>
+  </data>
   <data name="BackupVersion_Changes_Title" xml:space="preserve">
     <value>Changements</value>
   </data>
@@ -100,6 +103,9 @@ Les changements de version supprimés feront partie de la version "{1}".</value>
   </data>
   <data name="BackupVersion_Files_Title" xml:space="preserve">
     <value>Fichiers</value>
+  </data>
+  <data name="BackupVersion_FileVersion_Help" xml:space="preserve">
+    <value>Ci-dessous vous voyez la liste des versions du fichier sélectionné dans lesquelles le fichier a été créé, mis à jour ou supprimé.</value>
   </data>
   <data name="BackupVersion_FileVersion_Title" xml:space="preserve">
     <value>Journal : {0}</value>
@@ -269,15 +275,6 @@ Il y a un problème : le fournisseur d'accès réduit la vitesse d'upload après
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Le dossier n'existe pas.</value>
   </data>
-  <data name="FolderAccess_Field" xml:space="preserve">
-    <value>Accès au dossier :</value>
-  </data>
-  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
-    <value>Lecture seule</value>
-  </data>
-  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
-    <value>Lecture et écriture</value>
-  </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>Protocole :</value>
   </data>
@@ -320,6 +317,15 @@ Il y a un problème : le fournisseur d'accès réduit la vitesse d'upload après
   <data name="FingerPrintSHA256_Field_Validation_Empty" xml:space="preserve">
     <value>L'empreinte SHA-256 n'est pas spécifiée.</value>
   </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>Accès au dossier :</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>Lecture seule</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>Lecture et écriture</value>
+  </data>
   <data name="Ftps_Encryption_Option_Explicit" xml:space="preserve">
     <value>Explicite</value>
   </data>
@@ -329,14 +335,14 @@ Il y a un problème : le fournisseur d'accès réduit la vitesse d'upload après
   <data name="Ftps_Field_Encryption" xml:space="preserve">
     <value>Chiffrement SSL/TTS :</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>Serveur FTPS</value>
+  </data>
   <data name="FtpsServerStartTask_Name" xml:space="preserve">
     <value>Démarrer le serveur FTPS</value>
   </data>
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>Partager le dossier sur le réseau (serveur FTPS)</value>
-  </data>
-  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
-    <value>Serveur FTPS</value>
   </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
     <value>Configurez un serveur FTPS qui s'exécute sur cet ordinateur. Il utilise le chiffrement explicite avec un certificat auto-signé et partage le dossier sélectionné. Tant que le serveur est en cours d'exécution, vous pouvez vous y connecter depuis n'importe quel client FTPS de votre réseau local.</value>
@@ -984,6 +990,9 @@ Consultez la description détaillée dans le lien suivant.</value>
   </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>Indiquez le stockage contenant la sauvegarde que vous souhaitez restaurer. Utilisez les mêmes paramètres que lors de la création de la sauvegarde.</value>
+  </data>
+  <data name="Task_Restore_Storage_Title" xml:space="preserve">
+    <value>Emplacement de la sauvegarde</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>Échoué (voir journal ouvert)</value>

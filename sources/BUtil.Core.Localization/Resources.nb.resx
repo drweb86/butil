@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -90,6 +90,9 @@ feil eller advarsler.</value>
   <data name="BackupVersion_Button_Delete" xml:space="preserve">
     <value>Slett versjon</value>
   </data>
+  <data name="BackupVersion_Changes_Help" xml:space="preserve">
+    <value>Nedenfor er endringene i den valgte versjonen. {0} opprettet, {1} oppdatert, {2} slettet.</value>
+  </data>
   <data name="BackupVersion_Changes_Title" xml:space="preserve">
     <value>Endringer</value>
   </data>
@@ -100,6 +103,9 @@ Endringer fra slettet versjon blir en del av versjon "{1}".</value>
   </data>
   <data name="BackupVersion_Files_Title" xml:space="preserve">
     <value>Filer</value>
+  </data>
+  <data name="BackupVersion_FileVersion_Help" xml:space="preserve">
+    <value>Nedenfor ser du listen over versjoner for den valgte filen der filen ble opprettet, oppdatert eller slettet.</value>
   </data>
   <data name="BackupVersion_FileVersion_Title" xml:space="preserve">
     <value>Journal: {0}</value>
@@ -268,15 +274,6 @@ Bruksscenario: Du kopierer data til en ekstern server. Det er et problem: ISP re
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Mappen finnes ikke.</value>
   </data>
-  <data name="FolderAccess_Field" xml:space="preserve">
-    <value>Mappetilgang:</value>
-  </data>
-  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
-    <value>Skrivebeskyttet</value>
-  </data>
-  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
-    <value>Lese og skrive</value>
-  </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>Protokoll:</value>
   </data>
@@ -319,6 +316,15 @@ Bruksscenario: Du kopierer data til en ekstern server. Det er et problem: ISP re
   <data name="FingerPrintSHA256_Field_Validation_Empty" xml:space="preserve">
     <value>SHA-256-fingeravtrykk er ikke angitt.</value>
   </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>Mappetilgang:</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>Skrivebeskyttet</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>Lese og skrive</value>
+  </data>
   <data name="Ftps_Encryption_Option_Explicit" xml:space="preserve">
     <value>Eksplisitt</value>
   </data>
@@ -328,14 +334,14 @@ Bruksscenario: Du kopierer data til en ekstern server. Det er et problem: ISP re
   <data name="Ftps_Field_Encryption" xml:space="preserve">
     <value>SSL/TTS-kryptering:</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>FTPS-server</value>
+  </data>
   <data name="FtpsServerStartTask_Name" xml:space="preserve">
     <value>Start FTPS-server</value>
   </data>
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>Del mappe over nettverk (FTPS-server)</value>
-  </data>
-  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
-    <value>FTPS-server</value>
   </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
     <value>Sett opp en FTPS-server som kjører på denne datamaskinen. Den bruker eksplisitt kryptering med et selvsignert sertifikat og deler den valgte mappen. Mens serveren kjører, kan du koble til den fra en hvilken som helst FTPS-klient på det lokale nettverket.</value>
@@ -986,6 +992,9 @@ Se detaljert beskrivelse i følgende lenke.</value>
   </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>Angi lagringsplassen som inneholder sikkerhetskopien du vil gjenopprette. Bruk de samme innstillingene som da sikkerhetskopien ble opprettet.</value>
+  </data>
+  <data name="Task_Restore_Storage_Title" xml:space="preserve">
+    <value>Sikkerhetskopiens plassering</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>Mislyktes (se åpnet logg)</value>

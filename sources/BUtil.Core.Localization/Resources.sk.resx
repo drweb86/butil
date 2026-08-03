@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -90,6 +90,9 @@ zaregistrované chyby alebo varovania.</value>
   <data name="BackupVersion_Button_Delete" xml:space="preserve">
     <value>Odstrániť verziu</value>
   </data>
+  <data name="BackupVersion_Changes_Help" xml:space="preserve">
+    <value>Nižšie sú zmeny vybranej verzie. {0} vytvorené, {1} aktualizované, {2} odstránené.</value>
+  </data>
   <data name="BackupVersion_Changes_Title" xml:space="preserve">
     <value>Zmeny</value>
   </data>
@@ -100,6 +103,9 @@ Zmeny odstránenej verzie sa stanú súčasťou verzie „{1}".</value>
   </data>
   <data name="BackupVersion_Files_Title" xml:space="preserve">
     <value>Súbory</value>
+  </data>
+  <data name="BackupVersion_FileVersion_Help" xml:space="preserve">
+    <value>Nižšie vidíte zoznam verzií vybraného súboru, v ktorých bol súbor vytvorený, aktualizovaný alebo odstránený.</value>
   </data>
   <data name="BackupVersion_FileVersion_Title" xml:space="preserve">
     <value>Denník: {0}</value>
@@ -268,15 +274,6 @@ Scenár použitia: Kopírujete dáta na vzdialený server. Problém: ISP znižuj
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Priečinok neexistuje.</value>
   </data>
-  <data name="FolderAccess_Field" xml:space="preserve">
-    <value>Prístup k priečinku:</value>
-  </data>
-  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
-    <value>Iba na čítanie</value>
-  </data>
-  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
-    <value>Čítanie a zápis</value>
-  </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>Protokol:</value>
   </data>
@@ -319,6 +316,15 @@ Scenár použitia: Kopírujete dáta na vzdialený server. Problém: ISP znižuj
   <data name="FingerPrintSHA256_Field_Validation_Empty" xml:space="preserve">
     <value>Odtlačok SHA-256 nie je zadaný.</value>
   </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>Prístup k priečinku:</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>Iba na čítanie</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>Čítanie a zápis</value>
+  </data>
   <data name="Ftps_Encryption_Option_Explicit" xml:space="preserve">
     <value>Explicitné</value>
   </data>
@@ -328,14 +334,14 @@ Scenár použitia: Kopírujete dáta na vzdialený server. Problém: ISP znižuj
   <data name="Ftps_Field_Encryption" xml:space="preserve">
     <value>SSL/TTS šifrovanie:</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>FTPS server</value>
+  </data>
   <data name="FtpsServerStartTask_Name" xml:space="preserve">
     <value>Spustiť FTPS server</value>
   </data>
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>Zdieľať priečinok cez sieť (FTPS server)</value>
-  </data>
-  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
-    <value>FTPS server</value>
   </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
     <value>Nastavte FTPS server, ktorý beží na tomto počítači. Používa explicitné šifrovanie so samopodpísaným certifikátom a zdieľa vybraný priečinok. Kým server beží, môžete sa k nemu pripojiť z ľubovoľného FTPS klienta vo vašej lokálnej sieti.</value>
@@ -986,6 +992,9 @@ Pozrite si podrobný popis na nasledujúcom odkaze.</value>
   </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>Zadajte úložisko, ktoré obsahuje zálohu, ktorú chcete obnoviť. Použite rovnaké nastavenia ako pri vytváraní zálohy.</value>
+  </data>
+  <data name="Task_Restore_Storage_Title" xml:space="preserve">
+    <value>Umiestnenie zálohy</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>Neúspešné (pozrite si otvorený protokol)</value>

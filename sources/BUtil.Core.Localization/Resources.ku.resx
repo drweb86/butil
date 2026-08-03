@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -90,6 +90,9 @@ an hişyarî qeyd bûne.</value>
   <data name="BackupVersion_Button_Delete" xml:space="preserve">
     <value>Guhertoyê jê bibe</value>
   </data>
+  <data name="BackupVersion_Changes_Help" xml:space="preserve">
+    <value>Li jêr guhertinên guhertoya hilbijartî hene. {0} hate afirandin, {1} hate nûkirin, {2} hate jêbirin.</value>
+  </data>
   <data name="BackupVersion_Changes_Title" xml:space="preserve">
     <value>Guhertin</value>
   </data>
@@ -100,6 +103,9 @@ Guheztinên guhertoya jêbirî dê bibin beşek ji guhertoya "{1}".</value>
   </data>
   <data name="BackupVersion_Files_Title" xml:space="preserve">
     <value>Pel</value>
+  </data>
+  <data name="BackupVersion_FileVersion_Help" xml:space="preserve">
+    <value>Li jêr lîsteya guhertoyên pelê hilbijartî dibînî ku pel lê hate afirandin, nûkirin an jêbirin.</value>
   </data>
   <data name="BackupVersion_FileVersion_Title" xml:space="preserve">
     <value>Rojname: {0}</value>
@@ -268,15 +274,6 @@ Senaryoya bikaranînê: Hûn daneyan li serverek dûr kopî dikin. Pirsgirêk he
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Peldank tune ye.</value>
   </data>
-  <data name="FolderAccess_Field" xml:space="preserve">
-    <value>Gihîştina peldankê:</value>
-  </data>
-  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
-    <value>Tenê xwendin</value>
-  </data>
-  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
-    <value>Xwendin û nivîsandin</value>
-  </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>Protokol:</value>
   </data>
@@ -319,6 +316,15 @@ Senaryoya bikaranînê: Hûn daneyan li serverek dûr kopî dikin. Pirsgirêk he
   <data name="FingerPrintSHA256_Field_Validation_Empty" xml:space="preserve">
     <value>Şopa tiliyê SHA-256 nehatiye diyarkirin.</value>
   </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>Gihîştina peldankê:</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>Tenê xwendin</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>Xwendin û nivîsandin</value>
+  </data>
   <data name="Ftps_Encryption_Option_Explicit" xml:space="preserve">
     <value>Eşkere</value>
   </data>
@@ -328,14 +334,14 @@ Senaryoya bikaranînê: Hûn daneyan li serverek dûr kopî dikin. Pirsgirêk he
   <data name="Ftps_Field_Encryption" xml:space="preserve">
     <value>Şîfrekirina SSL/TTS:</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>Servera FTPS</value>
+  </data>
   <data name="FtpsServerStartTask_Name" xml:space="preserve">
     <value>Servera FTPS bide destpêkirin</value>
   </data>
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>Peldankê li ser torê parve bike (Servera FTPS)</value>
-  </data>
-  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
-    <value>Servera FTPS</value>
   </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
     <value>Servereke FTPS saz bikin ku li ser vî komputerî dixebite. Ew şîfrekirina eşkere bi sertîfîkaya xwe-îmzakkirî bikar tîne û peldanka hilbijartî parve dike. Dema ku server dixebite, hûn dikarin ji her xerîdareke FTPS li ser tora xwe ya herêmî pê ve girêbidin.</value>
@@ -987,6 +993,9 @@ Ji bo danasîna berfireh lînka jêrîn bibînin.</value>
   </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>Hilanîna ku yedeka ku hûn dixwazin vegerînin lê ye diyar bikin. Heman mîhengên ku dema yedek hate afirandin bikar bînin.</value>
+  </data>
+  <data name="Task_Restore_Storage_Title" xml:space="preserve">
+    <value>Cihê kopiya rezerv</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>Têk çû (têketina vekirî bibînin)</value>

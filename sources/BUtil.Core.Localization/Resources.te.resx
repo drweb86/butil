@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -85,6 +85,9 @@
   <data name="BackupVersion_Button_Delete" xml:space="preserve">
     <value>వెర్షన్‌ను తొలగించండి</value>
   </data>
+  <data name="BackupVersion_Changes_Help" xml:space="preserve">
+    <value>ఎంచుకున్న వెర్షన్ మార్పులు క్రింద ఉన్నాయి. {0} సృష్టించబడింది, {1} నవీకరించబడింది, {2} తొలగించబడింది.</value>
+  </data>
   <data name="BackupVersion_Changes_Title" xml:space="preserve">
     <value>లొరికిన వెర్షన్లు</value>
   </data>
@@ -95,6 +98,9 @@
   </data>
   <data name="BackupVersion_Files_Title" xml:space="preserve">
     <value>ఫైల్స్</value>
+  </data>
+  <data name="BackupVersion_FileVersion_Help" xml:space="preserve">
+    <value>ఎంచుకున్న ఫైలు సృష్టించబడిన, నవీకరించబడిన లేదా తొలగించబడిన వెర్షన్ల జాబితా క్రింద ఉంది.</value>
   </data>
   <data name="BackupVersion_FileVersion_Title" xml:space="preserve">
     <value>జర్నల్: {0}</value>
@@ -263,15 +269,6 @@
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>ఫోల్డర్ లేదు.</value>
   </data>
-  <data name="FolderAccess_Field" xml:space="preserve">
-    <value>ఫోల్డర్ యాక్సెస్:</value>
-  </data>
-  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
-    <value>చదవడానికి మాత్రమే</value>
-  </data>
-  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
-    <value>చదవడం మరియు రాయడం</value>
-  </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>ప్రోటోకాల్:</value>
   </data>
@@ -314,6 +311,15 @@
   <data name="FingerPrintSHA256_Field_Validation_Empty" xml:space="preserve">
     <value>ఫింగర్ ప్రింట్ SHA-256 నిర్దేశించబడలేదు.</value>
   </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>ఫోల్డర్ యాక్సెస్:</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>చదవడానికి మాత్రమే</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>చదవడం మరియు రాయడం</value>
+  </data>
   <data name="Ftps_Encryption_Option_Explicit" xml:space="preserve">
     <value>ప్రత్యక్షంగా</value>
   </data>
@@ -323,14 +329,14 @@
   <data name="Ftps_Field_Encryption" xml:space="preserve">
     <value>SSL/TTS సంకేతీకరణ:</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>FTPS సర్వర్</value>
+  </data>
   <data name="FtpsServerStartTask_Name" xml:space="preserve">
     <value>FTPS సర్వర్‌ను ప్రారంభించు</value>
   </data>
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>నెట్‌వర్క్‌లో ఫోల్డర్‌ను షేర్ చేయండి (FTPS సర్వర్)</value>
-  </data>
-  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
-    <value>FTPS సర్వర్</value>
   </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
     <value>ఈ కంప్యూటర్‌లో నడిచే FTPS సర్వర్‌ను సెటప్ చేయండి. ఇది స్వీయ-సంతకం చేసిన సర్టిఫికేట్‌తో స్పష్టమైన ఎన్‌క్రిప్షన్ ఉపయోగించి, ఎంచుకున్న ఫోల్డర్‌ను షేర్ చేస్తుంది. సర్వర్ నడుస్తున్నప్పుడు, మీ స్థానిక నెట్‌వర్క్‌లోని ఏదైనా FTPS క్లయింట్ నుండి కనెక్ట్ చేయవచ్చు.</value>
@@ -979,6 +985,9 @@
   </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>మీరు పునరుద్ధరించాలనుకుంటున్న బ్యాకప్ ఉన్న నిల్వను పేర్కొనండి. బ్యాకప్ సృష్టించినప్పుడు ఉపయోగించిన అదే సెట్టింగ్‌లను ఉపయోగించండి.</value>
+  </data>
+  <data name="Task_Restore_Storage_Title" xml:space="preserve">
+    <value>బ్యాకప్ స్థానం</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>ఊసరవేళ (ఉంచిన లాగును చూడండి)</value>

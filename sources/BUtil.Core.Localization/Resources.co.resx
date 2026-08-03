@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -90,6 +90,9 @@ o avvisi seranu registrati.</value>
   <data name="BackupVersion_Button_Delete" xml:space="preserve">
     <value>Delete version</value>
   </data>
+  <data name="BackupVersion_Changes_Help" xml:space="preserve">
+    <value>Quì sottu sò i cambiamenti di a versione selezziunata. {0} creatu, {1} aghjurnatu, {2} sguassatu.</value>
+  </data>
   <data name="BackupVersion_Changes_Title" xml:space="preserve">
     <value>Cambiamenti</value>
   </data>
@@ -100,6 +103,9 @@ I cambiamenti di versione eliminati diventeranu parte di a versione "{1}".</valu
   </data>
   <data name="BackupVersion_Files_Title" xml:space="preserve">
     <value>I schedari</value>
+  </data>
+  <data name="BackupVersion_FileVersion_Help" xml:space="preserve">
+    <value>Quì sottu vede a lista di e versioni di u schedariu selezziunatu induve u schedariu hè statu creatu, aghjurnatu o sguassatu.</value>
   </data>
   <data name="BackupVersion_FileVersion_Title" xml:space="preserve">
     <value>Journal : {0}</value>
@@ -268,15 +274,6 @@ Scenariu d'usu: Copiate i dati à u servitore remotu. Ci hè un prublema: l'ISP 
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>U cartulare ùn esiste micca.</value>
   </data>
-  <data name="FolderAccess_Field" xml:space="preserve">
-    <value>Accessu à u cartulare:</value>
-  </data>
-  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
-    <value>Solu lettura</value>
-  </data>
-  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
-    <value>Lettura è scrittura</value>
-  </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>Protocolu:</value>
   </data>
@@ -319,6 +316,15 @@ Scenariu d'usu: Copiate i dati à u servitore remotu. Ci hè un prublema: l'ISP 
   <data name="FingerPrintSHA256_Field_Validation_Empty" xml:space="preserve">
     <value>Fingerprint SHA-256 ùn hè micca specificatu.</value>
   </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>Accessu à u cartulare:</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>Solu lettura</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>Lettura è scrittura</value>
+  </data>
   <data name="Ftps_Encryption_Option_Explicit" xml:space="preserve">
     <value>Esplicito</value>
   </data>
@@ -328,14 +334,14 @@ Scenariu d'usu: Copiate i dati à u servitore remotu. Ci hè un prublema: l'ISP 
   <data name="Ftps_Field_Encryption" xml:space="preserve">
     <value>Cifratura SSL/TTS:</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>Servitore FTPS</value>
+  </data>
   <data name="FtpsServerStartTask_Name" xml:space="preserve">
     <value>Avviate u servitore FTPS</value>
   </data>
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>Condividi u cartulare nantu à a reta (Server FTPS)</value>
-  </data>
-  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
-    <value>Servitore FTPS</value>
   </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
     <value>Cunfigurate un servitore FTPS chì funziona nantu à stu urdinatore. Adupra una cifrazione esplicita cù un certificatu autofirmatu è sparte u cartulare sceltu. Mentri u servitore hè in funzione, pudete cunnettesi da qualsiasi cliente FTPS nantu à a vostra rete lucale.</value>
@@ -986,6 +992,9 @@ See detailed description in the following link.</value>
   </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>Specificate l'almacenamentu chì cuntene a salvaguardia chì vulete risturà. Utilizate e listesse impostazioni ch'è quandu a salvaguardia hè stata creata.</value>
+  </data>
+  <data name="Task_Restore_Storage_Title" xml:space="preserve">
+    <value>Locu di a copia di salvezza</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>Fiascu (vede u logu apertu)</value>

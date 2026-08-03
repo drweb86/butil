@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -90,6 +90,9 @@ als er fouten of waarschuwingen zijn geregistreerd.</value>
   <data name="BackupVersion_Button_Delete" xml:space="preserve">
     <value>Versie verwijderen</value>
   </data>
+  <data name="BackupVersion_Changes_Help" xml:space="preserve">
+    <value>Hieronder staan de wijzigingen van de geselecteerde versie. {0} aangemaakt, {1} bijgewerkt, {2} verwijderd.</value>
+  </data>
   <data name="BackupVersion_Changes_Title" xml:space="preserve">
     <value>Wijzigingen</value>
   </data>
@@ -100,6 +103,9 @@ Verwijderde versiewijzigingen worden onderdeel van versie "{1}".</value>
   </data>
   <data name="BackupVersion_Files_Title" xml:space="preserve">
     <value>Bestanden</value>
+  </data>
+  <data name="BackupVersion_FileVersion_Help" xml:space="preserve">
+    <value>Hieronder ziet u de lijst met versies van het geselecteerde bestand waarin het bestand is aangemaakt, bijgewerkt of verwijderd.</value>
   </data>
   <data name="BackupVersion_FileVersion_Title" xml:space="preserve">
     <value>Journaal: {0}</value>
@@ -268,15 +274,6 @@ Gebruiksscenario: U kopieert gegevens naar een externe server. Er is een problee
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Map bestaat niet.</value>
   </data>
-  <data name="FolderAccess_Field" xml:space="preserve">
-    <value>Maptoegang:</value>
-  </data>
-  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
-    <value>Alleen-lezen</value>
-  </data>
-  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
-    <value>Lezen en schrijven</value>
-  </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>Protocol:</value>
   </data>
@@ -319,6 +316,15 @@ Gebruiksscenario: U kopieert gegevens naar een externe server. Er is een problee
   <data name="FingerPrintSHA256_Field_Validation_Empty" xml:space="preserve">
     <value>SHA-256 vingerafdruk is niet opgegeven.</value>
   </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>Maptoegang:</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>Alleen-lezen</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>Lezen en schrijven</value>
+  </data>
   <data name="Ftps_Encryption_Option_Explicit" xml:space="preserve">
     <value>Expliciet</value>
   </data>
@@ -328,14 +334,14 @@ Gebruiksscenario: U kopieert gegevens naar een externe server. Er is een problee
   <data name="Ftps_Field_Encryption" xml:space="preserve">
     <value>SSL/TTS-versleuteling:</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>FTPS-server</value>
+  </data>
   <data name="FtpsServerStartTask_Name" xml:space="preserve">
     <value>FTPS-server starten</value>
   </data>
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>Map delen via netwerk (FTPS-server)</value>
-  </data>
-  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
-    <value>FTPS-server</value>
   </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
     <value>Stel een FTPS-server in die op deze computer draait. Deze gebruikt expliciete versleuteling met een zelfondertekend certificaat en deelt de geselecteerde map. Terwijl de server actief is, kunt u er vanuit elke FTPS-client op uw lokale netwerk verbinding mee maken.</value>
@@ -986,6 +992,9 @@ Zie gedetailleerde beschrijving via de volgende link.</value>
   </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>Geef de opslag op die de back-up bevat die u wilt herstellen. Gebruik dezelfde instellingen als toen de back-up werd gemaakt.</value>
+  </data>
+  <data name="Task_Restore_Storage_Title" xml:space="preserve">
+    <value>Locatie van de back-up</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>Mislukt (zie geopend logboek)</value>

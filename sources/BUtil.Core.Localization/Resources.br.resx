@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -90,6 +90,9 @@ or warnings will be registered.</value>
   <data name="BackupVersion_Button_Delete" xml:space="preserve">
     <value>Delete version</value>
   </data>
+  <data name="BackupVersion_Changes_Help" xml:space="preserve">
+    <value>Amañ dindan emañ kemmoù ar stumm dibabet. {0} krouet, {1} hizivaet, {2} diverket.</value>
+  </data>
   <data name="BackupVersion_Changes_Title" xml:space="preserve">
     <value>Changes</value>
   </data>
@@ -100,6 +103,9 @@ Deleted version changes will become part of version "{1}".</value>
   </data>
   <data name="BackupVersion_Files_Title" xml:space="preserve">
     <value>Files</value>
+  </data>
+  <data name="BackupVersion_FileVersion_Help" xml:space="preserve">
+    <value>Amañ dindan e welit roll stummoù ar restr dibabet e-lec'h ma'z eo bet krouet, hizivaet pe diverket ar restr.</value>
   </data>
   <data name="BackupVersion_FileVersion_Title" xml:space="preserve">
     <value>Journal: {0}</value>
@@ -268,15 +274,6 @@ Usage scenario: You copy data to remote server. There's a problem: ISP drops upl
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Folder does not exist.</value>
   </data>
-  <data name="FolderAccess_Field" xml:space="preserve">
-    <value>Folder access:</value>
-  </data>
-  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
-    <value>Read only</value>
-  </data>
-  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
-    <value>Read and write</value>
-  </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>Protocol:</value>
   </data>
@@ -319,6 +316,15 @@ Usage scenario: You copy data to remote server. There's a problem: ISP drops upl
   <data name="FingerPrintSHA256_Field_Validation_Empty" xml:space="preserve">
     <value>Fingerprint SHA-256 is not specified.</value>
   </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>Folder access:</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>Read only</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>Read and write</value>
+  </data>
   <data name="Ftps_Encryption_Option_Explicit" xml:space="preserve">
     <value>Explicit</value>
   </data>
@@ -328,14 +334,14 @@ Usage scenario: You copy data to remote server. There's a problem: ISP drops upl
   <data name="Ftps_Field_Encryption" xml:space="preserve">
     <value>SSL/TTS encryption:</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>FTPS server</value>
+  </data>
   <data name="FtpsServerStartTask_Name" xml:space="preserve">
     <value>Start FTPS server</value>
   </data>
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>Share folder over network (FTPS Server)</value>
-  </data>
-  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
-    <value>FTPS server</value>
   </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
     <value>Set up an FTPS server that runs on this computer. It uses explicit encryption with a self-signed certificate and shares the selected folder. While the server is running, you can connect to it from any FTPS client on your local network.</value>
@@ -986,6 +992,9 @@ See detailed description in the following link.</value>
   </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>Erspizit ar bladenn kadaviñ enni emañ ar wareziñ a fell deoc'h assav. Implijit an hevelep arventennoù ha pa voe krouet ar wareziñ.</value>
+  </data>
+  <data name="Task_Restore_Storage_Title" xml:space="preserve">
+    <value>Lec'hiadur ar savete</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>Failed (see opened log)</value>

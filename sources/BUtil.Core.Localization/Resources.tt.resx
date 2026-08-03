@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -90,6 +90,9 @@
   <data name="BackupVersion_Button_Delete" xml:space="preserve">
     <value>Delete version</value>
   </data>
+  <data name="BackupVersion_Changes_Help" xml:space="preserve">
+    <value>Аста сайланган версия үзгәрешләре күрсәтелгән. {0} булдырылган, {1} яңартылган, {2} бетерелгән.</value>
+  </data>
   <data name="BackupVersion_Changes_Title" xml:space="preserve">
     <value>Esзгәрешләр</value>
   </data>
@@ -100,6 +103,9 @@
   </data>
   <data name="BackupVersion_Files_Title" xml:space="preserve">
     <value>Файллар</value>
+  </data>
+  <data name="BackupVersion_FileVersion_Help" xml:space="preserve">
+    <value>Аста сайланган файлның булдырылган, яңартылган яки бетерелгән версияләре исемлеге күрсәтелгән.</value>
   </data>
   <data name="BackupVersion_FileVersion_Title" xml:space="preserve">
     <value>Журнал: {0}</value>
@@ -268,15 +274,6 @@
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Папка юк.</value>
   </data>
-  <data name="FolderAccess_Field" xml:space="preserve">
-    <value>Папкага керү:</value>
-  </data>
-  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
-    <value>Уку гына</value>
-  </data>
-  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
-    <value>Уку һәм язу</value>
-  </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>Протокол:</value>
   </data>
@@ -319,6 +316,15 @@
   <data name="FingerPrintSHA256_Field_Validation_Empty" xml:space="preserve">
     <value>Бармак эзе SHA-256 күрсәтелмәгән.</value>
   </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>Папкага керү:</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>Уку гына</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>Уку һәм язу</value>
+  </data>
   <data name="Ftps_Encryption_Option_Explicit" xml:space="preserve">
     <value>Ачык</value>
   </data>
@@ -328,14 +334,14 @@
   <data name="Ftps_Field_Encryption" xml:space="preserve">
     <value>SSL / TTS шифрлау:</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>FTPS серверы</value>
+  </data>
   <data name="FtpsServerStartTask_Name" xml:space="preserve">
     <value>FTPS серверын эшләтеп җибәрү</value>
   </data>
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>Челтәр аша папканы бүлешү (FTPS Сервер)</value>
-  </data>
-  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
-    <value>FTPS серверы</value>
   </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
     <value>Бу компьютерда эшләүче FTPS серверын көйләгез. Ул үз-үзенә кул куелган сертификат белән ачык шифрлау куллана һәм сайланган папканы уртаклаша. Сервер эшләгәндә сез җирле челтәрегездәге теләсә нинди FTPS клиентыннан аңа тоташа аласыз.</value>
@@ -986,6 +992,9 @@ See detailed description in the following link.</value>
   </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>Сез кайтарырга теләгән резерв күчермә булган саклагычны күрсәтегез. Резерв күчермә ясалганда кулланылган шул ук көйләүләрне кулланыгыз.</value>
+  </data>
+  <data name="Task_Restore_Storage_Title" xml:space="preserve">
+    <value>Резерв күчермә урыны</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>Уңайсыз (ачылган бүрәнәне карагыз)</value>

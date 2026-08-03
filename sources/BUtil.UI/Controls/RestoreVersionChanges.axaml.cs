@@ -1,6 +1,8 @@
 using Avalonia;
 using Avalonia.Controls;
+using System;
 using System.Collections;
+using Loc = BUtil.Core.Localization.Resources;
 
 namespace BUtil.UI.Controls;
 
@@ -17,6 +19,12 @@ public partial class RestoreVersionChanges : UserControl
         get => GetValue(TitleProperty);
         set => SetValue(TitleProperty, value);
     }
+
+    public string Help { get; } = string.Format(
+        Loc.BackupVersion_Changes_Help,
+        ChangeStateIcons.Created,
+        ChangeStateIcons.Updated,
+        ChangeStateIcons.Deleted);
 
     public IEnumerable? Items
     {

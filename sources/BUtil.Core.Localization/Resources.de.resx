@@ -1,4 +1,4 @@
-﻿<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:schema id="root">
     <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xs:element name="root" ns1:IsDataSet="true">
@@ -90,6 +90,9 @@ wenn Fehler oder Warnungen registriert werden.</value>
   <data name="BackupVersion_Button_Delete" xml:space="preserve">
     <value>Version löschen</value>
   </data>
+  <data name="BackupVersion_Changes_Help" xml:space="preserve">
+    <value>Unten sehen Sie die Änderungen der ausgewählten Version. {0} erstellt, {1} aktualisiert, {2} gelöscht.</value>
+  </data>
   <data name="BackupVersion_Changes_Title" xml:space="preserve">
     <value>Änderungen</value>
   </data>
@@ -100,6 +103,9 @@ Die Änderungen der gelöschten Version werden Teil der Version "{1}".</value>
   </data>
   <data name="BackupVersion_Files_Title" xml:space="preserve">
     <value>Dateien</value>
+  </data>
+  <data name="BackupVersion_FileVersion_Help" xml:space="preserve">
+    <value>Unten sehen Sie die Liste der Versionen der ausgewählten Datei, in denen die Datei erstellt, aktualisiert oder gelöscht wurde.</value>
   </data>
   <data name="BackupVersion_FileVersion_Title" xml:space="preserve">
     <value>Journal: {0}</value>
@@ -268,15 +274,6 @@ Anwendungsszenario: Sie kopieren Daten auf einen entfernten Server. Es gibt ein 
   <data name="Field_Folder_Validation_NotExist" xml:space="preserve">
     <value>Ordner existiert nicht.</value>
   </data>
-  <data name="FolderAccess_Field" xml:space="preserve">
-    <value>Ordnerzugriff:</value>
-  </data>
-  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
-    <value>Nur Lesen</value>
-  </data>
-  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
-    <value>Lesen und Schreiben</value>
-  </data>
   <data name="Field_TransportProtocol" xml:space="preserve">
     <value>Protokoll:</value>
   </data>
@@ -319,6 +316,15 @@ Anwendungsszenario: Sie kopieren Daten auf einen entfernten Server. Es gibt ein 
   <data name="FingerPrintSHA256_Field_Validation_Empty" xml:space="preserve">
     <value>SHA-256-Fingerabdruck nicht angegeben.</value>
   </data>
+  <data name="FolderAccess_Field" xml:space="preserve">
+    <value>Ordnerzugriff:</value>
+  </data>
+  <data name="FolderAccess_Field_ReadOnly" xml:space="preserve">
+    <value>Nur Lesen</value>
+  </data>
+  <data name="FolderAccess_Field_ReadWrite" xml:space="preserve">
+    <value>Lesen und Schreiben</value>
+  </data>
   <data name="Ftps_Encryption_Option_Explicit" xml:space="preserve">
     <value>Explizit</value>
   </data>
@@ -328,14 +334,14 @@ Anwendungsszenario: Sie kopieren Daten auf einen entfernten Server. Es gibt ein 
   <data name="Ftps_Field_Encryption" xml:space="preserve">
     <value>SSL/TTS-Verschlüsselung:</value>
   </data>
+  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
+    <value>FTPS-Server</value>
+  </data>
   <data name="FtpsServerStartTask_Name" xml:space="preserve">
     <value>FTPS-Server starten</value>
   </data>
   <data name="FtpsServerTask_Create" xml:space="preserve">
     <value>Ordner über Netzwerk teilen (FTPS-Server)</value>
-  </data>
-  <data name="FtpsServerConfiguration_Title" xml:space="preserve">
-    <value>FTPS-Server</value>
   </data>
   <data name="FtpsServerTask_Help" xml:space="preserve">
     <value>Richten Sie einen FTPS-Server ein, der auf diesem Computer läuft. Er verwendet explizite Verschlüsselung mit einem selbstsignierten Zertifikat und gibt den ausgewählten Ordner frei. Während der Server läuft, können Sie sich von jedem FTPS-Client in Ihrem lokalen Netzwerk damit verbinden.</value>
@@ -986,6 +992,9 @@ Siehe detaillierte Beschreibung im folgenden Link.</value>
   </data>
   <data name="Task_Restore_Storage_Help" xml:space="preserve">
     <value>Geben Sie den Speicherort an, der die wiederherzustellende Sicherung enthält. Verwenden Sie dieselben Einstellungen wie bei der Erstellung der Sicherung.</value>
+  </data>
+  <data name="Task_Restore_Storage_Title" xml:space="preserve">
+    <value>Speicherort der Sicherung</value>
   </data>
   <data name="Task_Status_FailedSeeLog" xml:space="preserve">
     <value>Fehlgeschlagen (siehe geöffnetes Protokoll)</value>
