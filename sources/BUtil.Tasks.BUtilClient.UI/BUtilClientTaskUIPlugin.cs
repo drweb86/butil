@@ -14,6 +14,7 @@ public sealed class BUtilClientTaskUIPlugin : ITaskUIPlugin
             editFactory: name => new EditBUtilServerClientTaskViewModel(name, false),
             createHeader: Resources.UploadFolderContentsTask_Create,
             group: "transfer",
-            preferredOrder: 200);
+            preferredOrder: 200,
+            animationFactory: () => new BUtilClientDecorationCanvas());
     }
 }

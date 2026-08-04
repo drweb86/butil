@@ -1,0 +1,54 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="BUtil.Tasks.IncrementalBackup.UI.Controls.IncrementalBackupDecorationCanvas"
+             IsHitTestVisible="False"
+             Width="320" Height="320"
+             HorizontalAlignment="Right"
+             VerticalAlignment="Bottom"
+             Margin="0 0 14 14"
+             Opacity="0.95">
+	<Viewbox Stretch="Uniform">
+		<Canvas Width="1024" Height="1024" ClipToBounds="True">
+
+			<!-- Spy dog photo, white background keyed to transparent -->
+			<Image Source="/Assets/spy-dog-backup.png" Width="1024" Height="1024" Stretch="Uniform"/>
+
+			<!-- Everything below is drawn on top of the photo -->
+
+			<!-- Soft bloom over the "MY BACKUP" box, pulsing -->
+			<Ellipse x:Name="BackupGlow" Canvas.Left="235" Canvas.Top="80" Width="380" Height="380" IsHitTestVisible="False">
+				<Ellipse.Fill>
+					<RadialGradientBrush>
+						<GradientStop Color="#40FFE28A" Offset="0"/>
+						<GradientStop Color="#00FFE28A" Offset="1"/>
+					</RadialGradientBrush>
+				</Ellipse.Fill>
+			</Ellipse>
+
+			<!-- Spinning "still verifying" ring around the loading glyph -->
+			<Ellipse x:Name="SpinnerRing" Canvas.Left="170" Canvas.Top="270" Width="116" Height="116"
+			         Stroke="#E8FFC266" StrokeThickness="6" StrokeDashArray="12,11" StrokeLineCap="Round" Fill="Transparent"/>
+
+			<!-- Blinking status dots on the monitor bezel -->
+			<Ellipse x:Name="BezelLight1" Canvas.Left="90" Canvas.Top="244" Width="26" Height="26">
+				<Ellipse.Fill>
+					<RadialGradientBrush>
+						<GradientStop Color="#CC8BFF8B" Offset="0"/>
+						<GradientStop Color="#008BFF8B" Offset="1"/>
+					</RadialGradientBrush>
+				</Ellipse.Fill>
+			</Ellipse>
+			<Ellipse x:Name="BezelLight2" Canvas.Left="95" Canvas.Top="282" Width="26" Height="26">
+				<Ellipse.Fill>
+					<RadialGradientBrush>
+						<GradientStop Color="#CCFFE066" Offset="0"/>
+						<GradientStop Color="#00FFE066" Offset="1"/>
+					</RadialGradientBrush>
+				</Ellipse.Fill>
+			</Ellipse>
+
+			<!-- Rising coffee steam is generated in code-behind -->
+			<Canvas x:Name="SteamCanvas" Width="1024" Height="1024" />
+		</Canvas>
+	</Viewbox>
+</UserControl>

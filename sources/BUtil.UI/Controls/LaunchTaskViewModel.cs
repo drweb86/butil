@@ -8,6 +8,7 @@ using BUtil.Interop.Logs;
 using BUtil.Core.Misc;
 using BUtil.Core.Services;
 using BUtil.Interop.Tasks;
+using BUtil.Interop.Tasks.UI;
 using System;
 
 namespace BUtil.UI.Controls;
@@ -37,6 +38,27 @@ public class LaunchTaskViewModel : ViewModelBase
                 return;
             _taskExecuterViewModel = value;
             OnPropertyChanged(nameof(TaskExecuterViewModel));
+        }
+    }
+
+    #endregion
+
+    #region AnimationFactory
+
+    private Func<object>? _animationFactory;
+
+    public Func<object>? AnimationFactory
+    {
+        get
+        {
+            return _animationFactory;
+        }
+        set
+        {
+            if (value == _animationFactory)
+                return;
+            _animationFactory = value;
+            OnPropertyChanged(nameof(AnimationFactory));
         }
     }
 
@@ -150,6 +172,8 @@ public class LaunchTaskViewModel : ViewModelBase
         }
         fileLog.Close(true);
         System.IO.File.Delete(fileLog.LogFilename);
+
+        AnimationFactory = TaskUIProviderRegistry.GetAnimationFactory(_task.Model.GetType());
 
         TaskExecuterViewModel = new TaskExecuterViewModel(
             _taskEvents,

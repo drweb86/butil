@@ -14,6 +14,7 @@ public sealed class IncrementalBackupTaskUIPlugin : ITaskUIPlugin
             editFactory: name => new EditIncrementalBackupTaskViewModel(name, false),
             createHeader: Resources.IncrementalBackupTask_Create,
             group: "local",
-            preferredOrder: 100);
+            preferredOrder: 100,
+            animationFactory: () => new IncrementalBackupDecorationCanvas());
     }
 }

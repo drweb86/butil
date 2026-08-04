@@ -14,6 +14,7 @@ public sealed class BUtilServerTaskUIPlugin : ITaskUIPlugin
             editFactory: name => new EditBUtilServerTaskViewModel(name, false),
             createHeader: Resources.FtpsServerTask_Create,
             group: "transfer",
-            preferredOrder: 100);
+            preferredOrder: 100,
+            animationFactory: () => new BUtilServerDecorationCanvas());
     }
 }

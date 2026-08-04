@@ -1,0 +1,42 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="BUtil.Tasks.ImportMedia.UI.Controls.ImportMediaDecorationCanvas"
+             IsHitTestVisible="False"
+             Width="320" Height="320"
+             HorizontalAlignment="Right"
+             VerticalAlignment="Bottom"
+             Margin="0 0 14 14"
+             Opacity="0.95">
+	<Viewbox Stretch="Uniform">
+		<Canvas Width="1024" Height="1024" ClipToBounds="True">
+
+			<!-- Spy photo, white background keyed to transparent -->
+			<Image Source="/Assets/spy-tape-recorder.png" Width="1024" Height="1024" Stretch="Uniform"/>
+
+			<!-- Everything below is drawn on top of the photo -->
+
+			<!-- Warm bloom pulsing over the recorder's control panel -->
+			<Ellipse x:Name="GlowEllipse" Canvas.Left="500" Canvas.Top="360" Width="400" Height="400" IsHitTestVisible="False">
+				<Ellipse.Fill>
+					<RadialGradientBrush>
+						<GradientStop Color="#30FFC266" Offset="0"/>
+						<GradientStop Color="#00FFC266" Offset="1"/>
+					</RadialGradientBrush>
+				</Ellipse.Fill>
+			</Ellipse>
+
+			<!-- Blinking "recording" glow near the REC button -->
+			<Ellipse x:Name="RecGlow" Canvas.Left="676" Canvas.Top="446" Width="80" Height="80">
+				<Ellipse.Fill>
+					<RadialGradientBrush>
+						<GradientStop Color="#99FF3B30" Offset="0"/>
+						<GradientStop Color="#00FF3B30" Offset="1"/>
+					</RadialGradientBrush>
+				</Ellipse.Fill>
+			</Ellipse>
+
+			<!-- Rising imported-media chips are generated in code-behind -->
+			<Canvas x:Name="ParticlesCanvas" Width="1024" Height="1024" />
+		</Canvas>
+	</Viewbox>
+</UserControl>

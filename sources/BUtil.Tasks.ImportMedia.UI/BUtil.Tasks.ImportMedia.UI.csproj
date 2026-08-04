@@ -13,6 +13,9 @@
     <PackageReference Include="Avalonia" Version="12.1.1" />
   </ItemGroup>
   <ItemGroup>
+    <AvaloniaResource Include="Assets\**" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="../BUtil.Tasks.ImportMedia/BUtil.Tasks.ImportMedia.csproj" />
     <ProjectReference Include="../BUtil.UI.Common/BUtil.UI.Common.csproj" />
     <ProjectReference Include="../BUtil.UI.Tasks/BUtil.UI.Tasks.csproj" />

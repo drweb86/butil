@@ -22,7 +22,8 @@
 			<RowDefinition Height="Auto"/>
 		</Grid.RowDefinitions>
 
-		<decor:ViewDecoration Grid.Row="0" Kind="LaunchTask" />
+		<decor:ViewDecoration Grid.Row="0" Kind="LaunchTask" IsVisible="{Binding !TaskExecuterViewModel.IsCollapsed}" />
+		<cvm:TaskAnimationDecoration Grid.Row="0" Factory="{Binding AnimationFactory}" IsVisible="{Binding TaskExecuterViewModel.IsCollapsed}" />
 		<cvm:TaskExecuterView Grid.Row="0" DataContext="{Binding TaskExecuterViewModel}" />
 
 		<WrapPanel HorizontalAlignment="Right" Grid.Row="1" Margin="0 8 0 0">

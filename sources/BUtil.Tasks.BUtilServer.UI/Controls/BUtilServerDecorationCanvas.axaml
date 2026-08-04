@@ -1,0 +1,35 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="BUtil.Tasks.BUtilServer.UI.Controls.BUtilServerDecorationCanvas"
+             IsHitTestVisible="False"
+             Width="320" Height="320"
+             HorizontalAlignment="Right"
+             VerticalAlignment="Bottom"
+             Margin="0 0 14 14"
+             Opacity="0.95">
+	<Viewbox Stretch="Uniform">
+		<Canvas Width="1024" Height="1024" ClipToBounds="True">
+
+			<!-- Worker holding a lit torch aloft, already transparent -->
+			<Image Source="/Assets/worker-torch.png" Width="1024" Height="1024" Stretch="Uniform"/>
+
+			<!-- Everything below is drawn on top of the photo -->
+
+			<!-- Flickering warm glow around the flame -->
+			<Ellipse x:Name="FlameGlow" Canvas.Left="200" Canvas.Top="-60" Width="400" Height="400" IsHitTestVisible="False">
+				<Ellipse.Fill>
+					<RadialGradientBrush>
+						<GradientStop Color="#59FFD54F" Offset="0"/>
+						<GradientStop Color="#00FF8F00" Offset="1"/>
+					</RadialGradientBrush>
+				</Ellipse.Fill>
+			</Ellipse>
+
+			<!-- Expanding "broadcast" signal rings from the torch -->
+			<Canvas x:Name="RingsCanvas" Width="1024" Height="1024" />
+
+			<!-- Rising embers are generated in code-behind -->
+			<Canvas x:Name="EmbersCanvas" Width="1024" Height="1024" />
+		</Canvas>
+	</Viewbox>
+</UserControl>

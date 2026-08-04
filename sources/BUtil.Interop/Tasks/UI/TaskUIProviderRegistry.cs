@@ -7,7 +7,8 @@ public static class TaskUIProviderRegistry
         Func<string, object> EditFactory,
         string CreateHeader,
         string Group,
-        int PreferredOrder);
+        int PreferredOrder,
+        Func<object>? AnimationFactory);
 
     private static readonly Dictionary<Type, TaskUIEntry> _entries = [];
     private static readonly object _lock = new();
@@ -17,7 +18,8 @@ public static class TaskUIProviderRegistry
         Func<string, object> editFactory,
         string createHeader,
         string group = "",
-        int preferredOrder = 0)
+        int preferredOrder = 0,
+        Func<object>? animationFactory = null)
         where TModel : class
     {
         ArgumentNullException.ThrowIfNull(createNewFactory);
@@ -31,7 +33,8 @@ public static class TaskUIProviderRegistry
                 editFactory,
                 createHeader,
                 group ?? string.Empty,
-                preferredOrder);
+                preferredOrder,
+                animationFactory);
         }
     }
 
@@ -51,6 +54,19 @@ public static class TaskUIProviderRegistry
     {
         lock (_lock)
             return _entries.TryGetValue(modelType, out var e) ? e.CreateHeader : string.Empty;
+    }
+
+    /// <summary>
+    /// Returns the factory that creates the decorative animation control for the collapsed
+    /// task execution view, as registered by the task's UI plugin. The result is an
+    /// implementation-defined object (typically an Avalonia <c>Control</c>) so that this
+    /// assembly does not need a dependency on the UI framework; callers are expected to
+    /// know how to host it (see <c>BUtil.UI.Controls.TaskAnimationDecoration</c>).
+    /// </summary>
+    public static Func<object>? GetAnimationFactory(Type modelType)
+    {
+        lock (_lock)
+            return _entries.TryGetValue(modelType, out var e) ? e.AnimationFactory : null;
     }
 
     internal static IReadOnlyList<TaskUICreateMenuRegistration> GetCreateMenuRegistrations()

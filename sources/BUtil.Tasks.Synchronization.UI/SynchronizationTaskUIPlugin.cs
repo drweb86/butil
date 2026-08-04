@@ -14,6 +14,7 @@ public sealed class SynchronizationTaskUIPlugin : ITaskUIPlugin
             editFactory: name => new EditSynchronizationTaskViewModel(name, false),
             createHeader: Resources.SynchronizationTask_Create,
             group: "local",
-            preferredOrder: 300);
+            preferredOrder: 300,
+            animationFactory: () => new SynchronizationDecorationCanvas());
     }
 }

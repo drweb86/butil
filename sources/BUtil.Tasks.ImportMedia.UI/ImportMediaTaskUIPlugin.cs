@@ -14,6 +14,7 @@ public sealed class ImportMediaTaskUIPlugin : ITaskUIPlugin
             editFactory: name => new EditMediaTaskViewModel(name, false),
             createHeader: Resources.ImportMediaTask_Create,
             group: "local",
-            preferredOrder: 200);
+            preferredOrder: 200,
+            animationFactory: () => new ImportMediaDecorationCanvas());
     }
 }

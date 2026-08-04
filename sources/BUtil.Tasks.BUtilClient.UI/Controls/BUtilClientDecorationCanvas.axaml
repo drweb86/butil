@@ -1,0 +1,39 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="BUtil.Tasks.BUtilClient.UI.Controls.BUtilClientDecorationCanvas"
+             IsHitTestVisible="False"
+             Width="320" Height="320"
+             HorizontalAlignment="Right"
+             VerticalAlignment="Bottom"
+             Margin="0 0 14 14"
+             Opacity="0.95">
+	<Viewbox Stretch="Uniform">
+		<Canvas Width="1024" Height="1024" ClipToBounds="True">
+
+			<!-- Person forcing an oversized envelope into the mailbox, already transparent -->
+			<Image Source="/Assets/mailing-envelope.png" Width="1024" Height="1024" Stretch="Uniform"/>
+
+			<!-- Everything below is drawn on top of the photo -->
+
+			<!-- Straining "pop" burst where the envelope is jammed into the slot -->
+			<Ellipse x:Name="JamBurst" Canvas.Left="700" Canvas.Top="370" Width="120" Height="120" Opacity="0" IsHitTestVisible="False">
+				<Ellipse.Fill>
+					<RadialGradientBrush>
+						<GradientStop Color="#B3FFE066" Offset="0"/>
+						<GradientStop Color="#00FFE066" Offset="1"/>
+					</RadialGradientBrush>
+				</Ellipse.Fill>
+			</Ellipse>
+
+			<!-- Traveling upload dot from the envelope into the mailbox slot -->
+			<Ellipse x:Name="UploadDot" Width="18" Height="18" Fill="#4FC3F7">
+				<Ellipse.Effect>
+					<DropShadowEffect BlurRadius="12" OffsetX="0" OffsetY="0" Color="#4FC3F7" Opacity="0.9"/>
+				</Ellipse.Effect>
+			</Ellipse>
+
+			<!-- Falling sweat drops are generated in code-behind -->
+			<Canvas x:Name="SweatCanvas" Width="1024" Height="1024" />
+		</Canvas>
+	</Viewbox>
+</UserControl>

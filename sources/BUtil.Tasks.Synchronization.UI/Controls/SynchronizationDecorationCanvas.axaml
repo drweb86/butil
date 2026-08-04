@@ -1,0 +1,43 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="BUtil.Tasks.Synchronization.UI.Controls.SynchronizationDecorationCanvas"
+             IsHitTestVisible="False"
+             Width="320" Height="320"
+             HorizontalAlignment="Right"
+             VerticalAlignment="Bottom"
+             Margin="0 0 14 14"
+             Opacity="0.95">
+	<Viewbox Stretch="Uniform">
+		<Canvas Width="1024" Height="1024" ClipToBounds="True">
+
+			<!-- Artist copying the reference sketch onto the canvas, white background keyed to transparent -->
+			<Image Source="/Assets/artist-syncing.png" Width="1024" Height="1024" Stretch="Uniform"/>
+
+			<!-- Everything below is drawn on top of the photo -->
+
+			<!-- Flash on the in-progress canvas when a "sync" arrives from the reference sheet -->
+			<Ellipse x:Name="ArrivalFlash" Canvas.Left="580" Canvas.Top="270" Width="260" Height="260" Opacity="0" IsHitTestVisible="False">
+				<Ellipse.Fill>
+					<RadialGradientBrush>
+						<GradientStop Color="#4CD9B0" Offset="0"/>
+						<GradientStop Color="#004CD9B0" Offset="1"/>
+					</RadialGradientBrush>
+				</Ellipse.Fill>
+			</Ellipse>
+
+			<!-- Traveling sync spark from the reference sheet to the canvas -->
+			<Ellipse x:Name="SyncDot" Width="20" Height="20" Fill="#4CD9B0">
+				<Ellipse.Effect>
+					<DropShadowEffect BlurRadius="14" OffsetX="0" OffsetY="0" Color="#4CD9B0" Opacity="0.9"/>
+				</Ellipse.Effect>
+			</Ellipse>
+
+			<!-- Sparkle at the brush tip -->
+			<Path x:Name="BrushSparkle" Data="M 0 -14 L 4 -4 L 14 0 L 4 4 L 0 14 L -4 4 L -14 0 L -4 -4 Z"
+			      Canvas.Left="705" Canvas.Top="462" Fill="#FFF59D"/>
+
+			<!-- Dripping wet paint from the canvas -->
+			<Ellipse x:Name="PaintDrip" Width="14" Height="20" Fill="#2F6FE0"/>
+		</Canvas>
+	</Viewbox>
+</UserControl>

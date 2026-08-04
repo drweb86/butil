@@ -14,6 +14,9 @@
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.2" />
   </ItemGroup>
   <ItemGroup>
+    <AvaloniaResource Include="Assets\**" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="../BUtil.Tasks.IncrementalBackup/BUtil.Tasks.IncrementalBackup.csproj" />
     <ProjectReference Include="../BUtil.UI.Common/BUtil.UI.Common.csproj" />
     <ProjectReference Include="../BUtil.UI.Tasks/BUtil.UI.Tasks.csproj" />
