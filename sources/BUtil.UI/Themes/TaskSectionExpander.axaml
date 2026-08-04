@@ -95,25 +95,27 @@
 						        BorderBrush="{TemplateBinding BorderBrush}"
 						        BorderThickness="{TemplateBinding BorderThickness}"
 						        CornerRadius="{TemplateBinding CornerRadius}">
-							<Grid RowDefinitions="Auto,Auto,Auto">
+							<!-- DockPanel (not Auto Grid rows): last child gets remaining height so nested ScrollViewers can scroll. -->
+							<DockPanel LastChildFill="True">
 								<ToggleButton x:Name="PART_HeaderToggleButton"
-								              Grid.Row="0"
+								              DockPanel.Dock="Top"
 								              Theme="{StaticResource TaskSectionExpanderHeader}"
 								              Content="{TemplateBinding Header}"
 								              ContentTemplate="{TemplateBinding HeaderTemplate}"
 								              IsChecked="{TemplateBinding IsExpanded, Mode=TwoWay}" />
 								<Border x:Name="HeaderSeparator"
-								        Grid.Row="1"
+								        DockPanel.Dock="Top"
 								        Height="1"
 								        Background="{TemplateBinding BorderBrush}"
 								        IsVisible="False" />
 								<ContentPresenter x:Name="PART_ContentPresenter"
-								                  Grid.Row="2"
+								                  MinHeight="0"
+								                  VerticalAlignment="Stretch"
 								                  Padding="12,4,12,12"
 								                  Content="{TemplateBinding Content}"
 								                  ContentTemplate="{TemplateBinding ContentTemplate}"
 								                  IsVisible="{TemplateBinding IsExpanded}" />
-							</Grid>
+							</DockPanel>
 						</Border>
 					</ControlTemplate>
 				</Setter>

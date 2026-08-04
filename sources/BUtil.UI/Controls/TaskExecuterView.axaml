@@ -46,8 +46,11 @@
 			</Grid>
 		</Expander.Header>
 		<ScrollViewer
-			ScrollViewer.VerticalScrollBarVisibility="Visible"
-			ScrollViewer.HorizontalScrollBarVisibility="Visible">
+			MinHeight="0"
+			VerticalAlignment="Stretch"
+			HorizontalAlignment="Stretch"
+			ScrollViewer.VerticalScrollBarVisibility="Auto"
+			ScrollViewer.HorizontalScrollBarVisibility="Auto">
 			<ItemsRepeater ItemsSource="{Binding Items}">
 				<ItemsRepeater.ItemTemplate>
 					<DataTemplate>
