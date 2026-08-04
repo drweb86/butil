@@ -158,6 +158,9 @@ eller varningar har registrerats.</value>
   <data name="CommandLineArguments_Help" xml:space="preserve">
     <value>Besök {0} för att se kommandoradsargument.</value>
   </data>
+  <data name="CommandLineArguments_Hint" xml:space="preserve">
+    <value>Kommandorad:</value>
+  </data>
   <data name="CommandLineArguments_Invalid" xml:space="preserve">
     <value>Ogiltiga kommandoradsargument.</value>
   </data>
@@ -935,6 +938,9 @@ Se detaljerad beskrivning i följande länk.</value>
   </data>
   <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
     <value>Ange en unik, centraliserad lagringsplats som enheter synkroniserar genom. Alla deltagande enheter bör använda samma lagringsplats. Denna plats hanteras helt av appen — inklusive borttagning av data — så använd den inte till något annat och dela den inte mellan flera uppgifter.</value>
+  </data>
+  <data name="Task_CopyCommandLine" xml:space="preserve">
+    <value>Kopiera kommandorad</value>
   </data>
   <data name="Task_Create" xml:space="preserve">
     <value>Ny</value>

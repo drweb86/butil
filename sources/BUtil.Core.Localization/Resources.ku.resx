@@ -158,6 +158,9 @@ Guheztinên guhertoya jêbirî dê bibin beşek ji guhertoya "{1}".</value>
   <data name="CommandLineArguments_Help" xml:space="preserve">
     <value>Ji bo dîtina argumanên rêza fermanê serdana {0} bikin.</value>
   </data>
+  <data name="CommandLineArguments_Hint" xml:space="preserve">
+    <value>Xeta fermanê:</value>
+  </data>
   <data name="CommandLineArguments_Invalid" xml:space="preserve">
     <value>Argumanên rêza fermanê nederbasdar in.</value>
   </data>
@@ -936,6 +939,9 @@ Ji bo danasîna berfireh lînka jêrîn bibînin.</value>
   </data>
   <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
     <value>Cîhek hilanînê ya navendî û yekta diyar bikin ku amûr bi rêya wê hevdemî dikin. Divê hemû amûrên beşdar heman cîhê hilanînê bikar bînin. Ev cî bi tevahî ji hêla sepanê ve tê rêvebirin — di nav de jêbirina daneyan jî — ji ber vê yekê wê ji bo tiştek din bikar neynin, û navbera çend erkan de par nekin.</value>
+  </data>
+  <data name="Task_CopyCommandLine" xml:space="preserve">
+    <value>Xeta fermanê kopî bike</value>
   </data>
   <data name="Task_Create" xml:space="preserve">
     <value>Nû</value>

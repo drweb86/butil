@@ -158,6 +158,9 @@
   <data name="CommandLineArguments_Help" xml:space="preserve">
     <value>Посетете {0}, за да видите аргументите на командния ред.</value>
   </data>
+  <data name="CommandLineArguments_Hint" xml:space="preserve">
+    <value>Команден ред:</value>
+  </data>
   <data name="CommandLineArguments_Invalid" xml:space="preserve">
     <value>Невалидни аргументи на командния ред.</value>
   </data>
@@ -935,6 +938,9 @@ bin.
   </data>
   <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
     <value>Посочете уникално централизирано хранилище, чрез което устройствата се синхронизират. Всички участващи устройства трябва да използват едно и също място за съхранение. Това място се управлява изцяло от приложението — включително изтриването на данни, — затова не го използвайте за нищо друго и не го споделяйте между няколко задачи.</value>
+  </data>
+  <data name="Task_CopyCommandLine" xml:space="preserve">
+    <value>Копиране на командния ред</value>
   </data>
   <data name="Task_Create" xml:space="preserve">
     <value>Нова</value>

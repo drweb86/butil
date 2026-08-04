@@ -158,6 +158,9 @@
   <data name="CommandLineArguments_Help" xml:space="preserve">
     <value>Тушаалын мөрийн аргументуудыг харахын тулд {0} руу зочилно уу.</value>
   </data>
+  <data name="CommandLineArguments_Hint" xml:space="preserve">
+    <value>Тушаалын мөр:</value>
+  </data>
   <data name="CommandLineArguments_Invalid" xml:space="preserve">
     <value>Тушаалын мөрийн аргументууд буруу байна.</value>
   </data>
@@ -936,6 +939,9 @@ bin.
   </data>
   <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
     <value>Төхөөрөмжүүд синхрончлолд ашиглах өвөрмөц, төвлөрсөн хадгалалтыг зааж өгнө үү. Оролцож буй бүх төхөөрөмж ижил хадгалалтын байршлыг ашиглах ёстой. Энэ байршлыг апп бүрэн удирддаг — өгөгдлийг устгах зэргийг оролцуулан — тиймээс үүнийг өөр зорилгоор бүү ашиглаж, олон даалгаврын хооронд бүү хуваалцаарай.</value>
+  </data>
+  <data name="Task_CopyCommandLine" xml:space="preserve">
+    <value>Тушаалын мөрийг хуулах</value>
   </data>
   <data name="Task_Create" xml:space="preserve">
     <value>Шинэ</value>

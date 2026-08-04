@@ -158,6 +158,9 @@ Spremembe izbrisane različice bodo postale del različice „{1}".</value>
   <data name="CommandLineArguments_Help" xml:space="preserve">
     <value>Obiščite {0}, da si ogledate argumente ukazne vrstice.</value>
   </data>
+  <data name="CommandLineArguments_Hint" xml:space="preserve">
+    <value>Ukazna vrstica:</value>
+  </data>
   <data name="CommandLineArguments_Invalid" xml:space="preserve">
     <value>Neveljavni argumenti ukazne vrstice.</value>
   </data>
@@ -935,6 +938,9 @@ Glejte podroben opis na naslednji povezavi.</value>
   </data>
   <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
     <value>Navedite edinstveno centralizirano shrambo, prek katere se naprave sinhronizirajo. Vse sodelujoče naprave naj uporabljajo isto lokacijo shrambe. To mesto v celoti upravlja aplikacija — vključno z brisanjem podatkov — zato ga ne uporabljajte za nič drugega in ga ne delite med več opravili.</value>
+  </data>
+  <data name="Task_CopyCommandLine" xml:space="preserve">
+    <value>Kopiraj ukazno vrstico</value>
   </data>
   <data name="Task_Create" xml:space="preserve">
     <value>Novo</value>

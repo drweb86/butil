@@ -153,6 +153,9 @@
   <data name="CommandLineArguments_Help" xml:space="preserve">
     <value>కమాండ్‌లైన్ ఆర్గ్యుమెంట్స్ చూడడానికి {0}కి వెళ్తారు.</value>
   </data>
+  <data name="CommandLineArguments_Hint" xml:space="preserve">
+    <value>కమాండ్ లైన్:</value>
+  </data>
   <data name="CommandLineArguments_Invalid" xml:space="preserve">
     <value>చెల్లని కమాండ్‌లైన్ ఆర్గ్యుమెంట్స్.</value>
   </data>
@@ -928,6 +931,9 @@
   </data>
   <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
     <value>పరికరాలు సింక్ చేయడానికి ఉపయోగించే ఒక ప్రత్యేకమైన కేంద్రీకృత నిల్వను పేర్కొనండి. పాల్గొనే అన్ని పరికరాలు ఒకే నిల్వ స్థానాన్ని ఉపయోగించాలి. ఈ స్థానం పూర్తిగా యాప్ ద్వారా నిర్వహించబడుతుంది — డేటాను తొలగించడంతో సహా — కాబట్టి దీన్ని మరే ఇతర పనికి ఉపయోగించవద్దు, మరియు బహుళ టాస్క్‌ల మధ్య పంచుకోవద్దు.</value>
+  </data>
+  <data name="Task_CopyCommandLine" xml:space="preserve">
+    <value>కమాండ్ లైన్‌ను కాపీ చేయి</value>
   </data>
   <data name="Task_Create" xml:space="preserve">
     <value>కొత్త</value>

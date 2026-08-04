@@ -155,6 +155,9 @@ Deleted version changes will become part of version "{1}".</value>
   <data name="CommandLineArguments_Help" xml:space="preserve">
     <value>Visit {0} to see command line arguments.</value>
   </data>
+  <data name="CommandLineArguments_Hint" xml:space="preserve">
+    <value>Command line:</value>
+  </data>
   <data name="CommandLineArguments_Invalid" xml:space="preserve">
     <value>Invalid command line arguments.</value>
   </data>
@@ -932,6 +935,9 @@ See detailed description in the following link.</value>
   </data>
   <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
     <value>Select one special storage location that devices use to sync. All devices taking part should use the same storage location. This location is fully managed by the app, including deleting data, so do not use it for anything else, and do not share it between multiple tasks.</value>
+  </data>
+  <data name="Task_CopyCommandLine" xml:space="preserve">
+    <value>Copy command line</value>
   </data>
   <data name="Task_Create" xml:space="preserve">
     <value>New</value>

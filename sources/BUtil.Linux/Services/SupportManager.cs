@@ -156,6 +156,29 @@ public class SupportManager : ISupportManager
         return isSuccess;
     }
 
+    #region Console command line
+    public string GetConsoleCommandLineForTask(string taskName) =>
+        $"systemd-inhibit {FormatConsoleCommand(QuoteArgument($"{TasksAppArguments.RunTask}={taskName}"))}";
+
+    public string GetConsoleCommandLineForEncrypt(string inputFile, string password) =>
+        FormatConsoleCommand("encrypt", QuoteArgument(inputFile), QuoteArgument(password));
+
+    public string GetConsoleCommandLineForDecrypt(string inputFile, string password) =>
+        FormatConsoleCommand("decrypt", QuoteArgument(inputFile), QuoteArgument(password));
+
+    public string GetConsoleCommandLineForCompress(string inputFile) =>
+        FormatConsoleCommand("encode", QuoteArgument(inputFile));
+
+    public string GetConsoleCommandLineForDecompress(string inputFile) =>
+        FormatConsoleCommand("decode", QuoteArgument(inputFile));
+
+    private static string FormatConsoleCommand(params string[] arguments) =>
+        string.Join(" ", [QuoteArgument(ConsoleBackupTool), .. arguments]);
+
+    private static string QuoteArgument(string value) =>
+        "\"" + value.Replace("\"", "\\\"") + "\"";
+    #endregion
+
     private static string GetTaskHash(string taskName)
     {
         var hash = SHA256.HashData(Encoding.UTF8.GetBytes(taskName));

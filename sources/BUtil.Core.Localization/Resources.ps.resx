@@ -158,6 +158,9 @@
   <data name="CommandLineArguments_Help" xml:space="preserve">
     <value>د کمانډ لاین دلیلونو لیدلو لپاره {0} ته لاړ شئ.</value>
   </data>
+  <data name="CommandLineArguments_Hint" xml:space="preserve">
+    <value>د امر کرښه:</value>
+  </data>
   <data name="CommandLineArguments_Invalid" xml:space="preserve">
     <value>د کمانډ لاین ناسم دلیلونه.</value>
   </data>
@@ -935,6 +938,9 @@ See detailed description in the following link.</value>
   </data>
   <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
     <value>یو ځانګړی مرکزي زیرمه ځای وټاکئ چې وسایل به د هغې له لارې همغږي کیږي. ټول ګډونوال وسایل باید یو ډول زیرمه ځای وکاروي. دا ځای په بشپړه توګه د اپلیکیشن لخوا اداره کیږي — د معلوماتو حذف کول هم پکې شامل دي — نو دا د بل هیڅ شي لپاره مه کاروئ، او د څو دندو ترمنځ یې شریک مه کوئ.</value>
+  </data>
+  <data name="Task_CopyCommandLine" xml:space="preserve">
+    <value>د امر کرښه کاپي کړئ</value>
   </data>
   <data name="Task_Create" xml:space="preserve">
     <value>نوی</value>

@@ -158,6 +158,9 @@ Deleted version changes will become part of version "{1}".</value>
   <data name="CommandLineArguments_Help" xml:space="preserve">
     <value>Visit {0} to see command line arguments.</value>
   </data>
+  <data name="CommandLineArguments_Hint" xml:space="preserve">
+    <value>Linennañ urzhioù:</value>
+  </data>
   <data name="CommandLineArguments_Invalid" xml:space="preserve">
     <value>Invalid command line arguments.</value>
   </data>
@@ -935,6 +938,9 @@ See detailed description in the following link.</value>
   </data>
   <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
     <value>Erspizit ur bladenn kadaviñ kreizennekaet hepken en em sinkronaocha an trevnadoù drezi. Ret eo d'an holl drevnadoù kemeret perzh en implijout ar memes lec'h kadaviñ. Merañ a ra an arload ar bladenn-mañ en he fezh — en o zouez dilemel roadennoù — neuze n'eo ket dav he implijout evit un dra all, ha n'eo ket dav he rannañ etre meur a dreuzoberiadur.</value>
+  </data>
+  <data name="Task_CopyCommandLine" xml:space="preserve">
+    <value>Eilañ al linennañ urzhioù</value>
   </data>
   <data name="Task_Create" xml:space="preserve">
     <value>New</value>

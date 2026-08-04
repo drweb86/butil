@@ -158,6 +158,9 @@
   <data name="CommandLineArguments_Help" xml:space="preserve">
     <value>कमांड लाइन तर्कों को देखने के लिए {0} पर जाएँ।</value>
   </data>
+  <data name="CommandLineArguments_Hint" xml:space="preserve">
+    <value>कमांड लाइन:</value>
+  </data>
   <data name="CommandLineArguments_Invalid" xml:space="preserve">
     <value>असमर्थित कमांड लाइन तर्क।</value>
   </data>
@@ -935,6 +938,9 @@ bin.
   </data>
   <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
     <value>एक विशिष्ट केंद्रीकृत संग्रहण निर्दिष्ट करें जिसके माध्यम से डिवाइस सिंक होते हैं। सभी भाग लेने वाले डिवाइस को एक ही संग्रहण स्थान का उपयोग करना चाहिए। इस स्थान का प्रबंधन पूरी तरह से ऐप द्वारा किया जाता है — जिसमें डेटा को हटाना भी शामिल है — इसलिए इसे किसी अन्य कार्य के लिए उपयोग न करें, और इसे कई कार्यों के बीच साझा न करें।</value>
+  </data>
+  <data name="Task_CopyCommandLine" xml:space="preserve">
+    <value>कमांड लाइन कॉपी करें</value>
   </data>
   <data name="Task_Create" xml:space="preserve">
     <value>नया</value>

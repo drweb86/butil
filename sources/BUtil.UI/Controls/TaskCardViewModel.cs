@@ -1,3 +1,6 @@
+using Avalonia;
+using Avalonia.Controls.ApplicationLifetimes;
+using Avalonia.Input.Platform;
 using Avalonia.Media;
 using BUtil.Core;
 using BUtil.Interop.Tasks.Events;
@@ -54,6 +57,7 @@ public class TaskCardViewModel(
     public static string Task_Edit => Resources.Task_Edit;
     public static string Task_Restore => Resources.Task_Restore;
     public static string Task_OpenLog => Resources.Task_OpenLog;
+    public static string Task_CopyCommandLine => Resources.Task_CopyCommandLine;
     public static string Button_OK => Resources.Button_OK;
     public static string Button_Cancel => Resources.Button_Cancel;
 
@@ -86,6 +90,13 @@ public class TaskCardViewModel(
     {
         if (_logFilePath != null)
             ProcessHelper.ShellExecute(_logFilePath);
+    }
+
+    public void TaskCopyCommandLineCommand()
+    {
+        var command = PlatformSpecificExperience.Instance.SupportManager.GetConsoleCommandLineForTask(Name);
+        if (Application.Current?.ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
+            _ = desktop.MainWindow?.Clipboard?.SetTextAsync(command);
     }
 
     public void TaskEditCommand()

@@ -155,6 +155,9 @@
   <data name="CommandLineArguments_Help" xml:space="preserve">
     <value>கமாண்டு வரி கட்டளைகளை பார்க்க {0} சென்று பாருங்கள்.</value>
   </data>
+  <data name="CommandLineArguments_Hint" xml:space="preserve">
+    <value>கட்டளை வரி:</value>
+  </data>
   <data name="CommandLineArguments_Invalid" xml:space="preserve">
     <value>செல்லுபடியான கமாண்டு வரி கட்டளைகள் அல்ல.</value>
   </data>
@@ -934,6 +937,9 @@ bin.
   </data>
   <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
     <value>சாதனங்கள் ஒத்திசைவதற்குப் பயன்படுத்தும் தனித்துவமான மையப்படுத்தப்பட்ட சேமிப்பகத்தை குறிப்பிடவும். பங்கேற்கும் அனைத்து சாதனங்களும் ஒரே சேமிப்பக இடத்தைப் பயன்படுத்த வேண்டும். இந்த இடம் முழுவதுமாக பயன்பாட்டால் நிர்வகிக்கப்படுகிறது — தரவை நீக்குவது உட்பட — எனவே இதை வேறு எதற்கும் பயன்படுத்த வேண்டாம், மேலும் பல பணிகளுக்கு இடையே பகிர வேண்டாம்.</value>
+  </data>
+  <data name="Task_CopyCommandLine" xml:space="preserve">
+    <value>கட்டளை வரியை நகலெடு</value>
   </data>
   <data name="Task_Create" xml:space="preserve">
     <value>புதிய</value>

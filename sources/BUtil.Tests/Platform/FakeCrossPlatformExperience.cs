@@ -1,5 +1,6 @@
 using BUtil.Core;
 using BUtil.Interop.Logs;
+using BUtil.Core.FileSystem;
 using BUtil.Core.Misc;
 using BUtil.Core.Options;
 using BUtil.Core.Services;
@@ -72,6 +73,27 @@ internal sealed class FakeCrossPlatformExperience : CrossPlatformExperience
         public void OpenLink(string url)
         {
         }
+
+        public string GetConsoleCommandLineForTask(string taskName) =>
+            FormatConsoleCommand(QuoteArgument($"{TasksAppArguments.RunTask}={taskName}"));
+
+        public string GetConsoleCommandLineForEncrypt(string inputFile, string password) =>
+            FormatConsoleCommand("encrypt", QuoteArgument(inputFile), QuoteArgument(password));
+
+        public string GetConsoleCommandLineForDecrypt(string inputFile, string password) =>
+            FormatConsoleCommand("decrypt", QuoteArgument(inputFile), QuoteArgument(password));
+
+        public string GetConsoleCommandLineForCompress(string inputFile) =>
+            FormatConsoleCommand("encode", QuoteArgument(inputFile));
+
+        public string GetConsoleCommandLineForDecompress(string inputFile) =>
+            FormatConsoleCommand("decode", QuoteArgument(inputFile));
+
+        private static string FormatConsoleCommand(params string[] arguments) =>
+            string.Join(" ", [QuoteArgument("butilc"), .. arguments]);
+
+        private static string QuoteArgument(string value) =>
+            "\"" + value.Replace("\"", "\\\"") + "\"";
     }
 
     private sealed class FakeFolderService : IFolderService

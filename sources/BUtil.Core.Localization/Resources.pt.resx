@@ -158,6 +158,9 @@ As alterações da versão excluída se tornarão parte da versão "{1}".</value
   <data name="CommandLineArguments_Help" xml:space="preserve">
     <value>Visite {0} para ver os argumentos da linha de comando.</value>
   </data>
+  <data name="CommandLineArguments_Hint" xml:space="preserve">
+    <value>Linha de comando:</value>
+  </data>
   <data name="CommandLineArguments_Invalid" xml:space="preserve">
     <value>Argumentos da linha de comando inválidos.</value>
   </data>
@@ -935,6 +938,9 @@ Veja a descrição detalhada no seguinte link.</value>
   </data>
   <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
     <value>Especifique um armazenamento centralizado exclusivo através do qual os dispositivos sincronizam. Todos os dispositivos participantes devem usar o mesmo local de armazenamento. Este local é totalmente gerenciado pelo aplicativo — incluindo a exclusão de dados — portanto, não o utilize para mais nada e não o compartilhe entre várias tarefas.</value>
+  </data>
+  <data name="Task_CopyCommandLine" xml:space="preserve">
+    <value>Copiar linha de comando</value>
   </data>
   <data name="Task_Create" xml:space="preserve">
     <value>Novo</value>

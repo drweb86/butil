@@ -158,6 +158,9 @@ Deleted version changes will become part of version "{1}".</value>
   <data name="CommandLineArguments_Help" xml:space="preserve">
     <value>Visit {0} to see command line arguments.</value>
   </data>
+  <data name="CommandLineArguments_Hint" xml:space="preserve">
+    <value>Llinia de comandos:</value>
+  </data>
   <data name="CommandLineArguments_Invalid" xml:space="preserve">
     <value>Invalid command line arguments.</value>
   </data>
@@ -935,6 +938,9 @@ See detailed description in the following link.</value>
   </data>
   <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
     <value>Especifica un almacenamientu centralizáu únicu al traviés del cual sincronicen los preseos. Tolos preseos participantes tienen d'usar el mesmu llugar d'almacenamientu. Esti llugar ye xestionáu enteramente pola aplicación — incluyendo la desaniciu de datos — asina que nun lu uses pa nada más, y nun lu compartas ente delles xeres.</value>
+  </data>
+  <data name="Task_CopyCommandLine" xml:space="preserve">
+    <value>Copiar llinia de comandos</value>
   </data>
   <data name="Task_Create" xml:space="preserve">
     <value>New</value>

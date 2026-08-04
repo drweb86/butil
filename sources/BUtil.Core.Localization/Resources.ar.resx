@@ -158,6 +158,9 @@
   <data name="CommandLineArguments_Help" xml:space="preserve">
     <value>زر {0} لرؤية معلمات سطر الأوامر.</value>
   </data>
+  <data name="CommandLineArguments_Hint" xml:space="preserve">
+    <value>سطر الأوامر:</value>
+  </data>
   <data name="CommandLineArguments_Invalid" xml:space="preserve">
     <value>معلمات سطر الأوامر غير صالحة.</value>
   </data>
@@ -935,6 +938,9 @@ bin.
   </data>
   <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
     <value>حدد مساحة تخزين مركزية فريدة تتزامن الأجهزة من خلالها. يجب أن تستخدم جميع الأجهزة المشاركة نفس موقع التخزين. يتم إدارة هذا الموقع بالكامل بواسطة التطبيق — بما في ذلك حذف البيانات — لذا لا تستخدمه لأي غرض آخر، ولا تشاركه بين مهام متعددة.</value>
+  </data>
+  <data name="Task_CopyCommandLine" xml:space="preserve">
+    <value>نسخ سطر الأوامر</value>
   </data>
   <data name="Task_Create" xml:space="preserve">
     <value>جديد</value>

@@ -158,6 +158,9 @@ Modificările versiunii șterse vor deveni parte din versiunea „{1}".</value>
   <data name="CommandLineArguments_Help" xml:space="preserve">
     <value>Vizitați {0} pentru a vedea argumentele liniei de comandă.</value>
   </data>
+  <data name="CommandLineArguments_Hint" xml:space="preserve">
+    <value>Linie de comandă:</value>
+  </data>
   <data name="CommandLineArguments_Invalid" xml:space="preserve">
     <value>Argumente de linie de comandă invalide.</value>
   </data>
@@ -935,6 +938,9 @@ Consultați descrierea detaliată în următorul link.</value>
   </data>
   <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
     <value>Specificați un spațiu de stocare centralizat unic prin care se sincronizează dispozitivele. Toate dispozitivele participante ar trebui să utilizeze aceeași locație de stocare. Această locație este gestionată integral de aplicație — inclusiv ștergerea datelor — așadar nu o utilizați în alt scop și nu o partajați între mai multe sarcini.</value>
+  </data>
+  <data name="Task_CopyCommandLine" xml:space="preserve">
+    <value>Copiază linia de comandă</value>
   </data>
   <data name="Task_Create" xml:space="preserve">
     <value>Nou</value>

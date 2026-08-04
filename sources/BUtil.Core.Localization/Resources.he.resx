@@ -158,6 +158,9 @@
   <data name="CommandLineArguments_Help" xml:space="preserve">
     <value>בקר ב-{0} כדי לראות את ארגומנטי שורת הפקודה.</value>
   </data>
+  <data name="CommandLineArguments_Hint" xml:space="preserve">
+    <value>שורת פקודה:</value>
+  </data>
   <data name="CommandLineArguments_Invalid" xml:space="preserve">
     <value>ארגומנטי שורת פקודה לא חוקיים.</value>
   </data>
@@ -935,6 +938,9 @@ bin.
   </data>
   <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
     <value>ציינו מיקום אחסון מרכזי וייחודי שדרכו יתבצע הסנכרון בין המכשירים. על כל המכשירים המשתתפים להשתמש באותו מיקום אחסון. מיקום זה מנוהל במלואו על ידי האפליקציה — כולל מחיקת נתונים — לכן אין להשתמש בו לכל מטרה אחרת, ואין לשתף אותו בין כמה משימות.</value>
+  </data>
+  <data name="Task_CopyCommandLine" xml:space="preserve">
+    <value>העתק שורת פקודה</value>
   </data>
   <data name="Task_Create" xml:space="preserve">
     <value>חדש</value>

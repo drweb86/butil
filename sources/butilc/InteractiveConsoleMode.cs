@@ -36,16 +36,32 @@ public static class InteractiveConsoleMode
                 Environment.Exit(0);
                 throw new InvalidOperationException();
             case MenuAction.EncryptAes256:
-                RunTechnicalCommand(Resources.TechnicalTool_EncryptAes256_Title, true, (ioc, input, output, password) => ioc.EncryptionService.EncryptAes256File(input, output, password));
+                RunTechnicalCommand(
+                    Resources.TechnicalTool_EncryptAes256_Title,
+                    true,
+                    (ioc, input, output, password) => ioc.EncryptionService.EncryptAes256File(input, output, password),
+                    (input, password) => PlatformSpecificExperience.Instance.SupportManager.GetConsoleCommandLineForEncrypt(input, password));
                 break;
             case MenuAction.DecryptAes256:
-                RunTechnicalCommand(Resources.TechnicalTool_DecryptAes256_Title, true, (ioc, input, output, password) => ioc.EncryptionService.DecryptAes256File(input, output, password));
+                RunTechnicalCommand(
+                    Resources.TechnicalTool_DecryptAes256_Title,
+                    true,
+                    (ioc, input, output, password) => ioc.EncryptionService.DecryptAes256File(input, output, password),
+                    (input, password) => PlatformSpecificExperience.Instance.SupportManager.GetConsoleCommandLineForDecrypt(input, password));
                 break;
             case MenuAction.CompressBrotli:
-                RunTechnicalCommand(Resources.TechnicalTool_CompressBrotli_Title, false, (ioc, input, output, _) => ioc.CompressionService.CompressBrotliFile(input, output));
+                RunTechnicalCommand(
+                    Resources.TechnicalTool_CompressBrotli_Title,
+                    false,
+                    (ioc, input, output, _) => ioc.CompressionService.CompressBrotliFile(input, output),
+                    (input, _) => PlatformSpecificExperience.Instance.SupportManager.GetConsoleCommandLineForCompress(input));
                 break;
             case MenuAction.DecompressBrotli:
-                RunTechnicalCommand(Resources.TechnicalTool_DecompressBrotli_Title, false, (ioc, input, output, _) => ioc.CompressionService.DecompressBrotliFile(input, output));
+                RunTechnicalCommand(
+                    Resources.TechnicalTool_DecompressBrotli_Title,
+                    false,
+                    (ioc, input, output, _) => ioc.CompressionService.DecompressBrotliFile(input, output),
+                    (input, _) => PlatformSpecificExperience.Instance.SupportManager.GetConsoleCommandLineForDecompress(input));
                 break;
             case MenuAction.SelectAndRunTask:
                 return SelectTaskName();
@@ -67,13 +83,16 @@ public static class InteractiveConsoleMode
             Environment.Exit(-1);
         }
 
-        return taskNames[ConsoleSelector.SelectWithArrowKeys(Resources.Task_Field_Choose, taskNames)];
+        var taskName = taskNames[ConsoleSelector.SelectWithArrowKeys(Resources.Task_Field_Choose, taskNames)];
+        WriteCommandLineHint(PlatformSpecificExperience.Instance.SupportManager.GetConsoleCommandLineForTask(taskName));
+        return taskName;
     }
 
     private static void RunTechnicalCommand(
         string title,
         bool requiresPassword,
-        Action<CommonServicesIoc, string, string, string> run)
+        Action<CommonServicesIoc, string, string, string> run,
+        Func<string, string, string> buildCommandLine)
     {
         Console.WriteLine(title);
         var input = ReadConsoleField(Resources.TechnicalTool_SourceFile);
@@ -99,9 +118,19 @@ public static class InteractiveConsoleMode
             Environment.Exit(-1);
         }
 
+        WriteCommandLineHint(buildCommandLine(input, password));
+
         using var ioc = new CommonServicesIoc(new ConsoleLog(), _ => { });
         run(ioc, input, output, password);
         Console.WriteLine(Resources.TechnicalTool_Completed);
+    }
+
+    private static void WriteCommandLineHint(string command)
+    {
+        Console.WriteLine();
+        Console.WriteLine(Resources.CommandLineArguments_Hint);
+        Console.WriteLine(command);
+        Console.WriteLine();
     }
 
     private static string ReadConsoleField(string label)

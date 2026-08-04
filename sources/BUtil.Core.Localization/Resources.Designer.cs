@@ -354,6 +354,15 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Command line:.
+        /// </summary>
+        public static string CommandLineArguments_Hint {
+            get {
+                return ResourceManager.GetString("CommandLineArguments_Hint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Invalid command line arguments..
         /// </summary>
         public static string CommandLineArguments_Invalid {
@@ -2379,6 +2388,15 @@ namespace BUtil.Core.Localization {
         public static string SynchronizationTask_Storage_Help {
             get {
                 return ResourceManager.GetString("SynchronizationTask_Storage_Help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Copy command line.
+        /// </summary>
+        public static string Task_CopyCommandLine {
+            get {
+                return ResourceManager.GetString("Task_CopyCommandLine", resourceCulture);
             }
         }
         

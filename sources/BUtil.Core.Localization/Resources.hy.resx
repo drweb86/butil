@@ -158,6 +158,9 @@
   <data name="CommandLineArguments_Help" xml:space="preserve">
     <value>Այցելեք {0}՝ հրամանի տողի արգումենտները տեսնելու համար:</value>
   </data>
+  <data name="CommandLineArguments_Hint" xml:space="preserve">
+    <value>Հրամանի տող:</value>
+  </data>
   <data name="CommandLineArguments_Invalid" xml:space="preserve">
     <value>Հրամանի տողի անվավեր արգումենտներ:</value>
   </data>
@@ -935,6 +938,9 @@ bin.
   </data>
   <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
     <value>Նշեք եզակի կենտրոնացված պահեստ, որի միջոցով սարքերը համաժամանակացվում են։ Բոլոր մասնակից սարքերը պետք է օգտագործեն նույն պահեստի գտնվելու վայրը։ Այս գտնվելու վայրը ամբողջությամբ կառավարվում է հավելվածի կողմից՝ ներառյալ տվյալների ջնջումը, ուստի մի օգտագործեք այն այլ նպատակով, և մի կիսվեք դրանով մի քանի առաջադրանքների միջև։</value>
+  </data>
+  <data name="Task_CopyCommandLine" xml:space="preserve">
+    <value>Պատճենել հրամանի տողը</value>
   </data>
   <data name="Task_Create" xml:space="preserve">
     <value>Նոր</value>

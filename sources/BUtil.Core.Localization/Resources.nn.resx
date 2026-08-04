@@ -158,6 +158,9 @@ Endringar frå sletta versjon vert ein del av versjon "{1}".</value>
   <data name="CommandLineArguments_Help" xml:space="preserve">
     <value>Gå til {0} for å sjå kommandolinjeargument.</value>
   </data>
+  <data name="CommandLineArguments_Hint" xml:space="preserve">
+    <value>Kommandolinje:</value>
+  </data>
   <data name="CommandLineArguments_Invalid" xml:space="preserve">
     <value>Ugyldige kommandolinjeargument.</value>
   </data>
@@ -935,6 +938,9 @@ Sjå detaljert skildring i følgjande lenkje.</value>
   </data>
   <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
     <value>Oppgi ein unik, sentralisert lagringsplass som einingar synkroniserer gjennom. Alle deltakande einingar bør bruke same lagringsstad. Denne staden vert fullstendig handsama av appen — medrekna sletting av data — så ikkje bruk han til noko anna, og ikkje del han mellom fleire oppgåver.</value>
+  </data>
+  <data name="Task_CopyCommandLine" xml:space="preserve">
+    <value>Kopier kommandolinje</value>
   </data>
   <data name="Task_Create" xml:space="preserve">
     <value>Ny</value>

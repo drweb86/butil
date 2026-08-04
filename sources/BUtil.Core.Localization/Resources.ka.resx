@@ -158,6 +158,9 @@
   <data name="CommandLineArguments_Help" xml:space="preserve">
     <value>ეწვიეთ {0} ბრძანების ხაზის არგუმენტების სანახავად.</value>
   </data>
+  <data name="CommandLineArguments_Hint" xml:space="preserve">
+    <value>ბრძანების სტრიქონი:</value>
+  </data>
   <data name="CommandLineArguments_Invalid" xml:space="preserve">
     <value>არასწორი ბრძანების ხაზის არგუმენტები.</value>
   </data>
@@ -935,6 +938,9 @@ bin.
   </data>
   <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
     <value>მიუთითეთ უნიკალური ცენტრალიზებული საცავი, რომლის მეშვეობითაც მოწყობილობები სინქრონიზდებიან. ყველა მონაწილე მოწყობილობამ უნდა გამოიყენოს ერთი და იგივე საცავის მდებარეობა. ეს ადგილმდებარეობა მთლიანად იმართება აპლიკაციის მიერ — მონაცემების წაშლის ჩათვლით — ამიტომ არ გამოიყენოთ ის სხვა მიზნით და არ გაუზიაროთ რამდენიმე ამოცანას.</value>
+  </data>
+  <data name="Task_CopyCommandLine" xml:space="preserve">
+    <value>ბრძანების სტრიქონის კოპირება</value>
   </data>
   <data name="Task_Create" xml:space="preserve">
     <value>ახალი</value>

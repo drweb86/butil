@@ -158,6 +158,9 @@ Zmiany z usuniętej wersji staną się częścią wersji "{1}".</value>
   <data name="CommandLineArguments_Help" xml:space="preserve">
     <value>Odwiedź {0}, aby zobaczyć argumenty wiersza poleceń.</value>
   </data>
+  <data name="CommandLineArguments_Hint" xml:space="preserve">
+    <value>Wiersz polecenia:</value>
+  </data>
   <data name="CommandLineArguments_Invalid" xml:space="preserve">
     <value>Nieprawidłowe argumenty wiersza poleceń.</value>
   </data>
@@ -935,6 +938,9 @@ Szczegółowy opis znajdziesz pod poniższym linkiem.</value>
   </data>
   <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
     <value>Wskaż unikalny scentralizowany magazyn, za pośrednictwem którego synchronizują się urządzenia. Wszystkie uczestniczące urządzenia powinny korzystać z tej samej lokalizacji magazynu. Ta lokalizacja jest w pełni zarządzana przez aplikację — łącznie z usuwaniem danych — dlatego nie używaj jej do niczego innego i nie udostępniaj jej pomiędzy różnymi zadaniami.</value>
+  </data>
+  <data name="Task_CopyCommandLine" xml:space="preserve">
+    <value>Kopiuj wiersz polecenia</value>
   </data>
   <data name="Task_Create" xml:space="preserve">
     <value>Nowe</value>

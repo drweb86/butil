@@ -158,6 +158,9 @@
   <data name="CommandLineArguments_Help" xml:space="preserve">
     <value>برای مشاهده آرگومان‌های خط فرمان به {0} مراجعه کنید.</value>
   </data>
+  <data name="CommandLineArguments_Hint" xml:space="preserve">
+    <value>خط فرمان:</value>
+  </data>
   <data name="CommandLineArguments_Invalid" xml:space="preserve">
     <value>آرگومان‌های خط فرمان نامعتبر.</value>
   </data>
@@ -936,6 +939,9 @@ bin.
   </data>
   <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
     <value>یک فضای ذخیره‌سازی متمرکز و منحصربه‌فرد مشخص کنید که دستگاه‌ها از طریق آن همگام‌سازی می‌شوند. همه دستگاه‌های شرکت‌کننده باید از یک محل ذخیره‌سازی یکسان استفاده کنند. این مکان به‌طور کامل توسط برنامه مدیریت می‌شود — از جمله حذف داده‌ها — بنابراین از آن برای هیچ منظور دیگری استفاده نکنید و آن را بین چندین وظیفه به اشتراک نگذارید.</value>
+  </data>
+  <data name="Task_CopyCommandLine" xml:space="preserve">
+    <value>کپی خط فرمان</value>
   </data>
   <data name="Task_Create" xml:space="preserve">
     <value>جدید</value>

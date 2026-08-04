@@ -158,6 +158,9 @@ Zmeny odstránenej verzie sa stanú súčasťou verzie „{1}".</value>
   <data name="CommandLineArguments_Help" xml:space="preserve">
     <value>Navštívte {0} pre zobrazenie argumentov príkazového riadku.</value>
   </data>
+  <data name="CommandLineArguments_Hint" xml:space="preserve">
+    <value>Príkazový riadok:</value>
+  </data>
   <data name="CommandLineArguments_Invalid" xml:space="preserve">
     <value>Neplatné argumenty príkazového riadku.</value>
   </data>
@@ -935,6 +938,9 @@ Pozrite si podrobný popis na nasledujúcom odkaze.</value>
   </data>
   <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
     <value>Zadajte jedinečné centralizované úložisko, cez ktoré sa zariadenia synchronizujú. Všetky zúčastnené zariadenia by mali používať rovnaké umiestnenie úložiska. Toto umiestnenie úplne spravuje aplikácia — vrátane mazania údajov —, preto ho nepoužívajte na nič iné a nezdieľajte ho medzi viacerými úlohami.</value>
+  </data>
+  <data name="Task_CopyCommandLine" xml:space="preserve">
+    <value>Kopírovať príkazový riadok</value>
   </data>
   <data name="Task_Create" xml:space="preserve">
     <value>Nová</value>

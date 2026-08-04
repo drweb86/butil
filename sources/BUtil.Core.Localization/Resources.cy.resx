@@ -158,6 +158,9 @@ Bydd newidiadau fersiwn sydd wedi'u dileu yn dod yn rhan o fersiwn "{1}".</value
   <data name="CommandLineArguments_Help" xml:space="preserve">
     <value>Ewch i {0} i weld dadleuon llinell orchymyn.</value>
   </data>
+  <data name="CommandLineArguments_Hint" xml:space="preserve">
+    <value>Llinell orchymyn:</value>
+  </data>
   <data name="CommandLineArguments_Invalid" xml:space="preserve">
     <value>Dadleuon llinell orchymyn annilys.</value>
   </data>
@@ -935,6 +938,9 @@ See detailed description in the following link.</value>
   </data>
   <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
     <value>Nodwch storfa ganolog unigryw y mae dyfeisiau'n cydweddu drwyddi. Dylai pob dyfais sy'n cymryd rhan ddefnyddio'r un lleoliad storio. Mae'r lleoliad hwn yn cael ei reoli'n gyfan gwbl gan yr ap — gan gynnwys dileu data — felly peidiwch â'i ddefnyddio ar gyfer unrhyw beth arall, a pheidiwch â'i rannu rhwng sawl tasg.</value>
+  </data>
+  <data name="Task_CopyCommandLine" xml:space="preserve">
+    <value>Copïo'r llinell orchymyn</value>
   </data>
   <data name="Task_Create" xml:space="preserve">
     <value>Newydd</value>

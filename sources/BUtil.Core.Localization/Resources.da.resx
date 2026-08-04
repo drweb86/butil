@@ -158,6 +158,9 @@ eller advarsler.</value>
   <data name="CommandLineArguments_Help" xml:space="preserve">
     <value>Besøg {0} for at se kommandolinjeargumenter.</value>
   </data>
+  <data name="CommandLineArguments_Hint" xml:space="preserve">
+    <value>Kommandolinje:</value>
+  </data>
   <data name="CommandLineArguments_Invalid" xml:space="preserve">
     <value>Ugyldige kommandolinjeargumenter.</value>
   </data>
@@ -935,6 +938,9 @@ Se detaljeret beskrivelse i følgende link.</value>
   </data>
   <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
     <value>Angiv en unik, centraliseret lagerplacering, som enheder synkroniserer gennem. Alle deltagende enheder bør bruge den samme lagerplacering. Denne placering administreres udelukkende af appen — herunder sletning af data — så brug den ikke til andet, og del den ikke mellem flere opgaver.</value>
+  </data>
+  <data name="Task_CopyCommandLine" xml:space="preserve">
+    <value>Kopiér kommandolinje</value>
   </data>
   <data name="Task_Create" xml:space="preserve">
     <value>Ny</value>

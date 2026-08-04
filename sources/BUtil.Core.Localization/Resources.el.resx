@@ -158,6 +158,9 @@
   <data name="CommandLineArguments_Help" xml:space="preserve">
     <value>Επισκεφτείτε {0} για να δείτε τα ορίσματα γραμμής εντολών.</value>
   </data>
+  <data name="CommandLineArguments_Hint" xml:space="preserve">
+    <value>Γραμμή εντολών:</value>
+  </data>
   <data name="CommandLineArguments_Invalid" xml:space="preserve">
     <value>Μη έγκυρα ορίσματα γραμμής εντολών.</value>
   </data>
@@ -935,6 +938,9 @@ bin.
   </data>
   <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
     <value>Καθορίστε έναν μοναδικό κεντρικό αποθηκευτικό χώρο μέσω του οποίου συγχρονίζονται οι συσκευές. Όλες οι συμμετέχουσες συσκευές πρέπει να χρησιμοποιούν την ίδια τοποθεσία αποθήκευσης. Αυτή η τοποθεσία διαχειρίζεται εξ ολοκλήρου από την εφαρμογή — συμπεριλαμβανομένης της διαγραφής δεδομένων — επομένως μην τη χρησιμοποιείτε για τίποτα άλλο και μην την κοινοποιείτε μεταξύ πολλαπλών εργασιών.</value>
+  </data>
+  <data name="Task_CopyCommandLine" xml:space="preserve">
+    <value>Αντιγραφή γραμμής εντολών</value>
   </data>
   <data name="Task_Create" xml:space="preserve">
     <value>Νέα</value>

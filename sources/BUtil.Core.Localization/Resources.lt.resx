@@ -158,6 +158,9 @@ Ištrintos versijos pakeitimai taps versijos „{1}" dalimi.</value>
   <data name="CommandLineArguments_Help" xml:space="preserve">
     <value>Apsilankykite {0}, kad pamatytumėte komandinės eilutės argumentus.</value>
   </data>
+  <data name="CommandLineArguments_Hint" xml:space="preserve">
+    <value>Komandinė eilutė:</value>
+  </data>
   <data name="CommandLineArguments_Invalid" xml:space="preserve">
     <value>Neteisingi komandinės eilutės argumentai.</value>
   </data>
@@ -935,6 +938,9 @@ bin.
   </data>
   <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
     <value>Nurodykite unikalią centralizuotą saugyklą, per kurią sinchronizuojami įrenginiai. Visi dalyvaujantys įrenginiai turėtų naudoti tą pačią saugyklos vietą. Šią vietą visiškai valdo programa — įskaitant duomenų trynimą, — todėl nenaudokite jos jokiam kitam tikslui ir nesidalykite ja tarp kelių užduočių.</value>
+  </data>
+  <data name="Task_CopyCommandLine" xml:space="preserve">
+    <value>Kopijuoti komandinę eilutę</value>
   </data>
   <data name="Task_Create" xml:space="preserve">
     <value>Nauja</value>

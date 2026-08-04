@@ -158,6 +158,9 @@ Geskrapde weergaweveranderinge sal deel word van weergawe "{1}".</value>
   <data name="CommandLineArguments_Help" xml:space="preserve">
     <value>Besoek {0} om opdragreëlargumente te sien.</value>
   </data>
+  <data name="CommandLineArguments_Hint" xml:space="preserve">
+    <value>Opdraglyn:</value>
+  </data>
   <data name="CommandLineArguments_Invalid" xml:space="preserve">
     <value>Ongeldige opdragreëlargumente.</value>
   </data>
@@ -935,6 +938,9 @@ See detailed description in the following link.</value>
   </data>
   <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
     <value>Spesifiseer 'n unieke, gesentraliseerde bergingsplek waardeur toestelle sinkroniseer. Alle deelnemende toestelle moet dieselfde bergingsplek gebruik. Hierdie plek word heeltemal deur die app bestuur — insluitend die verwydering van data — moet dit dus nie vir enigiets anders gebruik nie, en moenie dit tussen verskeie take deel nie.</value>
+  </data>
+  <data name="Task_CopyCommandLine" xml:space="preserve">
+    <value>Kopieer opdraglyn</value>
   </data>
   <data name="Task_Create" xml:space="preserve">
     <value>Nuut</value>

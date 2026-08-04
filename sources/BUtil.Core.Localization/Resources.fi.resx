@@ -158,6 +158,9 @@ Poistetun version muutokset tulevat osaksi versiota "{1}".</value>
   <data name="CommandLineArguments_Help" xml:space="preserve">
     <value>Vieraile osoitteessa {0} nähdäksesi komentoriviparametrit.</value>
   </data>
+  <data name="CommandLineArguments_Hint" xml:space="preserve">
+    <value>Komentorivi:</value>
+  </data>
   <data name="CommandLineArguments_Invalid" xml:space="preserve">
     <value>Virheelliset komentoriviparametrit.</value>
   </data>
@@ -935,6 +938,9 @@ Katso yksityiskohtainen kuvaus seuraavasta linkistä.</value>
   </data>
   <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
     <value>Määritä yksilöllinen keskitetty tallennustila, jonka kautta laitteet synkronoituvat. Kaikkien osallistuvien laitteiden tulisi käyttää samaa tallennussijaintia. Sovellus hallinnoi tätä sijaintia kokonaan — mukaan lukien tietojen poistaminen — joten älä käytä sitä mihinkään muuhun äläkä jaa sitä useiden tehtävien kesken.</value>
+  </data>
+  <data name="Task_CopyCommandLine" xml:space="preserve">
+    <value>Kopioi komentorivi</value>
   </data>
   <data name="Task_Create" xml:space="preserve">
     <value>Uusi</value>

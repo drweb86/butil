@@ -158,6 +158,9 @@
   <data name="CommandLineArguments_Help" xml:space="preserve">
     <value>Відвідайте {0}, щоб ознайомитися з аргументами командного рядка.</value>
   </data>
+  <data name="CommandLineArguments_Hint" xml:space="preserve">
+    <value>Командний рядок:</value>
+  </data>
   <data name="CommandLineArguments_Invalid" xml:space="preserve">
     <value>Некоректні аргументи командного рядка.</value>
   </data>
@@ -936,6 +939,9 @@ bin.
   </data>
   <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
     <value>Вкажіть унікальне централізоване сховище, через яке синхронізуються пристрої. Усі пристрої-учасники мають використовувати одне й те саме розташування сховища. Це розташування повністю керується застосунком — включно з видаленням даних, — тому не використовуйте його для чогось іншого і не діліть між кількома завданнями.</value>
+  </data>
+  <data name="Task_CopyCommandLine" xml:space="preserve">
+    <value>Копіювати командний рядок</value>
   </data>
   <data name="Task_Create" xml:space="preserve">
     <value>Нове завдання</value>

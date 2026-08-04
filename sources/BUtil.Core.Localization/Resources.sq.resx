@@ -158,6 +158,9 @@ Ndryshimet e versionit të fshirë do të bëhen pjesë e versionit "{1}".</valu
   <data name="CommandLineArguments_Help" xml:space="preserve">
     <value>Vizitoni {0} për të parë argumentet e linjës së komandës.</value>
   </data>
+  <data name="CommandLineArguments_Hint" xml:space="preserve">
+    <value>Rreshti i komandës:</value>
+  </data>
   <data name="CommandLineArguments_Invalid" xml:space="preserve">
     <value>Argumente të pavlefshme të linjës së komandës.</value>
   </data>
@@ -935,6 +938,9 @@ Shihni përshkrimin e detajuar në lidhjen vijuese.</value>
   </data>
   <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
     <value>Specifikoni një hapësirë ruajtjeje të centralizuar unike përmes së cilës sinkronizohen pajisjet. Të gjitha pajisjet pjesëmarrëse duhet të përdorin të njëjtin vend ruajtjeje. Ky vend menaxhohet plotësisht nga aplikacioni — përfshirë fshirjen e të dhënave — prandaj mos e përdorni për asgjë tjetër dhe mos e ndani midis disa detyrave.</value>
+  </data>
+  <data name="Task_CopyCommandLine" xml:space="preserve">
+    <value>Kopjo rreshtin e komandës</value>
   </data>
   <data name="Task_Create" xml:space="preserve">
     <value>E re</value>

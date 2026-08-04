@@ -158,6 +158,9 @@ Geläschte Versiounsännerunge ginn Deel vun der Versioun "{1}".</value>
   <data name="CommandLineArguments_Help" xml:space="preserve">
     <value>Besicht {0} fir Kommandozeilargumenter ze gesinn.</value>
   </data>
+  <data name="CommandLineArguments_Hint" xml:space="preserve">
+    <value>Befehlszeil:</value>
+  </data>
   <data name="CommandLineArguments_Invalid" xml:space="preserve">
     <value>Ongülteg Kommandozeil Argumenter.</value>
   </data>
@@ -935,6 +938,9 @@ See detailed description in the following link.</value>
   </data>
   <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
     <value>Gitt eng eenzegaarteg, zentraliséiert Späicherplaz un, iwwer déi Apparater synchroniséieren. All deelhuelend Apparat soll déiselwecht Späicherplaz benotzen. Dës Plaz gëtt komplett vun der App verwalt — dorënner d'Läschen vun Donnéeën — dofir benotzt se net fir eppes anescht, an deelt se net tëscht méi Aufgaben.</value>
+  </data>
+  <data name="Task_CopyCommandLine" xml:space="preserve">
+    <value>Befehlszeil kopéieren</value>
   </data>
   <data name="Task_Create" xml:space="preserve">
     <value>Nei</value>

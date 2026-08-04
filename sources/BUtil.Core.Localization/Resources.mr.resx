@@ -155,6 +155,9 @@
   <data name="CommandLineArguments_Help" xml:space="preserve">
     <value>कमांड लाइन आर्ग्युमेंट्स पाहण्यासाठी {0} ला भेट द्या.</value>
   </data>
+  <data name="CommandLineArguments_Hint" xml:space="preserve">
+    <value>कमांड लाइन:</value>
+  </data>
   <data name="CommandLineArguments_Invalid" xml:space="preserve">
     <value>अवैध कमांड लाइन आर्ग्युमेंट्स.</value>
   </data>
@@ -932,6 +935,9 @@
   </data>
   <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
     <value>उपकरणे सिंक करण्यासाठी वापरतील असे एक अद्वितीय केंद्रीकृत स्टोरेज निर्दिष्ट करा. सहभागी होणाऱ्या सर्व उपकरणांनी समान स्टोरेज स्थान वापरावे. हे स्थान संपूर्णपणे अ‍ॅपद्वारे व्यवस्थापित केले जाते — डेटा हटवण्यासह — त्यामुळे ते इतर कोणत्याही गोष्टीसाठी वापरू नका आणि अनेक कार्यांमध्ये सामायिक करू नका.</value>
+  </data>
+  <data name="Task_CopyCommandLine" xml:space="preserve">
+    <value>कमांड लाइन कॉपी करा</value>
   </data>
   <data name="Task_Create" xml:space="preserve">
     <value>नवीन</value>

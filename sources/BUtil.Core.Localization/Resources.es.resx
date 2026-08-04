@@ -158,6 +158,9 @@ Los cambios de la versión eliminada se convertirán en parte de la versión "{1
   <data name="CommandLineArguments_Help" xml:space="preserve">
     <value>Visite {0} para ver los argumentos de la línea de comandos.</value>
   </data>
+  <data name="CommandLineArguments_Hint" xml:space="preserve">
+    <value>Línea de comandos:</value>
+  </data>
   <data name="CommandLineArguments_Invalid" xml:space="preserve">
     <value>Argumentos de línea de comandos inválidos.</value>
   </data>
@@ -935,6 +938,9 @@ Consulta la descripción detallada en el siguiente enlace.</value>
   </data>
   <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
     <value>Especifique un almacenamiento centralizado único a través del cual se sincronizan los dispositivos. Todos los dispositivos participantes deben usar la misma ubicación de almacenamiento. Esta ubicación es gestionada completamente por la aplicación — incluida la eliminación de datos —, por lo que no debe utilizarla para nada más ni compartirla entre varias tareas.</value>
+  </data>
+  <data name="Task_CopyCommandLine" xml:space="preserve">
+    <value>Copiar línea de comandos</value>
   </data>
   <data name="Task_Create" xml:space="preserve">
     <value>Nuevo</value>

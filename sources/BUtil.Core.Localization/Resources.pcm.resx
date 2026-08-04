@@ -155,6 +155,9 @@
   <data name="CommandLineArguments_Help" xml:space="preserve">
     <value>Visit {0} to see command line arguments.</value>
   </data>
+  <data name="CommandLineArguments_Hint" xml:space="preserve">
+    <value>Command line:</value>
+  </data>
   <data name="CommandLineArguments_Invalid" xml:space="preserve">
     <value>Invalid command line arguments.</value>
   </data>
@@ -932,6 +935,9 @@ Abeg do one of dese:
   </data>
   <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
     <value>Choose one special storage wey all the devices go dey use to sync. All the devices wey dey involved must use the same storage location. The app go dey manage the storage well-well — including to delete data — so no use am for anything else, and no share am between different tasks.</value>
+  </data>
+  <data name="Task_CopyCommandLine" xml:space="preserve">
+    <value>Copy command line</value>
   </data>
   <data name="Task_Create" xml:space="preserve">
     <value>New</value>

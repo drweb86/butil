@@ -155,6 +155,9 @@ Silinen sürümdeki değişiklikler "{1}" sürümünün bir parçası olacak.</v
   <data name="CommandLineArguments_Help" xml:space="preserve">
     <value>Komut satırı argümanlarını görmek için {0} adresini ziyaret edin.</value>
   </data>
+  <data name="CommandLineArguments_Hint" xml:space="preserve">
+    <value>Komut satırı:</value>
+  </data>
   <data name="CommandLineArguments_Invalid" xml:space="preserve">
     <value>Geçersiz komut satırı argümanları.</value>
   </data>
@@ -932,6 +935,9 @@ Aşağıdaki bağlantıda detaylı açıklama bulun.</value>
   </data>
   <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
     <value>Cihazların senkronize olduğu benzersiz, merkezi bir depolama alanı belirtin. Katılan tüm cihazlar aynı depolama konumunu kullanmalıdır. Bu konum tamamen uygulama tarafından yönetilir — veri silme dahil — bu nedenle başka hiçbir şey için kullanmayın ve birden fazla görev arasında paylaşmayın.</value>
+  </data>
+  <data name="Task_CopyCommandLine" xml:space="preserve">
+    <value>Komut satırını kopyala</value>
   </data>
   <data name="Task_Create" xml:space="preserve">
     <value>Yeni</value>

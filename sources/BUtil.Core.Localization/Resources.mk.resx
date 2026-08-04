@@ -158,6 +158,9 @@
   <data name="CommandLineArguments_Help" xml:space="preserve">
     <value>Посетете {0} за да ги видите аргументите на командната линија.</value>
   </data>
+  <data name="CommandLineArguments_Hint" xml:space="preserve">
+    <value>Командна линија:</value>
+  </data>
   <data name="CommandLineArguments_Invalid" xml:space="preserve">
     <value>Невалидни аргументи на командната линија.</value>
   </data>
@@ -935,6 +938,9 @@ bin.
   </data>
   <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
     <value>Наведете единствено централизирано складиште преку кое се синхронизираат уредите. Сите вклучени уреди треба да ја користат истата локација на складиштето. Оваа локација целосно ја управува апликацијата — вклучувајќи го бришењето податоци — затоа не користете ја за ништо друго и не делете ја меѓу повеќе задачи.</value>
+  </data>
+  <data name="Task_CopyCommandLine" xml:space="preserve">
+    <value>Копирај ја командната линија</value>
   </data>
   <data name="Task_Create" xml:space="preserve">
     <value>Нова</value>

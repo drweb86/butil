@@ -1,11 +1,12 @@
-﻿# 2026.08.03
-(unpublished)
+﻿# 2026.08.05
 
 ## New Features
 - FTPS Server: it is possible to set shared folder access.
 - Upload folder: it is possible to skip existing files copy.
 - Import media: it is possible to set extensions of files to copy.
 - Console: reduced amount of messages that tool is producing.
+- Console: interactive mode shows a copyable command line for the selected action.
+- UI: task menu can copy the console command line to run the task.
 
 ## Changes
 - Some libraries were updated.

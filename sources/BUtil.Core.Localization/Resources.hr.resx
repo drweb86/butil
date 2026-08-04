@@ -158,6 +158,9 @@ Promjene obrisane verzije postat će dio verzije „{1}".</value>
   <data name="CommandLineArguments_Help" xml:space="preserve">
     <value>Posjetite {0} da biste vidjeli argumente naredbenog retka.</value>
   </data>
+  <data name="CommandLineArguments_Hint" xml:space="preserve">
+    <value>Naredbeni redak:</value>
+  </data>
   <data name="CommandLineArguments_Invalid" xml:space="preserve">
     <value>Nevažeći argumenti naredbenog retka.</value>
   </data>
@@ -935,6 +938,9 @@ Pogledajte detaljni opis na sljedećoj poveznici.</value>
   </data>
   <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
     <value>Odredite jedinstvenu centraliziranu pohranu putem koje se uređaji sinkroniziraju. Svi uređaji koji sudjeluju trebaju koristiti istu lokaciju pohrane. Ovom lokacijom u potpunosti upravlja aplikacija — uključujući brisanje podataka — stoga je nemojte koristiti ni za što drugo i nemojte je dijeliti između više zadataka.</value>
+  </data>
+  <data name="Task_CopyCommandLine" xml:space="preserve">
+    <value>Kopiraj naredbeni redak</value>
   </data>
   <data name="Task_Create" xml:space="preserve">
     <value>Novi</value>

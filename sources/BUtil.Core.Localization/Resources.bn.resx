@@ -152,6 +152,9 @@
   <data name="CommandLineArguments_Help" xml:space="preserve">
     <value>কমান্ড লাইন আর্গুমেন্টগুলি দেখতে {0} এ যান।</value>
   </data>
+  <data name="CommandLineArguments_Hint" xml:space="preserve">
+    <value>কমান্ড লাইন:</value>
+  </data>
   <data name="CommandLineArguments_Invalid" xml:space="preserve">
     <value>অবৈধ কমান্ড লাইন আর্গুমেন্ট।</value>
   </data>
@@ -929,6 +932,9 @@
   </data>
   <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
     <value>একটি অনন্য কেন্দ্রীভূত স্টোরেজ নির্দিষ্ট করুন যার মাধ্যমে ডিভাইসগুলো সিঙ্ক্রোনাইজ হয়। সমস্ত অংশগ্রহণকারী ডিভাইসের একই স্টোরেজ অবস্থান ব্যবহার করা উচিত। এই স্থানটি সম্পূর্ণরূপে অ্যাপ দ্বারা পরিচালিত হয় — ডেটা মুছে ফেলাসহ — তাই এটি অন্য কোনো কাজে ব্যবহার করবেন না এবং একাধিক টাস্কের মধ্যে এটি ভাগ করবেন না।</value>
+  </data>
+  <data name="Task_CopyCommandLine" xml:space="preserve">
+    <value>কমান্ড লাইন অনুলিপি করুন</value>
   </data>
   <data name="Task_Create" xml:space="preserve">
     <value>নতুন</value>

@@ -158,6 +158,9 @@ Forigitaj versioŝanĝoj fariĝos parto de versio "{1}".</value>
   <data name="CommandLineArguments_Help" xml:space="preserve">
     <value>Vizitu {0} por vidi komandliniajn argumentojn.</value>
   </data>
+  <data name="CommandLineArguments_Hint" xml:space="preserve">
+    <value>Komandlinio:</value>
+  </data>
   <data name="CommandLineArguments_Invalid" xml:space="preserve">
     <value>Nevalidaj komandliniaj argumentoj.</value>
   </data>
@@ -935,6 +938,9 @@ See detailed description in the following link.</value>
   </data>
   <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
     <value>Specifu unikan centran konservejon, per kiu aparatoj sinkroniĝas. Ĉiuj partoprenantaj aparatoj devus uzi la saman konservejan lokon. Ĉi tiu loko estas tute administrata de la aplikaĵo — inkluzive de la forigo de datumoj — do ne uzu ĝin por io alia, kaj ne kunhavigu ĝin inter pluraj taskoj.</value>
+  </data>
+  <data name="Task_CopyCommandLine" xml:space="preserve">
+    <value>Kopii komandlinion</value>
   </data>
   <data name="Task_Create" xml:space="preserve">
     <value>Nova</value>

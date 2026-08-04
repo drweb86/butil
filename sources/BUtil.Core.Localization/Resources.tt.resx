@@ -158,6 +158,9 @@
   <data name="CommandLineArguments_Help" xml:space="preserve">
     <value>Команда сызыгы аргументларын карау өчен {0} керегез.</value>
   </data>
+  <data name="CommandLineArguments_Hint" xml:space="preserve">
+    <value>Команда юлы:</value>
+  </data>
   <data name="CommandLineArguments_Invalid" xml:space="preserve">
     <value>Яраксыз командование аргументлары.</value>
   </data>
@@ -935,6 +938,9 @@ See detailed description in the following link.</value>
   </data>
   <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
     <value>Җайланмалар синхронлаштыру өчен кулланган уникаль үзәкләштерелгән саклагычны күрсәтегез. Катнашучы бөтен җайланмалар бер үк саклагыч урынын кулланырга тиеш. Бу урынны тулысынча кушымта идарә итә — моңа мәгълүматны бетерү дә керә — шуңа күрә аны башка бернәрсә өчен дә кулланмагыз һәм берничә бурыч арасында бүлешмәгез.</value>
+  </data>
+  <data name="Task_CopyCommandLine" xml:space="preserve">
+    <value>Команда юлын күчереп алу</value>
   </data>
   <data name="Task_Create" xml:space="preserve">
     <value>Яңа</value>

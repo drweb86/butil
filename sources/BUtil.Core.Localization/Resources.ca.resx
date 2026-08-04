@@ -158,6 +158,9 @@ Els canvis de versió suprimits passaran a formar part de la versió "{1}".</val
   <data name="CommandLineArguments_Help" xml:space="preserve">
     <value>Visiteu {0} per veure els arguments de la línia d'ordres.</value>
   </data>
+  <data name="CommandLineArguments_Hint" xml:space="preserve">
+    <value>Línia d'ordres:</value>
+  </data>
   <data name="CommandLineArguments_Invalid" xml:space="preserve">
     <value>Arguments de línia d'ordres no vàlids.</value>
   </data>
@@ -935,6 +938,9 @@ See detailed description in the following link.</value>
   </data>
   <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
     <value>Especifiqueu un emmagatzematge centralitzat únic mitjançant el qual se sincronitzen els dispositius. Tots els dispositius participants han d'utilitzar la mateixa ubicació d'emmagatzematge. Aquesta ubicació és gestionada completament per l'aplicació — inclosa l'eliminació de dades — per la qual cosa no l'utilitzeu per a res més, ni la compartiu entre diverses tasques.</value>
+  </data>
+  <data name="Task_CopyCommandLine" xml:space="preserve">
+    <value>Copia la línia d'ordres</value>
   </data>
   <data name="Task_Create" xml:space="preserve">
     <value>Nou</value>

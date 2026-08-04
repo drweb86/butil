@@ -158,6 +158,9 @@ Dzēstās versijas izmaiņas kļūs par versijas „{1}" daļu.</value>
   <data name="CommandLineArguments_Help" xml:space="preserve">
     <value>Apmeklējiet {0}, lai apskatītu komandrindas argumentus.</value>
   </data>
+  <data name="CommandLineArguments_Hint" xml:space="preserve">
+    <value>Komandrinda:</value>
+  </data>
   <data name="CommandLineArguments_Invalid" xml:space="preserve">
     <value>Nederīgi komandrindas argumenti.</value>
   </data>
@@ -935,6 +938,9 @@ Skatiet detalizētu aprakstu šajā saitē.</value>
   </data>
   <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
     <value>Norādiet unikālu, centralizētu krātuvi, caur kuru ierīces sinhronizējas. Visām iesaistītajām ierīcēm jāizmanto viena un tā pati krātuves atrašanās vieta. Šo atrašanās vietu pilnībā pārvalda lietotne — tostarp datu dzēšanu, — tāpēc neizmantojiet to nekam citam un nekopīgojiet to vairākiem uzdevumiem.</value>
+  </data>
+  <data name="Task_CopyCommandLine" xml:space="preserve">
+    <value>Kopēt komandrindu</value>
   </data>
   <data name="Task_Create" xml:space="preserve">
     <value>Jauns</value>

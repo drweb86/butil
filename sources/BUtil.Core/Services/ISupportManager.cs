@@ -13,4 +13,10 @@ public interface ISupportManager
     void OpenLink(string url);
     bool CanOpenLink { get; }
     bool SupportsSmileIcons { get; }
+
+    string GetConsoleCommandLineForTask(string taskName);
+    string GetConsoleCommandLineForEncrypt(string inputFile, string password);
+    string GetConsoleCommandLineForDecrypt(string inputFile, string password);
+    string GetConsoleCommandLineForCompress(string inputFile);
+    string GetConsoleCommandLineForDecompress(string inputFile);
 }

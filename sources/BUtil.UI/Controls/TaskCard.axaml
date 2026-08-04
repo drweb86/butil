@@ -101,6 +101,14 @@
 						</MenuItem>
 
 						<MenuItem Header="{Binding Task_OpenLog}" Command="{Binding OpenLogCommand}" IsEnabled="{Binding HasLog}" />
+
+						<Separator />
+
+						<MenuItem Header="{Binding Task_CopyCommandLine}" Command="{Binding TaskCopyCommandLineCommand}">
+							<MenuItem.Icon>
+								<TextBlock Text="📋" FontSize="14" />
+							</MenuItem.Icon>
+						</MenuItem>
 					</MenuItem>
 				</Menu>
 				</Grid>

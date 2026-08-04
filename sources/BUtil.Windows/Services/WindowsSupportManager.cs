@@ -82,6 +82,26 @@ public class WindowsSupportManager : ISupportManager
 
     #endregion
 
+    #region Console command line
+    public string GetConsoleCommandLineForTask(string taskName) =>
+        FormatConsoleCommand(QuoteArgument($"{TasksAppArguments.RunTask}={taskName}"));
+
+    public string GetConsoleCommandLineForEncrypt(string inputFile, string password) =>
+        FormatConsoleCommand("encrypt", QuoteArgument(inputFile), QuoteArgument(password));
+
+    public string GetConsoleCommandLineForDecrypt(string inputFile, string password) =>
+        FormatConsoleCommand("decrypt", QuoteArgument(inputFile), QuoteArgument(password));
+
+    public string GetConsoleCommandLineForCompress(string inputFile) =>
+        FormatConsoleCommand("encode", QuoteArgument(inputFile));
+
+    public string GetConsoleCommandLineForDecompress(string inputFile) =>
+        FormatConsoleCommand("decode", QuoteArgument(inputFile));
+
+    private static string FormatConsoleCommand(params string[] arguments) =>
+        string.Join(" ", [QuoteArgument(ConsoleBackupTool), .. arguments]);
+    #endregion
+
     private static string QuoteArgument(string value) =>
         "\"" + value.Replace("\"", "\\\"") + "\"";
 }

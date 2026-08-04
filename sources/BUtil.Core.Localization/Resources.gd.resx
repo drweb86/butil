@@ -158,6 +158,9 @@ Bidh atharraichean tionndaidh a chaidh a sguabadh às mar phàirt de dhreach "{1
   <data name="CommandLineArguments_Help" xml:space="preserve">
     <value>Tadhail air {0} gus argamaidean loidhne-àithne fhaicinn.</value>
   </data>
+  <data name="CommandLineArguments_Hint" xml:space="preserve">
+    <value>Loidhne àithne:</value>
+  </data>
   <data name="CommandLineArguments_Invalid" xml:space="preserve">
     <value>Argamaidean loidhne-àithne mì-dhligheach.</value>
   </data>
@@ -935,6 +938,9 @@ See detailed description in the following link.</value>
   </data>
   <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
     <value>Sònraich stòradh meadhanaichte àraidh tro bheil innealan a' sioncronachadh. Bu chòir do gach inneal a tha an sàs an aon àite stòraidh a chleachdadh. Tha an t-àite seo air a stiùireadh gu tur leis an aplacaid — a' gabhail a-steach sguabadh às dàta — mar sin na cleachd e airson dad eile, agus na co-roinn e eadar iomadh gnìomh.</value>
+  </data>
+  <data name="Task_CopyCommandLine" xml:space="preserve">
+    <value>Dèan lethbhreac den loidhne àithne</value>
   </data>
   <data name="Task_Create" xml:space="preserve">
     <value>Ùr</value>

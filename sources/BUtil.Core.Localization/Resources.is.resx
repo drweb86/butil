@@ -158,6 +158,9 @@ Breytingar á eyddri útgáfu verða hluti af útgáfu "{1}".</value>
   <data name="CommandLineArguments_Help" xml:space="preserve">
     <value>Heimsæktu {0} til að sjá skipanalínuviðföng.</value>
   </data>
+  <data name="CommandLineArguments_Hint" xml:space="preserve">
+    <value>Skipanalína:</value>
+  </data>
   <data name="CommandLineArguments_Invalid" xml:space="preserve">
     <value>Ógild skipanalínuviðföng.</value>
   </data>
@@ -935,6 +938,9 @@ Sjá nákvæma lýsingu á eftirfarandi tengli.</value>
   </data>
   <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
     <value>Tilgreindu einstaka, miðlæga geymslu sem tæki samstilla í gegnum. Öll þátttökutæki ættu að nota sömu geymslustaðsetningu. Forritið sér alfarið um þessa staðsetningu — þar með talið eyðingu gagna — svo notaðu hana ekki í neitt annað og deildu henni ekki milli margra verkefna.</value>
+  </data>
+  <data name="Task_CopyCommandLine" xml:space="preserve">
+    <value>Afrita skipanalínu</value>
   </data>
   <data name="Task_Create" xml:space="preserve">
     <value>Nýtt</value>

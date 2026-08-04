@@ -158,6 +158,9 @@
   <data name="CommandLineArguments_Help" xml:space="preserve">
     <value>명령줄 인수를 보려면 {0}을(를) 방문하세요.</value>
   </data>
+  <data name="CommandLineArguments_Hint" xml:space="preserve">
+    <value>명령줄:</value>
+  </data>
   <data name="CommandLineArguments_Invalid" xml:space="preserve">
     <value>잘못된 명령줄 인수입니다.</value>
   </data>
@@ -936,6 +939,9 @@ bin.
   </data>
   <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
     <value>장치가 동기화하는 데 사용할 고유한 중앙 집중식 저장소를 지정하세요. 참여하는 모든 장치는 동일한 저장 위치를 사용해야 합니다. 이 위치는 데이터 삭제를 포함하여 앱이 전적으로 관리하므로 다른 용도로 사용하지 말고 여러 작업 간에 공유하지 마세요.</value>
+  </data>
+  <data name="Task_CopyCommandLine" xml:space="preserve">
+    <value>명령줄 복사</value>
   </data>
   <data name="Task_Create" xml:space="preserve">
     <value>새로 만들기</value>

@@ -155,6 +155,9 @@ Những thay đổi của phiên bản đã xóa sẽ trở thành một phần 
   <data name="CommandLineArguments_Help" xml:space="preserve">
     <value>Truy cập {0} để xem các tham số dòng lệnh.</value>
   </data>
+  <data name="CommandLineArguments_Hint" xml:space="preserve">
+    <value>Dòng lệnh:</value>
+  </data>
   <data name="CommandLineArguments_Invalid" xml:space="preserve">
     <value>Các tham số dòng lệnh không hợp lệ.</value>
   </data>
@@ -932,6 +935,9 @@ Xem mô tả chi tiết trong liên kết sau.</value>
   </data>
   <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
     <value>Chỉ định một vị trí lưu trữ tập trung duy nhất mà các thiết bị dùng để đồng bộ hóa. Tất cả các thiết bị tham gia nên sử dụng cùng một vị trí lưu trữ. Vị trí này hoàn toàn do ứng dụng quản lý — bao gồm cả việc xóa dữ liệu — vì vậy đừng dùng nó cho mục đích khác và đừng chia sẻ nó giữa nhiều tác vụ.</value>
+  </data>
+  <data name="Task_CopyCommandLine" xml:space="preserve">
+    <value>Sao chép dòng lệnh</value>
   </data>
   <data name="Task_Create" xml:space="preserve">
     <value>Mới</value>

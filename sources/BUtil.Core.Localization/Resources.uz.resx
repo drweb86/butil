@@ -158,6 +158,9 @@ O'chirilgan versiya o'zgarishlari "{1}" versiyasining qismi bo'ladi.</value>
   <data name="CommandLineArguments_Help" xml:space="preserve">
     <value>Buyruq qatori argumentlarini ko'rish uchun {0} ga tashrif buyuring.</value>
   </data>
+  <data name="CommandLineArguments_Hint" xml:space="preserve">
+    <value>Buyruq qatori:</value>
+  </data>
   <data name="CommandLineArguments_Invalid" xml:space="preserve">
     <value>Buyruq qatori argumentlari noto'g'ri.</value>
   </data>
@@ -936,6 +939,9 @@ Batafsil tavsifni quyidagi havoladan ko'ring.</value>
   </data>
   <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
     <value>Qurilmalar sinxronlash uchun foydalanadigan noyob markazlashtirilgan saqlash joyini belgilang. Barcha ishtirok etuvchi qurilmalar bir xil saqlash joyidan foydalanishi kerak. Bu joyni ilova to'liq boshqaradi — ma'lumotlarni o'chirishni ham o'z ichiga olgan holda — shuning uchun uni boshqa hech narsa uchun ishlatmang va bir nechta vazifalar o'rtasida ulashmang.</value>
+  </data>
+  <data name="Task_CopyCommandLine" xml:space="preserve">
+    <value>Buyruq qatorini nusxalash</value>
   </data>
   <data name="Task_Create" xml:space="preserve">
     <value>Yangi</value>

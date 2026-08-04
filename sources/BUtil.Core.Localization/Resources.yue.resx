@@ -176,6 +176,9 @@
   <data name="CommandLineArguments_Help" xml:space="preserve">
     <value>訪問 {0} 以查看命令行參數。</value>
   </data>
+  <data name="CommandLineArguments_Hint" xml:space="preserve">
+    <value>命令列：</value>
+  </data>
   <data name="CommandLineArguments_Invalid" xml:space="preserve">
     <value>無效嘅命令行參數。</value>
   </data>
@@ -952,6 +955,9 @@ bin。
   </data>
   <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
     <value>指定一個獨一無二嘅集中式儲存空間，畀裝置用嚟同步。所有參與嘅裝置都應該用同一個儲存位置。呢個位置完全由應用程式管理——包括刪除數據喺內——所以唔好用嚟做其他嘢，亦都唔好喺多個任務之間共用。</value>
+  </data>
+  <data name="Task_CopyCommandLine" xml:space="preserve">
+    <value>複製命令列</value>
   </data>
   <data name="Task_Create" xml:space="preserve">
     <value>新建</value>

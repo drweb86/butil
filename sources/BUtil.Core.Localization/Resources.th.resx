@@ -158,6 +158,9 @@
   <data name="CommandLineArguments_Help" xml:space="preserve">
     <value>เยี่ยมชม {0} เพื่อดูอาร์กิวเมนต์บรรทัดคำสั่ง</value>
   </data>
+  <data name="CommandLineArguments_Hint" xml:space="preserve">
+    <value>บรรทัดคำสั่ง:</value>
+  </data>
   <data name="CommandLineArguments_Invalid" xml:space="preserve">
     <value>อาร์กิวเมนต์บรรทัดคำสั่งไม่ถูกต้อง</value>
   </data>
@@ -935,6 +938,9 @@ bin
   </data>
   <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
     <value>ระบุพื้นที่จัดเก็บส่วนกลางที่ไม่ซ้ำกันซึ่งอุปกรณ์จะใช้ในการซิงค์ อุปกรณ์ที่เข้าร่วมทั้งหมดควรใช้ตำแหน่งที่จัดเก็บเดียวกัน ตำแหน่งนี้ได้รับการจัดการทั้งหมดโดยแอป — รวมถึงการลบข้อมูล — ดังนั้นอย่าใช้เพื่อวัตถุประสงค์อื่น และอย่าแชร์ระหว่างงานหลายงาน</value>
+  </data>
+  <data name="Task_CopyCommandLine" xml:space="preserve">
+    <value>คัดลอกบรรทัดคำสั่ง</value>
   </data>
   <data name="Task_Create" xml:space="preserve">
     <value>สร้างใหม่</value>

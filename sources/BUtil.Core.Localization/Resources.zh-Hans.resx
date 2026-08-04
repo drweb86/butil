@@ -157,6 +157,9 @@
   <data name="CommandLineArguments_Help" xml:space="preserve">
     <value>访问 {0} 查看命令行参数。</value>
   </data>
+  <data name="CommandLineArguments_Hint" xml:space="preserve">
+    <value>命令行：</value>
+  </data>
   <data name="CommandLineArguments_Invalid" xml:space="preserve">
     <value>无效的命令行参数。</value>
   </data>
@@ -934,6 +937,9 @@ bin。
   </data>
   <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
     <value>指定一个唯一的集中式存储位置，设备将通过它进行同步。所有参与的设备都应使用相同的存储位置。该位置完全由应用程序管理——包括删除数据——因此请勿将其用于其他任何用途，也不要在多个任务之间共享。</value>
+  </data>
+  <data name="Task_CopyCommandLine" xml:space="preserve">
+    <value>复制命令行</value>
   </data>
   <data name="Task_Create" xml:space="preserve">
     <value>新建</value>
