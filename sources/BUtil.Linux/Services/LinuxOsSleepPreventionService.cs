@@ -7,18 +7,20 @@ namespace BUtil.Linux.Services;
 /// <summary>
 /// Blocks suspend/idle via logind's Inhibit lock (same mechanism as systemd-inhibit,
 /// but in-process over the system bus — no child process and no terminal).
-/// Closing the returned fd in <see cref="StopPreventSleep"/> drops the lock immediately.
+/// Closing the returned fds in <see cref="StopPreventSleep"/> drops the lock immediately.
+/// Idle and sleep are taken as separate locks so cron (no login session) can still
+/// inhibit idle suspend even when block-sleep is denied by polkit.
 /// </summary>
 internal sealed partial class LinuxOsSleepPreventionService : IOsSleepPreventionService
 {
-    private const string What = "sleep:idle";
+    private static readonly string[] InhibitWhat = ["idle", "sleep"];
     private const string Who = "BUtil";
     private const string Why = "A task is running";
     private const string Mode = "block";
 
     private readonly object _gate = new();
     private nint _bus;
-    private SafeFileHandle? _inhibitFd;
+    private readonly List<SafeFileHandle> _inhibitFds = [];
 
     public void PreventSleep()
     {
@@ -29,11 +31,11 @@ internal sealed partial class LinuxOsSleepPreventionService : IOsSleepPrevention
 
             try
             {
-                TakeInhibitLock();
+                TakeInhibitLocks();
             }
             catch
             {
-                ReleaseInhibitLock();
+                ReleaseInhibitLocks();
             }
         }
     }
@@ -42,23 +44,46 @@ internal sealed partial class LinuxOsSleepPreventionService : IOsSleepPrevention
     {
         lock (_gate)
         {
-            ReleaseInhibitLock();
+            ReleaseInhibitLocks();
         }
     }
 
-    private bool IsLockHeld => _inhibitFd is { IsClosed: false, IsInvalid: false };
+    private bool IsLockHeld => _inhibitFds.Exists(fd => fd is { IsClosed: false, IsInvalid: false });
 
-    private void TakeInhibitLock()
+    private void TakeInhibitLocks()
     {
         var r = NativeMethods.sd_bus_open_system(out var bus);
         if (r < 0)
             throw new InvalidOperationException($"sd_bus_open_system failed ({r}).");
 
+        _bus = bus;
+
+        foreach (var what in InhibitWhat)
+        {
+            try
+            {
+                var fd = Inhibit(bus, what);
+                if (fd is { IsClosed: false, IsInvalid: false })
+                    _inhibitFds.Add(fd);
+            }
+            catch
+            {
+                // sleep:block is often denied without an active logind session (cron).
+                // idle:block is allowed; keep whatever succeeded.
+            }
+        }
+
+        if (_inhibitFds.Count == 0)
+            throw new InvalidOperationException("logind Inhibit returned no locks.");
+    }
+
+    private static SafeFileHandle Inhibit(nint bus, string what)
+    {
         nint message = 0;
         nint reply = 0;
         try
         {
-            r = NativeMethods.sd_bus_message_new_method_call(
+            var r = NativeMethods.sd_bus_message_new_method_call(
                 bus,
                 out message,
                 "org.freedesktop.login1",
@@ -68,14 +93,14 @@ internal sealed partial class LinuxOsSleepPreventionService : IOsSleepPrevention
             if (r < 0)
                 throw new InvalidOperationException($"sd_bus_message_new_method_call failed ({r}).");
 
-            AppendString(message, What);
+            AppendString(message, what);
             AppendString(message, Who);
             AppendString(message, Why);
             AppendString(message, Mode);
 
             r = NativeMethods.sd_bus_call(bus, message, 0, 0, out reply);
             if (r < 0)
-                throw new InvalidOperationException($"sd_bus_call Inhibit failed ({r}).");
+                throw new InvalidOperationException($"sd_bus_call Inhibit({what}) failed ({r}).");
 
             r = NativeMethods.sd_bus_message_read_basic(reply, (byte)'h', out var fd);
             if (r < 0)
@@ -85,9 +110,7 @@ internal sealed partial class LinuxOsSleepPreventionService : IOsSleepPrevention
             if (dupFd < 0)
                 throw new InvalidOperationException("dup of inhibit fd failed.");
 
-            _inhibitFd = new SafeFileHandle(dupFd, ownsHandle: true);
-            _bus = bus;
-            bus = 0;
+            return new SafeFileHandle(dupFd, ownsHandle: true);
         }
         finally
         {
@@ -95,8 +118,6 @@ internal sealed partial class LinuxOsSleepPreventionService : IOsSleepPrevention
                 NativeMethods.sd_bus_message_unref(message);
             if (reply != 0)
                 NativeMethods.sd_bus_message_unref(reply);
-            if (bus != 0)
-                NativeMethods.sd_bus_unref(bus);
         }
     }
 
@@ -115,18 +136,20 @@ internal sealed partial class LinuxOsSleepPreventionService : IOsSleepPrevention
         }
     }
 
-    private void ReleaseInhibitLock()
+    private void ReleaseInhibitLocks()
     {
-        var handle = _inhibitFd;
-        _inhibitFd = null;
-        try
+        foreach (var handle in _inhibitFds)
         {
-            handle?.Dispose();
+            try
+            {
+                handle.Dispose();
+            }
+            catch
+            {
+                // Closing the logind fd is best-effort; the task must still be able to finish.
+            }
         }
-        catch
-        {
-            // Closing the logind fd is best-effort; the task must still be able to finish.
-        }
+        _inhibitFds.Clear();
 
         var bus = _bus;
         _bus = 0;
