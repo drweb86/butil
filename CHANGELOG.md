@@ -1,4 +1,10 @@
-﻿# 2026.08.05
+﻿# 2026.08.24
+(unpublished)
+
+## Changes
+- Some libraries were updated.
+
+# 2026.08.05
 
 ## New Features
 - FTPS Server: it is possible to set shared folder access.
