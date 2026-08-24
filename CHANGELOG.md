@@ -3,6 +3,7 @@
 
 ## Changes
 - Some libraries were updated.
+- Linux: Command line argument does not require system-inhibit anymore.
 
 # 2026.08.05
 

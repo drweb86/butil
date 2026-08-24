@@ -22,6 +22,8 @@ namespace BUtil.Linux;
 
 public class LinuxExperience : CrossPlatformExperience
 {
+    private readonly IOsSleepPreventionService _osSleepPreventionService = new LinuxOsSleepPreventionService();
+
     public override ISecretService SecretService => new LinuxSecretService();
 
     public override int MinimumListenerPort => 1025;
@@ -44,7 +46,7 @@ public class LinuxExperience : CrossPlatformExperience
 
     public override IUiService UiService => new LinuxUiService();
 
-    public override IOsSleepPreventionService OsSleepPreventionService => new LinuxOsSleepPreventionService();
+    public override IOsSleepPreventionService OsSleepPreventionService => _osSleepPreventionService;
 
     public override IFolderService GetFolderService()
     {

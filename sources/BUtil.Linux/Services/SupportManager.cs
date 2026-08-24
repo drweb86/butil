@@ -35,10 +35,9 @@ public class SupportManager : ISupportManager
     {
         Process.Start(new ProcessStartInfo
         {
-            FileName = "systemd-inhibit",
+            FileName = UIApp,
             WorkingDirectory = _workDir,
-            Arguments = $"\"./{UiAppName}\""
-                + (arguments != null ? $" {arguments}" : ""),
+            Arguments = arguments ?? string.Empty,
         });
     }
 
@@ -79,7 +78,7 @@ public class SupportManager : ISupportManager
             [Desktop Entry]
             Type=Application
             Name={EscapeDesktopValue(Files.GetTaskShortcutName(ApplicationName, taskName))}
-            Exec=systemd-inhibit {arguments}
+            Exec={arguments}
             Path={EscapeDesktopValue(Directories.BinariesDir)}
             Terminal=false
             Categories=Utility;
@@ -158,7 +157,7 @@ public class SupportManager : ISupportManager
 
     #region Console command line
     public string GetConsoleCommandLineForTask(string taskName) =>
-        $"systemd-inhibit {FormatConsoleCommand(QuoteArgument($"{TasksAppArguments.RunTask}={taskName}"))}";
+        FormatConsoleCommand(QuoteArgument($"{TasksAppArguments.RunTask}={taskName}"));
 
     public string GetConsoleCommandLineForEncrypt(string inputFile, string password) =>
         FormatConsoleCommand("encrypt", QuoteArgument(inputFile), QuoteArgument(password));
