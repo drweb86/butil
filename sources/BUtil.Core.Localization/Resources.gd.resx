@@ -155,6 +155,12 @@ Bidh atharraichean tionndaidh a chaidh a sguabadh às mar phàirt de dhreach "{1
   <data name="Button_Save" xml:space="preserve">
     <value>Sàbhail</value>
   </data>
+  <data name="Button_Start" xml:space="preserve">
+    <value>Tòisich</value>
+  </data>
+  <data name="Button_Stop" xml:space="preserve">
+    <value>Stad</value>
+  </data>
   <data name="CommandLineArguments_Help" xml:space="preserve">
     <value>Tadhail air {0} gus argamaidean loidhne-àithne fhaicinn.</value>
   </data>
@@ -1074,6 +1080,9 @@ See detailed description in the following link.</value>
   <data name="TechnicalTool_Menu_EncryptAes256" xml:space="preserve">
     <value>Cuir a-steach AES-256…</value>
   </data>
+  <data name="TechnicalTool_Menu_PreventSleep" xml:space="preserve">
+    <value>Cuir casg air modh-cadail…</value>
+  </data>
   <data name="TechnicalTool_OutputFile" xml:space="preserve">
     <value>Faidhle toraidh:</value>
   </data>
@@ -1082,6 +1091,15 @@ See detailed description in the following link.</value>
   </data>
   <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
     <value>Tagh am faidhle stòr</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_Duration_Help" xml:space="preserve">
+    <value>An ùine a chumar an coimpiutair na dhùisg, ann am mionaidean. Cleachd 0 airson gun chrìoch-ama (gun chrìoch).</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_PressAnyKey" xml:space="preserve">
+    <value>Brùth iuchair sam bith gus stad.</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_Title" xml:space="preserve">
+    <value>Cuir casg air modh-cadail</value>
   </data>
   <data name="TechnicalTool_SourceFile" xml:space="preserve">
     <value>Stòr faidhle:</value>

@@ -155,6 +155,12 @@ Breytingar á eyddri útgáfu verða hluti af útgáfu "{1}".</value>
   <data name="Button_Save" xml:space="preserve">
     <value>Vista</value>
   </data>
+  <data name="Button_Start" xml:space="preserve">
+    <value>Hefja</value>
+  </data>
+  <data name="Button_Stop" xml:space="preserve">
+    <value>Stöðva</value>
+  </data>
   <data name="CommandLineArguments_Help" xml:space="preserve">
     <value>Heimsæktu {0} til að sjá skipanalínuviðföng.</value>
   </data>
@@ -1074,6 +1080,9 @@ Sjá nákvæma lýsingu á eftirfarandi tengli.</value>
   <data name="TechnicalTool_Menu_EncryptAes256" xml:space="preserve">
     <value>Dulkóða AES-256…</value>
   </data>
+  <data name="TechnicalTool_Menu_PreventSleep" xml:space="preserve">
+    <value>Koma í veg fyrir svefn…</value>
+  </data>
   <data name="TechnicalTool_OutputFile" xml:space="preserve">
     <value>Úttaksskrá:</value>
   </data>
@@ -1082,6 +1091,15 @@ Sjá nákvæma lýsingu á eftirfarandi tengli.</value>
   </data>
   <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
     <value>Velja upprunaskrá</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_Duration_Help" xml:space="preserve">
+    <value>Hversu lengi á að halda tölvunni vakandi, í mínútum. Notaðu 0 fyrir engin tímamörk (ótakmarkað).</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_PressAnyKey" xml:space="preserve">
+    <value>Ýttu á einhvern takka til að stöðva.</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_Title" xml:space="preserve">
+    <value>Koma í veg fyrir svefn</value>
   </data>
   <data name="TechnicalTool_SourceFile" xml:space="preserve">
     <value>Upprunaskrá:</value>

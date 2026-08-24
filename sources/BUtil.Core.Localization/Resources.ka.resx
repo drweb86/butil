@@ -155,6 +155,12 @@
   <data name="Button_Save" xml:space="preserve">
     <value>შენახვა</value>
   </data>
+  <data name="Button_Start" xml:space="preserve">
+    <value>დაწყება</value>
+  </data>
+  <data name="Button_Stop" xml:space="preserve">
+    <value>გაჩერება</value>
+  </data>
   <data name="CommandLineArguments_Help" xml:space="preserve">
     <value>ეწვიეთ {0} ბრძანების ხაზის არგუმენტების სანახავად.</value>
   </data>
@@ -1074,6 +1080,9 @@ bin.
   <data name="TechnicalTool_Menu_EncryptAes256" xml:space="preserve">
     <value>AES-256 დაშიფვრა…</value>
   </data>
+  <data name="TechnicalTool_Menu_PreventSleep" xml:space="preserve">
+    <value>ძილის რეჟიმის თავიდან აცილება…</value>
+  </data>
   <data name="TechnicalTool_OutputFile" xml:space="preserve">
     <value>გამომავალი ფაილი:</value>
   </data>
@@ -1082,6 +1091,15 @@ bin.
   </data>
   <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
     <value>წყაროს ფაილის არჩევა</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_Duration_Help" xml:space="preserve">
+    <value>რამდენ ხანს დარჩეს კომპიუტერი აქტიური, წუთებში. დროის შეუზღუდავად გამოიყენეთ 0 (შეუზღუდავი).</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_PressAnyKey" xml:space="preserve">
+    <value>გასაჩერებლად დააჭირეთ ნებისმიერ ღილაკს.</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_Title" xml:space="preserve">
+    <value>ძილის რეჟიმის თავიდან აცილება</value>
   </data>
   <data name="TechnicalTool_SourceFile" xml:space="preserve">
     <value>წყაროს ფაილი:</value>

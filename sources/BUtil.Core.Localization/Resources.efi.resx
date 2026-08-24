@@ -152,6 +152,12 @@ Deleted version changes will become part of version "{1}".</value>
   <data name="Button_Save" xml:space="preserve">
     <value>Save</value>
   </data>
+  <data name="Button_Start" xml:space="preserve">
+    <value>Tọñọ</value>
+  </data>
+  <data name="Button_Stop" xml:space="preserve">
+    <value>Tre</value>
+  </data>
   <data name="CommandLineArguments_Help" xml:space="preserve">
     <value>Visit {0} to see command line arguments.</value>
   </data>
@@ -1071,6 +1077,9 @@ See detailed description in the following link.</value>
   <data name="TechnicalTool_Menu_EncryptAes256" xml:space="preserve">
     <value>Encrypt AES-256…</value>
   </data>
+  <data name="TechnicalTool_Menu_PreventSleep" xml:space="preserve">
+    <value>Kû yak kọmputa odoro…</value>
+  </data>
   <data name="TechnicalTool_OutputFile" xml:space="preserve">
     <value>Output file:</value>
   </data>
@@ -1079,6 +1088,15 @@ See detailed description in the following link.</value>
   </data>
   <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
     <value>Select source file</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_Duration_Help" xml:space="preserve">
+    <value>Sọñọ ini emi kọmputa edidude ama, ke minit. Da 0 ke ini mîdịghe utịt (unlimited).</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_PressAnyKey" xml:space="preserve">
+    <value>Fịk key ekededi man etre.</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_Title" xml:space="preserve">
+    <value>Kû yak kọmputa odoro</value>
   </data>
   <data name="TechnicalTool_SourceFile" xml:space="preserve">
     <value>Source file:</value>

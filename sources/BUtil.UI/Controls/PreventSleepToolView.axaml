@@ -1,0 +1,65 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:controls="clr-namespace:BUtil.UI.Controls"
+             xmlns:decor="clr-namespace:BUtil.UI.Controls;assembly=BUtil.UI.Common"
+             mc:Ignorable="d"
+             x:Class="BUtil.UI.Controls.PreventSleepToolView"
+             x:DataType="controls:PreventSleepToolViewModel">
+	<Grid>
+		<controls:PreventSleepDecorationCanvas
+				HorizontalAlignment="Right"
+				VerticalAlignment="Bottom"
+				Margin="0 0 14 14" />
+		<StackPanel Classes="FormContent">
+			<StackPanel.Styles>
+				<Style Selector="Button">
+					<Setter Property="Margin" Value="4" />
+					<Setter Property="MinWidth" Value="120" />
+					<Setter Property="HorizontalContentAlignment" Value="Center" />
+					<Setter Property="Padding" Value="32 32 32 32" />
+				</Style>
+			</StackPanel.Styles>
+			<decor:FormHeader Text="{Binding WindowTitle}" />
+			<decor:NumericUpDownField
+					IsVisible="{Binding !IsRunning}"
+					IsEnabled="{Binding !IsRunning}"
+					Label="{Binding DurationMinutes_Field}"
+					Minimum="0"
+					Value="{Binding DurationMinutes}"
+					Help="{Binding DurationMinutes_Help}" />
+			<Border
+					IsVisible="{Binding IsRunning}"
+					Background="#FF1A1A1A"
+					CornerRadius="16"
+					Padding="32 16"
+					HorizontalAlignment="Center"
+					Margin="0 16">
+				<TextBlock
+						Text="{Binding ClockDisplay}"
+						FontFamily="Consolas,Menlo,DejaVu Sans Mono,monospace"
+						FontSize="72"
+						FontWeight="Bold"
+						Foreground="#FFE53935"
+						LetterSpacing="4"
+						HorizontalAlignment="Center" />
+			</Border>
+			<StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0 8">
+				<Button
+						Content="{Binding Button_Start}"
+						Command="{Binding StartCommand}"
+						IsEnabled="{Binding CanStart}"
+						IsDefault="{Binding CanStart}" />
+				<Button
+						Content="{Binding Button_Stop}"
+						Command="{Binding StopCommand}"
+						IsEnabled="{Binding CanStop}" />
+				<Button
+						Content="{Binding Button_Close}"
+						Command="{Binding CloseCommand}"
+						IsCancel="True" />
+			</StackPanel>
+		</StackPanel>
+	</Grid>
+</UserControl>

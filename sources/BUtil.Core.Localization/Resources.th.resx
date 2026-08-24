@@ -155,6 +155,12 @@
   <data name="Button_Save" xml:space="preserve">
     <value>บันทึก</value>
   </data>
+  <data name="Button_Start" xml:space="preserve">
+    <value>เริ่ม</value>
+  </data>
+  <data name="Button_Stop" xml:space="preserve">
+    <value>หยุด</value>
+  </data>
   <data name="CommandLineArguments_Help" xml:space="preserve">
     <value>เยี่ยมชม {0} เพื่อดูอาร์กิวเมนต์บรรทัดคำสั่ง</value>
   </data>
@@ -1074,6 +1080,9 @@ bin
   <data name="TechnicalTool_Menu_EncryptAes256" xml:space="preserve">
     <value>เข้ารหัส AES-256…</value>
   </data>
+  <data name="TechnicalTool_Menu_PreventSleep" xml:space="preserve">
+    <value>ป้องกันโหมดสลีป…</value>
+  </data>
   <data name="TechnicalTool_OutputFile" xml:space="preserve">
     <value>ไฟล์ผลลัพธ์:</value>
   </data>
@@ -1082,6 +1091,15 @@ bin
   </data>
   <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
     <value>เลือกไฟล์ต้นทาง</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_Duration_Help" xml:space="preserve">
+    <value>ระยะเวลาที่ให้คอมพิวเตอร์ทำงานต่อ หน่วยเป็นนาที ใช้ 0 เพื่อไม่จำกัดเวลา (ไม่จำกัด)</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_PressAnyKey" xml:space="preserve">
+    <value>กดปุ่มใดก็ได้เพื่อหยุด</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_Title" xml:space="preserve">
+    <value>ป้องกันโหมดสลีป</value>
   </data>
   <data name="TechnicalTool_SourceFile" xml:space="preserve">
     <value>ไฟล์ต้นทาง:</value>

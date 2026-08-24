@@ -155,6 +155,12 @@ Els canvis de versió suprimits passaran a formar part de la versió "{1}".</val
   <data name="Button_Save" xml:space="preserve">
     <value>Desa</value>
   </data>
+  <data name="Button_Start" xml:space="preserve">
+    <value>Inicieu</value>
+  </data>
+  <data name="Button_Stop" xml:space="preserve">
+    <value>Atureu</value>
+  </data>
   <data name="CommandLineArguments_Help" xml:space="preserve">
     <value>Visiteu {0} per veure els arguments de la línia d'ordres.</value>
   </data>
@@ -1074,6 +1080,9 @@ See detailed description in the following link.</value>
   <data name="TechnicalTool_Menu_EncryptAes256" xml:space="preserve">
     <value>Xifra AES-256...</value>
   </data>
+  <data name="TechnicalTool_Menu_PreventSleep" xml:space="preserve">
+    <value>Evita la suspensió…</value>
+  </data>
   <data name="TechnicalTool_OutputFile" xml:space="preserve">
     <value>Fitxer de sortida:</value>
   </data>
@@ -1082,6 +1091,15 @@ See detailed description in the following link.</value>
   </data>
   <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
     <value>Seleccioneu el fitxer font</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_Duration_Help" xml:space="preserve">
+    <value>Quant de temps s'ha de mantenir actiu l'ordinador, en minuts. Utilitzeu 0 per a cap límit de temps (il·limitat).</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_PressAnyKey" xml:space="preserve">
+    <value>Premeu qualsevol tecla per aturar.</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_Title" xml:space="preserve">
+    <value>Evita la suspensió</value>
   </data>
   <data name="TechnicalTool_SourceFile" xml:space="preserve">
     <value>Fitxer font:</value>

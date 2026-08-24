@@ -155,6 +155,12 @@ Poistetun version muutokset tulevat osaksi versiota "{1}".</value>
   <data name="Button_Save" xml:space="preserve">
     <value>Tallenna</value>
   </data>
+  <data name="Button_Start" xml:space="preserve">
+    <value>Käynnistä</value>
+  </data>
+  <data name="Button_Stop" xml:space="preserve">
+    <value>Pysäytä</value>
+  </data>
   <data name="CommandLineArguments_Help" xml:space="preserve">
     <value>Vieraile osoitteessa {0} nähdäksesi komentoriviparametrit.</value>
   </data>
@@ -1074,6 +1080,9 @@ Katso yksityiskohtainen kuvaus seuraavasta linkistä.</value>
   <data name="TechnicalTool_Menu_EncryptAes256" xml:space="preserve">
     <value>Salaa AES-256…</value>
   </data>
+  <data name="TechnicalTool_Menu_PreventSleep" xml:space="preserve">
+    <value>Estä lepotila…</value>
+  </data>
   <data name="TechnicalTool_OutputFile" xml:space="preserve">
     <value>Tulostiedosto:</value>
   </data>
@@ -1082,6 +1091,15 @@ Katso yksityiskohtainen kuvaus seuraavasta linkistä.</value>
   </data>
   <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
     <value>Valitse lähdetiedosto</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_Duration_Help" xml:space="preserve">
+    <value>Kuinka kauan tietokone pidetään hereillä minuutteina. Arvo 0 tarkoittaa, ettei aikarajaa ole (rajoittamaton).</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_PressAnyKey" xml:space="preserve">
+    <value>Pysäytä painamalla mitä tahansa näppäintä.</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_Title" xml:space="preserve">
+    <value>Estä lepotila</value>
   </data>
   <data name="TechnicalTool_SourceFile" xml:space="preserve">
     <value>Lähdetiedosto:</value>

@@ -155,6 +155,12 @@
   <data name="Button_Save" xml:space="preserve">
     <value>저장</value>
   </data>
+  <data name="Button_Start" xml:space="preserve">
+    <value>시작</value>
+  </data>
+  <data name="Button_Stop" xml:space="preserve">
+    <value>중지</value>
+  </data>
   <data name="CommandLineArguments_Help" xml:space="preserve">
     <value>명령줄 인수를 보려면 {0}을(를) 방문하세요.</value>
   </data>
@@ -1075,6 +1081,9 @@ bin.
   <data name="TechnicalTool_Menu_EncryptAes256" xml:space="preserve">
     <value>AES-256 암호화…</value>
   </data>
+  <data name="TechnicalTool_Menu_PreventSleep" xml:space="preserve">
+    <value>절전 모드 방지…</value>
+  </data>
   <data name="TechnicalTool_OutputFile" xml:space="preserve">
     <value>출력 파일:</value>
   </data>
@@ -1083,6 +1092,15 @@ bin.
   </data>
   <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
     <value>원본 파일 선택</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_Duration_Help" xml:space="preserve">
+    <value>컴퓨터를 절전 모드로 전환하지 않을 시간(분)입니다. 시간 제한 없이 사용하려면 0을 입력하세요.</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_PressAnyKey" xml:space="preserve">
+    <value>중지하려면 아무 키나 누르세요.</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_Title" xml:space="preserve">
+    <value>절전 모드 방지</value>
   </data>
   <data name="TechnicalTool_SourceFile" xml:space="preserve">
     <value>원본 파일:</value>

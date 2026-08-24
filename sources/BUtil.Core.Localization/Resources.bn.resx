@@ -149,6 +149,12 @@
   <data name="Button_Save" xml:space="preserve">
     <value>সংরক্ষণ করুন</value>
   </data>
+  <data name="Button_Start" xml:space="preserve">
+    <value>শুরু করুন</value>
+  </data>
+  <data name="Button_Stop" xml:space="preserve">
+    <value>বন্ধ করুন</value>
+  </data>
   <data name="CommandLineArguments_Help" xml:space="preserve">
     <value>কমান্ড লাইন আর্গুমেন্টগুলি দেখতে {0} এ যান।</value>
   </data>
@@ -1068,6 +1074,9 @@
   <data name="TechnicalTool_Menu_EncryptAes256" xml:space="preserve">
     <value>AES-256 এনক্রিপ্ট…</value>
   </data>
+  <data name="TechnicalTool_Menu_PreventSleep" xml:space="preserve">
+    <value>স্লিপ প্রতিরোধ করুন…</value>
+  </data>
   <data name="TechnicalTool_OutputFile" xml:space="preserve">
     <value>আউটপুট ফাইল:</value>
   </data>
@@ -1076,6 +1085,15 @@
   </data>
   <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
     <value>উৎস ফাইল নির্বাচন করুন</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_Duration_Help" xml:space="preserve">
+    <value>কম্পিউটার কতক্ষণ সচল রাখা হবে, মিনিটে। কোনো সময়সীমা না রাখতে (সীমাহীন) 0 ব্যবহার করুন।</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_PressAnyKey" xml:space="preserve">
+    <value>বন্ধ করতে যেকোনো কী চাপুন।</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_Title" xml:space="preserve">
+    <value>স্লিপ প্রতিরোধ</value>
   </data>
   <data name="TechnicalTool_SourceFile" xml:space="preserve">
     <value>উৎস ফাইল:</value>

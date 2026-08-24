@@ -155,6 +155,12 @@ Bydd newidiadau fersiwn sydd wedi'u dileu yn dod yn rhan o fersiwn "{1}".</value
   <data name="Button_Save" xml:space="preserve">
     <value>Arbed</value>
   </data>
+  <data name="Button_Start" xml:space="preserve">
+    <value>Cychwyn</value>
+  </data>
+  <data name="Button_Stop" xml:space="preserve">
+    <value>Stopio</value>
+  </data>
   <data name="CommandLineArguments_Help" xml:space="preserve">
     <value>Ewch i {0} i weld dadleuon llinell orchymyn.</value>
   </data>
@@ -1074,6 +1080,9 @@ See detailed description in the following link.</value>
   <data name="TechnicalTool_Menu_EncryptAes256" xml:space="preserve">
     <value>Amgryptio AES-256…</value>
   </data>
+  <data name="TechnicalTool_Menu_PreventSleep" xml:space="preserve">
+    <value>Atal y cyfrifiadur rhag cysgu…</value>
+  </data>
   <data name="TechnicalTool_OutputFile" xml:space="preserve">
     <value>Ffeil allbwn:</value>
   </data>
@@ -1082,6 +1091,15 @@ See detailed description in the following link.</value>
   </data>
   <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
     <value>Dewiswch ffeil ffynhonnell</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_Duration_Help" xml:space="preserve">
+    <value>Am ba hyd i gadw'r cyfrifiadur yn effro, mewn munudau. Defnyddiwch 0 am ddim terfyn amser (diderfyn).</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_PressAnyKey" xml:space="preserve">
+    <value>Pwyswch unrhyw fysell i stopio.</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_Title" xml:space="preserve">
+    <value>Atal y cyfrifiadur rhag cysgu</value>
   </data>
   <data name="TechnicalTool_SourceFile" xml:space="preserve">
     <value>Ffeil ffynhonnell:</value>

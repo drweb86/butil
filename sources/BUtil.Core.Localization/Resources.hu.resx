@@ -155,6 +155,12 @@ A törölt verzió változásai a(z) „{1}" verzió részévé válnak.</value>
   <data name="Button_Save" xml:space="preserve">
     <value>Mentés</value>
   </data>
+  <data name="Button_Start" xml:space="preserve">
+    <value>Indítás</value>
+  </data>
+  <data name="Button_Stop" xml:space="preserve">
+    <value>Leállítás</value>
+  </data>
   <data name="CommandLineArguments_Help" xml:space="preserve">
     <value>Látogasson el a {0} oldalra a parancssori argumentumok megtekintéséhez.</value>
   </data>
@@ -1074,6 +1080,9 @@ A részletes leírást az alábbi linken találja.</value>
   <data name="TechnicalTool_Menu_EncryptAes256" xml:space="preserve">
     <value>AES-256 titkosítás…</value>
   </data>
+  <data name="TechnicalTool_Menu_PreventSleep" xml:space="preserve">
+    <value>Alvó állapot megakadályozása…</value>
+  </data>
   <data name="TechnicalTool_OutputFile" xml:space="preserve">
     <value>Kimeneti fájl:</value>
   </data>
@@ -1082,6 +1091,15 @@ A részletes leírást az alábbi linken találja.</value>
   </data>
   <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
     <value>Forrásfájl kiválasztása</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_Duration_Help" xml:space="preserve">
+    <value>A számítógép ébren tartásának időtartama percben. Ha nincs időkorlát (korlátlan), használjon 0 értéket.</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_PressAnyKey" xml:space="preserve">
+    <value>A leállításhoz nyomjon meg egy billentyűt.</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_Title" xml:space="preserve">
+    <value>Alvó állapot megakadályozása</value>
   </data>
   <data name="TechnicalTool_SourceFile" xml:space="preserve">
     <value>Forrásfájl:</value>

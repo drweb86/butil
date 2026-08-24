@@ -155,6 +155,12 @@ Verwijderde versiewijzigingen worden onderdeel van versie "{1}".</value>
   <data name="Button_Save" xml:space="preserve">
     <value>Opslaan</value>
   </data>
+  <data name="Button_Start" xml:space="preserve">
+    <value>Starten</value>
+  </data>
+  <data name="Button_Stop" xml:space="preserve">
+    <value>Stoppen</value>
+  </data>
   <data name="CommandLineArguments_Help" xml:space="preserve">
     <value>Bezoek {0} om de opdrachtregelargumenten te bekijken.</value>
   </data>
@@ -1074,6 +1080,9 @@ Zie gedetailleerde beschrijving via de volgende link.</value>
   <data name="TechnicalTool_Menu_EncryptAes256" xml:space="preserve">
     <value>AES-256 versleutelen…</value>
   </data>
+  <data name="TechnicalTool_Menu_PreventSleep" xml:space="preserve">
+    <value>Slaapstand voorkomen…</value>
+  </data>
   <data name="TechnicalTool_OutputFile" xml:space="preserve">
     <value>Uitvoerbestand:</value>
   </data>
@@ -1082,6 +1091,15 @@ Zie gedetailleerde beschrijving via de volgende link.</value>
   </data>
   <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
     <value>Bronbestand selecteren</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_Duration_Help" xml:space="preserve">
+    <value>Hoelang de computer actief moet blijven, in minuten. Gebruik 0 voor geen tijdslimiet (onbeperkt).</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_PressAnyKey" xml:space="preserve">
+    <value>Druk op een toets om te stoppen.</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_Title" xml:space="preserve">
+    <value>Slaapstand voorkomen</value>
   </data>
   <data name="TechnicalTool_SourceFile" xml:space="preserve">
     <value>Bronbestand:</value>

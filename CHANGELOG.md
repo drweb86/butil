@@ -1,6 +1,9 @@
 ﻿# 2026.08.24
 (unpublished)
 
+## New Features
+- Technical: It is possible to prevent PC from sleep for specified timeout or indefinitely.
+
 ## Changes
 - Some libraries were updated.
 - Linux: Command line argument does not require system-inhibit anymore.

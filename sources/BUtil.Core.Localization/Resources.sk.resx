@@ -155,6 +155,12 @@ Zmeny odstránenej verzie sa stanú súčasťou verzie „{1}".</value>
   <data name="Button_Save" xml:space="preserve">
     <value>Uložiť</value>
   </data>
+  <data name="Button_Start" xml:space="preserve">
+    <value>Spustiť</value>
+  </data>
+  <data name="Button_Stop" xml:space="preserve">
+    <value>Zastaviť</value>
+  </data>
   <data name="CommandLineArguments_Help" xml:space="preserve">
     <value>Navštívte {0} pre zobrazenie argumentov príkazového riadku.</value>
   </data>
@@ -1074,6 +1080,9 @@ Pozrite si podrobný popis na nasledujúcom odkaze.</value>
   <data name="TechnicalTool_Menu_EncryptAes256" xml:space="preserve">
     <value>Šifrovanie AES-256…</value>
   </data>
+  <data name="TechnicalTool_Menu_PreventSleep" xml:space="preserve">
+    <value>Zabrániť režimu spánku…</value>
+  </data>
   <data name="TechnicalTool_OutputFile" xml:space="preserve">
     <value>Výstupný súbor:</value>
   </data>
@@ -1082,6 +1091,15 @@ Pozrite si podrobný popis na nasledujúcom odkaze.</value>
   </data>
   <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
     <value>Vyberte zdrojový súbor</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_Duration_Help" xml:space="preserve">
+    <value>Ako dlho má počítač zostať aktívny, v minútach. Ak nechcete nastaviť časový limit (neobmedzene), použite hodnotu 0.</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_PressAnyKey" xml:space="preserve">
+    <value>Stlačením ľubovoľného klávesu zastavíte.</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_Title" xml:space="preserve">
+    <value>Zabrániť režimu spánku</value>
   </data>
   <data name="TechnicalTool_SourceFile" xml:space="preserve">
     <value>Zdrojový súbor:</value>

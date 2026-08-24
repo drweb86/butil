@@ -155,6 +155,12 @@ Die Änderungen der gelöschten Version werden Teil der Version "{1}".</value>
   <data name="Button_Save" xml:space="preserve">
     <value>Speichern</value>
   </data>
+  <data name="Button_Start" xml:space="preserve">
+    <value>Starten</value>
+  </data>
+  <data name="Button_Stop" xml:space="preserve">
+    <value>Stoppen</value>
+  </data>
   <data name="CommandLineArguments_Help" xml:space="preserve">
     <value>Besuchen Sie {0}, um die Befehlszeilenargumente zu sehen.</value>
   </data>
@@ -1074,6 +1080,9 @@ Siehe detaillierte Beschreibung im folgenden Link.</value>
   <data name="TechnicalTool_Menu_EncryptAes256" xml:space="preserve">
     <value>AES-256 verschlüsseln…</value>
   </data>
+  <data name="TechnicalTool_Menu_PreventSleep" xml:space="preserve">
+    <value>Energiesparmodus verhindern…</value>
+  </data>
   <data name="TechnicalTool_OutputFile" xml:space="preserve">
     <value>Ausgabedatei:</value>
   </data>
@@ -1082,6 +1091,15 @@ Siehe detaillierte Beschreibung im folgenden Link.</value>
   </data>
   <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
     <value>Quelldatei auswählen</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_Duration_Help" xml:space="preserve">
+    <value>Wie lange der Computer wachgehalten werden soll, in Minuten. Verwenden Sie 0 für kein Zeitlimit (unbegrenzt).</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_PressAnyKey" xml:space="preserve">
+    <value>Drücken Sie zum Beenden eine beliebige Taste.</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_Title" xml:space="preserve">
+    <value>Energiesparmodus verhindern</value>
   </data>
   <data name="TechnicalTool_SourceFile" xml:space="preserve">
     <value>Quelldatei:</value>

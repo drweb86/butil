@@ -4,8 +4,10 @@ using BUtil.Core.Localization;
 using BUtil.Core.Misc;
 using BUtil.Core.Services;
 using System;
+using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Threading;
 
 namespace butilc;
 
@@ -24,6 +26,7 @@ public static class InteractiveConsoleMode
             Resources.TechnicalTool_DecryptAes256_Title,
             Resources.TechnicalTool_CompressBrotli_Title,
             Resources.TechnicalTool_DecompressBrotli_Title,
+            Resources.TechnicalTool_PreventSleep_Title,
         };
 
         var selected = ConsoleSelector.SelectWithArrowKeys(Resources.Task_Field_Choose, options);
@@ -62,6 +65,9 @@ public static class InteractiveConsoleMode
                     false,
                     (ioc, input, output, _) => ioc.CompressionService.DecompressBrotliFile(input, output),
                     (input, _) => PlatformSpecificExperience.Instance.SupportManager.GetConsoleCommandLineForDecompress(input));
+                break;
+            case MenuAction.PreventSleep:
+                RunPreventSleep();
                 break;
             case MenuAction.SelectAndRunTask:
                 return SelectTaskName();
@@ -123,6 +129,72 @@ public static class InteractiveConsoleMode
         using var ioc = new CommonServicesIoc(new ConsoleLog(), _ => { });
         run(ioc, input, output, password);
         Console.WriteLine(Resources.TechnicalTool_Completed);
+    }
+
+    private static void RunPreventSleep()
+    {
+        Console.WriteLine(Resources.TechnicalTool_PreventSleep_Title);
+        Console.WriteLine(Resources.TechnicalTool_PreventSleep_Duration_Help);
+        var raw = ReadConsoleField(Resources.DurationMinutes_Field);
+        if (!TryParseDurationMinutes(raw, out var durationMinutes))
+        {
+            Console.WriteLine(Resources.TechnicalTool_PreventSleep_Duration_Help);
+            Environment.Exit(-1);
+        }
+
+        Console.WriteLine(Resources.TechnicalTool_PreventSleep_PressAnyKey);
+        WaitForKeyOrTimeout(durationMinutes > 0 ? TimeSpan.FromMinutes(durationMinutes) : null);
+        Console.WriteLine(Resources.TechnicalTool_Completed);
+    }
+
+    private static bool TryParseDurationMinutes(string raw, out long durationMinutes)
+    {
+        if (string.IsNullOrWhiteSpace(raw))
+        {
+            durationMinutes = 0;
+            return true;
+        }
+
+        if ((long.TryParse(raw, NumberStyles.Integer, CultureInfo.CurrentCulture, out durationMinutes)
+            || long.TryParse(raw, NumberStyles.Integer, CultureInfo.InvariantCulture, out durationMinutes))
+            && durationMinutes >= 0)
+        {
+            return true;
+        }
+
+        durationMinutes = 0;
+        return false;
+    }
+
+    private static void WaitForKeyOrTimeout(TimeSpan? timeout)
+    {
+        try
+        {
+            if (timeout is null)
+            {
+                Console.ReadKey(true);
+                return;
+            }
+
+            var end = DateTime.UtcNow + timeout.Value;
+            while (DateTime.UtcNow < end)
+            {
+                if (Console.KeyAvailable)
+                {
+                    Console.ReadKey(true);
+                    return;
+                }
+
+                Thread.Sleep(200);
+            }
+        }
+        catch (InvalidOperationException)
+        {
+            if (timeout is { } wait)
+                Thread.Sleep(wait);
+            else
+                Console.ReadLine();
+        }
     }
 
     private static void WriteCommandLineHint(string command)

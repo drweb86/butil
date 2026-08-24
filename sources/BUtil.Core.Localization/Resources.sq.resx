@@ -155,6 +155,12 @@ Ndryshimet e versionit të fshirë do të bëhen pjesë e versionit "{1}".</valu
   <data name="Button_Save" xml:space="preserve">
     <value>Ruaj</value>
   </data>
+  <data name="Button_Start" xml:space="preserve">
+    <value>Fillo</value>
+  </data>
+  <data name="Button_Stop" xml:space="preserve">
+    <value>Ndalo</value>
+  </data>
   <data name="CommandLineArguments_Help" xml:space="preserve">
     <value>Vizitoni {0} për të parë argumentet e linjës së komandës.</value>
   </data>
@@ -1074,6 +1080,9 @@ Shihni përshkrimin e detajuar në lidhjen vijuese.</value>
   <data name="TechnicalTool_Menu_EncryptAes256" xml:space="preserve">
     <value>Kripto AES-256…</value>
   </data>
+  <data name="TechnicalTool_Menu_PreventSleep" xml:space="preserve">
+    <value>Parandalo fjetjen…</value>
+  </data>
   <data name="TechnicalTool_OutputFile" xml:space="preserve">
     <value>Skedari i daljes:</value>
   </data>
@@ -1082,6 +1091,15 @@ Shihni përshkrimin e detajuar në lidhjen vijuese.</value>
   </data>
   <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
     <value>Zgjidhni skedarin burim</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_Duration_Help" xml:space="preserve">
+    <value>Sa kohë të mbahet kompjuteri aktiv, në minuta. Përdorni 0 për pa kufi kohor (pa kufizim).</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_PressAnyKey" xml:space="preserve">
+    <value>Shtypni cilindo tast për ta ndaluar.</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_Title" xml:space="preserve">
+    <value>Parandalo fjetjen</value>
   </data>
   <data name="TechnicalTool_SourceFile" xml:space="preserve">
     <value>Skedari burim:</value>

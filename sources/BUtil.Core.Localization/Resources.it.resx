@@ -155,6 +155,12 @@ Le modifiche alla versione eliminata diventeranno parte della versione "{1}".</v
   <data name="Button_Save" xml:space="preserve">
     <value>Salva</value>
   </data>
+  <data name="Button_Start" xml:space="preserve">
+    <value>Avvia</value>
+  </data>
+  <data name="Button_Stop" xml:space="preserve">
+    <value>Arresta</value>
+  </data>
   <data name="CommandLineArguments_Help" xml:space="preserve">
     <value>Per gli argomenti della riga di comando visita {0}.</value>
   </data>
@@ -1082,6 +1088,9 @@ Sceglie una delle seguenti opzioni:
   <data name="TechnicalTool_Menu_EncryptAes256" xml:space="preserve">
     <value>Cifra AES-256…</value>
   </data>
+  <data name="TechnicalTool_Menu_PreventSleep" xml:space="preserve">
+    <value>Impedisci sospensione…</value>
+  </data>
   <data name="TechnicalTool_OutputFile" xml:space="preserve">
     <value>File destinazione:</value>
   </data>
@@ -1090,6 +1099,15 @@ Sceglie una delle seguenti opzioni:
   </data>
   <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
     <value>Seleziona file sorgente</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_Duration_Help" xml:space="preserve">
+    <value>Per quanti minuti mantenere attivo il computer. Immettere 0 per non impostare alcun limite di tempo (illimitato).</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_PressAnyKey" xml:space="preserve">
+    <value>Premere un tasto qualsiasi per interrompere.</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_Title" xml:space="preserve">
+    <value>Impedisci sospensione</value>
   </data>
   <data name="TechnicalTool_SourceFile" xml:space="preserve">
     <value>File sorgente:</value>

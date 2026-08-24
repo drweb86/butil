@@ -150,6 +150,12 @@
   <data name="Button_Save" xml:space="preserve">
     <value>保存</value>
   </data>
+  <data name="Button_Start" xml:space="preserve">
+    <value>開始</value>
+  </data>
+  <data name="Button_Stop" xml:space="preserve">
+    <value>停止</value>
+  </data>
   <data name="CommandLineArguments_Help" xml:space="preserve">
     <value>{0}を訪れてコマンドライン引数を確認してください。</value>
   </data>
@@ -1058,6 +1064,9 @@ bin.
   <data name="TechnicalTool_Menu_EncryptAes256" xml:space="preserve">
     <value>AES-256 で暗号化…</value>
   </data>
+  <data name="TechnicalTool_Menu_PreventSleep" xml:space="preserve">
+    <value>スリープを防止…</value>
+  </data>
   <data name="TechnicalTool_OutputFile" xml:space="preserve">
     <value>出力ファイル:</value>
   </data>
@@ -1066,6 +1075,15 @@ bin.
   </data>
   <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
     <value>元のファイルを選択</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_Duration_Help" xml:space="preserve">
+    <value>コンピューターをスリープさせない時間（分）。時間を無制限にする場合は 0 を指定します。</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_PressAnyKey" xml:space="preserve">
+    <value>停止するには何かキーを押してください。</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_Title" xml:space="preserve">
+    <value>スリープを防止</value>
   </data>
   <data name="TechnicalTool_SourceFile" xml:space="preserve">
     <value>元のファイル:</value>

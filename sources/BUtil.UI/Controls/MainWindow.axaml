@@ -48,6 +48,7 @@
 						<MenuItem Header="{Binding TechnicalTool_Menu_EncryptAes256}" Command="{Binding TechnicalToolEncryptAes256Command}" IsVisible="{Binding CurrentPage.IsFullMenuVisible}"/>
 						<MenuItem Header="{Binding TechnicalTool_Menu_DecompressBrotli}" Command="{Binding TechnicalToolDecompressBrotliCommand}" IsVisible="{Binding CurrentPage.IsFullMenuVisible}"/>
 						<MenuItem Header="{Binding TechnicalTool_Menu_CompressBrotli}" Command="{Binding TechnicalToolCompressBrotliCommand}" IsVisible="{Binding CurrentPage.IsFullMenuVisible}"/>
+						<MenuItem Header="{Binding TechnicalTool_Menu_PreventSleep}" Command="{Binding TechnicalToolPreventSleepCommand}" IsVisible="{Binding CurrentPage.IsFullMenuVisible}"/>
 					</MenuItem>
 				</MenuItem>
 				<MenuItem FontWeight="Bold" Header="{Binding Task_Create}" IsVisible="{Binding CurrentPage.IsFullMenuVisible}" ItemsSource="{Binding TaskCreateMenuItems}" />

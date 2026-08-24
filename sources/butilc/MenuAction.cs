@@ -8,4 +8,5 @@ public enum MenuAction
     DecryptAes256,
     CompressBrotli,
     DecompressBrotli,
+    PreventSleep,
 }

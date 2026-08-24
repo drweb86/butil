@@ -148,6 +148,12 @@
   <data name="Button_Save" xml:space="preserve">
     <value>محفوظ کریں</value>
   </data>
+  <data name="Button_Start" xml:space="preserve">
+    <value>شروع کریں</value>
+  </data>
+  <data name="Button_Stop" xml:space="preserve">
+    <value>روکیں</value>
+  </data>
   <data name="CommandLineArguments_Help" xml:space="preserve">
     <value>کمانڈ لائن دلائل دیکھنے کے لئے {0} پر جائیں۔</value>
   </data>
@@ -1061,6 +1067,9 @@
   <data name="TechnicalTool_Menu_EncryptAes256" xml:space="preserve">
     <value>AES-256 انکرپٹ…</value>
   </data>
+  <data name="TechnicalTool_Menu_PreventSleep" xml:space="preserve">
+    <value>سلیپ موڈ روکیں…</value>
+  </data>
   <data name="TechnicalTool_OutputFile" xml:space="preserve">
     <value>آؤٹ پٹ فائل:</value>
   </data>
@@ -1069,6 +1078,15 @@
   </data>
   <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
     <value>ماخذ فائل منتخب کریں</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_Duration_Help" xml:space="preserve">
+    <value>کمپیوٹر کو فعال رکھنے کا دورانیہ، منٹوں میں۔ وقت کی کوئی حد نہ رکھنے (لامحدود) کے لیے 0 استعمال کریں۔</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_PressAnyKey" xml:space="preserve">
+    <value>روکنے کے لیے کوئی بھی کلید دبائیں۔</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_Title" xml:space="preserve">
+    <value>سلیپ موڈ روکیں</value>
   </data>
   <data name="TechnicalTool_SourceFile" xml:space="preserve">
     <value>ماخذ فائل:</value>

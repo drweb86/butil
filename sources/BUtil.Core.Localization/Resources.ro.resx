@@ -155,6 +155,12 @@ Modificările versiunii șterse vor deveni parte din versiunea „{1}".</value>
   <data name="Button_Save" xml:space="preserve">
     <value>Salvare</value>
   </data>
+  <data name="Button_Start" xml:space="preserve">
+    <value>Pornește</value>
+  </data>
+  <data name="Button_Stop" xml:space="preserve">
+    <value>Oprește</value>
+  </data>
   <data name="CommandLineArguments_Help" xml:space="preserve">
     <value>Vizitați {0} pentru a vedea argumentele liniei de comandă.</value>
   </data>
@@ -1074,6 +1080,9 @@ Consultați descrierea detaliată în următorul link.</value>
   <data name="TechnicalTool_Menu_EncryptAes256" xml:space="preserve">
     <value>Criptare AES-256…</value>
   </data>
+  <data name="TechnicalTool_Menu_PreventSleep" xml:space="preserve">
+    <value>Împiedică intrarea în repaus…</value>
+  </data>
   <data name="TechnicalTool_OutputFile" xml:space="preserve">
     <value>Fișier de ieșire:</value>
   </data>
@@ -1082,6 +1091,15 @@ Consultați descrierea detaliată în următorul link.</value>
   </data>
   <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
     <value>Selectare fișier sursă</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_Duration_Help" xml:space="preserve">
+    <value>Cât timp să fie menținut computerul activ, în minute. Folosiți 0 pentru nicio limită de timp (nelimitat).</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_PressAnyKey" xml:space="preserve">
+    <value>Apăsați orice tastă pentru a opri.</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_Title" xml:space="preserve">
+    <value>Împiedică intrarea în repaus</value>
   </data>
   <data name="TechnicalTool_SourceFile" xml:space="preserve">
     <value>Fișier sursă:</value>

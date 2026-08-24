@@ -155,6 +155,12 @@ I cambiamenti di versione eliminati diventeranu parte di a versione "{1}".</valu
   <data name="Button_Save" xml:space="preserve">
     <value>Salvà</value>
   </data>
+  <data name="Button_Start" xml:space="preserve">
+    <value>Avviate</value>
+  </data>
+  <data name="Button_Stop" xml:space="preserve">
+    <value>Arrestate</value>
+  </data>
   <data name="CommandLineArguments_Help" xml:space="preserve">
     <value>Visita {0} per vede l'argumenti di a linea di cummanda.</value>
   </data>
@@ -1074,6 +1080,9 @@ See detailed description in the following link.</value>
   <data name="TechnicalTool_Menu_EncryptAes256" xml:space="preserve">
     <value>Cripta AES-256...</value>
   </data>
+  <data name="TechnicalTool_Menu_PreventSleep" xml:space="preserve">
+    <value>Impedisce a sospensione…</value>
+  </data>
   <data name="TechnicalTool_OutputFile" xml:space="preserve">
     <value>File di output:</value>
   </data>
@@ -1082,6 +1091,15 @@ See detailed description in the following link.</value>
   </data>
   <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
     <value>Selezziunà u schedariu fonte</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_Duration_Help" xml:space="preserve">
+    <value>Quantu tempu mantene l'urdinatore svegliu, in minuti. Aduprate 0 per nisun limitu di tempu (illimitatu).</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_PressAnyKey" xml:space="preserve">
+    <value>Appughjate una chjave qualsiasi per piantà.</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_Title" xml:space="preserve">
+    <value>Impedisce a sospensione</value>
   </data>
   <data name="TechnicalTool_SourceFile" xml:space="preserve">
     <value>File di fonte:</value>

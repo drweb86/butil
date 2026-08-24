@@ -155,6 +155,12 @@ Zmiany z usuniętej wersji staną się częścią wersji "{1}".</value>
   <data name="Button_Save" xml:space="preserve">
     <value>Zapisz</value>
   </data>
+  <data name="Button_Start" xml:space="preserve">
+    <value>Uruchom</value>
+  </data>
+  <data name="Button_Stop" xml:space="preserve">
+    <value>Zatrzymaj</value>
+  </data>
   <data name="CommandLineArguments_Help" xml:space="preserve">
     <value>Odwiedź {0}, aby zobaczyć argumenty wiersza poleceń.</value>
   </data>
@@ -1074,6 +1080,9 @@ Szczegółowy opis znajdziesz pod poniższym linkiem.</value>
   <data name="TechnicalTool_Menu_EncryptAes256" xml:space="preserve">
     <value>Zaszyfruj AES-256…</value>
   </data>
+  <data name="TechnicalTool_Menu_PreventSleep" xml:space="preserve">
+    <value>Zapobieganie uśpieniu…</value>
+  </data>
   <data name="TechnicalTool_OutputFile" xml:space="preserve">
     <value>Plik wyjściowy:</value>
   </data>
@@ -1082,6 +1091,15 @@ Szczegółowy opis znajdziesz pod poniższym linkiem.</value>
   </data>
   <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
     <value>Wybierz plik źródłowy</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_Duration_Help" xml:space="preserve">
+    <value>Czas utrzymywania komputera w stanie aktywności (w minutach). Wpisz 0, aby nie ustawiać limitu czasu (bez ograniczeń).</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_PressAnyKey" xml:space="preserve">
+    <value>Naciśnij dowolny klawisz, aby zatrzymać.</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_Title" xml:space="preserve">
+    <value>Zapobieganie uśpieniu</value>
   </data>
   <data name="TechnicalTool_SourceFile" xml:space="preserve">
     <value>Plik źródłowy:</value>

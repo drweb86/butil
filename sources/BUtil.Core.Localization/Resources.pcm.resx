@@ -152,6 +152,12 @@
   <data name="Button_Save" xml:space="preserve">
     <value>Save</value>
   </data>
+  <data name="Button_Start" xml:space="preserve">
+    <value>Start am</value>
+  </data>
+  <data name="Button_Stop" xml:space="preserve">
+    <value>Stop am</value>
+  </data>
   <data name="CommandLineArguments_Help" xml:space="preserve">
     <value>Visit {0} to see command line arguments.</value>
   </data>
@@ -1071,6 +1077,9 @@ Abeg do one of dese:
   <data name="TechnicalTool_Menu_EncryptAes256" xml:space="preserve">
     <value>Encrypt AES-256…</value>
   </data>
+  <data name="TechnicalTool_Menu_PreventSleep" xml:space="preserve">
+    <value>Make computer no sleep…</value>
+  </data>
   <data name="TechnicalTool_OutputFile" xml:space="preserve">
     <value>Output file:</value>
   </data>
@@ -1079,6 +1088,15 @@ Abeg do one of dese:
   </data>
   <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
     <value>Choose source file</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_Duration_Help" xml:space="preserve">
+    <value>How long you wan make di computer stay awake, for minutes. Use 0 if e no get time limit (unlimited).</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_PressAnyKey" xml:space="preserve">
+    <value>Press any key to stop am.</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_Title" xml:space="preserve">
+    <value>Make computer no sleep</value>
   </data>
   <data name="TechnicalTool_SourceFile" xml:space="preserve">
     <value>Source file:</value>

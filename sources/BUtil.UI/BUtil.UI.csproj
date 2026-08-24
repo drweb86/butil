@@ -79,5 +79,8 @@
     <Compile Update="Controls\TechnicalFileToolView.axaml.cs">
       <DependentUpon>TechnicalFileToolView.axaml</DependentUpon>
     </Compile>
+    <Compile Update="Controls\PreventSleepToolView.axaml.cs">
+      <DependentUpon>PreventSleepToolView.axaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 </Project>

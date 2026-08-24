@@ -155,6 +155,12 @@ Dzēstās versijas izmaiņas kļūs par versijas „{1}" daļu.</value>
   <data name="Button_Save" xml:space="preserve">
     <value>Saglabāt</value>
   </data>
+  <data name="Button_Start" xml:space="preserve">
+    <value>Sākt</value>
+  </data>
+  <data name="Button_Stop" xml:space="preserve">
+    <value>Apturēt</value>
+  </data>
   <data name="CommandLineArguments_Help" xml:space="preserve">
     <value>Apmeklējiet {0}, lai apskatītu komandrindas argumentus.</value>
   </data>
@@ -1074,6 +1080,9 @@ Skatiet detalizētu aprakstu šajā saitē.</value>
   <data name="TechnicalTool_Menu_EncryptAes256" xml:space="preserve">
     <value>AES-256 šifrēšana…</value>
   </data>
+  <data name="TechnicalTool_Menu_PreventSleep" xml:space="preserve">
+    <value>Novērst miega režīmu…</value>
+  </data>
   <data name="TechnicalTool_OutputFile" xml:space="preserve">
     <value>Izvades fails:</value>
   </data>
@@ -1082,6 +1091,15 @@ Skatiet detalizētu aprakstu šajā saitē.</value>
   </data>
   <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
     <value>Izvēlieties avota failu</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_Duration_Help" xml:space="preserve">
+    <value>Cik ilgi neļaut datoram pāriet miega režīmā (minūtēs). Lai laiks nebūtu ierobežots, ievadiet 0 (neierobežots).</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_PressAnyKey" xml:space="preserve">
+    <value>Lai apturētu, nospiediet jebkuru taustiņu.</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_Title" xml:space="preserve">
+    <value>Novērst miega režīmu</value>
   </data>
   <data name="TechnicalTool_SourceFile" xml:space="preserve">
     <value>Avota fails:</value>

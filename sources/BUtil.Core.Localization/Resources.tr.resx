@@ -152,6 +152,12 @@ Silinen sürümdeki değişiklikler "{1}" sürümünün bir parçası olacak.</v
   <data name="Button_Save" xml:space="preserve">
     <value>Kaydet</value>
   </data>
+  <data name="Button_Start" xml:space="preserve">
+    <value>Başlat</value>
+  </data>
+  <data name="Button_Stop" xml:space="preserve">
+    <value>Durdur</value>
+  </data>
   <data name="CommandLineArguments_Help" xml:space="preserve">
     <value>Komut satırı argümanlarını görmek için {0} adresini ziyaret edin.</value>
   </data>
@@ -1071,6 +1077,9 @@ Aşağıdaki bağlantıda detaylı açıklama bulun.</value>
   <data name="TechnicalTool_Menu_EncryptAes256" xml:space="preserve">
     <value>AES-256 ile şifrele…</value>
   </data>
+  <data name="TechnicalTool_Menu_PreventSleep" xml:space="preserve">
+    <value>Uyku modunu engelle…</value>
+  </data>
   <data name="TechnicalTool_OutputFile" xml:space="preserve">
     <value>Çıkış dosyası:</value>
   </data>
@@ -1079,6 +1088,15 @@ Aşağıdaki bağlantıda detaylı açıklama bulun.</value>
   </data>
   <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
     <value>Kaynak dosyayı seç</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_Duration_Help" xml:space="preserve">
+    <value>Bilgisayarın ne kadar süre uyanık tutulacağını dakika cinsinden belirtin. Süre sınırı olmaması (sınırsız) için 0 kullanın.</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_PressAnyKey" xml:space="preserve">
+    <value>Durdurmak için herhangi bir tuşa basın.</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_Title" xml:space="preserve">
+    <value>Uyku modunu engelle</value>
   </data>
   <data name="TechnicalTool_SourceFile" xml:space="preserve">
     <value>Kaynak dosya:</value>

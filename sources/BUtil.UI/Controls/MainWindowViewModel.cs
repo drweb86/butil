@@ -87,6 +87,13 @@ public partial class MainWindowViewModel : ViewModelBase
     }
 
 #pragma warning disable CA1822 // Mark members as static
+    public void TechnicalToolPreventSleepCommand()
+#pragma warning restore CA1822 // Mark members as static
+    {
+        WindowManager.SwitchView(new PreventSleepToolViewModel());
+    }
+
+#pragma warning disable CA1822 // Mark members as static
     public void RestoreCommand()
 #pragma warning restore CA1822 // Mark members as static
     {
@@ -119,6 +126,7 @@ public partial class MainWindowViewModel : ViewModelBase
     public static string TechnicalTool_Menu_EncryptAes256 => Resources.TechnicalTool_Menu_EncryptAes256;
     public static string TechnicalTool_Menu_DecompressBrotli => Resources.TechnicalTool_Menu_DecompressBrotli;
     public static string TechnicalTool_Menu_CompressBrotli => Resources.TechnicalTool_Menu_CompressBrotli;
+    public static string TechnicalTool_Menu_PreventSleep => Resources.TechnicalTool_Menu_PreventSleep;
     public static string Task_Launch_Hint => Resources.Task_Launch_Hint;
     public static string Task_Create => Resources.Task_Create;
 

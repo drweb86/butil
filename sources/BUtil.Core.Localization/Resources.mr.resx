@@ -152,6 +152,12 @@
   <data name="Button_Save" xml:space="preserve">
     <value>संग्रहित करा</value>
   </data>
+  <data name="Button_Start" xml:space="preserve">
+    <value>सुरू करा</value>
+  </data>
+  <data name="Button_Stop" xml:space="preserve">
+    <value>थांबवा</value>
+  </data>
   <data name="CommandLineArguments_Help" xml:space="preserve">
     <value>कमांड लाइन आर्ग्युमेंट्स पाहण्यासाठी {0} ला भेट द्या.</value>
   </data>
@@ -1071,6 +1077,9 @@
   <data name="TechnicalTool_Menu_EncryptAes256" xml:space="preserve">
     <value>AES-256 एन्क्रिप्ट करा…</value>
   </data>
+  <data name="TechnicalTool_Menu_PreventSleep" xml:space="preserve">
+    <value>स्लीप मोड प्रतिबंधित करा…</value>
+  </data>
   <data name="TechnicalTool_OutputFile" xml:space="preserve">
     <value>आउटपुट फाइल:</value>
   </data>
@@ -1079,6 +1088,15 @@
   </data>
   <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
     <value>स्त्रोत फाइल निवडा</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_Duration_Help" xml:space="preserve">
+    <value>संगणक किती वेळ सक्रिय ठेवायचा, मिनिटांमध्ये. वेळेची मर्यादा न ठेवण्यासाठी (अमर्यादित) 0 वापरा.</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_PressAnyKey" xml:space="preserve">
+    <value>थांबवण्यासाठी कोणतीही की दाबा.</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_Title" xml:space="preserve">
+    <value>स्लीप मोड प्रतिबंधित करा</value>
   </data>
   <data name="TechnicalTool_SourceFile" xml:space="preserve">
     <value>स्त्रोत फाइल:</value>

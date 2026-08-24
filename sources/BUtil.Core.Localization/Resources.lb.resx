@@ -155,6 +155,12 @@ Geläschte Versiounsännerunge ginn Deel vun der Versioun "{1}".</value>
   <data name="Button_Save" xml:space="preserve">
     <value>Späicheren</value>
   </data>
+  <data name="Button_Start" xml:space="preserve">
+    <value>Starten</value>
+  </data>
+  <data name="Button_Stop" xml:space="preserve">
+    <value>Stoppen</value>
+  </data>
   <data name="CommandLineArguments_Help" xml:space="preserve">
     <value>Besicht {0} fir Kommandozeilargumenter ze gesinn.</value>
   </data>
@@ -1074,6 +1080,9 @@ See detailed description in the following link.</value>
   <data name="TechnicalTool_Menu_EncryptAes256" xml:space="preserve">
     <value>AES-256 verschlësselt ...</value>
   </data>
+  <data name="TechnicalTool_Menu_PreventSleep" xml:space="preserve">
+    <value>Schlofmodus verhënneren…</value>
+  </data>
   <data name="TechnicalTool_OutputFile" xml:space="preserve">
     <value>Ausgabdatei:</value>
   </data>
@@ -1082,6 +1091,15 @@ See detailed description in the following link.</value>
   </data>
   <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
     <value>Wielt Quelldatei</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_Duration_Help" xml:space="preserve">
+    <value>Wéi laang de Computer aktiv gehale soll ginn, a Minutten. Benotzt 0 fir keng Zäitlimit (onlimitéiert).</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_PressAnyKey" xml:space="preserve">
+    <value>Dréckt eng beliebeg Tast fir ze stoppen.</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_Title" xml:space="preserve">
+    <value>Schlofmodus verhënneren</value>
   </data>
   <data name="TechnicalTool_SourceFile" xml:space="preserve">
     <value>Source Datei:</value>

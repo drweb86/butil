@@ -1,0 +1,43 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="BUtil.UI.Controls.PreventSleepDecorationCanvas"
+             IsHitTestVisible="False">
+	<Viewbox Width="390" Height="300">
+	<Canvas Width="260" Height="200">
+		<Ellipse x:Name="MoonGlow"
+		         Canvas.Left="122" Canvas.Top="25"
+		         Width="146" Height="146"
+		         Opacity="0.3">
+			<Ellipse.Fill>
+				<RadialGradientBrush>
+					<GradientStop Color="#80FFE9C4" Offset="0" />
+					<GradientStop Color="#00FFE9C4" Offset="1" />
+				</RadialGradientBrush>
+			</Ellipse.Fill>
+		</Ellipse>
+		<Path Data="M 253.7 112.4 A 60 60 0 1 1 207.3 41.3 A 45 45 0 1 0 253.7 112.4 Z"
+		      Fill="#FFE9C4" />
+		<Path x:Name="Star1"
+		      Data="M 40 33 L 42 38 L 47 40 L 42 42 L 40 47 L 38 42 L 33 40 L 38 38 Z"
+		      Fill="#FFFDF6E6" />
+		<Path x:Name="Star2"
+		      Data="M 95 20 L 96.5 23.5 L 100 25 L 96.5 26.5 L 95 30 L 93.5 26.5 L 90 25 L 93.5 23.5 Z"
+		      Fill="#FFFDF6E6" />
+		<Path x:Name="Star3"
+		      Data="M 60 104 L 61.5 108.5 L 66 110 L 61.5 111.5 L 60 116 L 58.5 111.5 L 54 110 L 58.5 108.5 Z"
+		      Fill="#FFFDF6E6" />
+		<Path x:Name="Star4"
+		      Data="M 135 65 L 136.5 68.5 L 140 70 L 136.5 71.5 L 135 75 L 133.5 71.5 L 130 70 L 133.5 68.5 Z"
+		      Fill="#FFFDF6E6" />
+		<Path x:Name="Star5"
+		      Data="M 30 163 L 32 168 L 37 170 L 32 172 L 30 177 L 28 172 L 23 170 L 28 168 Z"
+		      Fill="#FFFDF6E6" />
+		<Path x:Name="Star6"
+		      Data="M 110 154 L 111.5 158.5 L 116 160 L 111.5 161.5 L 110 166 L 108.5 161.5 L 104 160 L 108.5 158.5 Z"
+		      Fill="#FFFDF6E6" />
+		<Path x:Name="Star7"
+		      Data="M 165 160 L 166.5 163.5 L 170 165 L 166.5 166.5 L 165 170 L 163.5 166.5 L 160 165 L 163.5 163.5 Z"
+		      Fill="#FFFDF6E6" />
+	</Canvas>
+	</Viewbox>
+</UserControl>

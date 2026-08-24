@@ -155,6 +155,12 @@ Změny smazané verze se stanou součástí verze „{1}".</value>
   <data name="Button_Save" xml:space="preserve">
     <value>Uložit</value>
   </data>
+  <data name="Button_Start" xml:space="preserve">
+    <value>Spustit</value>
+  </data>
+  <data name="Button_Stop" xml:space="preserve">
+    <value>Zastavit</value>
+  </data>
   <data name="CommandLineArguments_Help" xml:space="preserve">
     <value>Navštivte {0} pro zobrazení argumentů příkazového řádku.</value>
   </data>
@@ -1074,6 +1080,9 @@ Podrobný popis naleznete v následujícím odkazu.</value>
   <data name="TechnicalTool_Menu_EncryptAes256" xml:space="preserve">
     <value>Šifrovat AES-256…</value>
   </data>
+  <data name="TechnicalTool_Menu_PreventSleep" xml:space="preserve">
+    <value>Zabránit režimu spánku…</value>
+  </data>
   <data name="TechnicalTool_OutputFile" xml:space="preserve">
     <value>Výstupní soubor:</value>
   </data>
@@ -1082,6 +1091,15 @@ Podrobný popis naleznete v následujícím odkazu.</value>
   </data>
   <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
     <value>Vybrat zdrojový soubor</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_Duration_Help" xml:space="preserve">
+    <value>Jak dlouho zabránit počítači v přechodu do režimu spánku, v minutách. Použijte 0 pro žádný časový limit (neomezeně).</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_PressAnyKey" xml:space="preserve">
+    <value>Stiskněte libovolnou klávesu pro zastavení.</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_Title" xml:space="preserve">
+    <value>Zabránit režimu spánku</value>
   </data>
   <data name="TechnicalTool_SourceFile" xml:space="preserve">
     <value>Zdrojový soubor:</value>

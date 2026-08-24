@@ -345,6 +345,24 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Start.
+        /// </summary>
+        public static string Button_Start {
+            get {
+                return ResourceManager.GetString("Button_Start", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Stop.
+        /// </summary>
+        public static string Button_Stop {
+            get {
+                return ResourceManager.GetString("Button_Stop", resourceCulture);
+            }
+        }
+
+        /// <summary>
         ///   Looks up a localized string similar to Visit {0} to see command line arguments..
         /// </summary>
         public static string CommandLineArguments_Help {
@@ -2797,6 +2815,15 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Prevent sleep….
+        /// </summary>
+        public static string TechnicalTool_Menu_PreventSleep {
+            get {
+                return ResourceManager.GetString("TechnicalTool_Menu_PreventSleep", resourceCulture);
+            }
+        }
+
+        /// <summary>
         ///   Looks up a localized string similar to Output file:.
         /// </summary>
         public static string TechnicalTool_OutputFile {
@@ -2823,6 +2850,33 @@ namespace BUtil.Core.Localization {
             }
         }
         
+        /// <summary>
+        ///   Looks up a localized string similar to How long to keep the computer awake, in minutes. Use 0 for no time limit (unlimited)..
+        /// </summary>
+        public static string TechnicalTool_PreventSleep_Duration_Help {
+            get {
+                return ResourceManager.GetString("TechnicalTool_PreventSleep_Duration_Help", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Press any key to stop..
+        /// </summary>
+        public static string TechnicalTool_PreventSleep_PressAnyKey {
+            get {
+                return ResourceManager.GetString("TechnicalTool_PreventSleep_PressAnyKey", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Prevent sleep.
+        /// </summary>
+        public static string TechnicalTool_PreventSleep_Title {
+            get {
+                return ResourceManager.GetString("TechnicalTool_PreventSleep_Title", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Source file:.
         /// </summary>

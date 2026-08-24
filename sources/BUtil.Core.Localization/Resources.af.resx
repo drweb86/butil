@@ -155,6 +155,12 @@ Geskrapde weergaweveranderinge sal deel word van weergawe "{1}".</value>
   <data name="Button_Save" xml:space="preserve">
     <value>Stoor</value>
   </data>
+  <data name="Button_Start" xml:space="preserve">
+    <value>Begin</value>
+  </data>
+  <data name="Button_Stop" xml:space="preserve">
+    <value>Stop</value>
+  </data>
   <data name="CommandLineArguments_Help" xml:space="preserve">
     <value>Besoek {0} om opdragreëlargumente te sien.</value>
   </data>
@@ -1074,6 +1080,9 @@ See detailed description in the following link.</value>
   <data name="TechnicalTool_Menu_EncryptAes256" xml:space="preserve">
     <value>Enkripteer AES-256...</value>
   </data>
+  <data name="TechnicalTool_Menu_PreventSleep" xml:space="preserve">
+    <value>Verhoed slaapmodus…</value>
+  </data>
   <data name="TechnicalTool_OutputFile" xml:space="preserve">
     <value>Uitvoer lêer:</value>
   </data>
@@ -1082,6 +1091,15 @@ See detailed description in the following link.</value>
   </data>
   <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
     <value>Kies bronlêer</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_Duration_Help" xml:space="preserve">
+    <value>Hoe lank die rekenaar wakker gehou moet word, in minute. Gebruik 0 vir geen tydslimiet (onbeperk).</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_PressAnyKey" xml:space="preserve">
+    <value>Druk enige sleutel om te stop.</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_Title" xml:space="preserve">
+    <value>Verhoed slaapmodus</value>
   </data>
   <data name="TechnicalTool_SourceFile" xml:space="preserve">
     <value>Bron lêer:</value>

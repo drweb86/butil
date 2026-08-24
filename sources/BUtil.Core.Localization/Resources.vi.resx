@@ -152,6 +152,12 @@ Những thay đổi của phiên bản đã xóa sẽ trở thành một phần 
   <data name="Button_Save" xml:space="preserve">
     <value>Lưu</value>
   </data>
+  <data name="Button_Start" xml:space="preserve">
+    <value>Bắt đầu</value>
+  </data>
+  <data name="Button_Stop" xml:space="preserve">
+    <value>Dừng</value>
+  </data>
   <data name="CommandLineArguments_Help" xml:space="preserve">
     <value>Truy cập {0} để xem các tham số dòng lệnh.</value>
   </data>
@@ -1071,6 +1077,9 @@ Xem mô tả chi tiết trong liên kết sau.</value>
   <data name="TechnicalTool_Menu_EncryptAes256" xml:space="preserve">
     <value>Mã hóa AES-256…</value>
   </data>
+  <data name="TechnicalTool_Menu_PreventSleep" xml:space="preserve">
+    <value>Ngăn chế độ ngủ…</value>
+  </data>
   <data name="TechnicalTool_OutputFile" xml:space="preserve">
     <value>Tệp đầu ra:</value>
   </data>
@@ -1079,6 +1088,15 @@ Xem mô tả chi tiết trong liên kết sau.</value>
   </data>
   <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
     <value>Chọn tệp nguồn</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_Duration_Help" xml:space="preserve">
+    <value>Thời gian giữ máy tính hoạt động, tính bằng phút. Dùng 0 để không giới hạn thời gian (không giới hạn).</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_PressAnyKey" xml:space="preserve">
+    <value>Nhấn phím bất kỳ để dừng.</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_Title" xml:space="preserve">
+    <value>Ngăn chế độ ngủ</value>
   </data>
   <data name="TechnicalTool_SourceFile" xml:space="preserve">
     <value>Tệp nguồn:</value>

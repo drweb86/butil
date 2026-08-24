@@ -173,6 +173,12 @@
   <data name="Button_Save" xml:space="preserve">
     <value>保存</value>
   </data>
+  <data name="Button_Start" xml:space="preserve">
+    <value>開始</value>
+  </data>
+  <data name="Button_Stop" xml:space="preserve">
+    <value>停止</value>
+  </data>
   <data name="CommandLineArguments_Help" xml:space="preserve">
     <value>訪問 {0} 以查看命令行參數。</value>
   </data>
@@ -1091,6 +1097,9 @@ bin。
   <data name="TechnicalTool_Menu_EncryptAes256" xml:space="preserve">
     <value>加密 AES-256…</value>
   </data>
+  <data name="TechnicalTool_Menu_PreventSleep" xml:space="preserve">
+    <value>防止電腦進入睡眠…</value>
+  </data>
   <data name="TechnicalTool_OutputFile" xml:space="preserve">
     <value>輸出檔案：</value>
   </data>
@@ -1099,6 +1108,15 @@ bin。
   </data>
   <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
     <value>揀來源檔案</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_Duration_Help" xml:space="preserve">
+    <value>電腦保持喚醒幾耐（以分鐘計）。用 0 代表冇時間限制（無限）。</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_PressAnyKey" xml:space="preserve">
+    <value>撳任何鍵即可停止。</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_Title" xml:space="preserve">
+    <value>防止電腦進入睡眠</value>
   </data>
   <data name="TechnicalTool_SourceFile" xml:space="preserve">
     <value>來源檔案：</value>

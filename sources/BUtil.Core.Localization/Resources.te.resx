@@ -150,6 +150,12 @@
   <data name="Button_Save" xml:space="preserve">
     <value>సేవ్</value>
   </data>
+  <data name="Button_Start" xml:space="preserve">
+    <value>ప్రారంభించు</value>
+  </data>
+  <data name="Button_Stop" xml:space="preserve">
+    <value>ఆపు</value>
+  </data>
   <data name="CommandLineArguments_Help" xml:space="preserve">
     <value>కమాండ్‌లైన్ ఆర్గ్యుమెంట్స్ చూడడానికి {0}కి వెళ్తారు.</value>
   </data>
@@ -1067,6 +1073,9 @@
   <data name="TechnicalTool_Menu_EncryptAes256" xml:space="preserve">
     <value>AES-256 ఎన్‌క్రిప్ట్…</value>
   </data>
+  <data name="TechnicalTool_Menu_PreventSleep" xml:space="preserve">
+    <value>నిద్ర మోడ్‌ను నిరోధించు…</value>
+  </data>
   <data name="TechnicalTool_OutputFile" xml:space="preserve">
     <value>అవుట్‌పుట్ ఫైల్:</value>
   </data>
@@ -1075,6 +1084,15 @@
   </data>
   <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
     <value>మూల ఫైల్ ఎంచుకోండి</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_Duration_Help" xml:space="preserve">
+    <value>కంప్యూటర్‌ను మేల్కొని ఉంచే వ్యవధి, నిమిషాల్లో. సమయ పరిమితి లేకుండా (అపరిమితంగా) ఉంచడానికి 0 ఉపయోగించండి.</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_PressAnyKey" xml:space="preserve">
+    <value>ఆపడానికి ఏదైనా కీని నొక్కండి.</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_Title" xml:space="preserve">
+    <value>నిద్ర మోడ్‌ను నిరోధించు</value>
   </data>
   <data name="TechnicalTool_SourceFile" xml:space="preserve">
     <value>మూల ఫైల్:</value>

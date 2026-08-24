@@ -155,6 +155,12 @@ As alterações da versão excluída se tornarão parte da versão "{1}".</value
   <data name="Button_Save" xml:space="preserve">
     <value>Salvar</value>
   </data>
+  <data name="Button_Start" xml:space="preserve">
+    <value>Iniciar</value>
+  </data>
+  <data name="Button_Stop" xml:space="preserve">
+    <value>Parar</value>
+  </data>
   <data name="CommandLineArguments_Help" xml:space="preserve">
     <value>Visite {0} para ver os argumentos da linha de comando.</value>
   </data>
@@ -1074,6 +1080,9 @@ Veja a descrição detalhada no seguinte link.</value>
   <data name="TechnicalTool_Menu_EncryptAes256" xml:space="preserve">
     <value>Encriptar AES-256…</value>
   </data>
+  <data name="TechnicalTool_Menu_PreventSleep" xml:space="preserve">
+    <value>Impedir suspensão…</value>
+  </data>
   <data name="TechnicalTool_OutputFile" xml:space="preserve">
     <value>Ficheiro de saída:</value>
   </data>
@@ -1082,6 +1091,15 @@ Veja a descrição detalhada no seguinte link.</value>
   </data>
   <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
     <value>Selecionar ficheiro de origem</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_Duration_Help" xml:space="preserve">
+    <value>Por quanto tempo manter o computador ativo, em minutos. Use 0 para não definir limite de tempo (ilimitado).</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_PressAnyKey" xml:space="preserve">
+    <value>Pressione qualquer tecla para parar.</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_Title" xml:space="preserve">
+    <value>Impedir suspensão</value>
   </data>
   <data name="TechnicalTool_SourceFile" xml:space="preserve">
     <value>Ficheiro de origem:</value>

@@ -155,6 +155,12 @@ Perubahan versi yang dipadam akan menjadi sebahagian daripada versi "{1}".</valu
   <data name="Button_Save" xml:space="preserve">
     <value>Simpan</value>
   </data>
+  <data name="Button_Start" xml:space="preserve">
+    <value>Mula</value>
+  </data>
+  <data name="Button_Stop" xml:space="preserve">
+    <value>Hentikan</value>
+  </data>
   <data name="CommandLineArguments_Help" xml:space="preserve">
     <value>Layari {0} untuk melihat argumen baris perintah.</value>
   </data>
@@ -1074,6 +1080,9 @@ Lihat penerangan terperinci di pautan berikut.</value>
   <data name="TechnicalTool_Menu_EncryptAes256" xml:space="preserve">
     <value>Sulit AES-256…</value>
   </data>
+  <data name="TechnicalTool_Menu_PreventSleep" xml:space="preserve">
+    <value>Cegah mod tidur…</value>
+  </data>
   <data name="TechnicalTool_OutputFile" xml:space="preserve">
     <value>Fail output:</value>
   </data>
@@ -1082,6 +1091,15 @@ Lihat penerangan terperinci di pautan berikut.</value>
   </data>
   <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
     <value>Pilih fail sumber</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_Duration_Help" xml:space="preserve">
+    <value>Tempoh komputer dikekalkan aktif, dalam minit. Gunakan 0 untuk tiada had masa (tanpa had).</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_PressAnyKey" xml:space="preserve">
+    <value>Tekan sebarang kekunci untuk berhenti.</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_Title" xml:space="preserve">
+    <value>Cegah mod tidur</value>
   </data>
   <data name="TechnicalTool_SourceFile" xml:space="preserve">
     <value>Fail sumber:</value>

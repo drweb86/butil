@@ -155,6 +155,12 @@ O'chirilgan versiya o'zgarishlari "{1}" versiyasining qismi bo'ladi.</value>
   <data name="Button_Save" xml:space="preserve">
     <value>Saqlash</value>
   </data>
+  <data name="Button_Start" xml:space="preserve">
+    <value>Boshlash</value>
+  </data>
+  <data name="Button_Stop" xml:space="preserve">
+    <value>To‘xtatish</value>
+  </data>
   <data name="CommandLineArguments_Help" xml:space="preserve">
     <value>Buyruq qatori argumentlarini ko'rish uchun {0} ga tashrif buyuring.</value>
   </data>
@@ -1075,6 +1081,9 @@ Batafsil tavsifni quyidagi havoladan ko'ring.</value>
   <data name="TechnicalTool_Menu_EncryptAes256" xml:space="preserve">
     <value>AES-256 shifrlash…</value>
   </data>
+  <data name="TechnicalTool_Menu_PreventSleep" xml:space="preserve">
+    <value>Uyqu rejimining oldini olish…</value>
+  </data>
   <data name="TechnicalTool_OutputFile" xml:space="preserve">
     <value>Chiqish fayli:</value>
   </data>
@@ -1083,6 +1092,15 @@ Batafsil tavsifni quyidagi havoladan ko'ring.</value>
   </data>
   <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
     <value>Manba faylini tanlang</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_Duration_Help" xml:space="preserve">
+    <value>Kompyuterni qancha vaqt faol saqlash kerakligini daqiqalarda belgilang. Vaqt cheklanmasligi (cheksiz) uchun 0 dan foydalaning.</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_PressAnyKey" xml:space="preserve">
+    <value>To‘xtatish uchun istalgan tugmani bosing.</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_Title" xml:space="preserve">
+    <value>Uyqu rejimining oldini olish</value>
   </data>
   <data name="TechnicalTool_SourceFile" xml:space="preserve">
     <value>Manba fayli:</value>

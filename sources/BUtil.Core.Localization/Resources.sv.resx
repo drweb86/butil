@@ -155,6 +155,12 @@ eller varningar har registrerats.</value>
   <data name="Button_Save" xml:space="preserve">
     <value>Spara</value>
   </data>
+  <data name="Button_Start" xml:space="preserve">
+    <value>Starta</value>
+  </data>
+  <data name="Button_Stop" xml:space="preserve">
+    <value>Stoppa</value>
+  </data>
   <data name="CommandLineArguments_Help" xml:space="preserve">
     <value>Besök {0} för att se kommandoradsargument.</value>
   </data>
@@ -1074,6 +1080,9 @@ Se detaljerad beskrivning i följande länk.</value>
   <data name="TechnicalTool_Menu_EncryptAes256" xml:space="preserve">
     <value>Kryptera AES-256…</value>
   </data>
+  <data name="TechnicalTool_Menu_PreventSleep" xml:space="preserve">
+    <value>Förhindra strömsparläge…</value>
+  </data>
   <data name="TechnicalTool_OutputFile" xml:space="preserve">
     <value>Utdatafil:</value>
   </data>
@@ -1082,6 +1091,15 @@ Se detaljerad beskrivning i följande länk.</value>
   </data>
   <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
     <value>Välj källfil</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_Duration_Help" xml:space="preserve">
+    <value>Hur länge datorn ska hållas aktiv, i minuter. Använd 0 för ingen tidsgräns (obegränsat).</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_PressAnyKey" xml:space="preserve">
+    <value>Tryck på valfri tangent för att stoppa.</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_Title" xml:space="preserve">
+    <value>Förhindra strömsparläge</value>
   </data>
   <data name="TechnicalTool_SourceFile" xml:space="preserve">
     <value>Källfil:</value>

@@ -155,6 +155,12 @@ Endringar frå sletta versjon vert ein del av versjon "{1}".</value>
   <data name="Button_Save" xml:space="preserve">
     <value>Lagre</value>
   </data>
+  <data name="Button_Start" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="Button_Stop" xml:space="preserve">
+    <value>Stopp</value>
+  </data>
   <data name="CommandLineArguments_Help" xml:space="preserve">
     <value>Gå til {0} for å sjå kommandolinjeargument.</value>
   </data>
@@ -1074,6 +1080,9 @@ Sjå detaljert skildring i følgjande lenkje.</value>
   <data name="TechnicalTool_Menu_EncryptAes256" xml:space="preserve">
     <value>Krypter AES-256…</value>
   </data>
+  <data name="TechnicalTool_Menu_PreventSleep" xml:space="preserve">
+    <value>Hindre kvilemodus…</value>
+  </data>
   <data name="TechnicalTool_OutputFile" xml:space="preserve">
     <value>Utdatafil:</value>
   </data>
@@ -1082,6 +1091,15 @@ Sjå detaljert skildring i følgjande lenkje.</value>
   </data>
   <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
     <value>Vel kjeldefil</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_Duration_Help" xml:space="preserve">
+    <value>Kor lenge datamaskina skal haldast vaken, i minutt. Bruk 0 for inga tidsgrense (uavgrensa).</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_PressAnyKey" xml:space="preserve">
+    <value>Trykk på ein tast for å stoppe.</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_Title" xml:space="preserve">
+    <value>Hindre kvilemodus</value>
   </data>
   <data name="TechnicalTool_SourceFile" xml:space="preserve">
     <value>Kjeldefil:</value>

@@ -155,6 +155,12 @@
   <data name="Button_Save" xml:space="preserve">
     <value>Захаваць</value>
   </data>
+  <data name="Button_Start" xml:space="preserve">
+    <value>Запусціць</value>
+  </data>
+  <data name="Button_Stop" xml:space="preserve">
+    <value>Спыніць</value>
+  </data>
   <data name="CommandLineArguments_Help" xml:space="preserve">
     <value>Наведайце {0}, каб убачыць аргументы каманднага радка.</value>
   </data>
@@ -1074,6 +1080,9 @@ bin.
   <data name="TechnicalTool_Menu_EncryptAes256" xml:space="preserve">
     <value>Зашыфраваць AES-256…</value>
   </data>
+  <data name="TechnicalTool_Menu_PreventSleep" xml:space="preserve">
+    <value>Не дапускаць пераходу ў рэжым сну…</value>
+  </data>
   <data name="TechnicalTool_OutputFile" xml:space="preserve">
     <value>Выхадны файл:</value>
   </data>
@@ -1082,6 +1091,15 @@ bin.
   </data>
   <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
     <value>Абраць зыходны файл</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_Duration_Help" xml:space="preserve">
+    <value>Як доўга не дапускаць пераходу камп'ютара ў рэжым сну, у хвілінах. Выкарыстоўвайце 0, каб не абмяжоўваць час (неабмежавана).</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_PressAnyKey" xml:space="preserve">
+    <value>Націсніце любую клавішу, каб спыніць.</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_Title" xml:space="preserve">
+    <value>Не дапускаць пераходу ў рэжым сну</value>
   </data>
   <data name="TechnicalTool_SourceFile" xml:space="preserve">
     <value>Зыходны файл:</value>

@@ -155,6 +155,12 @@
   <data name="Button_Save" xml:space="preserve">
     <value>خوندي کړئ</value>
   </data>
+  <data name="Button_Start" xml:space="preserve">
+    <value>پیل کړئ</value>
+  </data>
+  <data name="Button_Stop" xml:space="preserve">
+    <value>ودروئ</value>
+  </data>
   <data name="CommandLineArguments_Help" xml:space="preserve">
     <value>د کمانډ لاین دلیلونو لیدلو لپاره {0} ته لاړ شئ.</value>
   </data>
@@ -1074,6 +1080,9 @@ See detailed description in the following link.</value>
   <data name="TechnicalTool_Menu_EncryptAes256" xml:space="preserve">
     <value>AES-256 کوډ کړئ…</value>
   </data>
+  <data name="TechnicalTool_Menu_PreventSleep" xml:space="preserve">
+    <value>د خوب حالت مخنیوی…</value>
+  </data>
   <data name="TechnicalTool_OutputFile" xml:space="preserve">
     <value>د محصول دوتنې:</value>
   </data>
@@ -1082,6 +1091,15 @@ See detailed description in the following link.</value>
   </data>
   <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
     <value>د سرچینې فایل غوره کړئ</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_Duration_Help" xml:space="preserve">
+    <value>هغه موده په دقیقو کې چې کمپیوټر باید ویښ وساتل شي. د وخت له محدودیت پرته (نامحدود) لپاره 0 وکاروئ.</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_PressAnyKey" xml:space="preserve">
+    <value>د درولو لپاره هره کیلي کېکاږئ.</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_Title" xml:space="preserve">
+    <value>د خوب حالت مخنیوی</value>
   </data>
   <data name="TechnicalTool_SourceFile" xml:space="preserve">
     <value>د سرچینې فایل:</value>

@@ -155,6 +155,12 @@ Les changements de version supprimés feront partie de la version "{1}".</value>
   <data name="Button_Save" xml:space="preserve">
     <value>Sauvegarder</value>
   </data>
+  <data name="Button_Start" xml:space="preserve">
+    <value>Démarrer</value>
+  </data>
+  <data name="Button_Stop" xml:space="preserve">
+    <value>Arrêter</value>
+  </data>
   <data name="CommandLineArguments_Help" xml:space="preserve">
     <value>Visitez {0} pour voir les arguments en ligne de commande.</value>
   </data>
@@ -1072,6 +1078,9 @@ Consultez la description détaillée dans le lien suivant.</value>
   <data name="TechnicalTool_Menu_EncryptAes256" xml:space="preserve">
     <value>Chiffrer AES-256…</value>
   </data>
+  <data name="TechnicalTool_Menu_PreventSleep" xml:space="preserve">
+    <value>Empêcher la mise en veille…</value>
+  </data>
   <data name="TechnicalTool_OutputFile" xml:space="preserve">
     <value>Fichier de sortie :</value>
   </data>
@@ -1080,6 +1089,15 @@ Consultez la description détaillée dans le lien suivant.</value>
   </data>
   <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
     <value>Sélectionner le fichier source</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_Duration_Help" xml:space="preserve">
+    <value>Durée pendant laquelle l’ordinateur doit rester actif, en minutes. Utilisez 0 pour supprimer la limite de temps (durée illimitée).</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_PressAnyKey" xml:space="preserve">
+    <value>Appuyez sur une touche pour arrêter.</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_Title" xml:space="preserve">
+    <value>Empêcher la mise en veille</value>
   </data>
   <data name="TechnicalTool_SourceFile" xml:space="preserve">
     <value>Fichier source :</value>

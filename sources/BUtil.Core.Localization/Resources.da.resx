@@ -155,6 +155,12 @@ eller advarsler.</value>
   <data name="Button_Save" xml:space="preserve">
     <value>Gem</value>
   </data>
+  <data name="Button_Start" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="Button_Stop" xml:space="preserve">
+    <value>Stop</value>
+  </data>
   <data name="CommandLineArguments_Help" xml:space="preserve">
     <value>Besøg {0} for at se kommandolinjeargumenter.</value>
   </data>
@@ -1074,6 +1080,9 @@ Se detaljeret beskrivelse i følgende link.</value>
   <data name="TechnicalTool_Menu_EncryptAes256" xml:space="preserve">
     <value>Kryptér AES-256…</value>
   </data>
+  <data name="TechnicalTool_Menu_PreventSleep" xml:space="preserve">
+    <value>Undgå slumretilstand…</value>
+  </data>
   <data name="TechnicalTool_OutputFile" xml:space="preserve">
     <value>Outputfil:</value>
   </data>
@@ -1082,6 +1091,15 @@ Se detaljeret beskrivelse i følgende link.</value>
   </data>
   <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
     <value>Vælg kildefil</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_Duration_Help" xml:space="preserve">
+    <value>Hvor længe computeren skal holdes vågen, i minutter. Brug 0 for ingen tidsbegrænsning (ubegrænset).</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_PressAnyKey" xml:space="preserve">
+    <value>Tryk på en vilkårlig tast for at stoppe.</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_Title" xml:space="preserve">
+    <value>Undgå slumretilstand</value>
   </data>
   <data name="TechnicalTool_SourceFile" xml:space="preserve">
     <value>Kildefil:</value>

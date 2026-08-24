@@ -155,6 +155,12 @@ Ezabatutako bertsio-aldaketak "{1}" bertsioaren zati bihurtuko dira.</value>
   <data name="Button_Save" xml:space="preserve">
     <value>Gorde</value>
   </data>
+  <data name="Button_Start" xml:space="preserve">
+    <value>Hasi</value>
+  </data>
+  <data name="Button_Stop" xml:space="preserve">
+    <value>Gelditu</value>
+  </data>
   <data name="CommandLineArguments_Help" xml:space="preserve">
     <value>Joan {0} komando-lerroko argumentuak ikusteko.</value>
   </data>
@@ -1074,6 +1080,9 @@ See detailed description in the following link.</value>
   <data name="TechnicalTool_Menu_EncryptAes256" xml:space="preserve">
     <value>Enkriptatu AES-256…</value>
   </data>
+  <data name="TechnicalTool_Menu_PreventSleep" xml:space="preserve">
+    <value>Saihestu ordenagailua lokartzea…</value>
+  </data>
   <data name="TechnicalTool_OutputFile" xml:space="preserve">
     <value>Irteera fitxategia:</value>
   </data>
@@ -1082,6 +1091,15 @@ See detailed description in the following link.</value>
   </data>
   <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
     <value>Hautatu iturburu-fitxategia</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_Duration_Help" xml:space="preserve">
+    <value>Ordenagailua esna zenbat denboraz mantendu, minututan. Erabili 0 denbora-mugarik ez ezartzeko (mugarik gabe).</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_PressAnyKey" xml:space="preserve">
+    <value>Sakatu edozein tekla gelditzeko.</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_Title" xml:space="preserve">
+    <value>Saihestu ordenagailua lokartzea</value>
   </data>
   <data name="TechnicalTool_SourceFile" xml:space="preserve">
     <value>Iturburu fitxategia:</value>

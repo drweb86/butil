@@ -155,6 +155,12 @@ Los cambios de la versión eliminada se convertirán en parte de la versión "{1
   <data name="Button_Save" xml:space="preserve">
     <value>Guardar</value>
   </data>
+  <data name="Button_Start" xml:space="preserve">
+    <value>Iniciar</value>
+  </data>
+  <data name="Button_Stop" xml:space="preserve">
+    <value>Detener</value>
+  </data>
   <data name="CommandLineArguments_Help" xml:space="preserve">
     <value>Visite {0} para ver los argumentos de la línea de comandos.</value>
   </data>
@@ -1074,6 +1080,9 @@ Consulta la descripción detallada en el siguiente enlace.</value>
   <data name="TechnicalTool_Menu_EncryptAes256" xml:space="preserve">
     <value>Cifrar AES-256…</value>
   </data>
+  <data name="TechnicalTool_Menu_PreventSleep" xml:space="preserve">
+    <value>Evitar la suspensión…</value>
+  </data>
   <data name="TechnicalTool_OutputFile" xml:space="preserve">
     <value>Archivo de salida:</value>
   </data>
@@ -1082,6 +1091,15 @@ Consulta la descripción detallada en el siguiente enlace.</value>
   </data>
   <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
     <value>Seleccionar archivo de origen</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_Duration_Help" xml:space="preserve">
+    <value>Cuánto tiempo mantener activo el equipo, en minutos. Use 0 para no establecer un límite de tiempo (ilimitado).</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_PressAnyKey" xml:space="preserve">
+    <value>Pulse cualquier tecla para detener.</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_Title" xml:space="preserve">
+    <value>Evitar la suspensión</value>
   </data>
   <data name="TechnicalTool_SourceFile" xml:space="preserve">
     <value>Archivo de origen:</value>

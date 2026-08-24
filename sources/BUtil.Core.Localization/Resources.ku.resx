@@ -155,6 +155,12 @@ Guheztinên guhertoya jêbirî dê bibin beşek ji guhertoya "{1}".</value>
   <data name="Button_Save" xml:space="preserve">
     <value>Tomar bike</value>
   </data>
+  <data name="Button_Start" xml:space="preserve">
+    <value>Dest pê bike</value>
+  </data>
+  <data name="Button_Stop" xml:space="preserve">
+    <value>Rawestîne</value>
+  </data>
   <data name="CommandLineArguments_Help" xml:space="preserve">
     <value>Ji bo dîtina argumanên rêza fermanê serdana {0} bikin.</value>
   </data>
@@ -1075,6 +1081,9 @@ Ji bo danasîna berfireh lînka jêrîn bibînin.</value>
   <data name="TechnicalTool_Menu_EncryptAes256" xml:space="preserve">
     <value>AES-256 şîfre bike…</value>
   </data>
+  <data name="TechnicalTool_Menu_PreventSleep" xml:space="preserve">
+    <value>Pêşî li razana komputerê bigire…</value>
+  </data>
   <data name="TechnicalTool_OutputFile" xml:space="preserve">
     <value>Pela derketinê:</value>
   </data>
@@ -1083,6 +1092,15 @@ Ji bo danasîna berfireh lînka jêrîn bibînin.</value>
   </data>
   <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
     <value>Pela çavkaniyê hilbijêrin</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_Duration_Help" xml:space="preserve">
+    <value>Komputerê bi çend deqîqeyan hişyar bihêle. Ji bo bê sînorê demê (bêsînor) 0 bikar bînin.</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_PressAnyKey" xml:space="preserve">
+    <value>Ji bo rawestandinê pêlî her kilîtekê bikin.</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_Title" xml:space="preserve">
+    <value>Pêşî li razana komputerê bigire</value>
   </data>
   <data name="TechnicalTool_SourceFile" xml:space="preserve">
     <value>Pela çavkaniyê:</value>

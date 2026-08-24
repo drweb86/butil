@@ -155,6 +155,12 @@ Promjene obrisane verzije postat će dio verzije „{1}".</value>
   <data name="Button_Save" xml:space="preserve">
     <value>Spremi</value>
   </data>
+  <data name="Button_Start" xml:space="preserve">
+    <value>Pokreni</value>
+  </data>
+  <data name="Button_Stop" xml:space="preserve">
+    <value>Zaustavi</value>
+  </data>
   <data name="CommandLineArguments_Help" xml:space="preserve">
     <value>Posjetite {0} da biste vidjeli argumente naredbenog retka.</value>
   </data>
@@ -1074,6 +1080,9 @@ Pogledajte detaljni opis na sljedećoj poveznici.</value>
   <data name="TechnicalTool_Menu_EncryptAes256" xml:space="preserve">
     <value>Šifriranje AES-256…</value>
   </data>
+  <data name="TechnicalTool_Menu_PreventSleep" xml:space="preserve">
+    <value>Spriječi stanje mirovanja…</value>
+  </data>
   <data name="TechnicalTool_OutputFile" xml:space="preserve">
     <value>Izlazna datoteka:</value>
   </data>
@@ -1082,6 +1091,15 @@ Pogledajte detaljni opis na sljedećoj poveznici.</value>
   </data>
   <data name="TechnicalTool_PickSourceFile" xml:space="preserve">
     <value>Odaberite izvornu datoteku</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_Duration_Help" xml:space="preserve">
+    <value>Koliko dugo računalo treba držati budnim, u minutama. Upotrijebite 0 ako ne želite vremensko ograničenje (neograničeno).</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_PressAnyKey" xml:space="preserve">
+    <value>Pritisnite bilo koju tipku za zaustavljanje.</value>
+  </data>
+  <data name="TechnicalTool_PreventSleep_Title" xml:space="preserve">
+    <value>Spriječi stanje mirovanja</value>
   </data>
   <data name="TechnicalTool_SourceFile" xml:space="preserve">
     <value>Izvorna datoteka:</value>
