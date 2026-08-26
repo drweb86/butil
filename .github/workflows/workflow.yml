@@ -88,9 +88,11 @@ jobs:
             /p:PublishReadyToRun=false /p:RunAnalyzersDuringBuild=False --self-contained true --property WarningLevel=0
           if ($LASTEXITCODE -ne 0) { exit 1 }
 
-      - name: Prepare binaries README
+      - name: Prepare binaries README and license
         shell: pwsh
-        run: Copy-Item "help\Readme.Binaries.md" "Output\publish\README.md"
+        run: |
+          Copy-Item "help\Readme.Binaries.md" "Output\publish\README.md"
+          Copy-Item "LICENSE" "Output\publish\LICENSE"
 
       - name: Generate NSIS language file
         shell: pwsh
