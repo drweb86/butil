@@ -10,6 +10,7 @@
 
 ## Bug Fixes
 - Fix huge timeout exception for FTPS server task.
+- Fetch fixes for FTPS library.
 
 # 2026.08.05
 
