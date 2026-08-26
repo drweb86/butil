@@ -44,6 +44,7 @@
 			<decor:NumericUpDownField
 				Label="{Binding DurationMinutes_Field}"
 				Minimum="0"
+				Maximum="{Binding DurationMinutesMaximum}"
 				Value="{Binding DurationMinutes}"
 				Help="{Binding DurationMinutes_Field_Help}" />
 		</StackPanel>

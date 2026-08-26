@@ -43,6 +43,7 @@ public class FtpsServerConfigurationViewModel : ObservableObject
     public IAsyncRelayCommand BrowseFolderCommand { get; }
 
     public long PortMinimum => PlatformSpecificExperience.Instance.MinimumListenerPort;
+    public long DurationMinutesMaximum => BUtilServerModelOptionsV2.MaxDurationMinutes;
 
     public IReadOnlyList<string> FolderAccessOptions { get; } =
     [
@@ -233,8 +234,9 @@ public class FtpsServerConfigurationViewModel : ObservableObject
         get => _durationMinutes;
         set
         {
-            if (value == _durationMinutes) return;
-            _durationMinutes = value;
+            var clamped = value < 0 ? 0 : Math.Min(value, BUtilServerModelOptionsV2.MaxDurationMinutes);
+            if (clamped == _durationMinutes) return;
+            _durationMinutes = clamped;
             OnPropertyChanged(nameof(DurationMinutes));
         }
     }

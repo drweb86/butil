@@ -1,4 +1,4 @@
-﻿# 2026.08.24
+﻿# 2026.08.26
 (unpublished)
 
 ## New Features
@@ -7,6 +7,9 @@
 ## Changes
 - Some libraries were updated.
 - Linux: Command line argument does not require system-inhibit anymore.
+
+## Bug Fixes
+- Fix huge timeout exception for FTPS server task.
 
 # 2026.08.05
 

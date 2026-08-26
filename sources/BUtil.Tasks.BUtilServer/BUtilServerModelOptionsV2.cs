@@ -5,6 +5,8 @@ namespace BUtil.Tasks.BUtilServer;
 public class BUtilServerModelOptionsV2 : ITaskModelOptionsV2
 {
     public const long DefaultDuration = 30;
+    // Task.Delay accepts at most uint.MaxValue-1 milliseconds (~49.7 days).
+    public const long MaxDurationMinutes = (uint.MaxValue - 1L) / 60_000;
     public const int DefaultPort = 10999;
     public const string DefaultUsername = "user";
     public const BUtilServerFolderAccess DefaultFolderAccess = BUtilServerFolderAccess.ReadWrite;
