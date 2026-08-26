@@ -273,6 +273,9 @@ Section "MainSection" SEC01
   File /r "..\output\publish\x64\*.*"
   ${EndIf}
 
+  SetOutPath "$INSTDIR"
+  File "..\LICENSE"
+
   ; Create uninstaller
   WriteUninstaller "$INSTDIR\uninst.exe"
   
@@ -323,6 +326,7 @@ Section Uninstall
   
   ; Remove files and directories
   RMDir /r "$INSTDIR\bin"
+  Delete "$INSTDIR\LICENSE"
   Delete "$INSTDIR\uninst.exe"
   RMDir "$INSTDIR"
   

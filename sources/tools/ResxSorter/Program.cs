@@ -325,10 +325,10 @@ namespace Codice.SortResX
                 writer.WriteLine("Author: Siarhei Kuchuk");
                 writer.WriteLine("PackageName: BUtil");
                 writer.WriteLine("PackageUrl: https://github.com/drweb86/butil");
-                writer.WriteLine("License: MIT, GPL, MSPL");
-                writer.WriteLine("LicenseUrl: https://raw.githubusercontent.com/drweb86/butil/refs/heads/master/LICENSE.md");
+                writer.WriteLine("License: CC0-1.0");
+                writer.WriteLine("LicenseUrl: https://raw.githubusercontent.com/drweb86/butil/refs/heads/master/LICENSE");
                 writer.WriteLine("Copyright: 2011-CURRENT_YEAR Siarhei Kuchuk");
-                writer.WriteLine("CopyrightUrl: https://raw.githubusercontent.com/drweb86/butil/refs/heads/master/LICENSE.md");
+                writer.WriteLine("CopyrightUrl: https://raw.githubusercontent.com/drweb86/butil/refs/heads/master/LICENSE");
                 writer.WriteLine($"ShortDescription: {YamlDoubleQuoted(shortDescription)}");
                 writer.WriteLine("Description: |");
                 foreach (var line in description.Split('\n'))

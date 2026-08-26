@@ -55,8 +55,10 @@ for rid in "${!ARCH_MAP[@]}"; do
     mkdir -p "$pkg_root/usr/bin"
     mkdir -p "$pkg_root/usr/share/applications"
     mkdir -p "$pkg_root/usr/share/pixmaps"
+    mkdir -p "$pkg_root/usr/share/doc/butil"
 
     cp -a "$publish_dir/"* "$pkg_root/usr/lib/butil/"
+    cp "$REPO_ROOT/LICENSE" "$pkg_root/usr/share/doc/butil/copyright"
 
     ln -sf ../lib/butil/butil-ui.Desktop "$pkg_root/usr/bin/butil-ui"
     ln -sf ../lib/butil/butilc "$pkg_root/usr/bin/butilc"
@@ -94,6 +96,8 @@ Description: Incremental backup, synchronization, and media import tool
  multimedia with deduplication and FTPS, SFTP, SMB/CIFS support.
  .
  Features: AES-256 encryption, scheduling via console tool, graphical UI.
+ .
+ License: CC0 1.0 Universal.
 CONTROL
 
     cat > "$pkg_root/DEBIAN/postinst" << 'POSTINST'
@@ -139,6 +143,7 @@ POSTRM
     find "$pkg_root/usr/lib/butil" \( -name "*.so" -o -name "*.so.*" \) -exec chmod 755 {} \;
     chmod 644 "$pkg_root/usr/share/applications/butil.desktop"
     chmod 644 "$pkg_root/usr/share/pixmaps/butil.png"
+    chmod 644 "$pkg_root/usr/share/doc/butil/copyright"
 
     echo "Building .deb..."
     dpkg-deb --build --root-owner-group "$pkg_root" "$deb_file"

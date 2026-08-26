@@ -20,6 +20,6 @@ public static class CopyrightInfo
             .GetName()
         .Version ?? throw new InvalidProgramException("Failed to get assembly from !");
 
-        Copyright = string.Format(CultureInfo.CurrentUICulture, "BUtil {0} : Copyright (c) 2010-{1} Siarhei Kuchuk", Version, DateTime.Now.Year);
+        Copyright = string.Format(CultureInfo.CurrentUICulture, "BUtil {0} : CC0 1.0 Universal (Siarhei Kuchuk, 2010-{1})", Version, DateTime.Now.Year);
     }
 }

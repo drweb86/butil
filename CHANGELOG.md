@@ -1,10 +1,10 @@
-﻿# 2026.08.26
-(unpublished)
+﻿# 2026.08.27
 
 ## New Features
 - Technical: It is possible to prevent PC from sleep for specified timeout or indefinitely.
 
 ## Changes
+- License is now CC0 1.0 Universal.
 - Some libraries were updated.
 - Linux: Command line argument does not require system-inhibit anymore.
 

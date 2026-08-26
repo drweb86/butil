@@ -2,5 +2,6 @@
   <PropertyGroup>
     <Nullable>enable</Nullable>
     <AvaloniaVersion>12.0.3</AvaloniaVersion>
+    <PackageLicenseExpression>CC0-1.0</PackageLicenseExpression>
   </PropertyGroup>
 </Project>
