@@ -35,10 +35,13 @@ public class TaskStore: ITaskStore
     {
         _fileSystem = fileSystem;
 #if DEBUG
-        _folder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "BUtil Backup Tasks - DEBUG");
+        var folderName = "BUtil Backup Tasks - DEBUG";
 #else
-        _folder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "BUtil Backup Tasks");
+        var folderName = "BUtil Backup Tasks";
 #endif
+        if (!string.IsNullOrEmpty(Environment.GetEnvironmentVariable("BUTIL_SCREENSHOT")))
+            folderName += " - Screenshots";
+        _folder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), folderName);
         _fileSystem.EnsureFolderCreated(_folder);
     }
 

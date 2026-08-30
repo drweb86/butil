@@ -1,6 +1,7 @@
 ﻿using Avalonia;
 using BUtil.Core.Misc;
 using System;
+using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -14,6 +15,15 @@ class Program
     [STAThread]
     public static void Main(string[] args)
     {
+        if (!string.IsNullOrEmpty(Environment.GetEnvironmentVariable("BUTIL_SCREENSHOT")))
+        {
+            var english = CultureInfo.GetCultureInfo("en-US");
+            CultureInfo.DefaultThreadCurrentCulture = english;
+            CultureInfo.DefaultThreadCurrentUICulture = english;
+            CultureInfo.CurrentCulture = english;
+            CultureInfo.CurrentUICulture = english;
+        }
+
         TaskScheduler.UnobservedTaskException += TaskScheduler_UnobservedTaskException;
         AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
         try

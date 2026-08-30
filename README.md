@@ -4,7 +4,9 @@
 
 > Import photos from phone via WI-FI and more.
 
-![Image Gallery](https://github.com/user-attachments/assets/070729eb-6d21-44df-a166-8ce805f3f446)
+[![Image Gallery](./help/Assets/Image%20Gallery.gif)](./help/Screenshots.md)
+
+[Screenshots](./help/Screenshots.md)
 
 <details>
 <summary>🌐 Supported languages (70+)</summary>
