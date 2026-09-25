@@ -1,0 +1,32 @@
+Architectures: amd64 arm64
+Codename: stable
+Components: main
+Date: Fri, 25 Sep 2026 21:56:31 +0000
+Description: BUtil APT Repository
+Label: BUtil
+Origin: BUtil
+Suite: stable
+MD5Sum:
+ 865658e72bc41e8b3449a481530fa34b              174 Release
+ e64440889c406a36545c1dca100e88c3              832 main/binary-amd64/Packages
+ 17b8351d7d8df55cfb047815747e9be4              562 main/binary-amd64/Packages.gz
+ 8bbc12f4f5b3d169fbf1adf46d71a824              832 main/binary-arm64/Packages
+ ce1c99a5ab40916eb54d4c64b25618ac              566 main/binary-arm64/Packages.gz
+SHA1:
+ 4abf1ee7963cb1565403e246ecdf0d9a69e93ac0              174 Release
+ bfa612d8a4825df01b10f0ab946246bfdb0f1006              832 main/binary-amd64/Packages
+ b889c3d6ceeadf8ad30132e0268cf5a0f4cf048a              562 main/binary-amd64/Packages.gz
+ 3a78e1354efe3f41e836bb79b9555ef8f8b801df              832 main/binary-arm64/Packages
+ 1e821abc8a00686e4120f385b2365223a702b9fd              566 main/binary-arm64/Packages.gz
+SHA256:
+ 48a07bc189a6c95aba6e46a6d576cb72f66a4942a271f387c9f5d714911e4e4d              174 Release
+ 83a02a233307a86402f24cb62ff6224912a1537e78b93fd89844d8ae5003a89e              832 main/binary-amd64/Packages
+ d5e00c0e9eacbacc02c66944cb635eb19763c4b2f6c565b0d1e93088548b798f              562 main/binary-amd64/Packages.gz
+ 75d6e8ed18a82cfc98ec97235cf01160cffe0ef1df0585e0699b6fc5dc786018              832 main/binary-arm64/Packages
+ 60de097334f99b6f1359863adece7561aa5f8e1bf3f4eccc9e7e84141ec3e277              566 main/binary-arm64/Packages.gz
+SHA512:
+ d5d8f1aecca62dedd204aa95e4db4c17af42c2d036f4fbc2ce132726978dd1ab9005379ccfe410dc310f7953a484e1e33b38b83af2ff14d99c44a3d292b51754              174 Release
+ 47d2dc7d14ae5187c3156862d076990642a36f4c22c80ba3d1912844cfc2393ad298798eeaf412e92773b0c7367731e95a5273d96b043568a373a0ffc2fe9e38              832 main/binary-amd64/Packages
+ c78ca36a0d56377740e6e6da1d74fa382517b912ef8a79bc47631ed872467b97b8e70304b0edee3bd790c168d270e6ca9dd07154361a00ac30b236c4cc4bff9d              562 main/binary-amd64/Packages.gz
+ 091c9fa540c3dba366d4a81415c158468f12e72eb82d269e0eb330e9ac4effcee4077765bb1efb6c8be9a6c14c4bb06aa58faefc10af0f8d1a2451c228d08fd8              832 main/binary-arm64/Packages
+ 1827abe7f0cb945b686a1f77c0bf37723294de03221717d202792cb9a0c21ce65399f9662ebc11e5229d952e4fed75204a72b910fc30af01bc83f40710766ff3              566 main/binary-arm64/Packages.gz

@@ -1,0 +1,22 @@
+Package: butil
+Version: 2026.09.25
+Architecture: amd64
+Maintainer: Siarhei Kuchuk <https://github.com/drweb86>
+Installed-Size: 174964
+Depends: libc6, libgcc-s1, libstdc++6, libx11-6, libfontconfig1, dbus-x11, cron
+Filename: pool/main/butil_2026.09.25_linux_amd64.deb
+Size: 59318306
+MD5sum: 413afc05eb04054f50a80e077134d73b
+SHA1: 861e20cae4c0a51a186eeab101006aad432ec720
+SHA256: 08b3bc2f1f77f77bf85aad64e8bd4054cf4be01bbd9482c329aa73b9bab8eba4
+Section: utils
+Priority: optional
+Homepage: https://github.com/drweb86/butil
+Description: Incremental backup, synchronization, and media import tool
+ BUtil creates incremental backups, synchronization, and imports
+ multimedia with deduplication and FTPS, SFTP, SMB/CIFS support.
+ .
+ Features: AES-256 encryption, scheduling via console tool, graphical UI.
+ .
+ License: CC0 1.0 Universal.
+
