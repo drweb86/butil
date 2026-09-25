@@ -42,10 +42,6 @@
 						<MenuItem Header="{Binding Theme_Value_Dark}" Command="{Binding GoDarkSide}" />
 						<MenuItem Header="{Binding Theme_Value_Light}" Command="{Binding GoLightSide}" />
 					</MenuItem>
-					<MenuItem Header="{Binding Menu_Privacy}" Command="{Binding OpenPrivacyCommand}" />
-					<MenuItem Header="{Binding Menu_License}" Command="{Binding OpenLicenseCommand}" />
-					<MenuItem Header="{Binding Menu_ThirdPartyNotices}" Command="{Binding OpenThirdPartyNoticesCommand}" />
-					<MenuItem Header="{Binding Menu_Credits}" Command="{Binding OpenCreditsCommand}" />
 					<MenuItem Header="{Binding Other_Menu_Title}">
 						<MenuItem Command="{Binding OpenLogsCommand}" Header="{Binding LogFile_BrowseLogsFolder}" />
 						<MenuItem Header="{Binding TechnicalTool_Menu_DecryptAes256}" Command="{Binding TechnicalToolDecryptAes256Command}" IsVisible="{Binding CurrentPage.IsFullMenuVisible}"/>
@@ -54,6 +50,11 @@
 						<MenuItem Header="{Binding TechnicalTool_Menu_CompressBrotli}" Command="{Binding TechnicalToolCompressBrotliCommand}" IsVisible="{Binding CurrentPage.IsFullMenuVisible}"/>
 						<MenuItem Header="{Binding TechnicalTool_Menu_PreventSleep}" Command="{Binding TechnicalToolPreventSleepCommand}" IsVisible="{Binding CurrentPage.IsFullMenuVisible}"/>
 					</MenuItem>
+					<Separator />
+					<MenuItem Header="{Binding Menu_Credits}" Command="{Binding OpenCreditsCommand}" />
+					<MenuItem Header="{Binding Menu_License}" Command="{Binding OpenLicenseCommand}" />
+					<MenuItem Header="{Binding Menu_ThirdPartyNotices}" Command="{Binding OpenThirdPartyNoticesCommand}" />
+					<MenuItem Header="{Binding Menu_Privacy}" Command="{Binding OpenPrivacyCommand}" />
 				</MenuItem>
 				<MenuItem FontWeight="Bold" Header="{Binding Task_Create}" IsVisible="{Binding CurrentPage.IsFullMenuVisible}" ItemsSource="{Binding TaskCreateMenuItems}" />
 				<MenuItem Command="{Binding RestoreCommand}" IsVisible="{Binding CurrentPage.IsFullMenuVisible}" Header="{Binding Task_Restore}" />

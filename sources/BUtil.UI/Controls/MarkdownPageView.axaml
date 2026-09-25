@@ -5,23 +5,21 @@
              x:Class="BUtil.UI.Controls.MarkdownPageView"
              x:Name="Root"
              x:DataType="controls:MarkdownPageViewModel">
-	<Grid Margin="24">
+	<Grid Classes="FormContent" VerticalAlignment="Stretch">
 		<Grid.RowDefinitions>
 			<RowDefinition Height="Auto" />
 			<RowDefinition Height="*" />
 			<RowDefinition Height="Auto" />
 		</Grid.RowDefinitions>
-		<decor:FormHeader Grid.Row="0" Text="{Binding WindowTitle}" Margin="0,0,0,12" />
+		<decor:FormHeader Grid.Row="0" Text="{Binding WindowTitle}" />
 		<ScrollViewer Grid.Row="1"
 		              VerticalScrollBarVisibility="Auto"
 		              HorizontalScrollBarVisibility="Disabled">
 			<StackPanel x:Name="DocumentHost" />
 		</ScrollViewer>
-		<Button Grid.Row="2"
-		        Content="{Binding CloseLabel}"
-		        HorizontalAlignment="Stretch"
-		        HorizontalContentAlignment="Center"
-		        Margin="0,12,0,0"
-		        Command="{Binding CloseCommand}" />
+		<decor:DialogButtons Grid.Row="2"
+		                     IsPrimaryVisible="False"
+		                     CancelText="{Binding CloseLabel}"
+		                     CancelCommand="{Binding CloseCommand}" />
 	</Grid>
 </UserControl>

@@ -1,8 +1,9 @@
 ﻿# 2026.09.25
-(unreleased)
 
 ## New Features
 - Preparation for Windows Store.
+## Bug Fixes
+- Vulnerabilities in FTPS Server fixup fetch.
 
 # 2026.08.27
 
