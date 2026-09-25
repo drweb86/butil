@@ -21,6 +21,18 @@
     <InternalsVisibleTo Include="BUtil.Tasks.IncrementalBackup" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="..\..\licenses\*.md"
+                      Exclude="..\..\licenses\README.md"
+                      LogicalName="BUtil.Core.License.%(Filename)%(Extension)" />
+    <EmbeddedResource Include="..\..\privacy\desktop\*.md"
+                      Exclude="..\..\privacy\desktop\README.md"
+                      LogicalName="BUtil.Core.Privacy.%(Filename)%(Extension)" />
+    <EmbeddedResource Include="..\..\THIRD-PARTY-NOTICES.md"
+                      LogicalName="BUtil.Core.ThirdPartyNotices.md" />
+    <EmbeddedResource Include="..\..\CREDITS.md"
+                      LogicalName="BUtil.Core.Credits.md" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="../BUtil.Core.Localization/BUtil.Core.Localization.csproj" />
     <ProjectReference Include="../BUtil.Interop/BUtil.Interop.csproj" />
     <ProjectReference Include="../BUtil.Storages.Common/BUtil.Storages.Common.csproj" />

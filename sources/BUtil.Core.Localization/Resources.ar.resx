@@ -1322,20 +1322,19 @@ bin.
   <data name="WhatTask_Description" xml:space="preserve">
     <value>هنا يمكنك تحديد المجلدات التي تريد نسخها احتياطيًا.</value>
   </data>
-  <data name="Winget_Description" xml:space="preserve">
-    <value>نسخ احتياطي/مزامنة بياناتك على Windows وLinux.
-استيراد الصور من الهاتف عبر WI-FI والمزيد.
-
-الميزات:
-- نسخ احتياطي تزايدي مع إزالة تكرار الملفات ودعم نقل WebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, SMB/CIFS؛
-- مزامنة الملفات بين الأجهزة باستخدام التخزين المركزي ودعم الإصدارات؛
-- استيراد الوسائط - استيراد الصوتيات والصور ومقاطع الفيديو من بطاقة SD للكاميرا والمسجل؛ الصور ومقاطع الفيديو من هاتفك عبر WI-FI من خلال تطبيق FTPS Server باستخدام أسماء ملفات القوالب ؛;
-- وحدة التحكم لجدولة الأتمتة؛
-- تشفير AES-256.
-
-المنصات: Windows 11 x64 أو ARM64 أو Ubuntu 24+.</value>
+  <data name="Document_Language" xml:space="preserve">
+    <value>اللغة</value>
   </data>
-  <data name="Winget_ShortDescription" xml:space="preserve">
-    <value>يقوم BUtil بإنشاء نسخ احتياطية تزايدية ومزامنة تزايدية واستيراد الوسائط المتعددة على جهاز الكمبيوتر الخاص بك مع دعم إزالة التكرار ونقل WebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, SMB/CIFS لنظامي Windows وLinux.</value>
+  <data name="Menu_License" xml:space="preserve">
+    <value>الترخيص</value>
+  </data>
+  <data name="Menu_Credits" xml:space="preserve">
+    <value>الإسهامات</value>
+  </data>
+  <data name="Menu_ThirdPartyNotices" xml:space="preserve">
+    <value>إشعارات الجهات الخارجية</value>
+  </data>
+  <data name="License_ThirdPartyNote" xml:space="preserve">
+    <value>كود BUtil نفسه في الملك العام. تحتفظ مكونات الجهات الخارجية بتراخيصها وهي مذكورة في إشعارات الجهات الخارجية.</value>
   </data>
 </root>

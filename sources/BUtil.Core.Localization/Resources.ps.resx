@@ -1322,20 +1322,19 @@ See detailed description in the following link.</value>
   <data name="WhatTask_Description" xml:space="preserve">
     <value>دلته تاسو کولی شئ هغه پوښۍ وټاکئ چې غواړئ بیک اپ یې کړئ.</value>
   </data>
-  <data name="Winget_Description" xml:space="preserve">
-    <value>ستاسو د معلوماتو بیک اپ / همغږي کول وینډوز، لینکس.
-له تلیفون څخه عکسونه د WI-FI له لارې وارد کړئ او نور ډیر څه.
-
-ځانګړتیاوې:
-- د فایلونو او WebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, SMB/CIFS ټرانسپورټ مالتړ د کمولو سره زیاتیدونکي بیک اپ؛
-- د مرکزي ذخیره کولو او نسخې ملاتړ په کارولو سره د وسیلو ترمینځ د فایلونو همغږي کول؛
-- میډیا وارد کړئ - د کیمرې ، ریکارډر SD کارت څخه آډیوګانې ، عکسونه ، ویډیوګانې وارد کړئ؛ ستاسو د تلیفون څخه عکسونه او ویډیوګانې د WI-FI له لارې د FTPS سرور غوښتنلیک له لارې د ټیمپلیټ فایل نومونو په کارولو له لارې؛;
-- د اتوماتیک مهال ویش لپاره کنسول؛
-- AES-256 کوډ کول.
-
-پلیټ فارمونه: وینډوز 11 x64، ARM64 یا اوبنټو 24+.</value>
+  <data name="Document_Language" xml:space="preserve">
+    <value>ژبه</value>
   </data>
-  <data name="Winget_ShortDescription" xml:space="preserve">
-    <value>BUtil د وینډوز او لینوکس لپاره زیاتیدونکي بیک اپ، زیاتیدونکي همغږي رامینځته کوي او ستاسو په کمپیوټر کې ملټي میډیا واردوي او د WebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, SMB/CIFS ټرانسپورټ ملاتړ سره د وینډوز او لینکس لپاره.</value>
+  <data name="Menu_License" xml:space="preserve">
+    <value>جواز</value>
+  </data>
+  <data name="Menu_Credits" xml:space="preserve">
+    <value>کریډیټ</value>
+  </data>
+  <data name="Menu_ThirdPartyNotices" xml:space="preserve">
+    <value>د درېیم اړخ خبرتیاوې</value>
+  </data>
+  <data name="License_ThirdPartyNote" xml:space="preserve">
+    <value>د BUtil خپل کوډ عام ملکیت دی. د درېیم اړخ برخې خپل جوازونه ساتي او د درېیم اړخ خبرتیاوو کې راغلي دي.</value>
   </data>
 </root>

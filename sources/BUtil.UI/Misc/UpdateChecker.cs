@@ -32,7 +32,15 @@ public static class UpdateChecker
 
     private static readonly string[] _separator = ["\r\n", "\r", "\n"];
 
-    public static async Task<AppUpdateInfo> CheckForUpdateGithub()
+    public static Task<AppUpdateInfo> CheckForUpdateGithub()
+    {
+        if (PlatformSpecificExperience.Instance.IsStorePackage)
+            return Task.FromResult(new AppUpdateInfo(false, null, null));
+
+        return CheckForUpdateGithubUnpacked();
+    }
+
+    private static async Task<AppUpdateInfo> CheckForUpdateGithubUnpacked()
     {
         try
         {

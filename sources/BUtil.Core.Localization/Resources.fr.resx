@@ -1320,20 +1320,19 @@ Consultez la description détaillée dans le lien suivant.</value>
   <data name="WhatTask_Description" xml:space="preserve">
     <value>Ici, vous pouvez indiquer les dossiers que vous souhaitez sauvegarder.</value>
   </data>
-  <data name="Winget_Description" xml:space="preserve">
-    <value>Sauvegardez/synchronisez vos données sous Windows, Linux.
-Importez des photos depuis votre téléphone via WI-FI et plus encore.
-
-Fonctionnalités :
-- Sauvegarde incrémentielle avec déduplication des fichiers et prise en charge des transports WebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, SMB/CIFS ;
-- Synchronisation des fichiers entre appareils utilisant un stockage centralisé et prise en charge du versionnage ;
-- Importation de médias - Importez des fichiers audio, photos, vidéos depuis la carte SD de l'appareil photo, de l'enregistreur ; photos et vidéos depuis votre téléphone via WI-FI grâce à l'application FTPS Server en utilisant des noms de fichiers modèles;
-- Console pour la planification de l'automatisation ;
-- Chiffrement AES-256.
-
-Plateformes : Windows 11 x64, ARM64 ou Ubuntu 24+.</value>
+  <data name="Document_Language" xml:space="preserve">
+    <value>Langue</value>
   </data>
-  <data name="Winget_ShortDescription" xml:space="preserve">
-    <value>BUtil crée des sauvegardes incrémentielles, une synchronisation et importe des multimédias sur votre PC avec déduplication et prise en charge des transports WebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, SMB/CIFS pour Windows et Linux.</value>
+  <data name="Menu_License" xml:space="preserve">
+    <value>Licence</value>
+  </data>
+  <data name="Menu_Credits" xml:space="preserve">
+    <value>Crédits</value>
+  </data>
+  <data name="Menu_ThirdPartyNotices" xml:space="preserve">
+    <value>Mentions de tiers</value>
+  </data>
+  <data name="License_ThirdPartyNote" xml:space="preserve">
+    <value>Le code propre de BUtil est dans le domaine public. Les composants tiers conservent leurs licences et sont listés dans Mentions de tiers.</value>
   </data>
 </root>

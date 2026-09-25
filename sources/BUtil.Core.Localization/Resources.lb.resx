@@ -1322,20 +1322,19 @@ See detailed description in the following link.</value>
   <data name="WhatTask_Description" xml:space="preserve">
     <value>Hei kënnt Dir d'Dossieren uginn, déi Dir wëllt sécheren.</value>
   </data>
-  <data name="Winget_Description" xml:space="preserve">
-    <value>Backup / Synchroniséiert Är Donnéeën Windows, Linux.
-Import Fotoen vum Telefon iwwer WI-FI a méi.
-
-Fonctiounen:
-- Inkrementell Backup mat Deduplikatioun vu Dateien a SFTP, FTPS, SMB / CIFS Transport Support;
-- Synchroniséierung vu Dateien tëscht Geräter mat zentraliséierter Späichere a Versiounssupport;
-- Import Medien - Import Audios, Fotoen, Videoen vun der SD Kaart vun der Kamera, Recorder; Fotoen a Videoe vun Ärem Telefon iwwer WI-FI iwwer FTPS Server Applikatioun mat Schabloun Dateinumm;
-- Konsole fir Automatisatiounsplang;
-- AES-256 Verschlësselung.
-
-Plattformen: Windows 11 x64, ARM64 oder Ubuntu 24+.</value>
+  <data name="Document_Language" xml:space="preserve">
+    <value>Sprooch</value>
   </data>
-  <data name="Winget_ShortDescription" xml:space="preserve">
-    <value>BUtil erstellt inkrementell Backups, inkrementell Synchroniséierung an importéiert Multimedia op Ärem PC mat Deduplication an FTPS, SFTP, SMB / CIFS transportéiert Ënnerstëtzung fir Windows a Linux.</value>
+  <data name="Menu_License" xml:space="preserve">
+    <value>Lizenz</value>
+  </data>
+  <data name="Menu_Credits" xml:space="preserve">
+    <value>Kreditter</value>
+  </data>
+  <data name="Menu_ThirdPartyNotices" xml:space="preserve">
+    <value>Hiweiser vun Drëtten</value>
+  </data>
+  <data name="License_ThirdPartyNote" xml:space="preserve">
+    <value>Den eegene Code vu BUtil ass fräi. Komponente vun Drëtten behalen hir Lizenzen a stinn ënner Hiweiser vun Drëtten.</value>
   </data>
 </root>

@@ -1322,20 +1322,19 @@ Lihat penerangan terperinci di pautan berikut.</value>
   <data name="WhatTask_Description" xml:space="preserve">
     <value>Di sini anda boleh menentukan folder yang ingin anda sandarkan.</value>
   </data>
-  <data name="Winget_Description" xml:space="preserve">
-    <value>Sandaran/segerakkan data anda pada Windows, Linux.
-Import foto dari telefon melalui WI-FI dan banyak lagi.
-
-Ciri-ciri:
-- Sandaran inkremental dengan deduplikasi fail dan sokongan pengangkutan WebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, SMB/CIFS;
-- Penyegerakan fail antara peranti menggunakan storan berpusat dan sokongan versi;
-- Import media - Import audio, foto, video daripada kad SD kamera, perakam; foto dan video daripada telefon anda melalui WI-FI menerusi aplikasi Pelayan FTPS menggunakan nama fail templat atau melalui;
-- Konsol untuk penjadualan automasi;
-- Penyulitan AES-256.
-
-Platform: Windows 11 x64, ARM64 atau Ubuntu 24+.</value>
+  <data name="Document_Language" xml:space="preserve">
+    <value>Bahasa</value>
   </data>
-  <data name="Winget_ShortDescription" xml:space="preserve">
-    <value>BUtil mencipta sandaran inkremental, penyegerakan inkremental dan mengimport multimedia pada PC anda dengan deduplikasi dan sokongan pengangkutan WebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, SMB/CIFS untuk Windows dan Linux.</value>
+  <data name="Menu_License" xml:space="preserve">
+    <value>Lesen</value>
+  </data>
+  <data name="Menu_Credits" xml:space="preserve">
+    <value>Kredit</value>
+  </data>
+  <data name="Menu_ThirdPartyNotices" xml:space="preserve">
+    <value>Notis pihak ketiga</value>
+  </data>
+  <data name="License_ThirdPartyNote" xml:space="preserve">
+    <value>Kod sendiri BUtil adalah domain awam. Komponen pihak ketiga kekal di bawah lesen mereka dan disenaraikan dalam Notis pihak ketiga.</value>
   </data>
 </root>

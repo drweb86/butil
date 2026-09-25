@@ -1322,20 +1322,19 @@ Consulta la descripción detallada en el siguiente enlace.</value>
   <data name="WhatTask_Description" xml:space="preserve">
     <value>Aquí puede especificar las carpetas de las que desea hacer una copia de seguridad.</value>
   </data>
-  <data name="Winget_Description" xml:space="preserve">
-    <value>Haga copias de seguridad/sincronice sus datos en Windows, Linux.
-Importe fotos desde el teléfono a través de WI-FI y más.
-
-Características:
-- Copia de seguridad incremental con deduplicación de archivos y soporte de transportes WebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, SMB/CIFS;
-- Sincronización de archivos entre dispositivos utilizando almacenamiento centralizado y soporte de versionado;
-- Importación de medios - Importe audios, fotos, videos desde la tarjeta SD de la cámara, grabadora; fotos y videos desde su teléfono a través de WI-FI mediante la aplicación FTPS Server usando nombres de archivos de plantilla o mediante;
-- Consola para programación de automatización;
-- Cifrado AES-256.
-
-Plataformas: Windows 11 x64, ARM64 o Ubuntu 24+.</value>
+  <data name="Document_Language" xml:space="preserve">
+    <value>Idioma</value>
   </data>
-  <data name="Winget_ShortDescription" xml:space="preserve">
-    <value>BUtil crea copias de seguridad incrementales, sincronización incremental e importa multimedia en su PC con deduplicación y soporte de transportes WebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, SMB/CIFS para Windows y Linux.</value>
+  <data name="Menu_License" xml:space="preserve">
+    <value>Licencia</value>
+  </data>
+  <data name="Menu_Credits" xml:space="preserve">
+    <value>Créditos</value>
+  </data>
+  <data name="Menu_ThirdPartyNotices" xml:space="preserve">
+    <value>Avisos de terceros</value>
+  </data>
+  <data name="License_ThirdPartyNote" xml:space="preserve">
+    <value>El código propio de BUtil es de dominio público. Los componentes de terceros conservan sus licencias y aparecen en Avisos de terceros.</value>
   </data>
 </root>

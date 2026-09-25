@@ -1,0 +1,45 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:controls="clr-namespace:BUtil.UI.Controls"
+             xmlns:legal="using:BUtil.Core.Legal"
+             xmlns:decor="clr-namespace:BUtil.UI.Controls;assembly=BUtil.UI.Common"
+             x:Class="BUtil.UI.Controls.LegalDocumentView"
+             x:Name="Root"
+             x:DataType="controls:LegalDocumentViewModel">
+	<Grid Margin="24">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="*" />
+			<RowDefinition Height="Auto" />
+		</Grid.RowDefinitions>
+		<decor:FormHeader Grid.Row="0" Text="{Binding WindowTitle}" />
+		<StackPanel Grid.Row="1" Spacing="6" Margin="0,0,0,12">
+			<TextBlock Text="{Binding LanguageLabel}" FontWeight="Medium" />
+			<ComboBox ItemsSource="{Binding Languages}"
+			          SelectedItem="{Binding SelectedLanguage}"
+			          HorizontalAlignment="Stretch">
+				<ComboBox.ItemTemplate>
+					<DataTemplate x:DataType="legal:DocumentLanguage">
+						<TextBlock Text="{Binding NativeName}" />
+					</DataTemplate>
+				</ComboBox.ItemTemplate>
+			</ComboBox>
+			<TextBlock Text="{Binding ThirdPartyNote}"
+			           IsVisible="{Binding ShowThirdPartyNote}"
+			           TextWrapping="Wrap"
+			           Margin="0,12,0,0" />
+		</StackPanel>
+		<ScrollViewer Grid.Row="2"
+		              VerticalScrollBarVisibility="Auto"
+		              HorizontalScrollBarVisibility="Disabled">
+			<StackPanel x:Name="DocumentHost" />
+		</ScrollViewer>
+		<Button Grid.Row="3"
+		        Content="{Binding CloseLabel}"
+		        HorizontalAlignment="Stretch"
+		        HorizontalContentAlignment="Center"
+		        Margin="0,12,0,0"
+		        Command="{Binding CloseCommand}" />
+	</Grid>
+</UserControl>

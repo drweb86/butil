@@ -1322,20 +1322,19 @@ See detailed description in the following link.</value>
   <data name="WhatTask_Description" xml:space="preserve">
     <value>An seo faodaidh tu na pasganan a bu toil leat cùl-taic a dhèanamh dhiubh a shònrachadh.</value>
   </data>
-  <data name="Winget_Description" xml:space="preserve">
-    <value>Dèan cùl-taic / sioncronaich an dàta agad Windows, Linux.
-Cuir a-steach dealbhan bhon fhòn tro WI-FI agus barrachd.
-
-Feartan:
-- Cùl-taic mean air mhean le dùblachadh fhaidhlichean agus taic còmhdhail SFTP, FTPS, SMB / CIFS;
-- Sioncronadh fhaidhlichean eadar innealan a’ cleachdadh stòradh meadhanaichte agus taic dreach;
-- Cuir a-steach meadhanan - Cuir a-steach clàran-fuaim, dealbhan, bhideothan bho chairt SD camara, inneal clàraidh; dealbhan agus bhideothan bhon fhòn agad tro WI-FI tro thagradh FTPS Server a’ cleachdadh ainmean faidhle teamplaid;
-- Console airson clàradh fèin-ghluasad;
-- crioptachadh AES-256.
-
-Àrd-ùrlaran: Windows 11 x64, ARM64 no Ubuntu 24+.</value>
+  <data name="Document_Language" xml:space="preserve">
+    <value>Cànan</value>
   </data>
-  <data name="Winget_ShortDescription" xml:space="preserve">
-    <value>Bidh BUtil a’ cruthachadh cùl-taic mean air mhean, sioncronadh mean air mhean agus a’ toirt a-steach ioma-mheadhan air do PC le deduplication agus FTPS, SFTP, SMB / CIFS a’ giùlan taic airson Windows agus Linux.</value>
+  <data name="Menu_License" xml:space="preserve">
+    <value>Ceadachd</value>
+  </data>
+  <data name="Menu_Credits" xml:space="preserve">
+    <value>Cliù</value>
+  </data>
+  <data name="Menu_ThirdPartyNotices" xml:space="preserve">
+    <value>Brathan treas-phàrtaidh</value>
+  </data>
+  <data name="License_ThirdPartyNote" xml:space="preserve">
+    <value>Tha còd fhèin BUtil san raon phoblach. Cumaidh co-phàirtean treas-phàrtaidh an ceadachdan agus tha iad fo Bhrathan treas-phàrtaidh.</value>
   </data>
 </root>

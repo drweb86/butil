@@ -1322,20 +1322,19 @@ See detailed description in the following link.</value>
   <data name="WhatTask_Description" xml:space="preserve">
     <value>Aquí podeu especificar les carpetes de les quals voleu fer una còpia de seguretat.</value>
   </data>
-  <data name="Winget_Description" xml:space="preserve">
-    <value>Còpia de seguretat/sincronització de les vostres dades Windows, Linux.
-Importa fotos del telèfon mitjançant WI-FI i molt més.
-
-Característiques:
-- Còpia de seguretat incremental amb deduplicació de fitxers i suport de transports WebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, SMB/CIFS;
-- Sincronització de fitxers entre dispositius mitjançant emmagatzematge centralitzat i suport de versions;
-- Importar suports - Importar àudios, fotos, vídeos des de la targeta SD de la càmera, la gravadora; fotos i vídeos del vostre telèfon mitjançant WI-FI mitjançant l'aplicació del servidor FTPS mitjançant noms de fitxers de plantilla o mitjançant;
-- Consola per a la programació d'automatització;
-- Xifratge AES-256.
-
-Plataformes: Windows 11 x64, ARM64 o Ubuntu 24+.</value>
+  <data name="Document_Language" xml:space="preserve">
+    <value>Llengua</value>
   </data>
-  <data name="Winget_ShortDescription" xml:space="preserve">
-    <value>BUtil crea còpies de seguretat incrementals, sincronització incremental i importa multimèdia al vostre PC amb deduplicació i suport de transports WebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, SMB/CIFS per a Windows i Linux.</value>
+  <data name="Menu_License" xml:space="preserve">
+    <value>Llicència</value>
+  </data>
+  <data name="Menu_Credits" xml:space="preserve">
+    <value>Crèdits</value>
+  </data>
+  <data name="Menu_ThirdPartyNotices" xml:space="preserve">
+    <value>Avisos de tercers</value>
+  </data>
+  <data name="License_ThirdPartyNote" xml:space="preserve">
+    <value>El codi propi de BUtil és de domini públic. Els components de tercers conserven les seves llicències i es llisten a Avisos de tercers.</value>
   </data>
 </root>

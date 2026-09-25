@@ -1322,20 +1322,19 @@ bin.
   <data name="WhatTask_Description" xml:space="preserve">
     <value>აქ შეგიძლიათ მიუთითოთ საქაღალდეები, რომელთა სარეზერვო ასლის შექმნაც გსურთ.</value>
   </data>
-  <data name="Winget_Description" xml:space="preserve">
-    <value>თქვენი მონაცემების სარეზერვო ასლის შექმნა/სინქრონიზაცია Windows, Linux-ზე.
-ფოტოების იმპორტი ტელეფონიდან WI-FI-ით და სხვა.
-
-ფუნქციები:
-- ინკრემენტული სარეზერვო ასლი ფაილების დუბლირების აღმოფხვრით და WebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, SMB/CIFS ტრანსპორტის მხარდაჭერით;
-- ფაილების სინქრონიზაცია მოწყობილობებს შორის ცენტრალიზებული საცავითა და ვერსიონირების მხარდაჭერით;
-- მედიის იმპორტი - აუდიოების, ფოტოების, ვიდეოების იმპორტი კამერის, ჩამწერის SD ბარათიდან; ფოტოები და ვიდეოები თქვენი ტელეფონიდან WI-FI-ით FTPS სერვერის აპლიკაციით შაბლონური ფაილის სახელებით -ით;
-- კონსოლი ავტომატიზაციის განრიგისთვის;
-- AES-256 დაშიფვრა.
-
-პლატფორმები: Windows 11 x64, ARM64 ან Ubuntu 24+.</value>
+  <data name="Document_Language" xml:space="preserve">
+    <value>ენა</value>
   </data>
-  <data name="Winget_ShortDescription" xml:space="preserve">
-    <value>BUtil ქმნის ინკრემენტულ სარეზერვო ასლებს, ინკრემენტულ სინქრონიზაციას და იმპორტირებს მულტიმედიას თქვენს კომპიუტერზე დუბლირების აღმოფხვრითა და WebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, SMB/CIFS ტრანსპორტის მხარდაჭერით Windows-ისა და Linux-ისთვის.</value>
+  <data name="Menu_License" xml:space="preserve">
+    <value>ლიცენზია</value>
+  </data>
+  <data name="Menu_Credits" xml:space="preserve">
+    <value>მადლობა</value>
+  </data>
+  <data name="Menu_ThirdPartyNotices" xml:space="preserve">
+    <value>მესამე მხარის შენიშვნები</value>
+  </data>
+  <data name="License_ThirdPartyNote" xml:space="preserve">
+    <value>BUtil-ის საკუთარი კოდი საჯარო საკუთრებაა. მესამე მხარის კომპონენტები ინარჩუნებენ ლიცენზიებს და ჩამოთვლილია მესამე მხარის შენიშვნებში.</value>
   </data>
 </root>

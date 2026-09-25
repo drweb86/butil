@@ -1322,20 +1322,19 @@ See detailed description in the following link.</value>
   <data name="WhatTask_Description" xml:space="preserve">
     <value>Quì pudete specificà i cartulari chì vulete salvà in copia di salvezza.</value>
   </data>
-  <data name="Winget_Description" xml:space="preserve">
-    <value>Salvà / sincronizà i vostri dati Windows, Linux.
-Importa foto da u telefunu via WI-FI è più.
-
-Features:
-- Backup incrementale cù deduplicazione di fugliali è supportu di trasporti SFTP, FTPS, SMB / CIFS;
-- Sincronizazione di i fugliali trà i dispositi utilizendu l'almacenamiento centralizatu è u supportu di versione;
-- Importazione di media - Importa audio, foto, video da a carta SD di a camera, registratore; foto è video da u vostru telefunu via WI-FI attraversu l'applicazione Server FTPS utilizendu nomi di schedari di mudellu;
-- Console per a pianificazione di l'automatizazione;
-- Cifratura AES-256.
-
-Piattaforme: Windows 11 x64, ARM64 o Ubuntu 24+.</value>
+  <data name="Document_Language" xml:space="preserve">
+    <value>Lingua</value>
   </data>
-  <data name="Winget_ShortDescription" xml:space="preserve">
-    <value>BUtil crea backup incrementali, sincronizazione incrementale è importa multimedia in u vostru PC cù deduplicazione è supportu di trasportu FTPS, SFTP, SMB / CIFS per Windows è Linux.</value>
+  <data name="Menu_License" xml:space="preserve">
+    <value>Licenza</value>
+  </data>
+  <data name="Menu_Credits" xml:space="preserve">
+    <value>Crediti</value>
+  </data>
+  <data name="Menu_ThirdPartyNotices" xml:space="preserve">
+    <value>Avvisi di terze parti</value>
+  </data>
+  <data name="License_ThirdPartyNote" xml:space="preserve">
+    <value>U codice propiu di BUtil hè di duminiu publicu. I cumpunenti di terze parti tenenu e so licenze è sò elencati in Avvisi di terze parti.</value>
   </data>
 </root>

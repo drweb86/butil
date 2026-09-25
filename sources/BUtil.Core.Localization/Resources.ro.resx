@@ -1322,20 +1322,19 @@ Consultați descrierea detaliată în următorul link.</value>
   <data name="WhatTask_Description" xml:space="preserve">
     <value>Aici puteți specifica folderele pentru care doriți să faceți backup.</value>
   </data>
-  <data name="Winget_Description" xml:space="preserve">
-    <value>Backup/sincronizare date pe Windows, Linux.
-Import fotografii de pe telefon prin WI-FI și altele.
-
-Funcționalități:
-- Backup incremental cu deduplicare fișiere și suport transport WebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, SMB/CIFS;
-- Sincronizare fișiere între dispozitive utilizând stocare centralizată și suport versionare;
-- Import media - Import audio, fotografii, videoclipuri de pe cardul SD al camerei, reportofonului; fotografii și videoclipuri de pe telefon prin WI-FI prin aplicația FTPS Server folosind nume de fișiere din șablon;
-- Consolă pentru planificare automată;
-- Criptare AES-256.
-
-Platforme: Windows 11 x64, ARM64 sau Ubuntu 24+.</value>
+  <data name="Document_Language" xml:space="preserve">
+    <value>Limbă</value>
   </data>
-  <data name="Winget_ShortDescription" xml:space="preserve">
-    <value>BUtil creează backup-uri incrementale, sincronizare incrementală și importă multimedia pe PC-ul dvs. cu deduplicare și suport transport WebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, SMB/CIFS pentru Windows și Linux.</value>
+  <data name="Menu_License" xml:space="preserve">
+    <value>Licență</value>
+  </data>
+  <data name="Menu_Credits" xml:space="preserve">
+    <value>Contribuții</value>
+  </data>
+  <data name="Menu_ThirdPartyNotices" xml:space="preserve">
+    <value>Mențiuni ale terților</value>
+  </data>
+  <data name="License_ThirdPartyNote" xml:space="preserve">
+    <value>Codul propriu BUtil este în domeniul public. Componentele terților își păstrează licențele și sunt enumerate la Mențiuni ale terților.</value>
   </data>
 </root>

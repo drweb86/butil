@@ -1322,20 +1322,19 @@ See detailed description in the following link.</value>
   <data name="WhatTask_Description" xml:space="preserve">
     <value>Anseo is féidir leat na fillteáin ar mhaith leat cúltaca a dhéanamh díobh a shonrú.</value>
   </data>
-  <data name="Winget_Description" xml:space="preserve">
-    <value>Cúltaca / sioncronaigh do shonraí Windows, Linux.
-Iompórtáil grianghraif ón bhfón trí WI-FI agus níos mó.
-
-Gnéithe:
-- Cúltaca incriminteach le dí-dhúbailt comhad agus tacaíocht iompair WebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, SMB/CIFS;
-- Comhaid a shioncronú idir gléasanna ag baint úsáide as stóráil láraithe agus tacaíocht leagan;
-- Meáin allmhairiú - Clostaifid a allmhairiú, grianghraif, físeáin ó chárta SD ceamara, taifeadán; grianghraif agus físeáin ó do ghuthán trí WI-FI trí fheidhmchlár FTPS Server ag baint úsáide as ainmneacha comhaid teimpléid;
-- Consól do sceidealú uathoibrithe;
-- Criptiú AES-256.
-
-Ardáin: Windows 11 x64, ARM64 nó Ubuntu 24+.</value>
+  <data name="Document_Language" xml:space="preserve">
+    <value>Teanga</value>
   </data>
-  <data name="Winget_ShortDescription" xml:space="preserve">
-    <value>Cruthaíonn BUtil cúltacaí incriminteacha, sioncrónú incriminteach agus iompórtálann sé ilmheán ar do ríomhaire le dídhúthú agus iompraíonn WebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, SMB/CIFS tacaíocht do Windows agus Linux.</value>
+  <data name="Menu_License" xml:space="preserve">
+    <value>Ceadúnas</value>
+  </data>
+  <data name="Menu_Credits" xml:space="preserve">
+    <value>Creidiúintí</value>
+  </data>
+  <data name="Menu_ThirdPartyNotices" xml:space="preserve">
+    <value>Fógraí tríú páirtí</value>
+  </data>
+  <data name="License_ThirdPartyNote" xml:space="preserve">
+    <value>Tá cód féin BUtil sa fearann poiblí. Coimeádann comhpháirteanna tríú páirtí a gceadúnais agus tá siad liostaithe faoi Fógraí tríú páirtí.</value>
   </data>
 </root>

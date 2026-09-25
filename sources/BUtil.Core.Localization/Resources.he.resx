@@ -1322,20 +1322,19 @@ bin.
   <data name="WhatTask_Description" xml:space="preserve">
     <value>כאן ניתן לציין את התיקיות שברצונך לגבות.</value>
   </data>
-  <data name="Winget_Description" xml:space="preserve">
-    <value>גבה/סנכרן את הנתונים שלך ב-Windows, Linux.
-ייבא תמונות מהטלפון דרך WI-FI ועוד.
-
-תכונות:
-- גיבוי מצטבר עם ביטול כפילויות קבצים ותמיכה בהעברות WebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, SMB/CIFS;
-- סנכרון קבצים בין התקנים באמצעות אחסון מרכזי ותמיכה בגרסאות;
-- ייבוא מדיה - ייבוא שמע, תמונות, סרטונים מכרטיס SD של מצלמה, מקליט; תמונות וסרטונים מהטלפון שלך דרך WI-FI באמצעות אפליקציית FTPS Server עם שמות קבצי תבנית;
-- קונסולה לתזמון אוטומציה;
-- הצפנת AES-256.
-
-פלטפורמות: Windows 11 x64, ARM64 או Ubuntu 24+.</value>
+  <data name="Document_Language" xml:space="preserve">
+    <value>שפה</value>
   </data>
-  <data name="Winget_ShortDescription" xml:space="preserve">
-    <value>BUtil יוצר גיבויים מצטברים, סנכרון מצטבר ומייבא מולטימדיה למחשב שלך עם ביטול כפילויות ותמיכה בהעברות WebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, SMB/CIFS עבור Windows ו-Linux.</value>
+  <data name="Menu_License" xml:space="preserve">
+    <value>רישיון</value>
+  </data>
+  <data name="Menu_Credits" xml:space="preserve">
+    <value>קרדיטים</value>
+  </data>
+  <data name="Menu_ThirdPartyNotices" xml:space="preserve">
+    <value>הודעות צד שלישי</value>
+  </data>
+  <data name="License_ThirdPartyNote" xml:space="preserve">
+    <value>הקוד של BUtil עצמו הוא נחלת הכלל. רכיבי צד שלישי שומרים על הרישיונות שלהם ומפורטים בהודעות צד שלישי.</value>
   </data>
 </root>

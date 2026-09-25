@@ -1323,20 +1323,19 @@ bin.
   <data name="WhatTask_Description" xml:space="preserve">
     <value>Энд та нөөцлөхийг хүссэн хавтаснуудаа зааж өгч болно.</value>
   </data>
-  <data name="Winget_Description" xml:space="preserve">
-    <value>Windows, Linux дээр өгөгдлөө нөөцлөх/синхрончлох.
-Утаснаас WI-FI-аар зураг импортлох болон бусад.
-
-Онцлогууд:
-- Файлын давхардлыг арилгах болон WebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, SMB/CIFS дамжуулалтын дэмжлэгтэй нэмэгдэл нөөцлөлт;
-- Төвлөрсөн санах ой болон хувилбарын дэмжлэгтэй төхөөрөмжүүдийн хооронд файл синхрончлох;
-- Медиа импорт - Камерын SD картнаас аудио, зураг, видео импортлох; утаснаасаа WI-FI-аар FTPS серверийн програмаар загвар файлын ашиглан зураг, видео импортлох;
-- Автоматжуулсан хуваарь тохируулах консол;
-- AES-256 шифрлэлт.
-
-Платформ: Windows 11 x64, ARM64 эсвэл Ubuntu 24+.</value>
+  <data name="Document_Language" xml:space="preserve">
+    <value>Хэл</value>
   </data>
-  <data name="Winget_ShortDescription" xml:space="preserve">
-    <value>BUtil нь Windows болон Linux-д зориулсан WebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, SMB/CIFS дамжуулалтын дэмжлэг болон давхардлыг арилгах бүхий нэмэгдэл нөөцлөлт, нэмэгдэл синхрончлол үүсгэж, мультимедиа импортлодог.</value>
+  <data name="Menu_License" xml:space="preserve">
+    <value>Лиценз</value>
+  </data>
+  <data name="Menu_Credits" xml:space="preserve">
+    <value>Талархал</value>
+  </data>
+  <data name="Menu_ThirdPartyNotices" xml:space="preserve">
+    <value>Гуравдагч этгээдийн мэдэгдэл</value>
+  </data>
+  <data name="License_ThirdPartyNote" xml:space="preserve">
+    <value>BUtil-ийн өөрийн код нь нийтийн өмч. Гуравдагч этгээдийн бүрэлдэхүүн хэсэг нь лицензээ хадгалж, Гуравдагч этгээдийн мэдэгдэлд бичигдсэн.</value>
   </data>
 </root>

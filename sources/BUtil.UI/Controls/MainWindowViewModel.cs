@@ -94,6 +94,34 @@ public partial class MainWindowViewModel : ViewModelBase
     }
 
 #pragma warning disable CA1822 // Mark members as static
+    public void OpenPrivacyCommand()
+#pragma warning restore CA1822 // Mark members as static
+    {
+        WindowManager.SwitchView(new LegalDocumentViewModel(LegalDocumentKind.Privacy));
+    }
+
+#pragma warning disable CA1822 // Mark members as static
+    public void OpenLicenseCommand()
+#pragma warning restore CA1822 // Mark members as static
+    {
+        WindowManager.SwitchView(new LegalDocumentViewModel(LegalDocumentKind.License));
+    }
+
+#pragma warning disable CA1822 // Mark members as static
+    public void OpenCreditsCommand()
+#pragma warning restore CA1822 // Mark members as static
+    {
+        WindowManager.SwitchView(new MarkdownPageViewModel(MarkdownPage.Credits));
+    }
+
+#pragma warning disable CA1822 // Mark members as static
+    public void OpenThirdPartyNoticesCommand()
+#pragma warning restore CA1822 // Mark members as static
+    {
+        WindowManager.SwitchView(new MarkdownPageViewModel(MarkdownPage.ThirdPartyNotices));
+    }
+
+#pragma warning disable CA1822 // Mark members as static
     public void RestoreCommand()
 #pragma warning restore CA1822 // Mark members as static
     {
@@ -122,6 +150,10 @@ public partial class MainWindowViewModel : ViewModelBase
     public static string Logs_Menu => Resources.Logs_Menu;
     public static string LogFile_BrowseLogsFolder => Resources.LogFile_BrowseLogsFolder;
     public static string Other_Menu_Title => Resources.Other_Menu_Title;
+    public static string Menu_Privacy => Resources.Menu_Privacy;
+    public static string Menu_License => Resources.Menu_License;
+    public static string Menu_Credits => Resources.Menu_Credits;
+    public static string Menu_ThirdPartyNotices => Resources.Menu_ThirdPartyNotices;
     public static string TechnicalTool_Menu_DecryptAes256 => Resources.TechnicalTool_Menu_DecryptAes256;
     public static string TechnicalTool_Menu_EncryptAes256 => Resources.TechnicalTool_Menu_EncryptAes256;
     public static string TechnicalTool_Menu_DecompressBrotli => Resources.TechnicalTool_Menu_DecompressBrotli;

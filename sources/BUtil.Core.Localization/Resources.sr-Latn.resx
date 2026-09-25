@@ -1322,20 +1322,19 @@ Pogledajte detaljan opis na sledećem linku.</value>
   <data name="WhatTask_Description" xml:space="preserve">
     <value>Ovde možete da navedete fascikle koje želite da napravite rezervnu kopiju.</value>
   </data>
-  <data name="Winget_Description" xml:space="preserve">
-    <value>Napravite rezervne kopije/sinhronizujte svoje podatke na sistemu Windows, Linux.
-Uvezite fotografije sa telefona putem WI-FI i još mnogo toga.
-
-Funkcije:
-- Inkrementalna rezervna kopija sa deduplikacijom datoteka i podrškom za WebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, SMB/CIFS transport;
-- Sinhronizacija datoteka između uređaja korišćenjem centralizovanog skladišta i podrškom za verzioniranje;
-- Uvoz medija - uvoz audija, fotografija, video zapisa sa SD kartice kamere, rekordera; fotografije i video zapisi sa vašeg telefona putem WI-FI kroz FTPS serversku aplikaciju koristeći šablone naziva datoteka;
-- Konzola za automatizaciju planiranja;
-- AES-256 šifrovanje.
-
-Platforme: Windows 11 x64, ARM64 ili Ubuntu 24+.</value>
+  <data name="Document_Language" xml:space="preserve">
+    <value>Jezik</value>
   </data>
-  <data name="Winget_ShortDescription" xml:space="preserve">
-    <value>BUtil kreira inkrementalne rezervne kopije, inkrementalnu sinhronizaciju i uvozi multimediju na vašem računaru sa deduplikacijom i podrškom za WebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, SMB/CIFS transport za Windows i Linux.</value>
+  <data name="Menu_License" xml:space="preserve">
+    <value>Licenca</value>
+  </data>
+  <data name="Menu_Credits" xml:space="preserve">
+    <value>Zasluge</value>
+  </data>
+  <data name="Menu_ThirdPartyNotices" xml:space="preserve">
+    <value>Obaveštenja trećih strana</value>
+  </data>
+  <data name="License_ThirdPartyNote" xml:space="preserve">
+    <value>Sopstveni kod BUtil-a je u javnom vlasništvu. Komponente trećih strana zadržavaju licence i navedene su u Obaveštenjima trećih strana.</value>
   </data>
 </root>

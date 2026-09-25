@@ -1322,20 +1322,19 @@ Shihni përshkrimin e detajuar në lidhjen vijuese.</value>
   <data name="WhatTask_Description" xml:space="preserve">
     <value>Këtu mund të specifikoni dosjet që dëshironi të rezervoni.</value>
   </data>
-  <data name="Winget_Description" xml:space="preserve">
-    <value>Kopjoni/sinkronizoni të dhënat tuaja në Windows, Linux.
-Importoni foto nga telefoni përmes WI-FI dhe më shumë.
-
-Veçoritë:
-- Kopje rezervë inkrementale me deduplikim skedarësh dhe mbështetje transporti WebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, SMB/CIFS;
-- Sinkronizim i skedarëve ndërmjet pajisjeve duke përdorur ruajtje të centralizuar dhe mbështetje versionimi;
-- Import mediash - Importoni audio, foto, video nga karta SD e kamerës, regjistruesit; foto dhe video nga telefoni juaj përmes WI-FI nëpërmjet aplikacionit të Serverit FTPS me emra skedarësh shablloni ose përmes;
-- Konsol për planifikimin e automatizimit;
-- Kriptim AES-256.
-
-Platformat: Windows 11 x64, ARM64 ose Ubuntu 24+.</value>
+  <data name="Document_Language" xml:space="preserve">
+    <value>Gjuha</value>
   </data>
-  <data name="Winget_ShortDescription" xml:space="preserve">
-    <value>BUtil krijon kopje rezervë inkrementale, sinkronizim inkremental dhe importon multimedia në PC-në tuaj me deduplikim dhe mbështetje transporti WebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, SMB/CIFS për Windows dhe Linux.</value>
+  <data name="Menu_License" xml:space="preserve">
+    <value>Licenca</value>
+  </data>
+  <data name="Menu_Credits" xml:space="preserve">
+    <value>Kredite</value>
+  </data>
+  <data name="Menu_ThirdPartyNotices" xml:space="preserve">
+    <value>Njoftime të palëve të treta</value>
+  </data>
+  <data name="License_ThirdPartyNote" xml:space="preserve">
+    <value>Kodi i vetë BUtil është në domenin publik. Komponentët e palëve të treta ruajnë licencat e tyre dhe janë te Njoftime të palëve të treta.</value>
   </data>
 </root>

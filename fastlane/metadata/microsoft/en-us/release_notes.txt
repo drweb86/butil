@@ -1,0 +1,1 @@
+Incremental backup with deduplication, folder sync, and photo import. Open source. No account and no ads. Files go only to storage you choose.

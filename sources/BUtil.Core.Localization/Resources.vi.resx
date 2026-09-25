@@ -1319,20 +1319,19 @@ Xem mô tả chi tiết trong liên kết sau.</value>
   <data name="WhatTask_Description" xml:space="preserve">
     <value>Tại đây bạn có thể chỉ định các thư mục muốn sao lưu.</value>
   </data>
-  <data name="Winget_Description" xml:space="preserve">
-    <value>Sao lưu/đồng bộ hóa dữ liệu của bạn trên Windows, Linux.
-Nhập ảnh từ điện thoại qua WI-FI và nhiều hơn nữa.
-
-Tính năng:
-- Sao lưu gia tăng với loại bỏ trùng lặp tệp và hỗ trợ giao thức WebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, SMB/CIFS;
-- Đồng bộ hóa tệp giữa các thiết bị sử dụng lưu trữ tập trung và hỗ trợ quản lý phiên bản;
-- Nhập phương tiện - Nhập âm thanh, ảnh, video từ Thẻ SD của máy ảnh, máy ghi âm; ảnh và video từ điện thoại của bạn qua WI-FI thông qua ứng dụng FTPS Server sử dụng tên tệp mẫu;
-- Bảng điều khiển để lên lịch tự động hóa;
-- Mã hóa AES-256.
-
-Nền tảng: Windows 11 x64, ARM64 hoặc Ubuntu 24+.</value>
+  <data name="Document_Language" xml:space="preserve">
+    <value>Ngôn ngữ</value>
   </data>
-  <data name="Winget_ShortDescription" xml:space="preserve">
-    <value>BUtil tạo sao lưu gia tăng, đồng bộ hóa gia tăng và nhập đa phương tiện trên PC của bạn với tính năng loại bỏ trùng lặp và hỗ trợ giao thức WebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, SMB/CIFS cho Windows và Linux.</value>
+  <data name="Menu_License" xml:space="preserve">
+    <value>Giấy phép</value>
+  </data>
+  <data name="Menu_Credits" xml:space="preserve">
+    <value>Ghi công</value>
+  </data>
+  <data name="Menu_ThirdPartyNotices" xml:space="preserve">
+    <value>Thông báo bên thứ ba</value>
+  </data>
+  <data name="License_ThirdPartyNote" xml:space="preserve">
+    <value>Mã của chính BUtil thuộc phạm vi công cộng. Thành phần bên thứ ba giữ giấy phép của họ và được liệt kê trong Thông báo bên thứ ba.</value>
   </data>
 </root>

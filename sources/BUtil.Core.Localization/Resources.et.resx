@@ -1322,20 +1322,19 @@ Vaadake üksikasjalikku kirjeldust järgmisel lingil.</value>
   <data name="WhatTask_Description" xml:space="preserve">
     <value>Siin saate määrata kaustad, mida soovite varundada.</value>
   </data>
-  <data name="Winget_Description" xml:space="preserve">
-    <value>Varundage/sünkroniseerige oma andmeid Windows-is, Linux-is.
-Importige fotosid telefonist WI-FI kaudu ja palju muud.
-
-Funktsioonid:
-- Inkrementaalne varundamine failide deduplikeerimisega ning WebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, SMB/CIFS transpordi toega;
-- Failide sünkroniseerimine seadmete vahel tsentraliseeritud hoidla ja versioonimise toega;
-- Meedia import - importige helisid, fotosid, videoid kaamera, diktofoni SD-kaardilt; fotosid ja videoid telefonist WI-FI kaudu FTPS-serveri rakenduse abil mallifailinimedega kaudu;
-- Konsool automatiseerimise ajastamiseks;
-- AES-256 krüpteerimine.
-
-Platvormid: Windows 11 x64, ARM64 või Ubuntu 24+.</value>
+  <data name="Document_Language" xml:space="preserve">
+    <value>Keel</value>
   </data>
-  <data name="Winget_ShortDescription" xml:space="preserve">
-    <value>BUtil loob inkrementaalseid varukoopiaid, inkrementaalset sünkroniseerimist ja impordib multimeediat teie arvutisse deduplikeerimise ning WebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, SMB/CIFS transpordi toega Windows-i ja Linux-i jaoks.</value>
+  <data name="Menu_License" xml:space="preserve">
+    <value>Litsents</value>
+  </data>
+  <data name="Menu_Credits" xml:space="preserve">
+    <value>Tänud</value>
+  </data>
+  <data name="Menu_ThirdPartyNotices" xml:space="preserve">
+    <value>Kolmandate osapoolte teatised</value>
+  </data>
+  <data name="License_ThirdPartyNote" xml:space="preserve">
+    <value>BUtili enda kood on üldkasutatav. Kolmandate osapoolte komponendid säilitavad oma litsentsid ja on loetletud jaotises Kolmandate osapoolte teatised.</value>
   </data>
 </root>

@@ -1322,20 +1322,19 @@ bin.
   <data name="WhatTask_Description" xml:space="preserve">
     <value>Тут вы можаце ўказаць папкі, якія хочаце рэзервова капіяваць.</value>
   </data>
-  <data name="Winget_Description" xml:space="preserve">
-    <value>Рэзервовае капіяванне/сінхранізацыя вашых даных у Windows, Linux.
-Імпарт фота з тэлефона праз WI-FI і іншае.
-
-Функцыі:
-- Інкрэментальнае рэзервовае капіяванне з дэдуплікацыяй файлаў і падтрымкай транспарту WebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, SMB/CIFS;
-- Сінхранізацыя файлаў паміж прыладамі з выкарыстаннем цэнтралізаванага сховішча і падтрымкай версій;
-- Імпарт медыя - імпарт аўдыя, фота, відэа з SD-карты камеры, рэкордэра; фота і відэа з тэлефона праз WI-FI праз праграму FTPS-сервера з шаблоннымі імёнамі файлаў;
-- Кансоль для планавання аўтаматызацыі;
-- AES-256 шыфраванне.
-
-Платформы: Windows 11 x64, ARM64 або Ubuntu 24+.</value>
+  <data name="Document_Language" xml:space="preserve">
+    <value>Мова</value>
   </data>
-  <data name="Winget_ShortDescription" xml:space="preserve">
-    <value>BUtil стварае інкрэментальныя рэзервовыя копіі, інкрэментальную сінхранізацыю і імпартуе мультымедыя на вашым ПК з дэдуплікацыяй і падтрымкай транспарту WebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, SMB/CIFS для Windows і Linux.</value>
+  <data name="Menu_License" xml:space="preserve">
+    <value>Ліцэнзія</value>
+  </data>
+  <data name="Menu_Credits" xml:space="preserve">
+    <value>Падзякі</value>
+  </data>
+  <data name="Menu_ThirdPartyNotices" xml:space="preserve">
+    <value>Паведамленні трэціх бакоў</value>
+  </data>
+  <data name="License_ThirdPartyNote" xml:space="preserve">
+    <value>Уласны код BUtil знаходзіцца ў грамадскім набытку. Кампаненты трэціх бакоў захоўваюць свае ліцэнзіі і пералічаны ў Паведамленнях трэціх бакоў.</value>
   </data>
 </root>

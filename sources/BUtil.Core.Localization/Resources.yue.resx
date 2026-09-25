@@ -1339,20 +1339,19 @@ bin。
   <data name="WhatTask_Description" xml:space="preserve">
     <value>你可以喺呢度指定想備份嘅資料夾。</value>
   </data>
-  <data name="Winget_Description" xml:space="preserve">
-    <value>喺 Windows、Linux 上面備份/同步你嘅數據。
-透過 WI-FI 從手機導入相片等等。
-
-功能：
-- 增量備份，支援檔案重複數據刪除同埋 WebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, SMB/CIFS 傳輸；
-- 使用集中存儲同版本控制支援喺設備之間同步檔案；
-- 媒體導入 - 從相機、錄音機嘅 SD 卡導入音頻、相片、影片；透過 FTPS 伺服器應用程式使用模板檔案名或透過 從手機導入相片同影片;
-- 用於自動化調度嘅控制台；
-- AES-256 加密。
-
-平台：Windows 11 x64、ARM64 或 Ubuntu 24+。</value>
+  <data name="Document_Language" xml:space="preserve">
+    <value>語言</value>
   </data>
-  <data name="Winget_ShortDescription" xml:space="preserve">
-    <value>BUtil 喺你嘅電腦上面創建增量備份、增量同步同埋導入多媒體，支援重複數據刪除同埋適用於 Windows 同 Linux 嘅 WebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, SMB/CIFS 傳輸。</value>
+  <data name="Menu_License" xml:space="preserve">
+    <value>授權</value>
+  </data>
+  <data name="Menu_Credits" xml:space="preserve">
+    <value>鳴謝</value>
+  </data>
+  <data name="Menu_ThirdPartyNotices" xml:space="preserve">
+    <value>第三方聲明</value>
+  </data>
+  <data name="License_ThirdPartyNote" xml:space="preserve">
+    <value>BUtil 自己嘅程式碼屬公有領域。第三方組件保留自己嘅授權，並列喺第三方聲明。</value>
   </data>
 </root>

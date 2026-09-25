@@ -1,4 +1,10 @@
-﻿# 2026.08.27
+﻿# 2026.09.25
+(unreleased)
+
+## New Features
+- Preparation for Windows Store.
+
+# 2026.08.27
 
 ## New Features
 - Technical: It is possible to prevent PC from sleep for specified timeout or indefinitely.

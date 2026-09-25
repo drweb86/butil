@@ -1322,20 +1322,19 @@ See detailed description in the following link.</value>
   <data name="WhatTask_Description" xml:space="preserve">
     <value>Yma gallwch nodi'r ffolderi yr hoffech eu gwneud copi wrth gefn ohonynt.</value>
   </data>
-  <data name="Winget_Description" xml:space="preserve">
-    <value>Gwneud copi wrth gefn / cydamseru'ch data Windows, Linux.
-Mewnforio lluniau o'r ffôn trwy WI-FI a mwy.
-
-Nodweddion:
-- Copi wrth gefn cynyddrannol gyda dad-ddyblygu ffeiliau a chefnogaeth cludo SFTP, FTPS, SMB / CIFS;
-- Cydamseru ffeiliau rhwng dyfeisiau gan ddefnyddio storfa ganolog a chefnogaeth fersiwn;
-- Mewnforio cyfryngau - Mewnforio audios, lluniau, fideos o gerdyn SD y camera, recordydd; lluniau a fideos o'ch ffôn trwy WI-FI trwy raglen Gweinydd FTPS gan ddefnyddio enwau ffeiliau templed;
-- Consol ar gyfer amserlennu awtomeiddio;
-- AES-256 amgryptio.
-
-Llwyfannau: Windows 11 x64, ARM64 neu Ubuntu 24+.</value>
+  <data name="Document_Language" xml:space="preserve">
+    <value>Iaith</value>
   </data>
-  <data name="Winget_ShortDescription" xml:space="preserve">
-    <value>Mae BUtil yn creu copïau wrth gefn cynyddrannol, cydamseru cynyddrannol ac yn mewnforio amlgyfrwng ar eich cyfrifiadur gyda dad-ddyblygu ac mae WebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, SMB/CIFS yn cludo cefnogaeth i Windows a Linux.</value>
+  <data name="Menu_License" xml:space="preserve">
+    <value>Trwydded</value>
+  </data>
+  <data name="Menu_Credits" xml:space="preserve">
+    <value>Cydnabyddiaeth</value>
+  </data>
+  <data name="Menu_ThirdPartyNotices" xml:space="preserve">
+    <value>Hysbysiadau trydydd parti</value>
+  </data>
+  <data name="License_ThirdPartyNote" xml:space="preserve">
+    <value>Mae cod BUtil ei hun yn y parth cyhoeddus. Mae cydrannau trydydd parti yn cadw eu trwyddedau ac wedi'u rhestru o dan Hysbysiadau trydydd parti.</value>
   </data>
 </root>

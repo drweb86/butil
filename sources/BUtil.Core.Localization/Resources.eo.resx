@@ -1322,20 +1322,19 @@ See detailed description in the following link.</value>
   <data name="WhatTask_Description" xml:space="preserve">
     <value>Ĉi tie vi povas specifi dosierujojn, kiujn vi ŝatus sekurkopii.</value>
   </data>
-  <data name="Winget_Description" xml:space="preserve">
-    <value>Rezervu/sinkronigu viajn datumojn Vindozo, Linukso.
-Importu fotojn de telefono per WI-FI kaj pli.
-
-Karakterizaĵoj:
-- Pliiga sekurkopio kun maldupliko de dosieroj kaj subteno de transportoj WebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, SMB/CIFS;
-- Sinkronigo de dosieroj inter aparatoj per centralizita stokado kaj versio-subteno;
-- Importu amaskomunikilaron - Importu sonaĵojn, fotojn, filmetojn el SD-Karto de fotilo, registrilo; fotoj kaj filmetoj de via telefono per WI-FI per FTPS-Servila aplikaĵo uzante ŝablonajn dosiernomojn;
-- Konzolo por aŭtomatiga planado;
-- AES-256 ĉifrado.
-
-Platformoj: Windows 11 x64, ARM64 aŭ Ubuntu 24+.</value>
+  <data name="Document_Language" xml:space="preserve">
+    <value>Lingvo</value>
   </data>
-  <data name="Winget_ShortDescription" xml:space="preserve">
-    <value>BUtil kreas pliigajn sekurkopiojn, pliigan sinkronigon kaj importas plurmediajn sur via komputilo kun dedupliko kaj WebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, SMB/CIFS transportas subtenon por Vindozo kaj Linukso.</value>
+  <data name="Menu_License" xml:space="preserve">
+    <value>Permesilo</value>
+  </data>
+  <data name="Menu_Credits" xml:space="preserve">
+    <value>Kontribuoj</value>
+  </data>
+  <data name="Menu_ThirdPartyNotices" xml:space="preserve">
+    <value>Avertoj pri triaj partioj</value>
+  </data>
+  <data name="License_ThirdPartyNote" xml:space="preserve">
+    <value>La propra kodo de BUtil estas publika havaĵo. Komponantoj de triaj partioj konservas siajn permesilojn kaj estas listigitaj en Avertoj pri triaj partioj.</value>
   </data>
 </root>

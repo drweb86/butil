@@ -1330,20 +1330,19 @@ Sceglie una delle seguenti opzioni:
   <data name="WhatTask_Description" xml:space="preserve">
     <value>Qui puoi specificare le cartelle di cui desideri eseguire il backup.</value>
   </data>
-  <data name="Winget_Description" xml:space="preserve">
-    <value>Backup/sincronizza i dati in Windows, Linux.
-Importa foto dal telefono tramite Wi-Fi e altro ancora.
-
-Funzionalità:
-- Backup incrementale con de-duplicazione dei file e supporto trasporti WebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, SMB/CIFS;
-- Sincronizzazione dei file tra dispositivi usando archiviazione centralizzata e supporto versioning;
-- Importazione media - Importa audio, foto, video dalla scheda SD di fotocamera, registratore; foto e video dal telefono tramite Wi-Fi attraverso l'applicazione Server FTPS usando nomi file modello o tramite;
-- Console per la pianificazione dell'automazione;
-- Crittografia AES-256.
-
-Piattaforme: Windows 11 x64, ARM64 o Ubuntu 24+.</value>
+  <data name="Document_Language" xml:space="preserve">
+    <value>Lingua</value>
   </data>
-  <data name="Winget_ShortDescription" xml:space="preserve">
-    <value>BUtil crea backup incrementali, sincronizzazione incrementale e importa contenuti multimediali nel PC con de-duplicazione e supporto trasporti WebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, SMB/CIFS per Windows e Linux.</value>
+  <data name="Menu_License" xml:space="preserve">
+    <value>Licenza</value>
+  </data>
+  <data name="Menu_Credits" xml:space="preserve">
+    <value>Riconoscimenti</value>
+  </data>
+  <data name="Menu_ThirdPartyNotices" xml:space="preserve">
+    <value>Note di terze parti</value>
+  </data>
+  <data name="License_ThirdPartyNote" xml:space="preserve">
+    <value>Il codice di BUtil è di pubblico dominio. I componenti di terze parti restano sotto le proprie licenze e sono elencati in Note di terze parti.</value>
   </data>
 </root>

@@ -1309,20 +1309,19 @@
   <data name="WhatTask_Description" xml:space="preserve">
     <value>یہاں آپ ان فولڈرز کی وضاحت کر سکتے ہیں جن کا آپ بیک اپ لینا چاہتے ہیں۔</value>
   </data>
-  <data name="Winget_Description" xml:space="preserve">
-    <value>Windows، Linux پر اپنے ڈیٹا کا بیک اپ/سنکرونائز کریں۔
-WI-FI کے ذریعے فون سے تصاویر امپورٹ کریں اور بہت کچھ۔
-
-خصوصیات:
-- فائل ڈیڈپلیکیشن اور WebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, SMB/CIFS ٹرانسپورٹ سپورٹ کے ساتھ انکریمینٹل بیک اپ؛
-- مرکزی سٹوریج اور ورژننگ سپورٹ کا استعمال کرتے ہوئے ڈیوائسز کے درمیان فائل سنکرونائزیشن؛
-- میڈیا امپورٹ - کیمرے، ریکارڈر کے SD کارڈ سے آڈیوز، تصاویر، ویڈیوز امپورٹ کریں؛ ٹیمپلیٹ فائل ناموں کا استعمال کرتے ہوئے FTPS سرور ایپلیکیشن کے ذریعے WI-FI کے ذریعے کے ذریعے اپنے فون سے تصاویر اور ویڈیوز؛;
-- آٹومیشن شیڈولنگ کے لیے کنسول؛
-- AES-256 انکرپشن۔
-
-پلیٹ فارمز: Windows 11 x64، ARM64 یا Ubuntu 24+۔</value>
+  <data name="Document_Language" xml:space="preserve">
+    <value>زبان</value>
   </data>
-  <data name="Winget_ShortDescription" xml:space="preserve">
-    <value>BUtil آپ کے PC پر ڈیڈپلیکیشن اور Windows اور Linux کے لیے WebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, SMB/CIFS ٹرانسپورٹ سپورٹ کے ساتھ انکریمینٹل بیک اپ، انکریمینٹل سنکرونائزیشن اور ملٹی میڈیا امپورٹ بناتا ہے۔</value>
+  <data name="Menu_License" xml:space="preserve">
+    <value>لائسنس</value>
+  </data>
+  <data name="Menu_Credits" xml:space="preserve">
+    <value>کریڈٹس</value>
+  </data>
+  <data name="Menu_ThirdPartyNotices" xml:space="preserve">
+    <value>فریق ثالث کے نوٹس</value>
+  </data>
+  <data name="License_ThirdPartyNote" xml:space="preserve">
+    <value>BUtil کا اپنا کوڈ عوامی ملکیت ہے۔ فریق ثالث کے اجزا اپنے لائسنس رکھتے ہیں اور فریق ثالث کے نوٹس میں درج ہیں۔</value>
   </data>
 </root>

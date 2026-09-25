@@ -1322,20 +1322,19 @@ Szczegółowy opis znajdziesz pod poniższym linkiem.</value>
   <data name="WhatTask_Description" xml:space="preserve">
     <value>Tutaj możesz wskazać foldery, które chcesz uwzględnić w kopii zapasowej.</value>
   </data>
-  <data name="Winget_Description" xml:space="preserve">
-    <value>Twórz kopie zapasowe/synchronizuj dane w systemach Windows, Linux.
-Importuj zdjęcia z telefonu przez WI-FI i wiele więcej.
-
-Funkcje:
-- Kopia przyrostowa z deduplikacją plików i obsługą transportów WebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, SMB/CIFS;
-- Synchronizacja plików między urządzeniami z wykorzystaniem scentralizowanego magazynu i obsługą wersjonowania;
-- Import mediów - Import plików audio, zdjęć, filmów z karty SD aparatu, rejestratora; zdjęć i filmów z telefonu przez WI-FI za pomocą aplikacji serwera FTPS z użyciem szablonów nazw plików;
-- Konsola do automatyzacji harmonogramów;
-- Szyfrowanie AES-256.
-
-Platformy: Windows 11 x64, ARM64 lub Ubuntu 24+.</value>
+  <data name="Document_Language" xml:space="preserve">
+    <value>Język</value>
   </data>
-  <data name="Winget_ShortDescription" xml:space="preserve">
-    <value>BUtil tworzy przyrostowe kopie zapasowe, przyrostową synchronizację i importuje multimedia na PC z deduplikacją i obsługą transportów WebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, SMB/CIFS dla Windows i Linux.</value>
+  <data name="Menu_License" xml:space="preserve">
+    <value>Licencja</value>
+  </data>
+  <data name="Menu_Credits" xml:space="preserve">
+    <value>Autorzy</value>
+  </data>
+  <data name="Menu_ThirdPartyNotices" xml:space="preserve">
+    <value>Informacje o stronach trzecich</value>
+  </data>
+  <data name="License_ThirdPartyNote" xml:space="preserve">
+    <value>Własny kod BUtil jest dobrem publicznym. Składniki stron trzecich zachowują swoje licencje i są wymienione w Informacjach o stronach trzecich.</value>
   </data>
 </root>

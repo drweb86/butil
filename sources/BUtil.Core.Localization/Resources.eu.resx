@@ -1322,20 +1322,19 @@ See detailed description in the following link.</value>
   <data name="WhatTask_Description" xml:space="preserve">
     <value>Hemen babeskopia egin nahi diezun karpetak zehaztu ditzakezu.</value>
   </data>
-  <data name="Winget_Description" xml:space="preserve">
-    <value>Egin babeskopiak/sinkronizatu zure datuak Windows, Linux.
-Inportatu argazkiak telefonotik WI-FI bidez eta gehiago.
-
-Ezaugarriak:
-- Babeskopia gehigarria fitxategien desduplicazioarekin eta WebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, SMB/CIFS garraioen laguntzarekin;
-- Gailuen arteko fitxategiak sinkronizatzea biltegiratze zentralizatua eta bertsioen euskarria erabiliz;
-- Inportatu multimedia - Inportatu audioak, argazkiak, bideoak kameraren SD txarteletik, grabagailutik; Zure telefonoko argazkiak eta bideoak WI-FI bidez FTPS Server aplikazioaren bidez txantiloi-fitxategien izenak erabiliz bidez;
-- Automatizazioaren programaziorako kontsola;
-- AES-256 enkriptatzea.
-
-Plataformak: Windows 11 x64, ARM64 edo Ubuntu 24+.</value>
+  <data name="Document_Language" xml:space="preserve">
+    <value>Hizkuntza</value>
   </data>
-  <data name="Winget_ShortDescription" xml:space="preserve">
-    <value>BUtil-ek segurtasun-kopia gehigarriak, sinkronizazio inkrementala eta multimedia inportatzen ditu zure ordenagailuan desduplicazioarekin eta Windows eta Linuxerako WebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, SMB/CIFS garraiatzeko laguntzarekin.</value>
+  <data name="Menu_License" xml:space="preserve">
+    <value>Lizentzia</value>
+  </data>
+  <data name="Menu_Credits" xml:space="preserve">
+    <value>Kredituak</value>
+  </data>
+  <data name="Menu_ThirdPartyNotices" xml:space="preserve">
+    <value>Hirugarrenen oharrak</value>
+  </data>
+  <data name="License_ThirdPartyNote" xml:space="preserve">
+    <value>BUtilen berezko kodea jabari publikokoa da. Hirugarrenen osagaiek beren lizentziak gordetzen dituzte eta Hirugarrenen oharretan daude.</value>
   </data>
 </root>

@@ -1322,20 +1322,19 @@ Zie gedetailleerde beschrijving via de volgende link.</value>
   <data name="WhatTask_Description" xml:space="preserve">
     <value>Hier kunt u de mappen opgeven waarvan u een back-up wilt maken.</value>
   </data>
-  <data name="Winget_Description" xml:space="preserve">
-    <value>Maak back-ups/synchroniseer uw gegevens op Windows, Linux.
-Importeer foto's van uw telefoon via WI-FI en meer.
-
-Functies:
-- Incrementele back-up met bestandsdeduplicatie en ondersteuning voor WebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, SMB/CIFS-transport;
-- Synchronisatie van bestanden tussen apparaten met gecentraliseerde opslag en ondersteuning voor versiebeheer;
-- Media importeren - Importeer audio, foto's, video's van de SD-kaart van camera, recorder; foto's en video's van uw telefoon via WI-FI via de FTPS Server-toepassing met sjabloonbestandsnamen;
-- Console voor automatiseringsplanning;
-- AES-256-versleuteling.
-
-Platforms: Windows 11 x64, ARM64 of Ubuntu 24+.</value>
+  <data name="Document_Language" xml:space="preserve">
+    <value>Taal</value>
   </data>
-  <data name="Winget_ShortDescription" xml:space="preserve">
-    <value>BUtil maakt incrementele back-ups, incrementele synchronisatie en importeert multimedia op uw PC met deduplicatie en ondersteuning voor WebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, SMB/CIFS-transport voor Windows en Linux.</value>
+  <data name="Menu_License" xml:space="preserve">
+    <value>Licentie</value>
+  </data>
+  <data name="Menu_Credits" xml:space="preserve">
+    <value>Vermeldingen</value>
+  </data>
+  <data name="Menu_ThirdPartyNotices" xml:space="preserve">
+    <value>Kennisgevingen van derden</value>
+  </data>
+  <data name="License_ThirdPartyNote" xml:space="preserve">
+    <value>BUtils eigen code is in het publieke domein. Onderdelen van derden houden hun licenties en staan bij Kennisgevingen van derden.</value>
   </data>
 </root>

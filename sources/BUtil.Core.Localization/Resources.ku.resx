@@ -1323,20 +1323,19 @@ Ji bo danasîna berfireh lînka jêrîn bibînin.</value>
   <data name="WhatTask_Description" xml:space="preserve">
     <value>Li vir hûn dikarin peldankên ku hûn dixwazin piştgirî bikin diyar bikin.</value>
   </data>
-  <data name="Winget_Description" xml:space="preserve">
-    <value>Daneyên xwe li Windows, Linux hilînin/hevdem bikin.
-Wêneyan ji telefonê bi WI-FI û zêdetir hawird bikin.
-
-Taybetmendî:
-- Hilanîna zêdeyî bi deduplîkasyona pelan û piştgirîya veguhastina WebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, SMB/CIFS;
-- Hevdemkirina pelan di navbera amûran de bi hilanîna navendî û piştgirîya guhertoyan;
-- Hawirdkirina medyayê - Deng, wêne, vîdyoyan ji karta SD ya kamerayê, tomarkerê hawird bikin; wêne û vîdyoyan ji telefona xwe bi WI-FI bi serlêdana Servera FTPS bi navên pelên şablonê;
-- Konsol ji bo plansaziya otomatîk;
-- Şîfrekirina AES-256.
-
-Platform: Windows 11 x64, ARM64 an Ubuntu 24+.</value>
+  <data name="Document_Language" xml:space="preserve">
+    <value>Ziman</value>
   </data>
-  <data name="Winget_ShortDescription" xml:space="preserve">
-    <value>BUtil hilanînên zêdeyî, hevdemkirina zêdeyî çêdike û medyayê li ser PC-ya we bi deduplîkasyon û piştgirîya veguhastina WebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, SMB/CIFS ji bo Windows û Linux hawird dike.</value>
+  <data name="Menu_License" xml:space="preserve">
+    <value>Lîsans</value>
+  </data>
+  <data name="Menu_Credits" xml:space="preserve">
+    <value>Spas</value>
+  </data>
+  <data name="Menu_ThirdPartyNotices" xml:space="preserve">
+    <value>Agahiyên aliyên sêyem</value>
+  </data>
+  <data name="License_ThirdPartyNote" xml:space="preserve">
+    <value>Koda xwe ya BUtil di qada giştî de ye. Pêkhateyên aliyên sêyem lîsansên xwe diparêzin û di Agahiyên aliyên sêyem de hatine nivîsandin.</value>
   </data>
 </root>

@@ -1323,20 +1323,19 @@ Batafsil tavsifni quyidagi havoladan ko'ring.</value>
   <data name="WhatTask_Description" xml:space="preserve">
     <value>Bu yerda zaxiralamoqchi bo'lgan papkalarni ko'rsatishingiz mumkin.</value>
   </data>
-  <data name="Winget_Description" xml:space="preserve">
-    <value>Windows, Linux da ma'lumotlaringizni zaxiralash/sinxronlashtirish.
-Telefondan WI-FI orqali rasmlarni import qilish va boshqalar.
-
-Xususiyatlar:
-- Fayl deduplikatsiyasi va WebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, SMB/CIFS transport qo'llab-quvvatlashi bilan bosqichma-bosqich zaxiralash;
-- Markazlashtirilgan xotira va versiya qo'llab-quvvatlashi bilan qurilmalar o'rtasida fayllarni sinxronlashtirish;
-- Media import - Kamera, yozuv qurilmasining SD kartasidan audio, rasm, videolarni import qilish; telefondan WI-FI orqali FTPS Server ilovasi yordamida shablon fayl nomlari orqali rasm va videolarni import qilish;
-- Avtomatlashtirish jadvallari uchun konsol;
-- AES-256 shifrlash.
-
-Platformalar: Windows 11 x64, ARM64 yoki Ubuntu 24+.</value>
+  <data name="Document_Language" xml:space="preserve">
+    <value>Til</value>
   </data>
-  <data name="Winget_ShortDescription" xml:space="preserve">
-    <value>BUtil Windows va Linux uchun WebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, SMB/CIFS transport qo'llab-quvvatlashi va deduplikatsiya bilan bosqichma-bosqich zaxiralar, sinxronizatsiya yaratadi va multimediani kompyuteringizga import qiladi.</value>
+  <data name="Menu_License" xml:space="preserve">
+    <value>Litsenziya</value>
+  </data>
+  <data name="Menu_Credits" xml:space="preserve">
+    <value>Mualliflar</value>
+  </data>
+  <data name="Menu_ThirdPartyNotices" xml:space="preserve">
+    <value>Uchinchi tomon eslatmalari</value>
+  </data>
+  <data name="License_ThirdPartyNote" xml:space="preserve">
+    <value>BUtilning o'z kodi ommaviy mulk. Uchinchi tomon tarkibiy qismlari o'z litsenziyalarini saqlaydi va Uchinchi tomon eslatmalarida ko'rsatilgan.</value>
   </data>
 </root>

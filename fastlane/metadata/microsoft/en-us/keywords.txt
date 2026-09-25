@@ -1,0 +1,7 @@
+backup
+file sync
+incremental backup
+deduplication
+photo import
+open source
+WebDAV

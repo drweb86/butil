@@ -11,10 +11,7 @@ using System.Xml;
 // Available technical keys:
 //
 // 1. _Technical_WingetLocale
-//    - Purpose: Winget package manager locale identifier
-//    - Example values: "en-US", "de-DE", "zh-CN", "pt-BR"
-//    - Used by: WingetLocaleGenerator to create locale.*.yaml files
-//    - Required for: All languages that should have winget locale files
+//    - Legacy locale id. WinGet copy now comes from fastlane/metadata/microsoft.
 //
 // 2. _Technical_NsisLanguage
 //    - Purpose: NSIS installer language name (must match NSIS built-in names)
@@ -25,11 +22,10 @@ using System.Xml;
 //
 // Adding a new language:
 //   1. Create Resources.{culture}.resx file
-//   2. Add _Technical_WingetLocale with the appropriate locale code
-//   3. Add _Technical_NsisLanguage ONLY if NSIS supports that language
-//   4. Add Winget_ShortDescription and Winget_Description translations
-//   5. Add Installer_* translations if NSIS language is supported
-//   6. Run ResxSorter to generate output files
+//   2. Add _Technical_NsisLanguage ONLY if NSIS supports that language
+//   3. Add Installer_* translations if NSIS language is supported
+//   4. Add fastlane/metadata/microsoft/<locale>/ for Store and WinGet copy
+//   5. Run ResxSorter to generate output files
 // =============================================================================
 
 namespace Codice.SortResX
@@ -37,12 +33,19 @@ namespace Codice.SortResX
     class Program
     {
         [STAThread]
-        static void Main()
+        static void Main(string[] args)
         {
             Console.WriteLine(Directory.GetCurrentDirectory());
             var sourceDir = Directory.GetCurrentDirectory();
             while (Path.GetFileName(sourceDir) != "sources")
                 sourceDir = Directory.GetParent(sourceDir)!.FullName;
+            var repoRoot = Directory.GetParent(sourceDir)!.FullName;
+            if (args.Contains("--only-winget"))
+            {
+                WingetLocaleGenerator.Generate(sourceDir, repoRoot);
+                return;
+            }
+
             var localizationDir = Path.Combine(sourceDir, "BUtil.Core.Localization");
 
             var dictionary = new Dictionary<string, int>();
@@ -72,7 +75,7 @@ namespace Codice.SortResX
             }
 
             NsisLanguageGenerator.Generate(sourceDir);
-            WingetLocaleGenerator.Generate(sourceDir);
+            WingetLocaleGenerator.Generate(sourceDir, repoRoot);
         }
     }
 
@@ -265,98 +268,191 @@ namespace Codice.SortResX
 
     public static class WingetLocaleGenerator
     {
-        public static void Generate(string sourceDir)
+        const int ShortDescriptionMin = 3;
+        const int ShortDescriptionMax = 256;
+        const int DescriptionMin = 3;
+        const int DescriptionMax = 10000;
+        const int TagMin = 1;
+        const int TagMax = 40;
+        const int TagsMaxItems = 16;
+        const int PackageLocaleMax = 20;
+
+        static readonly Dictionary<string, string> PublishedLocaleOverrides = new(StringComparer.OrdinalIgnoreCase)
         {
-            var localizationDir = Path.Combine(sourceDir, "BUtil.Core.Localization");
+            ["ha-latn-ng"] = "ha-NG",
+            ["uz-latn-uz"] = "uz-UZ",
+        };
+
+        public static void Generate(string sourceDir, string repoRoot)
+        {
+            var metadataDir = Path.Combine(repoRoot, "fastlane", "metadata", "microsoft");
             var wingetPkgsDir = Path.Combine(sourceDir, "tools", "winget-pkgs");
+            if (!Directory.Exists(metadataDir))
+                throw new Exception($"Fastlane metadata directory not found: {metadataDir}");
 
-            var allResx = Directory.GetFiles(localizationDir, "*.resx")
-                .OrderBy(x => x.Length);
-
-            foreach (var resxPath in allResx)
+            var manifests = new List<LocaleManifest>();
+            var seenLocales = new HashSet<string>(StringComparer.Ordinal);
+            foreach (var localeDir in Directory.GetDirectories(metadataDir).OrderBy(x => x, StringComparer.OrdinalIgnoreCase))
             {
-                var doc = new XmlDocument();
-                doc.Load(resxPath);
-
-                string? wingetLocale = null;
-                string? shortDescription = null;
-                string? description = null;
-
-                foreach (XmlNode node in doc.SelectNodes("//data")!)
-                {
-                    var name = node.Attributes?["name"]?.Value;
-                    if (name == "_Technical_WingetLocale")
-                        wingetLocale = node.SelectSingleNode("value")?.InnerText;
-                    else if (name == "Winget_ShortDescription")
-                        shortDescription = node.SelectSingleNode("value")?.InnerText;
-                    else if (name == "Winget_Description")
-                        description = node.SelectSingleNode("value")?.InnerText;
-                }
-
-                if (string.IsNullOrWhiteSpace(wingetLocale))
+                var folderName = Path.GetFileName(localeDir);
+                if (!File.Exists(Path.Combine(localeDir, "short_description.txt")))
                     continue;
 
-                if (shortDescription == null || description == null)
-                {
-                    Console.WriteLine($"Missing Winget_ keys in {resxPath}, skipping locale generation.");
-                    continue;
-                }
+                var wingetLocale = ToWingetLocale(folderName);
+                if (!seenLocales.Add(wingetLocale))
+                    throw new Exception($"Fastlane folder '{folderName}' maps to WinGet locale '{wingetLocale}', which is already used.");
 
-                if (shortDescription.Length > 256)
-                    throw new Exception($"Winget_ShortDescription in {Path.GetFileNameWithoutExtension(resxPath)} exceeds 256 chars ({shortDescription.Length}): {shortDescription}");
+                manifests.Add(ReadManifest(localeDir, folderName, wingetLocale));
+            }
 
-                var culture = ExtractCulture(resxPath);
-                var isDefaultLocale = culture == "";
-                var schemaType = isDefaultLocale ? "defaultLocale" : "locale";
-                var manifestType = isDefaultLocale ? "defaultLocale" : "locale";
-                var outputFileName = $"SiarheiKuchuk.BUtil.locale.{wingetLocale}.yaml";
-                var outputPath = Path.Combine(wingetPkgsDir, outputFileName);
+            if (!seenLocales.Contains("en-US"))
+                throw new Exception("fastlane/metadata/microsoft/en-us is required as the WinGet default locale.");
 
-                using var writer = new StreamWriter(outputPath, false, new UTF8Encoding(false));
-                writer.WriteLine($"# yaml-language-server: $schema=https://aka.ms/winget-manifest.{schemaType}.1.12.0.schema.json");
-                writer.WriteLine();
-                writer.WriteLine("PackageIdentifier: SiarheiKuchuk.BUtil");
-                writer.WriteLine("PackageVersion: APP_VERSION_STRING");
-                writer.WriteLine($"PackageLocale: {wingetLocale}");
-                writer.WriteLine("Publisher: Siarhei Kuchuk");
-                writer.WriteLine("PublisherUrl: https://github.com/drweb86");
-                writer.WriteLine("PublisherSupportUrl: https://github.com/drweb86/butil/issues");
-                writer.WriteLine("PrivacyUrl: https://raw.githubusercontent.com/drweb86/butil/refs/heads/master/PRIVACY_POLICY.md");
-                writer.WriteLine("Author: Siarhei Kuchuk");
-                writer.WriteLine("PackageName: BUtil");
-                writer.WriteLine("PackageUrl: https://github.com/drweb86/butil");
-                writer.WriteLine("License: CC0-1.0");
-                writer.WriteLine("LicenseUrl: https://raw.githubusercontent.com/drweb86/butil/refs/heads/master/LICENSE");
-                writer.WriteLine("Copyright: 2011-CURRENT_YEAR Siarhei Kuchuk");
-                writer.WriteLine("CopyrightUrl: https://raw.githubusercontent.com/drweb86/butil/refs/heads/master/LICENSE");
-                writer.WriteLine($"ShortDescription: {YamlDoubleQuoted(shortDescription)}");
-                writer.WriteLine("Description: |");
-                foreach (var line in description.Split('\n'))
-                {
-                    var trimmedLine = line.TrimEnd('\r');
-                    writer.WriteLine($"  {trimmedLine}");
-                }
-                if (isDefaultLocale)
-                    writer.WriteLine("Moniker: butil");
-                writer.WriteLine("Tags:");
-                writer.WriteLine("- backup");
-                writer.WriteLine("- sync");
-                writer.WriteLine("- synchronization");
-                writer.WriteLine("- p2p");
-                writer.WriteLine("ReleaseNotesUrl: https://raw.githubusercontent.com/drweb86/butil/refs/heads/master/CHANGELOG.md");
-                writer.WriteLine($"ManifestType: {manifestType}");
-                writer.WriteLine("ManifestVersion: 1.12.0");
+            Directory.CreateDirectory(wingetPkgsDir);
+            foreach (var stale in Directory.GetFiles(wingetPkgsDir, "SiarheiKuchuk.BUtil.locale.*.yaml"))
+                File.Delete(stale);
 
+            foreach (var manifest in manifests)
+            {
+                var outputPath = Path.Combine(wingetPkgsDir, $"SiarheiKuchuk.BUtil.locale.{manifest.Locale}.yaml");
+                WriteManifest(outputPath, manifest);
                 Console.WriteLine($"Generated {outputPath}");
             }
         }
 
-        private static string ExtractCulture(string resxPath)
+        static LocaleManifest ReadManifest(string localeDir, string folderName, string wingetLocale)
         {
-            var fileName = Path.GetFileNameWithoutExtension(resxPath);
-            var dotIndex = fileName.IndexOf('.');
-            return dotIndex >= 0 ? fileName[(dotIndex + 1)..] : "";
+            var shortDescription = ReadRequired(localeDir, "short_description.txt", folderName);
+            if (shortDescription.Contains('\n'))
+                throw new Exception($"{folderName}: short_description.txt must be a single line.");
+            RequireLength(folderName, "ShortDescription", shortDescription, ShortDescriptionMin, ShortDescriptionMax, allowNewlines: false);
+
+            var description = NormalizeBlock(ReadRequired(localeDir, "description.txt", folderName));
+            var features = ReadLines(ReadRequired(localeDir, "features.txt", folderName));
+            if (features.Count == 0)
+                throw new Exception($"{folderName}: features.txt has no feature lines.");
+
+            var featureBlock = string.Join("\n", features.Select(line => line.StartsWith("- ", StringComparison.Ordinal) ? line : "- " + line));
+            var fullDescription = description.Length == 0 ? featureBlock : description + "\n\n" + featureBlock;
+            RequireLength(folderName, "Description", fullDescription, DescriptionMin, DescriptionMax, allowNewlines: true);
+
+            var tags = ReadLines(ReadRequired(localeDir, "keywords.txt", folderName));
+            if (tags.Count == 0 || tags.Count > TagsMaxItems)
+                throw new Exception($"{folderName}: keywords.txt has {tags.Count} tags; WinGet allows 1-{TagsMaxItems}.");
+
+            var uniqueTags = new HashSet<string>(StringComparer.Ordinal);
+            foreach (var tag in tags)
+            {
+                if (!uniqueTags.Add(tag))
+                    throw new Exception($"{folderName}: duplicate tag '{tag}'.");
+                RequireLength(folderName, $"Tag '{tag}'", tag, TagMin, TagMax, allowNewlines: false);
+            }
+
+            return new LocaleManifest(wingetLocale, wingetLocale == "en-US", shortDescription, fullDescription, tags);
         }
+
+        static void WriteManifest(string outputPath, LocaleManifest manifest)
+        {
+            var schemaType = manifest.IsDefault ? "defaultLocale" : "locale";
+            using var writer = new StreamWriter(outputPath, false, new UTF8Encoding(false));
+            writer.WriteLine($"# yaml-language-server: $schema=https://aka.ms/winget-manifest.{schemaType}.1.12.0.schema.json");
+            writer.WriteLine();
+            writer.WriteLine("PackageIdentifier: SiarheiKuchuk.BUtil");
+            writer.WriteLine("PackageVersion: APP_VERSION_STRING");
+            writer.WriteLine($"PackageLocale: {manifest.Locale}");
+            writer.WriteLine("Publisher: Siarhei Kuchuk");
+            writer.WriteLine("PublisherUrl: https://github.com/drweb86");
+            writer.WriteLine("PublisherSupportUrl: https://github.com/drweb86/butil/issues");
+            writer.WriteLine("PrivacyUrl: https://raw.githubusercontent.com/drweb86/butil/refs/heads/master/PRIVACY_POLICY.md");
+            writer.WriteLine("Author: Siarhei Kuchuk");
+            writer.WriteLine("PackageName: BUtil");
+            writer.WriteLine("PackageUrl: https://github.com/drweb86/butil");
+            writer.WriteLine("License: CC0-1.0");
+            writer.WriteLine("LicenseUrl: https://raw.githubusercontent.com/drweb86/butil/refs/heads/master/LICENSE");
+            writer.WriteLine("Copyright: 2011-CURRENT_YEAR Siarhei Kuchuk");
+            writer.WriteLine("CopyrightUrl: https://raw.githubusercontent.com/drweb86/butil/refs/heads/master/LICENSE");
+            writer.WriteLine($"ShortDescription: {YamlDoubleQuoted(manifest.ShortDescription)}");
+            writer.WriteLine("Description: |-");
+            foreach (var line in manifest.Description.Split('\n'))
+                writer.WriteLine($"  {line}");
+            if (manifest.IsDefault)
+                writer.WriteLine("Moniker: butil");
+            writer.WriteLine("Tags:");
+            foreach (var tag in manifest.Tags)
+                writer.WriteLine($"- {YamlDoubleQuoted(tag)}");
+            writer.WriteLine("ReleaseNotesUrl: https://raw.githubusercontent.com/drweb86/butil/refs/heads/master/CHANGELOG.md");
+            writer.WriteLine($"ManifestType: {schemaType}");
+            writer.WriteLine("ManifestVersion: 1.12.0");
+        }
+
+        static string ToWingetLocale(string folderName)
+        {
+            if (PublishedLocaleOverrides.TryGetValue(folderName, out var published))
+                return published;
+
+            var parts = folderName.Split('-');
+            if (parts.Length == 0
+                || parts[0].Length is < 2 or > 3
+                || parts.Skip(1).Any(part => part.Length is < 1 or > 8)
+                || parts.Any(part => part.Any(ch => !char.IsAsciiLetter(ch))))
+                throw new Exception($"Fastlane folder '{folderName}' is not a WinGet locale.");
+
+            for (var i = 0; i < parts.Length; i++)
+            {
+                var part = parts[i];
+                if (i == 0)
+                    parts[i] = part.ToLowerInvariant();
+                else if (part.Length == 4)
+                    parts[i] = char.ToUpperInvariant(part[0]) + part[1..].ToLowerInvariant();
+                else
+                    parts[i] = part.ToUpperInvariant();
+            }
+
+            var locale = string.Join("-", parts);
+            if (locale.Length > PackageLocaleMax)
+                throw new Exception($"WinGet locale '{locale}' exceeds {PackageLocaleMax} characters.");
+            return locale;
+        }
+
+        static string ReadRequired(string localeDir, string fileName, string folderName)
+        {
+            var path = Path.Combine(localeDir, fileName);
+            if (!File.Exists(path))
+                throw new Exception($"{folderName}: missing {fileName}.");
+            return NormalizeBlock(File.ReadAllText(path));
+        }
+
+        static List<string> ReadLines(string text) =>
+            text.Split('\n').Select(line => line.Trim()).Where(line => line.Length > 0).ToList();
+
+        static string NormalizeBlock(string text)
+        {
+            var lines = text.Replace("\r\n", "\n").Replace('\r', '\n').Split('\n').Select(line => line.TrimEnd());
+            return string.Join("\n", lines).Trim();
+        }
+
+        static void RequireLength(string folderName, string field, string value, int min, int max, bool allowNewlines)
+        {
+            foreach (var rune in value.EnumerateRunes())
+            {
+                var code = rune.Value;
+                if (code == '\n' && allowNewlines)
+                    continue;
+                if (code < 0x20 || code == 0x7F)
+                    throw new Exception($"{folderName}: {field} contains a control character U+{code:X4}.");
+            }
+
+            var length = value.EnumerateRunes().Count();
+            if (length < min || length > max)
+                throw new Exception($"{folderName}: {field} is {length} characters; WinGet allows {min}-{max}.");
+        }
+
+        sealed record LocaleManifest(
+            string Locale,
+            bool IsDefault,
+            string ShortDescription,
+            string Description,
+            List<string> Tags);
 
         // Double-quoted: plain YAML scalars fail on embedded ':' (e.g. trailing ':' in translations).
         private static string YamlDoubleQuoted(string value)

@@ -1306,20 +1306,19 @@ bin.
   <data name="WhatTask_Description" xml:space="preserve">
     <value>ここでバックアップしたいフォルダーを指定できます。</value>
   </data>
-  <data name="Winget_Description" xml:space="preserve">
-    <value>Windows、Linuxでデータをバックアップ/同期します。
-WI-FI経由で電話から写真をインポートなど。
-
-機能：
-- ファイルの重複排除とWebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, SMB/CIFSトランスポートサポートを備えた増分バックアップ；
-- 集中ストレージとバージョン管理サポートを使用したデバイス間のファイル同期；
-- メディアインポート - カメラ、レコーダーのSDカードからオーディオ、写真、ビデオをインポート；テンプレートファイル名を使用したFTPSサーバーアプリケーション経由 WI-FIを通じて電話から写真とビデオ;
-- 自動化スケジューリング用コンソール；
-- AES-256暗号化。
-
-プラットフォーム：Windows 11 x64、ARM64またはUbuntu 24+。</value>
+  <data name="Document_Language" xml:space="preserve">
+    <value>言語</value>
   </data>
-  <data name="Winget_ShortDescription" xml:space="preserve">
-    <value>BUtilは、WindowsおよびLinux向けの重複排除とWebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, SMB/CIFSトランスポートサポートを備えた増分バックアップ、増分同期、マルチメディアインポートをPCで作成します。</value>
+  <data name="Menu_License" xml:space="preserve">
+    <value>ライセンス</value>
+  </data>
+  <data name="Menu_Credits" xml:space="preserve">
+    <value>クレジット</value>
+  </data>
+  <data name="Menu_ThirdPartyNotices" xml:space="preserve">
+    <value>サードパーティ表記</value>
+  </data>
+  <data name="License_ThirdPartyNote" xml:space="preserve">
+    <value>BUtil 自身のコードはパブリックドメインです。サードパーティの部品は各自のライセンスのままで、サードパーティ表記に記載しています。</value>
   </data>
 </root>

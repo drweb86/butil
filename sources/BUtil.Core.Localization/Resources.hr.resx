@@ -1322,20 +1322,19 @@ Pogledajte detaljni opis na sljedećoj poveznici.</value>
   <data name="WhatTask_Description" xml:space="preserve">
     <value>Ovdje možete odrediti mape koje želite sigurnosno kopirati.</value>
   </data>
-  <data name="Winget_Description" xml:space="preserve">
-    <value>Sigurnosno kopirajte/sinkronizirajte svoje podatke na sustavu Windows, Linux.
-Uvezite fotografije s telefona putem WI-FI i još mnogo toga.
-
-Značajke:
-- Inkrementalno sigurnosno kopiranje s deduplikacijom datoteka i podrškom za WebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, SMB/CIFS prijenos;
-- Sinkronizacija datoteka između uređaja koristeći centraliziranu pohranu i podršku za verzioniranje;
-- Uvoz medija - uvoz audija, fotografija, videozapisa s SD kartice kamere, snimača; fotografije i videozapisi s vašeg telefona putem WI-FI kroz FTPS poslužiteljsku aplikaciju koristeći predloške naziva datoteka;
-- Konzola za automatizaciju raspoređivanja;
-- AES-256 enkripcija.
-
-Platforme: Windows 11 x64, ARM64 ili Ubuntu 24+.</value>
+  <data name="Document_Language" xml:space="preserve">
+    <value>Jezik</value>
   </data>
-  <data name="Winget_ShortDescription" xml:space="preserve">
-    <value>BUtil stvara inkrementalne sigurnosne kopije, inkrementalnu sinkronizaciju i uvozi multimediju na vaše računalo s deduplikacijom i podrškom za WebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, SMB/CIFS prijenos za Windows i Linux.</value>
+  <data name="Menu_License" xml:space="preserve">
+    <value>Licenca</value>
+  </data>
+  <data name="Menu_Credits" xml:space="preserve">
+    <value>Zasluge</value>
+  </data>
+  <data name="Menu_ThirdPartyNotices" xml:space="preserve">
+    <value>Obavijesti trećih strana</value>
+  </data>
+  <data name="License_ThirdPartyNote" xml:space="preserve">
+    <value>Vlastiti kôd BUtila je u javnom vlasništvu. Komponente trećih strana zadržavaju licence i navedene su u Obavijestima trećih strana.</value>
   </data>
 </root>

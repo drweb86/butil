@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Package
+  xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
+  xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
+  xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
+  IgnorableNamespaces="uap rescap">
+
+  <Identity
+    Name="26873SiarheiKuchuk.BUtil"
+    Publisher="CN=48445635-F577-4A99-ABC2-E3554955850E"
+    Version="__VERSION__"
+    ProcessorArchitecture="__ARCH__" />
+
+  <Properties>
+    <DisplayName>BUtil</DisplayName>
+    <PublisherDisplayName>Siarhei Kuchuk</PublisherDisplayName>
+    <Logo>Assets\StoreLogo.png</Logo>
+  </Properties>
+
+  <Dependencies>
+    <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.17763.0" MaxVersionTested="10.0.26100.0" />
+  </Dependencies>
+
+  <!-- Partner Center listing locales, not .NET resx culture names. -->
+  <Resources>
+    <Resource Language="en-us" />
+    <Resource Language="ar-sa" />
+    <Resource Language="bg-bg" />
+    <Resource Language="bn-in" />
+    <Resource Language="cs-cz" />
+    <Resource Language="da-dk" />
+    <Resource Language="de-de" />
+    <Resource Language="el-gr" />
+    <Resource Language="es-es" />
+    <Resource Language="fa-ir" />
+    <Resource Language="fi-fi" />
+    <Resource Language="fr-fr" />
+    <Resource Language="he-il" />
+    <Resource Language="hi-in" />
+    <Resource Language="hr-hr" />
+    <Resource Language="hu-hu" />
+    <Resource Language="id-id" />
+    <Resource Language="it-it" />
+    <Resource Language="ja-jp" />
+    <Resource Language="ko-kr" />
+    <Resource Language="mr-in" />
+    <Resource Language="ms-my" />
+    <Resource Language="nb-no" />
+    <Resource Language="nl-nl" />
+    <Resource Language="pl-pl" />
+    <Resource Language="ps-af" />
+    <Resource Language="pt-br" />
+    <Resource Language="pt-pt" />
+    <Resource Language="ro-ro" />
+    <Resource Language="ru-ru" />
+    <Resource Language="sk-sk" />
+    <Resource Language="sl-si" />
+    <Resource Language="sr-latn-rs" />
+    <Resource Language="sv-se" />
+    <Resource Language="ta-in" />
+    <Resource Language="te-in" />
+    <Resource Language="th-th" />
+    <Resource Language="tr-tr" />
+    <Resource Language="uk-ua" />
+    <Resource Language="ur-pk" />
+    <Resource Language="uz-latn-uz" />
+    <Resource Language="vi-vn" />
+    <Resource Language="zh-cn" />
+    <Resource Language="zh-hk" />
+  </Resources>
+
+  <Applications>
+    <Application
+      Id="App"
+      Executable="butil-ui.Desktop.exe"
+      EntryPoint="Windows.FullTrustApplication">
+      <uap:VisualElements
+        DisplayName="BUtil"
+        Description="Back up, synchronize, and restore your files."
+        BackgroundColor="transparent"
+        Square150x150Logo="Assets\Square150x150Logo.png"
+        Square44x44Logo="Assets\Square44x44Logo.png">
+        <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png" />
+        <uap:SplashScreen Image="Assets\SplashScreen.png" />
+      </uap:VisualElements>
+    </Application>
+  </Applications>
+
+  <Capabilities>
+    <rescap:Capability Name="runFullTrust" />
+  </Capabilities>
+</Package>

@@ -648,6 +648,9 @@ Please either:
   <data name="OptionalField_Hint" xml:space="preserve">
     <value>(optional)</value>
   </data>
+<data name="Menu_Privacy" xml:space="preserve">
+    <value>Privacy</value>
+  </data>
   <data name="Other_Menu_Title" xml:space="preserve">
     <value>Other</value>
   </data>
@@ -1376,20 +1379,19 @@ See detailed description in the following link.</value>
   <data name="WhatTask_Description" xml:space="preserve">
     <value>Here you can specify folders you'd like to backup.</value>
   </data>
-  <data name="Winget_Description" xml:space="preserve">
-    <value>Backup/synchronize your data on Windows and Linux.
-Import photos from phone via Wi-Fi and more.
-
-Features:
-- Incremental backup with deduplication and support for local folders, WebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, SMB/CIFS storages;
-- Synchronization of files between devices using centralized storage with versioning support;
-- Import media — import audio, photos, videos from SD cards, cameras, recorders; import photos and videos from your phone via Wi-Fi through the FTPS Server companion app using template file names;
-- Console for automation and scheduling;
-- AES-256 encryption.
-
-Platforms: Windows 11 x64, ARM64 or Ubuntu 24+.</value>
+  <data name="Document_Language" xml:space="preserve">
+    <value>Language</value>
   </data>
-  <data name="Winget_ShortDescription" xml:space="preserve">
-    <value>BUtil creates incremental backups, synchronization, and media imports on Windows and Linux with deduplication and support for WebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, and SMB/CIFS storages.</value>
+  <data name="Menu_License" xml:space="preserve">
+    <value>License</value>
+  </data>
+  <data name="Menu_Credits" xml:space="preserve">
+    <value>Credits</value>
+  </data>
+  <data name="Menu_ThirdPartyNotices" xml:space="preserve">
+    <value>Third-party notices</value>
+  </data>
+  <data name="License_ThirdPartyNote" xml:space="preserve">
+    <value>BUtil's own code is in the public domain. Third-party components keep their own licenses and are listed under Third-party notices.</value>
   </data>
 </root>

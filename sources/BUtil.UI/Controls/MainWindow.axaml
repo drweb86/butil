@@ -42,6 +42,10 @@
 						<MenuItem Header="{Binding Theme_Value_Dark}" Command="{Binding GoDarkSide}" />
 						<MenuItem Header="{Binding Theme_Value_Light}" Command="{Binding GoLightSide}" />
 					</MenuItem>
+					<MenuItem Header="{Binding Menu_Privacy}" Command="{Binding OpenPrivacyCommand}" />
+					<MenuItem Header="{Binding Menu_License}" Command="{Binding OpenLicenseCommand}" />
+					<MenuItem Header="{Binding Menu_ThirdPartyNotices}" Command="{Binding OpenThirdPartyNoticesCommand}" />
+					<MenuItem Header="{Binding Menu_Credits}" Command="{Binding OpenCreditsCommand}" />
 					<MenuItem Header="{Binding Other_Menu_Title}">
 						<MenuItem Command="{Binding OpenLogsCommand}" Header="{Binding LogFile_BrowseLogsFolder}" />
 						<MenuItem Header="{Binding TechnicalTool_Menu_DecryptAes256}" Command="{Binding TechnicalToolDecryptAes256Command}" IsVisible="{Binding CurrentPage.IsFullMenuVisible}"/>

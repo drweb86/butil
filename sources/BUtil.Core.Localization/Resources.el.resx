@@ -1322,20 +1322,19 @@ bin.
   <data name="WhatTask_Description" xml:space="preserve">
     <value>Εδώ μπορείτε να καθορίσετε τους φακέλους που θέλετε να δημιουργήσετε αντίγραφο ασφαλείας.</value>
   </data>
-  <data name="Winget_Description" xml:space="preserve">
-    <value>Δημιουργία αντιγράφων ασφαλείας/συγχρονισμός των δεδομένων σας σε Windows, Linux.
-Εισαγωγή φωτογραφιών από τηλέφωνο μέσω WI-FI και πολλά άλλα.
-
-Χαρακτηριστικά:
-- Σταδιακό αντίγραφο ασφαλείας με αποδιπλασιασμό αρχείων και υποστήριξη μεταφορών WebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, SMB/CIFS·
-- Συγχρονισμός αρχείων μεταξύ συσκευών με χρήση κεντρικού αποθηκευτικού χώρου και υποστήριξη εκδόσεων·
-- Εισαγωγή πολυμέσων - Εισαγωγή ήχων, φωτογραφιών, βίντεο από κάρτα SD κάμερας, εγγραφέα· φωτογραφίες και βίντεο από το τηλέφωνό σας μέσω WI-FI μέσω εφαρμογής FTPS Server με ονόματα αρχείων προτύπου ·;
-- Κονσόλα για αυτοματοποίηση προγραμματισμού·
-- Κρυπτογράφηση AES-256.
-
-Πλατφόρμες: Windows 11 x64, ARM64 ή Ubuntu 24+.</value>
+  <data name="Document_Language" xml:space="preserve">
+    <value>Γλώσσα</value>
   </data>
-  <data name="Winget_ShortDescription" xml:space="preserve">
-    <value>Το BUtil δημιουργεί σταδιακά αντίγραφα ασφαλείας, σταδιακό συγχρονισμό και εισάγει πολυμέσα στον υπολογιστή σας με αποδιπλασιασμό και υποστήριξη μεταφορών WebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, SMB/CIFS για Windows και Linux.</value>
+  <data name="Menu_License" xml:space="preserve">
+    <value>Άδεια</value>
+  </data>
+  <data name="Menu_Credits" xml:space="preserve">
+    <value>Συντελεστές</value>
+  </data>
+  <data name="Menu_ThirdPartyNotices" xml:space="preserve">
+    <value>Σημειώσεις τρίτων</value>
+  </data>
+  <data name="License_ThirdPartyNote" xml:space="preserve">
+    <value>Ο δικός κώδικας του BUtil είναι κοινό κτήμα. Τα στοιχεία τρίτων κρατούν τις άδειές τους και αναφέρονται στις Σημειώσεις τρίτων.</value>
   </data>
 </root>

@@ -1322,20 +1322,19 @@ Podrobný popis naleznete v následujícím odkazu.</value>
   <data name="WhatTask_Description" xml:space="preserve">
     <value>Zde můžete zadat složky, které chcete zálohovat.</value>
   </data>
-  <data name="Winget_Description" xml:space="preserve">
-    <value>Zálohujte/synchronizujte svá data ve Windows, Linux.
-Importujte fotografie z telefonu přes WI-FI a další.
-
-Funkce:
-- Přírůstková záloha s deduplikací souborů a podporou přenosů WebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, SMB/CIFS;
-- Synchronizace souborů mezi zařízeními pomocí centralizovaného úložiště a podpora verzování;
-- Import médií - Import zvuků, fotografií, videí z SD karty fotoaparátu, rekordéru; fotografií a videí z telefonu přes WI-FI prostřednictvím aplikace FTPS Server s použitím šablonových názvů souborů;
-- Konzole pro plánování automatizace;
-- Šifrování AES-256.
-
-Platformy: Windows 11 x64, ARM64 nebo Ubuntu 24+.</value>
+  <data name="Document_Language" xml:space="preserve">
+    <value>Jazyk</value>
   </data>
-  <data name="Winget_ShortDescription" xml:space="preserve">
-    <value>BUtil vytváří přírůstkové zálohy, přírůstkovou synchronizaci a importuje multimédia na vašem PC s deduplikací a podporou přenosů WebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, SMB/CIFS pro Windows a Linux.</value>
+  <data name="Menu_License" xml:space="preserve">
+    <value>Licence</value>
+  </data>
+  <data name="Menu_Credits" xml:space="preserve">
+    <value>Zásluhy</value>
+  </data>
+  <data name="Menu_ThirdPartyNotices" xml:space="preserve">
+    <value>Oznámení třetích stran</value>
+  </data>
+  <data name="License_ThirdPartyNote" xml:space="preserve">
+    <value>Vlastní kód BUtil je volným dílem. Komponenty třetích stran si ponechávají své licence a jsou uvedeny v Oznámení třetích stran.</value>
   </data>
 </root>

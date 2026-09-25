@@ -1321,20 +1321,19 @@ bin.
   <data name="WhatTask_Description" xml:space="preserve">
     <value>இங்கே நீங்கள் காப்புப் பிரதி எடுக்க விரும்பும் கோப்புறைகளை குறிப்பிடலாம்.</value>
   </data>
-  <data name="Winget_Description" xml:space="preserve">
-    <value>Windows, Linux இல் உங்கள் தரவை காப்புப்பிரதி/ஒத்திசைக்கவும்.
-WI-FI வழியாக தொலைபேசியிலிருந்து புகைப்படங்களை இறக்குமதி செய்யவும் மற்றும் பல.
-
-அம்சங்கள்:
-- கோப்பு டிடூப்ளிகேஷன் மற்றும் WebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, SMB/CIFS போக்குவரத்து ஆதரவுடன் அதிகரிக்கும் காப்புப்பிரதி;
-- மையப்படுத்தப்பட்ட சேமிப்பகம் மற்றும் பதிப்பு ஆதரவைப் பயன்படுத்தி சாதனங்களுக்கு இடையே கோப்பு ஒத்திசைவு;
-- மீடியா இறக்குமதி - கேமரா, ரெக்கார்டரின் SD கார்டிலிருந்து ஆடியோக்கள், புகைப்படங்கள், வீடியோக்களை இறக்குமதி செய்யவும்; டெம்ப்ளேட் கோப்பு பெயர்களைப் பயன்படுத்தி FTPS சர்வர் பயன்பாட்டின் மூலம் WI-FI வழியாக அல்லது வழியாக உங்கள் தொலைபேசியிலிருந்து புகைப்படங்கள் மற்றும் வீடியோக்கள்;
-- தானியங்கி திட்டமிடலுக்கான கன்சோல்;
-- AES-256 குறியாக்கம்.
-
-தளங்கள்: Windows 11 x64, ARM64 அல்லது Ubuntu 24+.</value>
+  <data name="Document_Language" xml:space="preserve">
+    <value>மொழி</value>
   </data>
-  <data name="Winget_ShortDescription" xml:space="preserve">
-    <value>BUtil உங்கள் கணினியில் டிடூப்ளிகேஷன் மற்றும் Windows, Linux க்கான WebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, SMB/CIFS ஆதரவுடன் அதிகரிக்கும் காப்புப்பிரதிகள், ஒத்திசைவு மற்றும் மல்டிமீடியா இறக்குமதியை உருவாக்குகிறது.</value>
+  <data name="Menu_License" xml:space="preserve">
+    <value>உரிமம்</value>
+  </data>
+  <data name="Menu_Credits" xml:space="preserve">
+    <value>நன்றி</value>
+  </data>
+  <data name="Menu_ThirdPartyNotices" xml:space="preserve">
+    <value>மூன்றாம் தரப்பு அறிவிப்புகள்</value>
+  </data>
+  <data name="License_ThirdPartyNote" xml:space="preserve">
+    <value>BUtil-இன் சொந்த குறியீடு பொது உரிமையானது. மூன்றாம் தரப்பு கூறுகள் தம் உரிமத்தை வைத்திருக்கும்; அவை மூன்றாம் தரப்பு அறிவிப்புகளில் உள்ளன.</value>
   </data>
 </root>

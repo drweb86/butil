@@ -1603,6 +1603,60 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Language.
+        /// </summary>
+        public static string Document_Language {
+            get {
+                return ResourceManager.GetString("Document_Language", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to License.
+        /// </summary>
+        public static string Menu_License {
+            get {
+                return ResourceManager.GetString("Menu_License", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Credits.
+        /// </summary>
+        public static string Menu_Credits {
+            get {
+                return ResourceManager.GetString("Menu_Credits", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Third-party notices.
+        /// </summary>
+        public static string Menu_ThirdPartyNotices {
+            get {
+                return ResourceManager.GetString("Menu_ThirdPartyNotices", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to BUtil's own code is in the public domain. Third-party components keep their own licenses and are listed under Third-party notices.
+        /// </summary>
+        public static string License_ThirdPartyNote {
+            get {
+                return ResourceManager.GetString("License_ThirdPartyNote", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Privacy.
+        /// </summary>
+        public static string Menu_Privacy {
+            get {
+                return ResourceManager.GetString("Menu_Privacy", resourceCulture);
+            }
+        }
+
+        /// <summary>
         ///   Looks up a localized string similar to Other.
         /// </summary>
         public static string Other_Menu_Title {

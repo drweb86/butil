@@ -1322,20 +1322,19 @@ Skatiet detalizētu aprakstu šajā saitē.</value>
   <data name="WhatTask_Description" xml:space="preserve">
     <value>Šeit varat norādīt mapes, kuras vēlaties dublēt.</value>
   </data>
-  <data name="Winget_Description" xml:space="preserve">
-    <value>Dublējiet/sinhronizējiet savus datus sistēmā Windows, Linux.
-Importējiet fotogrāfijas no tālruņa, izmantojot WI-FI, un vēl vairāk.
-
-Funkcijas:
-- Inkrementālā rezerves kopija ar failu deduplikāciju un WebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, SMB/CIFS transporta atbalstu;
-- Failu sinhronizācija starp ierīcēm, izmantojot centralizētu krātuvi un versiju atbalstu;
-- Multivides importēšana - importējiet audio, fotogrāfijas, video no kameras, diktofona SD kartes; fotogrāfijas un video no tālruņa, izmantojot WI-FI caur FTPS servera lietotni ar veidņu failu nosaukumiem;
-- Konsole automatizācijas plānošanai;
-- AES-256 šifrēšana.
-
-Platformas: Windows 11 x64, ARM64 vai Ubuntu 24+.</value>
+  <data name="Document_Language" xml:space="preserve">
+    <value>Valoda</value>
   </data>
-  <data name="Winget_ShortDescription" xml:space="preserve">
-    <value>BUtil veido inkrementālās rezerves kopijas, inkrementālu sinhronizāciju un importē multividi jūsu datorā ar deduplikāciju un WebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, SMB/CIFS transporta atbalstu sistēmām Windows un Linux.</value>
+  <data name="Menu_License" xml:space="preserve">
+    <value>Licence</value>
+  </data>
+  <data name="Menu_Credits" xml:space="preserve">
+    <value>Atzinības</value>
+  </data>
+  <data name="Menu_ThirdPartyNotices" xml:space="preserve">
+    <value>Trešo pušu paziņojumi</value>
+  </data>
+  <data name="License_ThirdPartyNote" xml:space="preserve">
+    <value>BUtil paša kods ir publiskajā īpašumā. Trešo pušu komponenti patur savas licences un ir uzskaitīti sadaļā Trešo pušu paziņojumi.</value>
   </data>
 </root>

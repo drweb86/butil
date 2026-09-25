@@ -1322,20 +1322,19 @@ bin.
   <data name="WhatTask_Description" xml:space="preserve">
     <value>Čia galite nurodyti aplankus, kurių atsargines kopijas norite kurti.</value>
   </data>
-  <data name="Winget_Description" xml:space="preserve">
-    <value>Kurkite atsargines kopijas/sinchronizuokite savo duomenis sistemoje Windows, Linux.
-Importuokite nuotraukas iš telefono per WI-FI ir daugiau.
-
-Funkcijos:
-- Inkrementinė atsarginė kopija su failų deduplikacija ir WebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, SMB/CIFS transporto palaikymu;
-- Failų sinchronizacija tarp įrenginių naudojant centralizuotą saugyklą ir versijų palaikymą;
-- Medijos importavimas - importuokite garso įrašus, nuotraukas, vaizdo įrašus iš fotoaparato, diktofo SD kortelės; nuotraukas ir vaizdo įrašus iš telefono per WI-FI naudojant FTPS serverio programą su šabloniniais failų pavadinimais;
-- Konsolė automatizavimo planavimui;
-- AES-256 šifravimas.
-
-Platformos: Windows 11 x64, ARM64 arba Ubuntu 24+.</value>
+  <data name="Document_Language" xml:space="preserve">
+    <value>Kalba</value>
   </data>
-  <data name="Winget_ShortDescription" xml:space="preserve">
-    <value>BUtil kuria inkrementines atsargines kopijas, inkrementinę sinchronizaciją ir importuoja multimediją jūsų kompiuteryje su deduplikacija ir WebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, SMB/CIFS transporto palaikymu, skirtu Windows ir Linux.</value>
+  <data name="Menu_License" xml:space="preserve">
+    <value>Licencija</value>
+  </data>
+  <data name="Menu_Credits" xml:space="preserve">
+    <value>Padėkos</value>
+  </data>
+  <data name="Menu_ThirdPartyNotices" xml:space="preserve">
+    <value>Trečiųjų šalių pranešimai</value>
+  </data>
+  <data name="License_ThirdPartyNote" xml:space="preserve">
+    <value>Paties BUtil kodas yra viešo naudojimo. Trečiųjų šalių komponentai išlaiko savo licencijas ir išvardyti skiltyje Trečiųjų šalių pranešimai.</value>
   </data>
 </root>

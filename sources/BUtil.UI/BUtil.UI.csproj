@@ -17,9 +17,6 @@
   
   <ItemGroup>
     <None Remove="Assets\butil.ico" />
-    <None Remove="Assets\CrystalClear_EveraldoCoelho_BackupTask48x48.png" />
-    <None Remove="Assets\CrystalClear_EveraldoCoelho_Password48x48.png" />
-    <None Remove="Assets\CrystalClear_EveraldoCoelho_Schedule48x48.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -81,6 +78,12 @@
     </Compile>
     <Compile Update="Controls\PreventSleepToolView.axaml.cs">
       <DependentUpon>PreventSleepToolView.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Controls\LegalDocumentView.axaml.cs">
+      <DependentUpon>LegalDocumentView.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Controls\MarkdownPageView.axaml.cs">
+      <DependentUpon>MarkdownPageView.axaml</DependentUpon>
     </Compile>
   </ItemGroup>
 </Project>

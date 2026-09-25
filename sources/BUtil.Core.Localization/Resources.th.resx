@@ -1322,20 +1322,19 @@ bin
   <data name="WhatTask_Description" xml:space="preserve">
     <value>ที่นี่คุณสามารถระบุโฟลเดอร์ที่ต้องการสำรองข้อมูลได้</value>
   </data>
-  <data name="Winget_Description" xml:space="preserve">
-    <value>สำรอง/ซิงโครไนซ์ข้อมูลของคุณบน Windows, Linux
-นำเข้าภาพถ่ายจากโทรศัพท์ผ่าน WI-FI และอื่นๆ
-
-คุณสมบัติ:
-- การสำรองข้อมูลแบบเพิ่มหน่วยพร้อมการขจัดข้อมูลซ้ำซ้อนและรองรับ WebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, SMB/CIFS;
-- การซิงโครไนซ์ไฟล์ระหว่างอุปกรณ์โดยใช้ที่เก็บข้อมูลส่วนกลางและรองรับการกำหนดเวอร์ชัน;
-- นำเข้าสื่อ - นำเข้าเสียง ภาพถ่าย วิดีโอจากการ์ด SD ของกล้อง เครื่องบันทึก; ภาพถ่ายและวิดีโอจากโทรศัพท์ของคุณผ่าน WI-FI ผ่านแอปพลิเคชัน FTPS Server โดยใช้ชื่อไฟล์เทมเพลตหรือผ่าน;
-- คอนโซลสำหรับการตั้งเวลาอัตโนมัติ;
-- การเข้ารหัส AES-256
-
-แพลตฟอร์ม: Windows 11 x64, ARM64 หรือ Ubuntu 24+</value>
+  <data name="Document_Language" xml:space="preserve">
+    <value>ภาษา</value>
   </data>
-  <data name="Winget_ShortDescription" xml:space="preserve">
-    <value>BUtil สร้างการสำรองข้อมูลแบบเพิ่มหน่วย การซิงโครไนซ์แบบเพิ่มหน่วย และนำเข้ามัลติมีเดียบนพีซีของคุณ พร้อมการขจัดข้อมูลซ้ำซ้อนและรองรับ WebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, SMB/CIFS สำหรับ Windows และ Linux</value>
+  <data name="Menu_License" xml:space="preserve">
+    <value>สัญญาอนุญาต</value>
+  </data>
+  <data name="Menu_Credits" xml:space="preserve">
+    <value>เครดิต</value>
+  </data>
+  <data name="Menu_ThirdPartyNotices" xml:space="preserve">
+    <value>ประกาศของบุคคลที่สาม</value>
+  </data>
+  <data name="License_ThirdPartyNote" xml:space="preserve">
+    <value>โค้ดของ BUtil เองเป็นสาธารณสมบัติ ส่วนประกอบของบุคคลที่สามยังอยู่ภายใต้สัญญาอนุญาตของตน และระบุไว้ในประกาศของบุคคลที่สาม</value>
   </data>
 </root>

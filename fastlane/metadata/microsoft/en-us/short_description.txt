@@ -1,0 +1,1 @@
+Open source backup and file sync for Windows. Incremental backups with deduplication, photo import, and storage you choose. No account and no ads.

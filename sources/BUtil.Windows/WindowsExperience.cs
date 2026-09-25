@@ -30,6 +30,8 @@ public class WindowsExperience : CrossPlatformExperience
 
     public override ISupportManager SupportManager => new WindowsSupportManager();
 
+    public override bool IsStorePackage => WindowsStorePackage.IsCurrentProcessPackaged;
+
     public override IFolderService GetFolderService()
     {
         return new WindowsFolderService();

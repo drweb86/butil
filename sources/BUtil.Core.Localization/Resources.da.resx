@@ -1322,20 +1322,19 @@ Se detaljeret beskrivelse i følgende link.</value>
   <data name="WhatTask_Description" xml:space="preserve">
     <value>Her kan du angive de mapper, du vil sikkerhedskopiere.</value>
   </data>
-  <data name="Winget_Description" xml:space="preserve">
-    <value>Sikkerhedskopier/synkroniser dine data på Windows, Linux.
-Importér fotos fra telefon via WI-FI og mere.
-
-Funktioner:
-- Inkrementel backup med fildeduplikering og WebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, SMB/CIFS-transportunderstøttelse;
-- Synkronisering af filer mellem enheder med centraliseret lager og versioneringsunderstøttelse;
-- Medieimport - Importér lyd, fotos, videoer fra SD-kort i kamera, optager; fotos og videoer fra din telefon via WI-FI gennem FTPS Server-applikationen med skabelonfilnavne;
-- Konsol til automatiseringsplanlægning;
-- AES-256-kryptering.
-
-Platforme: Windows 11 x64, ARM64 eller Ubuntu 24+.</value>
+  <data name="Document_Language" xml:space="preserve">
+    <value>Sprog</value>
   </data>
-  <data name="Winget_ShortDescription" xml:space="preserve">
-    <value>BUtil opretter inkrementelle sikkerhedskopier, inkrementel synkronisering og importerer multimedier på din PC med deduplikering og WebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, SMB/CIFS-transportunderstøttelse til Windows og Linux.</value>
+  <data name="Menu_License" xml:space="preserve">
+    <value>Licens</value>
+  </data>
+  <data name="Menu_Credits" xml:space="preserve">
+    <value>Krediteringer</value>
+  </data>
+  <data name="Menu_ThirdPartyNotices" xml:space="preserve">
+    <value>Tredjepartsmeddelelser</value>
+  </data>
+  <data name="License_ThirdPartyNote" xml:space="preserve">
+    <value>BUtils egen kode er i public domain. Tredjepartskomponenter beholder deres egne licenser og står under Tredjepartsmeddelelser.</value>
   </data>
 </root>

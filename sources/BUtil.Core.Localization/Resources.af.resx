@@ -1322,20 +1322,19 @@ See detailed description in the following link.</value>
   <data name="WhatTask_Description" xml:space="preserve">
     <value>Hier kan jy vouers spesifiseer wat jy wil rugsteun.</value>
   </data>
-  <data name="Winget_Description" xml:space="preserve">
-    <value>Rugsteun / sinchroniseer jou data Windows, Linux.
-Voer foto's vanaf foon in via WI-FI en meer.
-
-Kenmerke:
-- Inkrementele rugsteun met deduplisering van lêers en SFTP, FTPS, SMB / CIFS vervoer ondersteuning;
-- Sinchronisasie van lêers tussen toestelle met behulp van gesentraliseerde berging en weergawe-ondersteuning;
-- Voer media in - Voer oudio's, foto's, video's in vanaf SD-kaart van kamera, opnemer; foto's en video's vanaf jou foon via WI-FI deur FTPS Server-toepassing met behulp van sjabloonlêername;
-- Konsole vir outomatiseringskedulering;
-- AES-256 enkripsie.
-
-Platforms: Windows 11 x64, ARM64 of Ubuntu 24+.</value>
+  <data name="Document_Language" xml:space="preserve">
+    <value>Taal</value>
   </data>
-  <data name="Winget_ShortDescription" xml:space="preserve">
-    <value>BUtil skep inkrementele rugsteun, inkrementele sinchronisasie en voer multimedia op jou rekenaar in met deduplisering en WebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, SMB/CIFS vervoer ondersteuning vir Windows en Linux.</value>
+  <data name="Menu_License" xml:space="preserve">
+    <value>Lisensie</value>
+  </data>
+  <data name="Menu_Credits" xml:space="preserve">
+    <value>Krediete</value>
+  </data>
+  <data name="Menu_ThirdPartyNotices" xml:space="preserve">
+    <value>Derdeparty-kennisgewings</value>
+  </data>
+  <data name="License_ThirdPartyNote" xml:space="preserve">
+    <value>BUtil se eie kode is in die publieke domein. Derdeparty-komponente hou hul eie lisensies en word onder Derdeparty-kennisgewings gelys.</value>
   </data>
 </root>

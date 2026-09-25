@@ -1319,20 +1319,19 @@ Aşağıdaki bağlantıda detaylı açıklama bulun.</value>
   <data name="WhatTask_Description" xml:space="preserve">
     <value>Burada yedeklemek istediğiniz klasörleri belirtebilirsiniz.</value>
   </data>
-  <data name="Winget_Description" xml:space="preserve">
-    <value>Windows, Linux'ta verilerinizi yedekleyin/senkronize edin.
-WI-FI üzerinden telefondan fotoğraf aktarın ve daha fazlası.
-
-Özellikler:
-- Dosya tekilleştirme ve WebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, SMB/CIFS aktarım desteği ile artımlı yedekleme;
-- Merkezi depolama ve sürüm desteği kullanarak cihazlar arasında dosya senkronizasyonu;
-- Medya içe aktarımı - Kamera, kaydedicinin SD Kartından ses, fotoğraf, video içe aktarın; şablon dosya adları kullanarak FTPS Sunucu uygulaması aracılığıyla WI-FI üzerinden aracılığıyla telefonunuzdan fotoğraf ve videolar;
-- Otomasyon planlaması için konsol;
-- AES-256 şifreleme.
-
-Platformlar: Windows 11 x64, ARM64 veya Ubuntu 24+.</value>
+  <data name="Document_Language" xml:space="preserve">
+    <value>Dil</value>
   </data>
-  <data name="Winget_ShortDescription" xml:space="preserve">
-    <value>BUtil, PC'nizde tekilleştirme ve Windows ve Linux için WebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, SMB/CIFS aktarım desteği ile artımlı yedeklemeler, artımlı senkronizasyon ve multimedya içe aktarımı oluşturur.</value>
+  <data name="Menu_License" xml:space="preserve">
+    <value>Lisans</value>
+  </data>
+  <data name="Menu_Credits" xml:space="preserve">
+    <value>Katkılar</value>
+  </data>
+  <data name="Menu_ThirdPartyNotices" xml:space="preserve">
+    <value>Üçüncü taraf bildirimleri</value>
+  </data>
+  <data name="License_ThirdPartyNote" xml:space="preserve">
+    <value>BUtil'in kendi kodu kamu malıdır. Üçüncü taraf bileşenler kendi lisanslarını korur ve Üçüncü taraf bildirimlerinde listelenir.</value>
   </data>
 </root>

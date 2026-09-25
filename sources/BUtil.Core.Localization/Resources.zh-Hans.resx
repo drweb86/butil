@@ -1321,20 +1321,19 @@ bin。
   <data name="WhatTask_Description" xml:space="preserve">
     <value>在这里可以指定要备份的文件夹。</value>
   </data>
-  <data name="Winget_Description" xml:space="preserve">
-    <value>在 Windows、Linux 上备份/同步您的数据。
-通过 WI-FI 从手机导入照片等。
-
-功能：
-- 增量备份，支持文件重复数据删除和 WebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, SMB/CIFS 传输；
-- 使用集中存储和版本控制支持在设备之间同步文件；
-- 媒体导入 - 从相机、录音机的 SD 卡导入音频、照片、视频；通过 FTPS 服务器应用程序使用模板文件名 从手机导入照片和视频;
-- 用于自动化调度的控制台；
-- AES-256 加密。
-
-平台：Windows 11 x64、ARM64 或 Ubuntu 24+。</value>
+  <data name="Document_Language" xml:space="preserve">
+    <value>语言</value>
   </data>
-  <data name="Winget_ShortDescription" xml:space="preserve">
-    <value>BUtil 在您的电脑上创建增量备份、增量同步和导入多媒体，支持重复数据删除以及适用于 Windows 和 Linux 的 WebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, SMB/CIFS 传输。</value>
+  <data name="Menu_License" xml:space="preserve">
+    <value>许可证</value>
+  </data>
+  <data name="Menu_Credits" xml:space="preserve">
+    <value>致谢</value>
+  </data>
+  <data name="Menu_ThirdPartyNotices" xml:space="preserve">
+    <value>第三方声明</value>
+  </data>
+  <data name="License_ThirdPartyNote" xml:space="preserve">
+    <value>BUtil 自己的代码属于公有领域。第三方组件保留各自的许可证，并列在第三方声明中。</value>
   </data>
 </root>

@@ -1323,20 +1323,19 @@ bin.
   <data name="WhatTask_Description" xml:space="preserve">
     <value>در اینجا می‌توانید پوشه‌هایی را که می‌خواهید پشتیبان‌گیری شوند مشخص کنید.</value>
   </data>
-  <data name="Winget_Description" xml:space="preserve">
-    <value>پشتیبان‌گیری/همگام‌سازی داده‌های شما در Windows، Linux.
-وارد کردن عکس‌ها از تلفن از طریق WI-FI و موارد دیگر.
-
-ویژگی‌ها:
-- پشتیبان‌گیری تدریجی با حذف تکراری فایل‌ها و پشتیبانی از انتقال WebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, SMB/CIFS؛
-- همگام‌سازی فایل‌ها بین دستگاه‌ها با استفاده از فضای ذخیره‌سازی متمرکز و پشتیبانی از نسخه‌بندی؛
-- وارد کردن رسانه - وارد کردن صداها، عکس‌ها، ویدیوها از کارت SD دوربین، ضبط‌کننده؛ عکس‌ها و ویدیوها از تلفن شما از طریق WI-FI با استفاده از برنامه FTPS Server با نام فایل‌های الگو یا ؛;
-- کنسول برای زمان‌بندی خودکار؛
-- رمزنگاری AES-256.
-
-پلتفرم‌ها: Windows 11 x64، ARM64 یا Ubuntu 24+.</value>
+  <data name="Document_Language" xml:space="preserve">
+    <value>زبان</value>
   </data>
-  <data name="Winget_ShortDescription" xml:space="preserve">
-    <value>BUtil پشتیبان‌های تدریجی، همگام‌سازی تدریجی ایجاد می‌کند و چندرسانه‌ای را در رایانه شما با حذف تکراری و پشتیبانی از انتقال WebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, SMB/CIFS برای Windows و Linux وارد می‌کند.</value>
+  <data name="Menu_License" xml:space="preserve">
+    <value>مجوز</value>
+  </data>
+  <data name="Menu_Credits" xml:space="preserve">
+    <value>دست‌اندرکاران</value>
+  </data>
+  <data name="Menu_ThirdPartyNotices" xml:space="preserve">
+    <value>اعلامیه‌های شخص ثالث</value>
+  </data>
+  <data name="License_ThirdPartyNote" xml:space="preserve">
+    <value>کد خود BUtil در مالکیت عمومی است. اجزای شخص ثالث مجوز خود را دارند و در اعلامیه‌های شخص ثالث آمده‌اند.</value>
   </data>
 </root>

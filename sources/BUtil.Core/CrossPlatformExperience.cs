@@ -43,4 +43,9 @@ public abstract class CrossPlatformExperience
     public abstract IUiService UiService { get; }
 
     public abstract IOsSleepPreventionService OsSleepPreventionService { get; }
+
+    /// <summary>
+    /// True when this process is a Microsoft Store package. Store installs are updated by the Store.
+    /// </summary>
+    public virtual bool IsStorePackage => false;
 }

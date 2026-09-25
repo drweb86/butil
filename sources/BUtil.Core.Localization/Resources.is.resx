@@ -1322,20 +1322,19 @@ Sjá nákvæma lýsingu á eftirfarandi tengli.</value>
   <data name="WhatTask_Description" xml:space="preserve">
     <value>Hér geturðu tilgreint möppur sem þú vilt taka öryggisafrit af.</value>
   </data>
-  <data name="Winget_Description" xml:space="preserve">
-    <value>Öryggisafritaðu/samstilltu gögnin þín á Windows, Linux.
-Flyttu inn myndir af síma í gegnum WI-FI og fleira.
-
-Eiginleikar:
-- Stigvaxandi öryggisafrit með aftvítekningu skráa og stuðningi við WebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, SMB/CIFS flutninga;
-- Samstilling skráa milli tækja með miðlægri geymslu og útgáfustjórnun;
-- Fjölmiðlainnflutningur - Flyttu inn hljóðskrár, myndir, myndbönd af SD-korti myndavélar, upptökutækis; myndir og myndbönd af símanum þínum í gegnum WI-FI með FTPS-þjónsforritinu með sniðskráarnöfnum eða í gegnum;
-- Stjórnborð fyrir sjálfvirknivæðingu tímaáætlana;
-- AES-256 dulkóðun.
-
-Verkvangar: Windows 11 x64, ARM64 eða Ubuntu 24+.</value>
+  <data name="Document_Language" xml:space="preserve">
+    <value>Tungumál</value>
   </data>
-  <data name="Winget_ShortDescription" xml:space="preserve">
-    <value>BUtil býr til stigvaxandi öryggisafrit, stigvaxandi samstillingu og flytur inn margmiðlunarefni á tölvuna þína með aftvítekningu og stuðningi við WebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, SMB/CIFS flutninga fyrir Windows og Linux.</value>
+  <data name="Menu_License" xml:space="preserve">
+    <value>Leyfi</value>
+  </data>
+  <data name="Menu_Credits" xml:space="preserve">
+    <value>Þakkir</value>
+  </data>
+  <data name="Menu_ThirdPartyNotices" xml:space="preserve">
+    <value>Tilkynningar þriðju aðila</value>
+  </data>
+  <data name="License_ThirdPartyNote" xml:space="preserve">
+    <value>Eigin kóði BUtil er í almenningseigu. Íhlutir þriðju aðila halda leyfum sínum og eru taldir upp í Tilkynningum þriðju aðila.</value>
   </data>
 </root>

@@ -275,6 +275,8 @@ Section "MainSection" SEC01
 
   SetOutPath "$INSTDIR"
   File "..\LICENSE"
+  File "..\THIRD-PARTY-NOTICES.md"
+  File "..\CREDITS.md"
 
   ; Create uninstaller
   WriteUninstaller "$INSTDIR\uninst.exe"
@@ -327,6 +329,8 @@ Section Uninstall
   ; Remove files and directories
   RMDir /r "$INSTDIR\bin"
   Delete "$INSTDIR\LICENSE"
+  Delete "$INSTDIR\THIRD-PARTY-NOTICES.md"
+  Delete "$INSTDIR\CREDITS.md"
   Delete "$INSTDIR\uninst.exe"
   RMDir "$INSTDIR"
   

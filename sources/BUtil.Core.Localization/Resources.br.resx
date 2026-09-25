@@ -1322,20 +1322,19 @@ See detailed description in the following link.</value>
   <data name="WhatTask_Description" xml:space="preserve">
     <value>Amañ e c'hallit spisaat an teuliadoù hoc'h eus c'hoant da virout.</value>
   </data>
-  <data name="Winget_Description" xml:space="preserve">
-    <value>Backup/synchronize your data Windows, Linux.
-Import photos from phone via WI-FI and more.
-
-Features:
-- Incremental backup with deduplication of files and WebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, SMB/CIFS transports support;
-- Synchronization of files between devices using centralized storage and versioning support;
-- Import media - Import audios, photos, videos from SD Card of camera, recorder; photos and videos from your phone via WI-FI through FTPS Server application using template file names;
-- Console for automation scheduling;
-- AES-256 encryption.
-
-Platforms: Windows 11 x64, ARM64 or Ubuntu 24+.</value>
+  <data name="Document_Language" xml:space="preserve">
+    <value>Yezh</value>
   </data>
-  <data name="Winget_ShortDescription" xml:space="preserve">
-    <value>BUtil creates incremental backups, incremental synchronization and imports multimedia on your PC with deduplication and WebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, SMB/CIFS transports support for Windows and Linux.</value>
+  <data name="Menu_License" xml:space="preserve">
+    <value>Lañvaz</value>
+  </data>
+  <data name="Menu_Credits" xml:space="preserve">
+    <value>Kredadoù</value>
+  </data>
+  <data name="Menu_ThirdPartyNotices" xml:space="preserve">
+    <value>Kemennoù tredeoù</value>
+  </data>
+  <data name="License_ThirdPartyNote" xml:space="preserve">
+    <value>Kodoù BUtil e-unan zo en domani foran. An elfennoù tredeoù a viro o lañvazioù hag int rollet e Kemennoù tredeoù.</value>
   </data>
 </root>

@@ -59,6 +59,10 @@ for rid in "${!ARCH_MAP[@]}"; do
 
     cp -a "$publish_dir/"* "$pkg_root/usr/lib/butil/"
     cp "$REPO_ROOT/LICENSE" "$pkg_root/usr/share/doc/butil/copyright"
+    cp "$REPO_ROOT/THIRD-PARTY-NOTICES.md" "$pkg_root/usr/lib/butil/THIRD-PARTY-NOTICES.md"
+    cp "$REPO_ROOT/THIRD-PARTY-NOTICES.md" "$pkg_root/usr/share/doc/butil/THIRD-PARTY-NOTICES.md"
+    cp "$REPO_ROOT/CREDITS.md" "$pkg_root/usr/lib/butil/CREDITS.md"
+    cp "$REPO_ROOT/CREDITS.md" "$pkg_root/usr/share/doc/butil/CREDITS.md"
 
     ln -sf ../lib/butil/butil-ui.Desktop "$pkg_root/usr/bin/butil-ui"
     ln -sf ../lib/butil/butilc "$pkg_root/usr/bin/butilc"
@@ -144,6 +148,10 @@ POSTRM
     chmod 644 "$pkg_root/usr/share/applications/butil.desktop"
     chmod 644 "$pkg_root/usr/share/pixmaps/butil.png"
     chmod 644 "$pkg_root/usr/share/doc/butil/copyright"
+    chmod 644 "$pkg_root/usr/lib/butil/THIRD-PARTY-NOTICES.md"
+    chmod 644 "$pkg_root/usr/share/doc/butil/THIRD-PARTY-NOTICES.md"
+    chmod 644 "$pkg_root/usr/lib/butil/CREDITS.md"
+    chmod 644 "$pkg_root/usr/share/doc/butil/CREDITS.md"
 
     echo "Building .deb..."
     dpkg-deb --build --root-owner-group "$pkg_root" "$deb_file"

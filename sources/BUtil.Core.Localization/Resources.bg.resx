@@ -1322,20 +1322,19 @@ bin.
   <data name="WhatTask_Description" xml:space="preserve">
     <value>Тук можете да посочите папките, които искате да архивирате.</value>
   </data>
-  <data name="Winget_Description" xml:space="preserve">
-    <value>Архивирайте/синхронизирайте вашите данни под Windows, Linux.
-Импортирайте снимки от телефон чрез WI-FI и още.
-
-Функции:
-- Инкрементално архивиране с дедупликация на файлове и поддръжка на WebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, SMB/CIFS транспорт;
-- Синхронизация на файлове между устройства с централизирано хранилище и поддръжка на версии;
-- Импортиране на медия - импортиране на аудио, снимки, видеоклипове от SD карта на камера, рекордер; снимки и видеоклипове от телефон чрез WI-FI чрез FTPS сървър приложение с шаблонни имена на файлове;
-- Конзола за автоматизирано планиране;
-- AES-256 криптиране.
-
-Платформи: Windows 11 x64, ARM64 или Ubuntu 24+.</value>
+  <data name="Document_Language" xml:space="preserve">
+    <value>Език</value>
   </data>
-  <data name="Winget_ShortDescription" xml:space="preserve">
-    <value>BUtil създава инкрементални архиви, инкрементална синхронизация и импортира мултимедия на вашия компютър с дедупликация и поддръжка на WebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, SMB/CIFS транспорт за Windows и Linux.</value>
+  <data name="Menu_License" xml:space="preserve">
+    <value>Лиценз</value>
+  </data>
+  <data name="Menu_Credits" xml:space="preserve">
+    <value>Заслуги</value>
+  </data>
+  <data name="Menu_ThirdPartyNotices" xml:space="preserve">
+    <value>Бележки за трети страни</value>
+  </data>
+  <data name="License_ThirdPartyNote" xml:space="preserve">
+    <value>Собственият код на BUtil е обществено достояние. Компонентите на трети страни запазват лицензите си и са изброени в Бележки за трети страни.</value>
   </data>
 </root>

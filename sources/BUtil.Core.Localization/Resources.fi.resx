@@ -1322,20 +1322,19 @@ Katso yksityiskohtainen kuvaus seuraavasta linkistä.</value>
   <data name="WhatTask_Description" xml:space="preserve">
     <value>Tässä voit määrittää kansiot, jotka haluat varmuuskopioida.</value>
   </data>
-  <data name="Winget_Description" xml:space="preserve">
-    <value>Varmuuskopioi/synkronoi tietosi Windowsissa, Linuxissa.
-Tuo valokuvia puhelimesta WI-FI:n kautta ja paljon muuta.
-
-Ominaisuudet:
-- Inkrementaalinen varmuuskopiointi tiedostojen deduplikoinnilla ja WebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, SMB/CIFS-siirtotuella;
-- Tiedostojen synkronointi laitteiden välillä keskitettyä tallennustilaa ja versionhallintaa käyttäen;
-- Median tuonti - Tuo ääniä, valokuvia, videoita kameran tai tallentimen SD-kortilta; valokuvia ja videoita puhelimestasi WI-FI:n kautta FTPS-palvelinsovelluksella mallitiedostonimillä :n kautta;
-- Konsoli automaation ajastamiseen;
-- AES-256-salaus.
-
-Alustat: Windows 11 x64, ARM64 tai Ubuntu 24+.</value>
+  <data name="Document_Language" xml:space="preserve">
+    <value>Kieli</value>
   </data>
-  <data name="Winget_ShortDescription" xml:space="preserve">
-    <value>BUtil luo inkrementaalisia varmuuskopioita, inkrementaalista synkronointia ja tuo multimediaa tietokoneellesi deduplikoinnilla ja WebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, SMB/CIFS-siirtotuella Windowsille ja Linuxille.</value>
+  <data name="Menu_License" xml:space="preserve">
+    <value>Lisenssi</value>
+  </data>
+  <data name="Menu_Credits" xml:space="preserve">
+    <value>Tekijät</value>
+  </data>
+  <data name="Menu_ThirdPartyNotices" xml:space="preserve">
+    <value>Kolmansien osapuolten ilmoitukset</value>
+  </data>
+  <data name="License_ThirdPartyNote" xml:space="preserve">
+    <value>BUtilin oma koodi on vapaata. Kolmansien osapuolten osat säilyttävät lisenssinsä ja ne on lueteltu kohdassa Kolmansien osapuolten ilmoitukset.</value>
   </data>
 </root>

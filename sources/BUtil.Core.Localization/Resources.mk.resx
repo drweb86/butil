@@ -1322,20 +1322,19 @@ bin.
   <data name="WhatTask_Description" xml:space="preserve">
     <value>Тука можете да ги наведете папките за кои сакате да направите резервна копија.</value>
   </data>
-  <data name="Winget_Description" xml:space="preserve">
-    <value>Направете резервна копија/синхронизирајте ги вашите податоци на Windows, Linux.
-Увезете фотографии од телефонот преку WI-FI и повеќе.
-
-Функции:
-- Инкрементално резервно копирање со дедупликација на датотеки и поддршка за WebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, SMB/CIFS транспорт;
-- Синхронизација на датотеки помеѓу уреди со централизирано складиште и поддршка за верзионирање;
-- Увоз на медиуми - Увезете аудио, фотографии, видеа од SD-картичка на камера, рекордер; фотографии и видеа од вашиот телефон преку WI-FI преку апликација FTPS-сервер со шаблонски имиња на датотеки;
-- Конзола за планирање автоматизација;
-- AES-256 шифрирање.
-
-Платформи: Windows 11 x64, ARM64 или Ubuntu 24+.</value>
+  <data name="Document_Language" xml:space="preserve">
+    <value>Јазик</value>
   </data>
-  <data name="Winget_ShortDescription" xml:space="preserve">
-    <value>BUtil создава инкрементални резервни копии, инкрементална синхронизација и увезува мултимедија на вашиот компјутер со дедупликација и поддршка за WebDAV, S3-compatible, NFS, Azure Blob, SFTP, FTPS, SMB/CIFS транспорт за Windows и Linux.</value>
+  <data name="Menu_License" xml:space="preserve">
+    <value>Лиценца</value>
+  </data>
+  <data name="Menu_Credits" xml:space="preserve">
+    <value>Заслуги</value>
+  </data>
+  <data name="Menu_ThirdPartyNotices" xml:space="preserve">
+    <value>Известувања од трети страни</value>
+  </data>
+  <data name="License_ThirdPartyNote" xml:space="preserve">
+    <value>Сопствениот код на BUtil е јавно добро. Компонентите од трети страни ги задржуваат лиценците и се наведени во Известувања од трети страни.</value>
   </data>
 </root>
