@@ -88,11 +88,25 @@ jobs:
             /p:PublishReadyToRun=false /p:RunAnalyzersDuringBuild=False --self-contained true --property WarningLevel=0
           if ($LASTEXITCODE -ne 0) { exit 1 }
 
+      - name: Pack MSIX
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = "Stop"
+          $v = "${{ steps.version.outputs.version }}"
+          & ".\scripts\pack-msix.ps1" -Version $v
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+
       - name: Prepare binaries README and license
         shell: pwsh
         run: |
           Copy-Item "help\Readme.Binaries.md" "Output\publish\README.md"
           Copy-Item "LICENSE" "Output\publish\LICENSE"
+          foreach ($name in @("THIRD-PARTY-NOTICES.md", "CREDITS.md")) {
+            Copy-Item $name "Output\publish\$name"
+            foreach ($arch in @("x64", "arm64")) {
+              Copy-Item $name "Output\publish\$arch\$name" -Force
+            }
+          }
 
       - name: Generate NSIS language file
         shell: pwsh
@@ -140,6 +154,7 @@ jobs:
           path: |
             Output/*.exe
             Output/*.7z
+            Output/*.msix
 
       - name: Upload Windows artifacts to GitHub Release
         if: github.event_name == 'release'
@@ -150,6 +165,9 @@ jobs:
           $v = "${{ steps.version.outputs.version }}"
           gh release upload "${{ github.event.release.tag_name }}" "Output\butil_${v}_windows_setup.exe" --clobber
           gh release upload "${{ github.event.release.tag_name }}" "Output\butil_${v}_windows_archive.7z" --clobber
+          Get-ChildItem "Output\butil_${v}_windows_*.msix" | ForEach-Object {
+            gh release upload "${{ github.event.release.tag_name }}" $_.FullName --clobber
+          }
 
   update-apt-repo:
     needs: build-deb
