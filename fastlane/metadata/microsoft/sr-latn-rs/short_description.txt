@@ -1,0 +1,1 @@
+Inkrementalna rezervna kopija, sinhronizacija fascikli i vraćanje. Deduplikacija, rasporedi i uvoz fotografija. Lokalna fascikla, NAS, S3, SFTP ili WebDAV. Bez naloga i bez reklama.

@@ -1,0 +1,1 @@
+Første versjon i Microsoft Store. Trinnvis filsikkerhetskopi med deduplisering, mappesynkronisering, fotoimport og gjenoppretting. Filer går bare til lagring du velger. Ingen konto og ingen reklame.

@@ -1,0 +1,7 @@
+filer backup gjenoppretting
+mappe synkronisering
+trinnvis planlagt
+NAS S3 SFTP WebDAV
+fotoimport kamera
+deduplisering versjonshistorikk
+lokal FTPS Azure NFS

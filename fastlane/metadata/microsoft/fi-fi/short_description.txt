@@ -1,0 +1,1 @@
+Lisäävä tiedostovarmuuskopio, kansiosynkronointi ja palautus. Kaksoiskappaleiden poisto, aikataulut ja kuvien tuonti. Paikallinen kansio, NAS, S3, SFTP tai WebDAV. Ei tiliä eikä mainoksia.

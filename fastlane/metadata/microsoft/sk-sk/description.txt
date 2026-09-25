@@ -1,0 +1,9 @@
+BUtil zálohuje, synchronizuje a obnovuje súbory na tomto počítači. Prírastkové zálohy ukladajú len to, čo sa zmenilo. Deduplikácia ponechá jednu kópiu, keď sa rovnaký súbor objaví viackrát.
+
+Zálohy posielajte do priečinka na tomto počítači, na NAS (SMB/CIFS) alebo na WebDAV, úložisko kompatibilné s S3, NFS, Azure Blob, SFTP či FTPS.
+
+Synchronizujte priečinok cez úložisko, ktoré ovládate, a pri zmene súborov uchovávajte staršie verzie. Importujte obrázky, video a zvuk z karty SD, fotoaparátu alebo telefónu v tej istej sieti Wi-Fi.
+
+Rovnaké úlohy bežia aj z konzoly, vrátane plánu. Heslá, ktoré uložíte, sa na tomto počítači šifrujú. Nie je tu účet, reklama ani telemetria.
+
+BUtil je open source. Vlastný kód je venovaný verejnej doméne. Komponenty tretích strán si ponechávajú vlastné licencie.

@@ -1,0 +1,7 @@
+파일 백업 복원
+폴더 동기화
+증분 예약
+NAS S3 SFTP WebDAV
+사진 가져오기 카메라
+중복제거 버전 기록
+로컬 FTPS Azure NFS

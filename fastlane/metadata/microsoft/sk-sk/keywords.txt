@@ -1,0 +1,7 @@
+súbory záloha obnova
+synchronizácia priečinkov
+prírastkové plán
+NAS S3 SFTP WebDAV
+import fotiek fotoaparát
+deduplikácia história verzií
+miestny FTPS Azure NFS

@@ -1,0 +1,7 @@
+datoteke kopija vraćanje
+sinkronizacija mapa
+inkrementalno raspored
+NAS S3 SFTP WebDAV
+uvoz fotografija kamera
+deduplikacija povijest verzija
+lokalno FTPS Azure NFS

@@ -1,0 +1,1 @@
+Prima versiune în Microsoft Store. Copiere incrementală cu deduplicare, sincronizare de foldere, import de fotografii și restaurare. Fișierele merg doar în stocarea pe care o alegeți. Fără cont și fără reclame.

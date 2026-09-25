@@ -1,0 +1,18 @@
+O backup incremental guarda só o que mudou desde a última execução.
+A deduplicação mantém uma cópia quando o mesmo arquivo aparece mais de uma vez.
+Restaure arquivos de um backup que você já fez.
+Faça backup para uma pasta local, WebDAV, armazenamento compatível com S3 ou NFS.
+Faça backup para um NAS (SMB/CIFS), Azure Blob, SFTP ou FTPS.
+Sincronize uma pasta entre computadores pelo armazenamento que você controla.
+Mantenha versões antigas quando um arquivo sincronizado muda.
+Importe fotos, vídeo e áudio de um cartão SD ou câmera.
+Importe fotos e vídeos de um telefone na mesma Wi-Fi.
+Nomeie os arquivos importados com um modelo que você escolhe.
+Agende um backup no login ou em um plano semanal.
+Execute as mesmas tarefas pelo console, inclusive com agendamento.
+Copie um comando de console de qualquer tarefa para automatizá-la.
+Veja quais tarefas estão agendadas e como a última execução terminou.
+As senhas salvas são criptografadas neste computador.
+Após uma tarefa, deixe o PC ligado, saia da conta, reinicie ou desligue.
+Código aberto, sem conta, sem anúncios e sem telemetria.
+Envie uma pasta e ignore os arquivos que já estão armazenados.

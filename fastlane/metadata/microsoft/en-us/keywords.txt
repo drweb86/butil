@@ -1,7 +1,7 @@
-backup
-file sync
-incremental backup
-deduplication
-photo import
-open source
-WebDAV
+file backup restore
+folder sync
+incremental scheduled
+NAS S3 SFTP WebDAV
+photo import camera
+deduplication version history
+local FTPS Azure NFS

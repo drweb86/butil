@@ -1,0 +1,1 @@
+Cópia de segurança incremental, sincronização de pastas e restauro. Deduplicação, agendamentos e importação de fotos. Pasta local, NAS, S3, SFTP ou WebDAV. Sem conta e sem anúncios.

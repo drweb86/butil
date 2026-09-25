@@ -1,0 +1,9 @@
+BUtil esegue il backup, sincronizza e ripristina i file su questo PC. I backup incrementali salvano solo ciò che è cambiato. La deduplicazione tiene una sola copia quando lo stesso file compare più di una volta.
+
+Invia i backup a una cartella di questo PC, a un NAS (SMB/CIFS), oppure a WebDAV, archiviazione compatibile con S3, NFS, Azure Blob, SFTP o FTPS.
+
+Sincronizza una cartella tramite uno spazio di archiviazione che controlli e conserva le versioni precedenti quando i file cambiano. Importa immagini, video e audio da una scheda SD, da una fotocamera o da un telefono sulla stessa Wi-Fi.
+
+Le stesse attività si eseguono dalla console, anche in base a una pianificazione. Le password che salvi sono cifrate su questo computer. Non c’è un account, né pubblicità, né telemetria.
+
+BUtil è open source. Il suo codice è dedicato al pubblico dominio. I componenti di terze parti mantengono le proprie licenze.

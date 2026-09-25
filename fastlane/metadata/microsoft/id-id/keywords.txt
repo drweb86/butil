@@ -1,0 +1,7 @@
+file cadangan pulihkan
+sinkron folder
+inkremental jadwal
+NAS S3 SFTP WebDAV
+impor foto kamera
+deduplikasi riwayat versi
+lokal FTPS Azure NFS

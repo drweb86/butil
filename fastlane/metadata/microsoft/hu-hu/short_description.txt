@@ -1,0 +1,1 @@
+Növekményes fájlmentés, mappaszinkronizálás és visszaállítás. Deduplikáció, ütemezés és fotóimport. Helyi mappa, NAS, S3, SFTP vagy WebDAV. Nincs fiók és nincs hirdetés.

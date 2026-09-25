@@ -1,0 +1,9 @@
+BUtil sauvegarde, synchronise et restaure des fichiers sur ce PC. Les sauvegardes incrémentielles ne conservent que ce qui a changé. La déduplication ne garde qu’une copie lorsque le même fichier apparaît plusieurs fois.
+
+Envoyez les sauvegardes dans un dossier de ce PC, sur un NAS (SMB/CIFS), ou vers WebDAV, un stockage compatible S3, NFS, Azure Blob, SFTP ou FTPS.
+
+Synchronisez un dossier via un stockage que vous contrôlez, et conservez les anciennes versions lorsque les fichiers changent. Importez des images, des vidéos et de l’audio depuis une carte SD, un appareil photo ou un téléphone sur le même Wi-Fi.
+
+Les mêmes tâches s’exécutent depuis la console, y compris selon une planification. Les mots de passe que vous enregistrez sont chiffrés sur cet ordinateur. Il n’y a pas de compte, pas de publicité et pas de télémétrie.
+
+BUtil est open source. Son propre code est versé dans le domaine public. Les composants tiers conservent leurs licences.

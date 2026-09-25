@@ -1,0 +1,9 @@
+BUtil sao lưu, đồng bộ và khôi phục tệp trên máy tính này. Bản sao lưu tăng dần chỉ giữ phần đã thay đổi. Loại bản trùng giữ một bản khi cùng một tệp xuất hiện nhiều lần.
+
+Gửi bản sao lưu vào thư mục trên máy tính này, tới NAS (SMB/CIFS), hoặc tới WebDAV, kho tương thích S3, NFS, Azure Blob, SFTP hoặc FTPS.
+
+Đồng bộ một thư mục qua kho do bạn kiểm soát, và giữ phiên bản cũ hơn khi tệp thay đổi. Nhập ảnh, video và âm thanh từ thẻ SD, máy ảnh hoặc điện thoại trên cùng Wi-Fi.
+
+Các tác vụ đó chạy từ bảng điều khiển, kể cả theo lịch. Mật khẩu bạn lưu được mã hóa trên máy tính này. Không có tài khoản, quảng cáo hay đo từ xa.
+
+BUtil là mã nguồn mở. Mã của chính nó được hiến vào phạm vi công cộng. Thành phần của bên thứ ba giữ giấy phép riêng.

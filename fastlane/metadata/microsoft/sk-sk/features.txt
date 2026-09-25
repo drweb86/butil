@@ -1,0 +1,18 @@
+Prírastková záloha uloží len to, čo sa zmenilo od posledného spustenia.
+Deduplikácia ponechá jednu kópiu, keď sa rovnaký súbor objaví viackrát.
+Obnovte súbory zo zálohy, ktorú už máte.
+Zálohujte do miestneho priečinka, na WebDAV, na úložisko kompatibilné s S3 alebo na NFS.
+Zálohujte na NAS (SMB/CIFS), Azure Blob, SFTP alebo FTPS.
+Synchronizujte priečinok medzi počítačmi cez úložisko, ktoré ovládate.
+Uchovávajte staršie verzie, keď sa synchronizovaný súbor zmení.
+Importujte fotky, video a zvuk z karty SD alebo z fotoaparátu.
+Importujte fotky a videá z telefónu v tej istej sieti Wi-Fi.
+Pomenujte importované súbory podľa šablóny, ktorú zvolíte.
+Naplánujte zálohu pri prihlásení alebo podľa týždenného plánu.
+Spúšťajte rovnaké úlohy z konzoly, vrátane plánu.
+Skopírujte príkaz konzoly ľubovoľnej úlohy, aby ste ju mohli automatizovať.
+Pozrite sa, ktoré úlohy sú naplánované a ako sa posledné spustenie skončilo.
+Uložené heslá sa na tomto počítači šifrujú.
+Po úlohe nechajte počítač zapnutý, odhláste sa, reštartujte alebo ho vypnite.
+Open source, bez účtu, bez reklám a bez telemetrie.
+Nahrajte priečinok a preskočte súbory, ktoré už sú uložené.

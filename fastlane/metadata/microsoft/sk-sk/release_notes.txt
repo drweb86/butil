@@ -1,0 +1,1 @@
+Prvá verzia v Microsoft Store. Prírastkové zálohovanie s deduplikáciou, synchronizácia priečinkov, import fotiek a obnova. Súbory idú len do úložiska, ktoré si vyberiete. Bez účtu a bez reklám.

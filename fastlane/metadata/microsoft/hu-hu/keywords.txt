@@ -1,0 +1,7 @@
+fájl mentés visszaállítás
+mappa szinkronizálás
+növekményes ütemezés
+NAS S3 SFTP WebDAV
+fotó import kamera
+deduplikáció verzióelőzmény
+helyi FTPS Azure NFS

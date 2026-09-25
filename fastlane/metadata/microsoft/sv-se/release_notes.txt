@@ -1,0 +1,1 @@
+Första versionen i Microsoft Store. Inkrementell filsäkerhetskopiering med deduplicering, mappsynk, fotoimport och återställning. Filer går bara till lagring som du väljer. Inget konto och ingen reklam.

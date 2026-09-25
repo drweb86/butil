@@ -1,18 +1,18 @@
 Incremental backup stores only what changed since the last run.
 Deduplication keeps one copy when the same file appears more than once.
+Restore files from a backup you already made.
 Back up to a local folder, WebDAV, S3-compatible storage, or NFS.
-Back up to Azure Blob, SFTP, FTPS, or SMB/CIFS.
+Back up to a NAS (SMB/CIFS), Azure Blob, SFTP, or FTPS.
 Sync a folder between computers through storage you control.
 Keep older versions when a synchronized file changes.
 Import photos, video, and audio from an SD card or camera.
 Import photos and videos from a phone on the same Wi-Fi.
 Name imported files from a template you choose.
+Schedule a backup at sign-in or on a weekly plan.
 Run the same tasks from the console, including on a schedule.
+Copy a console command for any task so you can automate it.
+See which tasks are scheduled and how the last run finished.
 Encrypt saved passwords on this computer.
 After a task, leave the PC on, sign out, restart, or shut down.
 Open source, with no account, no ads, and no telemetry.
-Windows 11 on x64 and ARM64.
-See which tasks are scheduled and how the last run finished.
-Copy a console command for any task so you can automate it.
-Restore files from a backup you already made.
-Public-domain code you can read. Third-party components keep their licenses.
+Upload a folder and skip files that are already stored.

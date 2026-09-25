@@ -1,0 +1,1 @@
+Primeira versão na Microsoft Store. Cópia incremental com deduplicação, sincronização de pastas, importação de fotos e restauro. Os ficheiros vão apenas para o armazenamento que escolher. Sem conta e sem anúncios.

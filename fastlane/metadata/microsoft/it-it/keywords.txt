@@ -1,0 +1,7 @@
+file backup ripristino
+sincronizza cartelle
+incrementale pianificato
+NAS S3 SFTP WebDAV
+importa foto fotocamera
+deduplicazione cronologia versioni
+locale FTPS Azure NFS

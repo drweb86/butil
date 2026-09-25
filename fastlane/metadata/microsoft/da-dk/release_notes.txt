@@ -1,0 +1,1 @@
+Første version i Microsoft Store. Trinvis filsikkerhedskopi med deduplikering, mappesynkronisering, fotoimport og gendannelse. Filer går kun til lagerplads, du vælger. Ingen konto og ingen reklamer.

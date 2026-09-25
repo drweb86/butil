@@ -1,0 +1,1 @@
+Copiere de rezervă incrementală, sincronizare de foldere și restaurare. Deduplicare, programări și import de fotografii. Folder local, NAS, S3, SFTP sau WebDAV. Fără cont și fără reclame.

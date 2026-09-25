@@ -1,0 +1,1 @@
+Első kiadás a Microsoft Store-ban. Növekményes fájlmentés deduplikációval, mappaszinkronizálás, fotóimport és visszaállítás. A fájlok csak az Ön által választott tárhelyre kerülnek. Nincs fiók és nincs hirdetés.

@@ -1,0 +1,7 @@
+tệp backup khôi phục
+đồng bộ
+tăng dần
+NAS S3 SFTP WebDAV
+nhập ảnh camera
+phiên bản trùng
+FTPS Azure NFS

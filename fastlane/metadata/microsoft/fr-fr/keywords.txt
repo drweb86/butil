@@ -1,0 +1,7 @@
+fichiers sauvegarde restauration
+synchro dossier
+incrémentale planifiée
+NAS S3 SFTP WebDAV
+import photos caméra
+déduplication historique versions
+local FTPS Azure NFS

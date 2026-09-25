@@ -1,0 +1,9 @@
+BUtil menyandarkan, menyegerak dan memulihkan fail pada PC ini. Sandaran berperingkat hanya menyimpan yang berubah. Nyahpendua menyimpan satu salinan apabila fail yang sama muncul lebih daripada sekali.
+
+Hantar sandaran ke folder pada PC ini, ke NAS (SMB/CIFS), atau ke WebDAV, storan serasi S3, NFS, Azure Blob, SFTP atau FTPS.
+
+Segerakkan folder melalui storan yang anda kawal, dan simpan versi lama apabila fail berubah. Import gambar, video dan audio daripada kad SD, kamera atau telefon pada Wi-Fi yang sama.
+
+Tugas yang sama berjalan dari konsol, termasuk mengikut jadual. Kata laluan yang anda simpan disulitkan pada komputer ini. Tiada akaun, iklan atau telemetri.
+
+BUtil ialah sumber terbuka. Kodnya sendiri didedikasikan kepada domain awam. Komponen pihak ketiga mengekalkan lesen masing-masing.

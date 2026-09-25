@@ -1,0 +1,7 @@
+tiedostot varmuuskopio palautus
+kansio synkronointi
+lisäävä aikataulu
+NAS S3 SFTP WebDAV
+kuvien tuonti kamera
+deduplikointi versiohistoria
+paikallinen FTPS Azure NFS

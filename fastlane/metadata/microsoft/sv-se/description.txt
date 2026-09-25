@@ -1,0 +1,9 @@
+BUtil säkerhetskopierar, synkroniserar och återställer filer på den här datorn. Inkrementella säkerhetskopior sparar bara det som ändrats. Deduplicering behåller en enda kopia när samma fil förekommer mer än en gång.
+
+Skicka säkerhetskopior till en mapp på den här datorn, till en NAS (SMB/CIFS), eller till WebDAV, S3-kompatibel lagring, NFS, Azure Blob, SFTP eller FTPS.
+
+Synkronisera en mapp via lagring som du bestämmer över, och behåll äldre versioner när filer ändras. Importera bilder, video och ljud från ett SD-kort, en kamera eller en telefon i samma wifi.
+
+Samma uppgifter körs från konsolen, även enligt ett schema. Lösenord som du sparar krypteras på den här datorn. Det finns inget konto, ingen reklam och ingen telemetri.
+
+BUtil är öppen källkod. Den egna koden är allmän egendom. Komponenter från tredje part behåller sina egna licenser.

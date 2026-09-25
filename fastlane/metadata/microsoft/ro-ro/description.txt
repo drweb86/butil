@@ -1,0 +1,9 @@
+BUtil face copii de rezervă, sincronizează și restaurează fișiere pe acest PC. Copiile incrementale păstrează doar ce s-a schimbat. Deduplicarea păstrează o singură copie când același fișier apare de mai multe ori.
+
+Trimiteți copiile într-un folder de pe acest PC, pe un NAS (SMB/CIFS) sau către WebDAV, stocare compatibilă S3, NFS, Azure Blob, SFTP ori FTPS.
+
+Sincronizați un folder prin stocarea pe care o controlați și păstrați versiunile mai vechi când fișierele se schimbă. Importați imagini, video și audio de pe un card SD, un aparat foto sau un telefon din aceeași rețea Wi-Fi.
+
+Aceleași activități rulează din consolă, inclusiv după un program. Parolele pe care le salvați sunt criptate pe acest calculator. Nu există cont, publicitate sau telemetrie.
+
+BUtil este open source. Codul propriu este dedicat domeniului public. Componentele terțe își păstrează licențele.

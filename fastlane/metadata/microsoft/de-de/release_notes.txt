@@ -1,0 +1,1 @@
+Erste Version im Microsoft Store. Inkrementelle Dateisicherung mit Deduplizierung, Ordnersynchronisierung, Fotoimport und Wiederherstellung. Dateien gehen nur in Speicher, den Sie auswählen. Kein Konto und keine Werbung.

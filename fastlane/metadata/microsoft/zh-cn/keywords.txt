@@ -1,0 +1,7 @@
+文件 备份 还原
+文件夹 同步
+增量 计划
+NAS S3 SFTP WebDAV
+照片 导入 相机
+去重 版本 历史
+本地 FTPS Azure NFS

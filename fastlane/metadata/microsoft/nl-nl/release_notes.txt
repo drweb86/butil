@@ -1,0 +1,1 @@
+Eerste versie in de Microsoft Store. Incrementele back-up met deduplicatie, mapsynchronisatie, foto-import en herstel. Bestanden gaan alleen naar opslag die u kiest. Geen account en geen advertenties.

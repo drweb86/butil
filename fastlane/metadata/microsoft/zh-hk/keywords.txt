@@ -1,0 +1,7 @@
+檔案 備份 還原
+資料夾 同步
+增量 排程
+NAS S3 SFTP WebDAV
+相片 匯入 相機
+去重 版本 紀錄
+本機 FTPS Azure NFS

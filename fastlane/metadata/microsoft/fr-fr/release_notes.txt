@@ -1,0 +1,1 @@
+Première version sur le Microsoft Store. Sauvegarde incrémentielle avec déduplication, synchro de dossiers, import de photos et restauration. Les fichiers vont uniquement vers le stockage que vous choisissez. Sans compte et sans publicité.

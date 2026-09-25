@@ -1,0 +1,1 @@
+Inkrementell filsäkerhetskopiering, mappsynk och återställning. Deduplicering, scheman och fotoimport. Lokal mapp, NAS, S3, SFTP eller WebDAV. Inget konto och ingen reklam.

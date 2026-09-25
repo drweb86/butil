@@ -1,1 +1,1 @@
-Open source backup and file sync for Windows. Incremental backups with deduplication, photo import, and storage you choose. No account and no ads.
+Incremental file backup, folder sync, and restore. Deduplication, schedules, and photo import. Local folder, NAS, S3, SFTP, or WebDAV. No account and no ads.

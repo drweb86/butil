@@ -1,0 +1,7 @@
+yedekleme geri yükleme
+klasör eşitleme
+artımlı zamanlama
+NAS S3 SFTP WebDAV
+fotoğraf içe kamera
+tekilleştirme sürüm geçmişi
+yerel FTPS Azure NFS

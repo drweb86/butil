@@ -1,0 +1,1 @@
+Inkrementalna sigurnosna kopija, sinkronizacija mapa i vraćanje. Deduplikacija, rasporedi i uvoz fotografija. Lokalna mapa, NAS, S3, SFTP ili WebDAV. Bez računa i bez oglasa.

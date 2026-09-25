@@ -1,0 +1,1 @@
+Prva verzija u Microsoft Store. Inkrementalna rezervna kopija sa deduplikacijom, sinhronizacija fascikli, uvoz fotografija i vraćanje. Datoteke idu samo u skladište koje izaberete. Bez naloga i bez reklama.

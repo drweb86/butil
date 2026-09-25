@@ -1,0 +1,1 @@
+Sauvegarde incrémentielle, synchro de dossiers et restauration. Déduplication, planifications et import de photos. Dossier local, NAS, S3, SFTP ou WebDAV. Sans compte et sans publicité.

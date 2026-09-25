@@ -1,6 +1,6 @@
 # Microsoft Store and WinGet metadata
 
-One folder per language. `en-us` is the source. Other languages are added after the English copy is approved.
+One folder per Partner Center locale, matching `Package.appxmanifest`. `en-us` is the source.
 
 | File | Store field | WinGet |
 |---|---|---|

@@ -1,0 +1,18 @@
+Inkrementalna kopija čuva samo ono što se promenilo od poslednjeg pokretanja.
+Deduplikacija zadržava jednu kopiju kada se ista datoteka pojavi više puta.
+Vratite datoteke iz rezervne kopije koju ste već napravili.
+Sačuvajte kopiju u lokalnu fasciklu, na WebDAV, na skladište usklađeno sa S3 ili na NFS.
+Sačuvajte kopiju na NAS (SMB/CIFS), Azure Blob, SFTP ili FTPS.
+Sinhronizujte fasciklu između računara preko skladišta kojim upravljate.
+Zadržite starije verzije kada se sinhronizovana datoteka promeni.
+Uvezite fotografije, video i zvuk sa SD kartice ili fotoaparata.
+Uvezite fotografije i video snimke sa telefona na istoj Wi-Fi mreži.
+Imenujte uvezene datoteke prema šablonu koji izaberete.
+Zakažite kopiju pri prijavi ili prema nedeljnom planu.
+Pokrenite iste zadatke iz konzole, uključujući raspored.
+Kopirajte konzolnu naredbu bilo kog zadatka da biste ga automatizovali.
+Pogledajte koji zadaci su zakazani i kako je završilo poslednje pokretanje.
+Sačuvane lozinke šifruju se na ovom računaru.
+Nakon zadatka ostavite računar uključen, odjavite se, ponovo pokrenite ili ga ugasite.
+Otvoreni kod, bez naloga, bez reklama i bez telemetrije.
+Pošaljite fasciklu i preskočite datoteke koje su već sačuvane.

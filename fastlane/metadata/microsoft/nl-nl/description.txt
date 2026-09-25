@@ -1,0 +1,9 @@
+BUtil maakt back-ups, synchroniseert en herstelt bestanden op deze pc. Incrementele back-ups bewaren alleen wat is gewijzigd. Deduplicatie houdt één kopie wanneer hetzelfde bestand vaker voorkomt.
+
+Stuur back-ups naar een map op deze pc, naar een NAS (SMB/CIFS), of naar WebDAV, S3-compatibele opslag, NFS, Azure Blob, SFTP of FTPS.
+
+Synchroniseer een map via opslag die u beheert, en bewaar oudere versies wanneer bestanden wijzigen. Importeer afbeeldingen, video en audio van een SD-kaart, een camera of een telefoon op dezelfde wifi.
+
+Dezelfde taken draaien vanuit de console, ook volgens een schema. Wachtwoorden die u opslaat, worden op deze computer versleuteld. Er is geen account, geen reclame en geen telemetrie.
+
+BUtil is open source. De eigen code is aan het publieke domein gegeven. Onderdelen van derden houden hun eigen licenties.

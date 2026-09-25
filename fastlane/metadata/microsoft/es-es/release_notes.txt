@@ -1,0 +1,1 @@
+Primera versión en Microsoft Store. Copia incremental con deduplicación, sincronización de carpetas, importación de fotos y restauración. Los archivos van solo al almacenamiento que usted elige. Sin cuenta y sin anuncios.

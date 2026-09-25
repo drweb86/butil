@@ -1,0 +1,18 @@
+Lisäävä varmuuskopio tallentaa vain sen, mikä on muuttunut edellisen ajon jälkeen.
+Kaksoiskappaleiden poisto säilyttää yhden kopion, kun sama tiedosto esiintyy useammin.
+Palauta tiedostoja varmuuskopiosta, jonka olet jo tehnyt.
+Varmuuskopioi paikalliseen kansioon, WebDAViin, S3-yhteensopivaan tilaan tai NFS:ään.
+Varmuuskopioi NAS-laitteeseen (SMB/CIFS), Azure Blobille, SFTP:hen tai FTPS:ään.
+Synkronoi kansio tietokoneiden välillä hallitsemasi tallennustilan kautta.
+Säilytä vanhemmat versiot, kun synkronoitu tiedosto muuttuu.
+Tuo kuvia, videota ja ääntä SD-kortilta tai kamerasta.
+Tuo kuvia ja videoita puhelimesta samassa Wi-Fi-verkossa.
+Nimeä tuodut tiedostot valitsemallasi mallilla.
+Ajoita varmuuskopio kirjautumiseen tai viikoittaiseen suunnitelmaan.
+Aja samat tehtävät konsolista, myös aikataulun mukaan.
+Kopioi konsolikomento mistä tahansa tehtävästä, jotta voit automatisoida sen.
+Näe, mitkä tehtävät on ajoitettu ja miten viimeisin ajo päättyi.
+Tallennetut salasanat salataan tällä tietokoneella.
+Tehtävän jälkeen jätä tietokone päälle, kirjaudu ulos, käynnistä uudelleen tai sammuta.
+Avoin lähdekoodi, ei tiliä, ei mainoksia eikä telemetriaa.
+Lähetä kansio ja ohita tiedostot, jotka on jo tallennettu.

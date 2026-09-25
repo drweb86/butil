@@ -1,0 +1,1 @@
+Prirastno varnostno kopiranje, sinhronizacija map in obnovitev. Deduplikacija, razporedi in uvoz fotografij. Lokalna mapa, NAS, S3, SFTP ali WebDAV. Brez računa in brez oglasov.

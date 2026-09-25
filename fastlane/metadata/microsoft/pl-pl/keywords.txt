@@ -1,0 +1,7 @@
+pliki kopia przywracanie
+synchronizacja folderów
+przyrostowa harmonogram
+NAS S3 SFTP WebDAV
+import zdjęć aparat
+deduplikacja historia wersji
+lokalny FTPS Azure NFS

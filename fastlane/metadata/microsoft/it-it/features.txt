@@ -1,0 +1,18 @@
+Il backup incrementale salva solo ciò che è cambiato dall’ultima esecuzione.
+La deduplicazione tiene una copia quando lo stesso file compare più di una volta.
+Ripristina i file da un backup che hai già creato.
+Esegui il backup in una cartella locale, su WebDAV, su archiviazione compatibile con S3 o su NFS.
+Esegui il backup su un NAS (SMB/CIFS), Azure Blob, SFTP o FTPS.
+Sincronizza una cartella tra computer tramite uno spazio di archiviazione che controlli.
+Conserva le versioni precedenti quando un file sincronizzato cambia.
+Importa foto, video e audio da una scheda SD o da una fotocamera.
+Importa foto e video da un telefono sulla stessa Wi-Fi.
+Assegna un nome ai file importati con un modello che scegli tu.
+Pianifica un backup all’accesso o con un piano settimanale.
+Esegui le stesse attività dalla console, anche in base a una pianificazione.
+Copia un comando della console per qualsiasi attività, così puoi automatizzarla.
+Vedi quali attività sono pianificate e come è terminata l’ultima esecuzione.
+Le password salvate sono cifrate su questo computer.
+Dopo un’attività, lascia il PC acceso, disconnetti, riavvia o spegni.
+Open source, senza account, senza pubblicità e senza telemetria.
+Carica una cartella e salta i file già archiviati.

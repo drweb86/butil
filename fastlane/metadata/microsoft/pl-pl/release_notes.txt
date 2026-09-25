@@ -1,0 +1,1 @@
+Pierwsza wersja w Microsoft Store. Przyrostowa kopia zapasowa z deduplikacją, synchronizacja folderów, import zdjęć i przywracanie. Pliki trafiają tylko do wybranego magazynu. Bez konta i bez reklam.

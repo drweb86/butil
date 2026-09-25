@@ -1,0 +1,1 @@
+Copia de seguridad incremental, sincronización de carpetas y restauración. Deduplicación, programaciones e importación de fotos. Carpeta local, NAS, S3, SFTP o WebDAV. Sin cuenta y sin anuncios.

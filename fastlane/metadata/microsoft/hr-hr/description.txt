@@ -1,0 +1,9 @@
+BUtil izrađuje sigurnosne kopije, sinkronizira i vraća datoteke na ovom računalu. Inkrementalne kopije spremaju samo ono što se promijenilo. Deduplikacija zadržava jednu kopiju kad se ista datoteka pojavi više puta.
+
+Šaljite kopije u mapu na ovom računalu, na NAS (SMB/CIFS) ili na WebDAV, pohranu usklađenu sa S3, NFS, Azure Blob, SFTP ili FTPS.
+
+Sinkronizirajte mapu preko pohrane kojom upravljate i zadržite starije verzije kad se datoteke promijene. Uvezite slike, video i zvuk sa SD kartice, fotoaparata ili telefona na istoj Wi-Fi mreži.
+
+Isti se zadaci pokreću iz konzole, uključujući raspored. Lozinke koje spremite šifriraju se na ovom računalu. Nema računa, oglasa ni telemetrije.
+
+BUtil je otvorenog koda. Vlastiti je kôd predan u javno vlasništvo. Komponente trećih strana zadržavaju vlastite licence.

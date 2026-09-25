@@ -1,0 +1,9 @@
+BUtil copia, sincroniza y restaura archivos en este PC. Las copias incrementales guardan solo lo que cambió. La deduplicación conserva una sola copia cuando el mismo archivo aparece más de una vez.
+
+Envíe las copias a una carpeta de este PC, a un NAS (SMB/CIFS), o a WebDAV, almacenamiento compatible con S3, NFS, Azure Blob, SFTP o FTPS.
+
+Sincronice una carpeta a través de un almacenamiento que usted controla y conserve versiones anteriores cuando los archivos cambien. Importe imágenes, vídeo y audio desde una tarjeta SD, una cámara o un teléfono en la misma Wi-Fi.
+
+Las mismas tareas se ejecutan desde la consola, también con una programación. Las contraseñas que guarda se cifran en este equipo. No hay cuenta, ni publicidad, ni telemetría.
+
+BUtil es de código abierto. Su propio código está dedicado al dominio público. Los componentes de terceros conservan sus licencias.

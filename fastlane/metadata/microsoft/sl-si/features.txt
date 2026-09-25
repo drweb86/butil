@@ -1,0 +1,18 @@
+Prirastna kopija shrani samo tisto, kar se je spremenilo od zadnjega zagona.
+Deduplikacija obdrži en izvod, ko se ista datoteka pojavi več kot enkrat.
+Obnovite datoteke iz varnostne kopije, ki ste jo že naredili.
+Kopirajte v lokalno mapo, na WebDAV, v shrambo, združljivo s S3, ali na NFS.
+Kopirajte na NAS (SMB/CIFS), Azure Blob, SFTP ali FTPS.
+Sinhronizirajte mapo med računalniki prek shrambe, ki jo nadzorujete.
+Obdržite starejše različice, ko se sinhronizirana datoteka spremeni.
+Uvozite fotografije, video in zvok s kartice SD ali fotoaparata.
+Uvozite fotografije in videoposnetke s telefona v istem omrežju Wi-Fi.
+Poimenujte uvožene datoteke po predlogi, ki jo izberete.
+Načrtujte kopijo ob prijavi ali po tedenskem načrtu.
+Zaženite ista opravila iz konzole, tudi po razporedu.
+Kopirajte konzolni ukaz katerega koli opravila, da ga avtomatizirate.
+Poglejte, katera opravila so načrtovana in kako se je končal zadnji zagon.
+Shranjena gesla so na tem računalniku šifrirana.
+Po opravilu pustite računalnik vklopljen, se odjavite, znova zaženite ali ga izklopite.
+Odprta koda, brez računa, brez oglasov in brez telemetrije.
+Naložite mapo in preskočite datoteke, ki so že shranjene.

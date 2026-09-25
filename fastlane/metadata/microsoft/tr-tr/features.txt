@@ -1,0 +1,18 @@
+Artımlı yedek, son çalışmadan beri değişenleri saklar.
+Yinelenenleri ayıklama, aynı dosya birden fazla kez geçtiğinde bir kopya tutar.
+Daha önce aldığınız bir yedekten dosyaları geri yükleyin.
+Yerel klasöre, WebDAV’a, S3 uyumlu depolamaya veya NFS’ye yedekleyin.
+NAS’a (SMB/CIFS), Azure Blob’a, SFTP veya FTPS ile yedekleyin.
+Kontrol ettiğiniz depolama üzerinden bilgisayarlar arasında klasör eşitleyin.
+Eşitlenen bir dosya değiştiğinde eski sürümleri saklayın.
+SD karttan veya kameradan fotoğraf, video ve ses alın.
+Aynı Wi-Fi ağındaki bir telefondan fotoğraf ve video alın.
+İçe aktarılan dosyaları seçtiğiniz bir şablonla adlandırın.
+Oturum açıldığında veya haftalık bir planla yedek zamanlayın.
+Aynı görevleri konsoldan, zamanlama dahil, çalıştırın.
+Otomatikleştirmek için herhangi bir görevin konsol komutunu kopyalayın.
+Hangi görevlerin zamanlandığını ve son çalışmanın nasıl bittiğini görün.
+Kayıtlı parolalar bu bilgisayarda şifrelenir.
+Bir görevden sonra bilgisayarı açık bırakın, oturumu kapatın, yeniden başlatın veya kapatın.
+Açık kaynak; hesap, reklam ve telemetri yok.
+Bir klasör yükleyin ve zaten depolanmış dosyaları atlayın.

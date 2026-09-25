@@ -1,0 +1,7 @@
+archivos copia restauración
+sincronizar carpetas
+incremental programada
+NAS S3 SFTP WebDAV
+importar fotos cámara
+deduplicación historial versiones
+local FTPS Azure NFS

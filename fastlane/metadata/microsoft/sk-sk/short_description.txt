@@ -1,0 +1,1 @@
+Prírastkové zálohovanie súborov, synchronizácia priečinkov a obnova. Deduplikácia, plány a import fotiek. Miestny priečinok, NAS, S3, SFTP alebo WebDAV. Bez účtu a bez reklám.

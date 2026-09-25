@@ -1,0 +1,18 @@
+O‘suvchi zaxira oxirgi ishga tushirishdan keyin o‘zgarganini saqlaydi.
+Takrorlarni olib tashlash bir xil fayl bir necha marta chiqsa bitta nusxani qoldiradi.
+Allaqachon yaratgan zaxirangizdan fayllarni tiklang.
+Mahalliy jildga, WebDAV ga, S3 bilan mos saqlashga yoki NFS ga zaxiralang.
+NAS ga (SMB/CIFS), Azure Blob ga, SFTP yoki FTPS orqali zaxiralang.
+Kompyuterlar o‘rtasida jildni o‘zingiz boshqaradigan saqlash orqali sinxronlang.
+Sinxronlangan fayl o‘zgaganda eski versiyalarni saqlang.
+SD kartadan yoki kameradan foto, video va audio oling.
+O‘sha Wi-Fi dagi telefondan foto va video oling.
+Import qilingan fayllarga tanlagan andozangiz bilan nom bering.
+Kirishda yoki haftalik reja bo‘yicha zaxirani rejalashtiring.
+Xuddi shu vazifalarni konsoldan, jadval bilan birga, ishga tushiring.
+Istalgan vazifaning konsol buyrug‘ini nusxalang, shunda uni avtomatlashtirasiz.
+Qaysi vazifalar rejalashtirilganini va oxirgi ish qanday tugaganini ko‘ring.
+Saqlangan parollar shu kompyuterda shifrlanadi.
+Vazifadan keyin kompyuterni yoniq qoldiring, chiqing, qayta ishga tushiring yoki o‘chiring.
+Ochiq manba, hisobsiz, reklamasiz va telemetriyasiz.
+Jildni yuklang va allaqachon saqlangan fayllarni tashlab keting.

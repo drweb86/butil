@@ -1,0 +1,7 @@
+Dateien Sicherung Backup
+Ordner Sync
+inkrementell Zeitplan
+NAS S3 SFTP WebDAV
+Fotoimport Kamera
+Deduplizierung Versionsverlauf
+lokal FTPS Azure NFS

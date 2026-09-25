@@ -1,0 +1,9 @@
+BUtil sikkerhetskopierer, synkroniserer og gjenoppretter filer på denne PC-en. Trinnvise sikkerhetskopier lagrer bare det som er endret. Deduplisering beholder én kopi når samme fil finnes mer enn én gang.
+
+Send sikkerhetskopier til en mappe på denne PC-en, til en NAS (SMB/CIFS), eller til WebDAV, S3-kompatibel lagring, NFS, Azure Blob, SFTP eller FTPS.
+
+Synkroniser en mappe via lagring du styrer, og behold eldre versjoner når filer endres. Importer bilder, video og lyd fra et SD-kort, et kamera eller en telefon på samme wifi.
+
+De samme oppgavene kjører fra konsollen, også etter en tidsplan. Passord du lagrer, krypteres på denne datamaskinen. Det er ingen konto, ingen reklame og ingen telemetri.
+
+BUtil er åpen kildekode. Egen kode er viet til offentlig eiendom. Tredjepartskomponenter beholder sine egne lisenser.

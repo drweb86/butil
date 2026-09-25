@@ -1,0 +1,7 @@
+fișiere backup restaurare
+sincronizare foldere
+incrementală programată
+NAS S3 SFTP WebDAV
+import fotografii cameră
+deduplicare istoric versiuni
+local FTPS Azure NFS

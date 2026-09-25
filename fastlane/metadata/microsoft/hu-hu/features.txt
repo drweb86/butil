@@ -1,0 +1,18 @@
+A növekményes mentés csak azt tárolja, ami a legutóbbi futás óta változott.
+A deduplikáció egy példányt tart meg, ha ugyanaz a fájl többször szerepel.
+Állítson vissza fájlokat egy már elkészített mentésből.
+Mentés helyi mappába, WebDAV-ra, S3-kompatibilis tárhelyre vagy NFS-re.
+Mentés NAS-ra (SMB/CIFS), Azure Blobra, SFTP-re vagy FTPS-re.
+Mappa szinkronizálása számítógépek között az Ön által kezelt tárhelyen.
+Régebbi verziók megőrzése, ha egy szinkronizált fájl megváltozik.
+Fotók, videó és hang importálása SD-kártyáról vagy fényképezőgépről.
+Fotók és videók importálása telefonról ugyanazon a Wi-Fi-n.
+Az importált fájlok elnevezése egy Ön által választott sablonnal.
+Mentés ütemezése bejelentkezéskor vagy heti terv szerint.
+Ugyanezek a feladatok a konzolból, ütemezéssel együtt.
+Konzolparancs másolása bármely feladathoz, hogy automatizálhassa.
+Látható, mely feladatok ütemezettek, és hogyan végződött az utolsó futás.
+A mentett jelszavak ezen a számítógépen titkosítva vannak.
+Feladat után a PC bekapcsolva maradhat, kijelentkezhet, újraindulhat vagy leállhat.
+Nyílt forráskód, fiók, hirdetés és telemetria nélkül.
+Mappa feltöltése, a már tárolt fájlok kihagyásával.

@@ -1,0 +1,1 @@
+Primeira versão na Microsoft Store. Backup incremental com deduplicação, sincronização de pastas, importação de fotos e restauração. Os arquivos vão só para o armazenamento que você escolhe. Sem conta e sem anúncios.

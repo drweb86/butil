@@ -1,0 +1,1 @@
+Przyrostowa kopia zapasowa, synchronizacja folderów i przywracanie. Deduplikacja, harmonogramy i import zdjęć. Folder lokalny, NAS, S3, SFTP lub WebDAV. Bez konta i bez reklam.

@@ -1,0 +1,1 @@
+Cadangan file inkremental, sinkron folder, dan pemulihan. Deduplikasi, jadwal, dan impor foto. Folder lokal, NAS, S3, SFTP, atau WebDAV. Tanpa akun dan tanpa iklan.

@@ -1,1 +1,1 @@
-Incremental backup with deduplication, folder sync, and photo import. Open source. No account and no ads. Files go only to storage you choose.
+Initial release on the Microsoft Store. Incremental file backup with deduplication, folder sync, photo import, and restore. Files go only to storage you choose. No account and no ads.

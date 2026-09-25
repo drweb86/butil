@@ -1,0 +1,1 @@
+Sao lưu tệp tăng dần, đồng bộ thư mục và khôi phục. Loại bản trùng, lịch và nhập ảnh. Thư mục cục bộ, NAS, S3, SFTP hoặc WebDAV. Không tài khoản và không quảng cáo.

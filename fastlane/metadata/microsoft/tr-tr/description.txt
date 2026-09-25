@@ -1,0 +1,9 @@
+BUtil bu bilgisayarda dosyaları yedekler, eşitler ve geri yükler. Artımlı yedekler yalnızca değişeni saklar. Yinelenenleri ayıklama, aynı dosya birden fazla kez geçtiğinde tek bir kopya tutar.
+
+Yedekleri bu bilgisayardaki bir klasöre, bir NAS’a (SMB/CIFS) veya WebDAV, S3 uyumlu depolama, NFS, Azure Blob, SFTP ya da FTPS’ye gönderin.
+
+Kontrol ettiğiniz depolama üzerinden bir klasörü eşitleyin ve dosyalar değiştiğinde eski sürümleri saklayın. SD karttan, kameradan veya aynı Wi-Fi ağındaki bir telefondan resim, video ve ses alın.
+
+Aynı görevler konsoldan, zamanlama dahil, çalışır. Kaydettiğiniz parolalar bu bilgisayarda şifrelenir. Hesap, reklam ve telemetri yoktur.
+
+BUtil açık kaynaktır. Kendi kodu kamu malıdır. Üçüncü taraf bileşenler kendi lisanslarını korur.

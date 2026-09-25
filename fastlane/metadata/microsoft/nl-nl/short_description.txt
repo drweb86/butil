@@ -1,0 +1,1 @@
+Incrementele back-up, mapsynchronisatie en herstel. Deduplicatie, schema's en foto-import. Lokale map, NAS, S3, SFTP of WebDAV. Geen account en geen advertenties.

@@ -1,0 +1,1 @@
+Prva različica v Microsoft Store. Prirastno varnostno kopiranje z deduplikacijo, sinhronizacija map, uvoz fotografij in obnovitev. Datoteke gredo samo v shrambo, ki jo izberete. Brez računa in brez oglasov.

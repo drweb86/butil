@@ -1,0 +1,1 @@
+Artımlı dosya yedekleme, klasör eşitleme ve geri yükleme. Yinelenenleri ayıklama, zamanlamalar ve fotoğraf içe aktarma. Yerel klasör, NAS, S3, SFTP veya WebDAV. Hesap yok, reklam yok.

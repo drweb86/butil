@@ -1,0 +1,7 @@
+bestanden backup herstel
+map synchronisatie
+incrementeel gepland
+NAS S3 SFTP WebDAV
+foto import camera
+deduplicatie versies geschiedenis
+lokaal FTPS Azure NFS

@@ -1,0 +1,18 @@
+Een incrementele back-up bewaart alleen wat sinds de laatste keer is gewijzigd.
+Deduplicatie houdt één kopie wanneer hetzelfde bestand vaker voorkomt.
+Herstel bestanden uit een back-up die u al hebt gemaakt.
+Maak een back-up naar een lokale map, WebDAV, S3-compatibele opslag of NFS.
+Maak een back-up naar een NAS (SMB/CIFS), Azure Blob, SFTP of FTPS.
+Synchroniseer een map tussen computers via opslag die u beheert.
+Bewaar oudere versies wanneer een gesynchroniseerd bestand wijzigt.
+Importeer foto's, video en audio van een SD-kaart of camera.
+Importeer foto's en video's van een telefoon op dezelfde wifi.
+Geef geïmporteerde bestanden een naam met een sjabloon dat u kiest.
+Plan een back-up bij het aanmelden of volgens een wekelijks schema.
+Voer dezelfde taken uit vanuit de console, ook volgens een schema.
+Kopieer een consoleopdracht voor elke taak, zodat u die kunt automatiseren.
+Zie welke taken zijn gepland en hoe de laatste uitvoering is geëindigd.
+Opgeslagen wachtwoorden worden op deze computer versleuteld.
+Laat de pc na een taak aan, meld af, start opnieuw op of zet hem uit.
+Open source, zonder account, zonder advertenties en zonder telemetrie.
+Upload een map en sla bestanden over die al zijn opgeslagen.

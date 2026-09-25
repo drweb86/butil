@@ -1,9 +1,9 @@
-BUtil keeps copies of the files you cannot afford to lose. Make incremental backups, keep two folders in sync, and bring photos and videos in from a camera or phone.
+BUtil backs up, syncs, and restores files on this PC. Incremental backups store only what changed. Deduplication keeps a single copy when the same file appears more than once.
 
-Backups store only what changed. Deduplication avoids keeping the same file twice. Send them to a folder on this PC, or to WebDAV, S3-compatible storage, NFS, Azure Blob, SFTP, FTPS, or SMB/CIFS.
+Send backups to a folder on this PC, a NAS (SMB/CIFS), or to WebDAV, S3-compatible storage, NFS, Azure Blob, SFTP, or FTPS.
 
-Sync a folder through storage you control, and keep older versions when files change. Import pictures and video from an SD card, a camera, or a phone on the same Wi-Fi.
+Sync a folder through storage you control, and keep older versions when files change. Import pictures, video, and audio from an SD card, a camera, or a phone on the same Wi-Fi.
 
-A console app runs the same tasks on a schedule. Passwords you save are encrypted on this computer. There is no account, no advertising, and no telemetry.
+Run the same tasks from the console, including on a schedule. Passwords you save are encrypted on this computer. There is no account, no advertising, and no telemetry.
 
 BUtil is open source. Its own code is dedicated to the public domain. Third-party components keep their own licenses.

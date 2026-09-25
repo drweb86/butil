@@ -1,0 +1,7 @@
+filer backup återställning
+mapp synkronisering
+inkrementell schemalagd
+NAS S3 SFTP WebDAV
+foto import kamera
+deduplicering versioner historik
+lokal FTPS Azure NFS

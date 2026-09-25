@@ -1,0 +1,18 @@
+Cadangan inkremental hanya menyimpan yang berubah sejak proses terakhir.
+Deduplikasi menyimpan satu salinan saat file yang sama muncul lebih dari sekali.
+Pulihkan file dari cadangan yang sudah Anda buat.
+Cadangkan ke folder lokal, WebDAV, penyimpanan yang kompatibel dengan S3, atau NFS.
+Cadangkan ke NAS (SMB/CIFS), Azure Blob, SFTP, atau FTPS.
+Sinkronkan folder antar komputer lewat penyimpanan yang Anda kendalikan.
+Simpan versi lama saat file yang disinkronkan berubah.
+Impor foto, video, dan audio dari kartu SD atau kamera.
+Impor foto dan video dari ponsel di Wi-Fi yang sama.
+Beri nama file yang diimpor dengan templat yang Anda pilih.
+Jadwalkan cadangan saat masuk atau menurut rencana mingguan.
+Jalankan tugas yang sama dari konsol, termasuk sesuai jadwal.
+Salin perintah konsol tugas apa pun agar dapat diotomatiskan.
+Lihat tugas mana yang dijadwalkan dan bagaimana proses terakhir selesai.
+Kata sandi yang disimpan dienkripsi di komputer ini.
+Setelah tugas, biarkan PC menyala, keluar, mulai ulang, atau matikan.
+Sumber terbuka, tanpa akun, tanpa iklan, dan tanpa telemetri.
+Unggah folder dan lewati file yang sudah tersimpan.

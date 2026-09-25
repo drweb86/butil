@@ -1,0 +1,1 @@
+O‘suvchi fayl zaxirasi, jild sinxronlash va tiklash. Takrorlarni olib tashlash, jadval va foto import. Mahalliy jild, NAS, S3, SFTP yoki WebDAV. Hisob yo‘q va reklama yo‘q.

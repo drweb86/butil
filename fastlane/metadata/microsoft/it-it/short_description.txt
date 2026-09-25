@@ -1,0 +1,1 @@
+Backup incrementale dei file, sincronizzazione delle cartelle e ripristino. Deduplicazione, pianificazioni e importazione foto. Cartella locale, NAS, S3, SFTP o WebDAV. Senza account e senza pubblicità.

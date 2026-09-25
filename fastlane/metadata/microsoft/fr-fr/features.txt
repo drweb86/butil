@@ -1,0 +1,18 @@
+La sauvegarde incrémentielle ne conserve que ce qui a changé depuis la dernière exécution.
+La déduplication ne garde qu’une copie lorsque le même fichier apparaît plusieurs fois.
+Restaurez des fichiers à partir d’une sauvegarde déjà créée.
+Sauvegardez vers un dossier local, WebDAV, un stockage compatible S3 ou NFS.
+Sauvegardez vers un NAS (SMB/CIFS), Azure Blob, SFTP ou FTPS.
+Synchronisez un dossier entre ordinateurs via un stockage que vous contrôlez.
+Conservez les anciennes versions lorsqu’un fichier synchronisé change.
+Importez des photos, des vidéos et de l’audio depuis une carte SD ou un appareil photo.
+Importez des photos et des vidéos depuis un téléphone sur le même Wi-Fi.
+Nommez les fichiers importés selon un modèle que vous choisissez.
+Planifiez une sauvegarde à la connexion ou chaque semaine.
+Exécutez les mêmes tâches depuis la console, y compris selon une planification.
+Copiez une commande de console pour chaque tâche afin de l’automatiser.
+Voyez quelles tâches sont planifiées et comment la dernière exécution s’est terminée.
+Les mots de passe enregistrés sont chiffrés sur cet ordinateur.
+Après une tâche, laissez le PC allumé, déconnectez-vous, redémarrez ou arrêtez-le.
+Open source, sans compte, sans publicité et sans télémétrie.
+Envoyez un dossier et ignorez les fichiers déjà stockés.

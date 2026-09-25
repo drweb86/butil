@@ -1,0 +1,1 @@
+Rilis pertama di Microsoft Store. Cadangan file inkremental dengan deduplikasi, sinkron folder, impor foto, dan pemulihan. File hanya menuju penyimpanan yang Anda pilih. Tanpa akun dan tanpa iklan.

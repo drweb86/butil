@@ -1,0 +1,1 @@
+První verze v Microsoft Storu. Přírůstkové zálohování s deduplikací, synchronizace složek, import fotek a obnova. Soubory jdou jen do úložiště, které si vyberete. Bez účtu a bez reklam.

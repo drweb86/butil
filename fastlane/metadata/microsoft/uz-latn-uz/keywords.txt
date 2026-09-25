@@ -1,0 +1,7 @@
+fayl zaxira tiklash
+jild sinxron
+o‘suvchi jadval
+NAS S3 SFTP WebDAV
+foto import kamera
+takror versiya tarix
+mahalliy FTPS Azure NFS

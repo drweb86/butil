@@ -1,0 +1,1 @@
+Prva verzija u Microsoft Storeu. Inkrementalna sigurnosna kopija s deduplikacijom, sinkronizacija mapa, uvoz fotografija i vraćanje. Datoteke idu samo u pohranu koju odaberete. Bez računa i bez oglasa.

@@ -1,0 +1,9 @@
+BUtil pravi rezervne kopije, sinhronizuje i vraća datoteke na ovom računaru. Inkrementalne kopije čuvaju samo ono što se promenilo. Deduplikacija zadržava jednu kopiju kada se ista datoteka pojavi više puta.
+
+Šaljite kopije u fasciklu na ovom računaru, na NAS (SMB/CIFS) ili na WebDAV, skladište usklađeno sa S3, NFS, Azure Blob, SFTP ili FTPS.
+
+Sinhronizujte fasciklu preko skladišta kojim upravljate i zadržite starije verzije kada se datoteke promene. Uvezite slike, video i zvuk sa SD kartice, fotoaparata ili telefona na istoj Wi-Fi mreži.
+
+Isti zadaci rade iz konzole, uključujući raspored. Lozinke koje sačuvate šifruju se na ovom računaru. Nema naloga, reklama ni telemetrije.
+
+BUtil je otvorenog koda. Sopstveni kod je predat u javno vlasništvo. Komponente trećih strana zadržavaju sopstvene licence.
