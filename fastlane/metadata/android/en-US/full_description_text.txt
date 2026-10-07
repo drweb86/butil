@@ -1,0 +1,13 @@
+BUtil backs up, syncs, and restores files. Incremental backups store only what changed. Deduplication keeps a single copy when the same file appears more than once.
+
+Where the files go
+
+Send backups to a folder, a NAS (SMB/CIFS), or to WebDAV, S3-compatible storage, NFS, Azure Blob, SFTP, or FTPS.
+
+- Sync a folder through storage you control, and keep older versions when files change.
+- Import pictures, video, and audio from an SD card or a camera.
+- Run tasks on a schedule, including from the console.
+
+Passwords you save are encrypted on the device. There is no account, no advertising, and no telemetry.
+
+BUtil is open source. Its own code is dedicated to the public domain. Third-party components keep their own licenses.

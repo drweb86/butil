@@ -8,6 +8,7 @@
 ## Changes
 - Italian language was updated by https://github.com/bovirus .
 - Some libraries were updated.
+- Android: Kotlin stub, Play listing folder, and release build.
 
 # 2026.09.25
 

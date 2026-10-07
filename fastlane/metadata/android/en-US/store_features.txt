@@ -1,0 +1,7 @@
+Incremental backup stores only what changed since the last run.
+Deduplication keeps one copy when the same file appears more than once.
+Restore files from a backup you already made.
+Back up to a local folder, NAS, WebDAV, S3, NFS, Azure Blob, SFTP, or FTPS.
+Sync a folder through storage you control, and keep older versions.
+Import photos, video, and audio from an SD card or camera.
+Open source, with no account, no ads, and no telemetry.

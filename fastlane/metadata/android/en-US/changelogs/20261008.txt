@@ -1,0 +1,1 @@
+First Android build. The application is a stub while the Kotlin port is prepared.

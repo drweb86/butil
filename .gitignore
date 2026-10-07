@@ -11,3 +11,8 @@ sources/frontend/node_modules/
 snap/snapcraft.yaml
 sources/setup-languages.nsh
 sources/tools/winget-pkgs/SiarheiKuchuk.BUtil.locale.*.yaml
+sources/android/.gradle/
+sources/android/build/
+sources/android/app/build/
+sources/android/local.properties
+sources/android/.idea/

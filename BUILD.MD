@@ -9,7 +9,8 @@ The `.github/workflows/workflow.yml` workflow runs when a GitHub Release is publ
 
 1. **Builds Linux packages** (x64 + arm64: .deb, .rpm, pacman, and a tarball), uploads them to the Release, and updates the APT repository on `gh-pages` from the .deb packages
 2. **Builds Windows installer** (NSIS .exe with x64 + arm64) and **7z archive**, uploads them to the Release
-3. **Creates a branch** in the `drweb86/winget-pkgs` fork with the WinGet manifest for the new version
+3. **Builds the Android release** (APK and AAB from `sources/android`). The packages are attached to the Release when the Android signing secrets are set. Without those secrets the workflow still builds and uploads an unsigned package as an Actions artifact.
+4. **Creates a branch** in the `drweb86/winget-pkgs` fork with the WinGet manifest for the new version
 
 ## One-time GitHub setup
 
@@ -22,6 +23,10 @@ Go to repository **Settings > Secrets and variables > Actions > Repository secre
 | `DEB_GPG_PRIVATE_KEY` | Full armored GPG private key (output of `gpg --armor --export-secret-keys YOUR_KEY_ID`) |
 | `DEB_GPG_PASSPHRASE` | Passphrase for the GPG key (empty string if none) |
 | `WINGET_FORK_PAT` | GitHub Personal Access Token with `repo` scope, for pushing to `drweb86/winget-pkgs` fork |
+| `ANDROID_KEYSTORE_BASE64` | Base64 of the Android release keystore. Omit all four Android secrets until you are ready to sign; the workflow then uploads an unsigned APK and AAB as an Actions artifact and does not attach them to the Release. |
+| `ANDROID_KEYSTORE_PASSWORD` | Password for that keystore. Required when `ANDROID_KEYSTORE_BASE64` is set. |
+| `ANDROID_KEY_ALIAS` | Key alias inside the keystore. Required when `ANDROID_KEYSTORE_BASE64` is set. |
+| `ANDROID_KEY_PASSWORD` | Password for that key. Required when `ANDROID_KEYSTORE_BASE64` is set. |
 
 #### Generating the GPG key
 
