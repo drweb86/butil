@@ -5,9 +5,9 @@
 
 # Automated Release (GitHub Actions)
 
-The `.github/workflows/publish-deb.yml` workflow runs when a GitHub Release is published. It automatically:
+The `.github/workflows/workflow.yml` workflow runs when a GitHub Release is published. It automatically:
 
-1. **Builds Ubuntu .deb packages** (x64 + arm64), uploads them to the Release, and updates the APT repository on `gh-pages`
+1. **Builds Linux packages** (x64 + arm64: .deb, .rpm, pacman, and a tarball), uploads them to the Release, and updates the APT repository on `gh-pages` from the .deb packages
 2. **Builds Windows installer** (NSIS .exe with x64 + arm64) and **7z archive**, uploads them to the Release
 3. **Creates a branch** in the `drweb86/winget-pkgs` fork with the WinGet manifest for the new version
 

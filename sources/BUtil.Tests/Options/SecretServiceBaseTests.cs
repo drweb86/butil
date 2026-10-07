@@ -31,6 +31,7 @@ public class SecretServiceBaseTests
             new TestStorageSettingsProvider(),
             typeof(TestStorageSettings),
             (_, _, _) => throw new NotSupportedException());
+        BUtilServerTaskPlugin.Register();
     }
 
     [TestMethod]

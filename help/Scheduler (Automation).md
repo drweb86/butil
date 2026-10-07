@@ -3,7 +3,7 @@
 BUtil integrates with the operating system scheduler under the **current user account**.
 
 - On **Windows**, when you fill in scheduled days and time in the **When?** section of a task, the application creates or updates a dedicated entry in the **Windows Task Scheduler**.
-- On **Ubuntu / Linux**, the same UI updates the current user's **crontab**.
+- On **Linux**, the same UI updates the current user's **crontab**.
 
 The user must be logged in at the scheduled time for the task to actually run (a scheduled task does not wake the machine and is not a system-level service).
 

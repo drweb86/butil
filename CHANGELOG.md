@@ -1,4 +1,15 @@
-﻿# 2026.09.25
+﻿# 2026.10.08
+(unpublshed)
+
+## New Features
+- Application is published to Windows Store. If you are not in corporate environment, consider uninstalling of application and reinstalling from Windows Store, since it will keep your application updated.
+- All linuxes are covered with builds.
+
+## Changes
+- Italian language was updated by https://github.com/bovirus .
+- Some libraries were updated.
+
+# 2026.09.25
 
 ## New Features
 - Preparation for Windows Store.

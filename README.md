@@ -35,7 +35,7 @@ Urdu, Uzbek, Vietnamese, Welsh, Yue Chinese, English
 
 ## Requirements
 
-**Windows 11 x64, ARM64** or [**Ubuntu 24+**](./help/Ubuntu.md).
+**Windows 11 x64, ARM64** or **Linux** (glibc, amd64 and arm64).
 
 ## 📦 Installation Options
 
@@ -67,6 +67,8 @@ Binaries are good if setups and zip archives are blocked by corporate policies. 
 
 <summary>📦 Installation for Linux</summary>
 
+Debian, Ubuntu, and derivatives
+
 A. Installation via APT Repository
 
 Best option. System will keep application updated.
@@ -78,17 +80,9 @@ curl -fsSL https://drweb86.github.io/butil/gpg-key.pub | sudo gpg --dearmor -o /
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/butil.gpg] https://drweb86.github.io/butil stable main" | sudo tee /etc/apt/sources.list.d/butil.list > /dev/null
 ```
 
-Install
+Install `sudo apt update && sudo apt install butil`
 
-```
-sudo apt update && sudo apt install butil
-```
-
-Update
-
-```
-sudo apt update && sudo apt upgrade butil
-```
+Update `sudo apt update && sudo apt upgrade butil`
 
 Uninstall
 
@@ -99,25 +93,9 @@ sudo rm /etc/apt/sources.list.d/butil.list /usr/share/keyrings/butil.gpg
 
 B. DEB [look for asset linux_arm64.deb and linux_amd64.deb](https://github.com/drweb86/butil/releases/latest)
 
-For amd64:
+Those files can be installed with `sudo dpkg -i butil_*_linux_*.deb && sudo apt-get install -f` .
 
-```
-sudo dpkg -i butil_*_linux_amd64.deb
-sudo apt-get install -f
-```
-
-For ARM64:
-
-```
-sudo dpkg -i butil_*_linux_arm64.deb
-sudo apt-get install -f
-```
-
-Uninstall
-
-```
-sudo apt remove butil
-```
+Uninstall `sudo apt remove butil`
 
 C. Bash script
 
@@ -133,10 +111,29 @@ Uninstallation (source install only):
 
 `wget -O - https://raw.githubusercontent.com/drweb86/butil/master/sources/ubuntu-uninstall.sh | bash`
 
-After installation (APT or .deb), the following commands are available:
+Fedora, RHEL, Rocky, Alma, and openSUSE
 
-- **`butil-ui`** — graphical user interface
-- **`butilc`** — console tool for automation and scheduling
+RPM [look for asset linux_x86_64.rpm and linux_aarch64.rpm](https://github.com/drweb86/butil/releases/latest)
+
+`sudo dnf install ./butil_*_linux_*.rpm`
+
+openSUSE: `sudo zypper install ./butil_*_linux_*.rpm`
+
+Arch Linux, Manjaro, and EndeavourOS
+
+Pacman [look for asset linux_x86_64.pkg.tar.zst and linux_aarch64.pkg.tar.zst](https://github.com/drweb86/butil/releases/latest)
+
+`sudo pacman -U butil_*_linux_*.pkg.tar.zst`
+
+Other glibc Linux (amd64 and arm64)
+
+Tarball [look for asset linux_amd64.tar.gz and linux_arm64.tar.gz](https://github.com/drweb86/butil/releases/latest)
+
+`sudo tar -C / -xzf butil_*_linux_*.tar.gz`
+
+The tarball unpacks into `/usr`. The system needs glibc, libstdc++, libX11, and fontconfig.
+
+After installation for linux, the following commands are available: **`butil-ui`** — graphical user interface; **`butilc`** — console tool for automation and scheduling. Scheduling uses crontab. Debian and Ubuntu packages depend on cron; Arch packages depend on cronie. On Fedora, RHEL, openSUSE, and the tarball, install cron or cronie when it is not already present.
 
 </details>
 
