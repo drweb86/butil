@@ -10,6 +10,9 @@
 - Some libraries were updated.
 - Android: Kotlin stub, Play listing folder, and release build.
 
+## Bug Fixes
+- Icon with black background for Windows Store builds.
+
 # 2026.09.25
 
 ## New Features

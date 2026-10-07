@@ -30,7 +30,7 @@ function ConvertTo-MsixVersion([string]$ChangelogVersion) {
     return ($parts -join ".")
 }
 
-function Find-MakeAppx {
+function Find-WindowsKitTool([string]$Name) {
     $searchRoots = @(
         (Join-Path ${env:ProgramFiles(x86)} "Windows Kits\10\bin"),
         (Join-Path $env:ProgramFiles "Windows Kits\10\bin")
@@ -40,7 +40,7 @@ function Find-MakeAppx {
         if (-not (Test-Path $kitsBin)) {
             continue
         }
-        $exe = Get-ChildItem $kitsBin -Recurse -Filter "makeappx.exe" -ErrorAction SilentlyContinue |
+        $exe = Get-ChildItem $kitsBin -Recurse -Filter $Name -ErrorAction SilentlyContinue |
             Where-Object { $_.Directory.Name -eq "x64" } |
             Sort-Object { $_.Directory.Parent.Name } -Descending |
             Select-Object -First 1
@@ -49,15 +49,17 @@ function Find-MakeAppx {
         }
     }
     if (-not $exe) {
-        throw "makeappx.exe not found under Windows Kits. Install the Windows 10/11 SDK (MakeAppx)."
+        throw "$Name not found under Windows Kits. Install the Windows 10/11 SDK."
     }
     return $exe.FullName
 }
 
 $msixVersion = ConvertTo-MsixVersion $Version
-$makeAppx = Find-MakeAppx
+$makeAppx = Find-WindowsKitTool "makeappx.exe"
+$makePri = Find-WindowsKitTool "makepri.exe"
 $packageDir = Join-Path $RepoRoot "sources\butil-ui.Desktop.Package"
 $template = Join-Path $packageDir "Package.appxmanifest"
+$priconfig = Join-Path $packageDir "priconfig.xml"
 $assetsSrc = Join-Path $packageDir "Assets"
 $publishRoot = Join-Path $RepoRoot "Output\publish"
 $outDir = Join-Path $RepoRoot "Output"
@@ -67,6 +69,9 @@ if (-not (Test-Path $template)) {
 }
 if (-not (Test-Path $assetsSrc)) {
     throw "Missing $assetsSrc"
+}
+if (-not (Test-Path $priconfig)) {
+    throw "Missing $priconfig"
 }
 
 New-Item -ItemType Directory -Force -Path $outDir | Out-Null
@@ -114,6 +119,20 @@ foreach ($arch in $arches) {
     $utf8NoBom = New-Object System.Text.UTF8Encoding $false
     [System.IO.File]::WriteAllText($manifestPath, $manifestText, $utf8NoBom)
 
+    # Index unplated logos. Without resources.pri, transparent BackgroundColor is plated on black.
+    $priIndex = Join-Path $RepoRoot "Output\msix-pri\$($arch.Folder)"
+    if (Test-Path $priIndex) {
+        Remove-Item $priIndex -Recurse -Force
+    }
+    New-Item -ItemType Directory -Force -Path $priIndex | Out-Null
+    Copy-Item $assetsDest (Join-Path $priIndex "Assets") -Recurse
+    $priPath = Join-Path $staging "resources.pri"
+    Write-Output "Indexing package resources for $($arch.Folder) with $makePri"
+    & $makePri new /pr $priIndex /cf $priconfig /mn $manifestPath /of $priPath /o
+    if ($LASTEXITCODE -ne 0) {
+        throw "makepri failed for $($arch.Folder) with exit code $LASTEXITCODE"
+    }
+
     $msixName = "butil_${Version}_windows_$($arch.Folder).msix"
     $msixPath = Join-Path $outDir $msixName
     if (Test-Path $msixPath) {
@@ -128,5 +147,6 @@ foreach ($arch in $arches) {
 }
 
 Remove-Item (Join-Path $RepoRoot "Output\msix-staging") -Recurse -Force -ErrorAction SilentlyContinue
+Remove-Item (Join-Path $RepoRoot "Output\msix-pri") -Recurse -Force -ErrorAction SilentlyContinue
 Write-Output "MSIX packages written to $outDir"
 exit 0
