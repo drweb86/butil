@@ -12,7 +12,7 @@ env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
-  build-deb:
+  build-linux:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -24,26 +24,40 @@ jobs:
         with:
           dotnet-version: '10.0.x'
 
-      - name: Build deb packages
+      - name: Install fpm
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ruby ruby-dev build-essential rpm libarchive-tools zstd
+          sudo gem install --no-document fpm -v 1.18.0
+
+      - name: Build Linux packages
         working-directory: sources
         run: |
-          chmod +x build-deb.sh
-          ./build-deb.sh
+          chmod +x build-linux.sh
+          ./build-linux.sh
 
-      - name: Upload deb artifacts
+      - name: Upload Linux artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: deb-packages
-          path: Output/*.deb
+          name: linux-packages
+          path: |
+            Output/*.deb
+            Output/*.rpm
+            Output/*.pkg.tar.zst
+            Output/*.tar.gz
 
-      - name: Upload debs to GitHub Release
+      - name: Upload Linux packages to GitHub Release
         if: github.event_name == 'release'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          for deb in Output/*.deb; do
-            gh release upload "${{ github.event.release.tag_name }}" "$deb" --clobber
-          done
+          shopt -s nullglob
+          files=(Output/*.deb Output/*.rpm Output/*.pkg.tar.zst Output/*.tar.gz)
+          if [ ${#files[@]} -eq 0 ]; then
+            echo "No Linux packages found"
+            exit 1
+          fi
+          gh release upload "${{ github.event.release.tag_name }}" "${files[@]}" --clobber
 
   build-windows:
     runs-on: windows-latest
@@ -170,7 +184,7 @@ jobs:
           }
 
   update-apt-repo:
-    needs: build-deb
+    needs: build-linux
     if: github.event_name == 'release'
     runs-on: ubuntu-latest
     permissions:
@@ -179,7 +193,7 @@ jobs:
       - name: Download deb artifacts
         uses: actions/download-artifact@v4
         with:
-          name: deb-packages
+          name: linux-packages
           path: debs
 
       - name: Import GPG key
