@@ -183,6 +183,91 @@ jobs:
             gh release upload "${{ github.event.release.tag_name }}" $_.FullName --clobber
           }
 
+  build-android:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # F-Droid buildserver-trixie uses Debian openjdk-21 21.0.12.1+1.
+      # Temurin publishes that build as 21.0.12+101.0.LTS. setup-java rejects
+      # the 21.0.12.1+1 form. A different JDK changes classes.dex.
+      - name: Setup Java 21
+        uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: '21.0.12+101.0.LTS'
+
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v4
+
+      - name: Install Android SDK packages
+        run: |
+          set -eux
+          echo "ANDROID_HOME=${ANDROID_HOME:-}"
+          echo "ANDROID_SDK_ROOT=${ANDROID_SDK_ROOT:-}"
+          command -v sdkmanager
+          sdkmanager --install "platforms;android-36" "build-tools;36.0.0"
+
+      - name: Prepare Android signing key
+        env:
+          ANDROID_KEYSTORE_BASE64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+          ANDROID_KEYSTORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+          ANDROID_KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
+          ANDROID_KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
+        run: |
+          if [ -z "${ANDROID_KEYSTORE_BASE64}" ]; then
+            echo "ANDROID_KEYSTORE_BASE64 is not set. The release APK and AAB will be unsigned."
+            exit 0
+          fi
+          missing=0
+          for name in ANDROID_KEYSTORE_PASSWORD ANDROID_KEY_ALIAS ANDROID_KEY_PASSWORD; do
+            if [ -z "${!name}" ]; then
+              echo "$name secret is required when ANDROID_KEYSTORE_BASE64 is set."
+              missing=1
+            fi
+          done
+          [ "$missing" -eq 0 ] || exit 1
+          echo "$ANDROID_KEYSTORE_BASE64" | base64 --decode > "${{ github.workspace }}/android-release.keystore"
+
+      - name: Get version
+        id: version
+        run: |
+          version=$(head -1 CHANGELOG.md | sed 's/^\xEF\xBB\xBF//' | grep -oE '[0-9]{4}\.[0-9]{2}\.[0-9]{2}' | head -1)
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+          echo "Version: $version"
+
+      - name: Build Android release APK and AAB
+        env:
+          VERSION: ${{ steps.version.outputs.version }}
+          ANDROID_KEYSTORE_FILE: ${{ github.workspace }}/android-release.keystore
+          ANDROID_KEYSTORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+          ANDROID_KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
+          ANDROID_KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
+        run: |
+          sed -i 's/\r$//' sources/android/ci-build.sh
+          bash sources/android/ci-build.sh
+
+      - name: Upload Android artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: android-package
+          path: |
+            Output/butil_*_android.apk
+            Output/butil_*_android.aab
+
+      - name: Upload Android APK and AAB to GitHub Release
+        if: github.event_name == 'release'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if [ ! -f "${{ github.workspace }}/android-release.keystore" ]; then
+            echo "Unsigned build. Skipping GitHub Release upload."
+            exit 0
+          fi
+          v="${{ steps.version.outputs.version }}"
+          gh release upload "${{ github.event.release.tag_name }}" "Output/butil_${v}_android.apk" --clobber
+          gh release upload "${{ github.event.release.tag_name }}" "Output/butil_${v}_android.aab" --clobber
+
   update-apt-repo:
     needs: build-linux
     if: github.event_name == 'release'
