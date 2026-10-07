@@ -561,12 +561,6 @@ Sceglie una delle seguenti opzioni:
   <data name="MainWindow_SearchWatermark" xml:space="preserve">
     <value>Cerca</value>
   </data>
-  <data name="Messages_Header_Error" xml:space="preserve">
-    <value>Errore</value>
-  </data>
-  <data name="Messages_Header_Information" xml:space="preserve">
-    <value>Informazione</value>
-  </data>
   <data name="Messages_Header_Question" xml:space="preserve">
     <value>Domanda</value>
   </data>
@@ -599,6 +593,9 @@ Sceglie una delle seguenti opzioni:
   </data>
   <data name="OptionalField_Hint" xml:space="preserve">
     <value>(opzionale)</value>
+  </data>
+  <data name="Menu_Privacy" xml:space="preserve">
+    <value>Privacy</value>
   </data>
   <data name="Other_Menu_Title" xml:space="preserve">
     <value>Altro</value>
@@ -1337,12 +1334,12 @@ Sceglie una delle seguenti opzioni:
     <value>Licenza</value>
   </data>
   <data name="Menu_Credits" xml:space="preserve">
-    <value>Riconoscimenti</value>
+    <value>Ringraziamenti</value>
   </data>
   <data name="Menu_ThirdPartyNotices" xml:space="preserve">
-    <value>Note di terze parti</value>
+    <value>Note terze parti</value>
   </data>
   <data name="License_ThirdPartyNote" xml:space="preserve">
-    <value>Il codice di BUtil è di pubblico dominio. I componenti di terze parti restano sotto le proprie licenze e sono elencati in Note di terze parti.</value>
+    <value>Il codice di BUtil è di pubblico dominio. I componenti di terze parti restano sotto le proprie licenze e sono elencati in 'Note terze parti'.</value>
   </data>
 </root>
