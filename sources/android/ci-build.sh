@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Release APK and AAB for the Android stub.
+# Release APK and AAB for the Android app.
 # Required env: VERSION (date from CHANGELOG.md, for example 2026.10.08)
 # Optional signing env:
 #   ANDROID_KEYSTORE_FILE, ANDROID_KEYSTORE_PASSWORD, ANDROID_KEY_ALIAS, ANDROID_KEY_PASSWORD

@@ -1,4 +1,4 @@
-# Android debug/release build for the Kotlin stub.
+# Android debug/release build.
 # Usage (from the repo root):
 #   powershell -File build-android.ps1
 #   powershell -File build-android.ps1 -Install

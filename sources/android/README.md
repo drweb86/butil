@@ -1,6 +1,8 @@
 # Native Android BUtil (Kotlin)
 
-Empty stub. The screen shows the application name. Backup, sync, and restore are not implemented here yet.
+The home screen is the tasks view. Backup, sync, and restore are not implemented yet, so that view shows stub text. The navigation drawer follows the desktop app menu.
+
+Compress Brotli, Decompress Brotli, Encrypt AES-256, and Decrypt AES-256 are implemented and use the same file formats as the desktop app. AES-256 is the desktop version-1 header (PBKDF2-HMAC-SHA512, AES-CBC, PKCS7). Brotli streams can be read by the desktop app, and streams written by the desktop app can be decompressed here.
 
 Application id: `com.siarheikuchuk.butil`
 
@@ -24,4 +26,4 @@ The debug APK is `Output/butil_android_debug.apk`. A release build reads the ver
 
 Set `ANDROID_KEYSTORE_FILE`, `ANDROID_KEYSTORE_PASSWORD`, `ANDROID_KEY_ALIAS`, and `ANDROID_KEY_PASSWORD` before `-Release` to sign. Without them the release package is unsigned.
 
-Third-party components are listed in [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md).
+Third-party components are listed in [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md). The same file is shown from the Third-party notices menu item.

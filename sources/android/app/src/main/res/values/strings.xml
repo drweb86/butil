@@ -1,4 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">BUtil</string>
+    <string name="app_version_and_site_link">BUtil - V%1$s</string>
+    <string name="theme_title">Theme</string>
+    <string name="theme_value_dark">Dark</string>
+    <string name="theme_value_light">Light</string>
+    <string name="other_menu_title">Other</string>
+    <string name="log_file_browse_logs_folder">Open logs folder</string>
+    <string name="technical_tool_menu_decrypt_aes256">Decrypt AES-256…</string>
+    <string name="technical_tool_menu_encrypt_aes256">Encrypt AES-256…</string>
+    <string name="technical_tool_menu_decompress_brotli">Decompress Brotli…</string>
+    <string name="technical_tool_menu_compress_brotli">Compress Brotli…</string>
+    <string name="technical_tool_menu_prevent_sleep">Prevent sleep…</string>
+    <string name="menu_credits">Credits</string>
+    <string name="menu_license">License</string>
+    <string name="menu_third_party_notices">Third-party notices</string>
+    <string name="menu_privacy">Privacy</string>
+    <string name="task_create">New</string>
+    <string name="incremental_backup_task_create">Incremental backup task</string>
+    <string name="import_media_task_create">Import media task</string>
+    <string name="synchronization_task_create">Synchronization</string>
+    <string name="ftps_server_task_create">Share folder over network (FTPS Server)</string>
+    <string name="upload_folder_contents_task_create">Upload folder to server</string>
+    <string name="task_restore">Restore</string>
+    <string name="task_list">Tasks</string>
+    <string name="stub_not_available">Not available yet.</string>
+    <string name="technical_tool_decrypt_aes256_title">Decrypt AES-256</string>
+    <string name="technical_tool_encrypt_aes256_title">Encrypt AES-256</string>
+    <string name="technical_tool_decompress_brotli_title">Decompress Brotli</string>
+    <string name="technical_tool_compress_brotli_title">Compress Brotli</string>
+    <string name="technical_tool_source_file">Source file:</string>
+    <string name="technical_tool_output_file">Output file:</string>
+    <string name="technical_tool_pick_source_file">Select source file</string>
+    <string name="technical_tool_pick_output_file">Select output file</string>
+    <string name="field_file_browse">Browse file</string>
+    <string name="password_field">Password:</string>
+    <string name="button_cancel">Cancel</string>
+    <string name="button_close">Close</string>
+    <string name="technical_tool_completed">Operation completed successfully.</string>
+    <string name="technical_tool_error_file_not_found">The file does not exist:</string>
+    <string name="technical_tool_error_password_required">Enter a password.</string>
+    <string name="technical_tool_error_path_required">Specify both source and output file paths.</string>
+    <string name="menu_open">Menu</string>
+    <string name="menu_back">Back</string>
 </resources>
