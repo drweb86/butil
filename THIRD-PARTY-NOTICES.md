@@ -6,8 +6,8 @@ The Windows builds include the .NET runtime. It is listed with the MIT component
 
 ## Apache-2.0
 
-- **AWSSDK.Core** 4.0.102.8. Authors: Amazon Web Services. [https://github.com/aws/aws-sdk-net/](https://github.com/aws/aws-sdk-net/)
-- **AWSSDK.S3** 4.0.104.1. Authors: Amazon Web Services. [https://github.com/aws/aws-sdk-net/](https://github.com/aws/aws-sdk-net/)
+- **AWSSDK.Core** 4.0.102.11. Authors: Amazon Web Services. [https://github.com/aws/aws-sdk-net/](https://github.com/aws/aws-sdk-net/)
+- **AWSSDK.S3** 4.0.104.4. Authors: Amazon Web Services. [https://github.com/aws/aws-sdk-net/](https://github.com/aws/aws-sdk-net/)
 
 ## CC0-1.0
 
@@ -24,19 +24,19 @@ The Windows builds include the .NET runtime. It is listed with the MIT component
 ## MIT
 
 - **.NET Runtime** 10. Copyright (c) .NET Foundation and Contributors. [https://dot.net/](https://dot.net/)
-- **Avalonia** 12.1.3. Copyright 2013-2026 © The AvaloniaUI Project. [https://avaloniaui.net/](https://avaloniaui.net/)
+- **Avalonia** 12.1.4. Copyright 2013-2026 © The AvaloniaUI Project. [https://avaloniaui.net/](https://avaloniaui.net/)
 - **Avalonia.Controls.ItemsRepeater** 12.0.0. Copyright 2022-2026 © The AvaloniaUI Project.
-- **Avalonia.Desktop** 12.1.3. Copyright 2013-2026 © The AvaloniaUI Project. [https://avaloniaui.net/](https://avaloniaui.net/)
-- **Avalonia.Fonts.Inter** 12.1.3. Copyright 2013-2026 © The AvaloniaUI Project. [https://avaloniaui.net/](https://avaloniaui.net/)
-- **Avalonia.FreeDesktop** 12.1.3. Copyright 2013-2026 © The AvaloniaUI Project. [https://avaloniaui.net/](https://avaloniaui.net/)
-- **Avalonia.FreeDesktop.AtSpi** 12.1.3. Copyright 2013-2026 © The AvaloniaUI Project. [https://avaloniaui.net/](https://avaloniaui.net/)
-- **Avalonia.HarfBuzz** 12.1.3. Copyright 2013-2026 © The AvaloniaUI Project. [https://avaloniaui.net/](https://avaloniaui.net/)
-- **Avalonia.Native** 12.1.3. Copyright 2013-2026 © The AvaloniaUI Project. [https://avaloniaui.net/](https://avaloniaui.net/)
-- **Avalonia.Remote.Protocol** 12.1.3. Copyright 2013-2026 © The AvaloniaUI Project. [https://avaloniaui.net/](https://avaloniaui.net/)
-- **Avalonia.Skia** 12.1.3. Copyright 2013-2026 © The AvaloniaUI Project. [https://avaloniaui.net/](https://avaloniaui.net/)
-- **Avalonia.Themes.Fluent** 12.1.3. Copyright 2013-2026 © The AvaloniaUI Project. [https://avaloniaui.net/](https://avaloniaui.net/)
-- **Avalonia.Win32** 12.1.3. Copyright 2013-2026 © The AvaloniaUI Project. [https://avaloniaui.net/](https://avaloniaui.net/)
-- **Avalonia.X11** 12.1.3. Copyright 2013-2026 © The AvaloniaUI Project. [https://avaloniaui.net/](https://avaloniaui.net/)
+- **Avalonia.Desktop** 12.1.4. Copyright 2013-2026 © The AvaloniaUI Project. [https://avaloniaui.net/](https://avaloniaui.net/)
+- **Avalonia.Fonts.Inter** 12.1.4. Copyright 2013-2026 © The AvaloniaUI Project. [https://avaloniaui.net/](https://avaloniaui.net/)
+- **Avalonia.FreeDesktop** 12.1.4. Copyright 2013-2026 © The AvaloniaUI Project. [https://avaloniaui.net/](https://avaloniaui.net/)
+- **Avalonia.FreeDesktop.AtSpi** 12.1.4. Copyright 2013-2026 © The AvaloniaUI Project. [https://avaloniaui.net/](https://avaloniaui.net/)
+- **Avalonia.HarfBuzz** 12.1.4. Copyright 2013-2026 © The AvaloniaUI Project. [https://avaloniaui.net/](https://avaloniaui.net/)
+- **Avalonia.Native** 12.1.4. Copyright 2013-2026 © The AvaloniaUI Project. [https://avaloniaui.net/](https://avaloniaui.net/)
+- **Avalonia.Remote.Protocol** 12.1.4. Copyright 2013-2026 © The AvaloniaUI Project. [https://avaloniaui.net/](https://avaloniaui.net/)
+- **Avalonia.Skia** 12.1.4. Copyright 2013-2026 © The AvaloniaUI Project. [https://avaloniaui.net/](https://avaloniaui.net/)
+- **Avalonia.Themes.Fluent** 12.1.4. Copyright 2013-2026 © The AvaloniaUI Project. [https://avaloniaui.net/](https://avaloniaui.net/)
+- **Avalonia.Win32** 12.1.4. Copyright 2013-2026 © The AvaloniaUI Project. [https://avaloniaui.net/](https://avaloniaui.net/)
+- **Avalonia.X11** 12.1.4. Copyright 2013-2026 © The AvaloniaUI Project. [https://avaloniaui.net/](https://avaloniaui.net/)
 - **Azure.Core** 1.60.0. © Microsoft Corporation. All rights reserved. [https://github.com/Azure/azure-sdk-for-net/blob/Azure.Core_1.60.0/sdk/core/Azure.Core/README.md](https://github.com/Azure/azure-sdk-for-net/blob/Azure.Core_1.60.0/sdk/core/Azure.Core/README.md)
 - **Azure.Storage.Blobs** 12.30.1. © Microsoft Corporation. All rights reserved. [https://github.com/Azure/azure-sdk-for-net/blob/Azure.Storage.Blobs_12.30.1/sdk/storage/Azure.Storage.Blobs/README.md](https://github.com/Azure/azure-sdk-for-net/blob/Azure.Storage.Blobs_12.30.1/sdk/storage/Azure.Storage.Blobs/README.md)
 - **Azure.Storage.Common** 12.29.0. © Microsoft Corporation. All rights reserved. [https://github.com/Azure/azure-sdk-for-net/blob/Azure.Storage.Common_12.29.0/sdk/storage/Azure.Storage.Common/README.md](https://github.com/Azure/azure-sdk-for-net/blob/Azure.Storage.Common_12.29.0/sdk/storage/Azure.Storage.Common/README.md)
@@ -54,7 +54,7 @@ The Windows builds include the .NET runtime. It is listed with the MIT component
 - **Microsoft.Extensions.DependencyInjection.Abstractions** 10.0.9. © Microsoft Corporation. All rights reserved. [https://dot.net/](https://dot.net/)
 - **Microsoft.Extensions.Diagnostics.Abstractions** 10.0.9. © Microsoft Corporation. All rights reserved. [https://dot.net/](https://dot.net/)
 - **Microsoft.Extensions.FileProviders.Abstractions** 10.0.9. © Microsoft Corporation. All rights reserved. [https://dot.net/](https://dot.net/)
-- **Microsoft.Extensions.FileSystemGlobbing** 10.0.12. © Microsoft Corporation. All rights reserved. [https://dot.net/](https://dot.net/)
+- **Microsoft.Extensions.FileSystemGlobbing** 10.0.13. © Microsoft Corporation. All rights reserved. [https://dot.net/](https://dot.net/)
 - **Microsoft.Extensions.Hosting.Abstractions** 10.0.9. © Microsoft Corporation. All rights reserved. [https://dot.net/](https://dot.net/)
 - **Microsoft.Extensions.Logging.Abstractions** 10.0.9. © Microsoft Corporation. All rights reserved. [https://dot.net/](https://dot.net/)
 - **Microsoft.Extensions.Options** 10.0.9. © Microsoft Corporation. All rights reserved. [https://dot.net/](https://dot.net/)
@@ -72,7 +72,7 @@ The Windows builds include the .NET runtime. It is listed with the MIT component
 - **System.Diagnostics.EventLog** 9.0.2. © Microsoft Corporation. All rights reserved. [https://dot.net/](https://dot.net/)
 - **System.IO.Hashing** 10.0.9. © Microsoft Corporation. All rights reserved. [https://dot.net/](https://dot.net/)
 - **System.Memory.Data** 10.0.9. © Microsoft Corporation. All rights reserved. [https://dot.net/](https://dot.net/)
-- **System.Security.Cryptography.ProtectedData** 10.0.12. © Microsoft Corporation. All rights reserved. [https://dot.net/](https://dot.net/)
+- **System.Security.Cryptography.ProtectedData** 10.0.13. © Microsoft Corporation. All rights reserved. [https://dot.net/](https://dot.net/)
 - **TaskScheduler** 2.12.2. Copyright © 2002-2025. [https://github.com/dahall/taskscheduler](https://github.com/dahall/taskscheduler)
 - **Tmds.DBus.Protocol** 0.94.1. Tom Deseyn.
 - **WebDav.Client** 2.9.0. Copyright © 2022 skazantsev. [https://github.com/skazantsev/WebDavClient](https://github.com/skazantsev/WebDavClient)

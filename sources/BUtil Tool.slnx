@@ -6,13 +6,14 @@
   <Folder Name="/Solution Items/">
     <File Path="../CHANGELOG.md" />
     <File Path="../README.md" />
+    <File Path="../THIRD-PARTY-NOTICES.md" />
     <File Path="ubuntu-install.sh" />
   </Folder>
   <Folder Name="/Storages/">
     <Project Path="BUtil.Storages.AzureBlob/BUtil.Storages.AzureBlob.csproj" />
     <Project Path="BUtil.Storages.Common/BUtil.Storages.Common.csproj" />
-    <Project Path="BUtil.Storages.Ftps/BUtil.Storages.Ftps.csproj" />
     <Project Path="BUtil.Storages.Folder/BUtil.Storages.Folder.csproj" />
+    <Project Path="BUtil.Storages.Ftps/BUtil.Storages.Ftps.csproj" />
     <Project Path="BUtil.Storages.Nfs/BUtil.Storages.Nfs.csproj" />
     <Project Path="BUtil.Storages.S3/BUtil.Storages.S3.csproj" />
     <Project Path="BUtil.Storages.Samba/BUtil.Storages.Samba.csproj" />
@@ -20,17 +21,17 @@
     <Project Path="BUtil.Storages.WebDav/BUtil.Storages.WebDav.csproj" />
   </Folder>
   <Folder Name="/Tasks/">
-    <Project Path="BUtil.Tasks.Common/BUtil.Tasks.Common.csproj" />
-    <Project Path="BUtil.Tasks.IncrementalBackup/BUtil.Tasks.IncrementalBackup.csproj" />
-    <Project Path="BUtil.Tasks.IncrementalBackup.UI/BUtil.Tasks.IncrementalBackup.UI.csproj" />
-    <Project Path="BUtil.Tasks.Synchronization/BUtil.Tasks.Synchronization.csproj" />
-    <Project Path="BUtil.Tasks.Synchronization.UI/BUtil.Tasks.Synchronization.UI.csproj" />
-    <Project Path="BUtil.Tasks.ImportMedia/BUtil.Tasks.ImportMedia.csproj" />
-    <Project Path="BUtil.Tasks.ImportMedia.UI/BUtil.Tasks.ImportMedia.UI.csproj" />
-    <Project Path="BUtil.Tasks.BUtilServer/BUtil.Tasks.BUtilServer.csproj" />
-    <Project Path="BUtil.Tasks.BUtilServer.UI/BUtil.Tasks.BUtilServer.UI.csproj" />
-    <Project Path="BUtil.Tasks.BUtilClient/BUtil.Tasks.BUtilClient.csproj" />
     <Project Path="BUtil.Tasks.BUtilClient.UI/BUtil.Tasks.BUtilClient.UI.csproj" />
+    <Project Path="BUtil.Tasks.BUtilClient/BUtil.Tasks.BUtilClient.csproj" />
+    <Project Path="BUtil.Tasks.BUtilServer.UI/BUtil.Tasks.BUtilServer.UI.csproj" />
+    <Project Path="BUtil.Tasks.BUtilServer/BUtil.Tasks.BUtilServer.csproj" />
+    <Project Path="BUtil.Tasks.Common/BUtil.Tasks.Common.csproj" />
+    <Project Path="BUtil.Tasks.ImportMedia.UI/BUtil.Tasks.ImportMedia.UI.csproj" />
+    <Project Path="BUtil.Tasks.ImportMedia/BUtil.Tasks.ImportMedia.csproj" />
+    <Project Path="BUtil.Tasks.IncrementalBackup.UI/BUtil.Tasks.IncrementalBackup.UI.csproj" />
+    <Project Path="BUtil.Tasks.IncrementalBackup/BUtil.Tasks.IncrementalBackup.csproj" />
+    <Project Path="BUtil.Tasks.Synchronization.UI/BUtil.Tasks.Synchronization.UI.csproj" />
+    <Project Path="BUtil.Tasks.Synchronization/BUtil.Tasks.Synchronization.csproj" />
   </Folder>
   <Folder Name="/UI/">
     <Project Path="BUtil.UI.Common/BUtil.UI.Common.csproj" />
@@ -44,8 +45,8 @@
     <BuildDependency Project="BUtil.Linux/BUtil.Linux.csproj" />
     <BuildDependency Project="BUtil.Windows/BUtil.Windows.csproj" />
   </Project>
-  <Project Path="BUtil.Core/BUtil.Core.csproj" />
   <Project Path="BUtil.Core.Localization/BUtil.Core.Localization.csproj" />
+  <Project Path="BUtil.Core/BUtil.Core.csproj" />
   <Project Path="BUtil.Interop/BUtil.Interop.csproj" />
   <Project Path="BUtil.Tests/BUtil.Tests.csproj" />
   <Project Path="butilc/butilc.csproj">
