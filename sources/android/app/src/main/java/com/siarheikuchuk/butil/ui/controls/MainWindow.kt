@@ -32,6 +32,7 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.SideEffect
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -44,6 +45,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.siarheikuchuk.butil.BuildConfig
 import com.siarheikuchuk.butil.R
+import com.siarheikuchuk.butil.core.tasks.UploadScheduler
 import com.siarheikuchuk.butil.ui.BUtilTheme
 import com.siarheikuchuk.butil.ui.ThemeSetting
 import kotlinx.coroutines.launch
@@ -58,6 +60,10 @@ private sealed interface AppPage {
 
     data class Markdown(val page: MarkdownPage) : AppPage
 
+    data class UploadEditor(val existingName: String?) : AppPage
+
+    data class UploadRun(val name: String) : AppPage
+
     data class Stub(val titleRes: Int) : AppPage
 }
 
@@ -71,6 +77,7 @@ fun MainWindow() {
         mutableStateOf(prefs.getString(ThemeSetting.NAME, ThemeSetting.DARK) != ThemeSetting.LIGHT)
     }
     var page by remember { mutableStateOf<AppPage>(AppPage.Tasks) }
+    var tasksRevision by remember { mutableStateOf(0) }
     val drawerState = androidx.compose.material3.rememberDrawerState(androidx.compose.material3.DrawerValue.Closed)
     val scope = rememberCoroutineScope()
     SideEffect {
@@ -82,8 +89,14 @@ fun MainWindow() {
         activity.enableEdgeToEdge(statusBarStyle = style, navigationBarStyle = style)
     }
 
+    LaunchedEffect(Unit) {
+        UploadScheduler.rescheduleAll(context)
+    }
     BUtilTheme(dark = dark) {
         BackHandler(enabled = page !is AppPage.Tasks) {
+            if (page is AppPage.UploadEditor || page is AppPage.UploadRun) {
+                tasksRevision++
+            }
             page = AppPage.Tasks
         }
         ModalNavigationDrawer(
@@ -134,7 +147,28 @@ fun MainWindow() {
                 },
             ) { padding ->
                 when (val current = page) {
-                    AppPage.Tasks -> TasksView(Modifier.padding(padding))
+                    AppPage.Tasks -> TasksView(
+                        revision = tasksRevision,
+                        onEdit = { page = AppPage.UploadEditor(it) },
+                        onRun = { page = AppPage.UploadRun(it) },
+                        modifier = Modifier.padding(padding),
+                    )
+                    is AppPage.UploadEditor -> UploadFolderEditor(
+                        existingName = current.existingName,
+                        onClose = {
+                            tasksRevision++
+                            page = AppPage.Tasks
+                        },
+                        modifier = Modifier.padding(padding),
+                    )
+                    is AppPage.UploadRun -> UploadRunPage(
+                        name = current.name,
+                        onClose = {
+                            tasksRevision++
+                            page = AppPage.Tasks
+                        },
+                        modifier = Modifier.padding(padding),
+                    )
                     is AppPage.Tool -> TechnicalFileToolView(
                         kind = current.kind,
                         onClose = { page = AppPage.Tasks },
@@ -158,6 +192,8 @@ fun MainWindow() {
 @Composable
 private fun pageTitle(page: AppPage): String = when (page) {
     AppPage.Tasks -> stringResource(R.string.app_name)
+    is AppPage.UploadEditor -> stringResource(R.string.upload_folder_contents_task_create)
+    is AppPage.UploadRun -> stringResource(R.string.upload_folder_contents_task_create)
     is AppPage.Tool -> stringResource(page.kind.titleRes())
     is AppPage.Markdown -> stringResource(page.page.titleRes())
     is AppPage.Stub -> stringResource(page.titleRes)
@@ -224,7 +260,12 @@ private fun AppMenu(
             StubItem(R.string.synchronization_task_create, page, onSelect, indent = true)
             HorizontalDivider(modifier = Modifier.padding(start = 28.dp, end = 28.dp, top = 4.dp, bottom = 4.dp))
             StubItem(R.string.ftps_server_task_create, page, onSelect, indent = true)
-            StubItem(R.string.upload_folder_contents_task_create, page, onSelect, indent = true)
+            NavigationDrawerItem(
+                label = { Text(stringResource(R.string.upload_folder_contents_task_create)) },
+                selected = page is AppPage.UploadEditor && page.existingName == null,
+                onClick = { onSelect(AppPage.UploadEditor(null)) },
+                modifier = Modifier.padding(start = 12.dp),
+            )
             StubItem(R.string.task_restore, page, onSelect)
             Spacer(Modifier.height(12.dp))
         }

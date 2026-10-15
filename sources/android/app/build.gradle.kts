@@ -99,5 +99,11 @@ dependencies {
     implementation("androidx.activity:activity-compose:1.9.3")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.9.0")
     implementation("org.brotli:dec:0.1.2")
+    implementation("androidx.documentfile:documentfile:1.0.1")
+    implementation("androidx.core:core-ktx:1.13.1")
+    implementation("commons-net:commons-net:3.11.1")
+    implementation("com.hierynomus:sshj:0.39.0")
+    implementation("org.slf4j:slf4j-nop:2.0.16")
+    implementation("com.hierynomus:smbj:0.13.0")
     debugImplementation("androidx.compose.ui:ui-tooling")
 }

@@ -11,10 +11,26 @@ Debug-only tooling (Compose UI tooling) is not part of the release build and is 
 - **AndroidX Activity Compose** 1.9.3. Copyright © The Android Open Source Project.
 - **Kotlin coroutines** 1.9.0. Copyright © JetBrains s.r.o. and contributors. [https://github.com/Kotlin/kotlinx.coroutines](https://github.com/Kotlin/kotlinx.coroutines)
 - **desugar_jdk_libs** 2.1.4. Copyright © The Android Open Source Project. [https://github.com/google/desugar_jdk_libs](https://github.com/google/desugar_jdk_libs)
+- **AndroidX DocumentFile** 1.0.1. Copyright © The Android Open Source Project.
+- **AndroidX Core KTX** 1.13.1. Copyright © The Android Open Source Project.
+- **Apache Commons Net** 3.11.1. Copyright © The Apache Software Foundation. [https://commons.apache.org/proper/commons-net/](https://commons.apache.org/proper/commons-net/)
+- **sshj** 0.39.0. Copyright © SSHJ contributors. [https://github.com/hierynomus/sshj](https://github.com/hierynomus/sshj)
+- **smbj** 0.13.0. Copyright © Jeroen van Erp and contributors. [https://github.com/hierynomus/smbj](https://github.com/hierynomus/smbj)
+- **asn-one** 0.6.0. Copyright © Jeroen van Erp. [https://github.com/hierynomus/asn-one](https://github.com/hierynomus/asn-one)
 
 ## MIT
 
 - **Brotli decoder** (`org.brotli:dec`) 0.1.2. Copyright (c) 2009, 2010, 2013-2016 by the Brotli Authors. [https://github.com/google/brotli](https://github.com/google/brotli)
+- **SLF4J API and NOP** 2.0.16. Copyright © QOS.ch. [https://www.slf4j.org/](https://www.slf4j.org/)
+- **MBassador** 1.3.0. Copyright © Benjamin Diedrichsen. [https://github.com/bennidi/mbassador](https://github.com/bennidi/mbassador)
+
+## Bouncy Castle Licence
+
+- **Bouncy Castle** `bcprov-jdk18on`, `bcpkix-jdk18on`, and `bcutil-jdk18on` 1.78.1. Copyright © The Legion of the Bouncy Castle Inc. [https://www.bouncycastle.org/](https://www.bouncycastle.org/)
+
+## CC0-1.0
+
+- **eddsa** 0.3.0. Written by the I2P project and dedicated to the public domain under CC0 1.0. [https://github.com/str4d/ed25519-java](https://github.com/str4d/ed25519-java)
 
 The copyright lines in each group above apply to that license text.
 
@@ -85,3 +101,18 @@ You may add Your own copyright statement to Your modifications and may provide a
 9. Accepting Warranty or Additional Liability. While redistributing the Work or Derivative Works thereof, You may choose to offer, and charge a fee for, acceptance of support, warranty, indemnity, or other liability obligations and/or rights consistent with this License. However, in accepting such obligations, You may act only on Your own behalf and on Your sole responsibility, not on behalf of any other Contributor, and only if You agree to indemnify, defend, and hold each Contributor harmless for any liability incurred by, or claims asserted against, such Contributor by reason of your accepting any such warranty or additional liability.
 
 END OF TERMS AND CONDITIONS
+
+## Bouncy Castle Licence text
+
+Copyright (c) 2000-2024 The Legion of the Bouncy Castle Inc. (https://www.bouncycastle.org)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+## CC0 1.0
+
+The eddsa component is dedicated to the public domain under CC0 1.0 Universal. The legal text is at [https://creativecommons.org/publicdomain/zero/1.0/legalcode](https://creativecommons.org/publicdomain/zero/1.0/legalcode).
+
