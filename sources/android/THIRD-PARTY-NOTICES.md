@@ -26,7 +26,7 @@ Debug-only tooling (Compose UI tooling) is not part of the release build and is 
 
 ## Bouncy Castle Licence
 
-- **Bouncy Castle** `bcprov-jdk18on`, `bcpkix-jdk18on`, and `bcutil-jdk18on` 1.78.1. Copyright © The Legion of the Bouncy Castle Inc. [https://www.bouncycastle.org/](https://www.bouncycastle.org/)
+- **Bouncy Castle** `bcprov-jdk18on`, `bcpkix-jdk18on`, and `bcutil-jdk18on` 1.79. Copyright © The Legion of the Bouncy Castle Inc. [https://www.bouncycastle.org/](https://www.bouncycastle.org/)
 
 ## CC0-1.0
 

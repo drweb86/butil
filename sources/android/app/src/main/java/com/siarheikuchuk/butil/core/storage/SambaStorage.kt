@@ -58,6 +58,66 @@ internal class SambaStorage(private val settings: SambaSettings) : Storage {
         deleteRecursive(path(relativeFolderName))
     }
 
+    override fun download(relativeFileName: String): InputStream {
+        val file = share.openFile(
+            path(relativeFileName),
+            EnumSet.of(AccessMask.GENERIC_READ),
+            EnumSet.of(FileAttributes.FILE_ATTRIBUTE_NORMAL),
+            EnumSet.of(SMB2ShareAccess.FILE_SHARE_READ),
+            SMB2CreateDisposition.FILE_OPEN,
+            null,
+        )
+        val stream = file.inputStream
+        return object : InputStream() {
+            override fun read(): Int = stream.read()
+            override fun read(b: ByteArray, off: Int, len: Int): Int = stream.read(b, off, len)
+            override fun close() {
+                stream.close()
+                file.close()
+            }
+        }
+    }
+
+    override fun delete(relativeFileName: String) {
+        val destination = path(relativeFileName)
+        if (share.fileExists(destination)) share.rm(destination)
+    }
+
+    override fun listFiles(): List<RemoteFile> {
+        val files = mutableListOf<RemoteFile>()
+        walkFiles(target.folder, "", files)
+        return files.sortedBy { it.relativePath }
+    }
+
+    override fun listFolders(): List<String> {
+        return share.list(target.folder.ifEmpty { "" })
+            .filter { it.fileName != "." && it.fileName != ".." && directory(it) }
+            .map { it.fileName }
+            .sorted()
+    }
+
+    private fun walkFiles(absolute: String, relative: String, into: MutableList<RemoteFile>) {
+        val children = try {
+            share.list(absolute.ifEmpty { "" })
+        } catch (_: Exception) {
+            return
+        }
+        for (child in children) {
+            if (child.fileName == "." || child.fileName == "..") continue
+            val childRelative = if (relative.isEmpty()) child.fileName else "$relative/${child.fileName}"
+            val childAbsolute = if (absolute.isEmpty()) child.fileName else "$absolute\\${child.fileName}"
+            if (directory(child)) {
+                walkFiles(childAbsolute, childRelative, into)
+            } else {
+                into += RemoteFile(childRelative, child.endOfFile, child.lastWriteTime.toDate().time)
+            }
+        }
+    }
+
+    private fun directory(child: FileIdBothDirectoryInformation): Boolean {
+        return child.fileAttributes and FileAttributes.FILE_ATTRIBUTE_DIRECTORY.value != 0L
+    }
+
     override fun close() {
         try {
             share.close()

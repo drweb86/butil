@@ -68,6 +68,71 @@ internal class SftpStorage(
         deleteRecursive(remote(relativeFolderName))
     }
 
+    override fun download(relativeFileName: String): InputStream {
+        val path = remote(relativeFileName)
+        val file = sftp.open(path, EnumSet.of(OpenMode.READ))
+        val size = sftp.stat(path).size
+        return object : InputStream() {
+            private var offset = 0L
+            override fun read(): Int {
+                val one = ByteArray(1)
+                val read = read(one, 0, 1)
+                return if (read < 0) -1 else one[0].toInt() and 0xFF
+            }
+
+            override fun read(b: ByteArray, off: Int, len: Int): Int {
+                if (offset >= size) return -1
+                val read = file.read(offset, b, off, len).toInt()
+                if (read <= 0) return -1
+                offset += read
+                return read
+            }
+
+            override fun close() {
+                file.close()
+            }
+        }
+    }
+
+    override fun delete(relativeFileName: String) {
+        val path = remote(relativeFileName)
+        if (sftp.statExistence(path) != null) sftp.rm(path)
+    }
+
+    override fun listFiles(): List<RemoteFile> {
+        val root = settings.folder.trim().trimEnd('/').ifBlank { "/" }
+        val files = mutableListOf<RemoteFile>()
+        walk(root, "", files)
+        return files.sortedBy { it.relativePath }
+    }
+
+    override fun listFolders(): List<String> {
+        val root = settings.folder.trim().trimEnd('/').ifBlank { "/" }
+        return sftp.ls(root)
+            .filter { it.isDirectory && it.name != "." && it.name != ".." }
+            .map { it.name }
+            .sorted()
+    }
+
+    private fun walk(absolute: String, relative: String, into: MutableList<RemoteFile>) {
+        val entries = try {
+            sftp.ls(absolute)
+        } catch (_: Exception) {
+            return
+        }
+        for (entry in entries) {
+            if (entry.name == "." || entry.name == "..") continue
+            val childRelative = if (relative.isEmpty()) entry.name else "$relative/${entry.name}"
+            val childAbsolute = if (absolute.endsWith("/")) absolute + entry.name else "$absolute/${entry.name}"
+            if (entry.isDirectory) {
+                walk(childAbsolute, childRelative, into)
+            } else {
+                val modified = entry.attributes.mtime * 1000L
+                into += RemoteFile(childRelative, entry.attributes.size, modified)
+            }
+        }
+    }
+
     override fun close() {
         try {
             sftp.close()

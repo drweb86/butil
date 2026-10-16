@@ -77,6 +77,7 @@ fun TasksView(
             val status = store.readStatus(name)
             Column(verticalArrangement = Arrangement.spacedBy(4.dp)) {
                 Text(name, style = MaterialTheme.typography.titleMedium)
+                Text(stringResource(taskKindLabel(runCatching { store.kind(name) }.getOrDefault(""))), style = MaterialTheme.typography.bodySmall)
                 if (!status.isNullOrBlank()) {
                     Text(status, style = MaterialTheme.typography.bodySmall)
                 }

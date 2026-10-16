@@ -21,16 +21,24 @@ class UploadFolderStore(context: Context) {
             .sortedWith(String.CASE_INSENSITIVE_ORDER)
     }
 
-    fun load(name: String): UploadFolderTask {
-        val task = TaskCodec.fromTaskJson(taskFile(name).readText())
-        task.storage = cipher.unprotectSettings(task.storage) as StorageSettings
+    fun load(name: String): UploadFolderTask = loadAny(name) as UploadFolderTask
+
+    fun kind(name: String): String {
+        val root = org.json.JSONObject(taskFile(name).readText())
+        return root.getJSONObject("Model").optString("\$type")
+    }
+
+    fun loadAny(name: String): AppTask {
+        val task = unprotect(TaskCodec.fromJson(taskFile(name).readText()))
         val scheduleFile = scheduleFile(name)
         if (scheduleFile.isFile) task.schedule = TaskCodec.fromScheduleJson(scheduleFile.readText())
         task.name = name
         return task
     }
 
-    fun save(task: UploadFolderTask, previousName: String?) {
+    fun save(task: UploadFolderTask, previousName: String?) = saveAny(task, previousName)
+
+    fun saveAny(task: AppTask, previousName: String?) {
         val name = task.name.trimEnd()
         task.name = name
         if (previousName != null && !previousName.equals(name, ignoreCase = true)) {
@@ -39,9 +47,24 @@ class UploadFolderStore(context: Context) {
             taskFile(previousName).delete()
             scheduleFile(previousName).delete()
         }
-        val protected = task.copy(storage = cipher.protectSettings(task.storage))
-        taskFile(name).writeText(TaskCodec.toTaskJson(protected))
+        taskFile(name).writeText(TaskCodec.toJson(protect(task)))
         scheduleFile(name).writeText(TaskCodec.toScheduleJson(task.schedule))
+    }
+
+    private fun protect(task: AppTask): AppTask = when (task) {
+        is UploadFolderTask -> task.copy(storage = cipher.protectSettings(task.storage))
+        is IncrementalBackupTask -> task.copy(password = cipher.protect(task.password), storage = cipher.protectSettings(task.storage))
+        is ImportMediaTask -> task.copy(from = cipher.protectSettings(task.from))
+        is SynchronizationTask -> task.copy(password = cipher.protect(task.password), storage = cipher.protectSettings(task.storage))
+        is FtpsServerTask -> task.copy(password = cipher.protect(task.password))
+    }
+
+    private fun unprotect(task: AppTask): AppTask = when (task) {
+        is UploadFolderTask -> task.copy(storage = cipher.unprotectSettings(task.storage) as StorageSettings)
+        is IncrementalBackupTask -> task.copy(password = cipher.unprotect(task.password), storage = cipher.unprotectSettings(task.storage) as StorageSettings)
+        is ImportMediaTask -> task.copy(from = cipher.unprotectSettings(task.from) as StorageSettings)
+        is SynchronizationTask -> task.copy(password = cipher.unprotect(task.password), storage = cipher.unprotectSettings(task.storage) as StorageSettings)
+        is FtpsServerTask -> task.copy(password = cipher.unprotect(task.password))
     }
 
     fun delete(name: String) {

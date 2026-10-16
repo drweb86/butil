@@ -39,6 +39,73 @@ internal class AzureBlobStorage(private val settings: AzureBlobSettings) : Stora
         uploadBlocks(blob, open)
     }
 
+    override fun download(relativeFileName: String): InputStream = openDownload("GET", key(relativeFileName))
+
+    override fun delete(relativeFileName: String) {
+        val deleted = call("DELETE", key(relativeFileName), emptyMap(), null, null, null)
+        if (!deleted.successful() && deleted.code != 404) {
+            throw IllegalStateException("Azure delete failed (HTTP ${deleted.code}): ${deleted.text()}")
+        }
+    }
+
+    override fun listFiles(): List<RemoteFile> {
+        val prefix = key(null).trim('/')
+        val root = if (prefix.isEmpty()) "" else "$prefix/"
+        val files = mutableListOf<RemoteFile>()
+        var marker: String? = null
+        while (true) {
+            val query = linkedMapOf("comp" to "list", "restype" to "container")
+            if (root.isNotEmpty()) query["prefix"] = root
+            if (marker != null) query["marker"] = marker
+            val listed = callBody("GET", "", query)
+            if (!listed.successful()) throw IllegalStateException("Azure list failed (HTTP ${listed.code}): ${listed.text()}")
+            val xml = listed.text()
+            val blocks = Regex("(?s)<Blob>(.*?)</Blob>").findAll(xml)
+            for (block in blocks) {
+                val body = block.groupValues[1]
+                val name = Regex("<Name>(.*?)</Name>").find(body)?.groupValues?.get(1)?.let(::unescape) ?: continue
+                if (!name.startsWith(root) || name.endsWith("/")) continue
+                val relative = name.removePrefix(root)
+                val size = Regex("<Content-Length>(\\d+)</Content-Length>").find(body)?.groupValues?.get(1)?.toLongOrNull() ?: 0L
+                val modifiedText = Regex("<Last-Modified>(.*?)</Last-Modified>").find(body)?.groupValues?.get(1).orEmpty()
+                val millis = runCatching {
+                    java.time.ZonedDateTime.parse(modifiedText, DateTimeFormatter.RFC_1123_DATE_TIME).toInstant().toEpochMilli()
+                }.getOrDefault(0L)
+                files += RemoteFile(relative, size, millis)
+            }
+            val next = Regex("<NextMarker>(.*?)</NextMarker>").find(xml)?.groupValues?.get(1)?.let(::unescape)
+            if (next.isNullOrBlank()) break
+            marker = next
+        }
+        return files.sortedBy { it.relativePath }
+    }
+
+    override fun listFolders(): List<String> {
+        val prefix = key(null).trim('/')
+        val root = if (prefix.isEmpty()) "" else "$prefix/"
+        val query = linkedMapOf("comp" to "list", "delimiter" to "/", "restype" to "container")
+        if (root.isNotEmpty()) query["prefix"] = root
+        val listed = callBody("GET", "", query)
+        if (!listed.successful()) return emptyList()
+        return Regex("<Name>(.*?)</Name>").findAll(listed.text()).map { unescape(it.groupValues[1]) }
+            .filter { it.startsWith(root) }
+            .map { it.removePrefix(root).trim('/') }
+            .filter { it.isNotEmpty() && !it.contains('/') }
+            .distinct()
+            .sorted()
+            .toList()
+    }
+
+    private fun callBody(method: String, blob: String, query: Map<String, String>): HttpResult {
+        val signed = signedCall(method, blob, query, null, null, emptyMap())
+        return HttpStreams.openBody(method, signed.url, signed.headers)
+    }
+
+    private fun openDownload(method: String, blob: String): InputStream {
+        val signed = signedCall(method, blob, emptyMap(), null, null, emptyMap())
+        return HttpStreams.openDownload(method, signed.url, signed.headers)
+    }
+
     override fun deleteFolder(relativeFolderName: String) {
         val prefix = key(relativeFolderName).trim('/') + "/"
         val listed = call("GET", "", mapOf("restype" to "container", "comp" to "list", "prefix" to prefix), null, null, null)
@@ -102,15 +169,16 @@ internal class AzureBlobStorage(private val settings: AzureBlobSettings) : Stora
         return if (normalized.isEmpty()) prefix else "$prefix/$normalized"
     }
 
-    private fun call(
+    private data class Signed(val url: String, val headers: Map<String, String>)
+
+    private fun signedCall(
         method: String,
         blob: String,
         query: Map<String, String>,
         contentType: String?,
         length: Long?,
-        open: (() -> InputStream)?,
-        extra: Map<String, String> = emptyMap(),
-    ): HttpResult {
+        extra: Map<String, String>,
+    ): Signed {
         val date = DateTimeFormatter.RFC_1123_DATE_TIME.withZone(ZoneOffset.UTC).format(Instant.now())
         val versionHeaders = linkedMapOf(
             "x-ms-date" to date,
@@ -137,7 +205,20 @@ internal class AzureBlobStorage(private val settings: AzureBlobSettings) : Stora
         }
         val url = "https://${settings.accountName}.blob.core.windows.net$resourcePath" +
             if (queryText.isEmpty()) "" else "?$queryText"
-        return HttpStreams.open(method, url, headers, streamBody = open, streamLength = length ?: -1)
+        return Signed(url, headers)
+    }
+
+    private fun call(
+        method: String,
+        blob: String,
+        query: Map<String, String>,
+        contentType: String?,
+        length: Long?,
+        open: (() -> InputStream)?,
+        extra: Map<String, String> = emptyMap(),
+    ): HttpResult {
+        val signed = signedCall(method, blob, query, contentType, length, extra)
+        return HttpStreams.open(method, signed.url, signed.headers, streamBody = open, streamLength = length ?: -1)
     }
 
     private fun unescape(value: String): String {

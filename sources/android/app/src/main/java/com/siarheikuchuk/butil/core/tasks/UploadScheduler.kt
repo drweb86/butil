@@ -14,11 +14,11 @@ object UploadScheduler {
     fun rescheduleAll(context: Context) {
         val store = UploadFolderStore(context)
         for (name in store.names()) {
-            reschedule(context, store.load(name))
+            reschedule(context, store.loadAny(name))
         }
     }
 
-    fun reschedule(context: Context, task: UploadFolderTask) {
+    fun reschedule(context: Context, task: AppTask) {
         val alarm = context.getSystemService(Context.ALARM_SERVICE) as AlarmManager
         val pending = pending(context, task.name)
         alarm.cancel(pending)
@@ -42,7 +42,7 @@ object UploadScheduler {
     fun runAtLogin(context: Context) {
         val store = UploadFolderStore(context)
         for (name in store.names()) {
-            val task = store.load(name)
+            val task = store.loadAny(name)
             if (task.schedule.runAtLogin) {
                 UploadFolderService.start(context, name)
             }

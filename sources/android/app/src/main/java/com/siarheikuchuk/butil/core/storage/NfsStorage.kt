@@ -52,6 +52,18 @@ internal class NfsStorage(private val settings: NfsSettings) : Storage {
         client.deleteTree(RemotePaths.normalizeRelative(relativeFolderName, allowEmpty = false))
     }
 
+    override fun download(relativeFileName: String): InputStream {
+        return client.download(RemotePaths.normalizeRelative(relativeFileName))
+    }
+
+    override fun delete(relativeFileName: String) {
+        client.deleteFile(RemotePaths.normalizeRelative(relativeFileName))
+    }
+
+    override fun listFiles(): List<RemoteFile> = client.listFiles()
+
+    override fun listFolders(): List<String> = client.listFolders()
+
     override fun close() {
         client.close()
     }
@@ -109,6 +121,108 @@ private class Nfs3Client(
                 offset += read
             }
         }
+    }
+
+    fun download(relative: String): InputStream {
+        val handle = lookup(relative) ?: throw IllegalStateException("NFS file does not exist: $relative")
+        val size = attributes(handle).size
+        return object : InputStream() {
+            private var offset = 0L
+            private var pending = ByteArray(0)
+            private var index = 0
+
+            override fun read(): Int {
+                val one = ByteArray(1)
+                val count = read(one, 0, 1)
+                return if (count < 0) -1 else one[0].toInt() and 0xFF
+            }
+
+            override fun read(b: ByteArray, off: Int, len: Int): Int {
+                if (len == 0) return 0
+                if (index >= pending.size) {
+                    if (offset >= size) return -1
+                    val count = minOf(32 * 1024, (size - offset).toInt())
+                    pending = readChunk(handle, offset, count)
+                    index = 0
+                    if (pending.isEmpty()) return -1
+                    offset += pending.size
+                }
+                val copied = minOf(len, pending.size - index)
+                pending.copyInto(b, off, index, index + copied)
+                index += copied
+                return copied
+            }
+        }
+    }
+
+    fun deleteFile(relative: String) {
+        val handle = lookup(relative) ?: return
+        if (fileType(handle) == NF3DIR) return
+        val parent = parentHandle(relative)
+        remove(parent, relative.substringAfterLast('/'))
+    }
+
+    fun listFiles(): List<RemoteFile> {
+        val files = mutableListOf<RemoteFile>()
+        walk(root, "", files)
+        return files.sortedBy { it.relativePath }
+    }
+
+    fun listFolders(): List<String> {
+        return listNames(root).mapNotNull { name ->
+            val child = lookupChild(root, name) ?: return@mapNotNull null
+            if (fileType(child) == NF3DIR) name else null
+        }.sorted()
+    }
+
+    private fun walk(directory: ByteArray, relative: String, into: MutableList<RemoteFile>) {
+        for (name in listNames(directory)) {
+            val child = lookupChild(directory, name) ?: continue
+            val childRelative = if (relative.isEmpty()) name else "$relative/$name"
+            if (fileType(child) == NF3DIR) {
+                walk(child, childRelative, into)
+            } else {
+                val attributes = attributes(child)
+                into += RemoteFile(childRelative, attributes.size, attributes.modifiedUtcMillis)
+            }
+        }
+    }
+
+    private fun readChunk(handle: ByteArray, offset: Long, count: Int): ByteArray {
+        val reply = call(nfsPort, NFS_PROGRAM, NFS_VERSION, READ, xdr {
+            opaqueVar(handle)
+            long(offset)
+            int(count)
+        })
+        val status = reply.int()
+        if (status != NFS_OK) throw IllegalStateException("NFS read failed ($status)")
+        if (reply.int() == 1) skipFattr(reply)
+        reply.int()
+        reply.int()
+        return reply.opaqueVar()
+    }
+
+    private data class NfsAttributes(val size: Long, val modifiedUtcMillis: Long)
+
+    private fun attributes(handle: ByteArray): NfsAttributes {
+        val reply = call(nfsPort, NFS_PROGRAM, NFS_VERSION, GETATTR, xdr { opaqueVar(handle) })
+        val status = reply.int()
+        if (status != NFS_OK) throw IllegalStateException("NFS getattr failed ($status)")
+        repeat(5) { reply.int() }
+        val size = reply.long()
+        reply.long()
+        reply.int()
+        reply.int()
+        reply.long()
+        reply.long()
+        reply.int()
+        reply.int()
+        val seconds = reply.int().toLong() and 0xffffffffL
+        return NfsAttributes(size, seconds * 1000L)
+    }
+
+    private fun skipFattr(reply: XdrReader) {
+        repeat(21) { reply.int() }
     }
 
     fun deleteTree(relative: String) {
@@ -366,6 +480,7 @@ private class Nfs3Client(
         private const val MNT = 1
         private const val GETATTR = 1
         private const val LOOKUP = 3
+        private const val READ = 6
         private const val READDIR = 16
         private const val WRITE = 7
         private const val CREATE = 8

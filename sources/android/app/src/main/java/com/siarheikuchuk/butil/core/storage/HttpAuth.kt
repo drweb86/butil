@@ -58,6 +58,58 @@ internal object HttpStreams {
         return HttpResult(code, payload, location)
     }
 
+    /** Reads a successful response body. Listings can be larger than the short probe used by [open]. */
+    fun openBody(
+        method: String,
+        url: String,
+        headers: Map<String, String>,
+        limit: Int = 8 * 1024 * 1024,
+    ): HttpResult {
+        val connection = (URL(url).openConnection() as HttpURLConnection).apply {
+            requestMethod = method
+            instanceFollowRedirects = false
+            connectTimeout = 30_000
+            readTimeout = 0
+            doInput = true
+            headers.forEach { (name, value) -> setRequestProperty(name, value) }
+        }
+        val code = connection.responseCode
+        val location = connection.getHeaderField("Location")
+        val stream = if (code in 200..299) connection.inputStream else connection.errorStream
+        val payload = stream?.use { it.readBytesLimited(limit) } ?: ByteArray(0)
+        connection.disconnect()
+        return HttpResult(code, payload, location)
+    }
+
+    fun openDownload(method: String, url: String, headers: Map<String, String>): InputStream {
+        val connection = (URL(url).openConnection() as HttpURLConnection).apply {
+            requestMethod = method
+            instanceFollowRedirects = false
+            connectTimeout = 30_000
+            readTimeout = 0
+            doInput = true
+            headers.forEach { (name, value) -> setRequestProperty(name, value) }
+        }
+        val code = connection.responseCode
+        if (code !in 200..299) {
+            val error = connection.errorStream?.use { it.readBytesLimited(4096) }?.toString(Charsets.UTF_8).orEmpty()
+            connection.disconnect()
+            throw IllegalStateException("Download failed (HTTP $code). $error")
+        }
+        val source = connection.inputStream
+        return object : InputStream() {
+            override fun read(): Int = source.read()
+            override fun read(b: ByteArray, off: Int, len: Int): Int = source.read(b, off, len)
+            override fun close() {
+                try {
+                    source.close()
+                } finally {
+                    connection.disconnect()
+                }
+            }
+        }
+    }
+
     private fun InputStream.readBytesLimited(limit: Int): ByteArray {
         val out = ByteArrayOutputStream()
         val buffer = ByteArray(4096)

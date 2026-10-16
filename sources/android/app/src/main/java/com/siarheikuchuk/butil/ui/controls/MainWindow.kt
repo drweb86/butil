@@ -62,6 +62,10 @@ private sealed interface AppPage {
 
     data class UploadEditor(val existingName: String?) : AppPage
 
+    data class Editor(val kind: String, val existingName: String?) : AppPage
+
+    data object Restore : AppPage
+
     data class UploadRun(val name: String) : AppPage
 
     data class Stub(val titleRes: Int) : AppPage
@@ -94,7 +98,7 @@ fun MainWindow() {
     }
     BUtilTheme(dark = dark) {
         BackHandler(enabled = page !is AppPage.Tasks) {
-            if (page is AppPage.UploadEditor || page is AppPage.UploadRun) {
+            if (page is AppPage.UploadEditor || page is AppPage.UploadRun || page is AppPage.Editor || page is AppPage.Restore) {
                 tasksRevision++
             }
             page = AppPage.Tasks
@@ -149,7 +153,10 @@ fun MainWindow() {
                 when (val current = page) {
                     AppPage.Tasks -> TasksView(
                         revision = tasksRevision,
-                        onEdit = { page = AppPage.UploadEditor(it) },
+                        onEdit = { name ->
+                            val kind = com.siarheikuchuk.butil.core.tasks.UploadFolderStore(context).kind(name)
+                            page = if (kind == "BUtilClient") AppPage.UploadEditor(name) else AppPage.Editor(kind, name)
+                        },
                         onRun = { page = AppPage.UploadRun(it) },
                         modifier = Modifier.padding(padding),
                     )
@@ -159,6 +166,19 @@ fun MainWindow() {
                             tasksRevision++
                             page = AppPage.Tasks
                         },
+                        modifier = Modifier.padding(padding),
+                    )
+                    is AppPage.Editor -> TaskEditor(
+                        kind = current.kind,
+                        existingName = current.existingName,
+                        onClose = {
+                            tasksRevision++
+                            page = AppPage.Tasks
+                        },
+                        modifier = Modifier.padding(padding),
+                    )
+                    AppPage.Restore -> RestorePage(
+                        onClose = { page = AppPage.Tasks },
                         modifier = Modifier.padding(padding),
                     )
                     is AppPage.UploadRun -> UploadRunPage(
@@ -193,7 +213,9 @@ fun MainWindow() {
 private fun pageTitle(page: AppPage): String = when (page) {
     AppPage.Tasks -> stringResource(R.string.app_name)
     is AppPage.UploadEditor -> stringResource(R.string.upload_folder_contents_task_create)
-    is AppPage.UploadRun -> stringResource(R.string.upload_folder_contents_task_create)
+    is AppPage.Editor -> stringResource(titleRes(page.kind))
+    AppPage.Restore -> stringResource(R.string.task_restore)
+    is AppPage.UploadRun -> stringResource(R.string.app_name)
     is AppPage.Tool -> stringResource(page.kind.titleRes())
     is AppPage.Markdown -> stringResource(page.page.titleRes())
     is AppPage.Stub -> stringResource(page.titleRes)
@@ -255,18 +277,22 @@ private fun AppMenu(
                 style = MaterialTheme.typography.titleSmall,
                 fontWeight = FontWeight.Bold,
             )
-            StubItem(R.string.incremental_backup_task_create, page, onSelect, indent = true)
-            StubItem(R.string.import_media_task_create, page, onSelect, indent = true)
-            StubItem(R.string.synchronization_task_create, page, onSelect, indent = true)
+            EditorItem("Incremental", R.string.incremental_backup_task_create, page, onSelect)
+            EditorItem("ImportMedia", R.string.import_media_task_create, page, onSelect)
+            EditorItem("Synchronization", R.string.synchronization_task_create, page, onSelect)
             HorizontalDivider(modifier = Modifier.padding(start = 28.dp, end = 28.dp, top = 4.dp, bottom = 4.dp))
-            StubItem(R.string.ftps_server_task_create, page, onSelect, indent = true)
+            EditorItem("BUtilServer", R.string.ftps_server_task_create, page, onSelect)
             NavigationDrawerItem(
                 label = { Text(stringResource(R.string.upload_folder_contents_task_create)) },
                 selected = page is AppPage.UploadEditor && page.existingName == null,
                 onClick = { onSelect(AppPage.UploadEditor(null)) },
                 modifier = Modifier.padding(start = 12.dp),
             )
-            StubItem(R.string.task_restore, page, onSelect)
+            NavigationDrawerItem(
+                label = { Text(stringResource(R.string.task_restore)) },
+                selected = page is AppPage.Restore,
+                onClick = { onSelect(AppPage.Restore) },
+            )
             Spacer(Modifier.height(12.dp))
         }
     }
@@ -291,6 +317,16 @@ private fun ToolItem(
         label = { Text(stringResource(kind.menuRes())) },
         selected = page is AppPage.Tool && page.kind == kind,
         onClick = { onSelect(AppPage.Tool(kind)) },
+        modifier = Modifier.padding(start = 12.dp),
+    )
+}
+
+@Composable
+private fun EditorItem(kind: String, titleRes: Int, page: AppPage, onSelect: (AppPage) -> Unit) {
+    NavigationDrawerItem(
+        label = { Text(stringResource(titleRes)) },
+        selected = page is AppPage.Editor && page.kind == kind && page.existingName == null,
+        onClick = { onSelect(AppPage.Editor(kind, null)) },
         modifier = Modifier.padding(start = 12.dp),
     )
 }

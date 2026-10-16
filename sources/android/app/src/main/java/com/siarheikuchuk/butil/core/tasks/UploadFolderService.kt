@@ -45,13 +45,13 @@ class UploadFolderService : Service() {
         work = scope.launch {
             val store = UploadFolderStore(this@UploadFolderService)
             try {
-                val task = store.load(name)
+                val task = store.loadAny(name)
                 UploadRunLog.clear()
-                UploadRunLog.add("Uploading \"$name\"")
-                val error = UploadFolderRunner(this@UploadFolderService).run(task, { progress ->
-                    UploadRunLog.add(progress.line)
-                    updateNotification(progress.line)
-                }, { cancelled })
+                UploadRunLog.add(statusTitle(task))
+                val error = runTask(task) { line ->
+                    UploadRunLog.add(line)
+                    updateNotification(line)
+                }
                 if (error == null) {
                     store.writeStatus(name, "Finished successfully.")
                     UploadRunLog.add("Upload finished.")
@@ -71,7 +71,7 @@ class UploadFolderService : Service() {
                 runningName = null
                 withContext(NonCancellable) {
                     try {
-                        UploadScheduler.reschedule(this@UploadFolderService, store.load(name))
+                        UploadScheduler.reschedule(this@UploadFolderService, store.loadAny(name))
                     } catch (_: Exception) {
                     }
                     withContext(Dispatchers.Main) {
@@ -117,7 +117,7 @@ class UploadFolderService : Service() {
         }
         return NotificationCompat.Builder(this, CHANNEL)
             .setSmallIcon(android.R.drawable.stat_sys_upload)
-            .setContentTitle(getString(R.string.upload_folder_contents_task_create))
+            .setContentTitle(getString(R.string.app_name))
             .setContentText(text)
             .setOngoing(true)
             .build()
@@ -145,6 +145,25 @@ class UploadFolderService : Service() {
         fun cancel() {
             cancelled = true
         }
+    }
+
+    private fun runTask(task: AppTask, onProgress: (String) -> Unit): String? {
+        val cancelled = { UploadFolderService.cancelled }
+        return when (task) {
+            is UploadFolderTask -> UploadFolderRunner(this).run(task, { progress -> onProgress(progress.line) }, cancelled)
+            is IncrementalBackupTask -> IncrementalBackupRunner(this).run(task, onProgress, cancelled)
+            is ImportMediaTask -> ImportMediaRunner(this).run(task, onProgress, cancelled)
+            is SynchronizationTask -> SynchronizationRunner(this).run(task, onProgress, cancelled)
+            is FtpsServerTask -> FtpsServerRunner(this, task.folder).run(task, onProgress, cancelled)
+        }
+    }
+
+    private fun statusTitle(task: AppTask): String = when (task) {
+        is UploadFolderTask -> "Uploading \"${task.name}\""
+        is IncrementalBackupTask -> "Backing up \"${task.name}\""
+        is ImportMediaTask -> "Importing \"${task.name}\""
+        is SynchronizationTask -> "Synchronizing \"${task.name}\""
+        is FtpsServerTask -> "Sharing \"${task.name}\""
     }
 }
 

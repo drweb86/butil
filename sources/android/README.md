@@ -1,6 +1,6 @@
 # Native Android BUtil (Kotlin)
 
-The home screen is the tasks view. Upload folder to server is available from New in the menu. It keeps the desktop options: source folder, skip existing files, upload limit, optional weekday schedule, and the same storage protocols (Directory, SFTP, FTPS, WebDAV, S3, Azure Blob, SMB/CIFS, and NFSv3) with the same connection fields. Task files use the desktop `.v3.json` shape. Secrets are sealed with the Android keystore.
+The home screen is the tasks view. New can create the desktop tasks: incremental backup, import media, synchronization, share folder over FTPS, and upload folder to server. Restore reads an incremental backup version from storage. Each task keeps the desktop options and the desktop `.v3.json` shape. Incremental backup and synchronization use the desktop state file (`State.brotli.aes256v1`): file contents are AES-256 version 1, and the state is Brotli then AES-256. Secrets are sealed with the Android keystore.
 
 Compress Brotli, Decompress Brotli, Encrypt AES-256, and Decrypt AES-256 are implemented and use the same file formats as the desktop app. AES-256 is the desktop version-1 header (PBKDF2-HMAC-SHA512, AES-CBC, PKCS7). Brotli streams can be read by the desktop app, and streams written by the desktop app can be decompressed here.
 

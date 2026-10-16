@@ -40,6 +40,110 @@ internal class S3Storage(private val settings: S3Settings) : Storage {
         }
     }
 
+    override fun download(relativeFileName: String): InputStream {
+        return openDownload("GET", key(relativeFileName), "")
+    }
+
+    override fun delete(relativeFileName: String) {
+        val deleted = call("DELETE", key(relativeFileName), "", HttpStreams.sha256(ByteArray(0)), null, -1)
+        if (!deleted.successful() && deleted.code != 404) {
+            throw IllegalStateException("S3 delete failed (HTTP ${deleted.code}): ${deleted.text()}")
+        }
+    }
+
+    override fun listFiles(): List<RemoteFile> {
+        val prefix = key(null).trim('/')
+        val root = if (prefix.isEmpty()) "" else "$prefix/"
+        val files = mutableListOf<RemoteFile>()
+        var token: String? = null
+        while (true) {
+            val query = linkedMapOf("list-type" to "2", "max-keys" to "1000")
+            if (root.isNotEmpty()) query["prefix"] = root
+            if (token != null) query["continuation-token"] = token
+            val canonical = query.toSortedMap().entries.joinToString("&") { (name, value) ->
+                "${AwsSigV4.encode(name)}=${AwsSigV4.encode(value)}"
+            }
+            val listed = callBody("GET", "", canonical)
+            if (!listed.successful()) throw IllegalStateException("S3 list failed (HTTP ${listed.code}): ${listed.text()}")
+            val xml = listed.text()
+            val blocks = Regex("(?s)<Contents>(.*?)</Contents>").findAll(xml)
+            for (block in blocks) {
+                val body = block.groupValues[1]
+                val itemKey = Regex("<Key>(.*?)</Key>").find(body)?.groupValues?.get(1)?.let(::xmlUnescape) ?: continue
+                if (!itemKey.startsWith(root) || itemKey.endsWith("/")) continue
+                val relative = itemKey.removePrefix(root)
+                val size = Regex("<Size>(\\d+)</Size>").find(body)?.groupValues?.get(1)?.toLongOrNull() ?: 0L
+                val modified = Regex("<LastModified>(.*?)</LastModified>").find(body)?.groupValues?.get(1)
+                val millis = modified?.let { runCatching { java.time.Instant.parse(it).toEpochMilli() }.getOrDefault(0L) } ?: 0L
+                files += RemoteFile(relative, size, millis)
+            }
+            val truncated = Regex("<IsTruncated>(.*?)</IsTruncated>").find(xml)?.groupValues?.get(1) == "true"
+            if (!truncated) break
+            token = Regex("<NextContinuationToken>(.*?)</NextContinuationToken>").find(xml)?.groupValues?.get(1)
+                ?.let(::xmlUnescape) ?: break
+        }
+        return files.sortedBy { it.relativePath }
+    }
+
+    override fun listFolders(): List<String> {
+        val prefix = key(null).trim('/')
+        val root = if (prefix.isEmpty()) "" else "$prefix/"
+        val query = linkedMapOf("delimiter" to "/", "list-type" to "2", "max-keys" to "1000")
+        if (root.isNotEmpty()) query["prefix"] = root
+        val canonical = query.toSortedMap().entries.joinToString("&") { (name, value) ->
+            "${AwsSigV4.encode(name)}=${AwsSigV4.encode(value)}"
+        }
+        val listed = callBody("GET", "", canonical)
+        if (!listed.successful()) return emptyList()
+        return Regex("<Prefix>(.*?)</Prefix>").findAll(listed.text()).map { xmlUnescape(it.groupValues[1]) }
+            .filter { it.startsWith(root) && it != root }
+            .map { it.removePrefix(root).trim('/') }
+            .filter { it.isNotEmpty() && !it.contains('/') }
+            .distinct()
+            .sorted()
+            .toList()
+    }
+
+    private fun xmlUnescape(value: String): String {
+        return value.replace("&amp;", "&").replace("&lt;", "<").replace("&gt;", ">").replace("&quot;", "\"")
+    }
+
+    private fun callBody(method: String, objectKey: String, query: String): HttpResult {
+        val amzDate = DateTimeFormatter.ofPattern("yyyyMMdd'T'HHmmss'Z'")
+            .withZone(ZoneOffset.UTC)
+            .format(Instant.now())
+        val headers = AwsSigV4.authorization(
+            method = method,
+            canonicalUri = endpoint.canonicalUri(objectKey),
+            canonicalQuery = query,
+            host = endpoint.hostHeader,
+            region = endpoint.region,
+            accessKey = settings.accessKey,
+            secretKey = settings.secretKey,
+            payloadHash = HttpStreams.sha256(ByteArray(0)),
+            amzDate = amzDate,
+        )
+        return HttpStreams.openBody(method, endpoint.url(objectKey, query), headers)
+    }
+
+    private fun openDownload(method: String, objectKey: String, query: String): InputStream {
+        val amzDate = DateTimeFormatter.ofPattern("yyyyMMdd'T'HHmmss'Z'")
+            .withZone(ZoneOffset.UTC)
+            .format(Instant.now())
+        val headers = AwsSigV4.authorization(
+            method = method,
+            canonicalUri = endpoint.canonicalUri(objectKey),
+            canonicalQuery = query,
+            host = endpoint.hostHeader,
+            region = endpoint.region,
+            accessKey = settings.accessKey,
+            secretKey = settings.secretKey,
+            payloadHash = HttpStreams.sha256(ByteArray(0)),
+            amzDate = amzDate,
+        )
+        return HttpStreams.openDownload(method, endpoint.url(objectKey, query), headers)
+    }
+
     override fun deleteFolder(relativeFolderName: String) {
         val prefix = key(relativeFolderName).trim('/') + "/"
         val listed = call(

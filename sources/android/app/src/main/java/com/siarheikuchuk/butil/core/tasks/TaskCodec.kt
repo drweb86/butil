@@ -17,12 +17,14 @@ import org.json.JSONObject
  * discriminator. Schedule is kept beside the task because the desktop stores it in the OS scheduler.
  */
 data class UploadFolderTask(
-    var name: String = "",
+    override var name: String = "",
     var folder: String = "",
     var skipExistingFiles: Boolean = false,
     var storage: StorageSettings = FolderSettings(),
-    var schedule: Schedule = Schedule(),
-)
+    override var schedule: Schedule = Schedule(),
+) : AppTask() {
+    override val jsonType: String get() = "BUtilClient"
+}
 
 data class Schedule(
     val days: MutableSet<Int> = mutableSetOf(),
@@ -226,6 +228,130 @@ object TaskCodec {
         is Number -> if (value.toInt() == 1) "Implicit" else "Explicit"
         is String -> if (value.equals("Implicit", ignoreCase = true)) "Implicit" else "Explicit"
         else -> "Explicit"
+    }
+
+    fun toJson(task: AppTask): String {
+        val root = JSONObject()
+        root.put("Model", modelJson(task))
+        root.put("Name", task.name)
+        return root.toString(2)
+    }
+
+    fun fromJson(json: String): AppTask {
+        val root = JSONObject(json)
+        val model = root.getJSONObject("Model")
+        val name = root.optString("Name")
+        return when (val type = model.optString("\$type")) {
+            TASK_TYPE -> fromTaskJson(json)
+            "Incremental" -> IncrementalBackupTask(
+                name = name,
+                items = sourceFolders(model.optJSONArray("Items")),
+                fileExcludePatterns = stringList(model.optJSONArray("FileExcludePatterns")),
+                password = model.optString("Password"),
+                storage = storageFromJson(model.getJSONObject("To")),
+            )
+            "ImportMedia" -> ImportMediaTask(
+                name = name,
+                transformFileName = model.optString("TransformFileName"),
+                from = storageFromJson(model.getJSONObject("From")),
+                destinationFolder = model.optString("DestinationFolder"),
+                skipAlreadyImportedFiles = model.optBoolean("SkipAlreadyImportedFiles", true),
+                deleteCopiedDataOnSourceMedia = model.optBoolean("DeleteCopiedDataOnSourceMedia", false),
+                fileExtensions = if (!model.has("FileExtensions") || model.isNull("FileExtensions")) {
+                    null
+                } else {
+                    stringList(model.optJSONArray("FileExtensions"))
+                },
+                fileLastWriteTimeMinMillis = model.optString("FileLastWriteTimeMin").takeIf { model.has("FileLastWriteTimeMin") && !model.isNull("FileLastWriteTimeMin") }
+                    ?.let(BackupClock::parse),
+            )
+            "Synchronization" -> SynchronizationTask(
+                name = name,
+                localFolder = model.optString("LocalFolder"),
+                repositorySubfolder = model.nullableString("RepositorySubfolder"),
+                synchronizationMode = enumNumber(model.opt("SynchronizationMode"), SynchronizationTask.MODE_TWO_WAY),
+                password = model.optString("Password"),
+                storage = storageFromJson(model.getJSONObject("To")),
+            )
+            "BUtilServer" -> FtpsServerTask(
+                name = name,
+                port = model.optInt("Port", 10999),
+                username = model.optString("Username", "user"),
+                password = model.optString("Password"),
+                folder = model.optString("Folder"),
+                folderAccess = enumNumber(model.opt("FolderAccess"), FtpsServerTask.ACCESS_READ_WRITE),
+                durationMinutes = model.optLong("DurationMinutes", 30),
+            )
+            else -> throw IllegalArgumentException("Unknown task type '$type'.")
+        }
+    }
+
+    private fun modelJson(task: AppTask): JSONObject = when (task) {
+        is UploadFolderTask -> modelJson(task)
+        is IncrementalBackupTask -> JSONObject()
+            .put("\$type", task.jsonType)
+            .put("To", storageToJson(task.storage))
+            .put("Items", JSONArray().apply {
+                task.items.forEach { item ->
+                    put(JSONObject().put("Id", item.id).put("Target", item.target).put("IsFolder", true))
+                }
+            })
+            .put("FileExcludePatterns", JSONArray(task.fileExcludePatterns))
+            .put("Password", task.password)
+        is ImportMediaTask -> JSONObject()
+            .put("\$type", task.jsonType)
+            .put("TransformFileName", task.transformFileName)
+            .put("From", storageToJson(task.from))
+            .put("DestinationFolder", task.destinationFolder)
+            .put("SkipAlreadyImportedFiles", task.skipAlreadyImportedFiles)
+            .put("DeleteCopiedDataOnSourceMedia", task.deleteCopiedDataOnSourceMedia)
+            .put("FileExtensions", task.fileExtensions?.let { JSONArray(it) } ?: JSONObject.NULL)
+            .put(
+                "FileLastWriteTimeMin",
+                task.fileLastWriteTimeMinMillis?.let(BackupClock::format) ?: JSONObject.NULL,
+            )
+        is SynchronizationTask -> JSONObject()
+            .put("\$type", task.jsonType)
+            .put("To", storageToJson(task.storage))
+            .put("LocalFolder", task.localFolder)
+            .put("RepositorySubfolder", task.repositorySubfolder ?: JSONObject.NULL)
+            .put("SynchronizationMode", task.synchronizationMode)
+            .put("Password", task.password)
+        is FtpsServerTask -> JSONObject()
+            .put("\$type", task.jsonType)
+            .put("Port", task.port)
+            .put("Username", task.username)
+            .put("Password", task.password)
+            .put("Folder", task.folder)
+            .put("FolderAccess", task.folderAccess)
+            .put("DurationMinutes", task.durationMinutes)
+    }
+
+    private fun sourceFolders(array: JSONArray?): MutableList<SourceFolder> {
+        val items = mutableListOf<SourceFolder>()
+        if (array == null) return items
+        for (i in 0 until array.length()) {
+            val item = array.getJSONObject(i)
+            if (!item.optBoolean("IsFolder", true)) continue
+            items += SourceFolder(
+                id = item.optString("Id").ifBlank { java.util.UUID.randomUUID().toString() },
+                target = item.optString("Target"),
+            )
+        }
+        return items
+    }
+
+    private fun stringList(array: JSONArray?): MutableList<String> {
+        val items = mutableListOf<String>()
+        if (array == null) return items
+        for (i in 0 until array.length()) items += array.optString(i)
+        return items
+    }
+
+    private fun enumNumber(value: Any?, fallback: Int): Int = when (value) {
+        is Number -> value.toInt()
+        is String -> value.toIntOrNull() ?: fallback
+        else -> fallback
     }
 
     private fun JSONObject.nullableString(name: String): String? {

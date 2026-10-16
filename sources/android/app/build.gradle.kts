@@ -99,6 +99,7 @@ dependencies {
     implementation("androidx.activity:activity-compose:1.9.3")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.9.0")
     implementation("org.brotli:dec:0.1.2")
+    implementation("org.bouncycastle:bcpkix-jdk18on:1.79")
     implementation("androidx.documentfile:documentfile:1.0.1")
     implementation("androidx.core:core-ktx:1.13.1")
     implementation("commons-net:commons-net:3.11.1")

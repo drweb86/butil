@@ -47,6 +47,53 @@ internal class FtpsStorage(
         deleteRecursive(remote(relativeFolderName))
     }
 
+    override fun download(relativeFileName: String): InputStream {
+        val stream = client.retrieveFileStream(remote(relativeFileName))
+            ?: throw IllegalStateException("Failed to download $relativeFileName. ${client.replyString}")
+        return object : InputStream() {
+            override fun read(): Int = stream.read()
+            override fun read(b: ByteArray, off: Int, len: Int): Int = stream.read(b, off, len)
+            override fun close() {
+                stream.close()
+                client.completePendingCommand()
+            }
+        }
+    }
+
+    override fun delete(relativeFileName: String) {
+        client.deleteFile(remote(relativeFileName))
+    }
+
+    override fun listFiles(): List<RemoteFile> {
+        val files = mutableListOf<RemoteFile>()
+        walk(settings.folder?.trim()?.trim('/').orEmpty(), "", files)
+        return files.sortedBy { it.relativePath }
+    }
+
+    override fun listFolders(): List<String> {
+        val root = settings.folder?.trim()?.trim('/').orEmpty()
+        return client.listFiles(root.ifEmpty { "." })
+            ?.filter { it.isDirectory && it.name != "." && it.name != ".." }
+            ?.map { it.name }
+            ?.sorted()
+            .orEmpty()
+    }
+
+    private fun walk(absolute: String, relative: String, into: MutableList<RemoteFile>) {
+        val listed = client.listFiles(absolute.ifEmpty { "." }) ?: return
+        for (child in listed) {
+            if (child.name == "." || child.name == "..") continue
+            val childRelative = if (relative.isEmpty()) child.name else "$relative/${child.name}"
+            val childAbsolute = if (absolute.isEmpty()) child.name else "$absolute/${child.name}"
+            if (child.isDirectory) {
+                walk(childAbsolute, childRelative, into)
+            } else if (child.isFile) {
+                val modified = child.timestamp?.timeInMillis ?: 0L
+                into += RemoteFile(childRelative, child.size, modified)
+            }
+        }
+    }
+
     override fun close() {
         try {
             if (client.isConnected) client.logout()
