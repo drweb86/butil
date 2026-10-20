@@ -48,6 +48,7 @@ fun TechnicalFileToolView(
     val title = stringResource(kind.titleRes())
     val pathRequired = stringResource(R.string.technical_tool_error_path_required)
     val passwordRequired = stringResource(R.string.technical_tool_error_password_required)
+    val passwordIncorrect = stringResource(R.string.technical_tool_error_password_incorrect)
     val fileNotFound = stringResource(R.string.technical_tool_error_file_not_found)
     val completed = stringResource(R.string.technical_tool_completed)
 
@@ -149,7 +150,12 @@ fun TechnicalFileToolView(
                             viewModel.statusText = completed
                         } catch (error: Exception) {
                             viewModel.statusIsError = true
-                            viewModel.statusText = error.message ?: error.toString()
+                            if (viewModel.isInvalidPassword(error)) {
+                                viewModel.passwordError = passwordIncorrect
+                                viewModel.statusText = passwordIncorrect
+                            } else {
+                                viewModel.statusText = error.message ?: error.toString()
+                            }
                         } finally {
                             viewModel.running = false
                         }

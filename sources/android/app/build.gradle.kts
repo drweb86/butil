@@ -69,6 +69,12 @@ android {
         includeInApk = false
         includeInBundle = false
     }
+
+    packaging {
+        resources {
+            excludes += "META-INF/versions/9/OSGI-INF/MANIFEST.MF"
+        }
+    }
 }
 
 // F-Droid: AGP ArtProfile output (assets/dexopt/baseline.prof{,m}) is not

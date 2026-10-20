@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">BUtil</string>
+    <string name="app_legal_title">BUtil - Siarhei Kuchuk</string>
     <string name="app_version_and_site_link">BUtil - V%1$s</string>
     <string name="theme_title">Theme</string>
     <string name="theme_value_dark">Dark</string>
@@ -40,6 +41,7 @@
     <string name="technical_tool_completed">Operation completed successfully.</string>
     <string name="technical_tool_error_file_not_found">The file does not exist:</string>
     <string name="technical_tool_error_password_required">Enter a password.</string>
+    <string name="technical_tool_error_password_incorrect">The password is incorrect.</string>
     <string name="technical_tool_error_path_required">Specify both source and output file paths.</string>
     <string name="menu_open">Menu</string>
     <string name="menu_back">Back</string>

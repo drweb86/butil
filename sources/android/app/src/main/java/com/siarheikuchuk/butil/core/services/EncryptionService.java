@@ -135,6 +135,11 @@ public final class EncryptionService implements IEncryptionService {
             if (tail != null && tail.length > 0) {
                 output.write(tail);
             }
+        } catch (javax.crypto.BadPaddingException ex) {
+            if (mode == Cipher.DECRYPT_MODE) {
+                throw new InvalidPasswordException(ex);
+            }
+            throw new IOException(ex.getMessage(), ex);
         } catch (GeneralSecurityException ex) {
             throw new IOException(ex.getMessage(), ex);
         }

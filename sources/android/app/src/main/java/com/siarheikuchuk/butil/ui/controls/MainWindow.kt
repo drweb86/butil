@@ -130,13 +130,12 @@ fun MainWindow() {
                 )
             },
         ) {
-            val title = pageTitle(page)
             Scaffold(
                 modifier = Modifier.fillMaxSize(),
                 containerColor = MaterialTheme.colorScheme.background,
                 topBar = {
                     TopAppBar(
-                        title = { Text(title) },
+                        title = { Text(stringResource(R.string.app_legal_title), maxLines = 2) },
                         navigationIcon = {
                             IconButton(onClick = { scope.launch { drawerState.open() } }) {
                                 Icon(Icons.Filled.Menu, contentDescription = stringResource(R.string.menu_open))
@@ -210,18 +209,6 @@ fun MainWindow() {
 }
 
 @Composable
-private fun pageTitle(page: AppPage): String = when (page) {
-    AppPage.Tasks -> stringResource(R.string.app_name)
-    is AppPage.UploadEditor -> stringResource(R.string.upload_folder_contents_task_create)
-    is AppPage.Editor -> stringResource(titleRes(page.kind))
-    AppPage.Restore -> stringResource(R.string.task_restore)
-    is AppPage.UploadRun -> stringResource(R.string.app_name)
-    is AppPage.Tool -> stringResource(page.kind.titleRes())
-    is AppPage.Markdown -> stringResource(page.page.titleRes())
-    is AppPage.Stub -> stringResource(page.titleRes)
-}
-
-@Composable
 private fun AppMenu(
     dark: Boolean,
     page: AppPage,
@@ -232,14 +219,31 @@ private fun AppMenu(
     ModalDrawerSheet {
         Column(Modifier.verticalScroll(rememberScrollState())) {
             Text(
-                text = stringResource(R.string.app_name),
+                text = stringResource(R.string.app_legal_title),
                 modifier = Modifier.padding(horizontal = 28.dp, vertical = 16.dp),
                 style = MaterialTheme.typography.titleLarge,
             )
+            Text(
+                text = stringResource(R.string.task_create),
+                modifier = Modifier.padding(horizontal = 28.dp, vertical = 8.dp),
+                style = MaterialTheme.typography.titleSmall,
+                fontWeight = FontWeight.Bold,
+            )
+            EditorItem("Incremental", R.string.incremental_backup_task_create, page, onSelect)
+            EditorItem("ImportMedia", R.string.import_media_task_create, page, onSelect)
+            EditorItem("Synchronization", R.string.synchronization_task_create, page, onSelect)
+            HorizontalDivider(modifier = Modifier.padding(start = 28.dp, end = 28.dp, top = 4.dp, bottom = 4.dp))
+            EditorItem("BUtilServer", R.string.ftps_server_task_create, page, onSelect)
             NavigationDrawerItem(
-                label = { Text(stringResource(R.string.app_version_and_site_link, BuildConfig.VERSION_NAME)) },
-                selected = false,
-                onClick = onWebsite,
+                label = { Text(stringResource(R.string.upload_folder_contents_task_create)) },
+                selected = page is AppPage.UploadEditor && page.existingName == null,
+                onClick = { onSelect(AppPage.UploadEditor(null)) },
+                modifier = Modifier.padding(start = 12.dp),
+            )
+            NavigationDrawerItem(
+                label = { Text(stringResource(R.string.task_restore)) },
+                selected = page is AppPage.Restore,
+                onClick = { onSelect(AppPage.Restore) },
             )
             SectionLabel(stringResource(R.string.theme_title))
             NavigationDrawerItem(
@@ -270,28 +274,10 @@ private fun AppMenu(
                 onClick = { onSelect(AppPage.Markdown(MarkdownPage.ThirdPartyNotices)) },
             )
             StubItem(R.string.menu_privacy, page, onSelect)
-            HorizontalDivider(modifier = Modifier.padding(vertical = 8.dp))
-            Text(
-                text = stringResource(R.string.task_create),
-                modifier = Modifier.padding(horizontal = 28.dp, vertical = 8.dp),
-                style = MaterialTheme.typography.titleSmall,
-                fontWeight = FontWeight.Bold,
-            )
-            EditorItem("Incremental", R.string.incremental_backup_task_create, page, onSelect)
-            EditorItem("ImportMedia", R.string.import_media_task_create, page, onSelect)
-            EditorItem("Synchronization", R.string.synchronization_task_create, page, onSelect)
-            HorizontalDivider(modifier = Modifier.padding(start = 28.dp, end = 28.dp, top = 4.dp, bottom = 4.dp))
-            EditorItem("BUtilServer", R.string.ftps_server_task_create, page, onSelect)
             NavigationDrawerItem(
-                label = { Text(stringResource(R.string.upload_folder_contents_task_create)) },
-                selected = page is AppPage.UploadEditor && page.existingName == null,
-                onClick = { onSelect(AppPage.UploadEditor(null)) },
-                modifier = Modifier.padding(start = 12.dp),
-            )
-            NavigationDrawerItem(
-                label = { Text(stringResource(R.string.task_restore)) },
-                selected = page is AppPage.Restore,
-                onClick = { onSelect(AppPage.Restore) },
+                label = { Text(stringResource(R.string.app_version_and_site_link, BuildConfig.VERSION_NAME)) },
+                selected = false,
+                onClick = onWebsite,
             )
             Spacer(Modifier.height(12.dp))
         }
@@ -356,13 +342,6 @@ private fun StubPage(title: String, modifier: Modifier = Modifier) {
             color = MaterialTheme.colorScheme.onBackground,
         )
     }
-}
-
-private fun TechnicalFileToolKind.titleRes(): Int = when (this) {
-    TechnicalFileToolKind.DecryptAes256 -> R.string.technical_tool_decrypt_aes256_title
-    TechnicalFileToolKind.EncryptAes256 -> R.string.technical_tool_encrypt_aes256_title
-    TechnicalFileToolKind.DecompressBrotli -> R.string.technical_tool_decompress_brotli_title
-    TechnicalFileToolKind.CompressBrotli -> R.string.technical_tool_compress_brotli_title
 }
 
 private fun TechnicalFileToolKind.menuRes(): Int = when (this) {

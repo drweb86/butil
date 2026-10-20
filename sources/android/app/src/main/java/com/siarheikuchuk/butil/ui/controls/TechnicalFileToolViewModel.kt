@@ -6,8 +6,13 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import com.siarheikuchuk.butil.core.misc.SourceItemHelper
+import android.provider.DocumentsContract
 import com.siarheikuchuk.butil.core.services.CompressionService
 import com.siarheikuchuk.butil.core.services.EncryptionService
+import com.siarheikuchuk.butil.core.services.InvalidPasswordException
+import java.io.File
+import java.io.FileInputStream
+import java.io.FileOutputStream
 import java.util.Locale
 
 /**
@@ -74,13 +79,16 @@ class TechnicalFileToolViewModel(val kind: TechnicalFileToolKind) {
         val output = outputUri ?: error(fileNotFound)
         val input = resolver.openInputStream(source)
             ?: throw java.io.FileNotFoundException(fileNotFound + "\n" + sourceName)
+        if (kind == TechnicalFileToolKind.DecryptAes256) {
+            decryptToOutput(resolver, input, output, fileNotFound)
+            return ""
+        }
         val out = resolver.openOutputStream(output)
             ?: throw java.io.FileNotFoundException(fileNotFound + "\n" + outputName)
         input.use { sourceStream ->
             out.use { outputStream ->
                 when (kind) {
-                    TechnicalFileToolKind.DecryptAes256 ->
-                        EncryptionService().decryptAes256(sourceStream, outputStream, password)
+                    TechnicalFileToolKind.DecryptAes256 -> error("Decrypt writes the output only after the password is accepted.")
                     TechnicalFileToolKind.EncryptAes256 ->
                         EncryptionService().encryptAes256(sourceStream, outputStream, password)
                     TechnicalFileToolKind.DecompressBrotli ->
@@ -91,6 +99,55 @@ class TechnicalFileToolViewModel(val kind: TechnicalFileToolKind) {
             }
         }
         return ""
+    }
+
+    fun isInvalidPassword(error: Throwable): Boolean {
+        var current: Throwable? = error
+        while (current != null) {
+            if (current is InvalidPasswordException) return true
+            current = current.cause
+        }
+        return false
+    }
+
+    /**
+     * Decryption is finished in a temporary file. The chosen document is replaced only
+     * after the password is accepted, and removed when it is not.
+     */
+    private fun decryptToOutput(resolver: ContentResolver, input: java.io.InputStream, output: Uri, fileNotFound: String) {
+        val temp = File.createTempFile("butil-decrypt-", ".part")
+        try {
+            input.use { sourceStream ->
+                FileOutputStream(temp).use { tempOut ->
+                    EncryptionService().decryptAes256(sourceStream, tempOut, password)
+                }
+            }
+            val dest = resolver.openOutputStream(output)
+                ?: throw java.io.FileNotFoundException(fileNotFound + "\n" + outputName)
+            dest.use { outputStream ->
+                FileInputStream(temp).use { it.copyTo(outputStream) }
+            }
+        } catch (error: Exception) {
+            if (discardOutput(resolver, output)) {
+                outputUri = null
+                outputName = ""
+            }
+            throw error
+        } finally {
+            temp.delete()
+        }
+    }
+
+    private fun discardOutput(resolver: ContentResolver, uri: Uri): Boolean {
+        return try {
+            DocumentsContract.deleteDocument(resolver, uri)
+        } catch (_: Exception) {
+            try {
+                resolver.delete(uri, null, null) > 0
+            } catch (_: Exception) {
+                false
+            }
+        }
     }
 
     private fun computeSuggestedOutput(input: String): String {
