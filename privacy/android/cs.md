@@ -43,14 +43,6 @@ Když se úloha spustí, aplikace se připojí pouze k místu, které jste nasta
 
 Sdílení složky přes FTPS naslouchá v tomto zařízení, aby klient FTPS, který nastavíte, mohl číst nebo zapisovat složku, ke které jste udělili přístup, pomocí uživatelského jména a hesla, která jste nastavili. Tento provoz zůstává mezi vašimi zařízeními (a kýmkoli v síti, kdo má tyto přihlašovací údaje). Vývojář není stranou této komunikace. Odpovídáte za to, kdo se může dostat k portu, kterou složku sdílíte a jak silné je toto heslo.
 
-### Odkaz, který otevřete
-
-Řádek verze v nabídce může otevřít domovskou stránku projektu v systémovém prohlížeči:
-
-[github.com/drweb86/butil](https://github.com/drweb86/butil)
-
-Tento web má vlastní zásady ochrany osobních údajů. Vývojář tento provoz nepřijímá.
-
 Aplikace nekontroluje aktualizace a nekontaktuje službu aktualizací.
 
 ## Plán
@@ -72,7 +64,7 @@ Aplikace je nástroj pro zálohování a synchronizaci souborů. Není určena d
 
 ## Třetí strany
 
-Poskytovatelé úložiště, které nastavíte, zpracovávají soubory a přihlašovací údaje, které jim úloha odešle. Otevření domovské stránky projektu zajišťuje systémový prohlížeč a tento web. Vývojář tento provoz nepřijímá.
+Poskytovatelé úložiště, které nastavíte, zpracovávají soubory a přihlašovací údaje, které jim úloha odešle. Vývojář tento provoz nepřijímá.
 
 ## Změny
 

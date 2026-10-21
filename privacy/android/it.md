@@ -43,14 +43,6 @@ Quando un’attività viene eseguita, l’applicazione si collega solo al luogo 
 
 La condivisione di una cartella tramite FTPS resta in ascolto su questo dispositivo, in modo che un client FTPS configurato possa leggere o scrivere la cartella autorizzata, usando il nome utente e la password impostati. Quel traffico resta tra i dispositivi (e chiunque nella rete possieda quelle credenziali). Lo sviluppatore non ne è parte. L’utente è responsabile di chi può raggiungere la porta, di quale cartella viene condivisa e della robustezza di quella password.
 
-### Collegamento aperto
-
-La riga della versione nel menu può aprire la pagina iniziale del progetto nel browser di sistema:
-
-[github.com/drweb86/butil](https://github.com/drweb86/butil)
-
-Quel sito ha una propria informativa sulla privacy. Lo sviluppatore non riceve quel traffico.
-
 L’applicazione non controlla gli aggiornamenti e non contatta un servizio di aggiornamento.
 
 ## Pianificazione
@@ -72,7 +64,7 @@ L’applicazione è uno strumento di backup e sincronizzazione dei file. Non è 
 
 ## Terze parti
 
-I fornitori di archiviazione configurati elaborano i file e le credenziali che l’attività invia loro. L’apertura della pagina iniziale del progetto è gestita dal browser di sistema e da quel sito. Lo sviluppatore non riceve quel traffico.
+I fornitori di archiviazione configurati elaborano i file e le credenziali che l’attività invia loro. Lo sviluppatore non riceve quel traffico.
 
 ## Modifiche
 

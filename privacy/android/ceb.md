@@ -43,14 +43,6 @@ Kon modagan ang buluhaton, ang aplikasyon mokonekta lang sa lugar nga imong gita
 
 Ang pagpaambit og polder pinaagi sa FTPS mamati niining aparato aron ang kliyente sa FTPS nga imong andamon makabasa o makasulat sa polder nga imong gitugotan, gamit ang ngalan sa tiggamit ug password nga imong gitakda. Kadtong dagan sa datos magpabilin tali sa imong mga aparato (ug bisan kinsa sa network nga adunay nianang mga kredensyal). Ang tig-ugmad dili kabahin niini. Ikaw ang responsable kon kinsa ang makaabot sa port, unsang polder ang imong ipaambit, ug unsa ka lig-on ang password.
 
-### Sumpay nga imong ablihan
-
-Ang laray sa bersyon sa menu makaabli sa panid nga unahan sa proyekto sa tigbasa sa sistema:
-
-[github.com/drweb86/butil](https://github.com/drweb86/butil)
-
-Kadtong site adunay kaugalingong palisiya sa pribasiya. Ang tig-ugmad dili makadawat nianang dagan sa datos.
-
 Ang aplikasyon dili magsusi og mga update ug dili mokontak og serbisyo sa update.
 
 ## Iskedyul
@@ -72,7 +64,7 @@ Ang aplikasyon usa ka himan sa pagtipig og kopya ug pagpahiangay sa payl. Dili k
 
 ## Mga ikatulong partido
 
-Ang mga tighatag sa tipiganan nga imong andamon magproseso sa mga payl ug kredensyal nga ipadala sa buluhaton ngadto kanila. Ang pag-abli sa panid nga unahan sa proyekto gidumala sa tigbasa sa sistema ug nianang site. Ang tig-ugmad dili makadawat nianang dagan sa datos.
+Ang mga tighatag sa tipiganan nga imong andamon magproseso sa mga payl ug kredensyal nga ipadala sa buluhaton ngadto kanila. Ang tig-ugmad dili makadawat nianang dagan sa datos.
 
 ## Mga kausaban
 

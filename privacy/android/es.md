@@ -43,14 +43,6 @@ Cuando se ejecuta una tarea, la aplicación se conecta solo al lugar que usted i
 
 Compartir una carpeta por FTPS escucha en este dispositivo para que un cliente FTPS que usted configure pueda leer o escribir la carpeta que usted autorizó, con el nombre de usuario y la contraseña que usted estableció. Ese tráfico permanece entre sus dispositivos (y cualquier persona de la red que tenga esas credenciales). El desarrollador no es parte de él. Usted es responsable de quién puede alcanzar el puerto, de qué carpeta comparte y de la solidez de esa contraseña.
 
-### Enlace que usted abre
-
-La fila de la versión en el menú puede abrir la página de inicio del proyecto en el navegador del sistema:
-
-[github.com/drweb86/butil](https://github.com/drweb86/butil)
-
-Ese sitio tiene su propia política de privacidad. El desarrollador no recibe ese tráfico.
-
 La aplicación no comprueba actualizaciones y no contacta con un servicio de actualización.
 
 ## Programación
@@ -72,7 +64,7 @@ La aplicación es una herramienta de copia de seguridad y sincronización de arc
 
 ## Terceros
 
-Los proveedores de almacenamiento que usted configura procesan los archivos y las credenciales que la tarea les envía. La apertura de la página de inicio del proyecto la realizan el navegador del sistema y ese sitio. El desarrollador no recibe ese tráfico.
+Los proveedores de almacenamiento que usted configura procesan los archivos y las credenciales que la tarea les envía. El desarrollador no recibe ese tráfico.
 
 ## Cambios
 

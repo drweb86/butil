@@ -43,14 +43,6 @@ Tapşırıq işləyəndə tətbiq yalnız sizin təyin etdiyiniz yerə qoşulur.
 
 Qovluğu FTPS üzərindən paylaşmaq bu cihazda dinləyir ki, tənzimlədiyiniz FTPS müştərisi icazə verdiyiniz qovluğu sizin təyin etdiyiniz istifadəçi adı və parol ilə oxuya və ya yaza bilsin. Həmin trafik cihazlarınız arasında (və şəbəkədə həmin etimadnamələrə malik olan hər kəs arasında) qalır. Tərtibatçı bunun tərəfi deyil. Porta kimin çata biləcəyinə, hansı qovluğu paylaşdığınıza və həmin parolun nə qədər güclü olduğuna siz məsuliyyət daşıyırsınız.
 
-### Açdığınız keçid
-
-Menyudakı versiya sətri layihənin ana səhifəsini sistem brauzerində aça bilər:
-
-[github.com/drweb86/butil](https://github.com/drweb86/butil)
-
-Həmin saytın öz məxfilik siyasəti var. Tərtibatçı həmin trafiki almır.
-
 Tətbiq yeniləmələri yoxlamır və yeniləmə xidməti ilə əlaqə saxlamır.
 
 ## Cədvəl
@@ -72,7 +64,7 @@ Tətbiq ehtiyat nüsxə və fayl sinxronlaşdırma alətidir. 13 yaşından kiç
 
 ## Üçüncü tərəflər
 
-Tənzimlədiyiniz yaddaş təminatçıları tapşırığın onlara göndərdiyi faylları və etimadnamələri emal edir. Layihənin ana səhifəsini açmaq sistem brauzeri və həmin sayt tərəfindən həyata keçirilir. Tərtibatçı həmin trafiki almır.
+Tənzimlədiyiniz yaddaş təminatçıları tapşırığın onlara göndərdiyi faylları və etimadnamələri emal edir. Tərtibatçı həmin trafiki almır.
 
 ## Dəyişikliklər
 

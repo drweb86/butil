@@ -43,14 +43,6 @@ Uma umsebenzi usebenza, uhlelo luxhuma kuphela endaweni oyibekayo. Lokho kungaba
 
 Ukwabelana ngefolda nge-FTPS kulalela kule divayisi ukuze iklayenti ye-FTPS oyilungisayo ikwazi ukufunda noma ukubhala ifolda oyivumele, isebenzisa igama lomsebenzisi nephasiwedi oyibekayo. Leyo thrafikhi ihlala phakathi kwamadivayisi akho (nanoma ubani enethiwekhini onalezo zitifiketi zokungena). Umthuthukisi akayona ingxenye yayo. Wena unomthwalo wokuthi ubani angafinyelela embobeni, iyiphi ifolda oyabelana ngayo, nokuthi lelo phasiwedi liqinile kangakanani.
 
-### Isixhumanisi osivulayo
-
-Umugqa wenguqulo kumenyu ungavula ikhasi lasekhaya lomsebenzi kusiphequluli sesistimu:
-
-[github.com/drweb86/butil](https://github.com/drweb86/butil)
-
-Lelo sayithi linomthetho walo wobumfihlo. Umthuthukisi akayitholi leyo thrafikhi.
-
 Uhlelo aluhloli izibuyekezo futhi aluxhumani nesevisi yokubuyekeza.
 
 ## Ishejuli
@@ -72,7 +64,7 @@ Uhlelo luyithuluzi lokugcina ikhophi nokuvumelanisa amafayela. Alibhekiswe ezing
 
 ## Abanye
 
-Abanikezeli bokugcina obalungisayo bacubungula amafayela nezitifiketi zokungena umsebenzi abathumela zona. Ukuvula ikhasi lasekhaya lomsebenzi kwenziwa isiphequluli sesistimu nalelo sayithi. Umthuthukisi akayitholi leyo thrafikhi.
+Abanikezeli bokugcina obalungisayo bacubungula amafayela nezitifiketi zokungena umsebenzi abathumela zona. Umthuthukisi akayitholi leyo thrafikhi.
 
 ## Izinguquko
 

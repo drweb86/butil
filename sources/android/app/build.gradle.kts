@@ -114,6 +114,10 @@ abstract class CopyThirdPartyNoticesTask : DefaultTask() {
     @get:PathSensitive(PathSensitivity.RELATIVE)
     abstract val sourceFile: RegularFileProperty
 
+    @get:InputFile
+    @get:PathSensitive(PathSensitivity.RELATIVE)
+    abstract val creditsFile: RegularFileProperty
+
     @get:OutputDirectory
     abstract val outputDir: DirectoryProperty
 
@@ -122,6 +126,7 @@ abstract class CopyThirdPartyNoticesTask : DefaultTask() {
         val dest = outputDir.get().asFile
         dest.mkdirs()
         sourceFile.get().asFile.copyTo(dest.resolve("THIRD-PARTY-NOTICES.md"), overwrite = true)
+        creditsFile.get().asFile.copyTo(dest.resolve("CREDITS.md"), overwrite = true)
     }
 }
 
@@ -163,6 +168,7 @@ androidComponents {
             "copyThirdPartyNotices${variant.name.replaceFirstChar { it.uppercase() }}",
         ) {
             sourceFile.set(rootProject.projectDir.resolve("THIRD-PARTY-NOTICES.md"))
+            creditsFile.set(rootProject.projectDir.resolve("../../CREDITS.md"))
         }
         val copyLicenses = tasks.register<CopyLicenseDocumentsTask>(
             "copyLicenses${variant.name.replaceFirstChar { it.uppercase() }}",

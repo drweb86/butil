@@ -43,14 +43,6 @@ Apabila sesuatu tugas berjalan, aplikasi hanya bersambung ke tempat yang anda te
 
 Berkongsi folder melalui FTPS mendengar pada peranti ini supaya klien FTPS yang anda tetapkan boleh membaca atau menulis folder yang anda benarkan, dengan nama pengguna dan kata laluan yang anda tetapkan. Trafik itu kekal antara peranti anda (dan sesiapa pada rangkaian yang mempunyai kelayakan itu). Pembangun bukan pihak kepada trafik itu. Anda bertanggungjawab tentang siapa yang boleh mencapai port, folder mana yang anda kongsi, dan betapa kuat kata laluan itu.
 
-### Pautan yang anda buka
-
-Baris versi dalam menu boleh membuka laman utama projek dalam pelayar sistem:
-
-[github.com/drweb86/butil](https://github.com/drweb86/butil)
-
-Tapak itu mempunyai dasar privasi sendiri. Pembangun tidak menerima trafik itu.
-
 Aplikasi tidak menyemak kemas kini dan tidak menghubungi perkhidmatan kemas kini.
 
 ## Jadual
@@ -72,7 +64,7 @@ Aplikasi ini ialah alat sandaran dan penyegerakan fail. Aplikasi ini tidak dituj
 
 ## Pihak ketiga
 
-Pembekal storan yang anda tetapkan memproses fail dan kelayakan yang dihantar tugas kepada mereka. Membuka laman utama projek dikendalikan oleh pelayar sistem dan oleh tapak itu. Pembangun tidak menerima trafik itu.
+Pembekal storan yang anda tetapkan memproses fail dan kelayakan yang dihantar tugas kepada mereka. Pembangun tidak menerima trafik itu.
 
 ## Perubahan
 

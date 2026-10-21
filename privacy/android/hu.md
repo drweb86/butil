@@ -43,14 +43,6 @@ Amikor egy feladat fut, az alkalmazás csak az Ön által megadott helyhez csatl
 
 A mappa FTPS-en keresztüli megosztása ezen az eszközön figyel, hogy az Ön által beállított FTPS-ügyfél a megadott felhasználónévvel és jelszóval olvashassa vagy írja a megadott mappát. Ez a forgalom az Ön eszközei között marad (és bárki között a hálózaton, akinél megvannak ezek a hitelesítő adatok). A fejlesztő nem részese ennek. Ön felel azért, hogy ki érheti el a portot, melyik mappát osztja meg, és milyen erős a jelszó.
 
-### Megnyitott hivatkozás
-
-A menü verziósora megnyithatja a projekt kezdőlapját a rendszer böngészőjében:
-
-[github.com/drweb86/butil](https://github.com/drweb86/butil)
-
-Ennek a webhelynek saját adatvédelmi szabályzata van. A fejlesztő nem kapja meg ezt a forgalmat.
-
 Az alkalmazás nem keres frissítéseket, és nem lép kapcsolatba frissítési szolgáltatással.
 
 ## Ütemezés
@@ -72,7 +64,7 @@ Az alkalmazás mentési és fájlszinkronizáló eszköz. Nem 13 év alatti gyer
 
 ## Harmadik felek
 
-Az Ön által beállított tárolószolgáltatók dolgozzák fel a fájlokat és a hitelesítő adatokat, amelyeket a feladat küld nekik. A projekt kezdőlapjának megnyitását a rendszer böngészője és az a webhely kezeli. A fejlesztő nem kapja meg ezt a forgalmat.
+Az Ön által beállított tárolószolgáltatók dolgozzák fel a fájlokat és a hitelesítő adatokat, amelyeket a feladat küld nekik. A fejlesztő nem kapja meg ezt a forgalmat.
 
 ## Változások
 

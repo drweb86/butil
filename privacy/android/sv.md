@@ -43,14 +43,6 @@ När en uppgift körs ansluter appen bara till platsen du har angett. Det kan va
 
 Att dela en mapp via FTPS lyssnar på den här enheten så att en FTPS-klient du konfigurerar kan läsa eller skriva mappen du har gett åtkomst till, med användarnamnet och lösenordet du har angett. Den trafiken stannar mellan dina enheter (och den på nätverket som har de inloggningsuppgifterna). Utvecklaren är inte part i den. Du ansvarar för vem som kan nå porten, vilken mapp du delar och hur starkt lösenordet är.
 
-### Länk du öppnar
-
-Versionsraden i menyn kan öppna projektets startsida i systemets webbläsare:
-
-[github.com/drweb86/butil](https://github.com/drweb86/butil)
-
-Den webbplatsen har en egen integritetspolicy. Utvecklaren tar inte emot den trafiken.
-
 Appen söker inte efter uppdateringar och kontaktar ingen uppdateringstjänst.
 
 ## Schema
@@ -72,7 +64,7 @@ Appen är ett verktyg för säkerhetskopiering och filsynkronisering. Den riktar
 
 ## Tredje parter
 
-Lagringsleverantörer du konfigurerar behandlar de filer och inloggningsuppgifter som uppgiften skickar till dem. Öppnandet av projektets startsida hanteras av systemets webbläsare och av den webbplatsen. Utvecklaren tar inte emot den trafiken.
+Lagringsleverantörer du konfigurerar behandlar de filer och inloggningsuppgifter som uppgiften skickar till dem. Utvecklaren tar inte emot den trafiken.
 
 ## Ändringar
 

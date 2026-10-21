@@ -43,14 +43,6 @@ Wanneer een taak wordt uitgevoerd, maakt de app alleen verbinding met de plaats 
 
 Een map delen via FTPS luistert op dit apparaat, zodat een FTPS-client die u instelt de map waartoe u toegang hebt gegeven kan lezen of schrijven, met de gebruikersnaam en het wachtwoord die u hebt ingesteld. Dat verkeer blijft tussen uw apparaten (en iedereen op het netwerk die over die aanmeldgegevens beschikt). De ontwikkelaar is daar geen partij bij. U bent verantwoordelijk voor wie de poort kan bereiken, welke map u deelt en hoe sterk dat wachtwoord is.
 
-### Koppeling die u opent
-
-De versieregel in het menu kan de startpagina van het project openen in de systeembrowser:
-
-[github.com/drweb86/butil](https://github.com/drweb86/butil)
-
-Die site heeft een eigen privacybeleid. De ontwikkelaar ontvangt dat verkeer niet.
-
 De app controleert niet op updates en neemt geen contact op met een updatedienst.
 
 ## Schema
@@ -72,7 +64,7 @@ De app is een hulpmiddel voor back-up en bestandssynchronisatie. Hij is niet ger
 
 ## Derden
 
-Opslagproviders die u instelt, verwerken de bestanden en aanmeldgegevens die de taak naar hen stuurt. Het openen van de startpagina van het project wordt afgehandeld door de systeembrowser en door die site. De ontwikkelaar ontvangt dat verkeer niet.
+Opslagproviders die u instelt, verwerken de bestanden en aanmeldgegevens die de taak naar hen stuurt. De ontwikkelaar ontvangt dat verkeer niet.
 
 ## Wijzigingen
 

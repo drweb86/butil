@@ -43,14 +43,6 @@ When task dey run, the app dey connect only to the place wey you set. E fit be f
 
 If you share folder through FTPS, the app go dey listen for dis device so the FTPS client wey you set fit read or write the folder wey you give, with the username and password wey you set. That traffic go dey between your devices (and anybody for the network wey get those credentials). The person wey develop am no be part of am. Na you dey responsible for who fit reach the port, which folder you share, and how strong that password be.
 
-### Link wey you open
-
-The version line for the menu fit open the project homepage for the system browser:
-
-[github.com/drweb86/butil](https://github.com/drweb86/butil)
-
-That site get im own privacy rule. The person wey develop am no dey receive that traffic.
-
 The app no dey check for update, and e no dey contact any update service.
 
 ## Schedule
@@ -72,7 +64,7 @@ The app na tool wey dey back up and sync file. E no dey target pikin wey never r
 
 ## Other people
 
-The storage people wey you set dey handle the files and credentials wey the task send go dem. To open the project homepage na the system browser and that site dey do am. The person wey develop am no dey receive that traffic.
+The storage people wey you set dey handle the files and credentials wey the task send go dem. The person wey develop am no dey receive that traffic.
 
 ## Changes
 

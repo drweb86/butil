@@ -43,14 +43,6 @@ Saat sebuah tugas berjalan, aplikasi hanya tersambung ke tempat yang Anda tetapk
 
 Berbagi folder melalui FTPS mendengarkan di perangkat ini agar klien FTPS yang Anda atur dapat membaca atau menulis folder yang Anda izinkan, dengan nama pengguna dan kata sandi yang Anda tetapkan. Lalu lintas itu tetap di antara perangkat Anda (dan siapa pun di jaringan yang memiliki kredensial itu). Pengembang bukan pihak dalam lalu lintas itu. Anda bertanggung jawab atas siapa yang dapat menjangkau port, folder mana yang Anda bagikan, dan seberapa kuat kata sandi itu.
 
-### Tautan yang Anda buka
-
-Baris versi di menu dapat membuka beranda proyek di browser sistem:
-
-[github.com/drweb86/butil](https://github.com/drweb86/butil)
-
-Situs itu memiliki kebijakan privasi sendiri. Pengembang tidak menerima lalu lintas itu.
-
 Aplikasi tidak memeriksa pembaruan dan tidak menghubungi layanan pembaruan.
 
 ## Jadwal
@@ -72,7 +64,7 @@ Aplikasi ini adalah alat cadangan dan sinkronisasi berkas. Aplikasi ini tidak di
 
 ## Pihak ketiga
 
-Penyedia penyimpanan yang Anda atur memproses berkas dan kredensial yang dikirim tugas kepada mereka. Membuka beranda proyek ditangani oleh browser sistem dan oleh situs itu. Pengembang tidak menerima lalu lintas itu.
+Penyedia penyimpanan yang Anda atur memproses berkas dan kredensial yang dikirim tugas kepada mereka. Pengembang tidak menerima lalu lintas itu.
 
 ## Perubahan
 

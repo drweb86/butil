@@ -43,14 +43,6 @@ Quando uma tarefa é executada, o aplicativo se conecta apenas ao local que voc�
 
 Compartilhar uma pasta por FTPS escuta neste dispositivo para que um cliente FTPS que você configure possa ler ou gravar a pasta que você autorizou, usando o nome de usuário e a senha que você definiu. Esse tráfego permanece entre os seus dispositivos (e qualquer pessoa na rede que tenha essas credenciais). O desenvolvedor não é parte dele. Você é responsável por quem pode alcançar a porta, por qual pasta você compartilha e pela força dessa senha.
 
-### Link que você abre
-
-A linha da versão no menu pode abrir a página inicial do projeto no navegador do sistema:
-
-[github.com/drweb86/butil](https://github.com/drweb86/butil)
-
-Esse site tem a própria política de privacidade. O desenvolvedor não recebe esse tráfego.
-
 O aplicativo não verifica atualizações e não entra em contato com um serviço de atualização.
 
 ## Agendamento
@@ -72,7 +64,7 @@ O aplicativo é uma ferramenta de backup e sincronização de arquivos. Ele não
 
 ## Terceiros
 
-Os provedores de armazenamento que você configura processam os arquivos e as credenciais que a tarefa envia a eles. A abertura da página inicial do projeto é feita pelo navegador do sistema e por esse site. O desenvolvedor não recebe esse tráfego.
+Os provedores de armazenamento que você configura processam os arquivos e as credenciais que a tarefa envia a eles. O desenvolvedor não recebe esse tráfego.
 
 ## Alterações
 

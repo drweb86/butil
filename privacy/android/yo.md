@@ -43,14 +43,6 @@ Nígbà tí iṣẹ́ bá ń ṣiṣẹ́, ìṣàfilọ́lẹ̀ náà sopọ̀ 
 
 Pínpín fódà nípasẹ̀ FTPS ń tẹ́tí lórí ẹ̀rọ yìí kí oníbàárà FTPS tí o ṣètò lè kà tàbí kọ fódà tí o fún láṣẹ, pẹ̀lú orúkọ olùlò àti ọ̀rọ̀ aṣínà tí o ṣètò. Ìrìnàjò yẹn dúró láàárín àwọn ẹ̀rọ rẹ (àti ẹnikẹ́ni lórí nẹ́tíwọ́ọ̀kì tó ní àwọn ẹ̀rí ìwọlé wọ̀n-ọn-nì). Olùdàgbàsókè kì í ṣe ẹgbẹ́ rẹ̀. Ìwọ ni olùdáájú ẹni tó lè dé pọ́ọ̀tì, fódà wo ni o pín, àti bí ọ̀rọ̀ aṣínà yẹn ṣe lágbára tó.
 
-### Àsopọ̀ tí o ṣí
-
-Ìlà ẹ̀dà nínú àkójọ lè ṣí ojú-ìwé ilé iṣẹ́ náà nínú aṣàwákiri ẹ̀rọ:
-
-[github.com/drweb86/butil](https://github.com/drweb86/butil)
-
-Ojú-òpó yẹn ní ìlànà ìpamọ́ tìrẹ. Olùdàgbàsókè kò gba ìrìnàjò yẹn.
-
 Ìṣàfilọ́lẹ̀ náà kò ṣàyẹ̀wò àwọn àtúnṣe, kò sì kan iṣẹ́ àtúnṣe.
 
 ## Ìṣètò àkókò
@@ -72,7 +64,7 @@ O lè ṣiṣẹ́ iṣẹ́ kan nígbà tí ẹ̀rọ bá bẹ̀rẹ̀, tàbí 
 
 ## Àwọn ẹlẹ́kẹta
 
-Àwọn olùpèsè ìfipamọ́ tí o ṣètò máa ń ṣe àwọn fáìlì àti àwọn ẹ̀rí ìwọlé tí iṣẹ́ náà fi ránṣẹ́ sí wọn. Ṣíṣí ojú-ìwé ilé iṣẹ́ náà ni aṣàwákiri ẹ̀rọ àti ojú-òpó yẹn ń ṣe. Olùdàgbàsókè kò gba ìrìnàjò yẹn.
+Àwọn olùpèsè ìfipamọ́ tí o ṣètò máa ń ṣe àwọn fáìlì àti àwọn ẹ̀rí ìwọlé tí iṣẹ́ náà fi ránṣẹ́ sí wọn. Olùdàgbàsókè kò gba ìrìnàjò yẹn.
 
 ## Àwọn àyípadà
 

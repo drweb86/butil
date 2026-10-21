@@ -43,14 +43,6 @@ Khi một tác vụ chạy, ứng dụng chỉ kết nối tới nơi bạn đ�
 
 Chia sẻ thư mục qua FTPS lắng nghe trên thiết bị này để máy khách FTPS do bạn cấu hình có thể đọc hoặc ghi thư mục bạn đã cấp quyền, bằng tên người dùng và mật khẩu bạn đặt. Lưu lượng đó ở giữa các thiết bị của bạn (và bất kỳ ai trên mạng có những thông tin đăng nhập đó). Nhà phát triển không phải một bên của lưu lượng đó. Bạn chịu trách nhiệm về ai có thể tới cổng, thư mục nào bạn chia sẻ, và mật khẩu đó mạnh đến mức nào.
 
-### Liên kết bạn mở
-
-Dòng phiên bản trong menu có thể mở trang chủ dự án trong trình duyệt hệ thống:
-
-[github.com/drweb86/butil](https://github.com/drweb86/butil)
-
-Trang đó có chính sách quyền riêng tư riêng. Nhà phát triển không nhận lưu lượng đó.
-
 Ứng dụng không kiểm tra bản cập nhật và không liên hệ dịch vụ cập nhật.
 
 ## Lịch
@@ -72,7 +64,7 @@ Bạn có thể chạy một tác vụ khi thiết bị khởi động, hoặc v
 
 ## Bên thứ ba
 
-Nhà cung cấp lưu trữ bạn cấu hình xử lý tệp và thông tin đăng nhập mà tác vụ gửi cho họ. Việc mở trang chủ dự án do trình duyệt hệ thống và trang đó xử lý. Nhà phát triển không nhận lưu lượng đó.
+Nhà cung cấp lưu trữ bạn cấu hình xử lý tệp và thông tin đăng nhập mà tác vụ gửi cho họ. Nhà phát triển không nhận lưu lượng đó.
 
 ## Thay đổi
 

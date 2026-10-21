@@ -43,14 +43,6 @@ Gdy zadanie działa, aplikacja łączy się tylko z miejscem, które ustawisz. M
 
 Udostępnianie folderu przez FTPS nasłuchuje na tym urządzeniu, aby skonfigurowany przez Ciebie klient FTPS mógł odczytywać lub zapisywać folder, do którego udzielono dostępu, przy użyciu ustawionej przez Ciebie nazwy użytkownika i hasła. Ten ruch pozostaje między Twoimi urządzeniami (oraz każdą osobą w sieci, która ma te dane uwierzytelniające). Deweloper nie jest stroną tej wymiany. Odpowiadasz za to, kto może połączyć się z portem, który folder udostępniasz i jak silne jest to hasło.
 
-### Łącze, które otwierasz
-
-Wiersz wersji w menu może otworzyć stronę główną projektu w przeglądarce systemowej:
-
-[github.com/drweb86/butil](https://github.com/drweb86/butil)
-
-Ta witryna ma własną politykę prywatności. Deweloper nie otrzymuje tego ruchu.
-
 Aplikacja nie sprawdza aktualizacji i nie kontaktuje się z usługą aktualizacji.
 
 ## Harmonogram
@@ -72,7 +64,7 @@ Aplikacja jest narzędziem do kopii zapasowych i synchronizacji plików. Nie jes
 
 ## Podmioty trzecie
 
-Skonfigurowani przez Ciebie dostawcy magazynu przetwarzają pliki i dane uwierzytelniające, które wysyła do nich zadanie. Otwarcie strony głównej projektu obsługują przeglądarka systemowa i ta witryna. Deweloper nie otrzymuje tego ruchu.
+Skonfigurowani przez Ciebie dostawcy magazynu przetwarzają pliki i dane uwierzytelniające, które wysyła do nich zadanie. Deweloper nie otrzymuje tego ruchu.
 
 ## Zmiany
 

@@ -43,14 +43,6 @@ Când rulează o sarcină, aplicația se conectează doar la locul pe care l-aț
 
 Partajarea unui dosar prin FTPS ascultă pe acest dispozitiv, astfel încât un client FTPS pe care îl configurați să poată citi sau scrie dosarul pentru care ați acordat acces, folosind numele de utilizator și parola pe care le-ați stabilit. Traficul rămâne între dispozitivele dumneavoastră (și oricine din rețea deține acele date de autentificare). Dezvoltatorul nu este parte la acesta. Sunteți responsabil pentru cine poate ajunge la port, ce dosar partajați și cât de puternică este parola.
 
-### Legătura pe care o deschideți
-
-Rândul versiunii din meniu poate deschide pagina principală a proiectului în browserul sistemului:
-
-[github.com/drweb86/butil](https://github.com/drweb86/butil)
-
-Acest site are propria politică de confidențialitate. Dezvoltatorul nu primește acel trafic.
-
 Aplicația nu caută actualizări și nu contactează un serviciu de actualizare.
 
 ## Program
@@ -72,7 +64,7 @@ Aplicația este un instrument de copiere de rezervă și de sincronizare a fiși
 
 ## Terți
 
-Furnizorii de stocare pe care îi configurați prelucrează fișierele și datele de autentificare pe care sarcina le trimite către ei. Deschiderea paginii principale a proiectului este realizată de browserul sistemului și de acel site. Dezvoltatorul nu primește acel trafic.
+Furnizorii de stocare pe care îi configurați prelucrează fișierele și datele de autentificare pe care sarcina le trimite către ei. Dezvoltatorul nu primește acel trafic.
 
 ## Modificări
 

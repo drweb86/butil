@@ -43,14 +43,6 @@ Vazifa bajarilganda, ilova faqat siz belgilagan joyga ulanadi. Bu ushbu qurilmad
 
 FTPS orqali jild ulashish ushbu qurilmada tinglaydi, shunda siz sozlagan FTPS mijozi siz qoʻygan foydalanuvchi nomi va parol bilan ruxsat bergan jildingizni oʻqishi yoki yozishi mumkin. Bu trafik qurilmalaringiz oʻrtasida qoladi (va tarmoqda oʻsha hisob maʼlumotlariga ega har qanday kishi oʻrtasida). Ishlab chiquvchi uning tomoni emas. Portga kim yetishi mumkinligi, qaysi jildni ulashingiz va parol qanchalik mustahkamligi uchun siz javobgarsiz.
 
-### Siz ochadigan havola
-
-Menyudagi versiya qatori tizim brauzerida loyiha bosh sahifasini ochishi mumkin:
-
-[github.com/drweb86/butil](https://github.com/drweb86/butil)
-
-Oʻsha saytning oʻz maxfiylik siyosati bor. Ishlab chiquvchi bu trafikni olmaydi.
-
 Ilova yangilanishlarni tekshirmaydi va yangilanish xizmatiga murojaat qilmaydi.
 
 ## Jadval
@@ -72,7 +64,7 @@ Ilova zaxira nusxa va fayl sinxronlash vositasidir. U 13 yoshgacha boʻlgan bola
 
 ## Uchinchi tomonlar
 
-Siz sozlaydigan saqlash provayderlari vazifa ularga yuboradigan fayllar va hisob maʼlumotlarini qayta ishlaydi. Loyiha bosh sahifasini ochishni tizim brauzeri va oʻsha sayt bajaradi. Ishlab chiquvchi bu trafikni olmaydi.
+Siz sozlaydigan saqlash provayderlari vazifa ularga yuboradigan fayllar va hisob maʼlumotlarini qayta ishlaydi. Ishlab chiquvchi bu trafikni olmaydi.
 
 ## Oʻzgarishlar
 

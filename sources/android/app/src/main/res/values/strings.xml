@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">BUtil</string>
-    <string name="app_legal_title" translatable="false">BUtil - Siarhei Kuchuk</string>
-    <string name="app_version_and_site_link">BUtil - V%1$s</string>
+    <string name="app_legal_title" translatable="false">BUtil - Siarhei Kuchuk - V%1$s</string>
     <string name="theme_title">Theme</string>
     <string name="theme_value_dark">Dark</string>
     <string name="theme_value_light">Light</string>

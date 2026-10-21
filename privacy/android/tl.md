@@ -43,14 +43,6 @@ Kapag tumatakbo ang isang gawain, kumokonekta ang app lamang sa lugar na itinakd
 
 Nakikinig sa device na ito ang pagbabahagi ng folder sa pamamagitan ng FTPS upang mabasa o maisulat ng FTPS client na ise-set mo ang folder na ibinigay mo, gamit ang username at password na itinakda mo. Nanatili ang trapikong iyon sa pagitan ng mga device mo (at ng sinumang nasa network na may mga kredensyal na iyon). Hindi partido ang developer dito. Ikaw ang responsable kung sino ang makakaabot sa port, aling folder ang ibabahagi mo, at gaano kalakas ang password na iyon.
 
-### Link na bubuksan mo
-
-Maaaring buksan ng hanay ng bersyon sa menu ang homepage ng proyekto sa browser ng sistema:
-
-[github.com/drweb86/butil](https://github.com/drweb86/butil)
-
-May sariling patakaran sa pribasiya ang site na iyon. Hindi tinatanggap ng developer ang trapikong iyon.
-
 Hindi tumitingin ang app ng mga update at hindi kumokontak sa serbisyo ng update.
 
 ## Iskedyul
@@ -72,7 +64,7 @@ Ang app ay kasangkapan sa backup at pag-sync ng file. Hindi ito nakatuon sa mga 
 
 ## Mga ikatlong partido
 
-Pinoproseso ng mga tagapagbigay ng imbakan na ise-set mo ang mga file at kredensyal na ipinapadala sa kanila ng gawain. Ang pagbukas ng homepage ng proyekto ay hinahawakan ng browser ng sistema at ng site na iyon. Hindi tinatanggap ng developer ang trapikong iyon.
+Pinoproseso ng mga tagapagbigay ng imbakan na ise-set mo ang mga file at kredensyal na ipinapadala sa kanila ng gawain. Hindi tinatanggap ng developer ang trapikong iyon.
 
 ## Mga pagbabago
 

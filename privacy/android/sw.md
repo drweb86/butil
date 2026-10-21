@@ -43,14 +43,6 @@ Kazi inapoendeshwa, programu huunganisha tu mahali ulipoweka. Hilo linaweza kuwa
 
 Kushiriki folda kupitia FTPS husikiliza kwenye kifaa hiki ili mteja wa FTPS unayesanidi aweze kusoma au kuandika folda uliyoidhinisha, kwa jina la mtumiaji na nenosiri uliloweka. Trafiki hiyo hubaki kati ya vifaa vyako (na mtu yeyote kwenye mtandao aliye na vitambulisho hivyo). Msanidi si mshirika wake. Wewe unawajibika kwa nani anayeweza kufika kwenye mlango, folda unayoshiriki, na jinsi nenosiri hilo lilivyo imara.
 
-### Kiungo unachofungua
-
-Mstari wa toleo kwenye menyu unaweza kufungua ukurasa wa kwanza wa mradi katika kivinjari cha mfumo:
-
-[github.com/drweb86/butil](https://github.com/drweb86/butil)
-
-Tovuti hiyo ina sera yake ya faragha. Msanidi hapokei trafiki hiyo.
-
 Programu haikagui masasisho wala haiwasiliani na huduma ya masasisho.
 
 ## Ratiba
@@ -72,7 +64,7 @@ Programu ni zana ya kuhifadhi nakala na kusawazisha faili. Haielekezwi kwa watot
 
 ## Wahusika wengine
 
-Watoa hifadhi unawosanidi huchakata faili na vitambulisho ambavyo kazi huwatumia. Kufungua ukurasa wa kwanza wa mradi hufanywa na kivinjari cha mfumo na tovuti hiyo. Msanidi hapokei trafiki hiyo.
+Watoa hifadhi unawosanidi huchakata faili na vitambulisho ambavyo kazi huwatumia. Msanidi hapokei trafiki hiyo.
 
 ## Mabadiliko
 

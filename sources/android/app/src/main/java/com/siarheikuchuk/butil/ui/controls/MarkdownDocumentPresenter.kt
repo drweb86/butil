@@ -6,13 +6,10 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.text.LinkAnnotation
 import androidx.compose.ui.text.SpanStyle
-import androidx.compose.ui.text.TextLinkStyles
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.withLink
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.siarheikuchuk.butil.core.legal.PrivacyInline
@@ -25,9 +22,6 @@ import com.siarheikuchuk.butil.core.legal.PrivacyMdBlock
 object MarkdownDocumentPresenter {
     @Composable
     fun Render(markdown: String, modifier: Modifier = Modifier) {
-        val linkStyle = TextLinkStyles(
-            style = SpanStyle(color = MaterialTheme.colorScheme.primary),
-        )
         Column(modifier) {
             for (block in PrivacyMarkdown.parse(markdown)) {
                 when (block) {
@@ -47,12 +41,10 @@ object MarkdownDocumentPresenter {
                     )
                     is PrivacyMdBlock.Paragraph -> InlineText(
                         inlines = block.inlines,
-                        linkStyle = linkStyle,
                         modifier = Modifier.padding(bottom = 10.dp),
                     )
                     is PrivacyMdBlock.Bullet -> InlineText(
                         inlines = block.inlines,
-                        linkStyle = linkStyle,
                         prefix = "•  ",
                         modifier = Modifier.padding(start = 12.dp, bottom = 6.dp),
                     )
@@ -65,7 +57,6 @@ object MarkdownDocumentPresenter {
 @Composable
 private fun InlineText(
     inlines: List<PrivacyInline>,
-    linkStyle: TextLinkStyles,
     modifier: Modifier = Modifier,
     prefix: String? = null,
 ) {
@@ -84,9 +75,7 @@ private fun InlineText(
                         append(inline.value)
                     }
                 }
-                is PrivacyInline.Link -> withLink(LinkAnnotation.Url(inline.url, linkStyle)) {
-                    append(inline.label)
-                }
+                is PrivacyInline.Link -> append(inline.label)
                 is PrivacyInline.Code -> {
                     pushStyle(SpanStyle(fontFamily = FontFamily.Monospace))
                     append(inline.value)

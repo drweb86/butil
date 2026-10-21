@@ -43,14 +43,6 @@ Lorsqu’une tâche s’exécute, l’application se connecte uniquement à l’
 
 Le partage d’un dossier par FTPS écoute sur cet appareil afin qu’un client FTPS que vous configurez puisse lire ou écrire le dossier que vous avez autorisé, avec le nom d’utilisateur et le mot de passe que vous avez définis. Ce trafic reste entre vos appareils (et toute personne du réseau qui possède ces identifiants). Le développeur n’en est pas partie. Vous êtes responsable de qui peut atteindre le port, du dossier que vous partagez et de la robustesse de ce mot de passe.
 
-### Lien que vous ouvrez
-
-La ligne de version dans le menu peut ouvrir la page d’accueil du projet dans le navigateur du système :
-
-[github.com/drweb86/butil](https://github.com/drweb86/butil)
-
-Ce site a sa propre politique de confidentialité. Le développeur ne reçoit pas ce trafic.
-
 L’application ne recherche pas de mises à jour et ne contacte pas de service de mise à jour.
 
 ## Planification
@@ -72,7 +64,7 @@ L’application est un outil de sauvegarde et de synchronisation de fichiers. El
 
 ## Tiers
 
-Les fournisseurs de stockage que vous configurez traitent les fichiers et les identifiants que la tâche leur envoie. L’ouverture de la page d’accueil du projet est assurée par le navigateur du système et par ce site. Le développeur ne reçoit pas ce trafic.
+Les fournisseurs de stockage que vous configurez traitent les fichiers et les identifiants que la tâche leur envoie. Le développeur ne reçoit pas ce trafic.
 
 ## Modifications
 

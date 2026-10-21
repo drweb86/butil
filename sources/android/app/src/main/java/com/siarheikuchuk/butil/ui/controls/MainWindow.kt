@@ -2,9 +2,6 @@
 
 package com.siarheikuchuk.butil.ui.controls
 
-import android.content.ActivityNotFoundException
-import android.content.Intent
-import android.net.Uri
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -43,8 +40,6 @@ import com.siarheikuchuk.butil.BuildConfig
 import com.siarheikuchuk.butil.R
 import com.siarheikuchuk.butil.core.tasks.UploadScheduler
 import kotlinx.coroutines.launch
-
-private const val HOME_PAGE = "https://github.com/drweb86/butil"
 
 private sealed interface AppPage {
     data object Tasks : AppPage
@@ -103,13 +98,6 @@ fun MainWindow(
                     },
                     onOpenPrivacy = onOpenPrivacy,
                     onOpenLicense = onOpenLicense,
-                    onWebsite = {
-                        try {
-                            context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(HOME_PAGE)))
-                        } catch (_: ActivityNotFoundException) {
-                        }
-                        scope.launch { drawerState.close() }
-                    },
                 )
             },
         ) {
@@ -118,7 +106,12 @@ fun MainWindow(
                 containerColor = MaterialTheme.colorScheme.background,
                 topBar = {
                     TopAppBar(
-                        title = { Text(stringResource(R.string.app_legal_title), maxLines = 2) },
+                        title = {
+                            Text(
+                                stringResource(R.string.app_legal_title, BuildConfig.VERSION_NAME),
+                                maxLines = 2,
+                            )
+                        },
                         navigationIcon = {
                             IconButton(onClick = { scope.launch { drawerState.open() } }) {
                                 Icon(Icons.Filled.Menu, contentDescription = stringResource(R.string.menu_open))
@@ -196,14 +189,13 @@ private fun AppMenu(
     page: AppPage,
     onSelect: (AppPage) -> Unit,
     onTheme: (Boolean) -> Unit,
-    onWebsite: () -> Unit,
     onOpenPrivacy: () -> Unit,
     onOpenLicense: () -> Unit,
 ) {
     ModalDrawerSheet {
         Column(Modifier.verticalScroll(rememberScrollState())) {
             Text(
-                text = stringResource(R.string.app_legal_title),
+                text = stringResource(R.string.app_legal_title, BuildConfig.VERSION_NAME),
                 modifier = Modifier.padding(horizontal = 28.dp, vertical = 16.dp),
                 style = MaterialTheme.typography.titleLarge,
             )
@@ -250,7 +242,11 @@ private fun AppMenu(
             ToolItem(TechnicalFileToolKind.CompressBrotli, page, onSelect)
             StubItem(R.string.technical_tool_menu_prevent_sleep, page, onSelect)
             HorizontalDivider(modifier = Modifier.padding(vertical = 8.dp))
-            StubItem(R.string.menu_credits, page, onSelect)
+            NavigationDrawerItem(
+                label = { Text(stringResource(R.string.menu_credits)) },
+                selected = page is AppPage.Markdown && page.page == MarkdownPage.Credits,
+                onClick = { onSelect(AppPage.Markdown(MarkdownPage.Credits)) },
+            )
             NavigationDrawerItem(
                 label = { Text(stringResource(R.string.menu_license)) },
                 selected = false,
@@ -265,11 +261,6 @@ private fun AppMenu(
                 label = { Text(stringResource(R.string.menu_privacy)) },
                 selected = false,
                 onClick = onOpenPrivacy,
-            )
-            NavigationDrawerItem(
-                label = { Text(stringResource(R.string.app_version_and_site_link, BuildConfig.VERSION_NAME)) },
-                selected = false,
-                onClick = onWebsite,
             )
             Spacer(Modifier.height(12.dp))
         }

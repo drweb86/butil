@@ -43,14 +43,6 @@ When a task runs, the app connects only to the place you set. That can be a fold
 
 Sharing a folder over FTPS listens on this device so an FTPS client you configure can read or write the folder you granted, using the username and password you set. That traffic stays between your devices (and anyone on the network who has those credentials). The developer is not a party to it. You are responsible for who can reach the port, which folder you share, and how strong that password is.
 
-### Link you open
-
-The version row in the menu can open the project homepage in the system browser:
-
-[github.com/drweb86/butil](https://github.com/drweb86/butil)
-
-That site has its own privacy policy. The developer does not receive that traffic.
-
 The app does not check for updates and does not contact an update service.
 
 ## Schedule
@@ -72,7 +64,7 @@ The app is a backup and file-sync tool. It is not directed at children under 13.
 
 ## Third parties
 
-Storage providers you configure process the files and credentials the task sends to them. Opening the project homepage is handled by the system browser and by that site. The developer does not receive that traffic.
+Storage providers you configure process the files and credentials the task sends to them. The developer does not receive that traffic.
 
 ## Changes
 

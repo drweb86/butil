@@ -43,14 +43,6 @@ Marka hawl socoto, codsigu wuxuu ku xirmaa oo keliya meesha aad dejisay. Taasi w
 
 Wadaagista galka FTPS waxay dhageysataa qalabkan si macmiil FTPS aad dejiso u akhriyo ama u qoro galka aad oggolaatay, isagoo adeegsanaya magaca isticmaalaha iyo erayga sirta ah ee aad dejisay. Taraafikadaas waxay ku sii nagtaa qalabyadaada dhexdooda (iyo qof kasta oo shabakadda ku jira oo haysta aqoonsiyadaas). Horumariyuhu kama mid aha. Adiga ayaa masuul ka ah cidda gaari karta port-ka, galka aad wadaagto, iyo sida erayga sirta ah u xooggan yahay.
 
-### Xiriirka aad furto
-
-Safka nooca ee liiska wuxuu ku furi karaa bogga hore ee mashruuca biraawsarka nidaamka:
-
-[github.com/drweb86/butil](https://github.com/drweb86/butil)
-
-Boggaas wuxuu leeyahay siyaasad asturnaan u gaar ah. Horumariyuhu ma helo taraafikadaas.
-
 Codsigu ma hubiyo cusboonaysiinta mana la xiriiro adeeg cusboonaysiin.
 
 ## Jadwal
@@ -72,7 +64,7 @@ Codsigu waa qalab kaydin iyo wada-waafajin faylal. Looma jeedin carruurta ka yar
 
 ## Dhinacyada saddexaad
 
-Bixiyeyaasha kaydka aad dejiso ayaa ka shaqeeya faylasha iyo aqoonsiyada hawshu u dirto. Furista bogga hore ee mashruuca waxaa maamula biraawsarka nidaamka iyo boggaas. Horumariyuhu ma helo taraafikadaas.
+Bixiyeyaasha kaydka aad dejiso ayaa ka shaqeeya faylasha iyo aqoonsiyada hawshu u dirto. Horumariyuhu ma helo taraafikadaas.
 
 ## Isbeddellada
 

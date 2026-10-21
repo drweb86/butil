@@ -14,6 +14,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.siarheikuchuk.butil.R
+import com.siarheikuchuk.butil.core.legal.Credits
 import com.siarheikuchuk.butil.core.legal.ThirdPartyNotices
 
 /**
@@ -29,6 +30,7 @@ fun MarkdownPageView(
     val context = LocalContext.current
     val viewModel = remember(page) {
         val markdown = when (page) {
+            MarkdownPage.Credits -> Credits.load(context)
             MarkdownPage.ThirdPartyNotices -> ThirdPartyNotices.load(context)
         }
         MarkdownPageViewModel(page, markdown)

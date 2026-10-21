@@ -43,14 +43,6 @@ Wenn eine Aufgabe ausgeführt wird, verbindet sich die Anwendung nur mit dem von
 
 Die Freigabe eines Ordners über FTPS lauscht auf diesem Gerät, damit ein von Ihnen eingerichteter FTPS-Client den freigegebenen Ordner mit dem von Ihnen festgelegten Benutzernamen und Kennwort lesen oder schreiben kann. Dieser Datenverkehr bleibt zwischen Ihren Geräten (und jeder Person im Netzwerk, die über diese Anmeldedaten verfügt). Der Entwickler ist daran nicht beteiligt. Sie sind dafür verantwortlich, wer den Port erreichen kann, welchen Ordner Sie freigeben und wie stark dieses Kennwort ist.
 
-### Link, den Sie öffnen
-
-Die Versionszeile im Menü kann die Projektstartseite im Systembrowser öffnen:
-
-[github.com/drweb86/butil](https://github.com/drweb86/butil)
-
-Diese Website hat eine eigene Datenschutzerklärung. Der Entwickler empfängt diesen Datenverkehr nicht.
-
 Die Anwendung prüft nicht auf Aktualisierungen und kontaktiert keinen Aktualisierungsdienst.
 
 ## Zeitplan
@@ -72,7 +64,7 @@ Die Anwendung ist ein Werkzeug für Sicherung und Dateisynchronisierung. Sie ric
 
 ## Dritte
 
-Von Ihnen eingerichtete Speicheranbieter verarbeiten die Dateien und Anmeldedaten, die die Aufgabe an sie sendet. Das Öffnen der Projektstartseite wird vom Systembrowser und von dieser Website ausgeführt. Der Entwickler empfängt diesen Datenverkehr nicht.
+Von Ihnen eingerichtete Speicheranbieter verarbeiten die Dateien und Anmeldedaten, die die Aufgabe an sie sendet. Der Entwickler empfängt diesen Datenverkehr nicht.
 
 ## Änderungen
 

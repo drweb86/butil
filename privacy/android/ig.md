@@ -43,14 +43,6 @@ Mgbe ọrụ na-arụ, ngwa na-ejikọ naanị n'ebe ị debere. Nke ahụ nwere
 
 Ikekọrịta folda site na FTPS na-ege ntị na ngwaọrụ a ka onye ahịa FTPS ị haziri nwee ike ịgụ ma ọ bụ dee folda ị nyere, site na aha onye ọrụ na okwuntụghe ị debere. Njem ahụ na-anọ n'etiti ngwaọrụ gị (na onye ọ bụla na netwọk nwere nzere ndị ahụ). Onye mmepe abụghị akụkụ nke ya. Ị bụ onye na-ahụ maka onye nwere ike iru port, folda ị na-ekekọrịta, na ka okwuntụghe ahụ siri ike.
 
-### Njikọ ị meghere
-
-Ahịrị ụdị dị na menu nwere ike imepe ibe mbụ nke ọrụ na ihe nchọgharị sistemụ:
-
-[github.com/drweb86/butil](https://github.com/drweb86/butil)
-
-Saịtị ahụ nwere iwu nzuzo nke ya. Onye mmepe anaghị enweta njem ahụ.
-
 Ngwa anaghị elele mmelite ma ọ naghị akpọtụrụ ọrụ mmelite.
 
 ## Usoro oge
@@ -72,7 +64,7 @@ Ngwa a bụ ngwá nchekwa na mmekọrịta faịlụ. Ọ naghị elekwasị any
 
 ## Ndị ọzọ
 
-Ndị na-enye nchekwa ị haziri na-ahazi faịlụ na nzere nke ọrụ na-eziga ha. Imepe ibe mbụ nke ọrụ bụ ihe nchọgharị sistemụ na saịtị ahụ na-eme. Onye mmepe anaghị enweta njem ahụ.
+Ndị na-enye nchekwa ị haziri na-ahazi faịlụ na nzere nke ọrụ na-eziga ha. Onye mmepe anaghị enweta njem ahụ.
 
 ## Mgbanwe
 

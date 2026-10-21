@@ -43,14 +43,6 @@ Lokacin da aiki ya gudana, manhajar tana haɗawa kawai da wurin da kuka saita. W
 
 Raba babban fayil ta FTPS yana saurare a wannan na'ura domin abokin ciniki na FTPS da kuka saita ya iya karantawa ko rubutawa babban fayil ɗin da kuka ba, ta amfani da sunan mai amfani da kalmar sirri da kuka saita. Wannan zirga-zirga tana zama tsakanin na'urorinku (da duk wanda ke kan hanyar sadarwa da ke da waɗannan shaidu). Mai haɓakawa ba shi cikin wannan ba. Ku ne ke da alhakin wanda zai iya isa tashar, wane babban fayil kuke raba, da ƙarfin wannan kalmar sirri.
 
-### Mahaɗin da kuke buɗewa
-
-Layin sigar a cikin menu na iya buɗe shafin farko na aikin a burauzar tsarin:
-
-[github.com/drweb86/butil](https://github.com/drweb86/butil)
-
-Wannan shafin yana da nata manufar sirri. Mai haɓakawa ba ya karɓar wannan zirga-zirga.
-
 Manhajar ba ta duba sabuntawa ba kuma ba ta tuntuɓar sabis na sabuntawa ba.
 
 ## Jadawali
@@ -72,7 +64,7 @@ Manhajar kayan aiki ce na ajiya da daidaita fayiloli. Ba a nufa ta ga yara ƙasa
 
 ## Wasu bangare
 
-Masu bayar da ajiya da kuka saita suna sarrafa fayiloli da shaidun da aikin ya aika musu. Buɗe shafin farko na aikin burauzar tsarin da wannan shafi ke yi. Mai haɓakawa ba ya karɓar wannan zirga-zirga.
+Masu bayar da ajiya da kuka saita suna sarrafa fayiloli da shaidun da aikin ya aika musu. Mai haɓakawa ba ya karɓar wannan zirga-zirga.
 
 ## Canje-canje
 

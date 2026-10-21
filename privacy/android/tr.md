@@ -43,14 +43,6 @@ Bir görev çalıştığında uygulama yalnızca belirlediğiniz yere bağlanır
 
 Bir klasörü FTPS üzerinden paylaşmak, yapılandırdığınız bir FTPS istemcisinin belirlediğiniz kullanıcı adı ve parola ile izin verdiğiniz klasörü okuyabilmesi veya yazabilmesi için bu cihazda dinler. Bu trafik cihazlarınız arasında (ve bu kimlik bilgilerine sahip ağdaki herkes arasında) kalır. Geliştirici bu iletişimin tarafı değildir. Porta kimlerin ulaşabileceğinden, hangi klasörü paylaştığınızdan ve bu parolanın gücünden siz sorumlusunuz.
 
-### Açtığınız bağlantı
-
-Menüdeki sürüm satırı, proje ana sayfasını sistem tarayıcısında açabilir:
-
-[github.com/drweb86/butil](https://github.com/drweb86/butil)
-
-Bu sitenin kendi gizlilik politikası vardır. Geliştirici bu trafiği almaz.
-
 Uygulama güncelleme denetlemez ve bir güncelleme hizmetine bağlanmaz.
 
 ## Zamanlama
@@ -72,7 +64,7 @@ Uygulama bir yedekleme ve dosya eşitleme aracıdır. 13 yaşından küçük ço
 
 ## Üçüncü taraflar
 
-Yapılandırdığınız depolama sağlayıcıları, görevin kendilerine gönderdiği dosyaları ve kimlik bilgilerini işler. Proje ana sayfasını açma işlemini sistem tarayıcısı ve o site gerçekleştirir. Geliştirici bu trafiği almaz.
+Yapılandırdığınız depolama sağlayıcıları, görevin kendilerine gönderdiği dosyaları ve kimlik bilgilerini işler. Geliştirici bu trafiği almaz.
 
 ## Değişiklikler
 
