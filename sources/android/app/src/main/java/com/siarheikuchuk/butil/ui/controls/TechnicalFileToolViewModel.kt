@@ -6,6 +6,10 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import com.siarheikuchuk.butil.core.misc.SourceItemHelper
+import com.siarheikuchuk.butil.ui.controls.TechnicalFileToolKind.CompressBrotli
+import com.siarheikuchuk.butil.ui.controls.TechnicalFileToolKind.DecryptAes256
+import com.siarheikuchuk.butil.ui.controls.TechnicalFileToolKind.DecompressBrotli
+import com.siarheikuchuk.butil.ui.controls.TechnicalFileToolKind.EncryptAes256
 import android.provider.DocumentsContract
 import com.siarheikuchuk.butil.core.services.CompressionService
 import com.siarheikuchuk.butil.core.services.EncryptionService
@@ -35,10 +39,26 @@ class TechnicalFileToolViewModel(val kind: TechnicalFileToolKind) {
     private var lastSuggestedOutput = ""
 
     val isPasswordVisible: Boolean
-        get() = kind == TechnicalFileToolKind.DecryptAes256 || kind == TechnicalFileToolKind.EncryptAes256
+        get() = kind == DecryptAes256 || kind == EncryptAes256
 
-    val suggestedOutputName: String
-        get() = computeSuggestedOutput(sourceName)
+    /**
+     * Name placed in the system save dialog. It is not shown in the form until that dialog
+     * returns a file.
+     */
+    fun outputPickerName(): String {
+        computeSuggestedOutput(sourceName).takeIf { it.isNotBlank() }?.let { return it }
+        sourceName.takeIf { it.isNotBlank() }?.let { return it }
+        return when (kind) {
+            EncryptAes256 -> "output.$AesExtension"
+            CompressBrotli -> "output.$BrotliExtensionNoDot"
+            else -> "output"
+        }
+    }
+
+    fun sourceMimeTypes(): Array<String> = when (kind) {
+        DecryptAes256, DecompressBrotli -> arrayOf(OCTET_STREAM, "*/*")
+        else -> arrayOf("*/*")
+    }
 
     fun setSource(uri: Uri, name: String) {
         sourceUri = uri
@@ -49,6 +69,7 @@ class TechnicalFileToolViewModel(val kind: TechnicalFileToolKind) {
         if (outputUri == null || outputName == lastSuggestedOutput) {
             outputUri = null
             outputName = ""
+            outputPathError = null
         }
         lastSuggestedOutput = suggested
     }
@@ -79,7 +100,7 @@ class TechnicalFileToolViewModel(val kind: TechnicalFileToolKind) {
         val output = outputUri ?: error(fileNotFound)
         val input = resolver.openInputStream(source)
             ?: throw java.io.FileNotFoundException(fileNotFound + "\n" + sourceName)
-        if (kind == TechnicalFileToolKind.DecryptAes256) {
+        if (kind == DecryptAes256) {
             decryptToOutput(resolver, input, output, fileNotFound)
             return ""
         }
@@ -88,12 +109,12 @@ class TechnicalFileToolViewModel(val kind: TechnicalFileToolKind) {
         input.use { sourceStream ->
             out.use { outputStream ->
                 when (kind) {
-                    TechnicalFileToolKind.DecryptAes256 -> error("Decrypt writes the output only after the password is accepted.")
-                    TechnicalFileToolKind.EncryptAes256 ->
+                    DecryptAes256 -> error("Decrypt writes the output only after the password is accepted.")
+                    EncryptAes256 ->
                         EncryptionService().encryptAes256(sourceStream, outputStream, password)
-                    TechnicalFileToolKind.DecompressBrotli ->
+                    DecompressBrotli ->
                         CompressionService().decompressBrotliStream(sourceStream, outputStream)
-                    TechnicalFileToolKind.CompressBrotli ->
+                    CompressBrotli ->
                         CompressionService().compressBrotliStream(sourceStream, outputStream)
                 }
             }
@@ -155,13 +176,13 @@ class TechnicalFileToolViewModel(val kind: TechnicalFileToolKind) {
             return ""
         }
         return when (kind) {
-            TechnicalFileToolKind.DecryptAes256 ->
-                stripSuffix(input, "." + SourceItemHelper.AES256V1Extension)
-            TechnicalFileToolKind.EncryptAes256 ->
-                input + "." + SourceItemHelper.AES256V1Extension
-            TechnicalFileToolKind.DecompressBrotli ->
+            DecryptAes256 ->
+                stripSuffix(input, ".$AesExtension")
+            EncryptAes256 ->
+                input + ".$AesExtension"
+            DecompressBrotli ->
                 stripSuffix(input, ".$BrotliExtensionNoDot")
-            TechnicalFileToolKind.CompressBrotli ->
+            CompressBrotli ->
                 input + ".$BrotliExtensionNoDot"
         }
     }
@@ -175,5 +196,7 @@ class TechnicalFileToolViewModel(val kind: TechnicalFileToolKind) {
 
     companion object {
         const val BrotliExtensionNoDot = "brotli"
+        private val AesExtension = SourceItemHelper.AES256V1Extension
+        private const val OCTET_STREAM = "application/octet-stream"
     }
 }

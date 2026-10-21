@@ -2,7 +2,6 @@
 <resources>
     <string name="app_name">BUtil</string>
     <string name="app_legal_title" translatable="false">BUtil - Siarhei Kuchuk - V%1$s</string>
-    <string name="other_menu_title">Other</string>
     <string name="log_file_browse_logs_folder">Open logs folder</string>
     <string name="technical_tool_menu_decrypt_aes256">Decrypt AES-256…</string>
     <string name="technical_tool_menu_encrypt_aes256">Encrypt AES-256…</string>

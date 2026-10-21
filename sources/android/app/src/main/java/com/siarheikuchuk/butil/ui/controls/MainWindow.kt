@@ -212,7 +212,7 @@ private fun AppMenu(
                 selected = page is AppPage.Restore,
                 onClick = { onSelect(AppPage.Restore) },
             )
-            SectionLabel(stringResource(R.string.other_menu_title))
+            HorizontalDivider(modifier = Modifier.padding(start = 28.dp, end = 28.dp, top = 4.dp, bottom = 4.dp))
             StubItem(R.string.log_file_browse_logs_folder, page, onSelect)
             ToolItem(TechnicalFileToolKind.DecryptAes256, page, onSelect)
             ToolItem(TechnicalFileToolKind.EncryptAes256, page, onSelect)
@@ -245,15 +245,6 @@ private fun AppMenu(
 }
 
 @Composable
-private fun SectionLabel(text: String) {
-    Text(
-        text = text,
-        modifier = Modifier.padding(horizontal = 28.dp, vertical = 8.dp),
-        style = MaterialTheme.typography.titleSmall,
-    )
-}
-
-@Composable
 private fun ToolItem(
     kind: TechnicalFileToolKind,
     page: AppPage,
@@ -263,7 +254,6 @@ private fun ToolItem(
         label = { Text(stringResource(kind.menuRes())) },
         selected = page is AppPage.Tool && page.kind == kind,
         onClick = { onSelect(AppPage.Tool(kind)) },
-        modifier = Modifier.padding(start = 12.dp),
     )
 }
 

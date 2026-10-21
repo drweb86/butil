@@ -1,10 +1,13 @@
 package com.siarheikuchuk.butil.ui.controls
 
+import android.app.Activity
 import android.content.ContentResolver
+import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.provider.OpenableColumns
 import androidx.activity.compose.rememberLauncherForActivityResult
+import androidx.activity.result.contract.ActivityResultContract
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -52,7 +55,7 @@ fun TechnicalFileToolView(
     val fileNotFound = stringResource(R.string.technical_tool_error_file_not_found)
     val completed = stringResource(R.string.technical_tool_completed)
 
-    val openSource = rememberLauncherForActivityResult(ActivityResultContracts.OpenDocument()) { uri ->
+    val openSource = rememberLauncherForActivityResult(OpenTechnicalDocument()) { uri ->
         if (uri != null) {
             persistPermission(context.contentResolver, uri, Intent.FLAG_GRANT_READ_URI_PERMISSION)
             viewModel.setSource(uri, displayName(context.contentResolver, uri))
@@ -85,20 +88,15 @@ fun TechnicalFileToolView(
             placeholder = stringResource(R.string.technical_tool_pick_source_file),
             error = viewModel.inputPathError,
             enabled = !viewModel.running,
-            onBrowse = { openSource.launch(arrayOf("*/*")) },
+            onBrowse = { openSource.launch(viewModel.sourceMimeTypes()) },
         )
         FileRow(
             label = stringResource(R.string.technical_tool_output_file),
             value = viewModel.outputName,
-            placeholder = viewModel.suggestedOutputName.ifBlank {
-                stringResource(R.string.technical_tool_pick_output_file)
-            },
+            placeholder = stringResource(R.string.technical_tool_pick_output_file),
             error = viewModel.outputPathError,
             enabled = !viewModel.running,
-            onBrowse = {
-                val suggested = viewModel.suggestedOutputName.ifBlank { "output" }
-                createOutput.launch(suggested)
-            },
+            onBrowse = { createOutput.launch(viewModel.outputPickerName()) },
         )
         if (viewModel.isPasswordVisible) {
             OutlinedTextField(
@@ -223,6 +221,27 @@ private fun displayName(resolver: ContentResolver, uri: Uri): String {
         }
     }
     return uri.lastPathSegment ?: "file"
+}
+
+/**
+ * Open picker whose initial type is the first MIME type. Extra types stay available in the
+ * system picker, including star-slash-star when the caller wants every file.
+ */
+private class OpenTechnicalDocument : ActivityResultContract<Array<String>, Uri?>() {
+    override fun createIntent(context: Context, input: Array<String>): Intent {
+        val intent = Intent(Intent.ACTION_OPEN_DOCUMENT).addCategory(Intent.CATEGORY_OPENABLE)
+        if (input.size <= 1) {
+            intent.type = input.firstOrNull() ?: "*/*"
+        } else {
+            intent.type = input[0]
+            intent.putExtra(Intent.EXTRA_MIME_TYPES, input)
+        }
+        return intent
+    }
+
+    override fun parseResult(resultCode: Int, intent: Intent?): Uri? {
+        return if (resultCode == Activity.RESULT_OK) intent?.data else null
+    }
 }
 
 private fun TechnicalFileToolKind.titleRes(): Int = when (this) {
