@@ -216,7 +216,7 @@ jobs:
           ANDROID_KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
         run: |
           if [ -z "${ANDROID_KEYSTORE_BASE64}" ]; then
-            echo "ANDROID_KEYSTORE_BASE64 is not set. The release APK and AAB will be unsigned."
+            echo "ANDROID_KEYSTORE_BASE64 is not set. The release APK, AAB, and China AAB will be unsigned."
             exit 0
           fi
           missing=0
@@ -236,7 +236,7 @@ jobs:
           echo "version=$version" >> "$GITHUB_OUTPUT"
           echo "Version: $version"
 
-      - name: Build Android release APK and AAB
+      - name: Build Android release APK, AAB, and China AAB
         env:
           VERSION: ${{ steps.version.outputs.version }}
           ANDROID_KEYSTORE_FILE: ${{ github.workspace }}/android-release.keystore
@@ -254,6 +254,7 @@ jobs:
           path: |
             Output/butil_*_android.apk
             Output/butil_*_android.aab
+            Output/butil_*_android_china.aab
 
       - name: Upload Android APK and AAB to GitHub Release
         if: github.event_name == 'release'
@@ -267,6 +268,7 @@ jobs:
           v="${{ steps.version.outputs.version }}"
           gh release upload "${{ github.event.release.tag_name }}" "Output/butil_${v}_android.apk" --clobber
           gh release upload "${{ github.event.release.tag_name }}" "Output/butil_${v}_android.aab" --clobber
+          gh release upload "${{ github.event.release.tag_name }}" "Output/butil_${v}_android_china.aab" --clobber
 
   update-apt-repo:
     needs: build-linux
