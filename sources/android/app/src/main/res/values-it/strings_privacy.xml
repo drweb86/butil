@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="menu_license">Licenza</string>
+    <string name="menu_privacy">Privacy</string>
+    <string name="privacy_language">Lingua</string>
+    <string name="privacy_ok">OK</string>
+    <string name="privacy_agree">Accetto</string>
+    <string name="privacy_disagree">Non accetto</string>
+    <string name="privacy_withdraw_consent">Revoca il consenso</string>
+    <string name="privacy_decline_message">Questa operazione eliminerà in modo permanente le attività, le impostazioni e le password memorizzate e chiuderà l\'applicazione. I file nelle cartelle selezionate non vengono eliminati. L\'operazione non può essere annullata.</string>
+    <string name="privacy_cancel">Annulla</string>
+    <string name="privacy_delete_and_close">Elimina e chiudi</string>
+</resources>

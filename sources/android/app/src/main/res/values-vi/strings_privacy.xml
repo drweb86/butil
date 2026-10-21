@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="menu_license">Giấy phép</string>
+    <string name="menu_privacy">Quyền riêng tư</string>
+    <string name="privacy_language">Ngôn ngữ</string>
+    <string name="privacy_ok">Được</string>
+    <string name="privacy_agree">Đồng ý</string>
+    <string name="privacy_disagree">Không đồng ý</string>
+    <string name="privacy_withdraw_consent">Rút lại sự đồng ý</string>
+    <string name="privacy_decline_message">Thao tác này sẽ xóa vĩnh viễn các tác vụ, cài đặt và mật khẩu đã lưu, rồi đóng ứng dụng. Tệp trong các thư mục bạn đã chọn không bị xóa. Không thể hoàn tác.</string>
+    <string name="privacy_cancel">Hủy</string>
+    <string name="privacy_delete_and_close">Xóa và đóng</string>
+</resources>

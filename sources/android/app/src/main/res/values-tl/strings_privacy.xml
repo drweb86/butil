@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="menu_license">Lisensya</string>
+    <string name="menu_privacy">Pribasiya</string>
+    <string name="privacy_language">Wika</string>
+    <string name="privacy_ok">Sige</string>
+    <string name="privacy_agree">Sumasang-ayon</string>
+    <string name="privacy_disagree">Hindi sumasang-ayon</string>
+    <string name="privacy_withdraw_consent">Bawiin ang pahintulot</string>
+    <string name="privacy_decline_message">Permanenteng buburahin nito ang mga nakaimbak na gawain, setting, at password, at isasara ang app. Hindi binubura ang mga file sa mga folder na pinili mo. Hindi na ito maaaring bawiin.</string>
+    <string name="privacy_cancel">Kanselahin</string>
+    <string name="privacy_delete_and_close">Burahin at isara</string>
+</resources>

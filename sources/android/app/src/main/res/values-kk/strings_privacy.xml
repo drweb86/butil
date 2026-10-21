@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="menu_license">Лицензия</string>
+    <string name="menu_privacy">Құпиялылық</string>
+    <string name="privacy_language">Тіл</string>
+    <string name="privacy_ok">Жарайды</string>
+    <string name="privacy_agree">Келісемін</string>
+    <string name="privacy_disagree">Келіспеймін</string>
+    <string name="privacy_withdraw_consent">Келісімді қайтарып алу</string>
+    <string name="privacy_decline_message">Бұл сақталған тапсырмаларды, параметрлерді және құпиясөздерді біржола жойып, қолданбаны жабады. Сіз таңдаған қалталардағы файлдар жойылмайды. Мұны болдырмау мүмкін емес.</string>
+    <string name="privacy_cancel">Бас тарту</string>
+    <string name="privacy_delete_and_close">Жою және жабу</string>
+</resources>

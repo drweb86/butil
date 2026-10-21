@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">BUtil</string>
-    <string name="app_legal_title">BUtil - Siarhei Kuchuk</string>
+    <string name="app_legal_title" translatable="false">BUtil - Siarhei Kuchuk</string>
     <string name="app_version_and_site_link">BUtil - V%1$s</string>
     <string name="theme_title">Theme</string>
     <string name="theme_value_dark">Dark</string>
@@ -17,6 +17,14 @@
     <string name="menu_license">License</string>
     <string name="menu_third_party_notices">Third-party notices</string>
     <string name="menu_privacy">Privacy</string>
+    <string name="privacy_language">Language</string>
+    <string name="privacy_ok">OK</string>
+    <string name="privacy_agree">Agree</string>
+    <string name="privacy_disagree">Disagree</string>
+    <string name="privacy_withdraw_consent">Withdraw consent</string>
+    <string name="privacy_decline_message">This will permanently delete stored tasks, settings, and passwords, and close the app. Files in folders you selected are not deleted. This cannot be undone.</string>
+    <string name="privacy_cancel">Cancel</string>
+    <string name="privacy_delete_and_close">Delete and close</string>
     <string name="task_create">New</string>
     <string name="incremental_backup_task_create">Incremental backup task</string>
     <string name="import_media_task_create">Import media task</string>

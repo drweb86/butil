@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="menu_license">Άδεια</string>
+    <string name="menu_privacy">Απόρρητο</string>
+    <string name="privacy_language">Γλώσσα</string>
+    <string name="privacy_ok">Εντάξει</string>
+    <string name="privacy_agree">Συμφωνώ</string>
+    <string name="privacy_disagree">Διαφωνώ</string>
+    <string name="privacy_withdraw_consent">Ανάκληση συγκατάθεσης</string>
+    <string name="privacy_decline_message">Αυτό θα διαγράψει οριστικά τις αποθηκευμένες εργασίες, τις ρυθμίσεις και τους κωδικούς και θα κλείσει την εφαρμογή. Τα αρχεία σε φακέλους που επιλέξατε δεν διαγράφονται. Αυτό δεν αναιρείται.</string>
+    <string name="privacy_cancel">Ακύρωση</string>
+    <string name="privacy_delete_and_close">Διαγραφή και κλείσιμο</string>
+</resources>

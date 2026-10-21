@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="menu_license">许可</string>
+    <string name="menu_privacy">隐私</string>
+    <string name="privacy_language">语言</string>
+    <string name="privacy_ok">确定</string>
+    <string name="privacy_agree">同意</string>
+    <string name="privacy_disagree">不同意</string>
+    <string name="privacy_withdraw_consent">撤回同意</string>
+    <string name="privacy_decline_message">这会永久删除已保存的任务、设置和密码，并关闭应用。你所选文件夹中的文件不会被删除。此操作无法撤销。</string>
+    <string name="privacy_cancel">取消</string>
+    <string name="privacy_delete_and_close">删除并关闭</string>
+</resources>

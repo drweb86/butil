@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-# Release APK and AAB for the Android app.
+# Release APK and AAB for the Android app, plus the China PIPL-policy AAB.
+# The China bundle requires privacy and license agreement before use.
 # Required env: VERSION (date from CHANGELOG.md, for example 2026.10.08)
 # Optional signing env:
 #   ANDROID_KEYSTORE_FILE, ANDROID_KEYSTORE_PASSWORD, ANDROID_KEY_ALIAS, ANDROID_KEY_PASSWORD
@@ -31,16 +32,17 @@ unset GRADLE_OPTS || true
 (
   cd "$ANDROID_ROOT"
   sh ./gradlew --no-daemon \
-    assembleRelease \
-    bundleRelease \
+    assembleGeneralRelease \
+    bundleGeneralRelease \
+    bundleChinaPiplPolicyRelease \
     -PappVersionName="$VERSION" \
     -PappVersionCode="$VERSION_CODE"
 )
 
 apk=""
 for candidate in \
-  "$ANDROID_ROOT/app/build/outputs/apk/release/app-release.apk" \
-  "$ANDROID_ROOT/app/build/outputs/apk/release/app-release-unsigned.apk"
+  "$ANDROID_ROOT/app/build/outputs/apk/general/release/app-general-release.apk" \
+  "$ANDROID_ROOT/app/build/outputs/apk/general/release/app-general-release-unsigned.apk"
 do
   if [ -f "$candidate" ]; then
     apk="$candidate"
@@ -55,8 +57,8 @@ fi
 
 aab=""
 for candidate in \
-  "$ANDROID_ROOT/app/build/outputs/bundle/release/app-release.aab" \
-  "$ANDROID_ROOT/app/build/outputs/bundle/release/app-release-unsigned.aab"
+  "$ANDROID_ROOT/app/build/outputs/bundle/generalRelease/app-general-release.aab" \
+  "$ANDROID_ROOT/app/build/outputs/bundle/generalRelease/app-general-release-unsigned.aab"
 do
   if [ -f "$candidate" ]; then
     aab="$candidate"
@@ -69,12 +71,32 @@ if [ -z "$aab" ]; then
   exit 1
 fi
 
+china_aab=""
+for candidate in \
+  "$ANDROID_ROOT/app/build/outputs/bundle/chinaPiplPolicyRelease/app-chinaPiplPolicy-release.aab" \
+  "$ANDROID_ROOT/app/build/outputs/bundle/chinaPiplPolicyRelease/app-chinaPiplPolicy-release-unsigned.aab"
+do
+  if [ -f "$candidate" ]; then
+    china_aab="$candidate"
+    break
+  fi
+done
+if [ -z "$china_aab" ]; then
+  echo "China PIPL policy AAB not found."
+  find "$ANDROID_ROOT/app/build/outputs" -name '*.aab' -type f || true
+  exit 1
+fi
+
 mkdir -p "$OUT_DIR"
 dest_apk="$OUT_DIR/butil_${VERSION}_android.apk"
 dest_aab="$OUT_DIR/butil_${VERSION}_android.aab"
+dest_china_aab="$OUT_DIR/butil_${VERSION}_android_china.aab"
 cp "$apk" "$dest_apk"
 cp "$aab" "$dest_aab"
+cp "$china_aab" "$dest_china_aab"
 echo "APK: $dest_apk"
 ls -lh "$dest_apk"
 echo "AAB: $dest_aab"
 ls -lh "$dest_aab"
+echo "China PIPL AAB: $dest_china_aab"
+ls -lh "$dest_china_aab"

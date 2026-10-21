@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="menu_license">Lesen</string>
+    <string name="menu_privacy">Privasi</string>
+    <string name="privacy_language">Bahasa</string>
+    <string name="privacy_ok">Baik</string>
+    <string name="privacy_agree">Setuju</string>
+    <string name="privacy_disagree">Tidak setuju</string>
+    <string name="privacy_withdraw_consent">Tarik balik persetujuan</string>
+    <string name="privacy_decline_message">Ini akan memadam secara kekal tugas, tetapan dan kata laluan yang disimpan, lalu menutup aplikasi. Fail dalam folder yang anda pilih tidak dipadam. Tindakan ini tidak boleh dibuat asal.</string>
+    <string name="privacy_cancel">Batal</string>
+    <string name="privacy_delete_and_close">Padam dan tutup</string>
+</resources>

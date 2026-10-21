@@ -70,9 +70,11 @@ class UploadFolderService : Service() {
             } finally {
                 runningName = null
                 withContext(NonCancellable) {
-                    try {
-                        UploadScheduler.reschedule(this@UploadFolderService, store.loadAny(name))
-                    } catch (_: Exception) {
+                    if (!suppressReschedule) {
+                        try {
+                            UploadScheduler.reschedule(this@UploadFolderService, store.loadAny(name))
+                        } catch (_: Exception) {
+                        }
                     }
                     withContext(Dispatchers.Main) {
                         UploadRunLog.active = false
@@ -133,6 +135,9 @@ class UploadFolderService : Service() {
         @Volatile
         var cancelled: Boolean = false
 
+        @Volatile
+        var suppressReschedule: Boolean = false
+
         fun start(context: Context, name: String) {
             val intent = Intent(context, UploadFolderService::class.java).putExtra(UploadScheduler.EXTRA_NAME, name)
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
@@ -144,6 +149,12 @@ class UploadFolderService : Service() {
 
         fun cancel() {
             cancelled = true
+        }
+
+        fun stop(context: Context) {
+            cancelled = true
+            suppressReschedule = true
+            context.stopService(Intent(context, UploadFolderService::class.java))
         }
     }
 

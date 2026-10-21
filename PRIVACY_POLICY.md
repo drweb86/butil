@@ -8,7 +8,7 @@ Developer name: Siarhei Kuchuk
 
 BUtil backs up, synchronizes, and restores files on this computer. It can also import media, share a folder, or upload files to a server you configure. It does not create a developer account. The developer does not operate a backend that receives your files, passwords, or usage data.
 
-Translations live in [privacy/desktop](privacy/desktop/README.md).
+Desktop translations live in [privacy/desktop](privacy/desktop/README.md). Android translations live in [privacy/android](privacy/android/README.md).
 
 ## Data the developer does not collect
 

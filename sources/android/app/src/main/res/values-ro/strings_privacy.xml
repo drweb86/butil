@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="menu_license">Licență</string>
+    <string name="menu_privacy">Confidențialitate</string>
+    <string name="privacy_language">Limbă</string>
+    <string name="privacy_ok">OK</string>
+    <string name="privacy_agree">Sunt de acord</string>
+    <string name="privacy_disagree">Nu sunt de acord</string>
+    <string name="privacy_withdraw_consent">Retrage consimțământul</string>
+    <string name="privacy_decline_message">Aceasta va șterge definitiv sarcinile, setările și parolele stocate și va închide aplicația. Fișierele din dosarele selectate nu sunt șterse. Această acțiune nu poate fi anulată.</string>
+    <string name="privacy_cancel">Anulează</string>
+    <string name="privacy_delete_and_close">Șterge și închide</string>
+</resources>

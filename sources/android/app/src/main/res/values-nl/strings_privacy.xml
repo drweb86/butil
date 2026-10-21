@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="menu_license">Licentie</string>
+    <string name="menu_privacy">Privacy</string>
+    <string name="privacy_language">Taal</string>
+    <string name="privacy_ok">OK</string>
+    <string name="privacy_agree">Akkoord</string>
+    <string name="privacy_disagree">Niet akkoord</string>
+    <string name="privacy_withdraw_consent">Toestemming intrekken</string>
+    <string name="privacy_decline_message">Hiermee worden opgeslagen taken, instellingen en wachtwoorden definitief verwijderd en wordt de app gesloten. Bestanden in mappen die u hebt geselecteerd, worden niet verwijderd. Dit kan niet ongedaan worden gemaakt.</string>
+    <string name="privacy_cancel">Annuleren</string>
+    <string name="privacy_delete_and_close">Verwijderen en sluiten</string>
+</resources>

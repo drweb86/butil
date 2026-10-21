@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="menu_license">ಪರವಾನಗಿ</string>
+    <string name="menu_privacy">ಗೌಪ್ಯತೆ</string>
+    <string name="privacy_language">ಭಾಷೆ</string>
+    <string name="privacy_ok">ಸರಿ</string>
+    <string name="privacy_agree">ಒಪ್ಪುತ್ತೇನೆ</string>
+    <string name="privacy_disagree">ಒಪ್ಪುವುದಿಲ್ಲ</string>
+    <string name="privacy_withdraw_consent">ಒಪ್ಪಿಗೆ ಹಿಂಪಡೆಯಿರಿ</string>
+    <string name="privacy_decline_message">ಇದು ಸಂಗ್ರಹಿಸಿದ ಕಾರ್ಯಗಳು, ಸೆಟ್ಟಿಂಗ್‌ಗಳು ಮತ್ತು ಪಾಸ್‌ವರ್ಡ್‌ಗಳನ್ನು ಶಾಶ್ವತವಾಗಿ ಅಳಿಸಿ, ಅಪ್ಲಿಕೇಶನ್ ಅನ್ನು ಮುಚ್ಚುತ್ತದೆ. ನೀವು ಆಯ್ಕೆಮಾಡಿದ ಫೋಲ್ಡರ್‌ಗಳಲ್ಲಿನ ಫೈಲ್‌ಗಳನ್ನು ಅಳಿಸಲಾಗುವುದಿಲ್ಲ. ಇದನ್ನು ರದ್ದುಗೊಳಿಸಲು ಸಾಧ್ಯವಿಲ್ಲ.</string>
+    <string name="privacy_cancel">ರದ್ದುಮಾಡಿ</string>
+    <string name="privacy_delete_and_close">ಅಳಿಸಿ ಮುಚ್ಚಿ</string>
+</resources>

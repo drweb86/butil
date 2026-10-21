@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="menu_license">Litsenziya</string>
+    <string name="menu_privacy">Maxfiylik</string>
+    <string name="privacy_language">Til</string>
+    <string name="privacy_ok">Mayli</string>
+    <string name="privacy_agree">Roziman</string>
+    <string name="privacy_disagree">Rozimasman</string>
+    <string name="privacy_withdraw_consent">Rozilikni qaytarib olish</string>
+    <string name="privacy_decline_message">Bu saqlangan vazifalar, sozlamalar va parollarni butunlay oʻchiradi va ilovani yopadi. Siz tanlagan jildlardagi fayllar oʻchirilmaydi. Buni ortga qaytarib boʻlmaydi.</string>
+    <string name="privacy_cancel">Bekor qilish</string>
+    <string name="privacy_delete_and_close">Oʻchirib yopish</string>
+</resources>

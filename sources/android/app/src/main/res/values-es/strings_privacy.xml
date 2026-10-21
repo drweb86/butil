@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="menu_license">Licencia</string>
+    <string name="menu_privacy">Privacidad</string>
+    <string name="privacy_language">Idioma</string>
+    <string name="privacy_ok">Aceptar</string>
+    <string name="privacy_agree">Acepto</string>
+    <string name="privacy_disagree">No acepto</string>
+    <string name="privacy_withdraw_consent">Retirar el consentimiento</string>
+    <string name="privacy_decline_message">Esto eliminará de forma permanente las tareas, los ajustes y las contraseñas guardados, y cerrará la aplicación. Los archivos de las carpetas que seleccionó no se eliminan. Esta acción no se puede deshacer.</string>
+    <string name="privacy_cancel">Cancelar</string>
+    <string name="privacy_delete_and_close">Eliminar y cerrar</string>
+</resources>

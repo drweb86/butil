@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="menu_license">Licence</string>
+    <string name="menu_privacy">Private matter</string>
+    <string name="privacy_language">Language</string>
+    <string name="privacy_ok">OK</string>
+    <string name="privacy_agree">I gree</string>
+    <string name="privacy_disagree">I no gree</string>
+    <string name="privacy_withdraw_consent">Take back consent</string>
+    <string name="privacy_decline_message">Dis one go delete the tasks, settings, and passwords wey dey store forever, and close the app. Files for the folders wey you select no go delete. You no fit undo am.</string>
+    <string name="privacy_cancel">Leave am</string>
+    <string name="privacy_delete_and_close">Delete am and close</string>
+</resources>

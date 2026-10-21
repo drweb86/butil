@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="menu_license">لائسنس</string>
+    <string name="menu_privacy">رازداري</string>
+    <string name="privacy_language">ٻولي</string>
+    <string name="privacy_ok">ٺيڪ</string>
+    <string name="privacy_agree">متفق</string>
+    <string name="privacy_disagree">ناموافق</string>
+    <string name="privacy_withdraw_consent">رضامندي واپس وٺو</string>
+    <string name="privacy_decline_message">هي محفوظ ڪيل ڪم، سيٽنگون ۽ پاسورڊ هميشه لاءِ ڊاهي ڇڏيندو ۽ ايپ بند ڪري ڇڏيندو. توهان جي چونڊيل فولڊرن ۾ فائلون نه ڊهجن. هن کي واپس نه ٿو ڪري سگهجي.</string>
+    <string name="privacy_cancel">منسوخ</string>
+    <string name="privacy_delete_and_close">ڊاهيو ۽ بند ڪريو</string>
+</resources>

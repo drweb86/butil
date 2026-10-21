@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="menu_license">లైసెన్స్</string>
+    <string name="menu_privacy">గోప్యత</string>
+    <string name="privacy_language">భాష</string>
+    <string name="privacy_ok">సరే</string>
+    <string name="privacy_agree">అంగీకరిస్తున్నాను</string>
+    <string name="privacy_disagree">అంగీకరించను</string>
+    <string name="privacy_withdraw_consent">అంగీకారాన్ని ఉపసంహరించు</string>
+    <string name="privacy_decline_message">ఇది నిల్వ చేసిన పనులు, సెట్టింగ్‌లు మరియు పాస్‌వర్డ్‌లను శాశ్వతంగా తొలగించి, యాప్‌ను మూసివేస్తుంది. మీరు ఎంచుకున్న ఫోల్డర్‌లలోని ఫైళ్లు తొలగించబడవు. దీన్ని రద్దు చేయలేరు.</string>
+    <string name="privacy_cancel">రద్దు చేయి</string>
+    <string name="privacy_delete_and_close">తొలగించి మూసివేయి</string>
+</resources>

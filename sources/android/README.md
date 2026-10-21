@@ -22,8 +22,12 @@ From the repository root:
 ./build-android.ps1 -Release
 ```
 
-The debug APK is `Output/butil_android_debug.apk`. A release build reads the version from `CHANGELOG.md` and writes `Output/butil_<version>_android.apk`.
+The debug APK is `Output/butil_android_debug.apk`. A release build reads the version from `CHANGELOG.md` and writes `Output/butil_<version>_android.apk`. The release workflow also writes `Output/butil_<version>_android.aab` and a separate China bundle, `Output/butil_<version>_android_china.aab`.
 
 Set `ANDROID_KEYSTORE_FILE`, `ANDROID_KEYSTORE_PASSWORD`, `ANDROID_KEY_ALIAS`, and `ANDROID_KEY_PASSWORD` before `-Release` to sign. Without them the release package is unsigned.
 
-Third-party components are listed in [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md). The same file is shown from the Third-party notices menu item.
+Privacy policies for this app are in [privacy/android](../../privacy/android/README.md). License texts are in [licenses](../../licenses/README.md). Both are copied into the APK. The China edition also appends [licenses/china-appendix](../../licenses/china-appendix/README.md). That edition asks for the privacy policy and then the license before the app can be used. Disagreeing, or withdrawing agreement later, deletes tasks, settings, and passwords stored by the app and closes it. Files in folders you selected are not deleted.
+
+Third-party components are listed in [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md). That file is English only and is not translated. The same file is shown from the Third-party notices menu item.
+
+The drawer title `BUtil - Siarhei Kuchuk` is not translated.

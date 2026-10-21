@@ -4,6 +4,8 @@ BUtil's own code, by Siarhei Kuchuk, is dedicated to the public domain under CC0
 Official Creative Commons translations are used where they exist.
 Other languages are unofficial translations; the English legal code governs.
 
+The [china-appendix](china-appendix) folder is extra terms for the Android China edition only. Those terms are not part of the CC0 legal code. Desktop apps do not show them.
+
 - [English](en.md)
 - [አማርኛ (Amharic)](am.md)
 - [العربية (Arabic)](ar.md)

@@ -39,6 +39,13 @@ object UploadScheduler {
         alarm.cancel(pending(context, name))
     }
 
+    fun cancelAll(context: Context) {
+        val store = UploadFolderStore(context)
+        for (name in store.names()) {
+            cancel(context, name)
+        }
+    }
+
     fun runAtLogin(context: Context) {
         val store = UploadFolderStore(context)
         for (name in store.names()) {

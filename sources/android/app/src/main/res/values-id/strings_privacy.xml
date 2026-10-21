@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="menu_license">Lisensi</string>
+    <string name="menu_privacy">Privasi</string>
+    <string name="privacy_language">Bahasa</string>
+    <string name="privacy_ok">Oke</string>
+    <string name="privacy_agree">Setuju</string>
+    <string name="privacy_disagree">Tidak setuju</string>
+    <string name="privacy_withdraw_consent">Tarik persetujuan</string>
+    <string name="privacy_decline_message">Ini akan menghapus secara permanen tugas, pengaturan, dan kata sandi yang tersimpan, lalu menutup aplikasi. Berkas di folder yang Anda pilih tidak dihapus. Ini tidak dapat dibatalkan.</string>
+    <string name="privacy_cancel">Batal</string>
+    <string name="privacy_delete_and_close">Hapus dan tutup</string>
+</resources>

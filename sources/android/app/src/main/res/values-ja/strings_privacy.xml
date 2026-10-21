@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="menu_license">ライセンス</string>
+    <string name="menu_privacy">プライバシー</string>
+    <string name="privacy_language">言語</string>
+    <string name="privacy_ok">OK</string>
+    <string name="privacy_agree">同意する</string>
+    <string name="privacy_disagree">同意しない</string>
+    <string name="privacy_withdraw_consent">同意を撤回</string>
+    <string name="privacy_decline_message">保存されたタスク、設定、パスワードが完全に削除され、アプリが終了します。選択したフォルダ内のファイルは削除されません。この操作は元に戻せません。</string>
+    <string name="privacy_cancel">キャンセル</string>
+    <string name="privacy_delete_and_close">削除して終了</string>
+</resources>

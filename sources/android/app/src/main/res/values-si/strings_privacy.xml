@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="menu_license">බලපත්‍රය</string>
+    <string name="menu_privacy">පෞද්ගලිකත්වය</string>
+    <string name="privacy_language">භාෂාව</string>
+    <string name="privacy_ok">හරි</string>
+    <string name="privacy_agree">එකඟ වෙමි</string>
+    <string name="privacy_disagree">එකඟ නොවෙමි</string>
+    <string name="privacy_withdraw_consent">කැමැත්ත ඉල්ලා අස්කරගන්න</string>
+    <string name="privacy_decline_message">මෙය ගබඩා කළ කාර්ය, සැකසුම් සහ මුරපද ස්ථිරව මකා යෙදුම වසයි. ඔබ තෝරාගත් ෆෝල්ඩරවල ගොනු මකනු නොලැබේ. මෙය අහෝසි කළ නොහැක.</string>
+    <string name="privacy_cancel">අවලංගු කරන්න</string>
+    <string name="privacy_delete_and_close">මකා වසන්න</string>
+</resources>

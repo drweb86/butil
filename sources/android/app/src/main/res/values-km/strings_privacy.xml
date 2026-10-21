@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="menu_license">អាជ្ញាប័ណ្ណ</string>
+    <string name="menu_privacy">ឯកជនភាព</string>
+    <string name="privacy_language">ភាសា</string>
+    <string name="privacy_ok">យល់ព្រម</string>
+    <string name="privacy_agree">យល់ស្រប</string>
+    <string name="privacy_disagree">មិនយល់ស្រប</string>
+    <string name="privacy_withdraw_consent">ដកការយល់ព្រម</string>
+    <string name="privacy_decline_message">សកម្មភាពនេះនឹងលុបកិច្ចការ ការកំណត់ និងពាក្យសម្ងាត់ដែលបានរក្សាទុកជាអចិន្ត្រៃយ៍ ហើយបិទកម្មវិធី។ ឯកសារក្នុងថតដែលអ្នកបានជ្រើសរើសមិនត្រូវបានលុបទេ។ មិនអាចធ្វើវិញបានទេ។</string>
+    <string name="privacy_cancel">បោះបង់</string>
+    <string name="privacy_delete_and_close">លុប ហើយបិទ</string>
+</resources>

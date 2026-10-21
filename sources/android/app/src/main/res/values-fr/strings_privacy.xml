@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="menu_license">Licence</string>
+    <string name="menu_privacy">Confidentialité</string>
+    <string name="privacy_language">Langue</string>
+    <string name="privacy_ok">OK</string>
+    <string name="privacy_agree">Accepter</string>
+    <string name="privacy_disagree">Refuser</string>
+    <string name="privacy_withdraw_consent">Retirer le consentement</string>
+    <string name="privacy_decline_message">Cela supprimera définitivement les tâches, les réglages et les mots de passe enregistrés, puis fermera l\'application. Les fichiers des dossiers que vous avez sélectionnés ne sont pas supprimés. Cette action est irréversible.</string>
+    <string name="privacy_cancel">Annuler</string>
+    <string name="privacy_delete_and_close">Supprimer et fermer</string>
+</resources>

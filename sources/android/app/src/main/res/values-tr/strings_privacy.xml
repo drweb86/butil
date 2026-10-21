@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="menu_license">Lisans</string>
+    <string name="menu_privacy">Gizlilik</string>
+    <string name="privacy_language">Dil</string>
+    <string name="privacy_ok">Tamam</string>
+    <string name="privacy_agree">Kabul ediyorum</string>
+    <string name="privacy_disagree">Kabul etmiyorum</string>
+    <string name="privacy_withdraw_consent">Onayı geri çek</string>
+    <string name="privacy_decline_message">Bu işlem, kayıtlı görevleri, ayarları ve parolaları kalıcı olarak siler ve uygulamayı kapatır. Seçtiğiniz klasörlerdeki dosyalar silinmez. Bu işlem geri alınamaz.</string>
+    <string name="privacy_cancel">İptal</string>
+    <string name="privacy_delete_and_close">Sil ve kapat</string>
+</resources>

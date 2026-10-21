@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="menu_license">Licenc</string>
+    <string name="menu_privacy">Adatvédelem</string>
+    <string name="privacy_language">Nyelv</string>
+    <string name="privacy_ok">Rendben</string>
+    <string name="privacy_agree">Elfogadom</string>
+    <string name="privacy_disagree">Nem fogadom el</string>
+    <string name="privacy_withdraw_consent">Hozzájárulás visszavonása</string>
+    <string name="privacy_decline_message">Ez véglegesen törli a tárolt feladatokat, beállításokat és jelszavakat, és bezárja az alkalmazást. A kiválasztott mappákban lévő fájlok nem törlődnek. Ez nem vonható vissza.</string>
+    <string name="privacy_cancel">Mégse</string>
+    <string name="privacy_delete_and_close">Törlés és bezárás</string>
+</resources>

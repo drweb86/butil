@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="menu_license">רישיון</string>
+    <string name="menu_privacy">פרטיות</string>
+    <string name="privacy_language">שפה</string>
+    <string name="privacy_ok">בסדר</string>
+    <string name="privacy_agree">מסכים/ה</string>
+    <string name="privacy_disagree">לא מסכים/ה</string>
+    <string name="privacy_withdraw_consent">ביטול ההסכמה</string>
+    <string name="privacy_decline_message">פעולה זו תמחק לצמיתות משימות, הגדרות וסיסמאות שנשמרו ותסגור את היישום. קבצים בתיקיות שבחרתם לא יימחקו. לא ניתן לבטל פעולה זו.</string>
+    <string name="privacy_cancel">ביטול</string>
+    <string name="privacy_delete_and_close">מחיקה וסגירה</string>
+</resources>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="menu_license">ଲାଇସେନ୍ସ</string>
+    <string name="menu_privacy">ଗୋପନୀୟତା</string>
+    <string name="privacy_language">ଭାଷା</string>
+    <string name="privacy_ok">ଠିକ୍ ଅଛି</string>
+    <string name="privacy_agree">ସହମତ</string>
+    <string name="privacy_disagree">ଅସହମତ</string>
+    <string name="privacy_withdraw_consent">ସହମତି ପ୍ରତ୍ୟାହାର କରନ୍ତୁ</string>
+    <string name="privacy_decline_message">ଏହା ସଂରକ୍ଷିତ କାର୍ଯ୍ୟ, ସେଟିଂସ୍ ଏବଂ ପାସୱାର୍ଡକୁ ସ୍ଥାୟୀ ଭାବରେ ଡିଲିଟ୍ କରି ଆପ୍ ବନ୍ଦ କରିବ। ଆପଣ ଚୟନ କରିଥିବା ଫୋଲ୍ଡରର ଫାଇଲ୍ ଡିଲିଟ୍ ହେବ ନାହିଁ। ଏହାକୁ ପୂର୍ବବତ୍ କରାଯାଇପାରିବ ନାହିଁ।</string>
+    <string name="privacy_cancel">ବାତିଲ୍</string>
+    <string name="privacy_delete_and_close">ଡିଲିଟ୍ କରନ୍ତୁ ଏବଂ ବନ୍ଦ କରନ୍ତୁ</string>
+</resources>

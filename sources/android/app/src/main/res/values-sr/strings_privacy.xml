@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="menu_license">Лиценца</string>
+    <string name="menu_privacy">Приватност</string>
+    <string name="privacy_language">Језик</string>
+    <string name="privacy_ok">У реду</string>
+    <string name="privacy_agree">Прихватам</string>
+    <string name="privacy_disagree">Не прихватам</string>
+    <string name="privacy_withdraw_consent">Повуци сагласност</string>
+    <string name="privacy_decline_message">Ово ће трајно избрисати сачуване задатке, подешавања и лозинке и затворити апликацију. Датотеке у фасциклама које сте изабрали се не бришу. Ово се не може опозвати.</string>
+    <string name="privacy_cancel">Откажи</string>
+    <string name="privacy_delete_and_close">Избриши и затвори</string>
+</resources>

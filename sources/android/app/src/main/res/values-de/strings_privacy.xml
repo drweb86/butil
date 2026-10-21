@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="menu_license">Lizenz</string>
+    <string name="menu_privacy">Datenschutz</string>
+    <string name="privacy_language">Sprache</string>
+    <string name="privacy_ok">OK</string>
+    <string name="privacy_agree">Zustimmen</string>
+    <string name="privacy_disagree">Nicht zustimmen</string>
+    <string name="privacy_withdraw_consent">Einwilligung widerrufen</string>
+    <string name="privacy_decline_message">Dadurch werden gespeicherte Aufgaben, Einstellungen und Kennwörter dauerhaft gelöscht und die Anwendung wird geschlossen. Dateien in von Ihnen ausgewählten Ordnern werden nicht gelöscht. Dies kann nicht rückgängig gemacht werden.</string>
+    <string name="privacy_cancel">Abbrechen</string>
+    <string name="privacy_delete_and_close">Löschen und schließen</string>
+</resources>

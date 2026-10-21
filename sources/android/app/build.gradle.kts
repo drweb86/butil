@@ -4,12 +4,6 @@ plugins {
     id("org.jetbrains.kotlin.plugin.compose")
 }
 
-val thirdPartyNoticesDir = layout.buildDirectory.dir("generated/thirdPartyNotices")
-val syncThirdPartyNotices = tasks.register<Copy>("syncThirdPartyNotices") {
-    from(rootProject.file("THIRD-PARTY-NOTICES.md"))
-    into(thirdPartyNoticesDir)
-}
-
 android {
     namespace = "com.siarheikuchuk.butil"
     compileSdk = 36
@@ -23,6 +17,19 @@ android {
         val defaultVersionName = "2026.10.08"
         versionCode = findProperty("appVersionCode")?.toString()?.toIntOrNull() ?: defaultVersionCode
         versionName = findProperty("appVersionName")?.toString()?.takeIf { it.isNotBlank() } ?: defaultVersionName
+    }
+
+    flavorDimensions += "policy"
+    productFlavors {
+        create("general") {
+            dimension = "policy"
+            isDefault = true
+            buildConfigField("boolean", "CHINA_PIPL_POLICY", "false")
+        }
+        create("chinaPiplPolicy") {
+            dimension = "policy"
+            buildConfigField("boolean", "CHINA_PIPL_POLICY", "true")
+        }
     }
 
     signingConfigs {
@@ -58,11 +65,6 @@ android {
         compose = true
         buildConfig = true
     }
-    sourceSets {
-        getByName("main") {
-            assets.srcDir(thirdPartyNoticesDir)
-        }
-    }
 
     // F-Droid
     dependenciesInfo {
@@ -85,12 +87,104 @@ tasks.whenTaskAdded {
     }
 }
 
-tasks.named("preBuild").configure {
-    dependsOn(syncThirdPartyNotices)
+abstract class CopyPrivacyPoliciesTask : DefaultTask() {
+    @get:InputDirectory
+    @get:PathSensitive(PathSensitivity.RELATIVE)
+    abstract val sourceDir: DirectoryProperty
+
+    @get:OutputDirectory
+    abstract val outputDir: DirectoryProperty
+
+    @TaskAction
+    fun copyPolicies() {
+        copyMdFiles(sourceDir.get().asFile, outputDir.get().asFile.resolve("privacy"))
+    }
+
+    private fun copyMdFiles(source: java.io.File, dest: java.io.File) {
+        dest.deleteRecursively()
+        dest.mkdirs()
+        source.listFiles()
+            ?.filter { it.isFile && it.extension.equals("md", ignoreCase = true) && !it.name.equals("README.md", ignoreCase = true) }
+            ?.forEach { it.copyTo(dest.resolve(it.name), overwrite = true) }
+    }
 }
-tasks.configureEach {
-    if (name.startsWith("merge") && name.endsWith("Assets")) {
-        dependsOn(syncThirdPartyNotices)
+
+abstract class CopyThirdPartyNoticesTask : DefaultTask() {
+    @get:InputFile
+    @get:PathSensitive(PathSensitivity.RELATIVE)
+    abstract val sourceFile: RegularFileProperty
+
+    @get:OutputDirectory
+    abstract val outputDir: DirectoryProperty
+
+    @TaskAction
+    fun copyNotice() {
+        val dest = outputDir.get().asFile
+        dest.mkdirs()
+        sourceFile.get().asFile.copyTo(dest.resolve("THIRD-PARTY-NOTICES.md"), overwrite = true)
+    }
+}
+
+abstract class CopyLicenseDocumentsTask : DefaultTask() {
+    @get:InputDirectory
+    @get:PathSensitive(PathSensitivity.RELATIVE)
+    abstract val sourceDir: DirectoryProperty
+
+    @get:InputDirectory
+    @get:PathSensitive(PathSensitivity.RELATIVE)
+    abstract val appendixDir: DirectoryProperty
+
+    @get:OutputDirectory
+    abstract val outputDir: DirectoryProperty
+
+    @TaskAction
+    fun copyLicenses() {
+        copyMdFiles(sourceDir.get().asFile, outputDir.get().asFile.resolve("license"))
+        copyMdFiles(appendixDir.get().asFile, outputDir.get().asFile.resolve("license/china-appendix"))
+    }
+
+    private fun copyMdFiles(source: java.io.File, dest: java.io.File) {
+        dest.deleteRecursively()
+        dest.mkdirs()
+        source.listFiles()
+            ?.filter { it.isFile && it.extension.equals("md", ignoreCase = true) && !it.name.equals("README.md", ignoreCase = true) }
+            ?.forEach { it.copyTo(dest.resolve(it.name), overwrite = true) }
+    }
+}
+
+androidComponents {
+    onVariants { variant ->
+        val copyPrivacyPolicies = tasks.register<CopyPrivacyPoliciesTask>(
+            "copyPrivacyPolicies${variant.name.replaceFirstChar { it.uppercase() }}",
+        ) {
+            sourceDir.set(rootProject.projectDir.resolve("../../privacy/android"))
+        }
+        val copyThirdPartyNotices = tasks.register<CopyThirdPartyNoticesTask>(
+            "copyThirdPartyNotices${variant.name.replaceFirstChar { it.uppercase() }}",
+        ) {
+            sourceFile.set(rootProject.projectDir.resolve("THIRD-PARTY-NOTICES.md"))
+        }
+        val copyLicenses = tasks.register<CopyLicenseDocumentsTask>(
+            "copyLicenses${variant.name.replaceFirstChar { it.uppercase() }}",
+        ) {
+            sourceDir.set(rootProject.projectDir.resolve("../../licenses"))
+            appendixDir.set(rootProject.projectDir.resolve("../../licenses/china-appendix"))
+        }
+        variant.sources.assets?.addGeneratedSourceDirectory(
+            copyPrivacyPolicies,
+            CopyPrivacyPoliciesTask::outputDir,
+        )
+        variant.sources.assets?.addGeneratedSourceDirectory(
+            copyThirdPartyNotices,
+            CopyThirdPartyNoticesTask::outputDir,
+        )
+        variant.sources.assets?.addGeneratedSourceDirectory(
+            copyLicenses,
+            CopyLicenseDocumentsTask::outputDir,
+        )
+        if (variant.flavorName == "chinaPiplPolicy" && variant.buildType == "debug") {
+            variant.applicationId.set("com.siarheikuchuk.butil.chinapipl.debug")
+        }
     }
 }
 

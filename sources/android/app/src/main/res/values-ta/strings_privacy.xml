@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="menu_license">உரிமம்</string>
+    <string name="menu_privacy">தனியுரிமை</string>
+    <string name="privacy_language">மொழி</string>
+    <string name="privacy_ok">சரி</string>
+    <string name="privacy_agree">ஒப்புக்கொள்</string>
+    <string name="privacy_disagree">ஒப்புக்கொள்ளவில்லை</string>
+    <string name="privacy_withdraw_consent">ஒப்புதலைத் திரும்பப் பெறு</string>
+    <string name="privacy_decline_message">இது சேமித்த பணிகள், அமைப்புகள் மற்றும் கடவுச்சொற்களை நிரந்தரமாக நீக்கி, பயன்பாட்டை மூடும். நீங்கள் தேர்ந்தெடுத்த கோப்புறைகளில் உள்ள கோப்புகள் நீக்கப்படாது. இதைச் செயல்தவிர்க்க முடியாது.</string>
+    <string name="privacy_cancel">ரத்துசெய்</string>
+    <string name="privacy_delete_and_close">நீக்கி மூடு</string>
+</resources>

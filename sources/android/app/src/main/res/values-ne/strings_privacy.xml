@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="menu_license">इजाजतपत्र</string>
+    <string name="menu_privacy">गोपनीयता</string>
+    <string name="privacy_language">भाषा</string>
+    <string name="privacy_ok">ठीक छ</string>
+    <string name="privacy_agree">सहमत</string>
+    <string name="privacy_disagree">असहमत</string>
+    <string name="privacy_withdraw_consent">सहमति फिर्ता लिनुहोस्</string>
+    <string name="privacy_decline_message">यसले भण्डारण गरिएका कार्य, सेटिङ र पासवर्ड स्थायी रूपमा मेटाउनेछ र एप बन्द गर्नेछ। तपाईंले छानेका फोल्डरका फाइल मेटिँदैनन्। यसलाई पूर्ववत गर्न सकिँदैन।</string>
+    <string name="privacy_cancel">रद्द गर्नुहोस्</string>
+    <string name="privacy_delete_and_close">मेटाउनुहोस् र बन्द गर्नुहोस्</string>
+</resources>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="menu_license">लाइसेंस</string>
+    <string name="menu_privacy">गोपनीयता</string>
+    <string name="privacy_language">भाषा</string>
+    <string name="privacy_ok">ठीक है</string>
+    <string name="privacy_agree">सहमत</string>
+    <string name="privacy_disagree">असहमत</string>
+    <string name="privacy_withdraw_consent">सहमति वापस लें</string>
+    <string name="privacy_decline_message">इससे संग्रहीत कार्य, सेटिंग्स और पासवर्ड स्थायी रूप से हट जाएँगे और ऐप बंद हो जाएगा। आपके द्वारा चुने गए फ़ोल्डरों की फ़ाइलें नहीं हटाई जातीं। इसे पूर्ववत नहीं किया जा सकता।</string>
+    <string name="privacy_cancel">रद्द करें</string>
+    <string name="privacy_delete_and_close">हटाएँ और बंद करें</string>
+</resources>

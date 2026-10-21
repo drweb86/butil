@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="menu_license">Ilayisensi</string>
+    <string name="menu_privacy">Ubumfihlo</string>
+    <string name="privacy_language">Ulimi</string>
+    <string name="privacy_ok">Kulungile</string>
+    <string name="privacy_agree">Ngiyavuma</string>
+    <string name="privacy_disagree">Angivumi</string>
+    <string name="privacy_withdraw_consent">Hoxisa imvume</string>
+    <string name="privacy_decline_message">Lokhu kuzosusa unaphakade imisebenzi, izilungiselelo, namaphasiwedi agciniwe, bese kuvala uhlelo. Amafayela akumafolda owakhethile awasuswa. Lokhu akukwazi ukuhlehliswa.</string>
+    <string name="privacy_cancel">Khansela</string>
+    <string name="privacy_delete_and_close">Susa bese uvala</string>
+</resources>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="menu_license">Lisensya</string>
+    <string name="menu_privacy">Pribasiya</string>
+    <string name="privacy_language">Pinulongan</string>
+    <string name="privacy_ok">Sige</string>
+    <string name="privacy_agree">Uyon ko</string>
+    <string name="privacy_disagree">Dili ko uyon</string>
+    <string name="privacy_withdraw_consent">Bawi ang pagtugot</string>
+    <string name="privacy_decline_message">Kini mopapas sa gihuptan nga mga buluhaton, kahimtang, ug mga password sa walay pagbalik, ug magsira sa aplikasyon. Ang mga payl sa mga polder nga imong gipili dili papason. Dili na kini mabalik.</string>
+    <string name="privacy_cancel">Kanselaha</string>
+    <string name="privacy_delete_and_close">Papasa ug isira</string>
+</resources>

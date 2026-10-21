@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="menu_license">Liisan</string>
+    <string name="menu_privacy">Asturnaanta</string>
+    <string name="privacy_language">Luqad</string>
+    <string name="privacy_ok">Haye</string>
+    <string name="privacy_agree">Waan aqbalay</string>
+    <string name="privacy_disagree">Waan diiday</string>
+    <string name="privacy_withdraw_consent">Ka noqo ogolaanshaha</string>
+    <string name="privacy_decline_message">Tani waxay si joogto ah u tirtiri doontaa hawlihii, dejintii, iyo erayada sirta ah ee la kaydiyay, waxayna xiri doontaa codsiga. Faylasha ku jira galalka aad dooratay lama tirtiro. Tan lama celin karo.</string>
+    <string name="privacy_cancel">Jooji</string>
+    <string name="privacy_delete_and_close">Tirtir oo xir</string>
+</resources>

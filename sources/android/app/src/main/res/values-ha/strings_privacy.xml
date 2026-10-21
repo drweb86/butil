@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="menu_license">Lasisi</string>
+    <string name="menu_privacy">Sirri</string>
+    <string name="privacy_language">Harshe</string>
+    <string name="privacy_ok">To</string>
+    <string name="privacy_agree">Na yarda</string>
+    <string name="privacy_disagree">Ban yarda ba</string>
+    <string name="privacy_withdraw_consent">Janye yarda</string>
+    <string name="privacy_decline_message">Wannan zai share ayyuka, saituna, da kalmomin sirri da aka adana har abada, kuma ya rufe manhaja. Ba a share fayiloli a manyan fayilolin da kuka zaɓa ba. Ba za a iya soke wannan ba.</string>
+    <string name="privacy_cancel">Soke</string>
+    <string name="privacy_delete_and_close">Share kuma rufe</string>
+</resources>

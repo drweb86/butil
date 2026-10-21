@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="menu_license">Leseni</string>
+    <string name="menu_privacy">Faragha</string>
+    <string name="privacy_language">Lugha</string>
+    <string name="privacy_ok">Sawa</string>
+    <string name="privacy_agree">Nakubali</string>
+    <string name="privacy_disagree">Sikubali</string>
+    <string name="privacy_withdraw_consent">Ondoa idhini</string>
+    <string name="privacy_decline_message">Hii itafuta kabisa kazi, mipangilio, na manenosiri yaliyohifadhiwa, na kufunga programu. Faili zilizo katika folda ulizochagua hazifutwi. Hili haliwezi kutenduliwa.</string>
+    <string name="privacy_cancel">Ghairi</string>
+    <string name="privacy_delete_and_close">Futa na ufunge</string>
+</resources>

@@ -47,6 +47,13 @@ class SecretCipher {
         return settings.withSecrets(updated)
     }
 
+    fun deleteKey() {
+        val store = KeyStore.getInstance(ANDROID_KEYSTORE).apply { load(null) }
+        if (store.containsAlias(ALIAS)) {
+            store.deleteEntry(ALIAS)
+        }
+    }
+
     private fun key(): SecretKey {
         val store = KeyStore.getInstance(ANDROID_KEYSTORE).apply { load(null) }
         val existing = store.getKey(ALIAS, null) as? SecretKey

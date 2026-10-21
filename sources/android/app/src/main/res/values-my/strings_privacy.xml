@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="menu_license">လိုင်စင်</string>
+    <string name="menu_privacy">ကိုယ်ရေးကိုယ်တာ</string>
+    <string name="privacy_language">ဘာသာစကား</string>
+    <string name="privacy_ok">ကောင်းပြီ</string>
+    <string name="privacy_agree">သဘောတူသည်</string>
+    <string name="privacy_disagree">သဘောမတူပါ</string>
+    <string name="privacy_withdraw_consent">သဘောတူညီချက်ကို ရုပ်သိမ်းရန်</string>
+    <string name="privacy_decline_message">ဤလုပ်ဆောင်ချက်သည် သိမ်းဆည်းထားသော လုပ်ငန်းများ၊ ဆက်တင်များနှင့် စကားဝှက်များကို အပြီးအပိုင်ဖျက်ပြီး အက်ပ်ကို ပိတ်ပါမည်။ သင်ရွေးထားသော ဖိုလ်ဒါများထဲရှိ ဖိုင်များကို မဖျက်ပါ။ ဤအရာကို ပြန်ပြင်၍မရပါ။</string>
+    <string name="privacy_cancel">ပယ်ဖျက်မည်</string>
+    <string name="privacy_delete_and_close">ဖျက်ပြီး ပိတ်မည်</string>
+</resources>

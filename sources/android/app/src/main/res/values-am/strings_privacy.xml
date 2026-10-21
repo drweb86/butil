@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="menu_license">ፈቃድ</string>
+    <string name="menu_privacy">ግላዊነት</string>
+    <string name="privacy_language">ቋንቋ</string>
+    <string name="privacy_ok">እሺ</string>
+    <string name="privacy_agree">እስማማለሁ</string>
+    <string name="privacy_disagree">አልስማማም</string>
+    <string name="privacy_withdraw_consent">ስምምነትን አንሳ</string>
+    <string name="privacy_decline_message">ይህ የተቀመጡ ተግባራትን፣ ቅንብሮችን እና የይለፍ ቃሎችን በቋሚነት ይሰርዛል እና መተግበሪያውን ይዘጋል። በመረጧቸው አቃፊዎች ውስጥ ያሉ ፋይሎች አይሰረዙም። ይህ ሊቀለበስ አይችልም።</string>
+    <string name="privacy_cancel">ይቅር</string>
+    <string name="privacy_delete_and_close">ሰርዝ እና ዝጋ</string>
+</resources>

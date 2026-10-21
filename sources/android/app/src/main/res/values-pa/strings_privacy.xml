@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="menu_license">ਲਾਇਸੈਂਸ</string>
+    <string name="menu_privacy">ਗੋਪਨੀਯਤਾ</string>
+    <string name="privacy_language">ਭਾਸ਼ਾ</string>
+    <string name="privacy_ok">ਠੀਕ ਹੈ</string>
+    <string name="privacy_agree">ਸਹਿਮਤ</string>
+    <string name="privacy_disagree">ਅਸਹਿਮਤ</string>
+    <string name="privacy_withdraw_consent">ਸਹਿਮਤੀ ਵਾਪਸ ਲਓ</string>
+    <string name="privacy_decline_message">ਇਹ ਸਟੋਰ ਕੀਤੇ ਕੰਮ, ਸੈਟਿੰਗਾਂ ਅਤੇ ਪਾਸਵਰਡ ਸਥਾਈ ਤੌਰ ਤੇ ਮਿਟਾ ਦੇਵੇਗਾ ਅਤੇ ਐਪ ਬੰਦ ਕਰ ਦੇਵੇਗਾ। ਤੁਹਾਡੇ ਵੱਲੋਂ ਚੁਣੇ ਫੋਲਡਰਾਂ ਵਿਚਲੀਆਂ ਫਾਈਲਾਂ ਨਹੀਂ ਮਿਟਦੀਆਂ। ਇਸਨੂੰ ਵਾਪਸ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਦਾ।</string>
+    <string name="privacy_cancel">ਰੱਦ ਕਰੋ</string>
+    <string name="privacy_delete_and_close">ਮਿਟਾਓ ਅਤੇ ਬੰਦ ਕਰੋ</string>
+</resources>

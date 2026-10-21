@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="menu_license">授權</string>
+    <string name="menu_privacy">私隱</string>
+    <string name="privacy_language">語言</string>
+    <string name="privacy_ok">確定</string>
+    <string name="privacy_agree">同意</string>
+    <string name="privacy_disagree">唔同意</string>
+    <string name="privacy_withdraw_consent">撤回同意</string>
+    <string name="privacy_decline_message">呢個操作會永久刪除已儲存嘅工作、設定同密碼，然後關閉應用程式。你所揀資料夾入面嘅檔案唔會被刪除。唔可以還原。</string>
+    <string name="privacy_cancel">取消</string>
+    <string name="privacy_delete_and_close">刪除並關閉</string>
+</resources>

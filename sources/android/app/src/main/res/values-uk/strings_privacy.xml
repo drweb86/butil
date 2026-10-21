@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="menu_license">Ліцензія</string>
+    <string name="menu_privacy">Конфіденційність</string>
+    <string name="privacy_language">Мова</string>
+    <string name="privacy_ok">ОК</string>
+    <string name="privacy_agree">Погодитися</string>
+    <string name="privacy_disagree">Не погодитися</string>
+    <string name="privacy_withdraw_consent">Відкликати згоду</string>
+    <string name="privacy_decline_message">Це назавжди видалить збережені завдання, параметри та паролі й закриє застосунок. Файли в обраних вами папках не видаляються. Цю дію не можна скасувати.</string>
+    <string name="privacy_cancel">Скасувати</string>
+    <string name="privacy_delete_and_close">Видалити й закрити</string>
+</resources>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="menu_license">Licens</string>
+    <string name="menu_privacy">Integritet</string>
+    <string name="privacy_language">Språk</string>
+    <string name="privacy_ok">OK</string>
+    <string name="privacy_agree">Godkänn</string>
+    <string name="privacy_disagree">Godkänn inte</string>
+    <string name="privacy_withdraw_consent">Återkalla samtycke</string>
+    <string name="privacy_decline_message">Det här raderar permanent sparade uppgifter, inställningar och lösenord och stänger appen. Filer i mappar du har valt raderas inte. Det här kan inte ångras.</string>
+    <string name="privacy_cancel">Avbryt</string>
+    <string name="privacy_delete_and_close">Radera och stäng</string>
+</resources>

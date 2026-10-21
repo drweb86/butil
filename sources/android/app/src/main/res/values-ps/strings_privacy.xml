@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="menu_license">جواز</string>
+    <string name="menu_privacy">محرمیت</string>
+    <string name="privacy_language">ژبه</string>
+    <string name="privacy_ok">سمه ده</string>
+    <string name="privacy_agree">موافق یم</string>
+    <string name="privacy_disagree">موافق نه یم</string>
+    <string name="privacy_withdraw_consent">رضایت واخلئ</string>
+    <string name="privacy_decline_message">دا به ساتل شوي دندې، امستنې او پاسورډونه د تل لپاره ړنګ کړي او غوښتنلیک به وتړي. ستاسو په ټاکلو فولډرونو کې فایلونه نه ړنګېږي. دا بېرته نه شي کېدای.</string>
+    <string name="privacy_cancel">لغوه</string>
+    <string name="privacy_delete_and_close">ړنګ کړئ او وتړئ</string>
+</resources>

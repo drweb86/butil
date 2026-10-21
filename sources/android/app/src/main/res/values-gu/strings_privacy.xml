@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="menu_license">લાઇસન્સ</string>
+    <string name="menu_privacy">ગોપનીયતા</string>
+    <string name="privacy_language">ભાષા</string>
+    <string name="privacy_ok">ઠીક છે</string>
+    <string name="privacy_agree">સંમત</string>
+    <string name="privacy_disagree">અસંમત</string>
+    <string name="privacy_withdraw_consent">સંમતિ પાછી ખેંચો</string>
+    <string name="privacy_decline_message">આનાથી સંગ્રહિત કાર્યો, સેટિંગ્સ અને પાસવર્ડ કાયમ માટે કાઢી નાખવામાં આવશે અને ઍપ બંધ થશે. તમે પસંદ કરેલા ફોલ્ડરમાંની ફાઇલો કાઢવામાં આવતી નથી. આને પૂર્વવત્ કરી શકાતું નથી.</string>
+    <string name="privacy_cancel">રદ કરો</string>
+    <string name="privacy_delete_and_close">કાઢી નાખો અને બંધ કરો</string>
+</resources>

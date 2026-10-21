@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="menu_license">الترخيص</string>
+    <string name="menu_privacy">الخصوصية</string>
+    <string name="privacy_language">اللغة</string>
+    <string name="privacy_ok">حسنًا</string>
+    <string name="privacy_agree">أوافق</string>
+    <string name="privacy_disagree">لا أوافق</string>
+    <string name="privacy_withdraw_consent">سحب الموافقة</string>
+    <string name="privacy_decline_message">سيؤدي هذا إلى حذف المهام والإعدادات وكلمات المرور المخزّنة نهائيًا وإغلاق التطبيق. لا تُحذف الملفات في المجلدات التي حددتها. لا يمكن التراجع عن هذا.</string>
+    <string name="privacy_cancel">إلغاء</string>
+    <string name="privacy_delete_and_close">حذف وإغلاق</string>
+</resources>

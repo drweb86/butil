@@ -1,6 +1,6 @@
 # Third-party notices
 
-The BUtil Android application's own code is dedicated to the public domain under CC0 1.0 Universal. The components listed here are not covered by that dedication. Each remains under the license stated for it. This file is distributed with the application.
+The BUtil Android application's own code is dedicated to the public domain under CC0 1.0 Universal. The components listed here are not covered by that dedication. Each remains under the license stated for it. This file is distributed with the application. It is English only and is not translated.
 
 Debug-only tooling (Compose UI tooling) is not part of the release build and is not listed. Compose and Activity also include other AndroidX libraries. Those are Apache-2.0 as well.
 

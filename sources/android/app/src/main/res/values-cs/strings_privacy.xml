@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="menu_license">Licence</string>
+    <string name="menu_privacy">Soukromí</string>
+    <string name="privacy_language">Jazyk</string>
+    <string name="privacy_ok">OK</string>
+    <string name="privacy_agree">Souhlasím</string>
+    <string name="privacy_disagree">Nesouhlasím</string>
+    <string name="privacy_withdraw_consent">Odvolat souhlas</string>
+    <string name="privacy_decline_message">Tím se trvale smažou uložené úlohy, nastavení a hesla a aplikace se zavře. Soubory ve složkách, které jste vybrali, se nesmažou. Tuto akci nelze vrátit zpět.</string>
+    <string name="privacy_cancel">Zrušit</string>
+    <string name="privacy_delete_and_close">Smazat a zavřít</string>
+</resources>

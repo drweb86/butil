@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="menu_license">Ikike</string>
+    <string name="menu_privacy">Nzuzo</string>
+    <string name="privacy_language">Asụsụ</string>
+    <string name="privacy_ok">Ọ dị mma</string>
+    <string name="privacy_agree">Ekwenyere m</string>
+    <string name="privacy_disagree">Ekwenyeghị m</string>
+    <string name="privacy_withdraw_consent">Weghachite nkwenye</string>
+    <string name="privacy_decline_message">Nke a ga-ehichapụ ọrụ, ntọala, na okwuntụghe echekwara kpamkpam, ma mechie ngwa. A naghị ehichapụ faịlụ ndị dị na folda ị họọrọ. Enweghị ike ịmegharị nke a.</string>
+    <string name="privacy_cancel">Kagbuo</string>
+    <string name="privacy_delete_and_close">Hichapụ ma mechie</string>
+</resources>

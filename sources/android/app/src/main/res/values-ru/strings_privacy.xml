@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="menu_license">Лицензия</string>
+    <string name="menu_privacy">Конфиденциальность</string>
+    <string name="privacy_language">Язык</string>
+    <string name="privacy_ok">ОК</string>
+    <string name="privacy_agree">Согласиться</string>
+    <string name="privacy_disagree">Не согласиться</string>
+    <string name="privacy_withdraw_consent">Отозвать согласие</string>
+    <string name="privacy_decline_message">Это безвозвратно удалит сохранённые задачи, параметры и пароли и закроет приложение. Файлы в выбранных вами папках не удаляются. Это действие нельзя отменить.</string>
+    <string name="privacy_cancel">Отмена</string>
+    <string name="privacy_delete_and_close">Удалить и закрыть</string>
+</resources>

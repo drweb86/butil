@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="menu_license">لائسنس</string>
+    <string name="menu_privacy">رازداری</string>
+    <string name="privacy_language">زبان</string>
+    <string name="privacy_ok">ٹھیک ہے</string>
+    <string name="privacy_agree">متفق</string>
+    <string name="privacy_disagree">غیر متفق</string>
+    <string name="privacy_withdraw_consent">رضامندی واپس لیں</string>
+    <string name="privacy_decline_message">اس سے محفوظ کام، ترتیبات اور پاس ورڈ ہمیشہ کے لیے مٹ جائیں گے اور ایپ بند ہو جائے گی۔ آپ کے منتخب فولڈروں کی فائلیں نہیں مٹتی۔ اسے واپس نہیں کیا جا سکتا۔</string>
+    <string name="privacy_cancel">منسوخ</string>
+    <string name="privacy_delete_and_close">مٹائیں اور بند کریں</string>
+</resources>

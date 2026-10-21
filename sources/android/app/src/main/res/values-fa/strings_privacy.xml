@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="menu_license">مجوز</string>
+    <string name="menu_privacy">حریم خصوصی</string>
+    <string name="privacy_language">زبان</string>
+    <string name="privacy_ok">تأیید</string>
+    <string name="privacy_agree">می‌پذیرم</string>
+    <string name="privacy_disagree">نمی‌پذیرم</string>
+    <string name="privacy_withdraw_consent">پس گرفتن موافقت</string>
+    <string name="privacy_decline_message">این کار وظیفه‌ها، تنظیمات و گذرواژه‌های ذخیره‌شده را برای همیشه حذف می‌کند و برنامه را می‌بندد. فایل‌های پوشه‌هایی که انتخاب کرده‌اید حذف نمی‌شوند. این کار برگشت‌پذیر نیست.</string>
+    <string name="privacy_cancel">لغو</string>
+    <string name="privacy_delete_and_close">حذف و بستن</string>
+</resources>

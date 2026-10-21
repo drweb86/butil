@@ -108,9 +108,9 @@ Set-Content -Path (Join-Path $AndroidRoot "local.properties") -Value "sdk.dir=$s
 $apkOutputs = Join-Path $AndroidRoot "app\build\outputs\apk"
 
 if ($Release) {
-    Invoke-Gradle @("assembleRelease")
-    $releaseDir = Join-Path $apkOutputs "release"
-    $apk = @("app-release.apk", "app-release-unsigned.apk") |
+    Invoke-Gradle @("assembleGeneralRelease")
+    $releaseDir = Join-Path $apkOutputs "general\release"
+    $apk = @("app-general-release.apk", "app-general-release-unsigned.apk") |
         ForEach-Object { Join-Path $releaseDir $_ } |
         Where-Object { Test-Path $_ } |
         Select-Object -First 1
@@ -120,8 +120,8 @@ if ($Release) {
     }
     $packageId = "com.siarheikuchuk.butil"
 } else {
-    Invoke-Gradle @("assembleDebug")
-    $copied = Copy-ToOutput (Join-Path $apkOutputs "debug\app-debug.apk") "butil_android_debug.apk"
+    Invoke-Gradle @("assembleGeneralDebug")
+    $copied = Copy-ToOutput (Join-Path $apkOutputs "general\debug\app-general-debug.apk") "butil_android_debug.apk"
     $packageId = "com.siarheikuchuk.butil"
 }
 

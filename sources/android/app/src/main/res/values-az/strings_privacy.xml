@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="menu_license">Lisenziya</string>
+    <string name="menu_privacy">Məxfilik</string>
+    <string name="privacy_language">Dil</string>
+    <string name="privacy_ok">Tamam</string>
+    <string name="privacy_agree">Razıyam</string>
+    <string name="privacy_disagree">Razı deyiləm</string>
+    <string name="privacy_withdraw_consent">Razılığı geri götür</string>
+    <string name="privacy_decline_message">Bu, saxlanan tapşırıqları, ayarları və parolları həmişəlik siləcək və tətbiqi bağlayacaq. Seçdiyiniz qovluqlardakı fayllar silinmir. Bunu geri qaytarmaq olmaz.</string>
+    <string name="privacy_cancel">Ləğv et</string>
+    <string name="privacy_delete_and_close">Sil və bağla</string>
+</resources>

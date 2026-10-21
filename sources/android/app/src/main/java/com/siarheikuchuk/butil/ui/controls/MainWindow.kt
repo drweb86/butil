@@ -5,10 +5,7 @@ package com.siarheikuchuk.butil.ui.controls
 import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.net.Uri
-import androidx.activity.ComponentActivity
-import androidx.activity.SystemBarStyle
 import androidx.activity.compose.BackHandler
-import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -31,7 +28,6 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.SideEffect
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -46,12 +42,9 @@ import androidx.compose.ui.unit.dp
 import com.siarheikuchuk.butil.BuildConfig
 import com.siarheikuchuk.butil.R
 import com.siarheikuchuk.butil.core.tasks.UploadScheduler
-import com.siarheikuchuk.butil.ui.BUtilTheme
-import com.siarheikuchuk.butil.ui.ThemeSetting
 import kotlinx.coroutines.launch
 
 private const val HOME_PAGE = "https://github.com/drweb86/butil"
-private const val PREFS = "butil"
 
 private sealed interface AppPage {
     data object Tasks : AppPage
@@ -73,31 +66,22 @@ private sealed interface AppPage {
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun MainWindow() {
+fun MainWindow(
+    dark: Boolean,
+    onDarkChanged: (Boolean) -> Unit,
+    onOpenPrivacy: () -> Unit,
+    onOpenLicense: () -> Unit,
+) {
     val context = LocalContext.current
-    val activity = context as ComponentActivity
-    val prefs = remember { context.getSharedPreferences(PREFS, android.content.Context.MODE_PRIVATE) }
-    var dark by remember {
-        mutableStateOf(prefs.getString(ThemeSetting.NAME, ThemeSetting.DARK) != ThemeSetting.LIGHT)
-    }
     var page by remember { mutableStateOf<AppPage>(AppPage.Tasks) }
     var tasksRevision by remember { mutableStateOf(0) }
     val drawerState = androidx.compose.material3.rememberDrawerState(androidx.compose.material3.DrawerValue.Closed)
     val scope = rememberCoroutineScope()
-    SideEffect {
-        val style = if (dark) {
-            SystemBarStyle.dark(android.graphics.Color.TRANSPARENT)
-        } else {
-            SystemBarStyle.light(android.graphics.Color.TRANSPARENT, android.graphics.Color.TRANSPARENT)
-        }
-        activity.enableEdgeToEdge(statusBarStyle = style, navigationBarStyle = style)
-    }
 
     LaunchedEffect(Unit) {
         UploadScheduler.rescheduleAll(context)
     }
-    BUtilTheme(dark = dark) {
-        BackHandler(enabled = page !is AppPage.Tasks) {
+    BackHandler(enabled = page !is AppPage.Tasks) {
             if (page is AppPage.UploadEditor || page is AppPage.UploadRun || page is AppPage.Editor || page is AppPage.Restore) {
                 tasksRevision++
             }
@@ -114,12 +98,11 @@ fun MainWindow() {
                         scope.launch { drawerState.close() }
                     },
                     onTheme = { useDark ->
-                        dark = useDark
-                        prefs.edit()
-                            .putString(ThemeSetting.NAME, if (useDark) ThemeSetting.DARK else ThemeSetting.LIGHT)
-                            .apply()
+                        onDarkChanged(useDark)
                         scope.launch { drawerState.close() }
                     },
+                    onOpenPrivacy = onOpenPrivacy,
+                    onOpenLicense = onOpenLicense,
                     onWebsite = {
                         try {
                             context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(HOME_PAGE)))
@@ -205,7 +188,6 @@ fun MainWindow() {
                 }
             }
         }
-    }
 }
 
 @Composable
@@ -215,6 +197,8 @@ private fun AppMenu(
     onSelect: (AppPage) -> Unit,
     onTheme: (Boolean) -> Unit,
     onWebsite: () -> Unit,
+    onOpenPrivacy: () -> Unit,
+    onOpenLicense: () -> Unit,
 ) {
     ModalDrawerSheet {
         Column(Modifier.verticalScroll(rememberScrollState())) {
@@ -267,13 +251,21 @@ private fun AppMenu(
             StubItem(R.string.technical_tool_menu_prevent_sleep, page, onSelect)
             HorizontalDivider(modifier = Modifier.padding(vertical = 8.dp))
             StubItem(R.string.menu_credits, page, onSelect)
-            StubItem(R.string.menu_license, page, onSelect)
+            NavigationDrawerItem(
+                label = { Text(stringResource(R.string.menu_license)) },
+                selected = false,
+                onClick = onOpenLicense,
+            )
             NavigationDrawerItem(
                 label = { Text(stringResource(R.string.menu_third_party_notices)) },
                 selected = page is AppPage.Markdown && page.page == MarkdownPage.ThirdPartyNotices,
                 onClick = { onSelect(AppPage.Markdown(MarkdownPage.ThirdPartyNotices)) },
             )
-            StubItem(R.string.menu_privacy, page, onSelect)
+            NavigationDrawerItem(
+                label = { Text(stringResource(R.string.menu_privacy)) },
+                selected = false,
+                onClick = onOpenPrivacy,
+            )
             NavigationDrawerItem(
                 label = { Text(stringResource(R.string.app_version_and_site_link, BuildConfig.VERSION_NAME)) },
                 selected = false,
