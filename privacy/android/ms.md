@@ -23,8 +23,6 @@ Dasar privasi ini dan lesen dipaparkan di dalam aplikasi. Kedua-duanya tidak dib
 
 Takrif tugas hanya disimpan dalam storan peribadi aplikasi pada peranti ini. Sesuatu tugas boleh mengandungi laluan folder, jadual, tetapan storan, serta kata laluan atau token yang anda taip. Kata laluan dan rahsia storan dimeterai dengan stor kunci Android sebelum disimpan, dan hanya boleh dibaca pada peranti ini. Nilai itu tidak dimuat naik kepada pembangun. Nilai itu tidak termasuk dalam sandaran Android. Menyahpasang aplikasi akan mengalih keluar nilai itu.
 
-Tema yang anda pilih disimpan dalam tetapan peribadi aplikasi pada peranti ini.
-
 ### Fail yang anda pilih
 
 Sandaran, penyegerakan, pemulihan, import dan muat naik membaca serta menulis folder yang anda pilih dengan pemilih dokumen sistem, atau pelayan yang anda tetapkan. Fail itu kekal dalam folder yang anda pilih, atau pada destinasi storan yang anda tetapkan. Aplikasi tidak memuat naik fail itu kepada pembangun. Menyahpasang aplikasi tidak memadam fail dalam folder yang anda pilih.

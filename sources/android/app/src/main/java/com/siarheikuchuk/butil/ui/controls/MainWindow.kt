@@ -62,8 +62,6 @@ private sealed interface AppPage {
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun MainWindow(
-    dark: Boolean,
-    onDarkChanged: (Boolean) -> Unit,
     onOpenPrivacy: () -> Unit,
     onOpenLicense: () -> Unit,
 ) {
@@ -86,14 +84,9 @@ fun MainWindow(
             drawerState = drawerState,
             drawerContent = {
                 AppMenu(
-                    dark = dark,
                     page = page,
                     onSelect = { next ->
                         page = next
-                        scope.launch { drawerState.close() }
-                    },
-                    onTheme = { useDark ->
-                        onDarkChanged(useDark)
                         scope.launch { drawerState.close() }
                     },
                     onOpenPrivacy = onOpenPrivacy,
@@ -185,10 +178,8 @@ fun MainWindow(
 
 @Composable
 private fun AppMenu(
-    dark: Boolean,
     page: AppPage,
     onSelect: (AppPage) -> Unit,
-    onTheme: (Boolean) -> Unit,
     onOpenPrivacy: () -> Unit,
     onOpenLicense: () -> Unit,
 ) {
@@ -221,26 +212,12 @@ private fun AppMenu(
                 selected = page is AppPage.Restore,
                 onClick = { onSelect(AppPage.Restore) },
             )
-            SectionLabel(stringResource(R.string.theme_title))
-            NavigationDrawerItem(
-                label = { Text(stringResource(R.string.theme_value_dark)) },
-                selected = dark,
-                onClick = { onTheme(true) },
-                modifier = Modifier.padding(start = 12.dp),
-            )
-            NavigationDrawerItem(
-                label = { Text(stringResource(R.string.theme_value_light)) },
-                selected = !dark,
-                onClick = { onTheme(false) },
-                modifier = Modifier.padding(start = 12.dp),
-            )
             SectionLabel(stringResource(R.string.other_menu_title))
             StubItem(R.string.log_file_browse_logs_folder, page, onSelect)
             ToolItem(TechnicalFileToolKind.DecryptAes256, page, onSelect)
             ToolItem(TechnicalFileToolKind.EncryptAes256, page, onSelect)
             ToolItem(TechnicalFileToolKind.DecompressBrotli, page, onSelect)
             ToolItem(TechnicalFileToolKind.CompressBrotli, page, onSelect)
-            StubItem(R.string.technical_tool_menu_prevent_sleep, page, onSelect)
             HorizontalDivider(modifier = Modifier.padding(vertical = 8.dp))
             NavigationDrawerItem(
                 label = { Text(stringResource(R.string.menu_credits)) },

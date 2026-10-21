@@ -23,8 +23,6 @@ Esta política de privacidade e a licença são mostradas dentro do aplicativo. 
 
 As definições das tarefas são armazenadas apenas no armazenamento privado do aplicativo neste dispositivo. Uma tarefa pode incluir caminhos de pastas, um agendamento, configurações de armazenamento e as senhas ou tokens que você digitar. As senhas e os segredos de armazenamento são selados com o repositório de chaves do Android antes de serem salvos e só podem ser lidos neste dispositivo. Esses valores não são enviados ao desenvolvedor. Eles não são incluídos no backup do Android. Desinstalar o aplicativo os remove.
 
-O tema que você escolhe é armazenado nas configurações privadas do aplicativo neste dispositivo.
-
 ### Arquivos que você escolhe
 
 Backup, sincronização, restauração, importação e envio leem e gravam as pastas que você seleciona com o seletor de documentos do sistema, ou o servidor que você configura. Esses arquivos permanecem nas pastas escolhidas ou no destino de armazenamento que você configura. O aplicativo não os envia ao desenvolvedor. Desinstalar o aplicativo não exclui os arquivos das pastas que você selecionou.

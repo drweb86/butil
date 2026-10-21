@@ -23,8 +23,6 @@ Wannan manufar sirri da lasisin ana nuna su a cikin manhaja. Ba a buɗe su azama
 
 Ma'anoni na ayyuka ana adana su kawai a ma'ajiyar manhaja ta sirri a wannan na'ura. Aiki na iya ƙunshi hanyoyin manyan fayiloli, jadawali, saitunan ajiya, da kalmomin sirri ko alamomi da kuka rubuta. Ana rufe kalmomin sirri da sirrin ajiya da ma'ajiyar mabuɗin Android kafin a adana su, kuma ana iya karanta su a wannan na'ura kawai. Ba a loda waɗannan ƙimomi zuwa mai haɓakawa ba. Ba su cikin adana Android ba. Cire manhajar yana cire su.
 
-Jigon da kuka zaɓa ana adana shi a saitunan manhaja na sirri a wannan na'ura.
-
 ### Fayilolin da kuka zaɓa
 
 Ajiya, daidaitawa, maidowa, shigowa, da lodawa suna karantawa da rubutawa manyan fayilolin da kuka zaɓa da mai zaɓen takardu na tsarin, ko uwar garken da kuka saita. Waɗannan fayiloli suna zama a manyan fayilolin da kuka zaɓa, ko a wurin ajiyar da kuka saita. Manhajar ba ta loda su zuwa mai haɓakawa ba. Cire manhajar ba ya share fayiloli a manyan fayilolin da kuka zaɓa ba.

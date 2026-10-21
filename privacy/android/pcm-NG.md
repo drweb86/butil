@@ -23,8 +23,6 @@ Dis privacy rule and the licence dey show inside the app. Dem no dey open like w
 
 How task take be dey stay only for the private storage of the app for dis device. Task fit carry folder path, schedule, storage settings, and passwords or tokens wey you type. Before dem save password and storage secret, dem go seal am with the Android keystore, and na only dis device fit read am. Dem no dey send those values go the person wey develop am. Dem no dey inside Android backup. If you comot the app, dem go comot too.
 
-The theme wey you choose dey stay for the private settings of the app for dis device.
-
 ### Files wey you choose
 
 Backup, sync, restore, import, and upload dey read and write the folders wey you select with the system document picker, or the server wey you don set. Those files go still dey for the folders wey you choose, or for the storage place wey you don set. The app no dey carry dem go the person wey develop am. If you comot the app, e no go delete the files wey dey inside the folders wey you select.

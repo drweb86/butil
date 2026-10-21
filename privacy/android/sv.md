@@ -23,8 +23,6 @@ Den här integritetspolicyn och licensen visas i appen. De öppnas inte som webb
 
 Uppgiftsdefinitioner lagras bara i appens privata lagring på den här enheten. En uppgift kan innehålla mappsökvägar, ett schema, lagringsinställningar och lösenord eller token som du skriver. Lösenord och lagringshemligheter förseglas med Android-nyckellagret innan de sparas och kan bara läsas på den här enheten. De värdena laddas inte upp till utvecklaren. De ingår inte i Android-säkerhetskopian. Om du avinstallerar appen tas de bort.
 
-Temat du väljer lagras i appens privata inställningar på den här enheten.
-
 ### Filer du väljer
 
 Säkerhetskopiering, synkronisering, återställning, import och uppladdning läser och skriver de mappar du väljer med systemets dokumentväljare, eller servern du konfigurerar. De filerna stannar i mapparna du valde eller på lagringsmålet du konfigurerar. Appen laddar inte upp dem till utvecklaren. Om du avinstallerar appen raderas inte filer i mappar du har valt.

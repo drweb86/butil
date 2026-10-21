@@ -23,8 +23,6 @@ Bu məxfilik siyasəti və lisenziya tətbiqin içində göstərilir. Onlar veb 
 
 Tapşırıq tərifləri yalnız bu cihazdakı tətbiqin şəxsi yaddaşında saxlanılır. Tapşırıq qovluq yollarını, cədvəli, yaddaş ayarlarını və sizin yazdığınız parolları və ya tokenləri əhatə edə bilər. Parollar və yaddaş sirləri saxlanmazdan əvvəl Android açar anbarı ilə möhürlənir və yalnız bu cihazda oxuna bilər. Bu dəyərlər tərtibatçıya yüklənmir. Onlar Android ehtiyat nüsxəsinə daxil edilmir. Tətbiqi silmək onları silir.
 
-Seçdiyiniz mövzu bu cihazdakı tətbiqin şəxsi ayarlarında saxlanılır.
-
 ### Seçdiyiniz fayllar
 
 Ehtiyat nüsxə, sinxronlaşdırma, bərpa, idxal və yükləmə sistem sənəd seçicisi ilə seçdiyiniz qovluqları və ya tənzimlədiyiniz serveri oxuyur və yazır. Həmin fayllar seçdiyiniz qovluqlarda və ya tənzimlədiyiniz yaddaş təyinatında qalır. Tətbiq onları tərtibatçıya yükləmir. Tətbiqi silmək seçdiyiniz qovluqlardakı faylları silmir.

@@ -23,8 +23,6 @@ Ez az adatvédelmi szabályzat és a licenc az alkalmazáson belül jelenik meg.
 
 A feladatmeghatározások csak az alkalmazás privát tárhelyén tárolódnak ezen az eszközön. Egy feladat tartalmazhat mappaútvonalakat, ütemezést, tárolási beállításokat, valamint az Ön által beírt jelszavakat vagy tokeneket. A jelszavak és a tárolási titkok mentés előtt az Android kulcstárral lezárásra kerülnek, és csak ezen az eszközön olvashatók. Ezek az értékek nem töltődnek fel a fejlesztőhöz. Nem szerepelnek az Android biztonsági mentésben. Az alkalmazás eltávolítása törli őket.
 
-A választott téma az alkalmazás privát beállításaiban tárolódik ezen az eszközön.
-
 ### Az Ön által választott fájlok
 
 A mentés, a szinkronizálás, a visszaállítás, az importálás és a feltöltés olvassa és írja a rendszer dokumentumválasztójával kijelölt mappákat vagy az Ön által beállított kiszolgálót. Ezek a fájlok a választott mappákban vagy a beállított tárolási célhelyen maradnak. Az alkalmazás nem tölti fel őket a fejlesztőhöz. Az alkalmazás eltávolítása nem törli a kijelölt mappákban lévő fájlokat.

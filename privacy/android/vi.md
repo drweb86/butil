@@ -23,8 +23,6 @@ Chính sách quyền riêng tư này và giấy phép được hiển thị bên
 
 Định nghĩa tác vụ chỉ được lưu trong bộ nhớ riêng của ứng dụng trên thiết bị này. Một tác vụ có thể gồm đường dẫn thư mục, lịch, cài đặt lưu trữ, cùng mật khẩu hoặc mã thông báo bạn nhập. Mật khẩu và bí mật lưu trữ được niêm phong bằng kho khóa Android trước khi lưu, và chỉ đọc được trên thiết bị này. Những giá trị đó không được tải lên nhà phát triển. Chúng không nằm trong bản sao lưu Android. Gỡ ứng dụng sẽ xóa chúng.
 
-Giao diện bạn chọn được lưu trong cài đặt riêng của ứng dụng trên thiết bị này.
-
 ### Tệp bạn chọn
 
 Sao lưu, đồng bộ, khôi phục, nhập và tải lên sẽ đọc và ghi các thư mục bạn chọn bằng bộ chọn tài liệu của hệ thống, hoặc máy chủ bạn cấu hình. Những tệp đó ở trong thư mục bạn đã chọn, hoặc tại đích lưu trữ bạn cấu hình. Ứng dụng không tải chúng lên nhà phát triển. Gỡ ứng dụng không xóa tệp trong các thư mục bạn đã chọn.

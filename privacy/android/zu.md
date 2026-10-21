@@ -23,8 +23,6 @@ Le nqubomgomo yobumfihlo nelayisensi kuboniswa ngaphakathi kohlelo. Azivulwa nje
 
 Izincazelo zemisebenzi zigcinwa kuphela esitoleni esiyimfihlo sohlelo kule divayisi. Umsebenzi ungafaka izindlela zamafolda, ishejuli, izilungiselelo zokugcina, namaphasiwedi noma amathokheni owathayiphayo. Amaphasiwedi nezimfihlo zokugcina zivalwa nge-keystore ye-Android ngaphambi kokugcinwa, futhi zingafundwa kuphela kule divayisi. Lawo manani awalayishelwa kumthuthukisi. Awafakwa ekugcineni kwe-Android. Ukukhipha uhlelo kuyawasusa.
 
-Itimu oyikhethayo igcinwa kuzilungiselelo eziyimfihlo zohlelo kule divayisi.
-
 ### Amafayela owakhethayo
 
 Ukugcina ikhophi, ukuvumelanisa, ukubuyisela, ukungenisa, nokulayisha kufunda futhi kubhale amafolda owakhetha ngesikhethi samadokhumenti sesistimu, noma iseva oyilungisayo. Lawo mafayela ahlala emafodeni owakhethile, noma endaweni yokugcina oyilungisayo. Uhlelo aluwalayisheli kumthuthukisi. Ukukhipha uhlelo akususi amafayela akumafolda owakhethile.

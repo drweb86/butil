@@ -23,8 +23,6 @@ Kining palisiya sa pribasiya ug ang lisensya gipakita sulod sa aplikasyon. Dili 
 
 Ang mga kahulugan sa buluhaton gitipigan lang sa pribadong tipiganan sa aplikasyon niining aparato. Ang buluhaton mahimong maglakip og mga agianan sa polder, iskedyul, mga kahimtang sa tipiganan, ug mga password o token nga imong i-type. Ang mga password ug mga sekreto sa tipiganan gisilyohan gamit ang Android keystore sa dili pa kini tipigan, ug mabasa lang niining aparato. Kadtong mga bili dili ipadala ngadto sa tig-ugmad. Wala kini apil sa backup sa Android. Ang pagtangtang sa aplikasyon magwagtang niini.
 
-Ang tema nga imong pilion gitipigan sa pribadong mga kahimtang sa aplikasyon niining aparato.
-
 ### Mga payl nga imong pilion
 
 Ang pagtipig og kopya, pagpahiangay, pagpabalik, pagsulod, ug pag-alsa mobasa ug mosulat sa mga polder nga imong pilion gamit ang tigpili og dokumento sa sistema, o sa server nga imong giandam. Kadtong mga payl magpabilin sa mga polder nga imong gipili, o sa destinasyon sa tipiganan nga imong giandam. Ang aplikasyon dili mopaalsa niini ngadto sa tig-ugmad. Ang pagtangtang sa aplikasyon dili magpapas sa mga payl sa mga polder nga imong gipili.

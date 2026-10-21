@@ -23,8 +23,6 @@ Această politică de confidențialitate și licența sunt afișate în aplicaț
 
 Definițiile sarcinilor sunt stocate doar în spațiul privat al aplicației pe acest dispozitiv. O sarcină poate include căi de dosare, un program, setări de stocare și parolele sau jetoanele pe care le introduceți. Parolele și secretele de stocare sunt sigilate cu depozitul de chei Android înainte de a fi salvate și pot fi citite doar pe acest dispozitiv. Aceste valori nu sunt încărcate la dezvoltator. Nu sunt incluse în copia de rezervă Android. Dezinstalarea aplicației le elimină.
 
-Tema pe care o alegeți este stocată în setările private ale aplicației pe acest dispozitiv.
-
 ### Fișierele pe care le alegeți
 
 Copierea de rezervă, sincronizarea, restaurarea, importul și încărcarea citesc și scriu dosarele pe care le selectați cu selectorul de documente al sistemului sau serverul pe care îl configurați. Aceste fișiere rămân în dosarele alese sau la destinația de stocare pe care o configurați. Aplicația nu le încarcă la dezvoltator. Dezinstalarea aplicației nu șterge fișierele din dosarele pe care le-ați selectat.

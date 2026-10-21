@@ -23,8 +23,6 @@ Dit privacybeleid en de licentie worden in de app getoond. Ze worden niet als we
 
 Taakdefinities worden alleen opgeslagen in de privéopslag van de app op dit apparaat. Een taak kan mappaden, een schema, opslaginstellingen en wachtwoorden of tokens bevatten die u invoert. Wachtwoorden en opslaggeheimen worden vóór het opslaan verzegeld met het Android-sleutelarchief en kunnen alleen op dit apparaat worden gelezen. Die waarden worden niet naar de ontwikkelaar geüpload. Ze worden niet opgenomen in de Android-back-up. Als u de app verwijdert, worden ze gewist.
 
-Het thema dat u kiest, wordt opgeslagen in de privé-instellingen van de app op dit apparaat.
-
 ### Bestanden die u kiest
 
 Back-up, synchronisatie, herstel, import en upload lezen en schrijven de mappen die u selecteert met de documentkiezer van het systeem, of de server die u instelt. Die bestanden blijven in de mappen die u koos of op de opslagbestemming die u instelt. De app uploadt ze niet naar de ontwikkelaar. Als u de app verwijdert, worden bestanden in mappen die u hebt geselecteerd niet verwijderd.

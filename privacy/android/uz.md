@@ -23,8 +23,6 @@ Ushbu maxfiylik siyosati va litsenziya ilova ichida koʻrsatiladi. Ular veb-sahi
 
 Vazifa taʼriflari faqat ushbu qurilmadagi ilovaning shaxsiy saqlash joyida saqlanadi. Vazifada jild yoʻllari, jadval, saqlash sozlamalari hamda siz tergan parollar yoki tokenlar boʻlishi mumkin. Parollar va saqlash sirlari saqlanishidan oldin Android kalitlar ombori bilan muhrlanadi va faqat ushbu qurilmada oʻqiladi. Bu qiymatlar ishlab chiquvchiga yuklanmaydi. Ular Android zaxira nusxasiga kirmaydi. Ilovani oʻchirib tashlash ularni olib tashlaydi.
 
-Siz tanlagan mavzu ushbu qurilmadagi ilovaning shaxsiy sozlamalarida saqlanadi.
-
 ### Siz tanlaydigan fayllar
 
 Zaxira nusxa, sinxronlash, tiklash, import va yuklash tizim hujjat tanlagichi bilan tanlagan jildlaringizni yoki sozlagan serveringizni oʻqiydi va yozadi. Bu fayllar tanlagan jildlaringizda yoki sozlagan saqlash manzilingizda qoladi. Ilova ularni ishlab chiquvchiga yuklamaydi. Ilovani oʻchirib tashlash siz tanlagan jildlardagi fayllarni oʻchirmaydi.

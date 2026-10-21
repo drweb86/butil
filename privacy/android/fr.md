@@ -23,8 +23,6 @@ Cette politique de confidentialité et la licence sont affichées dans l’appli
 
 Les définitions des tâches sont stockées uniquement dans le stockage privé de l’application sur cet appareil. Une tâche peut comprendre des chemins de dossiers, une planification, des réglages de stockage, ainsi que les mots de passe ou jetons que vous saisissez. Les mots de passe et les secrets de stockage sont scellés avec le magasin de clés Android avant d’être enregistrés et ne peuvent être lus que sur cet appareil. Ces valeurs ne sont pas envoyées au développeur. Elles ne sont pas incluses dans la sauvegarde Android. La désinstallation de l’application les supprime.
 
-Le thème que vous choisissez est stocké dans les réglages privés de l’application sur cet appareil.
-
 ### Fichiers que vous choisissez
 
 La sauvegarde, la synchronisation, la restauration, l’importation et l’envoi lisent et écrivent les dossiers que vous sélectionnez avec le sélecteur de documents du système, ou le serveur que vous configurez. Ces fichiers restent dans les dossiers que vous avez choisis ou sur la destination de stockage que vous configurez. L’application ne les envoie pas au développeur. La désinstallation de l’application ne supprime pas les fichiers des dossiers que vous avez sélectionnés.

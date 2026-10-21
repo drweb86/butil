@@ -23,8 +23,6 @@ A na-egosi iwu nzuzo a na ikike n'ime ngwa. A naghị emepe ha dị ka ibe weeb�
 
 A na-echekwa nkọwa ọrụ naanị na nchekwa nkeonwe nke ngwa na ngwaọrụ a. Ọrụ nwere ike ịgụnye ụzọ folda, usoro oge, ntọala nchekwa, na okwuntụghe ma ọ bụ token ị pịnyere. A na-emechi okwuntụghe na ihe nzuzo nchekwa na Android keystore tupu echekwa ha, a pụkwara ịgụ ha naanị na ngwaọrụ a. A naghị ebulite ụkpụrụ ndị ahụ nye onye mmepe. Ha anọghị na nchekwa Android. Iwepụ ngwa na-ewepụ ha.
 
-Isiokwu ị họọrọ ka echekwara na ntọala nkeonwe nke ngwa na ngwaọrụ a.
-
 ### Faịlụ ị họọrọ
 
 Nchekwa, mmekọrịta, iweghachi, mbubata, na mbulite na-agụ ma dee folda ndị ị họọrọ site na onye nhọrọ akwụkwọ nke sistemụ, ma ọ bụ sava ị haziri. Faịlụ ndị ahụ na-anọ na folda ndị ị họọrọ, ma ọ bụ na ebe nchekwa ị haziri. Ngwa anaghị ebulite ha nye onye mmepe. Iwepụ ngwa anaghị ehichapụ faịlụ ndị dị na folda ị họọrọ.

@@ -1,5 +1,6 @@
 package com.siarheikuchuk.butil.ui
 
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.lightColorScheme
@@ -18,15 +19,9 @@ private val LightAccent = Color(0xFF005A9E)
 private val LightText = Color(0xFF000000)
 private val LightError = Color(0xFFDA3B01)
 
-object ThemeSetting {
-    const val NAME = "Application.Theme"
-    const val DARK = "Dark"
-    const val LIGHT = "Light"
-}
-
 @Composable
-fun BUtilTheme(dark: Boolean, content: @Composable () -> Unit) {
-    val colors = if (dark) {
+fun BUtilTheme(content: @Composable () -> Unit) {
+    val colors = if (isSystemInDarkTheme()) {
         darkColorScheme(
             primary = DarkAccent,
             onPrimary = DarkBackground,

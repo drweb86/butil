@@ -23,8 +23,6 @@ Sera hii ya faragha na leseni huonyeshwa ndani ya programu. Hazifunguliwi kama k
 
 Ufafanuzi wa kazi huhifadhiwa tu katika hifadhi ya faragha ya programu kwenye kifaa hiki. Kazi inaweza kujumuisha njia za folda, ratiba, mipangilio ya hifadhi, na manenosiri au tokeni unazoandika. Manenosiri na siri za hifadhi hufungwa kwa hifadhi ya funguo ya Android kabla ya kuhifadhiwa, na zinaweza kusomwa tu kwenye kifaa hiki. Thamani hizo hazipakiwi kwa msanidi. Hazijumuishwi katika nakala rudufu ya Android. Kuondoa programu huziondoa.
 
-Mandhari unayochagua huhifadhiwa katika mipangilio ya faragha ya programu kwenye kifaa hiki.
-
 ### Faili unazochagua
 
 Uhifadhi nakala, usawazishaji, urejeshaji, uingizaji, na upakiaji husoma na kuandika folda unazochagua kwa kichagua hati cha mfumo, au seva unayosanidi. Faili hizo hubaki katika folda ulizochagua, au kwenye mahali pa hifadhi unaposanidi. Programu haizipaki kwa msanidi. Kuondoa programu hakufuti faili zilizo katika folda ulizochagua.

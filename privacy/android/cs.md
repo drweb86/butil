@@ -23,8 +23,6 @@ Tyto zásady ochrany osobních údajů a licence se zobrazují v aplikaci. Neote
 
 Definice úloh se ukládají pouze do soukromého úložiště aplikace v tomto zařízení. Úloha může obsahovat cesty ke složkám, plán, nastavení úložiště a hesla nebo tokeny, které zadáte. Hesla a tajné údaje úložiště se před uložením zapečetí úložištěm klíčů Android a lze je číst pouze v tomto zařízení. Tyto hodnoty se nenahrávají vývojáři. Nejsou součástí zálohy Android. Odinstalování aplikace je odstraní.
 
-Zvolený motiv se ukládá do soukromého nastavení aplikace v tomto zařízení.
-
 ### Soubory, které vyberete
 
 Zálohování, synchronizace, obnova, import a nahrávání čtou a zapisují složky vybrané systémovým výběrem dokumentů nebo server, který nastavíte. Tyto soubory zůstávají ve složkách, které jste vybrali, nebo v cíli úložiště, který nastavíte. Aplikace je nenahrává vývojáři. Odinstalování aplikace nesmaže soubory ve složkách, které jste vybrali.

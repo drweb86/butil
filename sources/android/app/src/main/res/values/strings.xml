@@ -2,16 +2,12 @@
 <resources>
     <string name="app_name">BUtil</string>
     <string name="app_legal_title" translatable="false">BUtil - Siarhei Kuchuk - V%1$s</string>
-    <string name="theme_title">Theme</string>
-    <string name="theme_value_dark">Dark</string>
-    <string name="theme_value_light">Light</string>
     <string name="other_menu_title">Other</string>
     <string name="log_file_browse_logs_folder">Open logs folder</string>
     <string name="technical_tool_menu_decrypt_aes256">Decrypt AES-256…</string>
     <string name="technical_tool_menu_encrypt_aes256">Encrypt AES-256…</string>
     <string name="technical_tool_menu_decompress_brotli">Decompress Brotli…</string>
     <string name="technical_tool_menu_compress_brotli">Compress Brotli…</string>
-    <string name="technical_tool_menu_prevent_sleep">Prevent sleep…</string>
     <string name="menu_credits">Credits</string>
     <string name="menu_license">License</string>
     <string name="menu_third_party_notices">Third-party notices</string>

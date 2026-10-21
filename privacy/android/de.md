@@ -23,8 +23,6 @@ Diese Datenschutzerklärung und die Lizenz werden in der Anwendung angezeigt. Si
 
 Aufgabendefinitionen werden nur im privaten Speicher der Anwendung auf diesem Gerät gespeichert. Eine Aufgabe kann Ordnerpfade, einen Zeitplan, Speichereinstellungen sowie Kennwörter oder Token enthalten, die Sie eingeben. Kennwörter und Speichergeheimnisse werden vor dem Speichern mit dem Android-Schlüsselspeicher versiegelt und können nur auf diesem Gerät gelesen werden. Diese Werte werden nicht an den Entwickler hochgeladen. Sie sind nicht in der Android-Sicherung enthalten. Beim Deinstallieren der Anwendung werden sie entfernt.
 
-Das von Ihnen gewählte Design wird in den privaten Einstellungen der Anwendung auf diesem Gerät gespeichert.
-
 ### Dateien, die Sie auswählen
 
 Sicherung, Synchronisierung, Wiederherstellung, Import und Hochladen lesen und schreiben die Ordner, die Sie mit der Systemauswahl für Dokumente auswählen, oder den Server, den Sie einrichten. Diese Dateien bleiben in den von Ihnen gewählten Ordnern oder am von Ihnen eingerichteten Speicherziel. Die Anwendung lädt sie nicht zum Entwickler hoch. Beim Deinstallieren der Anwendung werden Dateien in von Ihnen ausgewählten Ordnern nicht gelöscht.

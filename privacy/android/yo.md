@@ -23,8 +23,6 @@ A máa ń fi ìlànà ìpamọ́ yìí àti àṣẹ hàn nínú ìṣàfilọ́
 
 Àwọn ìtumọ̀ iṣẹ́ ni a fi pamọ́ nìkan nínú ìfipamọ́ àdáni ìṣàfilọ́lẹ̀ lórí ẹ̀rọ yìí. Iṣẹ́ kan lè ní àwọn ọ̀nà fódà, ìṣètò àkókò, àwọn ètò ìfipamọ́, àti àwọn ọ̀rọ̀ aṣínà tàbí àwọn àmì tí o tẹ̀. A máa ń fi Android keystore pa àwọn ọ̀rọ̀ aṣínà àti àṣírí ìfipamọ́ mọ́ kí a tó fi wọn pamọ́, a sì lè kà wọn lórí ẹ̀rọ yìí nìkan. A kò gbé àwọn iye wọ̀n-ọn-nì sí ọ̀dọ̀ olùdàgbàsókè. Wọn kò sí nínú àfipamọ́ Android. Yíyọ ìṣàfilọ́lẹ̀ náà kúrò máa ń yọ wọn kúrò.
 
-Àkòrí tí o yàn ni a fi pamọ́ nínú àwọn ètò àdáni ìṣàfilọ́lẹ̀ lórí ẹ̀rọ yìí.
-
 ### Àwọn fáìlì tí o yàn
 
 Àfipamọ́, ìbámu, ìdápadà, ìgbéwọlé, àti ìgbésókè máa ń kà ó sì kọ àwọn fódà tí o yàn pẹ̀lú aṣàyàn ìwé ẹ̀rọ, tàbí sáfà tí o ṣètò. Àwọn fáìlì wọ̀n-ọn-nì dúró nínú àwọn fódà tí o yàn, tàbí ní ibi ìfipamọ́ tí o ṣètò. Ìṣàfilọ́lẹ̀ náà kò gbé wọn sí ọ̀dọ̀ olùdàgbàsókè. Yíyọ ìṣàfilọ́lẹ̀ kúrò kò pa àwọn fáìlì nínú àwọn fódà tí o yàn rẹ́.

@@ -23,8 +23,6 @@ Siyaasaddan asturnaanta iyo laysinka waxaa lagu muujiyaa gudaha codsiga. Looma f
 
 Qeexitaannada hawlaha waxaa lagu kaydiyaa oo keliya kaydka gaarka ah ee codsiga ee qalabkan. Hawl waxay ku jiri kartaa waddooyinka galalka, jadwal, dejinta kaydka, iyo erayada sirta ah ama calaamadaha aad qorto. Erayada sirta ah iyo sirta kaydka waxaa la shaabadeeyaa keystore-ka Android ka hor inta aan la kaydin, waxaana lagu akhrin karaa oo keliya qalabkan. Qiimayaashaas looma raro horumariyaha. Kuma jiraan kaydka Android. Ka saarista codsiga ayaa tirtirta.
 
-Mawduuca aad doorato waxaa lagu kaydiyaa dejinta gaarka ah ee codsiga ee qalabkan.
-
 ### Faylasha aad doorato
 
 Kaydka, wada-waafajinta, soo celinta, soo dejinta, iyo raridda waxay akhriyaan oo qoraan galalka aad ku doorato xulaha dukumentiga nidaamka, ama serverka aad dejisay. Faylashaas waxay ku sii nagaan galalka aad dooratay, ama meesha kaydka aad dejisay. Codsigu uma raro horumariyaha. Ka saarista codsiga ma tirtirto faylasha ku jira galalka aad dooratay.

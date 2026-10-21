@@ -23,8 +23,6 @@ Kebijakan privasi ini dan lisensi ditampilkan di dalam aplikasi. Keduanya tidak 
 
 Definisi tugas hanya disimpan di penyimpanan privat aplikasi pada perangkat ini. Sebuah tugas dapat memuat jalur folder, jadwal, pengaturan penyimpanan, serta kata sandi atau token yang Anda ketik. Kata sandi dan rahasia penyimpanan disegel dengan penyimpanan kunci Android sebelum disimpan, dan hanya dapat dibaca di perangkat ini. Nilai itu tidak diunggah ke pengembang. Nilai itu tidak termasuk dalam cadangan Android. Menghapus pemasangan aplikasi akan menghapus nilai itu.
 
-Tema yang Anda pilih disimpan di pengaturan privat aplikasi pada perangkat ini.
-
 ### Berkas yang Anda pilih
 
 Pencadangan, penyelarasan, pemulihan, impor, dan unggahan membaca serta menulis folder yang Anda pilih dengan pemilih dokumen sistem, atau server yang Anda atur. Berkas itu tetap di folder yang Anda pilih, atau di tujuan penyimpanan yang Anda atur. Aplikasi tidak mengunggah berkas itu ke pengembang. Menghapus pemasangan aplikasi tidak menghapus berkas di folder yang Anda pilih.

@@ -23,8 +23,6 @@ This privacy policy and the license are shown inside the app. They are not opene
 
 Task definitions are stored only in app-private storage on this device. A task can include folder paths, a schedule, storage settings, and passwords or tokens you type. Passwords and storage secrets are sealed with the Android keystore before they are saved, and can be read only on this device. Those values are not uploaded to the developer. They are not included in Android backup. Uninstalling the app removes them.
 
-The theme you choose is stored in app-private settings on this device.
-
 ### Files you choose
 
 Backup, synchronization, restore, import, and upload read and write the folders you select with the system document picker, or the server you configure. Those files stay in the folders you chose, or on the storage destination you configure. The app does not upload them to the developer. Uninstalling the app does not delete files in folders you selected.

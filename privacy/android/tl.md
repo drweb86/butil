@@ -23,8 +23,6 @@ Ipinapakita sa loob ng app ang patakarang ito sa pribasiya at ang lisensya. Hind
 
 Ang mga kahulugan ng gawain ay nakaimbak lamang sa pribadong imbakan ng app sa device na ito. Maaaring kasama sa isang gawain ang mga path ng folder, iskedyul, mga setting ng imbakan, at mga password o token na tina-type mo. Sinasarhan ang mga password at mga lihim ng imbakan gamit ang Android keystore bago i-save, at mababasa lamang ang mga ito sa device na ito. Hindi ina-upload ang mga halagang iyon sa developer. Hindi kasama ang mga ito sa Android backup. Tinatanggal ng pag-uninstall ng app ang mga ito.
 
-Ang tema na pipiliin mo ay nakaimbak sa mga pribadong setting ng app sa device na ito.
-
 ### Mga file na pipiliin mo
 
 Binabasa at sinusulat ng backup, synchronization, restore, import, at upload ang mga folder na pipiliin mo gamit ang document picker ng sistema, o ang server na ise-set mo. Nanatili ang mga file na iyon sa mga folder na pinili mo, o sa patutunguhan ng imbakan na ise-set mo. Hindi ina-upload ng app ang mga ito sa developer. Hindi binubura ng pag-uninstall ng app ang mga file sa mga folder na pinili mo.

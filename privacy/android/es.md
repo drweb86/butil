@@ -23,8 +23,6 @@ Esta política de privacidad y la licencia se muestran dentro de la aplicación.
 
 Las definiciones de las tareas se almacenan solo en el almacenamiento privado de la aplicación en este dispositivo. Una tarea puede incluir rutas de carpetas, una programación, ajustes de almacenamiento y las contraseñas o tokens que usted escriba. Las contraseñas y los secretos de almacenamiento se sellan con el almacén de claves de Android antes de guardarse y solo se pueden leer en este dispositivo. Esos valores no se envían al desarrollador. No se incluyen en la copia de seguridad de Android. Desinstalar la aplicación los elimina.
 
-El tema que usted elige se almacena en los ajustes privados de la aplicación en este dispositivo.
-
 ### Archivos que usted elige
 
 La copia de seguridad, la sincronización, la restauración, la importación y la subida leen y escriben las carpetas que usted selecciona con el selector de documentos del sistema, o el servidor que usted configure. Esos archivos permanecen en las carpetas que eligió o en el destino de almacenamiento que configure. La aplicación no los sube al desarrollador. Desinstalar la aplicación no elimina los archivos de las carpetas que usted seleccionó.

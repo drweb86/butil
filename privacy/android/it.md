@@ -23,8 +23,6 @@ Questa informativa sulla privacy e la licenza sono mostrate all’interno dell�
 
 Le definizioni delle attività sono memorizzate solo nell’archivio privato dell’applicazione su questo dispositivo. Un’attività può includere percorsi di cartelle, una pianificazione, impostazioni di archiviazione e le password o i token digitati. Le password e i segreti di archiviazione vengono sigillati con l’archivio chiavi di Android prima di essere salvati e possono essere letti solo su questo dispositivo. Tali valori non vengono inviati allo sviluppatore. Non sono inclusi nel backup di Android. La disinstallazione dell’applicazione li rimuove.
 
-Il tema scelto è memorizzato nelle impostazioni private dell’applicazione su questo dispositivo.
-
 ### File scelti
 
 Backup, sincronizzazione, ripristino, importazione e caricamento leggono e scrivono le cartelle selezionate con il selettore di documenti di sistema, oppure il server configurato. Quei file restano nelle cartelle scelte o nella destinazione di archiviazione configurata. L’applicazione non li carica verso lo sviluppatore. La disinstallazione dell’applicazione non elimina i file nelle cartelle selezionate.

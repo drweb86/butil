@@ -23,8 +23,6 @@ Ta polityka prywatności i licencja są pokazywane w aplikacji. Nie są otwieran
 
 Definicje zadań są przechowywane tylko w prywatnym magazynie aplikacji na tym urządzeniu. Zadanie może obejmować ścieżki folderów, harmonogram, ustawienia magazynu oraz hasła lub tokeny, które wpisujesz. Hasła i sekrety magazynu są przed zapisaniem opieczętowane magazynem kluczy Android i można je odczytać tylko na tym urządzeniu. Te wartości nie są wysyłane do dewelopera. Nie są uwzględniane w kopii zapasowej Android. Odinstalowanie aplikacji je usuwa.
 
-Wybrany przez Ciebie motyw jest przechowywany w prywatnych ustawieniach aplikacji na tym urządzeniu.
-
 ### Pliki, które wybierasz
 
 Kopia zapasowa, synchronizacja, przywracanie, import i wysyłanie odczytują i zapisują foldery wybrane systemowym wyborem dokumentów albo serwer, który konfigurujesz. Te pliki pozostają w wybranych przez Ciebie folderach albo w skonfigurowanym miejscu przechowywania. Aplikacja nie wysyła ich do dewelopera. Odinstalowanie aplikacji nie usuwa plików w wybranych przez Ciebie folderach.

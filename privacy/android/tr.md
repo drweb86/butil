@@ -23,8 +23,6 @@ Bu gizlilik politikası ve lisans uygulama içinde gösterilir. Web sayfası ola
 
 Görev tanımları yalnızca bu cihazdaki uygulama özel deposunda saklanır. Bir görev, klasör yollarını, bir zamanlamayı, depolama ayarlarını ve yazdığınız parolaları veya belirteçleri içerebilir. Parolalar ve depolama gizleri kaydedilmeden önce Android anahtar deposu ile mühürlenir ve yalnızca bu cihazda okunabilir. Bu değerler geliştiriciye yüklenmez. Android yedeklemesine dahil edilmezler. Uygulamayı kaldırmak bunları siler.
 
-Seçtiğiniz tema, bu cihazdaki uygulama özel ayarlarında saklanır.
-
 ### Seçtiğiniz dosyalar
 
 Yedekleme, eşitleme, geri yükleme, içe aktarma ve yükleme, sistem belge seçicisiyle seçtiğiniz klasörleri veya yapılandırdığınız sunucuyu okur ve yazar. Bu dosyalar seçtiğiniz klasörlerde veya yapılandırdığınız depolama hedefinde kalır. Uygulama bunları geliştiriciye yüklemez. Uygulamayı kaldırmak, seçtiğiniz klasörlerdeki dosyaları silmez.
