@@ -44,6 +44,8 @@ import kotlinx.coroutines.launch
 private sealed interface AppPage {
     data object Tasks : AppPage
 
+    data object StatusPreview : AppPage
+
     data class Tool(val kind: TechnicalFileToolKind) : AppPage
 
     data class Markdown(val page: MarkdownPage) : AppPage
@@ -52,11 +54,9 @@ private sealed interface AppPage {
 
     data class Editor(val kind: String, val existingName: String?) : AppPage
 
-    data object Restore : AppPage
+    data class Restore(val taskName: String? = null) : AppPage
 
     data class UploadRun(val name: String) : AppPage
-
-    data class Stub(val titleRes: Int) : AppPage
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -64,15 +64,19 @@ private sealed interface AppPage {
 fun MainWindow(
     onOpenPrivacy: () -> Unit,
     onOpenLicense: () -> Unit,
+    showStatusPreview: Boolean = false,
 ) {
     val context = LocalContext.current
-    var page by remember { mutableStateOf<AppPage>(AppPage.Tasks) }
+    var page by remember { mutableStateOf<AppPage>(if (showStatusPreview) AppPage.StatusPreview else AppPage.Tasks) }
     var tasksRevision by remember { mutableStateOf(0) }
     val drawerState = androidx.compose.material3.rememberDrawerState(androidx.compose.material3.DrawerValue.Closed)
     val scope = rememberCoroutineScope()
 
     LaunchedEffect(Unit) {
         UploadScheduler.rescheduleAll(context)
+    }
+    LaunchedEffect(showStatusPreview) {
+        if (showStatusPreview) page = AppPage.StatusPreview
     }
     BackHandler(enabled = page !is AppPage.Tasks) {
             if (page is AppPage.UploadEditor || page is AppPage.UploadRun || page is AppPage.Editor || page is AppPage.Restore) {
@@ -126,6 +130,7 @@ fun MainWindow(
                             page = if (kind == "BUtilClient") AppPage.UploadEditor(name) else AppPage.Editor(kind, name)
                         },
                         onRun = { page = AppPage.UploadRun(it) },
+                        onRestore = { page = AppPage.Restore(it) },
                         modifier = Modifier.padding(padding),
                     )
                     is AppPage.UploadEditor -> UploadFolderEditor(
@@ -145,7 +150,8 @@ fun MainWindow(
                         },
                         modifier = Modifier.padding(padding),
                     )
-                    AppPage.Restore -> RestorePage(
+                    is AppPage.Restore -> RestorePage(
+                        taskName = current.taskName,
                         onClose = { page = AppPage.Tasks },
                         modifier = Modifier.padding(padding),
                     )
@@ -162,13 +168,10 @@ fun MainWindow(
                         onClose = { page = AppPage.Tasks },
                         modifier = Modifier.padding(padding),
                     )
+                    AppPage.StatusPreview -> TaskStatusPreview(Modifier.padding(padding))
                     is AppPage.Markdown -> MarkdownPageView(
                         page = current.page,
                         onClose = { page = AppPage.Tasks },
-                        modifier = Modifier.padding(padding),
-                    )
-                    is AppPage.Stub -> StubPage(
-                        title = stringResource(current.titleRes),
                         modifier = Modifier.padding(padding),
                     )
                 }
@@ -210,10 +213,9 @@ private fun AppMenu(
             NavigationDrawerItem(
                 label = { Text(stringResource(R.string.task_restore)) },
                 selected = page is AppPage.Restore,
-                onClick = { onSelect(AppPage.Restore) },
+                onClick = { onSelect(AppPage.Restore()) },
             )
             HorizontalDivider(modifier = Modifier.padding(start = 28.dp, end = 28.dp, top = 4.dp, bottom = 4.dp))
-            StubItem(R.string.log_file_browse_logs_folder, page, onSelect)
             ToolItem(TechnicalFileToolKind.DecryptAes256, page, onSelect)
             ToolItem(TechnicalFileToolKind.EncryptAes256, page, onSelect)
             ToolItem(TechnicalFileToolKind.DecompressBrotli, page, onSelect)
@@ -265,33 +267,6 @@ private fun EditorItem(kind: String, titleRes: Int, page: AppPage, onSelect: (Ap
         onClick = { onSelect(AppPage.Editor(kind, null)) },
         modifier = Modifier.padding(start = 12.dp),
     )
-}
-
-@Composable
-private fun StubItem(
-    titleRes: Int,
-    page: AppPage,
-    onSelect: (AppPage) -> Unit,
-    indent: Boolean = false,
-) {
-    NavigationDrawerItem(
-        label = { Text(stringResource(titleRes)) },
-        selected = page is AppPage.Stub && page.titleRes == titleRes,
-        onClick = { onSelect(AppPage.Stub(titleRes)) },
-        modifier = if (indent) Modifier.padding(start = 12.dp) else Modifier,
-    )
-}
-
-@Composable
-private fun StubPage(title: String, modifier: Modifier = Modifier) {
-    Column(modifier.fillMaxSize().padding(24.dp)) {
-        Text(text = title, style = MaterialTheme.typography.headlineSmall)
-        Spacer(Modifier.height(12.dp))
-        Text(
-            text = stringResource(R.string.stub_not_available),
-            color = MaterialTheme.colorScheme.onBackground,
-        )
-    }
 }
 
 private fun TechnicalFileToolKind.menuRes(): Int = when (this) {

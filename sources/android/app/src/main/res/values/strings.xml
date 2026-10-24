@@ -2,7 +2,6 @@
 <resources>
     <string name="app_name">BUtil</string>
     <string name="app_legal_title" translatable="false">BUtil - Siarhei Kuchuk - V%1$s</string>
-    <string name="log_file_browse_logs_folder">Open logs folder</string>
     <string name="technical_tool_menu_decrypt_aes256">Decrypt AES-256…</string>
     <string name="technical_tool_menu_encrypt_aes256">Encrypt AES-256…</string>
     <string name="technical_tool_menu_decompress_brotli">Decompress Brotli…</string>
@@ -27,7 +26,6 @@
     <string name="upload_folder_contents_task_create">Upload folder to server</string>
     <string name="task_restore">Restore</string>
     <string name="task_list">Tasks</string>
-    <string name="stub_not_available">Not available yet.</string>
     <string name="technical_tool_decrypt_aes256_title">Decrypt AES-256</string>
     <string name="technical_tool_encrypt_aes256_title">Encrypt AES-256</string>
     <string name="technical_tool_decompress_brotli_title">Decompress Brotli</string>
@@ -72,17 +70,21 @@
     <string name="run_at_login">Run at Login</string>
     <string name="button_ok">OK</string>
     <string name="task_run">Run</string>
+    <string name="task_status_failed">Failed · %1$s</string>
+    <string name="task_status_stopped">Stopped · %1$s</string>
+    <string name="task_status_never_run">Never run</string>
     <string name="task_edit">Edit</string>
+    <string name="task_duplicate">Duplicate</string>
+    <string name="task_more_options">More options</string>
+    <string name="task_open_recent_log">Open last log</string>
+    <string name="task_log_missing">This task has no log yet. Run it once to create one.</string>
+    <string name="task_log_save_failed">Could not save the log.</string>
+    <string name="task_log_open_failed">The log was saved, but no app can open it.</string>
     <string name="task_delete">Delete</string>
     <string name="task_delete_confirm">Delete this task?</string>
     <string name="tasks_empty">No tasks yet. Use New in the menu to create one.</string>
     <string name="folder_empty">Folder is not specified.</string>
     <string name="upload_notifications_required">Allow notifications so the upload can keep running.</string>
-    <string name="task_kind_incremental">Incremental backup</string>
-    <string name="task_kind_import">Import media</string>
-    <string name="task_kind_sync">Synchronization</string>
-    <string name="task_kind_server">FTPS server</string>
-    <string name="task_kind_upload">Upload folder</string>
     <string name="incremental_help">Incremental backup keeps each changed file since the previous run. The storage is managed by the app, so do not use it for anything else and do not share it between tasks.</string>
     <string name="incremental_storage_help">Specify a unique storage where backup versions will be saved.</string>
     <string name="field_password">Password:</string>

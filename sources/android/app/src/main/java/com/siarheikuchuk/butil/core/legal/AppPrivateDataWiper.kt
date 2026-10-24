@@ -11,7 +11,7 @@ object AppPrivateDataWiper {
     private const val APP_PREFS = "butil"
 
     /**
-     * Deletes tasks, settings, sealed secrets, and folder grants stored by the app.
+     * Deletes tasks, settings, logs, sealed secrets, and folder grants stored by the app.
      * Does not delete files in folders the user selected. Keeps the language chosen
      * for the privacy policy and the license so the next launch can use it.
      */

@@ -35,41 +35,53 @@ class UploadFolderService : Service() {
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         val name = intent?.getStringExtra(UploadScheduler.EXTRA_NAME)
         if (name.isNullOrBlank()) {
-            stopSelf()
+            if (runningName == null) {
+                startInForeground(getString(R.string.app_name))
+                stopSelf()
+            } else {
+                startInForeground("Uploading \"$runningName\"")
+            }
             return START_NOT_STICKY
         }
-        if (runningName == name) return START_NOT_STICKY
+        if (runningName == name) {
+            startInForeground("Uploading \"$name\"")
+            return START_NOT_STICKY
+        }
         runningName = name
         cancelled = false
         startInForeground("Uploading \"$name\"")
+        UploadRunLog.begin()
         work = scope.launch {
             val store = UploadFolderStore(this@UploadFolderService)
+            val runLog = TaskRunLog(this@UploadFolderService)
             try {
+                runLog.begin(name)
+                store.writeStarted(name, System.currentTimeMillis())
                 val task = store.loadAny(name)
-                UploadRunLog.clear()
-                UploadRunLog.add(statusTitle(task))
+                note(runLog, statusTitle(task))
                 val error = runTask(task) { line ->
-                    UploadRunLog.add(line)
+                    note(runLog, line)
                     updateNotification(line)
                 }
                 if (error == null) {
                     store.writeStatus(name, "Finished successfully.")
-                    UploadRunLog.add("Upload finished.")
+                    note(runLog, "Upload finished.")
                     UploadRunLog.mark(false)
                 } else {
                     store.writeStatus(name, error)
-                    UploadRunLog.add(error)
+                    note(runLog, error)
                     UploadRunLog.mark(true)
                 }
             } catch (error: Exception) {
                 if (error is kotlinx.coroutines.CancellationException) throw error
                 val message = error.message ?: error.toString()
                 store.writeStatus(name, message)
-                UploadRunLog.add(message)
+                note(runLog, message)
                 UploadRunLog.mark(true)
             } finally {
                 runningName = null
                 withContext(NonCancellable) {
+                    runLog.close()
                     if (!suppressReschedule) {
                         try {
                             UploadScheduler.reschedule(this@UploadFolderService, store.loadAny(name))
@@ -77,7 +89,7 @@ class UploadFolderService : Service() {
                         }
                     }
                     withContext(Dispatchers.Main) {
-                        UploadRunLog.active = false
+                        UploadRunLog.finish()
                         @Suppress("DEPRECATION")
                         stopForeground(true)
                         stopSelf()
@@ -169,6 +181,11 @@ class UploadFolderService : Service() {
         }
     }
 
+    private fun note(runLog: TaskRunLog, line: String) {
+        runLog.append(line)
+        UploadRunLog.add(line)
+    }
+
     private fun statusTitle(task: AppTask): String = when (task) {
         is UploadFolderTask -> "Uploading \"${task.name}\""
         is IncrementalBackupTask -> "Backing up \"${task.name}\""
@@ -184,8 +201,8 @@ object UploadRunLog {
     var active by mutableStateOf(false)
     private val main = Handler(Looper.getMainLooper())
 
-    fun clear() {
-        main.post {
+    fun begin() {
+        onMain {
             lines.clear()
             failed = false
             active = true
@@ -193,10 +210,18 @@ object UploadRunLog {
     }
 
     fun add(line: String) {
-        main.post { lines.add(line) }
+        onMain { lines.add(line) }
     }
 
     fun mark(failedRun: Boolean) {
-        main.post { failed = failedRun }
+        onMain { failed = failedRun }
+    }
+
+    fun finish() {
+        onMain { active = false }
+    }
+
+    private fun onMain(block: () -> Unit) {
+        if (Looper.myLooper() == Looper.getMainLooper()) block() else main.post(block)
     }
 }

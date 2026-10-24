@@ -12,6 +12,7 @@ class UploadFolderStore(context: Context) {
         if (BuildConfig.DEBUG) "BUtil Backup Tasks - DEBUG" else "BUtil Backup Tasks",
     ).apply { mkdirs() }
     private val cipher = SecretCipher()
+    private val logs = TaskRunLog(context)
 
     fun names(): List<String> {
         return root.listFiles()
@@ -41,6 +42,10 @@ class UploadFolderStore(context: Context) {
     fun saveAny(task: AppTask, previousName: String?) {
         val name = task.name.trimEnd()
         task.name = name
+        if (previousName != null && previousName != name) {
+            logs.move(previousName, name)
+            moveFile(startedFile(previousName), startedFile(name))
+        }
         if (previousName != null && !previousName.equals(name, ignoreCase = true)) {
             delete(previousName)
         } else if (previousName != null) {
@@ -67,10 +72,26 @@ class UploadFolderStore(context: Context) {
         is FtpsServerTask -> task.copy(password = cipher.unprotect(task.password))
     }
 
+    fun duplicate(name: String): String {
+        val task = loadAny(name)
+        val taken = names().map { it.lowercase() }.toMutableSet()
+        var counter = 1
+        var newName: String
+        do {
+            newName = "$name ($counter)"
+            counter++
+        } while (!taken.add(newName.lowercase()))
+        task.name = newName
+        saveAny(task, null)
+        return newName
+    }
+
     fun delete(name: String) {
         taskFile(name).delete()
         scheduleFile(name).delete()
         statusFile(name).delete()
+        startedFile(name).delete()
+        logs.delete(name)
     }
 
     fun readStatus(name: String): String? {
@@ -80,6 +101,16 @@ class UploadFolderStore(context: Context) {
 
     fun writeStatus(name: String, text: String) {
         statusFile(name).writeText(text)
+    }
+
+    fun readStarted(name: String): Long? {
+        val file = startedFile(name)
+        if (!file.isFile) return null
+        return file.readText().trim().toLongOrNull()
+    }
+
+    fun writeStarted(name: String, startedAtMillis: Long) {
+        startedFile(name).writeText(startedAtMillis.toString())
     }
 
     fun validateName(name: String, originalName: String?): String? {
@@ -97,6 +128,16 @@ class UploadFolderStore(context: Context) {
     private fun taskFile(name: String) = File(root, name + TASK_EXTENSION)
     private fun scheduleFile(name: String) = File(root, "$name.schedule.json")
     private fun statusFile(name: String) = File(root, "$name.status.txt")
+    private fun startedFile(name: String) = File(root, "$name.started.txt")
+
+    private fun moveFile(from: File, to: File) {
+        if (from.absolutePath == to.absolutePath || !from.isFile) return
+        if (to.exists()) to.delete()
+        if (!from.renameTo(to)) {
+            from.copyTo(to, overwrite = true)
+            from.delete()
+        }
+    }
 
     companion object {
         private const val TASK_EXTENSION = ".v3.json"

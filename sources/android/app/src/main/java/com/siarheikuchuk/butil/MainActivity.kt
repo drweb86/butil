@@ -1,5 +1,6 @@
 package com.siarheikuchuk.butil
 
+import android.content.Intent
 import android.os.Bundle
 import android.os.Process
 import androidx.activity.ComponentActivity
@@ -19,8 +20,11 @@ import com.siarheikuchuk.butil.ui.controls.LegalScreenMode
 import com.siarheikuchuk.butil.ui.controls.MainWindow
 
 class MainActivity : ComponentActivity() {
+    private val showStatusPreview = mutableStateOf(false)
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        showStatusPreview.value = consumeStatusPreview(intent)
         enableEdgeToEdge()
         setContent {
             var consented by remember {
@@ -74,10 +78,27 @@ class MainActivity : ComponentActivity() {
                     else -> MainWindow(
                         onOpenPrivacy = { privacyOpen = true },
                         onOpenLicense = { licenseOpen = true },
+                        showStatusPreview = showStatusPreview.value,
                     )
                 }
             }
         }
+    }
+
+    override fun onNewIntent(intent: Intent) {
+        super.onNewIntent(intent)
+        setIntent(intent)
+        if (consumeStatusPreview(intent)) showStatusPreview.value = true
+    }
+
+    private fun consumeStatusPreview(source: Intent?): Boolean {
+        val show = source?.getBooleanExtra(EXTRA_STATUS_PREVIEW, false) == true
+        source?.removeExtra(EXTRA_STATUS_PREVIEW)
+        return show
+    }
+
+    companion object {
+        const val EXTRA_STATUS_PREVIEW = "status_preview"
     }
 
     private fun wipePrivateDataAndExit() {

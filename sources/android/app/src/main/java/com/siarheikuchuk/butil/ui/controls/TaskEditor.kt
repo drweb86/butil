@@ -325,14 +325,6 @@ private fun helpRes(kind: String) = when (kind) {
     else -> R.string.ftps_help
 }
 
-fun taskKindLabel(kind: String): Int = when (kind) {
-    "Incremental" -> R.string.task_kind_incremental
-    "ImportMedia" -> R.string.task_kind_import
-    "Synchronization" -> R.string.task_kind_sync
-    "BUtilServer" -> R.string.task_kind_server
-    else -> R.string.task_kind_upload
-}
-
 private val scheduleDays = listOf(
     1 to R.string.days_monday,
     2 to R.string.days_tuesday,
@@ -569,10 +561,30 @@ private fun whereOf(task: AppTask?, kind: String): StorageSettings = when (task)
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun RestorePage(onClose: () -> Unit, modifier: Modifier = Modifier) {
+fun RestorePage(onClose: () -> Unit, modifier: Modifier = Modifier, taskName: String? = null) {
     val context = LocalContext.current
-    val draft = remember { StorageDraft(FolderSettings()) }
-    var password by remember { mutableStateOf("") }
+    val seeded = remember(taskName) {
+        if (taskName.isNullOrBlank()) null
+        else runCatching { UploadFolderStore(context).loadAny(taskName) }.getOrNull()
+    }
+    val draft = remember(taskName) {
+        StorageDraft(
+            when (seeded) {
+                is IncrementalBackupTask -> seeded.storage
+                is SynchronizationTask -> seeded.storage
+                else -> FolderSettings()
+            },
+        )
+    }
+    var password by remember(taskName) {
+        mutableStateOf(
+            when (seeded) {
+                is IncrementalBackupTask -> seeded.password
+                is SynchronizationTask -> seeded.password
+                else -> ""
+            },
+        )
+    }
     val destination = remember { DraftValue("") }
     var pending by remember { mutableStateOf<DraftValue?>(null) }
     var versions by remember { mutableStateOf<List<Long>>(emptyList()) }
