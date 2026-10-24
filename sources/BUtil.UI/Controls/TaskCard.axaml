@@ -76,41 +76,39 @@
 					</Button>
 					<Menu Grid.Column="1" VerticalAlignment="Center" Margin="0 0 0 0">
 						<MenuItem Header="⁝">
-						<MenuItem Header="{Binding Task_Edit}" Command="{Binding TaskEditCommand}">
-							<MenuItem.Icon>
-								<TextBlock Text="✏" FontSize="14" />
-							</MenuItem.Icon>
+							<MenuItem Header="{Binding Task_Edit}" Command="{Binding TaskEditCommand}">
+								<MenuItem.Icon>
+									<PathIcon Width="16" Height="16" Data="{x:Static cvm:MenuIcons.Edit}" />
+								</MenuItem.Icon>
+							</MenuItem>
+							<MenuItem Header="{Binding Task_Duplicate}" Command="{Binding TaskDuplicateCommand}">
+								<MenuItem.Icon>
+									<PathIcon Width="16" Height="16" Data="{x:Static cvm:MenuIcons.ContentCopy}" />
+								</MenuItem.Icon>
+							</MenuItem>
+							<MenuItem Header="{Binding Task_Restore}" Command="{Binding TaskRestoreCommand}">
+								<MenuItem.Icon>
+									<PathIcon Width="16" Height="16" Data="{x:Static cvm:MenuIcons.Restore}" />
+								</MenuItem.Icon>
+							</MenuItem>
+							<MenuItem Header="{Binding Task_OpenLog}" Command="{Binding OpenLogCommand}" IsEnabled="{Binding HasLog}">
+								<MenuItem.Icon>
+									<PathIcon Width="16" Height="16" Data="{x:Static cvm:MenuIcons.Description}" />
+								</MenuItem.Icon>
+							</MenuItem>
+							<MenuItem Header="{Binding Task_CopyCommandLine}" Command="{Binding TaskCopyCommandLineCommand}">
+								<MenuItem.Icon>
+									<PathIcon Width="16" Height="16" Data="{x:Static cvm:MenuIcons.ContentPaste}" />
+								</MenuItem.Icon>
+							</MenuItem>
+							<Separator />
+							<MenuItem Header="{Binding Task_Delete}" Command="{Binding TaskDeleteCommand}" Foreground="{Binding DeleteForeground}">
+								<MenuItem.Icon>
+									<PathIcon Width="16" Height="16" Data="{x:Static cvm:MenuIcons.Delete}" Foreground="{Binding DeleteForeground}" />
+								</MenuItem.Icon>
+							</MenuItem>
 						</MenuItem>
-
-						<MenuItem Header="{Binding Task_Duplicate}" Command="{Binding TaskDuplicateCommand}">
-							<MenuItem.Icon>
-								<TextBlock Text="⧉" FontSize="14" />
-							</MenuItem.Icon>
-						</MenuItem>
-
-						<MenuItem Header="{Binding Task_Restore}" Command="{Binding TaskRestoreCommand}">
-							<MenuItem.Icon>
-								<TextBlock Text="⟳" FontSize="14" />
-							</MenuItem.Icon>
-						</MenuItem>
-
-						<MenuItem Header="{Binding Task_Delete}" Command="{Binding TaskDeleteCommand}">
-							<MenuItem.Icon>
-								<TextBlock Text="❌" FontSize="14" />
-							</MenuItem.Icon>
-						</MenuItem>
-
-						<MenuItem Header="{Binding Task_OpenLog}" Command="{Binding OpenLogCommand}" IsEnabled="{Binding HasLog}" />
-
-						<Separator />
-
-						<MenuItem Header="{Binding Task_CopyCommandLine}" Command="{Binding TaskCopyCommandLineCommand}">
-							<MenuItem.Icon>
-								<TextBlock Text="📋" FontSize="14" />
-							</MenuItem.Icon>
-						</MenuItem>
-					</MenuItem>
-				</Menu>
+					</Menu>
 				</Grid>
 
 				<HyperlinkButton

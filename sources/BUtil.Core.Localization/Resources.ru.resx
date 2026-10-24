@@ -1335,6 +1335,9 @@ bin.
   <data name="Menu_ThirdPartyNotices" xml:space="preserve">
     <value>Уведомления о сторонних компонентах</value>
   </data>
+  <data name="Menu_About" xml:space="preserve">
+    <value>О программе</value>
+  </data>
   <data name="License_ThirdPartyNote" xml:space="preserve">
     <value>Собственный код BUtil передан в общественное достояние. Сторонние компоненты сохраняют свои лицензии и перечислены в Уведомлениях о сторонних компонентах.</value>
   </data>

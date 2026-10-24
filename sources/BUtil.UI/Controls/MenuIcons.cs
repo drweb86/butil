@@ -1,0 +1,46 @@
+using Avalonia.Controls;
+using Avalonia.Media;
+using System;
+
+namespace BUtil.UI.Controls;
+
+public static class MenuIcons
+{
+    public static StreamGeometry Backup { get; } = Geometry("M19.35,10.04C18.67,6.59 15.64,4 12,4 9.11,4 6.6,5.64 5.35,8.04 2.34,8.36 0,10.91 0,14c0,3.31 2.69,6 6,6h13c2.76,0 5,-2.24 5,-5 0,-2.64 -2.05,-4.78 -4.65,-4.96zM14,13v4h-4v-4H7l5,-5 5,5h-3z");
+    public static StreamGeometry PhotoLibrary { get; } = Geometry("M22,16V4c0,-1.1 -0.9,-2 -2,-2H8c-1.1,0 -2,0.9 -2,2v12c0,1.1 0.9,2 2,2h12c1.1,0 2,-0.9 2,-2zM11,12l2.03,2.71L16,11l4,5H8l3,-4zM2,6v14c0,1.1 0.9,2 2,2h14v-2H4V6H2z");
+    public static StreamGeometry Sync { get; } = Geometry("M12,4V1L8,5l4,4V6c3.31,0 6,2.69 6,6 0,1.01 -0.25,1.97 -0.7,2.8l1.46,1.46C19.54,15.03 20,13.57 20,12c0,-4.42 -3.58,-8 -8,-8zM12,18c-3.31,0 -6,-2.69 -6,-6 0,-1.01 0.25,-1.97 0.7,-2.8L5.24,7.74C4.46,8.97 4,10.43 4,12c0,4.42 3.58,8 8,8v3l4,-4 -4,-4v3z");
+    public static StreamGeometry Dns { get; } = Geometry("M20,13H4c-0.55,0 -1,0.45 -1,1v6c0,0.55 0.45,1 1,1h16c0.55,0 1,-0.45 1,-1v-6c0,-0.55 -0.45,-1 -1,-1zM7,19c-1.1,0 -2,-0.9 -2,-2s0.9,-2 2,-2 2,0.9 2,2 -0.9,2 -2,2zM20,3H4c-0.55,0 -1,0.45 -1,1v6c0,0.55 0.45,1 1,1h16c0.55,0 1,-0.45 1,-1V4c0,-0.55 -0.45,-1 -1,-1zM7,9c-1.1,0 -2,-0.9 -2,-2s0.9,-2 2,-2 2,0.9 2,2 -0.9,2 -2,2z");
+    public static StreamGeometry CloudUpload { get; } = Geometry("M19.35,10.04C18.67,6.59 15.64,4 12,4 9.11,4 6.6,5.64 5.35,8.04 2.34,8.36 0,10.91 0,14c0,3.31 2.69,6 6,6h13c2.76,0 5,-2.24 5,-5 0,-2.64 -2.05,-4.78 -4.65,-4.96zM19,18H6c-2.21,0 -4,-1.79 -4,-4 0,-2.05 1.53,-3.76 3.56,-3.97l1.07,-0.11 0.5,-0.95C8.08,7.14 9.94,6 12,6c2.62,0 4.88,1.86 5.39,4.43l0.3,1.5 1.53,0.11c1.56,0.1 2.78,1.41 2.78,2.96 0,1.65 -1.35,3 -3,3zM8,13h2.55v3h2.9v-3H16l-4,-4 -4,4z");
+    public static StreamGeometry Restore { get; } = Geometry("M13,3c-4.97,0 -9,4.03 -9,9H1l3.89,3.89 0.07,0.14L9,12H6c0,-3.87 3.13,-7 7,-7s7,3.13 7,7 -3.13,7 -7,7c-1.93,0 -3.68,-0.79 -4.94,-2.06l-1.42,1.42C8.27,19.99 10.51,21 13,21c4.97,0 9,-4.03 9,-9s-4.03,-9 -9,-9zM12,8v5l4.28,2.54 0.72,-1.21 -3.5,-2.08V8H12z");
+    public static StreamGeometry Lock { get; } = Geometry("M18,8h-1V6c0,-2.76 -2.24,-5 -5,-5S7,3.24 7,6v2H6c-1.1,0 -2,0.9 -2,2v10c0,1.1 0.9,2 2,2h12c1.1,0 2,-0.9 2,-2V10c0,-1.1 -0.9,-2 -2,-2zM12,17c-1.1,0 -2,-0.9 -2,-2s0.9,-2 2,-2 2,0.9 2,2 -0.9,2 -2,2zM15.1,8H8.9V6c0,-1.71 1.39,-3.1 3.1,-3.1 1.71,0 3.1,1.39 3.1,3.1v2z");
+    public static StreamGeometry LockOpen { get; } = Geometry("M18,8h-1V6c0,-2.76 -2.24,-5 -5,-5S7,3.24 7,6h1.9c0,-1.71 1.39,-3.1 3.1,-3.1 1.71,0 3.1,1.39 3.1,3.1v2H6c-1.1,0 -2,0.9 -2,2v10c0,1.1 0.9,2 2,2h12c1.1,0 2,-0.9 2,-2V10c0,-1.1 -0.9,-2 -2,-2zM18,20H6V10h12v10zM12,17c-1.1,0 -2,-0.9 -2,-2s0.9,-2 2,-2 2,0.9 2,2 -0.9,2 -2,2z");
+    public static StreamGeometry Compress { get; } = Geometry("M8,19h3v4h2v-4h3l-4,-4 -4,4zM16,5h-3V1h-2v4H8l4,4 4,-4zM4,9v2h16V9H4z");
+    public static StreamGeometry Expand { get; } = Geometry("M4,20h16v2H4zM4,2h16v2H4zM12,5.83L15.17,9l1.41,-1.41L12,3 7.41,7.59 8.83,9 12,5.83zM12,18.17L8.83,15l-1.41,1.41L12,21l4.59,-4.59L15.17,15 12,18.17z");
+    public static StreamGeometry Gavel { get; } = Geometry("M1,21h12v2H1zM5.24,8.07l2.83,-2.83 14.14,14.14 -2.83,2.83zM12.32,1l5.66,5.66 -2.83,2.83 -5.66,-5.66zM3.83,9.48l5.66,5.66 -2.83,2.83L1,12.31z");
+    public static StreamGeometry PrivacyTip { get; } = Geometry("M12,1L3,5v6c0,5.55 3.84,10.74 9,12 5.16,-1.26 9,-6.45 9,-12V5l-9,-4zM11,7h2v2h-2zM11,11h2v6h-2z");
+    public static StreamGeometry Info { get; } = Geometry("M11,7h2v2h-2zM11,11h2v6h-2zM12,2C6.48,2 2,6.48 2,12s4.48,10 10,10 10,-4.48 10,-10S17.52,2 12,2zM12,20c-4.41,0 -8,-3.59 -8,-8s3.59,-8 8,-8 8,3.59 8,8 -3.59,8 -8,8z");
+    public static StreamGeometry Edit { get; } = Geometry("M3,17.25V21h3.75L17.81,9.94l-3.75,-3.75L3,17.25zM20.71,7.04c0.39,-0.39 0.39,-1.02 0,-1.41l-2.34,-2.34c-0.39,-0.39 -1.02,-0.39 -1.41,0l-1.83,1.83 3.75,3.75 1.83,-1.83z");
+    public static StreamGeometry ContentCopy { get; } = Geometry("M16,1H4c-1.1,0 -2,0.9 -2,2v14h2V3h12V1zM19,5H8c-1.1,0 -2,0.9 -2,2v14c0,1.1 0.9,2 2,2h11c1.1,0 2,-0.9 2,-2V7c0,-1.1 -0.9,-2 -2,-2zM19,21H8V7h11v14z");
+    public static StreamGeometry Description { get; } = Geometry("M8,16h8v2H8zM8,12h8v2H8zM14,2H6c-1.1,0 -2,0.9 -2,2v16c0,1.1 0.89,2 1.99,2H18c1.1,0 2,-0.9 2,-2V8l-6,-6zM18,20H6V4h7v5h5v11z");
+    public static StreamGeometry Delete { get; } = Geometry("M16,9v10H8V9h8m-1.5,-6h-5l-1,1H5v2h14V4h-3.5l-1,-1zM18,7H6v12c0,1.1 0.9,2 2,2h8c1.1,0 2,-0.9 2,-2V7z");
+    public static StreamGeometry ContentPaste { get; } = Geometry("M19,2h-4.18C14.4,0.84 13.3,0 12,0 10.7,0 9.6,0.84 9.18,2H5C3.9,2 3,2.9 3,4v16c0,1.1 0.9,2 2,2h14c1.1,0 2,-0.9 2,-2V4c0,-1.1 -0.9,-2 -2,-2zM12,2c0.55,0 1,0.45 1,1s-0.45,1 -1,1 -1,-0.45 -1,-1 0.45,-1 1,-1zM19,20H5V4h2v3h10V4h2V20z");
+
+    public static StreamGeometry? ForModel(Type modelType) => modelType.Name switch
+    {
+        "IncrementalBackupModelOptionsV2" => Backup,
+        "ImportMediaTaskModelOptionsV2" => PhotoLibrary,
+        "SynchronizationTaskModelOptionsV2" => Sync,
+        "BUtilServerModelOptionsV2" => Dns,
+        "BUtilClientModelOptionsV2" => CloudUpload,
+        _ => null,
+    };
+
+    public static PathIcon Create(StreamGeometry data) => new()
+    {
+        Data = data,
+        Width = 16,
+        Height = 16,
+    };
+
+    private static StreamGeometry Geometry(string data) => StreamGeometry.Parse(data);
+}

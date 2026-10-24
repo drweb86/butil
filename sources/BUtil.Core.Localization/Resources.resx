@@ -1391,6 +1391,9 @@ See detailed description in the following link.</value>
   <data name="Menu_ThirdPartyNotices" xml:space="preserve">
     <value>Third-party notices</value>
   </data>
+  <data name="Menu_About" xml:space="preserve">
+    <value>About</value>
+  </data>
   <data name="License_ThirdPartyNote" xml:space="preserve">
     <value>BUtil's own code is in the public domain. Third-party components keep their own licenses and are listed under Third-party notices.</value>
   </data>

@@ -1,27 +1,18 @@
 using BUtil.Core.Legal;
 using BUtil.Core.Localization;
+using System;
 
 namespace BUtil.UI.Controls;
-
-public enum MarkdownPage
-{
-    Credits,
-    ThirdPartyNotices,
-}
 
 public class MarkdownPageViewModel : ViewModelBase
 {
     public string CloseLabel => Resources.Button_Close;
     public string Markdown { get; }
 
-    public MarkdownPageViewModel(MarkdownPage page)
+    public MarkdownPageViewModel()
     {
-        Markdown = page == MarkdownPage.Credits
-            ? CreditDocuments.Load()
-            : ThirdPartyNotices.Load();
-        WindowTitle = page == MarkdownPage.Credits
-            ? Resources.Menu_Credits
-            : Resources.Menu_ThirdPartyNotices;
+        Markdown = CreditDocuments.Load().TrimEnd() + Environment.NewLine + Environment.NewLine + ThirdPartyNotices.Load();
+        WindowTitle = Resources.Menu_About;
         IsFullMenuVisible = true;
     }
 

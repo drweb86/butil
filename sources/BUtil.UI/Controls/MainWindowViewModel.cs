@@ -108,17 +108,10 @@ public partial class MainWindowViewModel : ViewModelBase
     }
 
 #pragma warning disable CA1822 // Mark members as static
-    public void OpenCreditsCommand()
+    public void OpenAboutCommand()
 #pragma warning restore CA1822 // Mark members as static
     {
-        WindowManager.SwitchView(new MarkdownPageViewModel(MarkdownPage.Credits));
-    }
-
-#pragma warning disable CA1822 // Mark members as static
-    public void OpenThirdPartyNoticesCommand()
-#pragma warning restore CA1822 // Mark members as static
-    {
-        WindowManager.SwitchView(new MarkdownPageViewModel(MarkdownPage.ThirdPartyNotices));
+        WindowManager.SwitchView(new MarkdownPageViewModel());
     }
 
 #pragma warning disable CA1822 // Mark members as static
@@ -152,8 +145,7 @@ public partial class MainWindowViewModel : ViewModelBase
     public static string Other_Menu_Title => Resources.Other_Menu_Title;
     public static string Menu_Privacy => Resources.Menu_Privacy;
     public static string Menu_License => Resources.Menu_License;
-    public static string Menu_Credits => Resources.Menu_Credits;
-    public static string Menu_ThirdPartyNotices => Resources.Menu_ThirdPartyNotices;
+    public static string Menu_About => Resources.Menu_About;
     public static string TechnicalTool_Menu_DecryptAes256 => Resources.TechnicalTool_Menu_DecryptAes256;
     public static string TechnicalTool_Menu_EncryptAes256 => Resources.TechnicalTool_Menu_EncryptAes256;
     public static string TechnicalTool_Menu_DecompressBrotli => Resources.TechnicalTool_Menu_DecompressBrotli;
@@ -243,12 +235,15 @@ public partial class MainWindowViewModel : ViewModelBase
 
             foreach (var entry in group)
             {
-                result.Add(new MenuItem
+                var item = new MenuItem
                 {
                     Header = entry.Header,
                     Command = new DelegateCommand(() => WindowManager.SwitchToCreateTaskView(entry.ModelType)),
                     FontWeight = FontWeight.Normal,
-                });
+                };
+                if (MenuIcons.ForModel(entry.ModelType) is { } icon)
+                    item.Icon = MenuIcons.Create(icon);
+                result.Add(item);
             }
         }
 

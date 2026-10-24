@@ -16,10 +16,12 @@ using System.Windows.Input;
 
 namespace BUtil.UI.Controls;
 
-public sealed class TaskStartActionViewModel(string header, ICommand command)
+public sealed class TaskStartActionViewModel(string header, ICommand command, StreamGeometry? icon = null)
 {
     public string Header { get; } = header;
     public ICommand Command { get; } = command;
+    public StreamGeometry? Icon { get; } = icon;
+    public bool HasIcon => Icon != null;
 }
 
 public class TasksViewModel : ViewModelBase
@@ -100,7 +102,8 @@ public class TasksViewModel : ViewModelBase
     public IReadOnlyList<TaskStartActionViewModel> TaskCreateStartActions { get; } = CreateTaskCreateStartActions();
     public TaskStartActionViewModel RestoreStartAction { get; } = new(
         Resources.Task_Restore,
-        new DelegateCommand(() => WindowManager.SwitchToRestorationView()));
+        new DelegateCommand(() => WindowManager.SwitchToRestorationView()),
+        MenuIcons.Restore);
 
     public void Initialize()
     {
@@ -146,7 +149,8 @@ public class TasksViewModel : ViewModelBase
         return TaskUIProviderRegistry.GetCreateMenuRegistrations()
             .Select(e => new TaskStartActionViewModel(
                 e.Header,
-                new DelegateCommand(() => WindowManager.SwitchToCreateTaskView(e.ModelType))))
+                new DelegateCommand(() => WindowManager.SwitchToCreateTaskView(e.ModelType)),
+                MenuIcons.ForModel(e.ModelType)))
             .ToList();
     }
 

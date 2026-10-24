@@ -1639,6 +1639,15 @@ namespace BUtil.Core.Localization {
         }
 
         /// <summary>
+        ///   Looks up a localized string similar to About.
+        /// </summary>
+        public static string Menu_About {
+            get {
+                return ResourceManager.GetString("Menu_About", resourceCulture);
+            }
+        }
+
+        /// <summary>
         ///   Looks up a localized string similar to BUtil's own code is in the public domain. Third-party components keep their own licenses and are listed under Third-party notices.
         /// </summary>
         public static string License_ThirdPartyNote {

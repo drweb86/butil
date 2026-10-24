@@ -37,6 +37,7 @@ public class TaskCardViewModel(
     public SolidColorBrush Background { get; } = ColorPalette.GetBrush(SemanticColor.WindowFrontBackground);
 
     public SolidColorBrush SuccessForegroundColorBrush { get; } = ColorPalette.GetBrush(SemanticColor.Success);
+    public SolidColorBrush DeleteForeground { get; } = ColorPalette.GetBrush(SemanticColor.Error);
     public SolidColorBrush ForegroundWindowFontAccented { get; } = ColorPalette.GetBrush(SemanticColor.ForegroundWindowFontAccented);
 
     public bool IsNotStarted
