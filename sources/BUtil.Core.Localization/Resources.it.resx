@@ -1339,6 +1339,9 @@ Sceglie una delle seguenti opzioni:
   <data name="Menu_ThirdPartyNotices" xml:space="preserve">
     <value>Note terze parti</value>
   </data>
+  <data name="Menu_About" xml:space="preserve">
+    <value>Info programma</value>
+  </data>
   <data name="License_ThirdPartyNote" xml:space="preserve">
     <value>Il codice di BUtil è di pubblico dominio. I componenti di terze parti restano sotto le proprie licenze e sono elencati in 'Note terze parti'.</value>
   </data>
