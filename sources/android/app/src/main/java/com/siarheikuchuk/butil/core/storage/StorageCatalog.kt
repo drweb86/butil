@@ -195,7 +195,7 @@ object StorageCatalog {
     private fun provider(type: String, name: String, fields: List<StorageFieldSpec>) =
         StorageProviderSpec(type, name, fields)
 
-    private fun folderField() = StorageFieldSpec("folder", "Folder:", StorageFieldKind.FOLDER, "P:\\Storage\\Backup1")
+    private fun folderField() = StorageFieldSpec("folder", "Folder:", StorageFieldKind.FOLDER, "Folder is not specified.")
 
     private fun sftpFields() = listOf(
         StorageFieldSpec("host", "Server name:", StorageFieldKind.TEXT, "192.168.11.1"),

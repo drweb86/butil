@@ -94,7 +94,7 @@ object ImportMediaRules {
 }
 
 object DateTokens {
-    private val token = Regex("\\{(.*?)}")
+    private val token = Regex("\\{(.*?)\\}")
 
     fun apply(input: String, millis: Long): String {
         return token.replace(input) { match ->

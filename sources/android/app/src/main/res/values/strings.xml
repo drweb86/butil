@@ -57,6 +57,9 @@
     <string name="left_menu_what">What?</string>
     <string name="left_menu_where">Where?</string>
     <string name="left_menu_when">When?</string>
+    <string name="left_menu_encryption">Encryption</string>
+    <string name="import_source_title">Media Source</string>
+    <string name="ftps_server_title">FTPS server</string>
     <string name="when_optional_hint">This section is optional. If you skip it, the task will run only when you launch it manually.</string>
     <string name="field_name">Name:</string>
     <string name="field_folder">Folder:</string>
@@ -72,7 +75,9 @@
     <string name="days_friday">Friday</string>
     <string name="days_saturday">Saturday</string>
     <string name="days_sunday">Sunday</string>
-    <string name="run_at_login">Run at Login</string>
+    <string name="run_at_login">Run after device restart</string>
+    <string name="exact_alarm_needed">Android delays scheduled runs and may block them until you allow \"Alarms &amp; reminders\" for BUtil.</string>
+    <string name="exact_alarm_allow">Allow alarms &amp; reminders</string>
     <string name="button_ok">OK</string>
     <string name="task_run">Run</string>
     <string name="task_status_failed">Failed · %1$s</string>

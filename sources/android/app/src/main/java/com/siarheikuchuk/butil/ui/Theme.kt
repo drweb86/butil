@@ -17,6 +17,9 @@ private val DarkText = Color(0xFFE8EAED)
 private val DarkError = Color(0xFFDE6259)
 private val DarkSuccess = Color(0xFF81C784)
 private val DarkWarning = Color(0xFFFBBF24)
+private val DarkSectionBackground = Color(0xFF171D25)
+private val DarkSectionHeader = Color(0xFF1F2631)
+private val DarkSectionBorder = Color(0xFF2E3644)
 
 private val LightBackground = Color(0xFFF3F3F3)
 private val LightSurface = Color(0xFFFFFFFF)
@@ -25,12 +28,22 @@ private val LightText = Color(0xFF000000)
 private val LightError = Color(0xFFDA3B01)
 private val LightSuccess = Color(0xFF4CAF50)
 private val LightWarning = Color(0xFFB45309)
+private val LightSectionBackground = Color(0xFFFFFFFF)
+private val LightSectionHeader = Color(0xFFF6F8FA)
+private val LightSectionBorder = Color(0xFFD0D7DE)
 
 @Immutable
 internal data class StatusColors(val success: Color, val warning: Color)
 
 internal val LocalStatusColors = staticCompositionLocalOf {
     StatusColors(success = LightSuccess, warning = LightWarning)
+}
+
+@Immutable
+internal data class TaskSectionColors(val background: Color, val header: Color, val border: Color)
+
+internal val LocalTaskSectionColors = staticCompositionLocalOf {
+    TaskSectionColors(background = LightSectionBackground, header = LightSectionHeader, border = LightSectionBorder)
 }
 
 @Composable
@@ -64,7 +77,12 @@ fun BUtilTheme(content: @Composable () -> Unit) {
     } else {
         StatusColors(success = LightSuccess, warning = LightWarning)
     }
-    CompositionLocalProvider(LocalStatusColors provides statusColors) {
+    val sectionColors = if (dark) {
+        TaskSectionColors(background = DarkSectionBackground, header = DarkSectionHeader, border = DarkSectionBorder)
+    } else {
+        TaskSectionColors(background = LightSectionBackground, header = LightSectionHeader, border = LightSectionBorder)
+    }
+    CompositionLocalProvider(LocalStatusColors provides statusColors, LocalTaskSectionColors provides sectionColors) {
         MaterialTheme(colorScheme = colors, content = content)
     }
 }

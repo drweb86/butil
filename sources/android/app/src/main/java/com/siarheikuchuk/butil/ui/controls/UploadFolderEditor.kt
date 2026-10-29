@@ -106,82 +106,87 @@ fun UploadFolderEditor(
         verticalArrangement = Arrangement.spacedBy(12.dp),
     ) {
         Text(stringResource(R.string.upload_folder_contents_task_create), style = MaterialTheme.typography.headlineSmall)
-        Text(stringResource(R.string.upload_folder_help), style = MaterialTheme.typography.bodyMedium)
-        SectionTitle(stringResource(R.string.field_name))
-        OutlinedTextField(
-            value = form.name,
-            onValueChange = { form.name = it },
-            modifier = Modifier.fillMaxWidth(),
-            singleLine = true,
-            isError = form.nameError != null,
-            supportingText = form.nameError?.let { { Text(it) } },
-        )
-        SectionTitle(stringResource(R.string.left_menu_what))
-        Text(stringResource(R.string.field_folder))
-        Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-            Text(form.folderLabel.ifBlank { stringResource(R.string.folder_empty) }, modifier = Modifier.weight(1f))
-            OutlinedButton(onClick = { pickFolder.launch(null) }, enabled = !busy) {
-                Text(stringResource(R.string.field_folder_browse))
+        TaskSection("✅", stringResource(R.string.field_name)) {
+            OutlinedTextField(
+                value = form.name,
+                onValueChange = { form.name = it },
+                modifier = Modifier.fillMaxWidth(),
+                singleLine = true,
+                isError = form.nameError != null,
+                supportingText = form.nameError?.let { { Text(it) } },
+            )
+            Text(stringResource(R.string.upload_folder_help), style = MaterialTheme.typography.bodyMedium)
+        }
+        TaskSection("📁", stringResource(R.string.left_menu_what)) {
+            BrowseLine(
+                label = stringResource(R.string.field_folder),
+                value = form.folderLabel,
+                placeholder = stringResource(R.string.folder_empty),
+                action = stringResource(R.string.field_folder_browse),
+                enabled = !busy,
+            ) { pickFolder.launch(null) }
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                Checkbox(checked = form.skipExisting, onCheckedChange = { form.skipExisting = it })
+                Column {
+                    Text(stringResource(R.string.upload_folder_skip_existing))
+                    Text(stringResource(R.string.upload_folder_skip_existing_help), style = MaterialTheme.typography.bodySmall)
+                }
             }
         }
-        Row(verticalAlignment = Alignment.CenterVertically) {
-            Checkbox(checked = form.skipExisting, onCheckedChange = { form.skipExisting = it })
-            Column {
-                Text(stringResource(R.string.upload_folder_skip_existing))
-                Text(stringResource(R.string.upload_folder_skip_existing_help), style = MaterialTheme.typography.bodySmall)
+        TaskSection("💾", stringResource(R.string.left_menu_where)) {
+            Text(stringResource(R.string.upload_folder_storage_help), style = MaterialTheme.typography.bodyMedium)
+            ProviderMenu(form)
+            val help = form.selectedChoiceHelp()
+            if (help.isNotBlank()) Text(help, style = MaterialTheme.typography.bodySmall)
+            form.fields.filter { !it.hidden }.forEach { field ->
+                when (field.spec.kind) {
+                    StorageFieldKind.PASSWORD -> SecretField(field, !busy)
+                    StorageFieldKind.INTEGER -> NumberField(field, !busy)
+                    StorageFieldKind.ENUM -> EnumField(field, !busy) { form.applyRules() }
+                    StorageFieldKind.FOLDER -> BrowseField(field, stringResource(R.string.field_folder_browse), !busy) { pickStorageFolder.launch(null) }
+                    StorageFieldKind.FILE -> BrowseField(field, stringResource(R.string.field_file_browse), !busy) { pickKey.launch(arrayOf("*/*")) }
+                    StorageFieldKind.TEXT -> TextField(field, !busy)
+                }
             }
+            NumberField(
+                label = stringResource(R.string.upload_quota),
+                value = form.quota,
+                onValue = { form.quota = it },
+                help = stringResource(R.string.upload_quota_help),
+                error = form.quotaError,
+                enabled = !busy,
+            )
         }
-        SectionTitle(stringResource(R.string.left_menu_where))
-        Text(stringResource(R.string.upload_folder_storage_help))
-        ProviderMenu(form)
-        val help = form.selectedChoiceHelp()
-        if (help.isNotBlank()) Text(help, style = MaterialTheme.typography.bodySmall)
-        form.fields.filter { !it.hidden }.forEach { field ->
-            when (field.spec.kind) {
-                StorageFieldKind.PASSWORD -> SecretField(field, busy)
-                StorageFieldKind.INTEGER -> NumberField(field, busy)
-                StorageFieldKind.ENUM -> EnumField(field, busy) { form.applyRules() }
-                StorageFieldKind.FOLDER -> BrowseField(field, stringResource(R.string.field_folder_browse), busy) { pickStorageFolder.launch(null) }
-                StorageFieldKind.FILE -> BrowseField(field, stringResource(R.string.field_file_browse), busy) { pickKey.launch(arrayOf("*/*")) }
-                StorageFieldKind.TEXT -> TextField(field, busy)
+        TaskSection("⏰", stringResource(R.string.left_menu_when)) {
+            Text(stringResource(R.string.when_optional_hint), style = MaterialTheme.typography.bodySmall)
+            Text(stringResource(R.string.days_choose))
+            FlowRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                dayChips.forEach { (day, labelRes) ->
+                    FilterChip(
+                        selected = day in form.days,
+                        onClick = {
+                            if (day in form.days) form.days.remove(day) else form.days.add(day)
+                        },
+                        label = { Text(stringResource(labelRes)) },
+                    )
+                }
             }
-        }
-        NumberField(
-            label = stringResource(R.string.upload_quota),
-            value = form.quota,
-            onValue = { form.quota = it },
-            help = stringResource(R.string.upload_quota_help),
-            error = form.quotaError,
-            enabled = !busy,
-        )
-        SectionTitle(stringResource(R.string.left_menu_when))
-        Text(stringResource(R.string.when_optional_hint), style = MaterialTheme.typography.bodySmall)
-        Text(stringResource(R.string.days_choose))
-        FlowRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-            dayChips.forEach { (day, labelRes) ->
-                FilterChip(
-                    selected = day in form.days,
-                    onClick = {
-                        if (day in form.days) form.days.remove(day) else form.days.add(day)
-                    },
-                    label = { Text(stringResource(labelRes)) },
-                )
+            OutlinedButton(onClick = { showTime = true }, enabled = !busy) {
+                Text("%02d:%02d".format(form.hour, form.minute))
             }
-        }
-        OutlinedButton(onClick = { showTime = true }, enabled = !busy) {
-            Text("%02d:%02d".format(form.hour, form.minute))
-        }
-        if (showTime) {
-            TimePicker(state = timeState)
-            Button(onClick = {
-                form.hour = timeState.hour
-                form.minute = timeState.minute
-                showTime = false
-            }) { Text(stringResource(R.string.button_ok)) }
-        }
-        Row(verticalAlignment = Alignment.CenterVertically) {
-            Checkbox(checked = form.runAtLogin, onCheckedChange = { form.runAtLogin = it })
-            Text(stringResource(R.string.run_at_login))
+            if (showTime) {
+                TimePicker(state = timeState)
+                Button(onClick = {
+                    form.hour = timeState.hour
+                    form.minute = timeState.minute
+                    showTime = false
+                }) { Text(stringResource(R.string.button_ok)) }
+            }
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                Checkbox(checked = form.runAtLogin, onCheckedChange = { form.runAtLogin = it })
+                Text(stringResource(R.string.run_at_login))
+            }
+            ExactAlarmNotice(form.days.isNotEmpty() || form.runAtLogin)
         }
         if (busy) LinearProgressIndicator(Modifier.fillMaxWidth())
         if (!message.isNullOrBlank()) {
@@ -349,19 +354,15 @@ private fun EnumField(field: FieldRow, enabled: Boolean, onChange: () -> Unit) {
 
 @Composable
 private fun BrowseField(field: FieldRow, action: String, enabled: Boolean, onBrowse: () -> Unit) {
-    Column(verticalArrangement = Arrangement.spacedBy(4.dp)) {
-        Text(field.label)
-        Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-            Text(field.value.ifBlank { field.placeholder }.let(::friendlyLocation), modifier = Modifier.weight(1f))
-            OutlinedButton(onClick = onBrowse, enabled = enabled) { Text(action) }
-        }
-        if (field.error != null) Text(field.error!!, color = MaterialTheme.colorScheme.error, style = MaterialTheme.typography.bodySmall)
-    }
-}
-
-@Composable
-private fun SectionTitle(text: String) {
-    Text(text, style = MaterialTheme.typography.titleMedium)
+    BrowseLine(
+        label = field.label,
+        value = friendlyLocation(field.value),
+        placeholder = field.placeholder,
+        action = action,
+        enabled = enabled,
+        error = field.error,
+        onBrowse = onBrowse,
+    )
 }
 
 private val dayChips = listOf(

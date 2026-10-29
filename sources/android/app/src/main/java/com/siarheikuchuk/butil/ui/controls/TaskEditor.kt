@@ -13,6 +13,8 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Close
 import androidx.compose.material3.Button
 import androidx.compose.material3.Checkbox
 import androidx.compose.material3.DropdownMenuItem
@@ -20,6 +22,8 @@ import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.ExposedDropdownMenuBox
 import androidx.compose.material3.ExposedDropdownMenuDefaults
 import androidx.compose.material3.FilterChip
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.MenuAnchorType
@@ -97,54 +101,50 @@ fun TaskEditor(
         verticalArrangement = Arrangement.spacedBy(12.dp),
     ) {
         Text(title, style = MaterialTheme.typography.headlineSmall)
-        Text(stringResource(helpRes(kind)))
-        SectionLabel(stringResource(R.string.field_name))
-        OutlinedTextField(form.name, { form.name = it }, modifier = Modifier.fillMaxWidth(), singleLine = true, isError = form.nameError != null, supportingText = form.nameError?.let { { Text(it) } })
+        val browse: (DraftValue) -> Unit = {
+            form.pendingFolder = it
+            pickFolder.launch(null)
+        }
+        TaskSection("✅", stringResource(R.string.field_name)) {
+            OutlinedTextField(form.name, { form.name = it }, modifier = Modifier.fillMaxWidth(), singleLine = true, isError = form.nameError != null, supportingText = form.nameError?.let { { Text(it) } })
+            Text(stringResource(helpRes(kind)), style = MaterialTheme.typography.bodyMedium)
+        }
         when (kind) {
-            "Incremental" -> IncrementalFields(form, busy) {
-                form.pendingFolder = it
-                pickFolder.launch(null)
+            "Incremental" -> {
+                TaskSection("💾", stringResource(R.string.left_menu_what)) { IncrementalFields(form, busy, browse) }
+                TaskSection("💾", stringResource(R.string.left_menu_where)) { StorageBlock(stringResource(R.string.incremental_storage_help), form.where, busy, browse) }
+                TaskSection("🔒", stringResource(R.string.left_menu_encryption)) { PasswordLine(form, busy) }
             }
-            "ImportMedia" -> ImportFields(form, busy) {
-                form.pendingFolder = it
-                pickFolder.launch(null)
+            "ImportMedia" -> {
+                TaskSection("💾", stringResource(R.string.import_source_title)) { StorageBlock(stringResource(R.string.import_source_help), form.source, busy, browse) }
+                TaskSection("📷", stringResource(R.string.left_menu_what)) { ImportWhatFields(form) }
+                TaskSection("🖼", stringResource(R.string.left_menu_where)) { ImportWhereFields(form, busy, browse) }
             }
-            "Synchronization" -> SyncFields(form, busy) {
-                form.pendingFolder = it
-                pickFolder.launch(null)
+            "Synchronization" -> {
+                TaskSection("📁", stringResource(R.string.left_menu_what)) { SyncFields(form, busy, browse) }
+                TaskSection("💾", stringResource(R.string.left_menu_where)) { StorageBlock(stringResource(R.string.sync_storage_help), form.where, busy, browse) }
+                TaskSection("🔒", stringResource(R.string.left_menu_encryption)) { PasswordLine(form, busy) }
             }
-            "BUtilServer" -> ServerFields(form, busy) {
-                form.pendingFolder = it
-                pickFolder.launch(null)
-            }
+            "BUtilServer" -> TaskSection("🖥️",stringResource(R.string.ftps_server_title)) { ServerFields(form, busy, browse) }
         }
-        if (kind == "Incremental" || kind == "Synchronization") {
-            StorageBlock(stringResource(R.string.left_menu_where), form.where, busy) {
-                form.pendingFolder = it
-                pickFolder.launch(null)
+        TaskSection("⏰", stringResource(R.string.left_menu_when)) {
+            Text(stringResource(R.string.when_optional_hint), style = MaterialTheme.typography.bodySmall)
+            Text(stringResource(R.string.days_choose))
+            FlowRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                scheduleDays.forEach { (day, label) ->
+                    FilterChip(selected = day in form.days, onClick = { if (day in form.days) form.days.remove(day) else form.days.add(day) }, label = { Text(stringResource(label)) })
+                }
             }
-        }
-        if (kind == "ImportMedia") {
-            StorageBlock(stringResource(R.string.import_source_help), form.source, busy) {
-                form.pendingFolder = it
-                pickFolder.launch(null)
+            OutlinedButton(onClick = { showTime = true }, enabled = !busy) { Text("%02d:%02d".format(form.hour, form.minute)) }
+            if (showTime) {
+                TimePicker(state = timeState)
+                Button(onClick = { form.hour = timeState.hour; form.minute = timeState.minute; showTime = false }) { Text(stringResource(R.string.button_ok)) }
             }
-        }
-        SectionLabel(stringResource(R.string.left_menu_when))
-        Text(stringResource(R.string.when_optional_hint), style = MaterialTheme.typography.bodySmall)
-        FlowRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-            scheduleDays.forEach { (day, label) ->
-                FilterChip(selected = day in form.days, onClick = { if (day in form.days) form.days.remove(day) else form.days.add(day) }, label = { Text(stringResource(label)) })
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                Checkbox(form.runAtLogin, { form.runAtLogin = it })
+                Text(stringResource(R.string.run_at_login))
             }
-        }
-        OutlinedButton(onClick = { showTime = true }, enabled = !busy) { Text("%02d:%02d".format(form.hour, form.minute)) }
-        if (showTime) {
-            TimePicker(state = timeState)
-            Button(onClick = { form.hour = timeState.hour; form.minute = timeState.minute; showTime = false }) { Text(stringResource(R.string.button_ok)) }
-        }
-        Row(verticalAlignment = Alignment.CenterVertically) {
-            Checkbox(form.runAtLogin, { form.runAtLogin = it })
-            Text(stringResource(R.string.run_at_login))
+            ExactAlarmNotice(form.days.isNotEmpty() || form.runAtLogin)
         }
         if (busy) LinearProgressIndicator(Modifier.fillMaxWidth())
         if (!message.isNullOrBlank()) Text(message!!, color = MaterialTheme.colorScheme.error)
@@ -174,43 +174,54 @@ fun TaskEditor(
 
 @Composable
 private fun IncrementalFields(form: TaskDraft, busy: Boolean, browse: (DraftValue) -> Unit) {
-    SectionLabel(stringResource(R.string.left_menu_what))
     Text(stringResource(R.string.source_folders))
     form.folders.forEach { folder ->
-        Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-            Text(folderLabel(folder.value), modifier = Modifier.weight(1f))
-            OutlinedButton(onClick = { browse(folder) }, enabled = !busy) { Text(stringResource(R.string.field_folder_browse)) }
-            OutlinedButton(onClick = { form.folders.remove(folder) }, enabled = !busy) { Text(stringResource(R.string.remove_folder)) }
-        }
+        BrowseLine(
+            label = null,
+            value = folderLabel(folder.value),
+            placeholder = stringResource(R.string.folder_empty),
+            action = stringResource(R.string.field_folder_browse),
+            enabled = !busy,
+            trailing = {
+                IconButton(onClick = { form.folders.remove(folder) }, enabled = !busy) {
+                    Icon(Icons.Filled.Close, contentDescription = stringResource(R.string.remove_folder))
+                }
+            },
+        ) { browse(folder) }
     }
     OutlinedButton(onClick = { form.folders += DraftValue("") }, enabled = !busy) { Text(stringResource(R.string.add_folder)) }
     OutlinedTextField(form.exclude, { form.exclude = it }, modifier = Modifier.fillMaxWidth(), label = { Text(stringResource(R.string.field_exclude)) }, supportingText = { Text(stringResource(R.string.exclude_help)) }, minLines = 3)
+}
+
+@Composable
+private fun PasswordLine(form: TaskDraft, busy: Boolean) {
     SecretLine(stringResource(R.string.field_password), form.password, { form.password = it }, !busy)
 }
 
 @Composable
-private fun ImportFields(form: TaskDraft, busy: Boolean, browse: (DraftValue) -> Unit) {
-    SectionLabel(stringResource(R.string.import_output_folder))
-    FolderLine(form.output, busy) { browse(form.output) }
-    Text(stringResource(R.string.import_transform))
-    ChoiceLine(form.transform, ImportMediaRules.presets, !busy) { form.transform = it }
-    OutlinedTextField(form.transform, { form.transform = it }, modifier = Modifier.fillMaxWidth(), supportingText = { Text(stringResource(R.string.import_transform_help)) })
-    val example = ImportMediaRules.example(form.transform, form.output.value.ifBlank { "Pictures" })
-    if (example != null) Text(example, style = MaterialTheme.typography.bodySmall)
+private fun ImportWhatFields(form: TaskDraft) {
     OutlinedTextField(form.extensions, { form.extensions = it }, modifier = Modifier.fillMaxWidth(), label = { Text(stringResource(R.string.import_extensions)) }, supportingText = { Text(stringResource(R.string.import_extensions_help)) })
-    CheckLine(stringResource(R.string.import_skip), form.skipImported) { form.skipImported = it }
-    Text(stringResource(R.string.import_skip_help), style = MaterialTheme.typography.bodySmall)
+    Column {
+        CheckLine(stringResource(R.string.import_skip), form.skipImported) { form.skipImported = it }
+        Text(stringResource(R.string.import_skip_help), style = MaterialTheme.typography.bodySmall)
+    }
     CheckLine(stringResource(R.string.import_delete), form.deleteSource) { form.deleteSource = it }
     OutlinedTextField(form.minimumDate, { form.minimumDate = it }, modifier = Modifier.fillMaxWidth(), label = { Text(stringResource(R.string.import_min_date)) }, singleLine = true)
 }
 
 @Composable
+private fun ImportWhereFields(form: TaskDraft, busy: Boolean, browse: (DraftValue) -> Unit) {
+    FolderLine(stringResource(R.string.import_output_folder), form.output, busy) { browse(form.output) }
+    ChoiceLine(stringResource(R.string.import_transform), form.transform, ImportMediaRules.presets, !busy) { form.transform = it }
+    OutlinedTextField(form.transform, { form.transform = it }, modifier = Modifier.fillMaxWidth(), supportingText = { Text(stringResource(R.string.import_transform_help)) })
+    val example = ImportMediaRules.example(form.transform, form.output.value.ifBlank { "Pictures" })
+    if (example != null) Text(example, style = MaterialTheme.typography.bodySmall)
+}
+
+@Composable
 private fun SyncFields(form: TaskDraft, busy: Boolean, browse: (DraftValue) -> Unit) {
-    SectionLabel(stringResource(R.string.field_folder))
-    FolderLine(form.output, busy) { browse(form.output) }
-    Text(stringResource(R.string.sync_mode))
-    ChoiceLine(form.mode, listOf("Two-way", "Read"), !busy) { form.mode = it }
-    SecretLine(stringResource(R.string.field_password), form.password, { form.password = it }, !busy)
+    FolderLine(stringResource(R.string.field_folder), form.output, busy) { browse(form.output) }
+    ChoiceLine(stringResource(R.string.sync_mode), form.mode, listOf("Two-way", "Read"), !busy) { form.mode = it }
     if (form.repository.isNotBlank()) {
         OutlinedTextField(form.repository, { form.repository = it }, modifier = Modifier.fillMaxWidth(), label = { Text(stringResource(R.string.sync_repository)) })
     }
@@ -218,20 +229,18 @@ private fun SyncFields(form: TaskDraft, busy: Boolean, browse: (DraftValue) -> U
 
 @Composable
 private fun ServerFields(form: TaskDraft, busy: Boolean, browse: (DraftValue) -> Unit) {
-    FolderLine(form.output, busy) { browse(form.output) }
+    FolderLine(stringResource(R.string.field_folder), form.output, busy) { browse(form.output) }
     NumberLine(stringResource(R.string.ftps_port), form.port, { form.port = it }, !busy)
     OutlinedTextField(form.user, { form.user = it }, modifier = Modifier.fillMaxWidth(), label = { Text(stringResource(R.string.ftps_user)) }, singleLine = true)
     SecretLine(stringResource(R.string.field_password), form.password, { form.password = it }, !busy)
-    Text(stringResource(R.string.ftps_access))
-    ChoiceLine(form.access, listOf("Read and write", "Read only"), !busy) { form.access = it }
-    NumberLine(stringResource(R.string.ftps_duration), form.duration, { form.duration = it }, !busy)
-    Text(stringResource(R.string.ftps_duration_help), style = MaterialTheme.typography.bodySmall)
+    ChoiceLine(stringResource(R.string.ftps_access), form.access, listOf("Read and write", "Read only"), !busy) { form.access = it }
+    NumberLine(stringResource(R.string.ftps_duration), form.duration, { form.duration = it }, !busy, stringResource(R.string.ftps_duration_help))
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-private fun StorageBlock(title: String, draft: StorageDraft, busy: Boolean, browse: (DraftValue) -> Unit) {
-    SectionLabel(title)
+private fun StorageBlock(help: String, draft: StorageDraft, busy: Boolean, browse: (DraftValue) -> Unit) {
+    Text(help, style = MaterialTheme.typography.bodyMedium)
     var open by remember { mutableStateOf(false) }
     val current = StorageCatalog.providers.first { it.jsonType == draft.provider }
     ExposedDropdownMenuBox(expanded = open, onExpandedChange = { open = it }) {
@@ -248,26 +257,25 @@ private fun StorageBlock(title: String, draft: StorageDraft, busy: Boolean, brow
             StorageFieldKind.INTEGER -> NumberLine(field.label, field.value, { field.value = it; draft.applyRules() }, !busy)
             StorageFieldKind.ENUM -> {
                 val label = field.spec.choices.firstOrNull { it.value == field.value }?.label ?: field.value
-                ChoiceLine(label, field.spec.choices.map { it.label }, !busy) { selected ->
+                ChoiceLine(field.label, label, field.spec.choices.map { it.label }, !busy) { selected ->
                     field.value = field.spec.choices.first { it.label == selected }.value
                     draft.applyRules()
                 }
             }
-            StorageFieldKind.FOLDER, StorageFieldKind.FILE -> FolderLine(field, busy) { browse(field) }
+            StorageFieldKind.FOLDER, StorageFieldKind.FILE -> FolderLine(field.label, field, busy, field.spec.placeholder) { browse(field) }
             StorageFieldKind.TEXT -> OutlinedTextField(field.value, { field.value = it }, modifier = Modifier.fillMaxWidth(), label = { Text(field.label) }, singleLine = true, enabled = !busy)
         }
     }
-    NumberLine(stringResource(R.string.upload_quota), draft.quota, { draft.quota = it }, !busy)
-    Text(stringResource(R.string.upload_quota_help), style = MaterialTheme.typography.bodySmall)
+    NumberLine(stringResource(R.string.upload_quota), draft.quota, { draft.quota = it }, !busy, stringResource(R.string.upload_quota_help))
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-private fun ChoiceLine(current: String, options: List<String>, enabled: Boolean, onSelect: (String) -> Unit = {}) {
+private fun ChoiceLine(label: String, current: String, options: List<String>, enabled: Boolean, onSelect: (String) -> Unit = {}) {
     var open by remember { mutableStateOf(false) }
     var selected by remember(current) { mutableStateOf(current) }
     ExposedDropdownMenuBox(expanded = open, onExpandedChange = { if (enabled) open = it }) {
-        OutlinedTextField(selected, {}, readOnly = true, trailingIcon = { ExposedDropdownMenuDefaults.TrailingIcon(open) }, modifier = Modifier.menuAnchor(MenuAnchorType.PrimaryNotEditable).fillMaxWidth())
+        OutlinedTextField(selected, {}, readOnly = true, label = { Text(label) }, trailingIcon = { ExposedDropdownMenuDefaults.TrailingIcon(open) }, modifier = Modifier.menuAnchor(MenuAnchorType.PrimaryNotEditable).fillMaxWidth())
         ExposedDropdownMenu(expanded = open, onDismissRequest = { open = false }) {
             options.forEach { option ->
                 DropdownMenuItem(text = { Text(option) }, onClick = {
@@ -281,11 +289,8 @@ private fun ChoiceLine(current: String, options: List<String>, enabled: Boolean,
 }
 
 @Composable
-private fun FolderLine(value: DraftValue, busy: Boolean, browse: () -> Unit) {
-    Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-        Text(folderLabel(value.value), modifier = Modifier.weight(1f))
-        OutlinedButton(onClick = browse, enabled = !busy) { Text(stringResource(R.string.field_folder_browse)) }
-    }
+private fun FolderLine(label: String, value: DraftValue, busy: Boolean, placeholder: String = stringResource(R.string.folder_empty), browse: () -> Unit) {
+    BrowseLine(label, folderLabel(value.value), placeholder, stringResource(R.string.field_folder_browse), !busy, onBrowse = browse)
 }
 
 @Composable
@@ -294,8 +299,8 @@ private fun SecretLine(label: String, value: String, onChange: (String) -> Unit,
 }
 
 @Composable
-private fun NumberLine(label: String, value: String, onChange: (String) -> Unit, enabled: Boolean) {
-    OutlinedTextField(value, onChange, modifier = Modifier.fillMaxWidth(), label = { Text(label) }, keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number), singleLine = true, enabled = enabled)
+private fun NumberLine(label: String, value: String, onChange: (String) -> Unit, enabled: Boolean, help: String? = null) {
+    OutlinedTextField(value, onChange, modifier = Modifier.fillMaxWidth(), label = { Text(label) }, supportingText = help?.let { { Text(it) } }, keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number), singleLine = true, enabled = enabled)
 }
 
 @Composable
@@ -304,11 +309,6 @@ private fun CheckLine(label: String, checked: Boolean, onChange: (Boolean) -> Un
         Checkbox(checked, onChange)
         Text(label)
     }
-}
-
-@Composable
-private fun SectionLabel(text: String) {
-    Text(text, style = MaterialTheme.typography.titleMedium)
 }
 
 internal fun titleRes(kind: String) = when (kind) {
@@ -606,8 +606,7 @@ fun RestorePage(onClose: () -> Unit, modifier: Modifier = Modifier, taskName: St
             pending = it
             pick.launch(null)
         }
-        Text(stringResource(R.string.restore_destination))
-        FolderLine(destination, busy) {
+        FolderLine(stringResource(R.string.restore_destination), destination, busy) {
             pending = destination
             pick.launch(null)
         }
