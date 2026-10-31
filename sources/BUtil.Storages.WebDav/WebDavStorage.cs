@@ -27,18 +27,16 @@ class WebDavStorage : StorageBase<WebDavStorageSettingsV2>
         if (!isOAuth && string.IsNullOrWhiteSpace(Settings.User))
             throw new InvalidDataException("User is not specified.");
 
-        var scheme = Settings.UseHttps ? "https" : "http";
+        if (!Settings.UseHttps)
+            throw new InvalidDataException("WebDAV requires HTTPS.");
+
         var portPart = string.Empty;
-        if (Settings.Port > 0)
-        {
-            bool isDefault = (Settings.UseHttps && Settings.Port == 443) || (!Settings.UseHttps && Settings.Port == 80);
-            if (!isDefault)
-                portPart = $":{Settings.Port}";
-        }
+        if (Settings.Port > 0 && Settings.Port != 443)
+            portPart = $":{Settings.Port}";
 
         _basePath = "/" + Settings.BasePath.Trim('/');
 
-        var httpClient = new HttpClient { BaseAddress = new Uri($"{scheme}://{Settings.Host}{portPart}") };
+        var httpClient = new HttpClient { BaseAddress = new Uri($"https://{Settings.Host}{portPart}") };
         if (isOAuth)
             httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("OAuth", Settings.Password);
         else

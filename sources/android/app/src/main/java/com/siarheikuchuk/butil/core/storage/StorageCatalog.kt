@@ -70,7 +70,6 @@ object StorageCatalog {
         is WebDavSettings -> mapOf(
             "preset" to settings.preset,
             "host" to settings.host,
-            "useHttps" to if (settings.useHttps) "Yes" else "No",
             "port" to settings.port.toString(),
             "basePath" to settings.basePath,
             "user" to settings.user,
@@ -156,7 +155,7 @@ object StorageCatalog {
         val draft = WebDavSettings(
             preset = values["preset"] ?: "Custom",
             host = values["host"].orEmpty(),
-            useHttps = values["useHttps"] != "No",
+            useHttps = true,
             port = values["port"]?.toIntOrNull() ?: 0,
             basePath = values["basePath"].orEmpty(),
             user = values["user"].orEmpty(),
@@ -253,7 +252,6 @@ object StorageCatalog {
         fun rule(value: String, vararg patches: StoragePatch) = StorageRule(value, patches.toList())
         val hideServer = listOf(
             StoragePatch("host", hidden = true),
-            StoragePatch("useHttps", hidden = true),
             StoragePatch("port", hidden = true),
             StoragePatch("basePath", hidden = true),
         )
@@ -264,7 +262,7 @@ object StorageCatalog {
                 StorageFieldKind.ENUM,
                 defaultValue = "Custom",
                 choices = listOf(
-                    StorageChoice("Custom", "Generic / Custom", "Generic WebDAV server. Enter the address, HTTPS, port, and base path."),
+                    StorageChoice("Custom", "Generic / Custom", "Generic WebDAV server. Enter the address, port, and base path. The connection is HTTPS."),
                     StorageChoice("Nextcloud", "Nextcloud", "Nextcloud. Base path looks like /remote.php/dav/files/<username>/."),
                     StorageChoice("ownCloud", "ownCloud", "ownCloud. Base path looks like /remote.php/dav/files/<username>/."),
                     StorageChoice("Koofr", "Koofr (EU)", "Koofr. Server details are filled in automatically. Use an app password."),
@@ -300,13 +298,6 @@ object StorageCatalog {
                 ),
             ),
             StorageFieldSpec("host", "Server name:", StorageFieldKind.TEXT, "nextcloud.example.com", optional = true),
-            StorageFieldSpec(
-                "useHttps",
-                "HTTPS:",
-                StorageFieldKind.ENUM,
-                defaultValue = "Yes",
-                choices = listOf(StorageChoice("Yes", "Yes"), StorageChoice("No", "No")),
-            ),
             StorageFieldSpec("port", "Port:", StorageFieldKind.INTEGER, defaultValue = "0", min = 0, max = 65535),
             StorageFieldSpec("basePath", "Base Path:", StorageFieldKind.TEXT, "/remote.php/dav/files/user/Backups", optional = true),
             StorageFieldSpec("user", "User:", StorageFieldKind.TEXT, optional = true),

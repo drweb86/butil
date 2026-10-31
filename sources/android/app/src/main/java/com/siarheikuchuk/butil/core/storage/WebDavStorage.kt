@@ -1,9 +1,13 @@
 package com.siarheikuchuk.butil.core.storage
 
+import java.io.ByteArrayOutputStream
 import java.io.InputStream
-import java.net.HttpURLConnection
-import java.net.URL
+import java.net.InetSocketAddress
+import java.net.Socket
+import java.net.URI
 import java.util.Base64
+import javax.net.ssl.SSLSocket
+import javax.net.ssl.SSLSocketFactory
 
 internal class WebDavStorage(settings: WebDavSettings) : Storage {
     private val resolved = resolve(settings)
@@ -16,15 +20,10 @@ internal class WebDavStorage(settings: WebDavSettings) : Storage {
             throw IllegalArgumentException("User is not specified.")
         }
         if (resolved.password.isBlank()) throw IllegalArgumentException("Password is not specified.")
-        val scheme = if (resolved.useHttps) "https" else "http"
+        if (!settings.useHttps) throw IllegalArgumentException("WebDAV requires HTTPS.")
         val port = resolved.port
-        val portPart = when {
-            port <= 0 -> ""
-            resolved.useHttps && port == 443 -> ""
-            !resolved.useHttps && port == 80 -> ""
-            else -> ":$port"
-        }
-        origin = "$scheme://${resolved.host}$portPart"
+        val portPart = if (port <= 0 || port == 443) "" else ":$port"
+        origin = "https://${resolved.host}$portPart"
         basePath = "/" + resolved.basePath.trim('/')
     }
 
@@ -144,47 +143,26 @@ internal class WebDavStorage(settings: WebDavSettings) : Storage {
     }
 
     private fun openText(method: String, url: String, body: ByteArray, extra: Map<String, String>): String {
-        val connection = connection(method, url, extra)
-        connection.doOutput = true
-        connection.setFixedLengthStreamingMode(body.size)
-        connection.outputStream.use { it.write(body) }
-        val code = connection.responseCode
-        val stream = if (code in 200..299) connection.inputStream else connection.errorStream
-        val text = stream?.use { it.readBytes().toString(Charsets.UTF_8) }.orEmpty()
-        connection.disconnect()
-        if (code !in listOf(200, 207)) throw IllegalStateException("WebDAV $method failed (HTTP $code)")
+        val response = exchange(method, url, body.size.toLong(), { body.inputStream() }, extra)
+        val text = response.stream.use { it.readBytes() }.toString(Charsets.UTF_8)
+        response.close()
+        if (response.code !in listOf(200, 207)) throw IllegalStateException("WebDAV $method failed (HTTP ${response.code})")
         return text
     }
 
     private fun openStream(method: String, url: String, extra: Map<String, String>): InputStream {
-        val connection = connection(method, url, extra)
-        val code = connection.responseCode
-        if (code !in 200..299) {
-            connection.disconnect()
-            throw IllegalStateException("WebDAV download failed (HTTP $code)")
+        val response = exchange(method, url, null, null, extra)
+        if (response.code !in 200..299) {
+            response.close()
+            throw IllegalStateException("WebDAV download failed (HTTP ${response.code})")
         }
-        val source = connection.inputStream
-        return object : InputStream() {
-            override fun read(): Int = source.read()
-            override fun read(b: ByteArray, off: Int, len: Int): Int = source.read(b, off, len)
-            override fun close() {
-                source.close()
-                connection.disconnect()
-            }
-        }
+        return response.stream
     }
 
-    private fun connection(method: String, url: String, extra: Map<String, String>): HttpURLConnection {
-        return (URL(url).openConnection() as HttpURLConnection).apply {
-            requestMethod = method
-            connectTimeout = 30_000
-            readTimeout = 0
-            instanceFollowRedirects = false
-            setRequestProperty("Authorization", authorization())
-            extra.forEach { (name, value) -> setRequestProperty(name, value) }
-        }
-    }
-
+    /**
+     * Android's [java.net.HttpURLConnection] only allows a fixed set of methods, so PROPFIND and
+     * MKCOL never leave the device. Speak HTTP/1.1 on a socket instead.
+     */
     private fun request(
         method: String,
         url: String,
@@ -192,22 +170,79 @@ internal class WebDavStorage(settings: WebDavSettings) : Storage {
         open: (() -> InputStream)?,
         extra: Map<String, String> = emptyMap(),
     ): Int {
-        val connection = (URL(url).openConnection() as HttpURLConnection).apply {
-            requestMethod = method
-            connectTimeout = 30_000
-            readTimeout = 0
-            instanceFollowRedirects = false
-            setRequestProperty("Authorization", authorization())
-            extra.forEach { (name, value) -> setRequestProperty(name, value) }
+        val response = exchange(method, url, length, open, extra)
+        response.close()
+        return response.code
+    }
+
+    private fun exchange(
+        method: String,
+        url: String,
+        length: Long?,
+        open: (() -> InputStream)?,
+        extra: Map<String, String>,
+    ): DavResponse {
+        val target = URI(url)
+        val https = target.scheme.equals("https", ignoreCase = true)
+        if (!https) throw IllegalArgumentException("WebDAV requires HTTPS.")
+        val port = when {
+            target.port != -1 -> target.port
+            https -> 443
+            else -> 80
         }
+        val raw = Socket()
+        raw.connect(InetSocketAddress(target.host, port), 30_000)
+        raw.soTimeout = 60_000
+        val socket: Socket = if (!https) {
+            raw
+        } else {
+            val factory = SSLSocketFactory.getDefault() as SSLSocketFactory
+            val ssl = factory.createSocket(raw, target.host, port, true) as SSLSocket
+            ssl.startHandshake()
+            ssl
+        }
+        val path = (target.rawPath?.takeIf { it.isNotEmpty() } ?: "/") +
+            (target.rawQuery?.let { "?$it" } ?: "")
+        val hostHeader = if ((https && port == 443) || (!https && port == 80)) target.host else "${target.host}:$port"
+        val header = buildString {
+            append(method).append(' ').append(path).append(" HTTP/1.1\r\n")
+            append("Host: ").append(hostHeader).append("\r\n")
+            append("Authorization: ").append(authorization()).append("\r\n")
+            append("Connection: close\r\n")
+            extra.forEach { (name, value) -> append(name).append(": ").append(value).append("\r\n") }
+            if (open != null && length != null) append("Content-Length: ").append(length).append("\r\n")
+            append("\r\n")
+        }
+        val output = socket.getOutputStream()
+        output.write(header.toByteArray(Charsets.US_ASCII))
         if (open != null && length != null) {
-            connection.doOutput = true
-            connection.setFixedLengthStreamingMode(length)
-            connection.outputStream.use { output -> open().use { input -> StorageIo.copy(input, output) } }
+            open().use { input -> StorageIo.copy(input, output) }
         }
-        val code = connection.responseCode
-        connection.disconnect()
-        return code
+        output.flush()
+        val input = socket.getInputStream()
+        val status = readAsciiLine(input)
+        val code = status.split(' ').getOrNull(1)?.toIntOrNull()
+            ?: throw IllegalStateException("WebDAV reply was not HTTP: $status")
+        val headers = linkedMapOf<String, String>()
+        while (true) {
+            val line = readAsciiLine(input)
+            if (line.isEmpty()) break
+            val split = line.indexOf(':')
+            if (split > 0) headers[line.substring(0, split).trim().lowercase()] = line.substring(split + 1).trim()
+        }
+        val body = when {
+            headers["transfer-encoding"]?.contains("chunked", ignoreCase = true) == true -> ChunkedStream(input)
+            headers.containsKey("content-length") -> LimitedStream(input, headers.getValue("content-length").toLong())
+            else -> input
+        }
+        val closing = object : InputStream() {
+            override fun read(): Int = body.read()
+            override fun read(buffer: ByteArray, offset: Int, count: Int): Int = body.read(buffer, offset, count)
+            override fun close() {
+                socket.close()
+            }
+        }
+        return DavResponse(code, closing, socket)
     }
 
     private fun authorization(): String {
@@ -236,8 +271,77 @@ internal class WebDavStorage(settings: WebDavSettings) : Storage {
                 "Jianguoyun" -> "/dav/"
                 else -> settings.basePath
             }
-            val https = if (preset == "Custom" || preset == "Nextcloud" || preset == "ownCloud") settings.useHttps else true
-            return settings.copy(preset = preset, host = host, basePath = basePath, useHttps = https)
+            return settings.copy(preset = preset, host = host, basePath = basePath, useHttps = true)
         }
     }
+}
+
+private class DavResponse(val code: Int, val stream: InputStream, private val socket: Socket) : AutoCloseable {
+    override fun close() {
+        try {
+            stream.close()
+        } finally {
+            socket.close()
+        }
+    }
+}
+
+private class LimitedStream(private val input: InputStream, private var remaining: Long) : InputStream() {
+    override fun read(): Int {
+        if (remaining <= 0) return -1
+        val value = input.read()
+        if (value >= 0) remaining--
+        return value
+    }
+
+    override fun read(buffer: ByteArray, offset: Int, count: Int): Int {
+        if (remaining <= 0) return -1
+        if (count == 0) return 0
+        val read = input.read(buffer, offset, minOf(count.toLong(), remaining).toInt())
+        if (read > 0) remaining -= read
+        return read
+    }
+}
+
+private class ChunkedStream(private val input: InputStream) : InputStream() {
+    private var remaining = 0
+    private var done = false
+
+    override fun read(): Int {
+        val one = ByteArray(1)
+        val count = read(one, 0, 1)
+        return if (count < 0) -1 else one[0].toInt() and 0xFF
+    }
+
+    override fun read(buffer: ByteArray, offset: Int, count: Int): Int {
+        if (done) return -1
+        if (count == 0) return 0
+        if (remaining == 0) {
+            val size = readAsciiLine(input).substringBefore(';').trim().toIntOrNull(16) ?: 0
+            if (size == 0) {
+                while (readAsciiLine(input).isNotEmpty()) Unit
+                done = true
+                return -1
+            }
+            remaining = size
+        }
+        val read = input.read(buffer, offset, minOf(count, remaining))
+        if (read < 0) {
+            done = true
+            return -1
+        }
+        remaining -= read
+        if (remaining == 0) readAsciiLine(input)
+        return read
+    }
+}
+
+private fun readAsciiLine(input: InputStream): String {
+    val out = ByteArrayOutputStream()
+    while (true) {
+        val value = input.read()
+        if (value < 0 || value == '\n'.code) break
+        if (value != '\r'.code) out.write(value)
+    }
+    return out.toString(Charsets.US_ASCII.name())
 }

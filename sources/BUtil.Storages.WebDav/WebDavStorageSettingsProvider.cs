@@ -50,7 +50,6 @@ public class WebDavStorageSettingsProvider : IStorageSettingsProvider
                 new EnumSelectionUiRule("Koofr",
                 [
                     new EnumUiPatch("host", Hidden: true),
-                    new EnumUiPatch("useHttps", Hidden: true),
                     new EnumUiPatch("port", Hidden: true),
                     new EnumUiPatch("basePath", Hidden: true),
                     new EnumUiPatch("user", PlaceholderOverride: "your@email.com"),
@@ -60,7 +59,6 @@ public class WebDavStorageSettingsProvider : IStorageSettingsProvider
                 new EnumSelectionUiRule("pCloud",
                 [
                     new EnumUiPatch("host", Hidden: true),
-                    new EnumUiPatch("useHttps", Hidden: true),
                     new EnumUiPatch("port", Hidden: true),
                     new EnumUiPatch("basePath", Hidden: true),
                     new EnumUiPatch("user", PlaceholderOverride: "your@email.com"),
@@ -70,7 +68,6 @@ public class WebDavStorageSettingsProvider : IStorageSettingsProvider
                 new EnumSelectionUiRule("IONOSHiDrive",
                 [
                     new EnumUiPatch("host", Hidden: true),
-                    new EnumUiPatch("useHttps", Hidden: true),
                     new EnumUiPatch("port", Hidden: true),
                     new EnumUiPatch("basePath", Hidden: true),
                     new EnumUiPatch("user", PlaceholderOverride: "your-hidrive-username"),
@@ -79,7 +76,6 @@ public class WebDavStorageSettingsProvider : IStorageSettingsProvider
                 new EnumSelectionUiRule("Box",
                 [
                     new EnumUiPatch("host", Hidden: true),
-                    new EnumUiPatch("useHttps", Hidden: true),
                     new EnumUiPatch("port", Hidden: true),
                     new EnumUiPatch("basePath", Hidden: true),
                     new EnumUiPatch("user", PlaceholderOverride: "your@email.com"),
@@ -88,7 +84,6 @@ public class WebDavStorageSettingsProvider : IStorageSettingsProvider
                 new EnumSelectionUiRule("YandexDisk",
                 [
                     new EnumUiPatch("host", Hidden: true),
-                    new EnumUiPatch("useHttps", Hidden: true),
                     new EnumUiPatch("port", Hidden: true),
                     new EnumUiPatch("basePath", Hidden: true),
                     new EnumUiPatch("user", PlaceholderOverride: "your-yandex-login"),
@@ -98,7 +93,6 @@ public class WebDavStorageSettingsProvider : IStorageSettingsProvider
                 new EnumSelectionUiRule("MailRuCloud",
                 [
                     new EnumUiPatch("host", Hidden: true),
-                    new EnumUiPatch("useHttps", Hidden: true),
                     new EnumUiPatch("port", Hidden: true),
                     new EnumUiPatch("basePath", Hidden: true),
                     new EnumUiPatch("user", PlaceholderOverride: "your@mail.ru"),
@@ -108,7 +102,6 @@ public class WebDavStorageSettingsProvider : IStorageSettingsProvider
                 new EnumSelectionUiRule("Jianguoyun",
                 [
                     new EnumUiPatch("host", Hidden: true),
-                    new EnumUiPatch("useHttps", Hidden: true),
                     new EnumUiPatch("port", Hidden: true),
                     new EnumUiPatch("basePath", Hidden: true),
                     new EnumUiPatch("user", PlaceholderOverride: "your@email.com"),
@@ -123,14 +116,6 @@ public class WebDavStorageSettingsProvider : IStorageSettingsProvider
             Type = StorageFieldType.Text,
             Placeholder = "nextcloud.example.com",
             IsOptional = true,
-        },
-        new StorageFieldDescriptor
-        {
-            Key = "useHttps",
-            Label = Resources.Storage_Field_Https,
-            Type = StorageFieldType.Enum,
-            DefaultValue = "Yes",
-            Options = [new("Yes", "Yes"), new("No", "No")],
         },
         new StorageFieldDescriptor
         {
@@ -192,10 +177,6 @@ public class WebDavStorageSettingsProvider : IStorageSettingsProvider
             "Jianguoyun"  => "/dav/",
             _ => fieldValues.GetValueOrDefault("basePath") ?? string.Empty,
         };
-        var useHttps = preset is "Custom" or "Nextcloud" or "ownCloud"
-            ? fieldValues.GetValueOrDefault("useHttps") != "No"
-            : true;
-
         return new WebDavStorageSettingsV2
         {
             SingleBackupQuotaGb = quota,
@@ -203,7 +184,7 @@ public class WebDavStorageSettingsProvider : IStorageSettingsProvider
             UnmountPowershellScript = unmountScript,
             Preset = preset,
             Host = host,
-            UseHttps = useHttps,
+            UseHttps = true,
             Port = int.TryParse(fieldValues.GetValueOrDefault("port"), out var port) ? port : 0,
             BasePath = basePath,
             User = fieldValues.GetValueOrDefault("user") ?? string.Empty,
@@ -218,7 +199,6 @@ public class WebDavStorageSettingsProvider : IStorageSettingsProvider
         {
             ["preset"] = s.Preset,
             ["host"] = s.Host,
-            ["useHttps"] = s.UseHttps ? "Yes" : "No",
             ["port"] = s.Port.ToString(),
             ["basePath"] = s.BasePath,
             ["user"] = s.User,

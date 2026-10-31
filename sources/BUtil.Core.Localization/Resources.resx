@@ -1299,7 +1299,7 @@ See detailed description in the following link.</value>
   <data name="WebDav_Preset_Custom_Help" xml:space="preserve">
     <value>Generic WebDAV server (Nextcloud, ownCloud, Synology DSM, Seafile, Apache, etc.)
 
-1. Enter the server Address, choose HTTPS (recommended), and set the port (0 = default: 80 for HTTP, 443 for HTTPS).
+1. Enter the server address and port (0 = 443). WebDAV connects over HTTPS only.
 2. Enter the base path for the WebDAV endpoint.
    Nextcloud example:  /remote.php/dav/files/&lt;username&gt;/Backups
    Synology DSM:       /

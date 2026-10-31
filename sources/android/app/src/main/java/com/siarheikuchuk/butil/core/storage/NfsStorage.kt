@@ -276,7 +276,7 @@ private class Nfs3Client(
         val reply = call(nfsPort, NFS_PROGRAM, NFS_VERSION, MKDIR, xdr {
             opaqueVar(directory)
             str(name)
-            sattr()
+            sattr(DIR_MODE)
         })
         val status = reply.int()
         if (status != NFS_OK && status != NFSERR_EXIST) throw IllegalStateException("NFS mkdir failed ($status) for $name")
@@ -444,9 +444,9 @@ private class Nfs3Client(
         opaqueVar(body)
     }
 
-    private fun XdrWriter.sattr() {
+    private fun XdrWriter.sattr(mode: Int = FILE_MODE) {
         int(1)
-        int(420)
+        int(mode)
         int(0)
         int(0)
         int(0)
@@ -492,6 +492,8 @@ private class Nfs3Client(
         private const val NFSERR_EXIST = 17
         private const val NF3DIR = 2
         private const val FILE_SYNC = 2
+        private const val FILE_MODE = 420
+        private const val DIR_MODE = 493
     }
 }
 
