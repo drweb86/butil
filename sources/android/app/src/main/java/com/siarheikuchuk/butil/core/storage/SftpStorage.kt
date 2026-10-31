@@ -11,9 +11,11 @@ import net.schmizz.sshj.userauth.method.AuthPublickey
 import net.schmizz.sshj.userauth.password.PasswordFinder
 import net.schmizz.sshj.userauth.password.Resource
 import net.schmizz.sshj.common.Buffer
+import org.bouncycastle.jce.provider.BouncyCastleProvider
 import java.io.InputStream
 import java.security.MessageDigest
 import java.security.PublicKey
+import java.security.Security
 import java.util.EnumSet
 
 internal class SftpStorage(
@@ -163,6 +165,13 @@ internal class SftpStorage(
     }
 
     private fun connect(): SFTPClient {
+        // Android's built-in provider named "BC" has no X25519. SSHJ keeps that name and
+        // then fails the handshake. Replace it with the bundled provider before connecting.
+        val current = Security.getProvider(BouncyCastleProvider.PROVIDER_NAME)
+        if (current !is BouncyCastleProvider) {
+            Security.removeProvider(BouncyCastleProvider.PROVIDER_NAME)
+            Security.addProvider(BouncyCastleProvider())
+        }
         ssh.connectTimeout = 30_000
         ssh.addHostKeyVerifier(fingerprintVerifier())
         val port = if (settings.port == 0) 22 else settings.port
