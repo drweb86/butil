@@ -43,6 +43,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.unit.dp
@@ -263,7 +264,14 @@ private fun StorageBlock(help: String, draft: StorageDraft, busy: Boolean, brows
                 }
             }
             StorageFieldKind.FOLDER, StorageFieldKind.FILE -> FolderLine(field.label, field, busy, field.spec.placeholder) { browse(field) }
-            StorageFieldKind.TEXT -> OutlinedTextField(field.value, { field.value = it }, modifier = Modifier.fillMaxWidth(), label = { Text(field.label) }, singleLine = true, enabled = !busy)
+            StorageFieldKind.TEXT -> {
+                val fingerprints = if (field.spec.key == "certificate") ftpsCertificateFingerprints(field.value) else null
+                if (fingerprints != null) {
+                    Text(fingerprints, fontFamily = FontFamily.Monospace, style = MaterialTheme.typography.bodyMedium)
+                } else {
+                    OutlinedTextField(field.value, { field.value = it }, modifier = Modifier.fillMaxWidth(), label = { Text(field.label) }, singleLine = true, enabled = !busy)
+                }
+            }
         }
     }
     NumberLine(stringResource(R.string.upload_quota), draft.quota, { draft.quota = it }, !busy, stringResource(R.string.upload_quota_help))

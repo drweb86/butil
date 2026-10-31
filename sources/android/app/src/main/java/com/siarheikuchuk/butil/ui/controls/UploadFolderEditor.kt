@@ -39,6 +39,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.unit.dp
@@ -145,7 +146,10 @@ fun UploadFolderEditor(
                     StorageFieldKind.ENUM -> EnumField(field, !busy) { form.applyRules() }
                     StorageFieldKind.FOLDER -> BrowseField(field, stringResource(R.string.field_folder_browse), !busy) { pickStorageFolder.launch(null) }
                     StorageFieldKind.FILE -> BrowseField(field, stringResource(R.string.field_file_browse), !busy) { pickKey.launch(arrayOf("*/*")) }
-                    StorageFieldKind.TEXT -> TextField(field, !busy)
+                    StorageFieldKind.TEXT -> {
+                        val fingerprints = if (field.spec.key == "certificate") ftpsCertificateFingerprints(field.value) else null
+                        if (fingerprints != null) CertificateFingerprintBlock(fingerprints) else TextField(field, !busy)
+                    }
                 }
             }
             NumberField(
@@ -190,7 +194,11 @@ fun UploadFolderEditor(
         }
         if (busy) LinearProgressIndicator(Modifier.fillMaxWidth())
         if (!message.isNullOrBlank()) {
-            Text(message!!, color = MaterialTheme.colorScheme.error)
+            Text(
+                message!!,
+                color = MaterialTheme.colorScheme.error,
+                fontFamily = if (message!!.contains("SHA-256:")) FontFamily.Monospace else null,
+            )
         }
         Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
             Button(
@@ -579,27 +587,56 @@ private class UploadFolderForm(store: UploadFolderStore, existingName: String?) 
             "Port: ${if (settings.port == 0) "default" else settings.port}",
             "Encryption: ${settings.encryption}",
             "Folder: ${settings.folder.orEmpty()}",
-            "Certificate (raw hex): ${settings.trustedCertificate}",
         )
-        try {
-            val bytes = settings.trustedCertificate.chunked(2).map { it.toInt(16).toByte() }.toByteArray()
-            val cert = CertificateFactory.getInstance("X.509").generateCertificate(bytes.inputStream()) as X509Certificate
-            val thumb = MessageDigest.getInstance("SHA-1").digest(cert.encoded).joinToString("") { "%02X".format(it) }
-            lines += listOf(
-                "",
-                "Parsed certificate details:",
-                "Subject: ${cert.subjectDN}",
-                "Issuer: ${cert.issuerDN}",
-                "Serial number: ${cert.serialNumber}",
-                "Thumbprint: $thumb",
-                "Valid from (UTC): ${cert.notBefore}",
-                "Valid until (UTC): ${cert.notAfter}",
-            )
-        } catch (error: Exception) {
-            lines += "Certificate parse warning: ${error.message}"
+        val fingerprints = ftpsCertificateFingerprints(settings.trustedCertificate)
+        if (fingerprints != null) {
+            lines += ""
+            lines += fingerprints
+            val cert = parseFtpsCertificate(settings.trustedCertificate)
+            if (cert != null) {
+                lines += listOf(
+                    "",
+                    "Subject: ${cert.subjectDN}",
+                    "Issuer: ${cert.issuerDN}",
+                    "Serial number: ${cert.serialNumber}",
+                    "Valid from (UTC): ${cert.notBefore}",
+                    "Valid until (UTC): ${cert.notAfter}",
+                )
+            }
+        } else {
+            lines += "Certificate parse warning: the server certificate could not be read."
         }
         return lines.joinToString("\n")
     }
+}
+
+@Composable
+private fun CertificateFingerprintBlock(fingerprints: String) {
+    Column(verticalArrangement = Arrangement.spacedBy(4.dp)) {
+        Text("Trusted certificate:", style = MaterialTheme.typography.bodySmall)
+        Text(fingerprints, fontFamily = FontFamily.Monospace, style = MaterialTheme.typography.bodyMedium)
+    }
+}
+
+internal fun ftpsCertificateFingerprints(hex: String): String? {
+    val cert = parseFtpsCertificate(hex) ?: return null
+    return "SHA-256:  ${certificateFingerprint(cert, "SHA-256")}\n\nSHA-1:    ${certificateFingerprint(cert, "SHA-1")}"
+}
+
+private fun parseFtpsCertificate(hex: String): X509Certificate? {
+    val cleaned = hex.trim().replace(":", "").replace(" ", "")
+    if (cleaned.length < 64 || cleaned.length % 2 != 0) return null
+    if (cleaned.any { it !in '0'..'9' && it !in 'A'..'F' && it !in 'a'..'f' }) return null
+    return try {
+        val bytes = cleaned.chunked(2).map { it.toInt(16).toByte() }.toByteArray()
+        CertificateFactory.getInstance("X.509").generateCertificate(bytes.inputStream()) as X509Certificate
+    } catch (_: Exception) {
+        null
+    }
+}
+
+private fun certificateFingerprint(cert: X509Certificate, algorithm: String): String {
+    return MessageDigest.getInstance(algorithm).digest(cert.encoded).joinToString(":") { "%02X".format(it) }
 }
 
 private data class TestOutcome(val settings: StorageSettings, val trust: String?, val error: String?)

@@ -209,6 +209,7 @@ dependencies {
     implementation("androidx.documentfile:documentfile:1.0.1")
     implementation("androidx.core:core-ktx:1.13.1")
     implementation("commons-net:commons-net:3.11.1")
+    implementation("org.conscrypt:conscrypt-android:2.5.3")
     implementation("com.hierynomus:sshj:0.39.0")
     implementation("org.slf4j:slf4j-nop:2.0.16")
     implementation("com.hierynomus:smbj:0.13.0")

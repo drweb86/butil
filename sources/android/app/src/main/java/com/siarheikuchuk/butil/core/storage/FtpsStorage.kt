@@ -1,10 +1,18 @@
 package com.siarheikuchuk.butil.core.storage
 
+import android.util.Log
 import org.apache.commons.net.ftp.FTP
+import org.apache.commons.net.ftp.FTPReply
 import org.apache.commons.net.ftp.FTPSClient
+import org.conscrypt.Conscrypt
+import java.io.FileDescriptor
 import java.io.InputStream
+import java.io.OutputStream
+import java.net.Socket
+import java.security.Security
 import java.security.cert.CertificateException
 import java.security.cert.X509Certificate
+import javax.net.ssl.SSLSocket
 import javax.net.ssl.TrustManagerFactory
 import javax.net.ssl.X509TrustManager
 
@@ -110,10 +118,17 @@ internal class FtpsStorage(
         if (settings.port < 0 || settings.port > 65535) throw IllegalArgumentException("Port is invalid.")
         if (settings.user.isBlank()) throw IllegalArgumentException("User is not specified.")
         if (settings.password.isBlank()) throw IllegalArgumentException("Password is not specified.")
+        // The platform engine socket closes TCP before close_notify is written. The server
+        // then rejects the upload. This provider's file-descriptor sockets send the alert first.
+        if (Security.getProvider("Conscrypt") == null) {
+            Security.insertProviderAt(Conscrypt.newProvider(), 1)
+        }
+        Conscrypt.setUseEngineSocketByDefault(false)
         val implicit = settings.encryption == "Implicit"
-        val ftp = FTPSClient("TLS", implicit)
+        val ftp = SessionReuseFtpsClient(implicit)
         ftp.connectTimeout = 30_000
         ftp.defaultTimeout = 120_000
+        ftp.controlEncoding = "UTF-8"
         ftp.trustManager = PinningTrustManager(settings, autodetect)
         val port = when {
             settings.port > 0 -> settings.port
@@ -123,6 +138,9 @@ internal class FtpsStorage(
         ftp.connect(settings.host, port)
         if (!ftp.login(settings.user, settings.password)) {
             throw IllegalStateException("FTPS login failed. ${ftp.replyString}")
+        }
+        if (FTPReply.isPositiveCompletion(ftp.sendCommand("OPTS", "UTF8 ON"))) {
+            ftp.controlEncoding = "UTF-8"
         }
         ftp.execPBSZ(0)
         ftp.execPROT("P")
@@ -194,5 +212,104 @@ private class PinningTrustManager(
         val factory = TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm())
         factory.init(null as java.security.KeyStore?)
         return factory.trustManagers.filterIsInstance<X509TrustManager>().firstOrNull()
+    }
+}
+
+/**
+ * The data connection is a different port from the control connection. Conscrypt only
+ * offers the cached TLS session when the host and port match, so a protected upload
+ * otherwise stops after the first TLS record. Copy the control session onto the data port.
+ */
+private class SessionReuseFtpsClient(implicit: Boolean) : FTPSClient("TLS", implicit) {
+    init {
+        bufferSize = 64 * 1024
+    }
+
+    override fun _prepareDataSocket_(socket: Socket) {
+        if (socket !is SSLSocket) return
+        val control = _socket_ as? SSLSocket ?: return
+        try {
+            reuseConscryptSession(control, socket)
+        } catch (error: Exception) {
+            Log.w("BUtilFtps", "Could not reuse TLS session: ${error.javaClass.simpleName}: ${error.message}")
+        }
+    }
+
+    override fun _openDataConnection_(command: String, arg: String): Socket? {
+        val opened = super._openDataConnection_(command, arg) ?: return null
+        return ClosingSslSocket(opened)
+    }
+}
+
+/**
+ * Commons Net closes the upload stream and then the socket. Conscrypt's
+ * [SSLSocket.shutdownOutput] shuts the raw TCP write side and does not send
+ * close_notify, so a later [SSLSocket.close] can no longer send it either.
+ * Flush the buffered records here, and let [close] perform the TLS shutdown.
+ */
+private class ClosingSslSocket(private val inner: Socket) : Socket() {
+    override fun getOutputStream(): OutputStream {
+        val raw = inner.getOutputStream()
+        return object : java.io.FilterOutputStream(raw) {
+            override fun close() {
+                flush()
+            }
+        }
+    }
+
+    override fun getInputStream(): InputStream = inner.getInputStream()
+    override fun close() {
+        if (inner is SSLSocket) sendCloseNotify(inner)
+        inner.close()
+    }
+
+    override fun isConnected(): Boolean = inner.isConnected
+    override fun isClosed(): Boolean = inner.isClosed
+    override fun isInputShutdown(): Boolean = inner.isInputShutdown
+    override fun isOutputShutdown(): Boolean = inner.isOutputShutdown
+}
+
+// File-descriptor Conscrypt interrupts the SSL object inside close() before it writes
+// close_notify, which drops the alert when a write is still finishing. Send it first.
+private fun sendCloseNotify(socket: SSLSocket) {
+    try {
+        val sslField = generateSequence(socket.javaClass as Class<*>?) { it.superclass }
+            .flatMap { type -> type.declaredFields.asSequence() }
+            .firstOrNull { it.name == "ssl" }
+            ?: return
+        sslField.isAccessible = true
+        val ssl = sslField.get(socket) ?: return
+        val shutdown = ssl.javaClass.declaredMethods.firstOrNull {
+            it.name == "shutdown" && it.parameterTypes.size == 1 && it.parameterTypes[0] == FileDescriptor::class.java
+        } ?: return
+        shutdown.isAccessible = true
+        val platform = Class.forName("org.conscrypt.Platform")
+        val fd = platform.getDeclaredMethod("getFileDescriptor", Socket::class.java)
+            .apply { isAccessible = true }
+            .invoke(null, socket)
+        shutdown.invoke(ssl, fd)
+    } catch (error: Exception) {
+        Log.w("BUtilFtps", "Could not send TLS close_notify: ${error.javaClass.simpleName}: ${error.message}")
+    }
+}
+
+private fun reuseConscryptSession(control: SSLSocket, data: SSLSocket) {
+    val session = control.session ?: return
+    val context = session.sessionContext ?: return
+    val mapField = context.javaClass.declaredFields.firstOrNull { it.name == "sessionsByHostAndPort" } ?: return
+    mapField.isAccessible = true
+    val map = mapField.get(context) ?: return
+    val values = map.javaClass.getMethod("values").invoke(map) as Collection<*>
+    val holder = values.firstOrNull() ?: return
+    val keys = map.javaClass.getMethod("keySet").invoke(map) as Collection<*>
+    val sampleKey = keys.firstOrNull() ?: return
+    val ctor = sampleKey.javaClass.declaredConstructors.maxByOrNull { it.parameterTypes.size } ?: return
+    ctor.isAccessible = true
+    if (ctor.parameterTypes.size != 2) return
+    val put = map.javaClass.methods.first { it.name == "put" && it.parameterTypes.size == 2 }
+    val port = data.port
+    val hosts = listOfNotNull(data.inetAddress?.hostAddress, data.inetAddress?.hostName, session.peerHost).distinct()
+    for (host in hosts) {
+        put.invoke(map, ctor.newInstance(host, port), holder)
     }
 }
