@@ -434,7 +434,12 @@ private class TaskDraft(store: UploadFolderStore, private val kind: String, exis
     var exclude by mutableStateOf((loaded as? IncrementalBackupTask)?.fileExcludePatterns?.joinToString("\n").orEmpty())
     var output = DraftValue(outputOf(loaded))
     var transform by mutableStateOf((loaded as? ImportMediaTask)?.transformFileName ?: ImportMediaRules.presets.first())
-    var extensions by mutableStateOf((loaded as? ImportMediaTask)?.fileExtensions?.joinToString(", ").orEmpty())
+    var extensions by mutableStateOf(
+        when (val task = loaded) {
+            is ImportMediaTask -> task.fileExtensions?.joinToString(", ").orEmpty()
+            else -> if (kind == "ImportMedia") ImportMediaRules.defaultExtensions.joinToString(", ") else ""
+        },
+    )
     var skipImported by mutableStateOf((loaded as? ImportMediaTask)?.skipAlreadyImportedFiles ?: true)
     var deleteSource by mutableStateOf((loaded as? ImportMediaTask)?.deleteCopiedDataOnSourceMedia ?: false)
     var minimumDate by mutableStateOf((loaded as? ImportMediaTask)?.fileLastWriteTimeMinMillis?.let { millis ->
