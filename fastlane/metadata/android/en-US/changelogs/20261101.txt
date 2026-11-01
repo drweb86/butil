@@ -1,3 +1,0 @@
-Preview. This version can copy, change, and delete files, including during sync. Keep your own backup of those files before you run a task.
-The privacy policy and license are included in every supported language. The China edition asks for agreement before use.
-An FTPS upload that closes without a TLS close_notify is rejected, and the partial file is removed.

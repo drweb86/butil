@@ -1,15 +1,13 @@
-﻿# 2026.11.01
+# 2026.11.02
 
 ## New Features
 - Application is published to Windows Store. If you are not in corporate environment, consider uninstalling of application and reinstalling from Windows Store, since it will keep your application updated.
 - All linuxes are covered with builds.
+- Android: preview is created. The app can copy, change, and delete files, including during sync. Keep your own backup of those files before you run a task.
 
 ## Changes
 - Italian language was updated by https://github.com/bovirus .
 - Some libraries were updated.
-- Android: Kotlin stub, Play listing folder, and release build.
-- Android: the privacy policy and license are bundled in the app. The China edition is a separate bundle and requires agreement before use. Declining or withdrawing agreement deletes data stored by the app and closes it.
-- Android: this is a preview. The app can copy, change, and delete files, including during sync. Keep your own backup of those files before you run a task. The task list shows this warning.
 
 ## Bug Fixes
 - Icon with black background for Windows Store builds.
@@ -19,6 +17,7 @@
 
 ## New Features
 - Preparation for Windows Store.
+
 ## Bug Fixes
 - Vulnerabilities in FTPS Server fixup fetch.
 
