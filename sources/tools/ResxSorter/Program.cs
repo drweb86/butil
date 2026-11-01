@@ -355,7 +355,7 @@ namespace Codice.SortResX
         {
             var schemaType = manifest.IsDefault ? "defaultLocale" : "locale";
             using var writer = new StreamWriter(outputPath, false, new UTF8Encoding(false));
-            writer.WriteLine($"# yaml-language-server: $schema=https://aka.ms/winget-manifest.{schemaType}.1.12.0.schema.json");
+            writer.WriteLine($"# yaml-language-server: $schema=https://aka.ms/winget-manifest.{schemaType}.1.28.0.schema.json");
             writer.WriteLine();
             writer.WriteLine("PackageIdentifier: SiarheiKuchuk.BUtil");
             writer.WriteLine("PackageVersion: APP_VERSION_STRING");
@@ -382,7 +382,7 @@ namespace Codice.SortResX
                 writer.WriteLine($"- {YamlDoubleQuoted(tag)}");
             writer.WriteLine("ReleaseNotesUrl: https://raw.githubusercontent.com/drweb86/butil/refs/heads/master/CHANGELOG.md");
             writer.WriteLine($"ManifestType: {schemaType}");
-            writer.WriteLine("ManifestVersion: 1.12.0");
+            writer.WriteLine("ManifestVersion: 1.28.0");
         }
 
         static string ToWingetLocale(string folderName)

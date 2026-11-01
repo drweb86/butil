@@ -2,10 +2,12 @@ package com.siarheikuchuk.butil.core.tasks
 
 import android.content.Context
 import com.siarheikuchuk.butil.BuildConfig
+import com.siarheikuchuk.butil.R
 import com.siarheikuchuk.butil.core.storage.SecretCipher
 import java.io.File
 
 class UploadFolderStore(context: Context) {
+    val appContext = context.applicationContext
     private val root = File(
         context.filesDir,
         if (BuildConfig.DEBUG) "BUtil Backup Tasks - DEBUG" else "BUtil Backup Tasks",
@@ -112,15 +114,17 @@ class UploadFolderStore(context: Context) {
         startedFile(name).writeText(startedAtMillis.toString())
     }
 
+    fun text(id: Int, vararg formatArgs: Any): String = appContext.getString(id, *formatArgs)
+
     fun validateName(name: String, originalName: String?): String? {
         val trimmed = name.trimEnd()
         if (trimmed.isBlank() || ILLEGAL.any { trimmed.contains(it) } || trimmed.contains("..")) {
-            return "Name is empty or contains not supported path characters."
+            return text(R.string.error_name_invalid)
         }
         val taken = names().any { existing ->
             existing.equals(trimmed, ignoreCase = true) && !existing.equals(originalName, ignoreCase = true)
         }
-        if (taken) return "A task with this name already exists."
+        if (taken) return text(R.string.error_name_duplicate)
         return null
     }
 

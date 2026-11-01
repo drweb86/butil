@@ -11,7 +11,7 @@ The Windows builds include the .NET runtime. It is listed with the MIT component
 
 ## CC0-1.0
 
-- **Siarhei_Kuchuk.FtpsServerLibrary** 2026.10.4. (c) 2025-2026 Siarhei Kuchuk. [https://github.com/drweb86/dotnet-ftps-server](https://github.com/drweb86/dotnet-ftps-server)
+- **Siarhei_Kuchuk.FtpsServerLibrary** 2026.11.3. (c) 2025-2026 Siarhei Kuchuk. [https://github.com/drweb86/dotnet-ftps-server](https://github.com/drweb86/dotnet-ftps-server)
 
 ## Bundled license
 

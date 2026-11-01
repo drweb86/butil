@@ -1,8 +1,10 @@
 package com.siarheikuchuk.butil.core.storage
 
+import com.siarheikuchuk.butil.R
+
 enum class StorageFieldKind { TEXT, PASSWORD, INTEGER, ENUM, FOLDER, FILE }
 
-data class StorageChoice(val value: String, val label: String, val help: String = "")
+data class StorageChoice(val value: String, val label: String, val help: String = "", val labelRes: Int = 0)
 
 data class StoragePatch(
     val target: String,
@@ -10,6 +12,7 @@ data class StoragePatch(
     val hidden: Boolean = false,
     val placeholder: String? = null,
     val value: String? = null,
+    val labelRes: Int = 0,
 )
 
 data class StorageRule(val whenValue: String, val patches: List<StoragePatch>)
@@ -25,17 +28,19 @@ data class StorageFieldSpec(
     val max: Long? = null,
     val choices: List<StorageChoice> = emptyList(),
     val rules: List<StorageRule> = emptyList(),
+    val labelRes: Int = 0,
 )
 
 data class StorageProviderSpec(
     val jsonType: String,
     val displayName: String,
     val fields: List<StorageFieldSpec>,
+    val displayNameRes: Int = 0,
 )
 
 object StorageCatalog {
     val providers: List<StorageProviderSpec> = listOf(
-        provider("Folder", "Directory", listOf(folderField())),
+        provider("Folder", "Directory", listOf(folderField()), R.string.storage_directory),
         provider("Sftp", "SFTP", sftpFields()),
         provider("Ftps", "FTPS", ftpsFields()),
         provider("WebDav", "WebDAV", webDavFields()),
@@ -191,60 +196,67 @@ object StorageCatalog {
         )
     }
 
-    private fun provider(type: String, name: String, fields: List<StorageFieldSpec>) =
-        StorageProviderSpec(type, name, fields)
+    private fun provider(type: String, name: String, fields: List<StorageFieldSpec>, nameRes: Int = 0) =
+        StorageProviderSpec(type, name, fields, nameRes)
 
-    private fun folderField() = StorageFieldSpec("folder", "Folder:", StorageFieldKind.FOLDER, "Folder is not specified.")
+    private fun folderField() = StorageFieldSpec(
+        "folder", "Folder:", StorageFieldKind.FOLDER, "Folder is not specified.", labelRes = R.string.field_folder,
+    )
 
     private fun sftpFields() = listOf(
-        StorageFieldSpec("host", "Server name:", StorageFieldKind.TEXT, "192.168.11.1"),
-        StorageFieldSpec("port", "Port:", StorageFieldKind.INTEGER, defaultValue = "22", min = 0, max = 65535),
-        StorageFieldSpec("user", "User:", StorageFieldKind.TEXT),
-        StorageFieldSpec("password", "Password:", StorageFieldKind.PASSWORD, optional = true),
-        StorageFieldSpec("keyfile", "Key file:", StorageFieldKind.FILE, optional = true),
-        StorageFieldSpec("fingerprint", "Fingerprint SHA-256:", StorageFieldKind.TEXT, optional = true),
-        StorageFieldSpec("folder", "Folder:", StorageFieldKind.TEXT, "/home/sftpuser/ftpserver"),
+        StorageFieldSpec("host", "Server name:", StorageFieldKind.TEXT, "192.168.11.1", labelRes = R.string.storage_server),
+        StorageFieldSpec("port", "Port:", StorageFieldKind.INTEGER, defaultValue = "22", min = 0, max = 65535, labelRes = R.string.ftps_port),
+        StorageFieldSpec("user", "User:", StorageFieldKind.TEXT, labelRes = R.string.ftps_user),
+        StorageFieldSpec("password", "Password:", StorageFieldKind.PASSWORD, optional = true, labelRes = R.string.field_password),
+        StorageFieldSpec("keyfile", "Key file:", StorageFieldKind.FILE, optional = true, labelRes = R.string.storage_key_file),
+        StorageFieldSpec("fingerprint", "Fingerprint SHA-256:", StorageFieldKind.TEXT, optional = true, labelRes = R.string.storage_fingerprint),
+        StorageFieldSpec("folder", "Folder:", StorageFieldKind.TEXT, "/home/sftpuser/ftpserver", labelRes = R.string.field_folder),
     )
 
     private fun ftpsFields() = listOf(
-        StorageFieldSpec("host", "Server name:", StorageFieldKind.TEXT, "192.168.11.1"),
+        StorageFieldSpec("host", "Server name:", StorageFieldKind.TEXT, "192.168.11.1", labelRes = R.string.storage_server),
         StorageFieldSpec(
             "encryption",
             "SSL/TTS encryption:",
             StorageFieldKind.ENUM,
             defaultValue = "Explicit",
-            choices = listOf(StorageChoice("Explicit", "Explicit"), StorageChoice("Implicit", "Implicit")),
+            choices = listOf(
+                StorageChoice("Explicit", "Explicit", labelRes = R.string.storage_explicit),
+                StorageChoice("Implicit", "Implicit", labelRes = R.string.storage_implicit),
+            ),
+            labelRes = R.string.storage_encryption,
         ),
-        StorageFieldSpec("port", "Port:", StorageFieldKind.INTEGER, defaultValue = "0", min = 0, max = 65535),
-        StorageFieldSpec("user", "User:", StorageFieldKind.TEXT),
-        StorageFieldSpec("password", "Password:", StorageFieldKind.PASSWORD),
-        StorageFieldSpec("folder", "Folder:", StorageFieldKind.TEXT, optional = true),
-        StorageFieldSpec("certificate", "Trusted certificate (hex):", StorageFieldKind.TEXT, optional = true),
+        StorageFieldSpec("port", "Port:", StorageFieldKind.INTEGER, defaultValue = "0", min = 0, max = 65535, labelRes = R.string.ftps_port),
+        StorageFieldSpec("user", "User:", StorageFieldKind.TEXT, labelRes = R.string.ftps_user),
+        StorageFieldSpec("password", "Password:", StorageFieldKind.PASSWORD, labelRes = R.string.field_password),
+        StorageFieldSpec("folder", "Folder:", StorageFieldKind.TEXT, optional = true, labelRes = R.string.field_folder),
+        StorageFieldSpec("certificate", "Trusted certificate (hex):", StorageFieldKind.TEXT, optional = true, labelRes = R.string.storage_trusted_certificate),
     )
 
     private fun azureFields() = listOf(
-        StorageFieldSpec("accountName", "Account Name:", StorageFieldKind.TEXT, "mystorageaccount"),
-        StorageFieldSpec("accountKey", "Account Key:", StorageFieldKind.PASSWORD),
-        StorageFieldSpec("container", "Container:", StorageFieldKind.TEXT, "backups"),
-        StorageFieldSpec("pathPrefix", "Path Prefix:", StorageFieldKind.TEXT, "my-pc", optional = true),
+        StorageFieldSpec("accountName", "Account Name:", StorageFieldKind.TEXT, "mystorageaccount", labelRes = R.string.storage_account_name),
+        StorageFieldSpec("accountKey", "Account Key:", StorageFieldKind.PASSWORD, labelRes = R.string.storage_account_key),
+        StorageFieldSpec("container", "Container:", StorageFieldKind.TEXT, "backups", labelRes = R.string.storage_container),
+        StorageFieldSpec("pathPrefix", "Path Prefix:", StorageFieldKind.TEXT, "my-pc", optional = true, labelRes = R.string.storage_path_prefix),
     )
 
     private fun sambaFields() = listOf(
-        StorageFieldSpec("url", "Url:", StorageFieldKind.TEXT, "\\\\192.168.11.1\\share\\folder"),
-        StorageFieldSpec("user", "User:", StorageFieldKind.TEXT, optional = true),
-        StorageFieldSpec("password", "Password:", StorageFieldKind.PASSWORD, optional = true),
+        StorageFieldSpec("url", "Url:", StorageFieldKind.TEXT, "\\\\192.168.11.1\\share\\folder", labelRes = R.string.storage_url),
+        StorageFieldSpec("user", "User:", StorageFieldKind.TEXT, optional = true, labelRes = R.string.ftps_user),
+        StorageFieldSpec("password", "Password:", StorageFieldKind.PASSWORD, optional = true, labelRes = R.string.field_password),
     )
 
     private fun nfsFields() = listOf(
-        StorageFieldSpec("host", "Server name:", StorageFieldKind.TEXT, "192.168.1.100"),
-        StorageFieldSpec("sharePath", "Share Path:", StorageFieldKind.TEXT, "/export/backups"),
-        StorageFieldSpec("mountPoint", "Mount Point:", StorageFieldKind.TEXT, "/mnt/nfs-backup"),
+        StorageFieldSpec("host", "Server name:", StorageFieldKind.TEXT, "192.168.1.100", labelRes = R.string.storage_server),
+        StorageFieldSpec("sharePath", "Share Path:", StorageFieldKind.TEXT, "/export/backups", labelRes = R.string.storage_share_path),
+        StorageFieldSpec("mountPoint", "Mount Point:", StorageFieldKind.TEXT, "/mnt/nfs-backup", labelRes = R.string.storage_mount_point),
         StorageFieldSpec(
             "mountOptions",
             "Mount Options:",
             StorageFieldKind.TEXT,
             "vers=3,uid=1000,gid=1000",
             optional = true,
+            labelRes = R.string.storage_mount_options,
         ),
     )
 
@@ -260,6 +272,7 @@ object StorageCatalog {
                 "preset",
                 "Preset:",
                 StorageFieldKind.ENUM,
+                labelRes = R.string.storage_preset,
                 defaultValue = "Custom",
                 choices = listOf(
                     StorageChoice("Custom", "Generic / Custom", "Generic WebDAV server. Enter the address, port, and base path. The connection is HTTPS."),
@@ -297,11 +310,11 @@ object StorageCatalog {
                     rule("Jianguoyun", *hideServer.toTypedArray(), StoragePatch("user", placeholder = "your@email.com"), StoragePatch("password", label = "App Password")),
                 ),
             ),
-            StorageFieldSpec("host", "Server name:", StorageFieldKind.TEXT, "nextcloud.example.com", optional = true),
-            StorageFieldSpec("port", "Port:", StorageFieldKind.INTEGER, defaultValue = "0", min = 0, max = 65535),
-            StorageFieldSpec("basePath", "Base Path:", StorageFieldKind.TEXT, "/remote.php/dav/files/user/Backups", optional = true),
-            StorageFieldSpec("user", "User:", StorageFieldKind.TEXT, optional = true),
-            StorageFieldSpec("password", "Password / OAuth Token:", StorageFieldKind.PASSWORD),
+            StorageFieldSpec("host", "Server name:", StorageFieldKind.TEXT, "nextcloud.example.com", optional = true, labelRes = R.string.storage_server),
+            StorageFieldSpec("port", "Port:", StorageFieldKind.INTEGER, defaultValue = "0", min = 0, max = 65535, labelRes = R.string.ftps_port),
+            StorageFieldSpec("basePath", "Base Path:", StorageFieldKind.TEXT, "/remote.php/dav/files/user/Backups", optional = true, labelRes = R.string.storage_base_path),
+            StorageFieldSpec("user", "User:", StorageFieldKind.TEXT, optional = true, labelRes = R.string.ftps_user),
+            StorageFieldSpec("password", "Password / OAuth Token:", StorageFieldKind.PASSWORD, labelRes = R.string.storage_password_or_token),
         )
     }
 
@@ -320,6 +333,7 @@ object StorageCatalog {
                 "provider",
                 "Provider:",
                 StorageFieldKind.ENUM,
+                labelRes = R.string.storage_provider,
                 defaultValue = "Custom",
                 choices = listOf(
                     StorageChoice("AWSS3", "AWS S3", "AWS S3. The endpoint is chosen from the region."),
@@ -364,12 +378,12 @@ object StorageCatalog {
                     rule("Custom", *common(service = "http://192.168.1.10:9000", region = "us-east-1", access = "Access Key", secret = "Secret Key", bucket = "my-backup-bucket").toTypedArray()),
                 ),
             ),
-            StorageFieldSpec("serviceUrl", "Service URL:", StorageFieldKind.TEXT, "https://s3.example.com", optional = true),
-            StorageFieldSpec("region", "Region:", StorageFieldKind.TEXT, "us-east-1", optional = true),
-            StorageFieldSpec("bucket", "Bucket:", StorageFieldKind.TEXT),
-            StorageFieldSpec("accessKey", "Access Key:", StorageFieldKind.TEXT),
-            StorageFieldSpec("secretKey", "Secret Key:", StorageFieldKind.PASSWORD),
-            StorageFieldSpec("pathPrefix", "Path Prefix:", StorageFieldKind.TEXT, "backups/my-pc", optional = true),
+            StorageFieldSpec("serviceUrl", "Service URL:", StorageFieldKind.TEXT, "https://s3.example.com", optional = true, labelRes = R.string.storage_service_url),
+            StorageFieldSpec("region", "Region:", StorageFieldKind.TEXT, "us-east-1", optional = true, labelRes = R.string.storage_region),
+            StorageFieldSpec("bucket", "Bucket:", StorageFieldKind.TEXT, labelRes = R.string.storage_bucket),
+            StorageFieldSpec("accessKey", "Access Key:", StorageFieldKind.TEXT, labelRes = R.string.storage_access_key),
+            StorageFieldSpec("secretKey", "Secret Key:", StorageFieldKind.PASSWORD, labelRes = R.string.storage_secret_key),
+            StorageFieldSpec("pathPrefix", "Path Prefix:", StorageFieldKind.TEXT, "backups/my-pc", optional = true, labelRes = R.string.storage_path_prefix),
         )
     }
 }

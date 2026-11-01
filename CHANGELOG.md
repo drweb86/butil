@@ -12,6 +12,7 @@
 
 ## Bug Fixes
 - Icon with black background for Windows Store builds.
+- FTPS server: an upload that closes the data connection without a TLS close_notify is rejected, and the partial file is removed.
 
 # 2026.09.25
 

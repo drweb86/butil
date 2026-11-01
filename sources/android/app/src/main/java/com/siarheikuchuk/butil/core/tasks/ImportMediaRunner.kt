@@ -2,6 +2,7 @@ package com.siarheikuchuk.butil.core.tasks
 
 import android.content.Context
 import com.siarheikuchuk.butil.BuildConfig
+import com.siarheikuchuk.butil.R
 import com.siarheikuchuk.butil.core.storage.LocalFolder
 import com.siarheikuchuk.butil.core.storage.StorageFactory
 import org.json.JSONArray
@@ -55,29 +56,28 @@ object ImportMediaRules {
         return extensions.any { it.equals(extension, ignoreCase = true) }
     }
 
-    fun validateTransform(transform: String): String? {
-        if (transform.isBlank()) return "Transform file name is empty."
+    fun validateTransform(context: Context, transform: String): String? {
+        if (transform.isBlank()) return context.getString(R.string.error_transform_empty)
         return try {
             val sample = DateTokens.apply(transform, System.currentTimeMillis())
-            if (sample.contains("..") || sample.contains(':')) "Invalid transform file name string." else null
+            if (sample.contains("..") || sample.contains(':')) context.getString(R.string.error_transform_invalid) else null
         } catch (_: Exception) {
-            "Invalid transform file name string."
+            context.getString(R.string.error_transform_invalid)
         }
     }
 
-    fun example(transform: String, outputFolder: String): String? {
+    fun example(context: Context, transform: String, outputFolder: String): String? {
         return try {
             val modified = System.currentTimeMillis()
             val destination = outputFolder.trimEnd('/', '\\') + "/" +
                 DateTokens.apply(transform, modified) + ".jpg"
-            "Example:\nImagine you have file DCIM001.jpg (modified at ${BackupClock.format(modified)}).\n" +
-                "With this directory and template string file will be stored as:\n$destination"
+            context.getString(R.string.import_example, "DCIM001.jpg", BackupClock.format(modified), destination)
         } catch (_: Exception) {
             null
         }
     }
 
-    fun tooBroad(folderNames: List<String>): String? {
+    fun tooBroad(folderNames: List<String>): Pair<String, String>? {
         val known = setOf(
             "DCIM", "MISC", "PRIVATE", "MP_ROOT", "Pictures", "Download", "Downloads", "Movies", "Music",
             "Alarms", "Notifications", "Podcasts", "Ringtones", "Android", "Documents", "Photos",
@@ -89,7 +89,12 @@ object ImportMediaRules {
             .sorted()
         if (matches.size < 2) return null
         val suggestion = matches.firstOrNull { it.equals("DCIM", ignoreCase = true) } ?: matches.first()
-        return "The selected folder looks like a device or home root because it contains several known media folders (${matches.joinToString(", ")}). Please choose a more specific folder, for example \"$suggestion\"."
+        return matches.joinToString(", ") to suggestion
+    }
+
+    fun tooBroadMessage(context: Context, folderNames: List<String>): String? {
+        val found = tooBroad(folderNames) ?: return null
+        return context.getString(R.string.error_import_too_broad, found.first, found.second)
     }
 }
 
@@ -172,13 +177,13 @@ object DateTokens {
 
 class ImportMediaRunner(private val context: Context) {
     fun run(task: ImportMediaTask, onProgress: (String) -> Unit, cancelled: () -> Boolean): String? {
-        val transformError = ImportMediaRules.validateTransform(task.transformFileName)
+        val transformError = ImportMediaRules.validateTransform(context, task.transformFileName)
         if (transformError != null) return transformError
         if (!LocalFolder.isDirectory(context, task.destinationFolder)) return "Output folder does not exist."
         val work = File(context.cacheDir, "import-" + System.nanoTime()).apply { mkdirs() }
         try {
             return StorageFactory.open(context, task.from, autodetect = false).use { source ->
-                val broad = ImportMediaRules.tooBroad(source.listFolders())
+                val broad = ImportMediaRules.tooBroadMessage(context, source.listFolders())
                 if (broad != null) return broad
                 val remembered = if (task.skipAlreadyImportedFiles) loadState(task.name) else mutableSetOf()
                 val destinationFiles = LocalFolder.listRemoteFiles(context, task.destinationFolder)

@@ -215,14 +215,22 @@ private fun ImportWhereFields(form: TaskDraft, busy: Boolean, browse: (DraftValu
     FolderLine(stringResource(R.string.import_output_folder), form.output, busy) { browse(form.output) }
     ChoiceLine(stringResource(R.string.import_transform), form.transform, ImportMediaRules.presets, !busy) { form.transform = it }
     OutlinedTextField(form.transform, { form.transform = it }, modifier = Modifier.fillMaxWidth(), supportingText = { Text(stringResource(R.string.import_transform_help)) })
-    val example = ImportMediaRules.example(form.transform, form.output.value.ifBlank { "Pictures" })
+    val example = ImportMediaRules.example(LocalContext.current, form.transform, form.output.value.ifBlank { "Pictures" })
     if (example != null) Text(example, style = MaterialTheme.typography.bodySmall)
 }
 
 @Composable
 private fun SyncFields(form: TaskDraft, busy: Boolean, browse: (DraftValue) -> Unit) {
     FolderLine(stringResource(R.string.field_folder), form.output, busy) { browse(form.output) }
-    ChoiceLine(stringResource(R.string.sync_mode), form.mode, listOf("Two-way", "Read"), !busy) { form.mode = it }
+    ChoiceLine(
+        stringResource(R.string.sync_mode),
+        form.mode,
+        listOf(
+            "Two-way" to stringResource(R.string.sync_mode_two_way),
+            "Read" to stringResource(R.string.sync_mode_read),
+        ),
+        !busy,
+    ) { form.mode = it }
     if (form.repository.isNotBlank()) {
         OutlinedTextField(form.repository, { form.repository = it }, modifier = Modifier.fillMaxWidth(), label = { Text(stringResource(R.string.sync_repository)) })
     }
@@ -234,7 +242,15 @@ private fun ServerFields(form: TaskDraft, busy: Boolean, browse: (DraftValue) ->
     NumberLine(stringResource(R.string.ftps_port), form.port, { form.port = it }, !busy)
     OutlinedTextField(form.user, { form.user = it }, modifier = Modifier.fillMaxWidth(), label = { Text(stringResource(R.string.ftps_user)) }, singleLine = true)
     SecretLine(stringResource(R.string.field_password), form.password, { form.password = it }, !busy)
-    ChoiceLine(stringResource(R.string.ftps_access), form.access, listOf("Read and write", "Read only"), !busy) { form.access = it }
+    ChoiceLine(
+        stringResource(R.string.ftps_access),
+        form.access,
+        listOf(
+            "Read and write" to stringResource(R.string.ftps_read_write),
+            "Read only" to stringResource(R.string.ftps_read_only),
+        ),
+        !busy,
+    ) { form.access = it }
     NumberLine(stringResource(R.string.ftps_duration), form.duration, { form.duration = it }, !busy, stringResource(R.string.ftps_duration_help))
 }
 
@@ -245,31 +261,31 @@ private fun StorageBlock(help: String, draft: StorageDraft, busy: Boolean, brows
     var open by remember { mutableStateOf(false) }
     val current = StorageCatalog.providers.first { it.jsonType == draft.provider }
     ExposedDropdownMenuBox(expanded = open, onExpandedChange = { open = it }) {
-        OutlinedTextField(current.displayName, {}, readOnly = true, label = { Text(stringResource(R.string.field_protocol)) }, trailingIcon = { ExposedDropdownMenuDefaults.TrailingIcon(open) }, modifier = Modifier.menuAnchor(ExposedDropdownMenuAnchorType.PrimaryNotEditable).fillMaxWidth())
+        OutlinedTextField(textOf(current.displayNameRes, current.displayName), {}, readOnly = true, label = { Text(stringResource(R.string.field_protocol)) }, trailingIcon = { ExposedDropdownMenuDefaults.TrailingIcon(open) }, modifier = Modifier.menuAnchor(ExposedDropdownMenuAnchorType.PrimaryNotEditable).fillMaxWidth())
         ExposedDropdownMenu(expanded = open, onDismissRequest = { open = false }) {
             StorageCatalog.providers.forEach { provider ->
-                DropdownMenuItem(text = { Text(provider.displayName) }, onClick = { draft.choose(provider.jsonType); open = false })
+                DropdownMenuItem(text = { Text(textOf(provider.displayNameRes, provider.displayName)) }, onClick = { draft.choose(provider.jsonType); open = false })
             }
         }
     }
     draft.fields.filter { !it.hidden }.forEach { field ->
+        val fieldLabel = textOf(field.labelRes, field.label)
         when (field.spec.kind) {
-            StorageFieldKind.PASSWORD -> SecretLine(field.label, field.value, { field.value = it }, !busy)
-            StorageFieldKind.INTEGER -> NumberLine(field.label, field.value, { field.value = it; draft.applyRules() }, !busy)
+            StorageFieldKind.PASSWORD -> SecretLine(fieldLabel, field.value, { field.value = it }, !busy)
+            StorageFieldKind.INTEGER -> NumberLine(fieldLabel, field.value, { field.value = it; draft.applyRules() }, !busy)
             StorageFieldKind.ENUM -> {
-                val label = field.spec.choices.firstOrNull { it.value == field.value }?.label ?: field.value
-                ChoiceLine(field.label, label, field.spec.choices.map { it.label }, !busy) { selected ->
-                    field.value = field.spec.choices.first { it.label == selected }.value
+                ChoiceLine(fieldLabel, field.value, field.spec.choices.map { it.value to textOf(it.labelRes, it.label) }, !busy) { selected ->
+                    field.value = selected
                     draft.applyRules()
                 }
             }
-            StorageFieldKind.FOLDER, StorageFieldKind.FILE -> FolderLine(field.label, field, busy, field.spec.placeholder) { browse(field) }
+            StorageFieldKind.FOLDER, StorageFieldKind.FILE -> FolderLine(fieldLabel, field, busy, field.spec.placeholder) { browse(field) }
             StorageFieldKind.TEXT -> {
                 val fingerprints = if (field.spec.key == "certificate") ftpsCertificateFingerprints(field.value) else null
                 if (fingerprints != null) {
                     Text(fingerprints, fontFamily = FontFamily.Monospace, style = MaterialTheme.typography.bodyMedium)
                 } else {
-                    OutlinedTextField(field.value, { field.value = it }, modifier = Modifier.fillMaxWidth(), label = { Text(field.label) }, singleLine = true, enabled = !busy)
+                    OutlinedTextField(field.value, { field.value = it }, modifier = Modifier.fillMaxWidth(), label = { Text(fieldLabel) }, singleLine = true, enabled = !busy)
                 }
             }
         }
