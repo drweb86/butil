@@ -2,6 +2,7 @@ package com.siarheikuchuk.butil.core.storage
 
 import android.content.Context
 import android.net.Uri
+import com.siarheikuchuk.butil.R
 import androidx.documentfile.provider.DocumentFile
 import java.io.File
 import java.io.InputStream
@@ -18,8 +19,8 @@ internal class ListedFile(
  */
 internal object LocalFolder {
     fun requireDirectory(context: Context, location: String) {
-        if (location.isBlank()) throw IllegalArgumentException("Folder is not specified.")
-        if (!isDirectory(context, location)) throw IllegalArgumentException("Folder does not exist.")
+        if (location.isBlank()) throw IllegalArgumentException(context.getString(R.string.error_folder_not_specified))
+        if (!isDirectory(context, location)) throw IllegalArgumentException(context.getString(R.string.error_folder_missing))
     }
 
     fun isDirectory(context: Context, location: String): Boolean {
@@ -196,7 +197,7 @@ internal object LocalFolder {
 
     fun storage(context: Context, settings: FolderSettings): Storage {
         if (settings.destinationFolder.isBlank()) {
-            throw IllegalArgumentException("Folder is not specified.")
+            throw IllegalArgumentException(context.getString(R.string.error_folder_not_specified))
         }
         return FolderStorage(context, settings)
     }

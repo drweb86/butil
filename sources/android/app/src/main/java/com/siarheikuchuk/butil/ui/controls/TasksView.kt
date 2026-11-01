@@ -138,6 +138,7 @@ fun TasksView(
 
     if (names.isEmpty()) {
         Column(modifier.padding(24.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+            PreviewNotice()
             Text(stringResource(R.string.task_list), style = MaterialTheme.typography.headlineMedium)
             Text(stringResource(R.string.tasks_empty))
         }
@@ -148,6 +149,7 @@ fun TasksView(
         modifier.padding(horizontal = 16.dp, vertical = 12.dp).verticalScroll(rememberScrollState()),
         verticalArrangement = Arrangement.spacedBy(12.dp),
     ) {
+        PreviewNotice()
         names.forEach { name ->
             val status = store.readStatus(name)
             val kind = runCatching { store.kind(name) }.getOrDefault("")
@@ -288,6 +290,21 @@ private val NeverRunIcon = materialIcon(
     "RadioButtonUnchecked",
     "M12,2C6.48,2 2,6.48 2,12s4.48,10 10,10 10,-4.48 10,-10S17.52,2 12,2zM12,20c-4.42,0 -8,-3.58 -8,-8s3.58,-8 8,-8 8,3.58 8,8 -3.58,8 -8,8z",
 )
+
+@Composable
+private fun PreviewNotice() {
+    Surface(
+        color = MaterialTheme.colorScheme.tertiaryContainer,
+        shape = RoundedCornerShape(12.dp),
+        modifier = Modifier.fillMaxWidth(),
+    ) {
+        Text(
+            stringResource(R.string.preview_notice),
+            modifier = Modifier.padding(12.dp),
+            style = MaterialTheme.typography.bodyMedium,
+        )
+    }
+}
 
 private fun materialIcon(name: String, path: String): ImageVector = ImageVector.Builder(
     name = name,

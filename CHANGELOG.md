@@ -9,6 +9,7 @@
 - Some libraries were updated.
 - Android: Kotlin stub, Play listing folder, and release build.
 - Android: the privacy policy and license are bundled in the app. The China edition is a separate bundle and requires agreement before use. Declining or withdrawing agreement deletes data stored by the app and closes it.
+- Android: this is a preview. The app can copy, change, and delete files, including during sync. Keep your own backup of those files before you run a task. The task list shows this warning.
 
 ## Bug Fixes
 - Icon with black background for Windows Store builds.

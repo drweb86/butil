@@ -2,6 +2,7 @@ package com.siarheikuchuk.butil.core.storage
 
 import android.content.Context
 import android.net.Uri
+import com.siarheikuchuk.butil.R
 import java.io.File
 import java.io.InputStream
 
@@ -13,18 +14,18 @@ object StorageFactory {
         }
         return when (prepared) {
             is FolderSettings -> LocalFolder.storage(context, prepared)
-            is FtpsSettings -> FtpsStorage(prepared, autodetect)
-            is SftpSettings -> SftpStorage(prepared, autodetect)
-            is WebDavSettings -> WebDavStorage(prepared)
+            is FtpsSettings -> FtpsStorage(context, prepared, autodetect)
+            is SftpSettings -> SftpStorage(context, prepared, autodetect)
+            is WebDavSettings -> WebDavStorage(context, prepared)
             is S3Settings -> S3Storage(prepared)
             is AzureBlobSettings -> AzureBlobStorage(prepared)
-            is SambaSettings -> SambaStorage(prepared)
+            is SambaSettings -> SambaStorage(context, prepared)
             is NfsSettings -> NfsStorage(prepared)
         }
     }
 
     fun test(context: Context, settings: StorageSettings): String? {
-        if (settings.quotaGb < 0) return "Quota should be 0 (do not apply) or value above 0."
+        if (settings.quotaGb < 0) return context.getString(R.string.error_quota)
         return try {
             open(context, settings, autodetect = true).use { storage ->
                 val readError = storage.test()

@@ -16,9 +16,12 @@ import java.io.InputStream
 import java.security.MessageDigest
 import java.security.PublicKey
 import java.security.Security
+import android.content.Context
+import com.siarheikuchuk.butil.R
 import java.util.EnumSet
 
 internal class SftpStorage(
+    private val context: Context,
     private val settings: SftpSettings,
     private val testingConnection: Boolean,
 ) : Storage {
@@ -36,7 +39,7 @@ internal class SftpStorage(
             null
         } catch (error: Exception) {
             if (!sftp.statExistence(settings.folder).let { it != null }) {
-                "Folder does not exist."
+                context.getString(R.string.error_folder_missing)
             } else {
                 error.message ?: error.toString()
             }
@@ -147,21 +150,21 @@ internal class SftpStorage(
     }
 
     private fun validate() {
-        if (settings.host.isBlank()) throw IllegalArgumentException("Server name is not be specified.")
-        if (settings.port < 0 || settings.port > 65535) throw IllegalArgumentException("Port is invalid.")
-        if (settings.user.isBlank()) throw IllegalArgumentException("User is not specified.")
+        if (settings.host.isBlank()) throw IllegalArgumentException(context.getString(R.string.error_server_name))
+        if (settings.port < 0 || settings.port > 65535) throw IllegalArgumentException(context.getString(R.string.error_port_invalid))
+        if (settings.user.isBlank()) throw IllegalArgumentException(context.getString(R.string.error_user_not_specified))
         if (settings.password.isNullOrBlank() && settings.keyFile.isNullOrBlank()) {
-            throw IllegalArgumentException("Both password or key file are empty.")
+            throw IllegalArgumentException(context.getString(R.string.error_sftp_password_and_key))
         }
         if (!testingConnection && settings.fingerPrintSha256.isBlank()) {
-            throw IllegalArgumentException("Fingerprint SHA-256 is not specified.")
+            throw IllegalArgumentException(context.getString(R.string.error_fingerprint_missing))
         }
-        if (settings.folder.isBlank()) throw IllegalArgumentException("Folder is not specified.")
+        if (settings.folder.isBlank()) throw IllegalArgumentException(context.getString(R.string.error_folder_not_specified))
         if (settings.folder == "/") {
-            throw IllegalArgumentException("SFTP folder / is not allowed. Folder must point to more specific folder.")
+            throw IllegalArgumentException(context.getString(R.string.error_sftp_folder_root))
         }
-        if (!settings.folder.startsWith("/")) throw IllegalArgumentException("SFTP folder must start with /.")
-        if (settings.folder.endsWith("/")) throw IllegalArgumentException("SFTP folder must not end on /.")
+        if (!settings.folder.startsWith("/")) throw IllegalArgumentException(context.getString(R.string.error_sftp_folder_prefix))
+        if (settings.folder.endsWith("/")) throw IllegalArgumentException(context.getString(R.string.error_sftp_folder_suffix))
     }
 
     private fun connect(): SFTPClient {

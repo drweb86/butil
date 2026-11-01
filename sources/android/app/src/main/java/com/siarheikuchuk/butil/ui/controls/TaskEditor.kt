@@ -213,7 +213,7 @@ private fun ImportWhatFields(form: TaskDraft) {
 @Composable
 private fun ImportWhereFields(form: TaskDraft, busy: Boolean, browse: (DraftValue) -> Unit) {
     FolderLine(stringResource(R.string.import_output_folder), form.output, busy) { browse(form.output) }
-    ChoiceLine(stringResource(R.string.import_transform), form.transform, ImportMediaRules.presets, !busy) { form.transform = it }
+    ChoiceLine(stringResource(R.string.import_transform), form.transform, ImportMediaRules.presets.map { it to it }, !busy) { form.transform = it }
     OutlinedTextField(form.transform, { form.transform = it }, modifier = Modifier.fillMaxWidth(), supportingText = { Text(stringResource(R.string.import_transform_help)) })
     val example = ImportMediaRules.example(LocalContext.current, form.transform, form.output.value.ifBlank { "Pictures" })
     if (example != null) Text(example, style = MaterialTheme.typography.bodySmall)
@@ -295,16 +295,20 @@ private fun StorageBlock(help: String, draft: StorageDraft, busy: Boolean, brows
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-private fun ChoiceLine(label: String, current: String, options: List<String>, enabled: Boolean, onSelect: (String) -> Unit = {}) {
+@Composable
+private fun textOf(res: Int, fallback: String) = if (res != 0) stringResource(res) else fallback
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+private fun ChoiceLine(label: String, current: String, options: List<Pair<String, String>>, enabled: Boolean, onSelect: (String) -> Unit = {}) {
     var open by remember { mutableStateOf(false) }
-    var selected by remember(current) { mutableStateOf(current) }
+    val selected = options.firstOrNull { it.first == current }?.second ?: current
     ExposedDropdownMenuBox(expanded = open, onExpandedChange = { if (enabled) open = it }) {
         OutlinedTextField(selected, {}, readOnly = true, label = { Text(label) }, trailingIcon = { ExposedDropdownMenuDefaults.TrailingIcon(open) }, modifier = Modifier.menuAnchor(ExposedDropdownMenuAnchorType.PrimaryNotEditable).fillMaxWidth())
         ExposedDropdownMenu(expanded = open, onDismissRequest = { open = false }) {
-            options.forEach { option ->
-                DropdownMenuItem(text = { Text(option) }, onClick = {
-                    selected = option
-                    onSelect(option)
+            options.forEach { (value, text) ->
+                DropdownMenuItem(text = { Text(text) }, onClick = {
+                    onSelect(value)
                     open = false
                 })
             }
@@ -380,6 +384,7 @@ open class DraftValue(initial: String) {
 private class DraftField(val spec: StorageFieldSpec, initial: String) : DraftValue(initial) {
     var hidden by mutableStateOf(false)
     var label by mutableStateOf(spec.label)
+    var labelRes by mutableStateOf(spec.labelRes)
 }
 
 private class StorageDraft(initial: StorageSettings) {
@@ -405,12 +410,16 @@ private class StorageDraft(initial: StorageSettings) {
             fields.forEach { field ->
                 field.hidden = false
                 field.label = field.spec.label
+                field.labelRes = field.spec.labelRes
             }
             for (field in fields) {
                 val rule = field.spec.rules.firstOrNull { it.whenValue == field.value } ?: continue
                 for (patch in rule.patches) {
                     val target = fields.firstOrNull { it.spec.key == patch.target } ?: continue
-                    if (patch.label != null) target.label = patch.label
+                    if (patch.label != null) {
+                        target.label = patch.label
+                        target.labelRes = patch.labelRes
+                    }
                     target.hidden = patch.hidden
                     if (patch.value != null && target.value != patch.value) {
                         target.value = patch.value
@@ -481,24 +490,24 @@ private class TaskDraft(store: UploadFolderStore, private val kind: String, exis
         return when (kind) {
             "Incremental" -> when {
                 folders.none { it.value.isNotBlank() } -> "Add at least one folder."
-                password.isBlank() -> "Password is not specified."
+                password.isBlank() -> store.text(R.string.error_password_not_specified)
                 else -> null
             }
             "ImportMedia" -> when {
                 output.value.isBlank() -> "Output folder is not specified."
-                else -> ImportMediaRules.validateTransform(transform)
+                else -> ImportMediaRules.validateTransform(store.appContext, transform)
             }
             "Synchronization" -> when {
-                output.value.isBlank() -> "Folder is not specified."
-                password.isBlank() -> "Password is not specified."
+                output.value.isBlank() -> store.text(R.string.error_folder_not_specified)
+                password.isBlank() -> store.text(R.string.error_password_not_specified)
                 repository.isNotBlank() -> "Repository subfolder is no longer supported. Clear it and save the task."
                 else -> null
             }
             else -> when {
-                output.value.isBlank() -> "Folder is not specified."
-                user.isBlank() -> "User is not specified."
-                password.isBlank() -> "Password is not specified."
-                port.toIntOrNull() !in 1..65535 -> "Port is invalid."
+                output.value.isBlank() -> store.text(R.string.error_folder_not_specified)
+                user.isBlank() -> store.text(R.string.error_user_not_specified)
+                password.isBlank() -> store.text(R.string.error_password_not_specified)
+                port.toIntOrNull() !in 1..65535 -> store.text(R.string.error_port_invalid)
                 (duration.toLongOrNull() ?: 0) !in 1..FtpsServerTask.MAX_DURATION_MINUTES -> "Duration is invalid."
                 else -> null
             }

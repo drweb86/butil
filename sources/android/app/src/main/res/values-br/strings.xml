@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="menu_credits">Kredadoù</string>
+    <string name="menu_license">Lañvaz</string>
+    <string name="menu_third_party_notices">Kemennoù tredeoù</string>
+    <string name="privacy_language">Yezh</string>
+    <string name="upload_folder_help">Gallout a rit kargañ endalc\'had un teuliad war ar servijer. Dre ziouer e vez flastret ar restroù a zo dija er pal.</string>
+    <string name="upload_folder_skip_existing">Na flastrit ket ar restroù a zo dija</string>
+    <string name="upload_folder_skip_existing_help">Pa vez enaouet e vez dilezet ar restroù a zo dija er pal e-lec\'h bezañ flastret.</string>
+    <string name="upload_folder_storage_help">Spisait al lec\'h mirout pal e vo karget endalc\'had an teuliad ennañ.</string>
+    <string name="import_source_title">Mammenn media</string>
+    <string name="when_optional_hint">Diret eo ar rann-mañ. Ma tremenasit warni, ne loc\'hio an trevell nemet pa vo lañset ganeoc\'h dre zorn.</string>
+    <string name="import_source_help">Erspizit an tarzh da importiñ media dioutañ — da skouer ur gartenn SD, ur renkell benveg-luc\'hskeudennañ, pe ur pellgomz dre FTPS.</string>
+    <string name="import_extensions">Extensions de fichiers :</string>
+    <string name="import_extensions_help">Liste d\'extensions à importer, séparées par des virgules (par exemple .jpg, .png, .mp3). Laissez vide pour importer tous les fichiers.</string>
+    <string name="import_delete">Dilemel ar roadennoù eilet eus ar media mammenn</string>
+    <string name="storage_preset">Kefridi-kent:</string>
+    <string name="storage_base_path">Hent diazez:</string>
+    <string name="storage_password_or_token">Ger-tremen / Token OAuth:</string>
+    <string name="storage_service_url">URL ar servij:</string>
+    <string name="storage_region">Rannvro:</string>
+    <string name="storage_bucket">Seau:</string>
+    <string name="storage_access_key">Alc\'hwez d\'ar c\'hontant:</string>
+    <string name="storage_secret_key">Alc\'hwez kuzh:</string>
+    <string name="storage_path_prefix">Rakger hent:</string>
+    <string name="storage_provider">Pourvezer:</string>
+    <string name="storage_account_name">Anv ar gont:</string>
+    <string name="storage_account_key">Alc\'hwez ar gont:</string>
+    <string name="storage_container">Kestenn:</string>
+    <string name="storage_share_path">Hent rannañ:</string>
+    <string name="storage_mount_point">Pik staj:</string>
+    <string name="storage_mount_options">Dibarzhioù staj:</string>
+    <string name="error_name_duplicate">Ur gefridi gant an anv-mañ a zo anezhañ c\'hoazh.</string>
+    <string name="error_import_too_broad">Le dossier sélectionné semble être la racine d\'un appareil ou d\'un répertoire personnel, car il contient plusieurs dossiers multimédias connus (%1$s). Veuillez choisir un dossier plus précis, par exemple \"%2$s\".</string>
+</resources>

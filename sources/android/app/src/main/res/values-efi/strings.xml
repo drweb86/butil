@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="menu_credits">Ekọn̄</string>
+    <string name="menu_license">Unọ idem</string>
+    <string name="menu_third_party_notices">Unọ idem mbon enwen</string>
+    <string name="privacy_language">Usem</string>
+    <string name="import_source_help">Select the source to import media from — for example an SD card, camera folder, or phone over FTPS.</string>
+    <string name="import_delete">Sio mme data emi ẹkopide ke source media</string>
+</resources>

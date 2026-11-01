@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="menu_credits">Créditos</string>
+    <string name="menu_license">Llicencia</string>
+    <string name="menu_third_party_notices">Avisos de terceros</string>
+    <string name="privacy_language">Llingua</string>
+    <string name="upload_folder_help">Pues xubir el conteníu d\'una carpeta al sirvidor. Por defeutu sobrescríbense los ficheros de destín existentes.</string>
+    <string name="upload_folder_skip_existing">Nun sobrescribir los ficheros existentes</string>
+    <string name="upload_folder_skip_existing_help">Cuando ta activao, los ficheros que yá esisten nel destín omítense en cuenta de sobrescribise.</string>
+    <string name="upload_folder_storage_help">Especifica l\'almacenamientu de destín onde se xubirá\'l conteníu de la carpeta.</string>
+    <string name="import_source_title">Fonte multimedia</string>
+    <string name="when_optional_hint">Esta seición ye opcional. Si la saltes, la xera namás va executase cuando la lances manualmente.</string>
+    <string name="import_source_help">Especifica la fonte dende la que importar medios — por exemplu una tarxeta SD, una carpeta de cámara, o un teléfonu per FTPS.</string>
+    <string name="import_extensions">Extensiones de archivo:</string>
+    <string name="import_extensions_help">Lista de extensiones a importar, separadas por comas (por ejemplo .jpg, .png, .mp3). Déjela vacía para importar todos los archivos.</string>
+    <string name="import_delete">Desaniciar datos copiaos del mediu d\'orixe</string>
+    <string name="storage_preset">Configuración previa:</string>
+    <string name="storage_base_path">Ruta base:</string>
+    <string name="storage_password_or_token">Contraseña / Token OAuth:</string>
+    <string name="storage_service_url">URL del serviciu:</string>
+    <string name="storage_region">Rexón:</string>
+    <string name="storage_bucket">Cubetu:</string>
+    <string name="storage_access_key">Clave d\'accesu:</string>
+    <string name="storage_secret_key">Clave secreta:</string>
+    <string name="storage_path_prefix">Prefixu de ruta:</string>
+    <string name="storage_provider">Proveedor:</string>
+    <string name="storage_account_name">Nome de la cuenta:</string>
+    <string name="storage_account_key">Clave de la cuenta:</string>
+    <string name="storage_container">Contenedor:</string>
+    <string name="storage_share_path">Ruta del recursu compartíu:</string>
+    <string name="storage_mount_point">Puntu d\'atoblamientu:</string>
+    <string name="storage_mount_options">Opciones d\'atoblamientu:</string>
+    <string name="error_name_duplicate">Yá esiste una xera con esti nome.</string>
+    <string name="error_import_too_broad">La carpeta seleccionada parece la raíz de un dispositivo o de un directorio personal porque contiene varias carpetas multimedia conocidas (%1$s). Elija una carpeta más concreta, por ejemplo \"%2$s\".</string>
+</resources>

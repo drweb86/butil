@@ -1,6 +1,8 @@
 package com.siarheikuchuk.butil.core.storage
 
+import android.content.Context
 import android.util.Log
+import com.siarheikuchuk.butil.R
 import org.apache.commons.net.ftp.FTP
 import org.apache.commons.net.ftp.FTPReply
 import org.apache.commons.net.ftp.FTPSClient
@@ -17,6 +19,7 @@ import javax.net.ssl.TrustManagerFactory
 import javax.net.ssl.X509TrustManager
 
 internal class FtpsStorage(
+    private val context: Context,
     private val settings: FtpsSettings,
     private val autodetect: Boolean,
 ) : Storage {
@@ -28,7 +31,7 @@ internal class FtpsStorage(
             val current = client.printWorkingDirectory()
             val exists = client.changeWorkingDirectory(folder)
             if (!current.isNullOrBlank()) client.changeWorkingDirectory(current)
-            if (!exists) return "Folder does not exist."
+            if (!exists) return context.getString(R.string.error_folder_missing)
         }
         return null
     }
@@ -114,10 +117,10 @@ internal class FtpsStorage(
     }
 
     private fun connect(): FTPSClient {
-        if (settings.host.isBlank()) throw IllegalArgumentException("Server name is not be specified.")
-        if (settings.port < 0 || settings.port > 65535) throw IllegalArgumentException("Port is invalid.")
-        if (settings.user.isBlank()) throw IllegalArgumentException("User is not specified.")
-        if (settings.password.isBlank()) throw IllegalArgumentException("Password is not specified.")
+        if (settings.host.isBlank()) throw IllegalArgumentException(context.getString(R.string.error_server_name))
+        if (settings.port < 0 || settings.port > 65535) throw IllegalArgumentException(context.getString(R.string.error_port_invalid))
+        if (settings.user.isBlank()) throw IllegalArgumentException(context.getString(R.string.error_user_not_specified))
+        if (settings.password.isBlank()) throw IllegalArgumentException(context.getString(R.string.error_password_not_specified))
         // The platform engine socket closes TCP before close_notify is written. The server
         // then rejects the upload. This provider's file-descriptor sockets send the alert first.
         if (Security.getProvider("Conscrypt") == null) {

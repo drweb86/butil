@@ -260,7 +260,7 @@ private fun ProviderMenu(form: UploadFolderForm) {
     val current = StorageCatalog.providers.first { it.jsonType == form.provider }
     ExposedDropdownMenuBox(expanded = open, onExpandedChange = { open = it }) {
         OutlinedTextField(
-            value = current.displayName,
+            value = textOf(current.displayNameRes, current.displayName),
             onValueChange = {},
             readOnly = true,
             label = { Text(stringResource(R.string.field_protocol)) },
@@ -270,7 +270,7 @@ private fun ProviderMenu(form: UploadFolderForm) {
         ExposedDropdownMenu(expanded = open, onDismissRequest = { open = false }) {
             StorageCatalog.providers.forEach { provider ->
                 DropdownMenuItem(
-                    text = { Text(provider.displayName) },
+                    text = { Text(textOf(provider.displayNameRes, provider.displayName)) },
                     onClick = {
                         form.chooseProvider(provider.jsonType)
                         open = false
@@ -287,7 +287,7 @@ private fun TextField(field: FieldRow, enabled: Boolean) {
         value = field.value,
         onValueChange = { field.value = it; field.error = null },
         modifier = Modifier.fillMaxWidth(),
-        label = { Text(field.label) },
+        label = { Text(textOf(field.labelRes, field.label)) },
         placeholder = { Text(field.placeholder) },
         isError = field.error != null,
         supportingText = field.error?.let { { Text(it) } },
@@ -301,7 +301,7 @@ private fun SecretField(field: FieldRow, enabled: Boolean) {
         value = field.value,
         onValueChange = { field.value = it; field.error = null },
         modifier = Modifier.fillMaxWidth(),
-        label = { Text(field.label) },
+        label = { Text(textOf(field.labelRes, field.label)) },
         visualTransformation = PasswordVisualTransformation(),
         isError = field.error != null,
         supportingText = field.error?.let { { Text(it) } },
@@ -311,7 +311,7 @@ private fun SecretField(field: FieldRow, enabled: Boolean) {
 
 @Composable
 private fun NumberField(field: FieldRow, enabled: Boolean) {
-    NumberField(field.label, field.value, { field.value = it; field.error = null }, field.placeholder, field.error, enabled)
+    NumberField(textOf(field.labelRes, field.label), field.value, { field.value = it; field.error = null }, field.placeholder, field.error, enabled)
 }
 
 @Composable
@@ -333,13 +333,14 @@ private fun NumberField(label: String, value: String, onValue: (String) -> Unit,
 @Composable
 private fun EnumField(field: FieldRow, enabled: Boolean, onChange: () -> Unit) {
     var open by remember { mutableStateOf(false) }
-    val label = field.spec.choices.firstOrNull { it.value == field.value }?.label ?: field.value
+    val selected = field.spec.choices.firstOrNull { it.value == field.value }
+    val label = if (selected == null) field.value else textOf(selected.labelRes, selected.label)
     ExposedDropdownMenuBox(expanded = open, onExpandedChange = { if (enabled) open = it }) {
         OutlinedTextField(
             value = label,
             onValueChange = {},
             readOnly = true,
-            label = { Text(field.label) },
+            label = { Text(textOf(field.labelRes, field.label)) },
             trailingIcon = { ExposedDropdownMenuDefaults.TrailingIcon(open) },
             modifier = Modifier.menuAnchor(ExposedDropdownMenuAnchorType.PrimaryNotEditable).fillMaxWidth(),
             isError = field.error != null,
@@ -347,7 +348,7 @@ private fun EnumField(field: FieldRow, enabled: Boolean, onChange: () -> Unit) {
         ExposedDropdownMenu(expanded = open, onDismissRequest = { open = false }) {
             field.spec.choices.forEach { choice ->
                 DropdownMenuItem(
-                    text = { Text(choice.label) },
+                    text = { Text(textOf(choice.labelRes, choice.label)) },
                     onClick = {
                         field.value = choice.value
                         field.error = null
@@ -363,7 +364,7 @@ private fun EnumField(field: FieldRow, enabled: Boolean, onChange: () -> Unit) {
 @Composable
 private fun BrowseField(field: FieldRow, action: String, enabled: Boolean, onBrowse: () -> Unit) {
     BrowseLine(
-        label = field.label,
+        label = textOf(field.labelRes, field.label),
         value = friendlyLocation(field.value),
         placeholder = field.placeholder,
         action = action,
@@ -396,10 +397,14 @@ private fun friendlyLocation(value: String): String {
     return Uri.parse(value).lastPathSegment ?: value
 }
 
+@Composable
+private fun textOf(res: Int, fallback: String) = if (res != 0) stringResource(res) else fallback
+
 private class FieldRow(val spec: StorageFieldSpec, initial: String) {
     var value by mutableStateOf(initial)
     var hidden by mutableStateOf(false)
     var label by mutableStateOf(spec.label)
+    var labelRes by mutableStateOf(spec.labelRes)
     var placeholder by mutableStateOf(spec.placeholder)
     var error by mutableStateOf<String?>(null)
 }
@@ -456,13 +461,17 @@ private class UploadFolderForm(store: UploadFolderStore, existingName: String?) 
             fields.forEach { field ->
                 field.hidden = false
                 field.label = field.spec.label
+                field.labelRes = field.spec.labelRes
                 field.placeholder = field.spec.placeholder
             }
             for (field in fields) {
                 val rule = field.spec.rules.firstOrNull { it.whenValue == field.value } ?: continue
                 for (patch in rule.patches) {
                     val target = fields.firstOrNull { it.spec.key == patch.target } ?: continue
-                    if (patch.label != null) target.label = patch.label
+                    if (patch.label != null) {
+                        target.label = patch.label
+                        target.labelRes = patch.labelRes
+                    }
                     target.hidden = patch.hidden
                     if (patch.placeholder != null) target.placeholder = patch.placeholder
                     if (patch.value != null && target.value != patch.value) {
@@ -480,10 +489,10 @@ private class UploadFolderForm(store: UploadFolderStore, existingName: String?) 
         quotaError = null
         fields.forEach { it.error = null }
         val errors = mutableListOf<String>()
-        if (nameError != null) errors += "Name: $nameError"
-        if (folder.isBlank()) errors += "What?: Folder is not specified."
+        if (nameError != null) errors += "${store.text(R.string.field_name)} $nameError"
+        if (folder.isBlank()) errors += "${store.text(R.string.left_menu_what)}: ${store.text(R.string.error_folder_not_specified)}"
         fields.filter { !it.hidden }.forEach { field ->
-            val error = fieldError(field)
+            val error = fieldError(store, field)
             if (error != null) {
                 field.error = error
                 errors += error
@@ -492,11 +501,11 @@ private class UploadFolderForm(store: UploadFolderStore, existingName: String?) 
         if (provider == "Sftp") {
             val password = fields.firstOrNull { it.spec.key == "password" }?.value.orEmpty()
             val key = fields.firstOrNull { it.spec.key == "keyfile" }?.value.orEmpty()
-            if (password.isBlank() && key.isBlank()) errors += "Both password or key file are empty."
+            if (password.isBlank() && key.isBlank()) errors += store.text(R.string.error_sftp_password_and_key)
         }
         val quotaValue = quota.toLongOrNull()
         if (quotaValue == null || quotaValue < 0) {
-            quotaError = "Quota should be 0 (do not apply) or value above 0."
+            quotaError = store.text(R.string.error_quota)
             errors += quotaError!!
         }
         return errors.firstOrNull()
@@ -507,7 +516,7 @@ private class UploadFolderForm(store: UploadFolderStore, existingName: String?) 
         val beforeCertificate = (settings as? FtpsSettings)?.trustedCertificate.orEmpty()
         val beforeFingerprint = (settings as? SftpSettings)?.fingerPrintSha256.orEmpty()
         val storageError = StorageFactory.test(context, settings)
-        val trust = trustText(settings, beforeCertificate, beforeFingerprint)
+        val trust = trustText(context, settings, beforeCertificate, beforeFingerprint)
         if (trust != null) return TestOutcome(settings, trust, storageError)
         if (storageError != null) return TestOutcome(settings, null, storageError)
         val sourceError = StorageFactory.test(context, FolderSettings(destinationFolder = folder))
@@ -543,50 +552,60 @@ private class UploadFolderForm(store: UploadFolderStore, existingName: String?) 
         return StorageCatalog.toSettings(provider, values, quota.toLongOrNull() ?: 0, preserved)
     }
 
-    private fun fieldError(field: FieldRow): String? {
+    private fun fieldError(store: UploadFolderStore, field: FieldRow): String? {
         if (field.spec.kind == StorageFieldKind.INTEGER) {
             val number = field.value.toLongOrNull()
             if (number == null || (field.spec.min != null && number < field.spec.min) || (field.spec.max != null && number > field.spec.max)) {
-                return "Port is invalid."
+                return store.text(R.string.error_port_invalid)
             }
             return null
         }
-        if (!field.spec.optional && field.value.isBlank()) return "${field.label.trimEnd(':')} is not specified."
+        if (!field.spec.optional && field.value.isBlank()) {
+            val label = if (field.labelRes != 0) store.text(field.labelRes) else field.label
+            return store.text(R.string.error_field_not_specified, label.trimEnd(':'))
+        }
         if (provider == "Sftp" && field.spec.key == "folder") {
-            if (field.value == "/") return "SFTP folder / is not allowed. Folder must point to more specific folder."
-            if (!field.value.startsWith("/")) return "SFTP folder must start with /."
-            if (field.value.endsWith("/")) return "SFTP folder must not end on /."
+            if (field.value == "/") return store.text(R.string.error_sftp_folder_root)
+            if (!field.value.startsWith("/")) return store.text(R.string.error_sftp_folder_prefix)
+            if (field.value.endsWith("/")) return store.text(R.string.error_sftp_folder_suffix)
         }
         return null
     }
 
-    private fun trustText(settings: StorageSettings, beforeCertificate: String, beforeFingerprint: String): String? {
+    private fun trustText(context: android.content.Context, settings: StorageSettings, beforeCertificate: String, beforeFingerprint: String): String? {
         if (settings is FtpsSettings && settings.trustedCertificate.isNotBlank() &&
             !settings.trustedCertificate.equals(beforeCertificate, ignoreCase = true)
         ) {
-            return certificateText(settings)
+            return certificateText(context, settings)
         }
         if (settings is SftpSettings && settings.fingerPrintSha256.isNotBlank() &&
             !settings.fingerPrintSha256.equals(beforeFingerprint, ignoreCase = true)
         ) {
-            return "SFTP server trust information detected during test.\n" +
-                "Verify this fingerprint out-of-band, then click OK again to store it.\n\n" +
-                "Host: ${settings.host}\nPort: ${if (settings.port == 0) "default (22)" else settings.port}\n" +
-                "User: ${settings.user}\nFolder: ${settings.folder}\n" +
-                "Fingerprint (SHA-256): ${settings.fingerPrintSha256}"
+            val port = if (settings.port == 0) context.getString(R.string.trust_port_default_22) else settings.port.toString()
+            return listOf(
+                context.getString(R.string.trust_sftp_title),
+                context.getString(R.string.trust_sftp_instruction),
+                "",
+                context.getString(R.string.trust_host, settings.host),
+                context.getString(R.string.trust_port, port),
+                context.getString(R.string.trust_user, settings.user),
+                context.getString(R.string.trust_folder, settings.folder),
+                context.getString(R.string.trust_fingerprint, settings.fingerPrintSha256),
+            ).joinToString("\n")
         }
         return null
     }
 
-    private fun certificateText(settings: FtpsSettings): String {
+    private fun certificateText(context: android.content.Context, settings: FtpsSettings): String {
+        val port = if (settings.port == 0) context.getString(R.string.trust_port_default) else settings.port.toString()
         val lines = mutableListOf(
-            "FTPS server certificate detected during test.",
-            "Verify certificate identity out-of-band, then click OK again to store it.",
+            context.getString(R.string.trust_ftps_title),
+            context.getString(R.string.trust_ftps_instruction),
             "",
-            "Host: ${settings.host}",
-            "Port: ${if (settings.port == 0) "default" else settings.port}",
-            "Encryption: ${settings.encryption}",
-            "Folder: ${settings.folder.orEmpty()}",
+            context.getString(R.string.trust_host, settings.host),
+            context.getString(R.string.trust_port, port),
+            context.getString(R.string.trust_encryption, settings.encryption),
+            context.getString(R.string.trust_folder, settings.folder.orEmpty()),
         )
         val fingerprints = ftpsCertificateFingerprints(settings.trustedCertificate)
         if (fingerprints != null) {
@@ -596,15 +615,15 @@ private class UploadFolderForm(store: UploadFolderStore, existingName: String?) 
             if (cert != null) {
                 lines += listOf(
                     "",
-                    "Subject: ${cert.subjectDN}",
-                    "Issuer: ${cert.issuerDN}",
-                    "Serial number: ${cert.serialNumber}",
-                    "Valid from (UTC): ${cert.notBefore}",
-                    "Valid until (UTC): ${cert.notAfter}",
+                    context.getString(R.string.trust_subject, cert.subjectDN.toString()),
+                    context.getString(R.string.trust_issuer, cert.issuerDN.toString()),
+                    context.getString(R.string.trust_serial, cert.serialNumber.toString()),
+                    context.getString(R.string.trust_valid_from, cert.notBefore.toString()),
+                    context.getString(R.string.trust_valid_until, cert.notAfter.toString()),
                 )
             }
         } else {
-            lines += "Certificate parse warning: the server certificate could not be read."
+            lines += context.getString(R.string.trust_cert_warning, "the server certificate could not be read.")
         }
         return lines.joinToString("\n")
     }

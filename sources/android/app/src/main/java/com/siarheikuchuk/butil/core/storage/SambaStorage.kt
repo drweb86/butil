@@ -1,6 +1,8 @@
 package com.siarheikuchuk.butil.core.storage
 
+import android.content.Context
 import com.hierynomus.msdtyp.AccessMask
+import com.siarheikuchuk.butil.R
 import com.hierynomus.msfscc.FileAttributes
 import com.hierynomus.msfscc.fileinformation.FileIdBothDirectoryInformation
 import com.hierynomus.mssmb2.SMB2CreateDisposition
@@ -11,21 +13,21 @@ import com.hierynomus.smbj.share.DiskShare
 import java.io.InputStream
 import java.util.EnumSet
 
-internal class SambaStorage(private val settings: SambaSettings) : Storage {
-    private val target = parse(settings.url)
+internal class SambaStorage(private val context: Context, private val settings: SambaSettings) : Storage {
+    private val target = parse(context, settings.url)
     private val client = SMBClient()
     private val connection = client.connect(target.host)
     private val session = connection.authenticate(authentication())
     private val share: DiskShare = session.connectShare(target.share) as DiskShare
 
     init {
-        if (settings.url.isBlank()) throw IllegalArgumentException("Url is not specified.")
+        if (settings.url.isBlank()) throw IllegalArgumentException(context.getString(R.string.error_url_missing))
     }
 
     override fun test(): String? {
         return try {
             if (target.folder.isNotEmpty() && !share.folderExists(target.folder)) {
-                "Folder does not exist."
+                context.getString(R.string.error_folder_missing)
             } else {
                 share.list(target.folder.ifEmpty { "" })
                 null
@@ -172,10 +174,10 @@ internal class SambaStorage(private val settings: SambaSettings) : Storage {
     private data class Target(val host: String, val share: String, val folder: String)
 
     companion object {
-        private fun parse(url: String): Target {
+        private fun parse(context: Context, url: String): Target {
             val normalized = url.trim().replace('\\', '/').removePrefix("smb:").trim('/')
             val parts = normalized.split('/').filter { it.isNotEmpty() }
-            if (parts.size < 2) throw IllegalArgumentException("Url is not specified.")
+            if (parts.size < 2) throw IllegalArgumentException(context.getString(R.string.error_url_missing))
             return Target(parts[0], parts[1], parts.drop(2).joinToString("\\"))
         }
     }

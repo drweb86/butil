@@ -1,5 +1,7 @@
 package com.siarheikuchuk.butil.core.storage
 
+import android.content.Context
+import com.siarheikuchuk.butil.R
 import java.io.ByteArrayOutputStream
 import java.io.InputStream
 import java.net.InetSocketAddress
@@ -9,7 +11,7 @@ import java.util.Base64
 import javax.net.ssl.SSLSocket
 import javax.net.ssl.SSLSocketFactory
 
-internal class WebDavStorage(settings: WebDavSettings) : Storage {
+internal class WebDavStorage(private val context: Context, settings: WebDavSettings) : Storage {
     private val resolved = resolve(settings)
     private val origin: String
     private val basePath: String
@@ -17,9 +19,9 @@ internal class WebDavStorage(settings: WebDavSettings) : Storage {
     init {
         if (resolved.host.isBlank()) throw IllegalArgumentException("Host is not specified.")
         if (resolved.preset != "YandexDisk" && resolved.user.isBlank()) {
-            throw IllegalArgumentException("User is not specified.")
+            throw IllegalArgumentException(context.getString(R.string.error_user_not_specified))
         }
-        if (resolved.password.isBlank()) throw IllegalArgumentException("Password is not specified.")
+        if (resolved.password.isBlank()) throw IllegalArgumentException(context.getString(R.string.error_password_not_specified))
         if (!settings.useHttps) throw IllegalArgumentException("WebDAV requires HTTPS.")
         val port = resolved.port
         val portPart = if (port <= 0 || port == 443) "" else ":$port"
