@@ -1,12 +1,11 @@
 plugins {
     id("com.android.application")
-    id("org.jetbrains.kotlin.android")
     id("org.jetbrains.kotlin.plugin.compose")
 }
 
 android {
     namespace = "com.siarheikuchuk.butil"
-    compileSdk = 36
+    compileSdk = 37
     buildToolsVersion = "36.0.0"
 
     defaultConfig {
@@ -59,12 +58,13 @@ android {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
-    kotlinOptions {
-        jvmTarget = "17"
-    }
     buildFeatures {
         compose = true
         buildConfig = true
+    }
+
+    testOptions {
+        unitTests.isIncludeAndroidResources = true
     }
 
     // F-Droid
@@ -159,6 +159,9 @@ abstract class CopyLicenseDocumentsTask : DefaultTask() {
 }
 
 androidComponents {
+    beforeVariants { builder ->
+        builder.hostTests[com.android.build.api.variant.HostTestBuilder.UNIT_TEST_TYPE]?.enable = true
+    }
     onVariants { variant ->
         val copyPrivacyPolicies = tasks.register<CopyPrivacyPoliciesTask>(
             "copyPrivacyPolicies${variant.name.replaceFirstChar { it.uppercase() }}",
@@ -195,27 +198,34 @@ androidComponents {
     }
 }
 
+kotlin {
+    compilerOptions {
+        jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17)
+    }
+}
+
 dependencies {
-    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.4")
-    val composeBom = platform("androidx.compose:compose-bom:2024.10.01")
+    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.5")
+    val composeBom = platform("androidx.compose:compose-bom:2026.09.00")
     implementation(composeBom)
     implementation("androidx.compose.ui:ui")
     implementation("androidx.compose.ui:ui-tooling-preview")
     implementation("androidx.compose.material3:material3")
     implementation("androidx.compose.material:material-icons-core")
-    implementation("androidx.activity:activity-compose:1.9.3")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.9.0")
+    implementation("androidx.activity:activity-compose:1.13.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.11.0")
     implementation("org.brotli:dec:0.1.2")
-    implementation("org.bouncycastle:bcpkix-jdk18on:1.79")
-    implementation("androidx.documentfile:documentfile:1.0.1")
-    implementation("androidx.core:core-ktx:1.13.1")
-    implementation("commons-net:commons-net:3.11.1")
-    implementation("org.conscrypt:conscrypt-android:2.5.3")
-    implementation("com.hierynomus:sshj:0.39.0")
-    implementation("org.slf4j:slf4j-nop:2.0.16")
-    implementation("com.hierynomus:smbj:0.13.0")
+    implementation("org.bouncycastle:bcprov-jdk18on:1.86")
+    implementation("org.bouncycastle:bcpkix-jdk18on:1.86")
+    implementation("androidx.documentfile:documentfile:1.1.0")
+    implementation("androidx.core:core-ktx:1.19.1")
+    implementation("commons-net:commons-net:3.13.0")
+    implementation("org.conscrypt:conscrypt-android:2.8.0")
+    implementation("com.hierynomus:sshj:0.41.2")
+    implementation("org.slf4j:slf4j-nop:2.0.20")
+    implementation("com.hierynomus:smbj:0.15.0")
     debugImplementation("androidx.compose.ui:ui-tooling")
-    androidTestImplementation("androidx.test.ext:junit:1.2.1")
-    androidTestImplementation("androidx.test:runner:1.6.2")
-    androidTestImplementation("androidx.test:core:1.6.1")
+    androidTestImplementation("androidx.test.ext:junit:1.3.0")
+    androidTestImplementation("androidx.test:runner:1.7.0")
+    androidTestImplementation("androidx.test:core:1.7.0")
 }

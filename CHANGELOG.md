@@ -1,5 +1,4 @@
-﻿# 2026.10.15
-(unpublshed)
+﻿# 2026.11.01
 
 ## New Features
 - Application is published to Windows Store. If you are not in corporate environment, consider uninstalling of application and reinstalling from Windows Store, since it will keep your application updated.

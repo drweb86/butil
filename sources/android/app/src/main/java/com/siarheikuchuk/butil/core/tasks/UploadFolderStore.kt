@@ -3,7 +3,6 @@ package com.siarheikuchuk.butil.core.tasks
 import android.content.Context
 import com.siarheikuchuk.butil.BuildConfig
 import com.siarheikuchuk.butil.core.storage.SecretCipher
-import com.siarheikuchuk.butil.core.storage.StorageSettings
 import java.io.File
 
 class UploadFolderStore(context: Context) {
@@ -65,10 +64,10 @@ class UploadFolderStore(context: Context) {
     }
 
     private fun unprotect(task: AppTask): AppTask = when (task) {
-        is UploadFolderTask -> task.copy(storage = cipher.unprotectSettings(task.storage) as StorageSettings)
-        is IncrementalBackupTask -> task.copy(password = cipher.unprotect(task.password), storage = cipher.unprotectSettings(task.storage) as StorageSettings)
-        is ImportMediaTask -> task.copy(from = cipher.unprotectSettings(task.from) as StorageSettings)
-        is SynchronizationTask -> task.copy(password = cipher.unprotect(task.password), storage = cipher.unprotectSettings(task.storage) as StorageSettings)
+        is UploadFolderTask -> task.copy(storage = cipher.unprotectSettings(task.storage))
+        is IncrementalBackupTask -> task.copy(password = cipher.unprotect(task.password), storage = cipher.unprotectSettings(task.storage))
+        is ImportMediaTask -> task.copy(from = cipher.unprotectSettings(task.from))
+        is SynchronizationTask -> task.copy(password = cipher.unprotect(task.password), storage = cipher.unprotectSettings(task.storage))
         is FtpsServerTask -> task.copy(password = cipher.unprotect(task.password))
     }
 

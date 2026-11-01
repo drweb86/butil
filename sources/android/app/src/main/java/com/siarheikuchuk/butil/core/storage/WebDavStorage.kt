@@ -319,7 +319,8 @@ private class ChunkedStream(private val input: InputStream) : InputStream() {
         if (remaining == 0) {
             val size = readAsciiLine(input).substringBefore(';').trim().toIntOrNull(16) ?: 0
             if (size == 0) {
-                while (readAsciiLine(input).isNotEmpty()) Unit
+                while (readAsciiLine(input).isNotEmpty()) {
+                }
                 done = true
                 return -1
             }

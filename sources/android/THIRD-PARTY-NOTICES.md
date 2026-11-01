@@ -6,32 +6,28 @@ Debug-only tooling (Compose UI tooling) is not part of the release build and is 
 
 ## Apache-2.0
 
-- **Kotlin standard library** 2.0.21. Copyright © JetBrains s.r.o. and contributors. [https://github.com/JetBrains/kotlin](https://github.com/JetBrains/kotlin)
-- **AndroidX Compose** (UI, Material3, Material icons), versions selected by Compose BOM 2024.10.01. Copyright © The Android Open Source Project. [https://developer.android.com/jetpack/compose](https://developer.android.com/jetpack/compose)
-- **AndroidX Activity Compose** 1.9.3. Copyright © The Android Open Source Project.
-- **Kotlin coroutines** 1.9.0. Copyright © JetBrains s.r.o. and contributors. [https://github.com/Kotlin/kotlinx.coroutines](https://github.com/Kotlin/kotlinx.coroutines)
-- **desugar_jdk_libs** 2.1.4. Copyright © The Android Open Source Project. [https://github.com/google/desugar_jdk_libs](https://github.com/google/desugar_jdk_libs)
-- **AndroidX DocumentFile** 1.0.1. Copyright © The Android Open Source Project.
-- **AndroidX Core KTX** 1.13.1. Copyright © The Android Open Source Project.
-- **Apache Commons Net** 3.11.1. Copyright © The Apache Software Foundation. [https://commons.apache.org/proper/commons-net/](https://commons.apache.org/proper/commons-net/)
-- **Conscrypt** (`org.conscrypt:conscrypt-android`) 2.5.3. Copyright © 2016 The Android Open Source Project. [https://conscrypt.org/](https://conscrypt.org/). This distribution contains a modified portion of Netty ([http://netty.io/](http://netty.io/)) and a modified portion of Apache Harmony ([https://harmony.apache.org/](https://harmony.apache.org/)).
-- **sshj** 0.39.0. Copyright © SSHJ contributors. [https://github.com/hierynomus/sshj](https://github.com/hierynomus/sshj)
-- **smbj** 0.13.0. Copyright © Jeroen van Erp and contributors. [https://github.com/hierynomus/smbj](https://github.com/hierynomus/smbj)
+- **Kotlin standard library** 2.4.21. Copyright © JetBrains s.r.o. and contributors. [https://github.com/JetBrains/kotlin](https://github.com/JetBrains/kotlin)
+- **AndroidX Compose** (UI, Material3, Material icons), versions selected by Compose BOM 2026.09.00. Copyright © The Android Open Source Project. [https://developer.android.com/jetpack/compose](https://developer.android.com/jetpack/compose)
+- **AndroidX Activity Compose** 1.13.0. Copyright © The Android Open Source Project.
+- **Kotlin coroutines** 1.11.0. Copyright © JetBrains s.r.o. and contributors. [https://github.com/Kotlin/kotlinx.coroutines](https://github.com/Kotlin/kotlinx.coroutines)
+- **desugar_jdk_libs** 2.1.5. Copyright © The Android Open Source Project. [https://github.com/google/desugar_jdk_libs](https://github.com/google/desugar_jdk_libs)
+- **AndroidX DocumentFile** 1.1.0. Copyright © The Android Open Source Project.
+- **AndroidX Core KTX** 1.19.1. Copyright © The Android Open Source Project.
+- **Apache Commons Net** 3.13.0. Copyright © The Apache Software Foundation. [https://commons.apache.org/proper/commons-net/](https://commons.apache.org/proper/commons-net/)
+- **Conscrypt** (`org.conscrypt:conscrypt-android`) 2.8.0. Copyright © 2016 The Android Open Source Project. [https://conscrypt.org/](https://conscrypt.org/). This distribution contains a modified portion of Netty ([http://netty.io/](http://netty.io/)) and a modified portion of Apache Harmony ([https://harmony.apache.org/](https://harmony.apache.org/)).
+- **sshj** 0.41.2. Copyright © SSHJ contributors. [https://github.com/hierynomus/sshj](https://github.com/hierynomus/sshj)
+- **smbj** 0.15.0. Copyright © Jeroen van Erp and contributors. [https://github.com/hierynomus/smbj](https://github.com/hierynomus/smbj)
 - **asn-one** 0.6.0. Copyright © Jeroen van Erp. [https://github.com/hierynomus/asn-one](https://github.com/hierynomus/asn-one)
 
 ## MIT
 
 - **Brotli decoder** (`org.brotli:dec`) 0.1.2. Copyright (c) 2009, 2010, 2013-2016 by the Brotli Authors. [https://github.com/google/brotli](https://github.com/google/brotli)
-- **SLF4J API and NOP** 2.0.16. Copyright © QOS.ch. [https://www.slf4j.org/](https://www.slf4j.org/)
-- **MBassador** 1.3.0. Copyright © Benjamin Diedrichsen. [https://github.com/bennidi/mbassador](https://github.com/bennidi/mbassador)
+- **SLF4J API and NOP** 2.0.20. Copyright © QOS.ch. [https://www.slf4j.org/](https://www.slf4j.org/)
+- **MBassador** 1.3.2. Copyright © Benjamin Diedrichsen. [https://github.com/bennidi/mbassador](https://github.com/bennidi/mbassador)
 
 ## Bouncy Castle Licence
 
-- **Bouncy Castle** `bcprov-jdk18on`, `bcpkix-jdk18on`, and `bcutil-jdk18on` 1.79. Copyright © The Legion of the Bouncy Castle Inc. [https://www.bouncycastle.org/](https://www.bouncycastle.org/)
-
-## CC0-1.0
-
-- **eddsa** 0.3.0. Written by the I2P project and dedicated to the public domain under CC0 1.0. [https://github.com/str4d/ed25519-java](https://github.com/str4d/ed25519-java)
+- **Bouncy Castle** `bcprov-jdk18on`, `bcpkix-jdk18on`, and `bcutil-jdk18on` 1.86. Copyright © The Legion of the Bouncy Castle Inc. [https://www.bouncycastle.org/](https://www.bouncycastle.org/)
 
 The copyright lines in each group above apply to that license text.
 

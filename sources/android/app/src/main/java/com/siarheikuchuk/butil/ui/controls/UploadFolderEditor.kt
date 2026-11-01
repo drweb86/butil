@@ -23,7 +23,7 @@ import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.FilterChip
 import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.MenuAnchorType
+import androidx.compose.material3.ExposedDropdownMenuAnchorType
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
@@ -265,7 +265,7 @@ private fun ProviderMenu(form: UploadFolderForm) {
             readOnly = true,
             label = { Text(stringResource(R.string.field_protocol)) },
             trailingIcon = { ExposedDropdownMenuDefaults.TrailingIcon(open) },
-            modifier = Modifier.menuAnchor(MenuAnchorType.PrimaryNotEditable).fillMaxWidth(),
+            modifier = Modifier.menuAnchor(ExposedDropdownMenuAnchorType.PrimaryNotEditable).fillMaxWidth(),
         )
         ExposedDropdownMenu(expanded = open, onDismissRequest = { open = false }) {
             StorageCatalog.providers.forEach { provider ->
@@ -341,7 +341,7 @@ private fun EnumField(field: FieldRow, enabled: Boolean, onChange: () -> Unit) {
             readOnly = true,
             label = { Text(field.label) },
             trailingIcon = { ExposedDropdownMenuDefaults.TrailingIcon(open) },
-            modifier = Modifier.menuAnchor(MenuAnchorType.PrimaryNotEditable).fillMaxWidth(),
+            modifier = Modifier.menuAnchor(ExposedDropdownMenuAnchorType.PrimaryNotEditable).fillMaxWidth(),
             isError = field.error != null,
         )
         ExposedDropdownMenu(expanded = open, onDismissRequest = { open = false }) {

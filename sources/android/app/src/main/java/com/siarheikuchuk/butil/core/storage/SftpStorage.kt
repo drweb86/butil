@@ -84,7 +84,7 @@ internal class SftpStorage(
 
             override fun read(b: ByteArray, off: Int, len: Int): Int {
                 if (offset >= size) return -1
-                val read = file.read(offset, b, off, len).toInt()
+                val read = file.read(offset, b, off, len)
                 if (read <= 0) return -1
                 offset += read
                 return read

@@ -6,8 +6,8 @@ The Windows builds include the .NET runtime. It is listed with the MIT component
 
 ## Apache-2.0
 
-- **AWSSDK.Core** 4.0.102.11. Authors: Amazon Web Services. [https://github.com/aws/aws-sdk-net/](https://github.com/aws/aws-sdk-net/)
-- **AWSSDK.S3** 4.0.104.4. Authors: Amazon Web Services. [https://github.com/aws/aws-sdk-net/](https://github.com/aws/aws-sdk-net/)
+- **AWSSDK.Core** 4.0.102.14. Authors: Amazon Web Services. [https://github.com/aws/aws-sdk-net/](https://github.com/aws/aws-sdk-net/)
+- **AWSSDK.S3** 4.0.104.8. Authors: Amazon Web Services. [https://github.com/aws/aws-sdk-net/](https://github.com/aws/aws-sdk-net/)
 
 ## CC0-1.0
 
@@ -42,7 +42,7 @@ The Windows builds include the .NET runtime. It is listed with the MIT component
 - **Azure.Storage.Common** 12.29.0. © Microsoft Corporation. All rights reserved. [https://github.com/Azure/azure-sdk-for-net/blob/Azure.Storage.Common_12.29.0/sdk/storage/Azure.Storage.Common/README.md](https://github.com/Azure/azure-sdk-for-net/blob/Azure.Storage.Common_12.29.0/sdk/storage/Azure.Storage.Common/README.md)
 - **BouncyCastle.Cryptography** 2.7.0. Copyright © Legion of the Bouncy Castle Inc. 2000-2026. [https://www.bouncycastle.org/stable/nuget/csharp/website](https://www.bouncycastle.org/stable/nuget/csharp/website)
 - **CommunityToolkit.Mvvm** 8.4.2. (c) .NET Foundation and Contributors. All rights reserved. [https://github.com/CommunityToolkit/dotnet](https://github.com/CommunityToolkit/dotnet)
-- **FluentFTP** 55.0.0. Copyright (c) 2015 Robin Rodricks and FluentFTP Contributors. [https://github.com/robinrodricks/FluentFTP](https://github.com/robinrodricks/FluentFTP)
+- **FluentFTP** 55.1.0. Copyright (c) 2015 Robin Rodricks and FluentFTP Contributors. [https://github.com/robinrodricks/FluentFTP](https://github.com/robinrodricks/FluentFTP)
 - **HarfBuzzSharp** 8.3.1.3. © Microsoft Corporation. All rights reserved. [https://go.microsoft.com/fwlink/](https://go.microsoft.com/fwlink/)
 - **HarfBuzzSharp.NativeAssets.Linux** 8.3.1.3. © Microsoft Corporation. All rights reserved. [https://go.microsoft.com/fwlink/](https://go.microsoft.com/fwlink/)
 - **HarfBuzzSharp.NativeAssets.macOS** 8.3.1.3. © Microsoft Corporation. All rights reserved. [https://go.microsoft.com/fwlink/](https://go.microsoft.com/fwlink/)
@@ -54,7 +54,7 @@ The Windows builds include the .NET runtime. It is listed with the MIT component
 - **Microsoft.Extensions.DependencyInjection.Abstractions** 10.0.9. © Microsoft Corporation. All rights reserved. [https://dot.net/](https://dot.net/)
 - **Microsoft.Extensions.Diagnostics.Abstractions** 10.0.9. © Microsoft Corporation. All rights reserved. [https://dot.net/](https://dot.net/)
 - **Microsoft.Extensions.FileProviders.Abstractions** 10.0.9. © Microsoft Corporation. All rights reserved. [https://dot.net/](https://dot.net/)
-- **Microsoft.Extensions.FileSystemGlobbing** 10.0.13. © Microsoft Corporation. All rights reserved. [https://dot.net/](https://dot.net/)
+- **Microsoft.Extensions.FileSystemGlobbing** 10.0.14. © Microsoft Corporation. All rights reserved. [https://dot.net/](https://dot.net/)
 - **Microsoft.Extensions.Hosting.Abstractions** 10.0.9. © Microsoft Corporation. All rights reserved. [https://dot.net/](https://dot.net/)
 - **Microsoft.Extensions.Logging.Abstractions** 10.0.9. © Microsoft Corporation. All rights reserved. [https://dot.net/](https://dot.net/)
 - **Microsoft.Extensions.Options** 10.0.9. © Microsoft Corporation. All rights reserved. [https://dot.net/](https://dot.net/)
@@ -72,7 +72,7 @@ The Windows builds include the .NET runtime. It is listed with the MIT component
 - **System.Diagnostics.EventLog** 9.0.2. © Microsoft Corporation. All rights reserved. [https://dot.net/](https://dot.net/)
 - **System.IO.Hashing** 10.0.9. © Microsoft Corporation. All rights reserved. [https://dot.net/](https://dot.net/)
 - **System.Memory.Data** 10.0.9. © Microsoft Corporation. All rights reserved. [https://dot.net/](https://dot.net/)
-- **System.Security.Cryptography.ProtectedData** 10.0.13. © Microsoft Corporation. All rights reserved. [https://dot.net/](https://dot.net/)
+- **System.Security.Cryptography.ProtectedData** 10.0.14. © Microsoft Corporation. All rights reserved. [https://dot.net/](https://dot.net/)
 - **TaskScheduler** 2.12.2. Copyright © 2002-2025. [https://github.com/dahall/taskscheduler](https://github.com/dahall/taskscheduler)
 - **Tmds.DBus.Protocol** 0.94.1. Tom Deseyn.
 - **WebDav.Client** 2.9.0. Copyright © 2022 skazantsev. [https://github.com/skazantsev/WebDavClient](https://github.com/skazantsev/WebDavClient)

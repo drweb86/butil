@@ -9,7 +9,7 @@ Application id: `com.siarheikuchuk.butil`
 ## Requirements
 
 - minSdk 23 (Android 6.0)
-- compileSdk / targetSdk 36
+- compileSdk 37, targetSdk 36
 - JDK 21 (bytecode target stays 17)
 
 ## Local build

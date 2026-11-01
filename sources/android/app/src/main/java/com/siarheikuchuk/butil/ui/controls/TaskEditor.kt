@@ -26,7 +26,7 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.MenuAnchorType
+import androidx.compose.material3.ExposedDropdownMenuAnchorType
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
@@ -245,7 +245,7 @@ private fun StorageBlock(help: String, draft: StorageDraft, busy: Boolean, brows
     var open by remember { mutableStateOf(false) }
     val current = StorageCatalog.providers.first { it.jsonType == draft.provider }
     ExposedDropdownMenuBox(expanded = open, onExpandedChange = { open = it }) {
-        OutlinedTextField(current.displayName, {}, readOnly = true, label = { Text(stringResource(R.string.field_protocol)) }, trailingIcon = { ExposedDropdownMenuDefaults.TrailingIcon(open) }, modifier = Modifier.menuAnchor(MenuAnchorType.PrimaryNotEditable).fillMaxWidth())
+        OutlinedTextField(current.displayName, {}, readOnly = true, label = { Text(stringResource(R.string.field_protocol)) }, trailingIcon = { ExposedDropdownMenuDefaults.TrailingIcon(open) }, modifier = Modifier.menuAnchor(ExposedDropdownMenuAnchorType.PrimaryNotEditable).fillMaxWidth())
         ExposedDropdownMenu(expanded = open, onDismissRequest = { open = false }) {
             StorageCatalog.providers.forEach { provider ->
                 DropdownMenuItem(text = { Text(provider.displayName) }, onClick = { draft.choose(provider.jsonType); open = false })
@@ -283,7 +283,7 @@ private fun ChoiceLine(label: String, current: String, options: List<String>, en
     var open by remember { mutableStateOf(false) }
     var selected by remember(current) { mutableStateOf(current) }
     ExposedDropdownMenuBox(expanded = open, onExpandedChange = { if (enabled) open = it }) {
-        OutlinedTextField(selected, {}, readOnly = true, label = { Text(label) }, trailingIcon = { ExposedDropdownMenuDefaults.TrailingIcon(open) }, modifier = Modifier.menuAnchor(MenuAnchorType.PrimaryNotEditable).fillMaxWidth())
+        OutlinedTextField(selected, {}, readOnly = true, label = { Text(label) }, trailingIcon = { ExposedDropdownMenuDefaults.TrailingIcon(open) }, modifier = Modifier.menuAnchor(ExposedDropdownMenuAnchorType.PrimaryNotEditable).fillMaxWidth())
         ExposedDropdownMenu(expanded = open, onDismissRequest = { open = false }) {
             options.forEach { option ->
                 DropdownMenuItem(text = { Text(option) }, onClick = {
