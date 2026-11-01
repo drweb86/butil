@@ -206,7 +206,7 @@ jobs:
           echo "ANDROID_HOME=${ANDROID_HOME:-}"
           echo "ANDROID_SDK_ROOT=${ANDROID_SDK_ROOT:-}"
           command -v sdkmanager
-          sdkmanager --install "platforms;android-36" "build-tools;36.0.0"
+          sdkmanager --install "platforms;android-37.0" "build-tools;36.0.0"
 
       - name: Prepare Android signing key
         env:
@@ -294,6 +294,9 @@ jobs:
 
       - name: Build APT repository
         run: |
+          sudo apt-get update
+          sudo apt-get install -y dpkg-dev apt-utils
+
           mkdir -p apt-repo/pool/main
           mkdir -p apt-repo/dists/stable/main/binary-amd64
           mkdir -p apt-repo/dists/stable/main/binary-arm64
