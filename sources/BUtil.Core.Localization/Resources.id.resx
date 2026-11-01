@@ -1331,6 +1331,9 @@ Silakan:
   <data name="Menu_ThirdPartyNotices" xml:space="preserve">
     <value>Pemberitahuan pihak ketiga</value>
   </data>
+  <data name="Menu_About" xml:space="preserve">
+    <value>Tentang</value>
+  </data>
   <data name="License_ThirdPartyNote" xml:space="preserve">
     <value>Kode milik BUtil berada di domain publik. Komponen pihak ketiga tetap pada lisensinya dan tercantum di Pemberitahuan pihak ketiga.</value>
   </data>

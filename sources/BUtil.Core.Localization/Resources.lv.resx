@@ -1334,6 +1334,9 @@ Skatiet detalizētu aprakstu šajā saitē.</value>
   <data name="Menu_ThirdPartyNotices" xml:space="preserve">
     <value>Trešo pušu paziņojumi</value>
   </data>
+  <data name="Menu_About" xml:space="preserve">
+    <value>Par</value>
+  </data>
   <data name="License_ThirdPartyNote" xml:space="preserve">
     <value>BUtil paša kods ir publiskajā īpašumā. Trešo pušu komponenti patur savas licences un ir uzskaitīti sadaļā Trešo pušu paziņojumi.</value>
   </data>

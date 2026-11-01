@@ -1331,6 +1331,9 @@
   <data name="Menu_ThirdPartyNotices" xml:space="preserve">
     <value>तृतीय-पक्ष सूचना</value>
   </data>
+  <data name="Menu_About" xml:space="preserve">
+    <value>परिचय</value>
+  </data>
   <data name="License_ThirdPartyNote" xml:space="preserve">
     <value>BUtil चा स्वतःचा कोड सार्वजनिक आहे. तृतीय-पक्ष घटक त्यांचे परवाने ठेवतात आणि तृतीय-पक्ष सूचनांमध्ये दिले आहेत.</value>
   </data>

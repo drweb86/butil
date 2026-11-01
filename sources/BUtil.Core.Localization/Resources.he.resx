@@ -1334,6 +1334,9 @@ bin.
   <data name="Menu_ThirdPartyNotices" xml:space="preserve">
     <value>הודעות צד שלישי</value>
   </data>
+  <data name="Menu_About" xml:space="preserve">
+    <value>אודות</value>
+  </data>
   <data name="License_ThirdPartyNote" xml:space="preserve">
     <value>הקוד של BUtil עצמו הוא נחלת הכלל. רכיבי צד שלישי שומרים על הרישיונות שלהם ומפורטים בהודעות צד שלישי.</value>
   </data>

@@ -1334,6 +1334,9 @@ bin.
   <data name="Menu_ThirdPartyNotices" xml:space="preserve">
     <value>तृतीय-पक्ष सूचनाएँ</value>
   </data>
+  <data name="Menu_About" xml:space="preserve">
+    <value>परिचय</value>
+  </data>
   <data name="License_ThirdPartyNote" xml:space="preserve">
     <value>BUtil का अपना कोड सार्वजनिक है। तृतीय-पक्ष घटक अपने लाइसेंस रखते हैं और तृतीय-पक्ष सूचनाओं में दिए गए हैं।</value>
   </data>

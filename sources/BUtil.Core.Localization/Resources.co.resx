@@ -1334,6 +1334,9 @@ See detailed description in the following link.</value>
   <data name="Menu_ThirdPartyNotices" xml:space="preserve">
     <value>Avvisi di terze parti</value>
   </data>
+  <data name="Menu_About" xml:space="preserve">
+    <value>Apprupositu</value>
+  </data>
   <data name="License_ThirdPartyNote" xml:space="preserve">
     <value>U codice propiu di BUtil hè di duminiu publicu. I cumpunenti di terze parti tenenu e so licenze è sò elencati in Avvisi di terze parti.</value>
   </data>

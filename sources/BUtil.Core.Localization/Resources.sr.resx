@@ -1334,6 +1334,9 @@ bin.
   <data name="Menu_ThirdPartyNotices" xml:space="preserve">
     <value>Обавештења трећих страна</value>
   </data>
+  <data name="Menu_About" xml:space="preserve">
+    <value>О програму</value>
+  </data>
   <data name="License_ThirdPartyNote" xml:space="preserve">
     <value>Сопствени код BUtil-а је у јавном власништву. Компоненте трећих страна задржавају лиценце и наведене су у Обавештењима трећих страна.</value>
   </data>

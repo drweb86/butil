@@ -1334,6 +1334,9 @@ See detailed description in the following link.</value>
   <data name="Menu_ThirdPartyNotices" xml:space="preserve">
     <value>د درېیم اړخ خبرتیاوې</value>
   </data>
+  <data name="Menu_About" xml:space="preserve">
+    <value>په اړه</value>
+  </data>
   <data name="License_ThirdPartyNote" xml:space="preserve">
     <value>د BUtil خپل کوډ عام ملکیت دی. د درېیم اړخ برخې خپل جوازونه ساتي او د درېیم اړخ خبرتیاوو کې راغلي دي.</value>
   </data>

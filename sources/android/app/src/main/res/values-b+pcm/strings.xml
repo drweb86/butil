@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="menu_about">About di program</string>
     <string name="ftps_server_task_create">Share folder for network (FTPS Server)</string>
     <string name="upload_folder_contents_task_create">Upload folder go server</string>
     <string name="technical_tool_pick_source_file">Choose source file</string>
@@ -16,11 +17,39 @@
     <string name="left_menu_what">Wetín?</string>
     <string name="ftps_server_title">FTPS Server</string>
     <string name="when_optional_hint">Dis section no dey compulsory. If you skip am, the task go only run when you start am by hand.</string>
+    <string name="upload_quota_help">E limit how much data one run go send go di storage. 0 mean say limit no dey. When e reach di limit, di files wey remain go skip and you fit send dem next time.</string>
+    <string name="run_at_login">Run after di device restart</string>
+    <string name="exact_alarm_needed">Android dey delay di time wey you set, and e fit block am until you allow alarm and reminder for BUtil.</string>
+    <string name="exact_alarm_allow">Allow alarm and reminder</string>
+    <string name="task_status_failed">E fail · %1$s</string>
+    <string name="task_status_stopped">E stop · %1$s</string>
+    <string name="task_status_never_run">E never run</string>
     <string name="task_duplicate">Make copy</string>
+    <string name="task_log_missing">Dis task never get log. Run am one time make e create one.</string>
+    <string name="task_log_save_failed">E no fit save di log.</string>
+    <string name="task_log_open_failed">Di log don save, but no app fit open am.</string>
+    <string name="task_delete_confirm">Delete dis task?</string>
+    <string name="tasks_empty">Task never dey. Use New for menu make you create one.</string>
     <string name="folder_empty">Folder no dey specified.</string>
+    <string name="upload_notifications_required">Allow notification so di upload fit continue.</string>
+    <string name="incremental_help">Incremental backup go keep every file wey change since di last run. Di app dey manage di storage: no use am for any other thing and no share am between tasks.</string>
+    <string name="incremental_storage_help">Put one storage wey na only for di backup versions.</string>
+    <string name="exclude_help">One pattern for one line. Name like bin go skip dat folder. *.tmp go skip di files wey match.</string>
+    <string name="source_folders">Folders wey you wan back up:</string>
+    <string name="import_help">E go import audio, photos and videos from folder or server and save dem with names wey come from di file date.</string>
     <string name="import_source_help">Choose the place wey you wan import media come from — like SD card, camera folder, or phone through FTPS.</string>
+    <string name="import_transform_help">Use {DATE:format} put di date wey di file change. Di format na .NET date pattern, like yyyy-MM-dd.</string>
     <string name="import_skip">Skip files wey don already import</string>
+    <string name="import_skip_help">E go skip files wey don dey for di destination or wey you don import before.</string>
     <string name="import_delete">Delete copied data from source media</string>
+    <string name="import_min_date">Skip files wey dem change before (yyyy-MM-dd):</string>
+    <string name="sync_storage_help">Put one storage wey devices go use sync. All di devices suppose use di same place and di same password.</string>
+    <string name="ftps_help">E go share di folder wey you choose with explicit FTPS and certificate wey e sign by itself. While di task dey run, FTPS client for your local network fit connect.</string>
+    <string name="ftps_duration">How long, minutes:</string>
+    <string name="ftps_duration_help">Di server go stop after dis number of minutes. 30 na di usual one.</string>
+    <string name="restore_help">E go restore one version from incremental backup storage. Choose di same storage and password wey di backup task use.</string>
+    <string name="restore_destination">Restore enter:</string>
+    <string name="preview_notice">Dis na preview. E fit copy, change and delete files, even when e dey sync. Keep your own backup of those files before you run any task.</string>
     <string name="storage_key_file">Key File:</string>
     <string name="storage_fingerprint">Fingaprint SHA-256:</string>
     <string name="storage_encryption">SSL/TLS encryption:</string>

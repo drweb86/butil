@@ -1334,6 +1334,9 @@ bin.
   <data name="Menu_ThirdPartyNotices" xml:space="preserve">
     <value>Σημειώσεις τρίτων</value>
   </data>
+  <data name="Menu_About" xml:space="preserve">
+    <value>Σχετικά</value>
+  </data>
   <data name="License_ThirdPartyNote" xml:space="preserve">
     <value>Ο δικός κώδικας του BUtil είναι κοινό κτήμα. Τα στοιχεία τρίτων κρατούν τις άδειές τους και αναφέρονται στις Σημειώσεις τρίτων.</value>
   </data>

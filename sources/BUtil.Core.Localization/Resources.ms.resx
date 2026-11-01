@@ -1334,6 +1334,9 @@ Lihat penerangan terperinci di pautan berikut.</value>
   <data name="Menu_ThirdPartyNotices" xml:space="preserve">
     <value>Notis pihak ketiga</value>
   </data>
+  <data name="Menu_About" xml:space="preserve">
+    <value>Perihal</value>
+  </data>
   <data name="License_ThirdPartyNote" xml:space="preserve">
     <value>Kod sendiri BUtil adalah domain awam. Komponen pihak ketiga kekal di bawah lesen mereka dan disenaraikan dalam Notis pihak ketiga.</value>
   </data>

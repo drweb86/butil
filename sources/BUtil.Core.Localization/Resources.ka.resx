@@ -1334,6 +1334,9 @@ bin.
   <data name="Menu_ThirdPartyNotices" xml:space="preserve">
     <value>მესამე მხარის შენიშვნები</value>
   </data>
+  <data name="Menu_About" xml:space="preserve">
+    <value>შესახებ</value>
+  </data>
   <data name="License_ThirdPartyNote" xml:space="preserve">
     <value>BUtil-ის საკუთარი კოდი საჯარო საკუთრებაა. მესამე მხარის კომპონენტები ინარჩუნებენ ლიცენზიებს და ჩამოთვლილია მესამე მხარის შენიშვნებში.</value>
   </data>

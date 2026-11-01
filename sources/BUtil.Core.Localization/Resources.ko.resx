@@ -1335,6 +1335,9 @@ bin.
   <data name="Menu_ThirdPartyNotices" xml:space="preserve">
     <value>제3자 고지</value>
   </data>
+  <data name="Menu_About" xml:space="preserve">
+    <value>정보</value>
+  </data>
   <data name="License_ThirdPartyNote" xml:space="preserve">
     <value>BUtil 자체의 코드는 퍼블릭 도메인입니다. 제3자 구성 요소는 자체 라이선스를 유지하며 제3자 고지에 나와 있습니다.</value>
   </data>

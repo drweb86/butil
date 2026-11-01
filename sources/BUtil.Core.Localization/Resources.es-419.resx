@@ -1334,6 +1334,9 @@ See detailed description in the following link.</value>
   <data name="Menu_ThirdPartyNotices" xml:space="preserve">
     <value>Avisos de terceros</value>
   </data>
+  <data name="Menu_About" xml:space="preserve">
+    <value>Acerca de</value>
+  </data>
   <data name="License_ThirdPartyNote" xml:space="preserve">
     <value>El código propio de BUtil es de dominio público. Los componentes de terceros conservan sus licencias y aparecen en Avisos de terceros.</value>
   </data>

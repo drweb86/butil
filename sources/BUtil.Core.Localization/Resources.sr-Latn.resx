@@ -1334,6 +1334,9 @@ Pogledajte detaljan opis na sledećem linku.</value>
   <data name="Menu_ThirdPartyNotices" xml:space="preserve">
     <value>Obaveštenja trećih strana</value>
   </data>
+  <data name="Menu_About" xml:space="preserve">
+    <value>O programu</value>
+  </data>
   <data name="License_ThirdPartyNote" xml:space="preserve">
     <value>Sopstveni kod BUtil-a je u javnom vlasništvu. Komponente trećih strana zadržavaju licence i navedene su u Obaveštenjima trećih strana.</value>
   </data>

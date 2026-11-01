@@ -1334,6 +1334,9 @@ Siehe detaillierte Beschreibung im folgenden Link.</value>
   <data name="Menu_ThirdPartyNotices" xml:space="preserve">
     <value>Hinweise Dritter</value>
   </data>
+  <data name="Menu_About" xml:space="preserve">
+    <value>Über</value>
+  </data>
   <data name="License_ThirdPartyNote" xml:space="preserve">
     <value>BUtils eigener Code ist gemeinfrei. Komponenten Dritter behalten ihre Lizenzen und stehen unter Hinweise Dritter.</value>
   </data>

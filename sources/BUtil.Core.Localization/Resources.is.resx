@@ -1334,6 +1334,9 @@ Sjá nákvæma lýsingu á eftirfarandi tengli.</value>
   <data name="Menu_ThirdPartyNotices" xml:space="preserve">
     <value>Tilkynningar þriðju aðila</value>
   </data>
+  <data name="Menu_About" xml:space="preserve">
+    <value>Um</value>
+  </data>
   <data name="License_ThirdPartyNote" xml:space="preserve">
     <value>Eigin kóði BUtil er í almenningseigu. Íhlutir þriðju aðila halda leyfum sínum og eru taldir upp í Tilkynningum þriðju aðila.</value>
   </data>

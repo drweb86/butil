@@ -1328,6 +1328,9 @@
   <data name="Menu_ThirdPartyNotices" xml:space="preserve">
     <value>তৃতীয় পক্ষের নোটিশ</value>
   </data>
+  <data name="Menu_About" xml:space="preserve">
+    <value>সম্বন্ধে</value>
+  </data>
   <data name="License_ThirdPartyNote" xml:space="preserve">
     <value>BUtil-এর নিজের কোড পাবলিক ডোমেইনে। তৃতীয় পক্ষের উপাদান তাদের নিজস্ব লাইসেন্স রাখে এবং তৃতীয় পক্ষের নোটিশে তালিকাভুক্ত।</value>
   </data>

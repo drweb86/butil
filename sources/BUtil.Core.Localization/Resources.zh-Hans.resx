@@ -1333,6 +1333,9 @@ bin。
   <data name="Menu_ThirdPartyNotices" xml:space="preserve">
     <value>第三方声明</value>
   </data>
+  <data name="Menu_About" xml:space="preserve">
+    <value>关于</value>
+  </data>
   <data name="License_ThirdPartyNote" xml:space="preserve">
     <value>BUtil 自己的代码属于公有领域。第三方组件保留各自的许可证，并列在第三方声明中。</value>
   </data>

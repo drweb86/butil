@@ -1331,6 +1331,9 @@ Xem mô tả chi tiết trong liên kết sau.</value>
   <data name="Menu_ThirdPartyNotices" xml:space="preserve">
     <value>Thông báo bên thứ ba</value>
   </data>
+  <data name="Menu_About" xml:space="preserve">
+    <value>Giới thiệu</value>
+  </data>
   <data name="License_ThirdPartyNote" xml:space="preserve">
     <value>Mã của chính BUtil thuộc phạm vi công cộng. Thành phần bên thứ ba giữ giấy phép của họ và được liệt kê trong Thông báo bên thứ ba.</value>
   </data>

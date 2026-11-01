@@ -1335,6 +1335,9 @@ Batafsil tavsifni quyidagi havoladan ko'ring.</value>
   <data name="Menu_ThirdPartyNotices" xml:space="preserve">
     <value>Uchinchi tomon eslatmalari</value>
   </data>
+  <data name="Menu_About" xml:space="preserve">
+    <value>Dastur haqida</value>
+  </data>
   <data name="License_ThirdPartyNote" xml:space="preserve">
     <value>BUtilning o'z kodi ommaviy mulk. Uchinchi tomon tarkibiy qismlari o'z litsenziyalarini saqlaydi va Uchinchi tomon eslatmalarida ko'rsatilgan.</value>
   </data>

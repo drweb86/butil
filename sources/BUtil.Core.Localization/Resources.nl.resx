@@ -1334,6 +1334,9 @@ Zie gedetailleerde beschrijving via de volgende link.</value>
   <data name="Menu_ThirdPartyNotices" xml:space="preserve">
     <value>Kennisgevingen van derden</value>
   </data>
+  <data name="Menu_About" xml:space="preserve">
+    <value>Over</value>
+  </data>
   <data name="License_ThirdPartyNote" xml:space="preserve">
     <value>BUtils eigen code is in het publieke domein. Onderdelen van derden houden hun licenties en staan bij Kennisgevingen van derden.</value>
   </data>

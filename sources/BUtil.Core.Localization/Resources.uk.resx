@@ -1335,6 +1335,9 @@ bin.
   <data name="Menu_ThirdPartyNotices" xml:space="preserve">
     <value>Повідомлення третіх сторін</value>
   </data>
+  <data name="Menu_About" xml:space="preserve">
+    <value>Про програму</value>
+  </data>
   <data name="License_ThirdPartyNote" xml:space="preserve">
     <value>Власний код BUtil є суспільним надбанням. Компоненти третіх сторін зберігають свої ліцензії та перелічені в Повідомленнях третіх сторін.</value>
   </data>

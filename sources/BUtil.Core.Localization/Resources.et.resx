@@ -1334,6 +1334,9 @@ Vaadake üksikasjalikku kirjeldust järgmisel lingil.</value>
   <data name="Menu_ThirdPartyNotices" xml:space="preserve">
     <value>Kolmandate osapoolte teatised</value>
   </data>
+  <data name="Menu_About" xml:space="preserve">
+    <value>Teave</value>
+  </data>
   <data name="License_ThirdPartyNote" xml:space="preserve">
     <value>BUtili enda kood on üldkasutatav. Kolmandate osapoolte komponendid säilitavad oma litsentsid ja on loetletud jaotises Kolmandate osapoolte teatised.</value>
   </data>

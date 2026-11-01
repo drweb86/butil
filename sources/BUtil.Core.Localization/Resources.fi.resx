@@ -1334,6 +1334,9 @@ Katso yksityiskohtainen kuvaus seuraavasta linkistä.</value>
   <data name="Menu_ThirdPartyNotices" xml:space="preserve">
     <value>Kolmansien osapuolten ilmoitukset</value>
   </data>
+  <data name="Menu_About" xml:space="preserve">
+    <value>Tietoja</value>
+  </data>
   <data name="License_ThirdPartyNote" xml:space="preserve">
     <value>BUtilin oma koodi on vapaata. Kolmansien osapuolten osat säilyttävät lisenssinsä ja ne on lueteltu kohdassa Kolmansien osapuolten ilmoitukset.</value>
   </data>

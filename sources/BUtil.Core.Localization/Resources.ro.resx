@@ -1334,6 +1334,9 @@ Consultați descrierea detaliată în următorul link.</value>
   <data name="Menu_ThirdPartyNotices" xml:space="preserve">
     <value>Mențiuni ale terților</value>
   </data>
+  <data name="Menu_About" xml:space="preserve">
+    <value>Despre</value>
+  </data>
   <data name="License_ThirdPartyNote" xml:space="preserve">
     <value>Codul propriu BUtil este în domeniul public. Componentele terților își păstrează licențele și sunt enumerate la Mențiuni ale terților.</value>
   </data>

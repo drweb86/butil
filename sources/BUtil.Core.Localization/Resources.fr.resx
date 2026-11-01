@@ -1332,6 +1332,9 @@ Consultez la description détaillée dans le lien suivant.</value>
   <data name="Menu_ThirdPartyNotices" xml:space="preserve">
     <value>Mentions de tiers</value>
   </data>
+  <data name="Menu_About" xml:space="preserve">
+    <value>À propos</value>
+  </data>
   <data name="License_ThirdPartyNote" xml:space="preserve">
     <value>Le code propre de BUtil est dans le domaine public. Les composants tiers conservent leurs licences et sont listés dans Mentions de tiers.</value>
   </data>

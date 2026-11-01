@@ -1334,6 +1334,9 @@ See detailed description in the following link.</value>
   <data name="Menu_ThirdPartyNotices" xml:space="preserve">
     <value>Avisos de tercers</value>
   </data>
+  <data name="Menu_About" xml:space="preserve">
+    <value>Quant a</value>
+  </data>
   <data name="License_ThirdPartyNote" xml:space="preserve">
     <value>El codi propi de BUtil és de domini públic. Els components de tercers conserven les seves llicències i es llisten a Avisos de tercers.</value>
   </data>

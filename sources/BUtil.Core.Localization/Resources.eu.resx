@@ -1334,6 +1334,9 @@ See detailed description in the following link.</value>
   <data name="Menu_ThirdPartyNotices" xml:space="preserve">
     <value>Hirugarrenen oharrak</value>
   </data>
+  <data name="Menu_About" xml:space="preserve">
+    <value>Honi buruz</value>
+  </data>
   <data name="License_ThirdPartyNote" xml:space="preserve">
     <value>BUtilen berezko kodea jabari publikokoa da. Hirugarrenen osagaiek beren lizentziak gordetzen dituzte eta Hirugarrenen oharretan daude.</value>
   </data>

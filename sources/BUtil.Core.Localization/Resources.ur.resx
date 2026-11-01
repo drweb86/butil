@@ -1321,6 +1321,9 @@
   <data name="Menu_ThirdPartyNotices" xml:space="preserve">
     <value>فریق ثالث کے نوٹس</value>
   </data>
+  <data name="Menu_About" xml:space="preserve">
+    <value>متعلق</value>
+  </data>
   <data name="License_ThirdPartyNote" xml:space="preserve">
     <value>BUtil کا اپنا کوڈ عوامی ملکیت ہے۔ فریق ثالث کے اجزا اپنے لائسنس رکھتے ہیں اور فریق ثالث کے نوٹس میں درج ہیں۔</value>
   </data>

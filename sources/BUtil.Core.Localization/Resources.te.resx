@@ -1327,6 +1327,9 @@
   <data name="Menu_ThirdPartyNotices" xml:space="preserve">
     <value>మూడవ పక్ష నోటీసులు</value>
   </data>
+  <data name="Menu_About" xml:space="preserve">
+    <value>గురించి</value>
+  </data>
   <data name="License_ThirdPartyNote" xml:space="preserve">
     <value>BUtil స్వంత కోడ్ పబ్లిక్ డొమైన్. మూడవ పక్ష భాగాలు తమ లైసెన్సులను ఉంచుతాయి మరియు మూడవ పక్ష నోటీసులలో ఉన్నాయి.</value>
   </data>

@@ -1331,6 +1331,9 @@ Aşağıdaki bağlantıda detaylı açıklama bulun.</value>
   <data name="Menu_ThirdPartyNotices" xml:space="preserve">
     <value>Üçüncü taraf bildirimleri</value>
   </data>
+  <data name="Menu_About" xml:space="preserve">
+    <value>Hakkında</value>
+  </data>
   <data name="License_ThirdPartyNote" xml:space="preserve">
     <value>BUtil'in kendi kodu kamu malıdır. Üçüncü taraf bileşenler kendi lisanslarını korur ve Üçüncü taraf bildirimlerinde listelenir.</value>
   </data>

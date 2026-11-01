@@ -1331,6 +1331,9 @@ Abeg do one of dese:
   <data name="Menu_ThirdPartyNotices" xml:space="preserve">
     <value>Third-party notices</value>
   </data>
+  <data name="Menu_About" xml:space="preserve">
+    <value>About di program</value>
+  </data>
   <data name="License_ThirdPartyNote" xml:space="preserve">
     <value>BUtil own code dey for public domain. Third-party components keep their own licenses and dem dey under Third-party notices.</value>
   </data>

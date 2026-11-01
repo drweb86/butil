@@ -293,8 +293,6 @@ private fun StorageBlock(help: String, draft: StorageDraft, busy: Boolean, brows
     NumberLine(stringResource(R.string.upload_quota), draft.quota, { draft.quota = it }, !busy, stringResource(R.string.upload_quota_help))
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
-@Composable
 @Composable
 private fun textOf(res: Int, fallback: String) = if (res != 0) stringResource(res) else fallback
 

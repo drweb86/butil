@@ -1334,6 +1334,9 @@ Se detaljert beskrivelse i følgende lenke.</value>
   <data name="Menu_ThirdPartyNotices" xml:space="preserve">
     <value>Tredjepartsmerknader</value>
   </data>
+  <data name="Menu_About" xml:space="preserve">
+    <value>Om</value>
+  </data>
   <data name="License_ThirdPartyNote" xml:space="preserve">
     <value>BUtils egen kode er i det fri. Tredjepartskomponenter beholder sine lisenser og er oppført under Tredjepartsmerknader.</value>
   </data>

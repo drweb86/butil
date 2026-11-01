@@ -1334,6 +1334,9 @@ See detailed description in the following link.</value>
   <data name="Menu_ThirdPartyNotices" xml:space="preserve">
     <value>Өченче яклар турында хәбәрләр</value>
   </data>
+  <data name="Menu_About" xml:space="preserve">
+    <value>Программа турында</value>
+  </data>
   <data name="License_ThirdPartyNote" xml:space="preserve">
     <value>BUtil үз коды җәмәгать милке. Өченче яклар компонентлары үз лицензияләрен саклый һәм Өченче яклар турында хәбәрләрдә күрсәтелгән.</value>
   </data>

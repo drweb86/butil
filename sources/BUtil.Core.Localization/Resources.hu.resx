@@ -1334,6 +1334,9 @@ A részletes leírást az alábbi linken találja.</value>
   <data name="Menu_ThirdPartyNotices" xml:space="preserve">
     <value>Harmadik felek közleményei</value>
   </data>
+  <data name="Menu_About" xml:space="preserve">
+    <value>Névjegy</value>
+  </data>
   <data name="License_ThirdPartyNote" xml:space="preserve">
     <value>A BUtil saját kódja közkincs. A harmadik felek összetevői megtartják a licencüket, és a Harmadik felek közleményei között szerepelnek.</value>
   </data>

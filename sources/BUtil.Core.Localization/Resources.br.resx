@@ -1334,6 +1334,9 @@ See detailed description in the following link.</value>
   <data name="Menu_ThirdPartyNotices" xml:space="preserve">
     <value>Kemennoù tredeoù</value>
   </data>
+  <data name="Menu_About" xml:space="preserve">
+    <value>Diwar-benn</value>
+  </data>
   <data name="License_ThirdPartyNote" xml:space="preserve">
     <value>Kodoù BUtil e-unan zo en domani foran. An elfennoù tredeoù a viro o lañvazioù hag int rollet e Kemennoù tredeoù.</value>
   </data>

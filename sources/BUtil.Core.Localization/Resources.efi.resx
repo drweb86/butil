@@ -1331,6 +1331,9 @@ See detailed description in the following link.</value>
   <data name="Menu_ThirdPartyNotices" xml:space="preserve">
     <value>Unọ idem mbon enwen</value>
   </data>
+  <data name="Menu_About" xml:space="preserve">
+    <value>Se abaña</value>
+  </data>
   <data name="License_ThirdPartyNote" xml:space="preserve">
     <value>Kod BUtil ke idem esie odu ke public domain. Mbon enwen enyene unọ idem mmọ, ndien ema ewọt ke Unọ idem mbon enwen.</value>
   </data>

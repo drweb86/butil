@@ -1335,6 +1335,9 @@ Ji bo danasîna berfireh lînka jêrîn bibînin.</value>
   <data name="Menu_ThirdPartyNotices" xml:space="preserve">
     <value>Agahiyên aliyên sêyem</value>
   </data>
+  <data name="Menu_About" xml:space="preserve">
+    <value>Der barê</value>
+  </data>
   <data name="License_ThirdPartyNote" xml:space="preserve">
     <value>Koda xwe ya BUtil di qada giştî de ye. Pêkhateyên aliyên sêyem lîsansên xwe diparêzin û di Agahiyên aliyên sêyem de hatine nivîsandin.</value>
   </data>

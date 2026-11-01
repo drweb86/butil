@@ -1334,6 +1334,9 @@ Podrobný popis naleznete v následujícím odkazu.</value>
   <data name="Menu_ThirdPartyNotices" xml:space="preserve">
     <value>Oznámení třetích stran</value>
   </data>
+  <data name="Menu_About" xml:space="preserve">
+    <value>O aplikaci</value>
+  </data>
   <data name="License_ThirdPartyNote" xml:space="preserve">
     <value>Vlastní kód BUtil je volným dílem. Komponenty třetích stran si ponechávají své licence a jsou uvedeny v Oznámení třetích stran.</value>
   </data>

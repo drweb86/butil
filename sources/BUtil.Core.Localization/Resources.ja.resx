@@ -1318,6 +1318,9 @@ bin.
   <data name="Menu_ThirdPartyNotices" xml:space="preserve">
     <value>サードパーティ表記</value>
   </data>
+  <data name="Menu_About" xml:space="preserve">
+    <value>バージョン情報</value>
+  </data>
   <data name="License_ThirdPartyNote" xml:space="preserve">
     <value>BUtil 自身のコードはパブリックドメインです。サードパーティの部品は各自のライセンスのままで、サードパーティ表記に記載しています。</value>
   </data>

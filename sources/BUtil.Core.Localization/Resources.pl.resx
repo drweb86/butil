@@ -1334,6 +1334,9 @@ Szczegółowy opis znajdziesz pod poniższym linkiem.</value>
   <data name="Menu_ThirdPartyNotices" xml:space="preserve">
     <value>Informacje o stronach trzecich</value>
   </data>
+  <data name="Menu_About" xml:space="preserve">
+    <value>O programie</value>
+  </data>
   <data name="License_ThirdPartyNote" xml:space="preserve">
     <value>Własny kod BUtil jest dobrem publicznym. Składniki stron trzecich zachowują swoje licencje i są wymienione w Informacjach o stronach trzecich.</value>
   </data>

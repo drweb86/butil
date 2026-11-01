@@ -1334,6 +1334,9 @@ bin
   <data name="Menu_ThirdPartyNotices" xml:space="preserve">
     <value>ประกาศของบุคคลที่สาม</value>
   </data>
+  <data name="Menu_About" xml:space="preserve">
+    <value>เกี่ยวกับ</value>
+  </data>
   <data name="License_ThirdPartyNote" xml:space="preserve">
     <value>โค้ดของ BUtil เองเป็นสาธารณสมบัติ ส่วนประกอบของบุคคลที่สามยังอยู่ภายใต้สัญญาอนุญาตของตน และระบุไว้ในประกาศของบุคคลที่สาม</value>
   </data>

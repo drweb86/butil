@@ -1334,6 +1334,9 @@ bin.
   <data name="Menu_ThirdPartyNotices" xml:space="preserve">
     <value>Trečiųjų šalių pranešimai</value>
   </data>
+  <data name="Menu_About" xml:space="preserve">
+    <value>Apie</value>
+  </data>
   <data name="License_ThirdPartyNote" xml:space="preserve">
     <value>Paties BUtil kodas yra viešo naudojimo. Trečiųjų šalių komponentai išlaiko savo licencijas ir išvardyti skiltyje Trečiųjų šalių pranešimai.</value>
   </data>

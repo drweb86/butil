@@ -1334,6 +1334,9 @@ See detailed description in the following link.</value>
   <data name="Menu_ThirdPartyNotices" xml:space="preserve">
     <value>Fógraí tríú páirtí</value>
   </data>
+  <data name="Menu_About" xml:space="preserve">
+    <value>Maidir leis</value>
+  </data>
   <data name="License_ThirdPartyNote" xml:space="preserve">
     <value>Tá cód féin BUtil sa fearann poiblí. Coimeádann comhpháirteanna tríú páirtí a gceadúnais agus tá siad liostaithe faoi Fógraí tríú páirtí.</value>
   </data>

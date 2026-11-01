@@ -1333,6 +1333,9 @@ bin.
   <data name="Menu_ThirdPartyNotices" xml:space="preserve">
     <value>மூன்றாம் தரப்பு அறிவிப்புகள்</value>
   </data>
+  <data name="Menu_About" xml:space="preserve">
+    <value>பற்றி</value>
+  </data>
   <data name="License_ThirdPartyNote" xml:space="preserve">
     <value>BUtil-இன் சொந்த குறியீடு பொது உரிமையானது. மூன்றாம் தரப்பு கூறுகள் தம் உரிமத்தை வைத்திருக்கும்; அவை மூன்றாம் தரப்பு அறிவிப்புகளில் உள்ளன.</value>
   </data>

@@ -1334,6 +1334,9 @@ bin.
   <data name="Menu_ThirdPartyNotices" xml:space="preserve">
     <value>إشعارات الجهات الخارجية</value>
   </data>
+  <data name="Menu_About" xml:space="preserve">
+    <value>حول</value>
+  </data>
   <data name="License_ThirdPartyNote" xml:space="preserve">
     <value>كود BUtil نفسه في الملك العام. تحتفظ مكونات الجهات الخارجية بتراخيصها وهي مذكورة في إشعارات الجهات الخارجية.</value>
   </data>

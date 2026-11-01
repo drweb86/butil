@@ -1334,6 +1334,9 @@ Sjå detaljert skildring i følgjande lenkje.</value>
   <data name="Menu_ThirdPartyNotices" xml:space="preserve">
     <value>Merknader frå tredjeparter</value>
   </data>
+  <data name="Menu_About" xml:space="preserve">
+    <value>Om</value>
+  </data>
   <data name="License_ThirdPartyNote" xml:space="preserve">
     <value>BUtil sin eigen kode er i det fri. Komponentar frå tredjeparter held lisensane sine og er lista under Merknader frå tredjeparter.</value>
   </data>

@@ -1334,6 +1334,9 @@ Shihni përshkrimin e detajuar në lidhjen vijuese.</value>
   <data name="Menu_ThirdPartyNotices" xml:space="preserve">
     <value>Njoftime të palëve të treta</value>
   </data>
+  <data name="Menu_About" xml:space="preserve">
+    <value>Rreth</value>
+  </data>
   <data name="License_ThirdPartyNote" xml:space="preserve">
     <value>Kodi i vetë BUtil është në domenin publik. Komponentët e palëve të treta ruajnë licencat e tyre dhe janë te Njoftime të palëve të treta.</value>
   </data>
