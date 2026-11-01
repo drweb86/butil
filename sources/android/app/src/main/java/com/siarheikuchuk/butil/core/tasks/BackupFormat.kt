@@ -61,22 +61,14 @@ object BackupNames {
     }
 
     fun relativeTo(folder: String, fileName: String): String {
-        val root = folder.trimEnd('\\', '/')
-        val file = fileName.replace('/', '\\')
-        val trimmed = file.trimStart('\\')
-        val prefixed = listOf(file, trimmed, "\\$trimmed")
-        for (candidate in prefixed) {
-            val normalized = candidate.trimStart('\\')
-            if (normalized.equals(root, ignoreCase = true)) return ""
-            val prefix = root + "\\"
-            if (normalized.startsWith(prefix, ignoreCase = true)) {
-                return normalized.substring(prefix.length)
-            }
+        val root = folder.trimEnd('\\', '/').replace('\\', '/')
+        val file = fileName.replace('\\', '/')
+        if (file.equals(root, ignoreCase = true)) return ""
+        val prefix = "$root/"
+        if (file.startsWith(prefix, ignoreCase = true)) {
+            return file.substring(prefix.length)
         }
-        if (file.length > root.length + 1 && file.startsWith(root, ignoreCase = true)) {
-            return file.substring(root.length + 1).trimStart('\\')
-        }
-        return file.trimStart('\\')
+        return file.trimStart('/')
     }
 }
 

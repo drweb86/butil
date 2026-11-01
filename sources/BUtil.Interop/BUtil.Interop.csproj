@@ -14,5 +14,6 @@
     <InternalsVisibleTo Include="butilc" />
     <InternalsVisibleTo Include="BUtil.Storages.Common" />
     <InternalsVisibleTo Include="BUtil.Tasks.Common" />
+    <InternalsVisibleTo Include="BUtil.Tests" />
   </ItemGroup>
 </Project>

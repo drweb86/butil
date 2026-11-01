@@ -166,8 +166,8 @@ class SynchronizationRunner(private val context: Context) {
         val source = BackupSourceItem(BackupNames.EMPTY_ID, BackupNames.SYNC_TARGET, true)
         val version = state.versions.maxByOrNull { it.backupDateUtcMillis } ?: return null
         return BackupStateCodec.filesAt(state, source, version).firstOrNull { stored ->
-            val relative = BackupNames.relativeTo(BackupNames.SYNC_TARGET, stored.file.fileName)
-            relative.equals(remote.relativeFileName, ignoreCase = true) ||
+            val relative = BackupNames.relativeTo(BackupNames.SYNC_TARGET, stored.file.fileName).replace('\\', '/')
+            relative.equals(remote.relativeFileName.replace('\\', '/'), ignoreCase = true) ||
                 (stored.file.size == remote.size && stored.file.sha512.equals(remote.sha512, ignoreCase = true))
         }
     }

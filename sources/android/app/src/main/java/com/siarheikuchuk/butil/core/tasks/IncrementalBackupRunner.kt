@@ -39,7 +39,7 @@ class IncrementalBackupRunner(private val context: Context) {
                 uploads.forEachIndexed { index, (source, storageFile) ->
                     if (cancelled()) return "Backup cancelled."
                     val position = "${index + 1}/${uploads.size}"
-                    val existing = BackupStateCodec.findStored(state, storageFile.file, ignoreLastVersion = true)
+                    val existing = alreadyStored(state, storageFile)
                     if (existing != null) {
                         storageFile.copyStorageFrom(existing)
                         onProgress("Already stored ($position): ${friendly(source, storageFile.file.fileName)}")
@@ -115,12 +115,16 @@ class IncrementalBackupRunner(private val context: Context) {
                 val sourceItems = version.changes.map { it.sourceItem }.ifEmpty {
                     state.versions.flatMap { it.changes.map { change -> change.sourceItem } }.distinctBy { it.target }
                 }
+                val planned = sourceItems.distinctBy { it.target to it.isFolder }.map { source ->
+                    source to BackupStateCodec.filesAt(state, source, version)
+                }.filter { it.second.isNotEmpty() }
+                val prefixes = restorePrefixes(planned.map { it.first.target })
                 var count = 0
-                sourceItems.distinctBy { it.target to it.isFolder }.forEach { source ->
-                    val files = BackupStateCodec.filesAt(state, source, version)
+                planned.forEach { (source, files) ->
                     files.forEach { storageFile ->
                         if (cancelled()) return "Restore cancelled."
-                        val relative = BackupNames.relativeTo(source.target, storageFile.file.fileName).replace('\\', '/')
+                        val relative = (prefixes[source.target] ?: "") +
+                            BackupNames.relativeTo(source.target, storageFile.file.fileName).replace('\\', '/')
                         if (relative.isBlank()) return@forEach
                         count++
                         onProgress("Restoring $relative")
@@ -156,7 +160,7 @@ class IncrementalBackupRunner(private val context: Context) {
         cancelled: () -> Boolean,
     ): List<Snapshot>? {
         val result = mutableListOf<Snapshot>()
-        task.items.forEach { item ->
+        task.items.forEachIndexed { sourceIndex, item ->
             if (cancelled()) return null
             onProgress("Scanning ${item.target}")
             val source = BackupSourceItem(item.id, item.target, true)
@@ -165,7 +169,7 @@ class IncrementalBackupRunner(private val context: Context) {
             LocalFolder.listRemoteFiles(context, item.target).forEach { remote ->
                 if (cancelled()) return null
                 if (ExcludePatterns.excluded(item.target, remote.relativePath, task.fileExcludePatterns)) return@forEach
-                val local = materialize(work, "plain-${temps.size}") {
+                val local = materialize(work, "plain-$sourceIndex-${temps.size}") {
                     LocalFolder.open(context, item.target, remote.relativePath)
                 }
                 val state = BackupFileState(
@@ -224,6 +228,38 @@ class IncrementalBackupRunner(private val context: Context) {
         storageFile.storageIntegrityMethod = BackupNames.SHA512
         storageFile.storageIntegrityMethodInfo = FileHash.sha512(encrypted)
         encrypted.delete()
+    }
+
+    private fun alreadyStored(state: BackupState, storageFile: BackupStorageFile): BackupStorageFile? {
+        BackupStateCodec.findStored(state, storageFile.file, ignoreLastVersion = true)
+            ?.takeIf { it.storageRelativeFileName.isNotBlank() }
+            ?.let { return it }
+        val version = state.versions.lastOrNull() ?: return null
+        return version.changes
+            .asSequence()
+            .flatMap { (it.createdFiles + it.updatedFiles).asSequence() }
+            .firstOrNull {
+                it !== storageFile &&
+                    it.storageRelativeFileName.isNotBlank() &&
+                    it.file.sameContent(storageFile.file)
+            }
+    }
+
+    private fun restorePrefixes(targets: List<String>): Map<String, String> {
+        if (targets.distinct().size <= 1) return emptyMap()
+        val used = mutableSetOf<String>()
+        val prefixes = linkedMapOf<String, String>()
+        targets.distinct().forEach { target ->
+            val leaf = target.trimEnd('/', '\\').replace('\\', '/').substringAfterLast('/').ifBlank { "folder" }
+            var name = leaf
+            var suffix = 2
+            while (!used.add(name)) {
+                name = "$leaf-$suffix"
+                suffix++
+            }
+            prefixes[target] = "$name/"
+        }
+        return prefixes
     }
 
     private fun friendly(source: BackupSourceItem, fileName: String): String {

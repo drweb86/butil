@@ -17,6 +17,7 @@ android {
         val defaultVersionName = "2026.10.08"
         versionCode = findProperty("appVersionCode")?.toString()?.toIntOrNull() ?: defaultVersionCode
         versionName = findProperty("appVersionName")?.toString()?.takeIf { it.isNotBlank() } ?: defaultVersionName
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
     flavorDimensions += "policy"
@@ -214,4 +215,7 @@ dependencies {
     implementation("org.slf4j:slf4j-nop:2.0.16")
     implementation("com.hierynomus:smbj:0.13.0")
     debugImplementation("androidx.compose.ui:ui-tooling")
+    androidTestImplementation("androidx.test.ext:junit:1.2.1")
+    androidTestImplementation("androidx.test:runner:1.6.2")
+    androidTestImplementation("androidx.test:core:1.6.1")
 }
