@@ -168,6 +168,9 @@
     <string name="trust_sftp_instruction">Kontrolu ĉi tiun fingrospuron ekstere de la bando, tiam alklaku Konservi denove por konservi ĝin.</string>
     <string name="trust_ftps_title">FTPS-servila atestilo detektita dum testo.</string>
     <string name="trust_ftps_instruction">Kontrolu atestilidentecon ekstere de la bando, tiam alklaku Konservi denove por konservi ĝin.</string>
+    <string name="trust_ftps_self_signed">Dum la testo de la konekto troviĝis memsubskribita atestilo.</string>
+    <string name="trust_ftps_next">Ĝi estis konservita en la deksesuma kampo de la atestilo. La sekva konekto akceptos ĝin.</string>
+    <string name="trust_ftps_compare">Komparu ĉi tiujn fingrospurojn kun tiuj, kiujn vi atendas. Se ili kongruas, tuŝu OK denove. Se ili ne kongruas, tio povas esti atako de homo en la mezo, aŭ antivirusa aŭ MDM-programaro kaptas la konekton.</string>
     <string name="trust_host">Gastiganto: %1$s</string>
     <string name="trust_port">Haveno: %1$s</string>
     <string name="trust_user">Uzanto: %1$s</string>

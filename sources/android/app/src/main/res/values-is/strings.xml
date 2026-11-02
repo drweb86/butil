@@ -169,6 +169,9 @@
     <string name="trust_sftp_instruction">Staðfestu þetta fingrafar utan rásarinnar, smelltu síðan á Vista aftur til að geyma það.</string>
     <string name="trust_ftps_title">FTPS þjónsvottorð greindist við prófun.</string>
     <string name="trust_ftps_instruction">Staðfestu auðkenni vottorðs utan rásarinnar, smelltu síðan á Vista aftur til að geyma það.</string>
+    <string name="trust_ftps_self_signed">Við prófun tengingarinnar fannst sjálfundirritað vottorð.</string>
+    <string name="trust_ftps_next">Það var vistað í sextándakerfisreit vottorðsins. Næsta tenging mun samþykkja það.</string>
+    <string name="trust_ftps_compare">Berðu þessi fingraför saman við þau sem þú býst við. Ef þau stemma, ýttu aftur á OK. Ef þau stemma ekki getur þetta verið milliliðsárás, eða vírusvarnar- eða MDM-hugbúnaður grípur tenginguna.</string>
     <string name="trust_host">Hýsill: %1$s</string>
     <string name="trust_port">Gátt: %1$s</string>
     <string name="trust_user">Notandi: %1$s</string>

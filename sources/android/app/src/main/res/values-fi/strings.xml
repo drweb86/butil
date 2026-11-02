@@ -168,6 +168,9 @@
     <string name="trust_sftp_instruction">Vahvista tämä sormenjälki erillisesti ja napsauta sitten uudelleen Tallenna tallentaaksesi sen.</string>
     <string name="trust_ftps_title">FTPS-palvelimen varmenne havaittu testin aikana.</string>
     <string name="trust_ftps_instruction">Vahvista varmenteen identiteetti erillisesti ja napsauta sitten uudelleen Tallenna tallentaaksesi sen.</string>
+    <string name="trust_ftps_self_signed">Yhteyttä testattaessa löytyi itse allekirjoitettu varmenne.</string>
+    <string name="trust_ftps_next">Se tallennettiin varmenteen heksakenttään. Seuraava yhteys hyväksyy sen.</string>
+    <string name="trust_ftps_compare">Vertaa näitä sormenjälkiä odottamiisi. Jos ne täsmäävät, napauta OK uudelleen. Jos ne eivät täsmää, kyseessä voi olla välistävetohyökkäys, tai virustorjunta tai MDM-ohjelmisto kaappaa yhteyden.</string>
     <string name="trust_host">Isäntä: %1$s</string>
     <string name="trust_port">Portti: %1$s</string>
     <string name="trust_user">Käyttäjä: %1$s</string>

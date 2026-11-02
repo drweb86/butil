@@ -165,6 +165,9 @@
     <string name="trust_sftp_instruction">Xác minh dấu vân tay này ngoài kênh, sau đó nhấp Lưu lại để lưu trữ nó.</string>
     <string name="trust_ftps_title">Chứng chỉ máy chủ FTPS được phát hiện trong quá trình kiểm tra.</string>
     <string name="trust_ftps_instruction">Xác minh danh tính chứng chỉ ngoài kênh, sau đó nhấp Lưu lại để lưu trữ nó.</string>
+    <string name="trust_ftps_self_signed">Khi thử kết nối, đã tìm thấy chứng chỉ tự ký.</string>
+    <string name="trust_ftps_next">Chứng chỉ đã được lưu vào ô thập lục phân. Lần kết nối sau sẽ chấp nhận chứng chỉ này.</string>
+    <string name="trust_ftps_compare">Hãy so các dấu vân tay này với những dấu bạn mong đợi. Nếu khớp, hãy chạm OK lần nữa. Nếu không khớp, đây có thể là tấn công người đứng giữa, hoặc phần mềm diệt vi-rút hay MDM đang chặn kết nối.</string>
     <string name="trust_host">Máy chủ: %1$s</string>
     <string name="trust_port">Cổng: %1$s</string>
     <string name="trust_user">Người dùng: %1$s</string>

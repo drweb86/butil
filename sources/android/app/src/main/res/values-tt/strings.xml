@@ -170,6 +170,9 @@
     <string name="trust_sftp_instruction">Бу бармак эзен тикшерегез, аннары саклау өчен кабат Саклагыз.</string>
     <string name="trust_ftps_title">Тест вакытында FTPS сервер сертификаты ачыкланды.</string>
     <string name="trust_ftps_instruction">Сертификатның шәхесен тикшерегез, аннары саклау өчен кабат Саклагыз.</string>
+    <string name="trust_ftps_self_signed">Тоташуны тикшергәндә үзе имзаланган сертификат табылды.</string>
+    <string name="trust_ftps_next">Ул сертификатның уналтылы кырына язылды. Киләсе тоташу аны кабул итәчәк.</string>
+    <string name="trust_ftps_compare">Бу эзләрне көтелгәннәре белән чагыштырыгыз. Алар туры килсә, OK төймәсен тагын бер тапкыр басыгыз. Тура килмәсә, бу «уртадагы кеше» һөҗүме булырга мөмкин, яки антивирус яки MDM программасы тоташуны арада тота.</string>
     <string name="trust_host">Алып баручы: %1$s</string>
     <string name="trust_port">Порт: %1$s</string>
     <string name="trust_user">Кулланучы: %1$s</string>

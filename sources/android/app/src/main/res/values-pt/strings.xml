@@ -167,6 +167,9 @@
     <string name="trust_sftp_instruction">Verifique esta impressão digital fora de banda, depois clique em Salvar novamente para armazená-la.</string>
     <string name="trust_ftps_title">Certificado do servidor FTPS detectado durante o teste.</string>
     <string name="trust_ftps_instruction">Verifique a identidade do certificado fora de banda, depois clique em Salvar novamente para armazená-lo.</string>
+    <string name="trust_ftps_self_signed">Ao testar a conexão, foi encontrado um certificado autoassinado.</string>
+    <string name="trust_ftps_next">Ele foi salvo no campo hexadecimal do certificado. A próxima conexão vai aceitá-lo.</string>
+    <string name="trust_ftps_compare">Compare estas impressões digitais com as que você espera. Se coincidirem, toque em OK novamente. Se não coincidirem, pode ser um ataque man-in-the-middle, ou um antivírus ou um software MDM pode estar interceptando a conexão.</string>
     <string name="trust_port">Porta: %1$s</string>
     <string name="trust_user">Usuário: %1$s</string>
     <string name="trust_folder">Pasta: %1$s</string>

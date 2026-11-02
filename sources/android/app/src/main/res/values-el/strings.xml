@@ -166,6 +166,9 @@
     <string name="trust_sftp_instruction">Επαληθεύστε αυτό το αποτύπωμα εκτός ζώνης και κάντε ξανά κλικ στο Αποθήκευση για αποθήκευση.</string>
     <string name="trust_ftps_title">Εντοπίστηκε πιστοποιητικό διακομιστή FTPS κατά τη δοκιμή.</string>
     <string name="trust_ftps_instruction">Επαληθεύστε την ταυτότητα του πιστοποιητικού εκτός ζώνης και κάντε ξανά κλικ στο Αποθήκευση για αποθήκευση.</string>
+    <string name="trust_ftps_self_signed">Κατά τη δοκιμή της σύνδεσης βρέθηκε ένα αυτοϋπογεγραμμένο πιστοποιητικό.</string>
+    <string name="trust_ftps_next">Αποθηκεύτηκε στο δεκαεξαδικό πεδίο του πιστοποιητικού. Η επόμενη σύνδεση θα το αποδεχτεί.</string>
+    <string name="trust_ftps_compare">Συγκρίνετε αυτά τα δακτυλικά αποτυπώματα με αυτά που περιμένετε. Αν ταιριάζουν, πατήστε ξανά OK. Αν δεν ταιριάζουν, μπορεί να πρόκειται για επίθεση man-in-the-middle, ή λογισμικό προστασίας από ιούς ή MDM να υποκλέπτει τη σύνδεση.</string>
     <string name="trust_host">Κεντρικός υπολογιστής: %1$s</string>
     <string name="trust_port">Θύρα: %1$s</string>
     <string name="trust_user">Χρήστης: %1$s</string>

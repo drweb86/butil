@@ -161,6 +161,9 @@
     <string name="trust_sftp_instruction">Verifieer deze vingerafdruk out-of-band en klik vervolgens opnieuw op Opslaan om het op te slaan.</string>
     <string name="trust_ftps_title">FTPS-servercertificaat gedetecteerd tijdens test.</string>
     <string name="trust_ftps_instruction">Verifieer de certificaatidentiteit out-of-band en klik vervolgens opnieuw op Opslaan om het op te slaan.</string>
+    <string name="trust_ftps_self_signed">Tijdens het testen van de verbinding is een zelfondertekend certificaat gevonden.</string>
+    <string name="trust_ftps_next">Het is opgeslagen in het hexadecimale veld van het certificaat. De volgende verbinding accepteert het.</string>
+    <string name="trust_ftps_compare">Vergelijk deze vingerafdrukken met de verwachte. Als ze overeenkomen, tik opnieuw op OK. Als ze niet overeenkomen, kan dit een man-in-the-middle-aanval zijn, of antivirus- of MDM-software onderschept de verbinding.</string>
     <string name="trust_port">Poort: %1$s</string>
     <string name="trust_user">Gebruiker: %1$s</string>
     <string name="trust_folder">Map: %1$s</string>

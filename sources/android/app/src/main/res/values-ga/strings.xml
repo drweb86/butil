@@ -168,6 +168,9 @@
     <string name="trust_sftp_instruction">Fíoraigh an t-as-bhanda seo méarloirg, ansin cliceáil ar Sábháil arís chun é a stóráil.</string>
     <string name="trust_ftps_title">Braitheadh ​​teastas freastalaí FTPS le linn tástála.</string>
     <string name="trust_ftps_instruction">Fíoraigh aitheantas teastas lasmuigh den bhanda, ansin cliceáil Sábháil arís chun é a stóráil.</string>
+    <string name="trust_ftps_self_signed">Agus an nasc á thástáil, fuarthas teastas féinsínithe.</string>
+    <string name="trust_ftps_next">Sábháladh sa réimse heicsidheachúlach den teastas é. Glacfaidh an chéad nasc eile leis.</string>
+    <string name="trust_ftps_compare">Cuir na méarloirg seo i gcomparáid leis na cinn a bhfuil tú ag súil leo. Má mheaitseálann siad, tapáil OK arís. Mura meaitseálann, d\'fhéadfadh sé a bheith ina ionsaí fear sa lár, nó d\'fhéadfadh bogearraí frithvíris nó MDM a bheith ag idircheapadh an naisc.</string>
     <string name="trust_host">Óstach: %1$s</string>
     <string name="trust_user">Úsáideoir: %1$s</string>
     <string name="trust_folder">Fillteán: %1$s</string>

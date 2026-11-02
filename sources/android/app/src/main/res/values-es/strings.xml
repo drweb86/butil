@@ -165,6 +165,9 @@
     <string name="trust_sftp_instruction">Verifique esta huella fuera de banda, luego haga clic en Guardar nuevamente para almacenarla.</string>
     <string name="trust_ftps_title">Certificado del servidor FTPS detectado durante la prueba.</string>
     <string name="trust_ftps_instruction">Verifique la identidad del certificado fuera de banda, luego haga clic en Guardar nuevamente para almacenarlo.</string>
+    <string name="trust_ftps_self_signed">Al probar la conexión, se encontró un certificado autofirmado.</string>
+    <string name="trust_ftps_next">Se guardó en el campo hexadecimal del certificado. La próxima conexión lo aceptará.</string>
+    <string name="trust_ftps_compare">Compare estas huellas con las que espera. Si coinciden, toque OK de nuevo. Si no coinciden, puede ser un ataque de intermediario, o un antivirus o un software MDM puede estar interceptando la conexión.</string>
     <string name="trust_port">Puerto: %1$s</string>
     <string name="trust_user">Usuario: %1$s</string>
     <string name="trust_folder">Carpeta: %1$s</string>

@@ -171,6 +171,9 @@
     <string name="trust_sftp_instruction">Egiaztatu hatz-marka hau bandaz kanpo, eta sakatu Gorde berriro gordetzeko.</string>
     <string name="trust_ftps_title">FTPS zerbitzariaren ziurtagiria proban hauteman da.</string>
     <string name="trust_ftps_instruction">Egiaztatu ziurtagiriaren identitatea bandaz kanpo, eta sakatu berriro Gorde gordetzeko.</string>
+    <string name="trust_ftps_self_signed">Konexioa probatzean, norberak sinatutako ziurtagiri bat aurkitu da.</string>
+    <string name="trust_ftps_next">Ziurtagiriaren hamaseitar eremuan gorde da. Hurrengo konexioak onartuko du.</string>
+    <string name="trust_ftps_compare">Alderatu hatz-marka hauek espero dituzunekin. Bat badatoz, sakatu OK berriro. Ez badatoz, tarteko pertsona baten erasoa izan daiteke, edo antibirusak edo MDM softwareak konexioa atzematen ari da.</string>
     <string name="trust_host">Ostalaria: %1$s</string>
     <string name="trust_port">Portua: %1$s</string>
     <string name="trust_user">Erabiltzailea: %1$s</string>

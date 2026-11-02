@@ -164,6 +164,9 @@
     <string name="trust_sftp_instruction">Verifizéiert dëse Fangerofdrock ausserhalb vun der Band, klickt dann nach eng Kéier op Späicheren fir et ze späicheren.</string>
     <string name="trust_ftps_title">FTPS Server Zertifikat entdeckt während Test.</string>
     <string name="trust_ftps_instruction">Verifizéiert Zertifika Identitéit ausserhalb vun der Band, klickt dann nach eng Kéier op Späicheren fir se ze späicheren.</string>
+    <string name="trust_ftps_self_signed">Beim Testen vun der Verbindung gouf en selbstsignéiert Zertifikat fonnt.</string>
+    <string name="trust_ftps_next">Et gouf am hexadezimalen Feld vum Zertifikat gespäichert. Déi nächst Verbindung wäert et akzeptéieren.</string>
+    <string name="trust_ftps_compare">Vergläicht dës Fangerofdréck mat deenen, déi Dir erwaart. Wa se iwwereneestëmmen, tippt nach eng Kéier op OK. Wa se net iwwereneestëmmen, kann et en Man-in-the-Middle-Ugrëff sinn, oder Antivirus- oder MDM-Software fängt d\'Verbindung of.</string>
     <string name="trust_user">Benotzer: %1$s</string>
     <string name="trust_folder">Dossier: %1$s</string>
     <string name="trust_fingerprint">Fangerofdrock (SHA-256): %1$s</string>

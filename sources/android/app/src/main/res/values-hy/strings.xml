@@ -170,6 +170,9 @@
     <string name="trust_sftp_instruction">Հաստատեք այս մատնահետքը տիրույթից դուրս, այնուհետև կրկին սեղմեք Պահել՝ այն պահելու համար:</string>
     <string name="trust_ftps_title">FTPS սերվերի վկայականը հայտնաբերվել է փորձարկման ժամանակ:</string>
     <string name="trust_ftps_instruction">Ստուգեք վկայականի ինքնությունը տիրույթից դուրս, այնուհետև կրկին սեղմեք Պահպանել՝ այն պահելու համար:</string>
+    <string name="trust_ftps_self_signed">Կապի ստուգման ժամանակ գտնվել է ինքնաստորագրված վկայական։</string>
+    <string name="trust_ftps_next">Այն պահվել է վկայականի տասնվեցական դաշտում։ Հաջորդ կապը կընդունի այն։</string>
+    <string name="trust_ftps_compare">Համեմատեք այս մատնահետքերը սպասվածների հետ։ Եթե դրանք համընկնում են, նորից սեղմեք OK։ Եթե չեն համընկնում, դա կարող է լինել «մարդը մեջտեղում» հարձակում, կամ հակավիրուսը կամ MDM ծրագիրը միջամտում է կապին։</string>
     <string name="trust_host">Հյուրընկալող՝ %1$s</string>
     <string name="trust_port">Նավահանգիստ՝ %1$s</string>
     <string name="trust_user">Օգտվող՝ %1$s</string>

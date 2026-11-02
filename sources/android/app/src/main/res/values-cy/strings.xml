@@ -168,6 +168,9 @@
     <string name="trust_sftp_instruction">Dilyswch yr olion bysedd hwn y tu allan i\'r band, yna cliciwch Cadw eto i\'w storio.</string>
     <string name="trust_ftps_title">Tystysgrif gweinydd FTPS wedi\'i chanfod yn ystod y prawf.</string>
     <string name="trust_ftps_instruction">Gwiriwch hunaniaeth tystysgrif y tu allan i\'r band, yna cliciwch Cadw eto i\'w storio.</string>
+    <string name="trust_ftps_self_signed">Wrth brofi\'r cysylltiad, cafwyd hyd i dystysgrif hunan-lofnodedig.</string>
+    <string name="trust_ftps_next">Cafodd ei chadw ym maes hecs y dystysgrif. Bydd y cysylltiad nesaf yn ei derbyn.</string>
+    <string name="trust_ftps_compare">Cymharwch yr olion bysedd hyn â\'r rhai rydych yn eu disgwyl. Os ydyn nhw\'n cyfateb, tapiwch OK eto. Os nad ydyn nhw\'n cyfateb, efallai mai ymosodiad dyn-yn-y-canol yw hwn, neu fod meddalwedd gwrthfirws neu MDM yn rhyng-gipio\'r cysylltiad.</string>
     <string name="trust_host">Gwesteiwr: %1$s</string>
     <string name="trust_port">Porth: %1$s</string>
     <string name="trust_user">Defnyddiwr: %1$s</string>

@@ -163,6 +163,9 @@
     <string name="trust_sftp_instruction">Sahkan cap jari ini di luar jalur, kemudian klik Simpan semula untuk menyimpannya.</string>
     <string name="trust_ftps_title">Sijil pelayan FTPS dikesan semasa ujian.</string>
     <string name="trust_ftps_instruction">Sahkan identiti sijil di luar jalur, kemudian klik Simpan semula untuk menyimpannya.</string>
+    <string name="trust_ftps_self_signed">Semasa menguji sambungan, sijil yang ditandatangani sendiri ditemui.</string>
+    <string name="trust_ftps_next">Ia disimpan dalam medan heks sijil. Sambungan seterusnya akan menerimanya.</string>
+    <string name="trust_ftps_compare">Bandingkan cap jari ini dengan yang anda jangkakan. Jika sepadan, ketik OK sekali lagi. Jika tidak sepadan, ini mungkin serangan orang di tengah, atau perisian antivirus atau MDM memintas sambungan.</string>
     <string name="trust_host">Hos: %1$s</string>
     <string name="trust_user">Pengguna: %1$s</string>
     <string name="trust_fingerprint">Cap jari (SHA-256): %1$s</string>

@@ -166,6 +166,9 @@
     <string name="trust_sftp_instruction">אמת טביעת אצבע זו מחוץ לערוץ, ואז לחץ שוב על שמור כדי לאחסן אותה.</string>
     <string name="trust_ftps_title">אישור שרת FTPS זוהה במהלך הבדיקה.</string>
     <string name="trust_ftps_instruction">אמת את זהות האישור מחוץ לערוץ, ואז לחץ שוב על שמור כדי לאחסן אותו.</string>
+    <string name="trust_ftps_self_signed">במהלך בדיקת החיבור נמצאה תעודה בחתימה עצמית.</string>
+    <string name="trust_ftps_next">היא נשמרה בשדה ההקסדצימלי של התעודה. החיבור הבא יקבל אותה.</string>
+    <string name="trust_ftps_compare">השוו את טביעות האצבע האלה לאלה שאתם מצפים להן. אם הן תואמות, הקישו שוב על OK. אם אינן תואמות, ייתכן שזו התקפת אדם באמצע, או שתוכנת אנטי-וירוס או MDM מיירטת את החיבור.</string>
     <string name="trust_host">מארח: %1$s</string>
     <string name="trust_port">פורט: %1$s</string>
     <string name="trust_user">משתמש: %1$s</string>

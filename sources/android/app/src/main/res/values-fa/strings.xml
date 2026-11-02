@@ -166,6 +166,9 @@
     <string name="trust_sftp_instruction">این اثر انگشت را خارج از کانال تأیید کنید، سپس دوباره روی ذخیره کلیک کنید تا ذخیره شود.</string>
     <string name="trust_ftps_title">گواهی سرور FTPS در طول آزمایش شناسایی شد.</string>
     <string name="trust_ftps_instruction">هویت گواهی را خارج از کانال تأیید کنید، سپس دوباره روی ذخیره کلیک کنید تا ذخیره شود.</string>
+    <string name="trust_ftps_self_signed">هنگام آزمایش اتصال، یک گواهی خودامضا پیدا شد.</string>
+    <string name="trust_ftps_next">در فیلد هگز گواهی ذخیره شد. اتصال بعدی آن را می‌پذیرد.</string>
+    <string name="trust_ftps_compare">این اثرانگشت‌ها را با اثرانگشت‌های مورد انتظار مقایسه کنید. اگر یکسان بودند، دوباره OK را بزنید. اگر یکسان نبودند، ممکن است حمله مرد میانی باشد، یا نرم‌افزار آنتی‌ویروس یا MDM اتصال را رهگیری می‌کند.</string>
     <string name="trust_host">میزبان: %1$s</string>
     <string name="trust_port">پورت: %1$s</string>
     <string name="trust_user">کاربر: %1$s</string>

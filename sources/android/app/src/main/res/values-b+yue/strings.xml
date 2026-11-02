@@ -167,6 +167,9 @@
     <string name="trust_sftp_instruction">請透過帶外方式驗證此指紋，然後再次點擊「儲存」以儲存。</string>
     <string name="trust_ftps_title">測試期間檢測到FTPS伺服器憑證。</string>
     <string name="trust_ftps_instruction">請透過帶外方式驗證憑證身分，然後再次點擊「儲存」以儲存。</string>
+    <string name="trust_ftps_self_signed">測試連線嗰陣搵到自簽憑證。</string>
+    <string name="trust_ftps_next">已經寫低咗喺憑證嘅十六進制欄。下次連線會接受佢。</string>
+    <string name="trust_ftps_compare">將呢啲指紋同你預期嘅比較。如果一樣，再撳一次 OK。如果唔一樣，可能係中間人攻擊，或者防毒軟件或者 MDM 軟件截緊呢個連線。</string>
     <string name="trust_host">主機：%1$s</string>
     <string name="trust_port">端口：%1$s</string>
     <string name="trust_user">用戶：%1$s</string>

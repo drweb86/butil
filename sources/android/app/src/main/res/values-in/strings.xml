@@ -159,6 +159,9 @@
     <string name="trust_sftp_instruction">Verifikasi sidik jari ini di luar jalur, lalu klik Simpan lagi untuk menyimpannya.</string>
     <string name="trust_ftps_title">Sertifikat server FTPS terdeteksi saat pengujian.</string>
     <string name="trust_ftps_instruction">Verifikasi identitas sertifikat di luar jalur, lalu klik Simpan lagi untuk menyimpannya.</string>
+    <string name="trust_ftps_self_signed">Saat menguji koneksi, ditemukan sertifikat yang ditandatangani sendiri.</string>
+    <string name="trust_ftps_next">Sertifikat itu disimpan di kolom heksadesimal. Koneksi berikutnya akan menerimanya.</string>
+    <string name="trust_ftps_compare">Bandingkan sidik jari ini dengan yang Anda harapkan. Jika cocok, ketuk OK lagi. Jika tidak cocok, ini mungkin serangan man-in-the-middle, atau perangkat lunak antivirus atau MDM menyadap koneksi.</string>
     <string name="trust_user">Pengguna: %1$s</string>
     <string name="trust_fingerprint">Sidik jari (SHA-256): %1$s</string>
     <string name="trust_encryption">Enkripsi: %1$s</string>

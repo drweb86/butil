@@ -170,6 +170,9 @@
     <string name="trust_sftp_instruction">Праверце гэты адбітак па іншым канале, потым зноў націсніце Захаваць.</string>
     <string name="trust_ftps_title">Сертыфікат FTPS сервера выяўлены падчас тэсту.</string>
     <string name="trust_ftps_instruction">Праверце ідэнтычнасць сертыфіката па іншым канале, потым зноў націсніце Захаваць.</string>
+    <string name="trust_ftps_self_signed">Падчас праверкі злучэння знойдзены самападпісаны сертыфікат.</string>
+    <string name="trust_ftps_next">Ён запісаны ў шаснаццатковае поле сертыфіката. Наступнае злучэнне прыме яго.</string>
+    <string name="trust_ftps_compare">Параўнайце гэтыя адбіткі з чаканымі. Калі яны супадаюць, націсніце OK яшчэ раз. Калі не супадаюць, гэта можа быць атака «чалавек пасярэдзіне», або антывірус ці праграма MDM перахоплівае злучэнне.</string>
     <string name="trust_host">Хост: %1$s</string>
     <string name="trust_port">Порт: %1$s</string>
     <string name="trust_user">Карыстальнік: %1$s</string>

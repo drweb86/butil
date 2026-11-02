@@ -159,6 +159,9 @@
     <string name="trust_sftp_instruction">Verificați această amprentă prin alt canal, apoi faceți clic pe Salvare din nou pentru a o stoca.</string>
     <string name="trust_ftps_title">Certificat server FTPS detectat în timpul testului.</string>
     <string name="trust_ftps_instruction">Verificați identitatea certificatului prin alt canal, apoi faceți clic pe Salvare din nou pentru a-l stoca.</string>
+    <string name="trust_ftps_self_signed">În timpul testării conexiunii a fost găsit un certificat autosemnat.</string>
+    <string name="trust_ftps_next">A fost salvat în câmpul hexazecimal al certificatului. Următoarea conexiune îl va accepta.</string>
+    <string name="trust_ftps_compare">Comparați aceste amprente cu cele așteptate. Dacă se potrivesc, atingeți OK din nou. Dacă nu se potrivesc, poate fi un atac de tip om la mijloc, sau un antivirus ori un software MDM interceptează conexiunea.</string>
     <string name="trust_host">Gazdă: %1$s</string>
     <string name="trust_user">Utilizator: %1$s</string>
     <string name="trust_fingerprint">Amprentă (SHA-256): %1$s</string>

@@ -42,4 +42,7 @@
     <string name="restore_load">Load mme version</string>
     <string name="restore_destination">Fiak n̄kpọ do:</string>
     <string name="preview_notice">Emi edi version se ese mbemiso. Enye ekeme ndi copy, kpụhọ ndien sio mme file, ke sync n̄ko. Nim backup fo mbemiso afo anam utom.</string>
+    <string name="trust_ftps_self_signed">Ke ini edomode udiana, ema okut certificate se enye ikpọhọde onyụn̄ sin.</string>
+    <string name="trust_ftps_next">Ema nim enye ke field hex ke certificate. Udiana enwen eyeyime enye.</string>
+    <string name="trust_ftps_compare">Domo mme fingerprint emi ye mme eke afo oyomde. Edieke ema sana, tuk OK ini kiet eken. Edieke mmisana, ekeme ndidi attack man-in-the-middle, midighe software antivirus midighe MDM ke biọkọ udiana emi.</string>
 </resources>

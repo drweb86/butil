@@ -1,3 +1,12 @@
+# 2026.11.04
+
+## Bug Fixes
+- Android: self-signed certificate acceptance was not working, corrected message.
+- Android: FTPS client did not send close connection.
+
+## Changes
+- Italian language was updated by https://github.com/bovirus .
+
 # 2026.11.03
 
 ## New Features

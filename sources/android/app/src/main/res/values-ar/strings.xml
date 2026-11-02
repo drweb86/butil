@@ -168,6 +168,9 @@
     <string name="trust_sftp_instruction">تحقق من هذه البصمة خارج النطاق، ثم انقر على حفظ مرة أخرى لتخزينها.</string>
     <string name="trust_ftps_title">تم اكتشاف شهادة خادم FTPS أثناء الاختبار.</string>
     <string name="trust_ftps_instruction">تحقق من هوية الشهادة خارج النطاق، ثم انقر على حفظ مرة أخرى لتخزينها.</string>
+    <string name="trust_ftps_self_signed">أثناء اختبار الاتصال، تم العثور على شهادة موقعة ذاتيًا.</string>
+    <string name="trust_ftps_next">تم حفظها في حقل الشهادة الست عشري. سيقبلها الاتصال التالي.</string>
+    <string name="trust_ftps_compare">قارن هذه البصمات بالبصمات التي تتوقعها. إذا تطابقت، انقر على OK مرة أخرى. إذا لم تتطابق، فقد يكون هذا هجوم رجل في الوسط، أو أن برنامج مكافحة فيروسات أو MDM يعترض الاتصال.</string>
     <string name="trust_host">المضيف: %1$s</string>
     <string name="trust_port">المنفذ: %1$s</string>
     <string name="trust_user">المستخدم: %1$s</string>

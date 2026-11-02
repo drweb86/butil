@@ -168,6 +168,9 @@
     <string name="trust_sftp_instruction">Vê şopa tiliyê ji derveyî bandê verast bikin, paşê dîsa Tomar bike bikirtînin.</string>
     <string name="trust_ftps_title">Di dema ceribandinê de sertîfîkaya servera FTPS hat dîtin.</string>
     <string name="trust_ftps_instruction">Nasnameya sertîfîkayê ji derveyî bandê verast bikin, paşê dîsa Tomar bike bikirtînin.</string>
+    <string name="trust_ftps_self_signed">Di dema ceribandina girêdanê de sertîfîkayeke xwe-îmzekirî hat dîtin.</string>
+    <string name="trust_ftps_next">Ew di qada hex a sertîfîkayê de hat tomarkirin. Girêdana din wê qebûl bike.</string>
+    <string name="trust_ftps_compare">Van şopên tiliyan bi yên ku hûn hêvî dikin re bidin ber hev. Heke li hev bên, careke din OK bitikînin. Heke li hev neyên, dibe ku êrîşa man-in-the-middle be, an jî nermalava antîvîrus an MDM girêdanê digire.</string>
     <string name="trust_user">Bikarhêner: %1$s</string>
     <string name="trust_folder">Peldank: %1$s</string>
     <string name="trust_fingerprint">Şopa tiliyê (SHA-256): %1$s</string>

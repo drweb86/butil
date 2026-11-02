@@ -169,6 +169,9 @@
     <string name="trust_sftp_instruction">Verifikoni këtë gjurmë gishti jashtë kanalit, pastaj klikoni Ruaj përsëri për ta ruajtur.</string>
     <string name="trust_ftps_title">Certifikata e serverit FTPS u zbulua gjatë testimit.</string>
     <string name="trust_ftps_instruction">Verifikoni identitetin e certifikatës jashtë kanalit, pastaj klikoni Ruaj përsëri për ta ruajtur.</string>
+    <string name="trust_ftps_self_signed">Gjatë testimit të lidhjes u gjet një certifikatë e vetë-nënshkruar.</string>
+    <string name="trust_ftps_next">U ruajt në fushën heksadecimale të certifikatës. Lidhja tjetër do ta pranojë.</string>
+    <string name="trust_ftps_compare">Krahasoni këto gjurmë me ato që prisni. Nëse përputhen, prekni përsëri OK. Nëse nuk përputhen, kjo mund të jetë një sulm njeri-në-mes, ose një antivirus apo softuer MDM po përgjon lidhjen.</string>
     <string name="trust_host">Pritësi: %1$s</string>
     <string name="trust_port">Porta: %1$s</string>
     <string name="trust_user">Përdoruesi: %1$s</string>

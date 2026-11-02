@@ -165,6 +165,9 @@
     <string name="trust_sftp_instruction">Dearbhaich an lorgan-meòir seo a-mach às a’ chòmhlan, agus an uairsin cliog air Sàbhail a-rithist gus a stòradh.</string>
     <string name="trust_ftps_title">Teisteanas frithealaiche FTPS air a lorg rè deuchainn.</string>
     <string name="trust_ftps_instruction">Dearbhaich dearbh-aithne teisteanais taobh a-muigh a’ chòmhlan, agus an uairsin cliog air Sàbhail a-rithist gus a stòradh.</string>
+    <string name="trust_ftps_self_signed">Fhad \'s a thathar a\' feuchainn a\' cheangail, chaidh teisteanas fèin-shoidhnichte a lorg.</string>
+    <string name="trust_ftps_next">Chaidh a shàbhaladh ann an raon heicsidheachdail an teisteanais. Gabhaidh an ath cheangal ris.</string>
+    <string name="trust_ftps_compare">Dèan coimeas eadar na lorgan-meòir seo agus na feadhainn a tha thu an dùil. Ma tha iad a\' freagairt, brùth air OK a-rithist. Mura freagair, faodaidh gur e ionnsaigh duine-sa-mheadhan a th\' ann, no gum bi bathar-bog an-aghaidh bhìorasan no MDM a\' glacadh a\' cheangail.</string>
     <string name="trust_host">Neach-aoigheachd: %1$s</string>
     <string name="trust_user">Cleachdaiche: %1$s</string>
     <string name="trust_folder">Pasgan: %1$s</string>

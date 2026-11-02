@@ -169,6 +169,9 @@
     <string name="trust_sftp_instruction">Энэ хурууны хээг гадны сувгаар шалгаж, дараа нь Хадгалах дарна уу.</string>
     <string name="trust_ftps_title">Тест хийх явцад FTPS серверийн гэрчилгээ илэрлээ.</string>
     <string name="trust_ftps_instruction">Гэрчилгээний таниулгыг гадны сувгаар шалгаж, дараа нь Хадгалах дарна уу.</string>
+    <string name="trust_ftps_self_signed">Холболтыг шалгах үед өөрийн гарын үсэгтэй гэрчилгээ олдлоо.</string>
+    <string name="trust_ftps_next">Үүнийг гэрчилгээний арван зургаатын талбарт хадгалсан. Дараагийн холболт үүнийг хүлээн авна.</string>
+    <string name="trust_ftps_compare">Эдгээр хурууны хээг таны хүлээж буй хээтэй харьцуулна уу. Таарвал OK дээр дахин дарна уу. Таарахгүй бол энэ нь завсрын халдлага байж болно, эсвэл вирусны эсрэг болон MDM програм холболтыг тасалж байна.</string>
     <string name="trust_host">Хост: %1$s</string>
     <string name="trust_port">Порт: %1$s</string>
     <string name="trust_user">Хэрэглэгч: %1$s</string>

@@ -148,7 +148,13 @@ fun TaskEditor(
             ExactAlarmNotice(form.days.isNotEmpty() || form.runAtLogin)
         }
         if (busy) LinearProgressIndicator(Modifier.fillMaxWidth())
-        if (!message.isNullOrBlank()) Text(message!!, color = MaterialTheme.colorScheme.error)
+        if (!message.isNullOrBlank()) {
+            Text(
+                message!!,
+                color = MaterialTheme.colorScheme.error,
+                fontFamily = if (message!!.contains("SHA-256:")) FontFamily.Monospace else null,
+            )
+        }
         Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
             Button(enabled = !busy, onClick = {
                 val error = form.validate(store)
@@ -159,8 +165,14 @@ fun TaskEditor(
                 busy = true
                 scope.launch {
                     val tested = withContext(Dispatchers.IO) { form.test(context) }
-                    message = tested
-                    if (tested == null) {
+                    if (tested.trust != null && tested.storage != null) {
+                        form.storageDraft().applyDetected(tested.storage)
+                        message = tested.trust
+                        busy = false
+                        return@launch
+                    }
+                    message = tested.error
+                    if (tested.error == null) {
                         form.save(store)
                         UploadScheduler.reschedule(context, form.task())
                         onClose()
@@ -280,14 +292,7 @@ private fun StorageBlock(help: String, draft: StorageDraft, busy: Boolean, brows
                 }
             }
             StorageFieldKind.FOLDER, StorageFieldKind.FILE -> FolderLine(fieldLabel, field, busy, field.spec.placeholder) { browse(field) }
-            StorageFieldKind.TEXT -> {
-                val fingerprints = if (field.spec.key == "certificate") ftpsCertificateFingerprints(field.value) else null
-                if (fingerprints != null) {
-                    Text(fingerprints, fontFamily = FontFamily.Monospace, style = MaterialTheme.typography.bodyMedium)
-                } else {
-                    OutlinedTextField(field.value, { field.value = it }, modifier = Modifier.fillMaxWidth(), label = { Text(fieldLabel) }, singleLine = true, enabled = !busy)
-                }
-            }
+            StorageFieldKind.TEXT -> OutlinedTextField(field.value, { field.value = it }, modifier = Modifier.fillMaxWidth(), label = { Text(fieldLabel) }, singleLine = true, enabled = !busy)
         }
     }
     NumberLine(stringResource(R.string.upload_quota), draft.quota, { draft.quota = it }, !busy, stringResource(R.string.upload_quota_help))
@@ -434,6 +439,12 @@ private class StorageDraft(initial: StorageSettings) {
         return StorageCatalog.toSettings(provider, values, quota.toLongOrNull() ?: 0, preserved)
     }
 
+    fun applyDetected(settings: StorageSettings) {
+        preserved = settings
+        quota = settings.quotaGb.toString()
+        fill(settings)
+    }
+
     private fun fill(settings: StorageSettings) {
         provider = settings.jsonType
         val values = StorageCatalog.fieldValues(settings)
@@ -512,16 +523,24 @@ private class TaskDraft(store: UploadFolderStore, private val kind: String, exis
         }
     }
 
-    fun test(context: android.content.Context): String? {
-        val settings = if (kind == "ImportMedia") source.settings() else where.settings()
-        if (kind != "BUtilServer") {
-            StorageFactory.test(context, settings)?.let { return it }
+    fun storageDraft(): StorageDraft = if (kind == "ImportMedia") source else where
+
+    fun test(context: android.content.Context): TaskTestResult {
+        val settings = if (kind == "BUtilServer") null else storageDraft().settings()
+        if (settings != null) {
+            val beforeCertificate = (settings as? FtpsSettings)?.trustedCertificate.orEmpty()
+            val beforeFingerprint = (settings as? SftpSettings)?.fingerPrintSha256.orEmpty()
+            val error = StorageFactory.test(context, settings)
+            val trust = detectedTrustMessage(context, settings, beforeCertificate, beforeFingerprint)
+            if (trust != null) return TaskTestResult(settings, trust, error)
+            if (error != null) return TaskTestResult(settings, null, error)
         }
         val folder = if (kind == "Incremental") folders.firstOrNull { it.value.isNotBlank() }?.value else output.value
         if (!folder.isNullOrBlank()) {
-            StorageFactory.test(context, FolderSettings(destinationFolder = folder))?.let { return it }
+            val folderError = StorageFactory.test(context, FolderSettings(destinationFolder = folder))
+            if (folderError != null) return TaskTestResult(settings, null, folderError)
         }
-        return null
+        return TaskTestResult(settings, null, null)
     }
 
     fun save(store: UploadFolderStore) {
@@ -586,6 +605,26 @@ private fun outputOf(task: AppTask?): String = when (task) {
     is SynchronizationTask -> task.localFolder
     is FtpsServerTask -> task.folder
     else -> ""
+}
+
+private class TaskTestResult(
+    val storage: StorageSettings?,
+    val trust: String?,
+    val error: String?,
+)
+
+private data class TrustProbe(val trust: String?, val error: String?)
+
+private fun probeTrust(context: android.content.Context, settings: StorageSettings): TrustProbe {
+    val beforeCertificate = (settings as? FtpsSettings)?.trustedCertificate.orEmpty()
+    val beforeFingerprint = (settings as? SftpSettings)?.fingerPrintSha256.orEmpty()
+    val error = try {
+        StorageFactory.open(context, settings, autodetect = true).use { it.test() }
+    } catch (error: Exception) {
+        error.message ?: error.toString()
+    }
+    val trust = detectedTrustMessage(context, settings, beforeCertificate, beforeFingerprint)
+    return TrustProbe(trust, if (trust != null) null else error)
 }
 
 private fun whereOf(task: AppTask?, kind: String): StorageSettings = when (task) {
@@ -657,11 +696,35 @@ fun RestorePage(onClose: () -> Unit, modifier: Modifier = Modifier, taskName: St
             }
         }
         if (busy) LinearProgressIndicator(Modifier.fillMaxWidth())
-        if (!message.isNullOrBlank()) Text(message!!)
+        if (!message.isNullOrBlank()) {
+            Text(
+                message!!,
+                color = MaterialTheme.colorScheme.error,
+                fontFamily = if (message!!.contains("SHA-256:")) FontFamily.Monospace else null,
+            )
+        }
         Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
             OutlinedButton(enabled = !busy, onClick = {
                 busy = true
+                message = null
                 scope.launch {
+                    val settings = draft.settings()
+                    if (settings is FtpsSettings || settings is SftpSettings) {
+                        val probe = withContext(Dispatchers.IO) { probeTrust(context, settings) }
+                        if (probe.trust != null) {
+                            draft.applyDetected(settings)
+                            message = probe.trust
+                            versions = emptyList()
+                            busy = false
+                            return@launch
+                        }
+                        if (probe.error != null) {
+                            message = probe.error
+                            versions = emptyList()
+                            busy = false
+                            return@launch
+                        }
+                    }
                     val found = withContext(Dispatchers.IO) {
                         runCatching {
                             IncrementalBackupRunner(context).versions(

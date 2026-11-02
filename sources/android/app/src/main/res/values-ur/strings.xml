@@ -168,6 +168,9 @@
     <string name="trust_sftp_instruction">اس فنگرپرنٹ کو آؤٹ-آف-بینڈ تصدیق کریں، پھر اسے ذخیرہ کرنے کے لیے دوبارہ محفوظ کریں پر کلک کریں۔</string>
     <string name="trust_ftps_title">ٹیسٹ کے دوران FTPS سرور سرٹیفکیٹ دریافت ہوا۔</string>
     <string name="trust_ftps_instruction">سرٹیفکیٹ کی شناخت آؤٹ-آف-بینڈ تصدیق کریں، پھر اسے ذخیرہ کرنے کے لیے دوبارہ محفوظ کریں پر کلک کریں۔</string>
+    <string name="trust_ftps_self_signed">کنکشن کی جانچ کے دوران ایک خود دستخط شدہ سرٹیفکیٹ ملا۔</string>
+    <string name="trust_ftps_next">اسے سرٹیفکیٹ کے ہیکس خانے میں محفوظ کر دیا گیا ہے۔ اگلا کنکشن اسے قبول کر لے گا۔</string>
+    <string name="trust_ftps_compare">ان فنگر پرنٹس کا موازنہ ان سے کریں جن کی آپ توقع کرتے ہیں۔ اگر وہ ملتے ہوں تو OK دوبارہ تھپتھپائیں۔ اگر نہ ملتے ہوں تو یہ درمیانی شخص کا حملہ ہو سکتا ہے، یا اینٹی وائرس یا MDM سافٹ ویئر کنکشن روک رہا ہو سکتا ہے۔</string>
     <string name="trust_host">ہوسٹ: %1$s</string>
     <string name="trust_port">پورٹ: %1$s</string>
     <string name="trust_user">صارف: %1$s</string>

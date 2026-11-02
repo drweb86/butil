@@ -168,6 +168,9 @@
     <string name="trust_sftp_instruction">د دې ګوتې نښه د بینډ څخه بهر تایید کړئ، بیا د ذخیره کولو لپاره بیا خوندي کلیک وکړئ.</string>
     <string name="trust_ftps_title">د FTPS سرور سند د ازموینې پرمهال کشف شو.</string>
     <string name="trust_ftps_instruction">د بانډ څخه بهر د سند پیژندنه تایید کړئ ، بیا د ذخیره کولو لپاره بیا خوندي کلیک وکړئ.</string>
+    <string name="trust_ftps_self_signed">د اتصال د ازموینې پر مهال یو پخپله لاسلیک شوی سند وموندل شو.</string>
+    <string name="trust_ftps_next">دا د سند په هیکس ډګر کې خوندي شو. راتلونکی اتصال به یې ومني.</string>
+    <string name="trust_ftps_compare">دا ګوتې نښې له هغو سره پرتله کړئ چې تاسو یې تمه لرئ. که سمون وخوري، بیا OK کېکاږئ. که سمون ونه خوري، دا کېدای شي د منځني کس برید وي، یا د انټي ویروس یا MDM سافټویر اتصال نیسي.</string>
     <string name="trust_host">کوربه: %1$s</string>
     <string name="trust_port">بندر: %1$s</string>
     <string name="trust_user">کارن: %1$s</string>

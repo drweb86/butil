@@ -165,6 +165,9 @@
     <string name="trust_sftp_instruction">Provjerite ovaj otisak izvan kanala, zatim kliknite Sačuvaj ponovo da ga sačuvate.</string>
     <string name="trust_ftps_title">Certifikat FTPS servera otkriven tokom testiranja.</string>
     <string name="trust_ftps_instruction">Provjerite identitet certifikata izvan kanala, zatim kliknite Sačuvaj ponovo da ga sačuvate.</string>
+    <string name="trust_ftps_self_signed">Tokom provjere veze pronađen je samopotpisani certifikat.</string>
+    <string name="trust_ftps_next">Sačuvan je u heksadecimalno polje certifikata. Sljedeća veza će ga prihvatiti.</string>
+    <string name="trust_ftps_compare">Uporedite ove otiske s onima koje očekujete. Ako se podudaraju, dodirnite OK ponovo. Ako se ne podudaraju, to može biti napad posrednika, ili antivirus ili MDM softver presreće vezu.</string>
     <string name="trust_host">Domaćin: %1$s</string>
     <string name="trust_user">Korisnik: %1$s</string>
     <string name="trust_fingerprint">Otisak (SHA-256): %1$s</string>

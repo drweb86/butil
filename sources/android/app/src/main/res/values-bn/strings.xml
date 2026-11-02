@@ -168,6 +168,9 @@
     <string name="trust_sftp_instruction">এই ফিঙ্গারপ্রিন্টটি আউট-অফ-ব্যান্ডে যাচাই করুন, তারপর সংরক্ষণ করতে আবার Save ক্লিক করুন।</string>
     <string name="trust_ftps_title">পরীক্ষার সময় FTPS সার্ভারের সার্টিফিকেট পাওয়া গেছে।</string>
     <string name="trust_ftps_instruction">সার্টিফিকেটের পরিচয় আউট-অফ-ব্যান্ডে যাচাই করুন, তারপর সংরক্ষণ করতে আবার Save ক্লিক করুন।</string>
+    <string name="trust_ftps_self_signed">সংযোগ পরীক্ষা করার সময় একটি স্ব-স্বাক্ষরিত সার্টিফিকেট পাওয়া গেছে।</string>
+    <string name="trust_ftps_next">এটি সার্টিফিকেটের হেক্স ঘরে সংরক্ষণ করা হয়েছে। পরের সংযোগ এটি গ্রহণ করবে।</string>
+    <string name="trust_ftps_compare">এই ফিঙ্গারপ্রিন্টগুলো আপনার প্রত্যাশিতগুলোর সাথে মিলিয়ে দেখুন। মিললে আবার OK ট্যাপ করুন। না মিললে এটি ম্যান-ইন-দ্য-মিডল আক্রমণ হতে পারে, অথবা অ্যান্টিভাইরাস বা MDM সফটওয়্যার সংযোগটি আটকে রাখছে।</string>
     <string name="trust_host">হোস্ট: %1$s</string>
     <string name="trust_port">পোর্ট: %1$s</string>
     <string name="trust_user">ব্যবহারকারী: %1$s</string>

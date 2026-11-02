@@ -167,6 +167,9 @@
     <string name="trust_sftp_instruction">ตรวจสอบลายนิ้วมือนี้นอกช่องทาง จากนั้นคลิกบันทึกอีกครั้งเพื่อจัดเก็บ</string>
     <string name="trust_ftps_title">ตรวจพบใบรับรองเซิร์ฟเวอร์ FTPS ระหว่างการทดสอบ</string>
     <string name="trust_ftps_instruction">ตรวจสอบตัวตนใบรับรองนอกช่องทาง จากนั้นคลิกบันทึกอีกครั้งเพื่อจัดเก็บ</string>
+    <string name="trust_ftps_self_signed">ระหว่างทดสอบการเชื่อมต่อ พบใบรับรองที่ลงนามเอง</string>
+    <string name="trust_ftps_next">บันทึกไว้ในช่องเลขฐานสิบหกของใบรับรองแล้ว การเชื่อมต่อครั้งถัดไปจะยอมรับใบรับรองนี้</string>
+    <string name="trust_ftps_compare">เปรียบเทียบลายนิ้วมือเหล่านี้กับที่คุณคาดไว้ หากตรงกัน ให้แตะ OK อีกครั้ง หากไม่ตรงกัน อาจเป็นการโจมตีแบบคนกลาง หรือซอฟต์แวร์ป้องกันไวรัสหรือ MDM กำลังดักการเชื่อมต่อ</string>
     <string name="trust_host">โฮสต์: %1$s</string>
     <string name="trust_port">พอร์ต: %1$s</string>
     <string name="trust_user">ผู้ใช้: %1$s</string>

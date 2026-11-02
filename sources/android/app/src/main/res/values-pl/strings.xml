@@ -161,6 +161,9 @@
     <string name="trust_sftp_instruction">Zweryfikuj ten odcisk palca poza pasmem, a następnie kliknij ponownie Zapisz, aby go zapisać.</string>
     <string name="trust_ftps_title">Wykryto certyfikat serwera FTPS podczas testu.</string>
     <string name="trust_ftps_instruction">Zweryfikuj tożsamość certyfikatu poza pasmem, a następnie kliknij ponownie Zapisz, aby go zapisać.</string>
+    <string name="trust_ftps_self_signed">Podczas testowania połączenia znaleziono certyfikat z podpisem własnym.</string>
+    <string name="trust_ftps_next">Zapisano go w polu szesnastkowym certyfikatu. Następne połączenie go zaakceptuje.</string>
+    <string name="trust_ftps_compare">Porównaj te odciski z oczekiwanymi. Jeśli się zgadzają, stuknij OK ponownie. Jeśli się nie zgadzają, może to być atak man-in-the-middle albo program antywirusowy lub MDM przechwytuje połączenie.</string>
     <string name="trust_user">Użytkownik: %1$s</string>
     <string name="trust_fingerprint">Odcisk palca (SHA-256): %1$s</string>
     <string name="trust_encryption">Szyfrowanie: %1$s</string>

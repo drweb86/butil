@@ -164,6 +164,9 @@
     <string name="trust_sftp_instruction">Ushbu barmoq izini tashqi kanal orqali tekshiring, so\'ngra Saqlash tugmasini qayta bosing.</string>
     <string name="trust_ftps_title">Test davomida FTPS server sertifikati aniqlandi.</string>
     <string name="trust_ftps_instruction">Sertifikat identifikatsiyasini tashqi kanal orqali tekshiring, so\'ngra Saqlash tugmasini qayta bosing.</string>
+    <string name="trust_ftps_self_signed">Ulanishni tekshirishda o‘zi imzolagan sertifikat topildi.</string>
+    <string name="trust_ftps_next">U sertifikatning o‘n oltilik maydoniga yozildi. Keyingi ulanish uni qabul qiladi.</string>
+    <string name="trust_ftps_compare">Bu barmoq izlarini kutilganlari bilan solishtiring. Mos kelsa, OK tugmasini yana bosing. Mos kelmasa, bu oradagi odam hujumi bo‘lishi mumkin yoki antivirus yoki MDM dasturi ulanishni ushlab turibdi.</string>
     <string name="trust_host">Xost: %1$s</string>
     <string name="trust_user">Foydalanuvchi: %1$s</string>
     <string name="trust_folder">Papka: %1$s</string>

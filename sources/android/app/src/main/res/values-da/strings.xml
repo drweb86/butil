@@ -162,6 +162,9 @@
     <string name="trust_sftp_instruction">Verificer dette fingeraftryk out-of-band, og klik derefter på Gem igen for at gemme det.</string>
     <string name="trust_ftps_title">FTPS-servercertifikat fundet under test.</string>
     <string name="trust_ftps_instruction">Verificer certifikatidentiteten out-of-band, og klik derefter på Gem igen for at gemme det.</string>
+    <string name="trust_ftps_self_signed">Under test af forbindelsen blev der fundet et selvsigneret certifikat.</string>
+    <string name="trust_ftps_next">Det blev gemt i certifikatets hex-felt. Den næste forbindelse vil acceptere det.</string>
+    <string name="trust_ftps_compare">Sammenlign disse fingeraftryk med dem, du forventer. Hvis de stemmer overens, skal du trykke på OK igen. Hvis de ikke stemmer, kan det være et man-in-the-middle-angreb, eller antivirus- eller MDM-software opfanger forbindelsen.</string>
     <string name="trust_host">Vært: %1$s</string>
     <string name="trust_user">Bruger: %1$s</string>
     <string name="trust_folder">Mappe: %1$s</string>

@@ -69,4 +69,7 @@
     <string name="storage_mount_options">Opciones d\'atoblamientu:</string>
     <string name="error_name_duplicate">Yá esiste una xera con esti nome.</string>
     <string name="error_import_too_broad">La carpeta seleccionada parece la raíz de un dispositivo o de un directorio personal porque contiene varias carpetas multimedia conocidas (%1$s). Elija una carpeta más concreta, por ejemplo \"%2$s\".</string>
+    <string name="trust_ftps_self_signed">Al probar la conexón, atopóse un certificáu autofirmáu.</string>
+    <string name="trust_ftps_next">Guardóse nel campu hexadecimal del certificáu. La próxima conexón va aceutalu.</string>
+    <string name="trust_ftps_compare">Compara estes buelgues coles qu\'esperes. Si coinciden, toca OK otra vez. Si nun coinciden, pue ser un ataque de home nel mediu, o un antivirus o un software MDM pue tar interceptando la conexón.</string>
 </resources>

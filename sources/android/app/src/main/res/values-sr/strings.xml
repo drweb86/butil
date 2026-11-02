@@ -167,6 +167,9 @@
     <string name="trust_sftp_instruction">Проверите овај отисак ван канала, затим поново кликните на Сачувај да бисте га сачували.</string>
     <string name="trust_ftps_title">Сертификат FTPS сервера откривен током теста.</string>
     <string name="trust_ftps_instruction">Проверите идентитет сертификата ван канала, затим поново кликните на Сачувај да бисте га сачували.</string>
+    <string name="trust_ftps_self_signed">Током провере везе пронађен је самопотписани сертификат.</string>
+    <string name="trust_ftps_next">Сачуван је у хексадецимално поље сертификата. Следећа веза ће га прихватити.</string>
+    <string name="trust_ftps_compare">Упоредите ове отиске са онима које очекујете. Ако се поклапају, додирните OK поново. Ако се не поклапају, то може бити напад човека у средини, или антивирус или MDM софтвер пресреће везу.</string>
     <string name="trust_host">Хост: %1$s</string>
     <string name="trust_port">Порт: %1$s</string>
     <string name="trust_user">Корисник: %1$s</string>

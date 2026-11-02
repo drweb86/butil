@@ -166,6 +166,9 @@
     <string name="trust_sftp_instruction">대역 외에서 이 지문을 확인한 후 저장을 다시 클릭하여 저장하세요.</string>
     <string name="trust_ftps_title">테스트 중 FTPS 서버 인증서가 감지되었습니다.</string>
     <string name="trust_ftps_instruction">대역 외에서 인증서 ID를 확인한 후 저장을 다시 클릭하여 저장하세요.</string>
+    <string name="trust_ftps_self_signed">연결을 테스트하는 동안 자체 서명된 인증서를 찾았습니다.</string>
+    <string name="trust_ftps_next">인증서 16진수 필드에 저장되었습니다. 다음 연결에서 수락됩니다.</string>
+    <string name="trust_ftps_compare">이 지문을 예상한 지문과 비교하세요. 일치하면 OK를 다시 누르세요. 일치하지 않으면 중간자 공격이거나, 백신 또는 MDM 소프트웨어가 연결을 가로채고 있을 수 있습니다.</string>
     <string name="trust_host">호스트: %1$s</string>
     <string name="trust_port">포트: %1$s</string>
     <string name="trust_user">사용자: %1$s</string>

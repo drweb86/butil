@@ -168,6 +168,9 @@
     <string name="trust_sftp_instruction">请通过带外方式验证此指纹，然后再次点击\"保存\"以存储。</string>
     <string name="trust_ftps_title">测试期间检测到 FTPS 服务器证书。</string>
     <string name="trust_ftps_instruction">请通过带外方式验证证书身份，然后再次点击\"保存\"以存储。</string>
+    <string name="trust_ftps_self_signed">测试连接时发现了自签名证书。</string>
+    <string name="trust_ftps_next">已写入证书的十六进制字段。下次连接将接受该证书。</string>
+    <string name="trust_ftps_compare">请将这些指纹与预期指纹进行比较。如果一致，请再次点按 OK。如果不一致，这可能是中间人攻击，或者杀毒软件或 MDM 软件正在拦截此连接。</string>
     <string name="trust_host">主机：%1$s</string>
     <string name="trust_port">端口：%1$s</string>
     <string name="trust_user">用户：%1$s</string>

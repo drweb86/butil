@@ -163,6 +163,9 @@
     <string name="trust_sftp_instruction">Ellenőrizze ezt az ujjlenyomatot sávon kívül, majd kattintson újra a Mentés gombra a tároláshoz.</string>
     <string name="trust_ftps_title">A teszt során FTPS kiszolgálói tanúsítvány észlelve.</string>
     <string name="trust_ftps_instruction">Ellenőrizze a tanúsítvány identitását sávon kívül, majd kattintson újra a Mentés gombra a tároláshoz.</string>
+    <string name="trust_ftps_self_signed">A kapcsolat tesztelése közben önaláírt tanúsítványt találtunk.</string>
+    <string name="trust_ftps_next">Elmentettük a tanúsítvány hexadecimális mezőjébe. A következő kapcsolat el fogja fogadni.</string>
+    <string name="trust_ftps_compare">Hasonlítsa össze ezeket az ujjlenyomatokat a vártakkal. Ha egyeznek, koppintson újra az OK gombra. Ha nem egyeznek, közbeékelődéses támadás lehet, vagy egy vírusirtó vagy MDM szoftver fogja el a kapcsolatot.</string>
     <string name="trust_host">Gazdagép: %1$s</string>
     <string name="trust_user">Felhasználó: %1$s</string>
     <string name="trust_folder">Mappa: %1$s</string>

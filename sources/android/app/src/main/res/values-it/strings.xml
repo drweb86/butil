@@ -6,7 +6,7 @@
     <string name="technical_tool_menu_compress_brotli">Comprimi Brotli…</string>
     <string name="menu_credits">Ringraziamenti</string>
     <string name="menu_third_party_notices">Note terze parti</string>
-    <string name="menu_about">Informazioni</string>
+    <string name="menu_about">Info programma</string>
     <string name="menu_section_new_task">Nuova attività</string>
     <string name="menu_section_tools">Strumenti</string>
     <string name="task_create">Crea</string>
@@ -162,6 +162,9 @@
     <string name="trust_sftp_instruction">Verifica la firma digitale, quindi per memorizzarla seleziona di nuovo \"Salva\".</string>
     <string name="trust_ftps_title">Certificato server FTPS rilevato durante il test..</string>
     <string name="trust_ftps_instruction">Verifica l\'identità del certificato, quindi per memorizzarlo seleziona nuovamente \"Salva\".</string>
+    <string name="trust_ftps_self_signed">Durante il test della connessione è stato trovato un certificato autofirmato.</string>
+    <string name="trust_ftps_next">È stato salvato nel campo esadecimale del certificato. La prossima connessione lo accetterà.</string>
+    <string name="trust_ftps_compare">Confronta queste impronte con quelle che ti aspetti. Se corrispondono, tocca di nuovo OK. Se non corrispondono, può essere un attacco man-in-the-middle, oppure un antivirus o un software MDM sta intercettando la connessione.</string>
     <string name="trust_port">Porta: %1$s</string>
     <string name="trust_user">Utente: %1$s</string>
     <string name="trust_folder">Cartella: %1$s</string>

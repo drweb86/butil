@@ -170,6 +170,9 @@
     <string name="trust_sftp_instruction">Verifique esta impresión dixital fóra da banda e, a continuación, prema de novo en Gardar para almacenala.</string>
     <string name="trust_ftps_title">Certificado do servidor FTPS detectado durante a proba.</string>
     <string name="trust_ftps_instruction">Verifique a identidade do certificado fóra de banda e prema de novo en Gardar para almacenalo.</string>
+    <string name="trust_ftps_self_signed">Ao probar a conexión, atopouse un certificado autofirmado.</string>
+    <string name="trust_ftps_next">Gardouse no campo hexadecimal do certificado. A próxima conexión aceptarao.</string>
+    <string name="trust_ftps_compare">Compare estas pegadas coas que espera. Se coinciden, toque OK de novo. Se non coinciden, pode ser un ataque de intermediario, ou un antivirus ou un software MDM pode estar interceptando a conexión.</string>
     <string name="trust_host">Anfitrión: %1$s</string>
     <string name="trust_port">Porto: %1$s</string>
     <string name="trust_user">Usuario: %1$s</string>

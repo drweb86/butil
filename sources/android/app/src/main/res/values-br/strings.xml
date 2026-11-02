@@ -69,4 +69,7 @@
     <string name="storage_mount_options">Dibarzhioù staj:</string>
     <string name="error_name_duplicate">Ur gefridi gant an anv-mañ a zo anezhañ c\'hoazh.</string>
     <string name="error_import_too_broad">Le dossier sélectionné semble être la racine d\'un appareil ou d\'un répertoire personnel, car il contient plusieurs dossiers multimédias connus (%1$s). Veuillez choisir un dossier plus précis, par exemple \"%2$s\".</string>
+    <string name="trust_ftps_self_signed">E-pad arnod ar gevreadenn e voe kavet un testeni emsinet.</string>
+    <string name="trust_ftps_next">Enrollet eo bet e maezienn c\'hwezekvedennel an testeni. Ar gevreadenn war-lerc\'h a asanto anezhañ.</string>
+    <string name="trust_ftps_compare">Keñverit ar roudoù-biz-mañ gant ar re a c\'hortozit. Ma klotont, stokit OK en-dro. Ma ne glotont ket, e c\'hall bezañ un tagadenn den-en-kreiz, pe ur meziant enepviruz pe MDM oc\'h ereañ ouzh ar gevreadenn.</string>
 </resources>

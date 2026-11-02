@@ -159,6 +159,9 @@
     <string name="trust_sftp_instruction">Verifiera detta fingeravtryck out-of-band och klicka sedan på Spara igen för att lagra det.</string>
     <string name="trust_ftps_title">FTPS-servercertifikat upptäcktes under test.</string>
     <string name="trust_ftps_instruction">Verifiera certifikatidentiteten out-of-band och klicka sedan på Spara igen för att lagra det.</string>
+    <string name="trust_ftps_self_signed">Vid test av anslutningen hittades ett självsignerat certifikat.</string>
+    <string name="trust_ftps_next">Det sparades i certifikatets hexadecimala fält. Nästa anslutning kommer att acceptera det.</string>
+    <string name="trust_ftps_compare">Jämför dessa fingeravtryck med dem du förväntar dig. Om de stämmer, tryck på OK igen. Om de inte stämmer kan det vara en man-in-the-middle-attack, eller så fångar antivirus- eller MDM-program upp anslutningen.</string>
     <string name="trust_host">Värd: %1$s</string>
     <string name="trust_user">Användare: %1$s</string>
     <string name="trust_folder">Mapp: %1$s</string>

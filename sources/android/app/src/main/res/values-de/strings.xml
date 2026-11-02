@@ -160,6 +160,9 @@
     <string name="trust_sftp_instruction">Überprüfen Sie diesen Fingerabdruck außerhalb des Bandes, dann klicken Sie erneut auf Speichern.</string>
     <string name="trust_ftps_title">FTPS-Server-Zertifikat während des Tests erkannt.</string>
     <string name="trust_ftps_instruction">Überprüfen Sie die Zertifikatsidentität außerhalb des Bandes, dann klicken Sie erneut auf Speichern.</string>
+    <string name="trust_ftps_self_signed">Beim Testen der Verbindung wurde ein selbstsigniertes Zertifikat gefunden.</string>
+    <string name="trust_ftps_next">Es wurde im Hexadezimalfeld des Zertifikats gespeichert. Die nächste Verbindung wird es akzeptieren.</string>
+    <string name="trust_ftps_compare">Vergleichen Sie diese Fingerabdrücke mit den erwarteten. Wenn sie übereinstimmen, tippen Sie erneut auf OK. Wenn nicht, kann es ein Man-in-the-Middle-Angriff sein, oder Antiviren- oder MDM-Software fängt die Verbindung ab.</string>
     <string name="trust_user">Benutzer: %1$s</string>
     <string name="trust_folder">Ordner: %1$s</string>
     <string name="trust_fingerprint">Fingerabdruck (SHA-256): %1$s</string>

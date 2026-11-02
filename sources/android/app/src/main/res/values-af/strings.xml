@@ -169,6 +169,9 @@
     <string name="trust_sftp_instruction">Verifieer hierdie vingerafdruk buite band en klik dan weer Stoor om dit te stoor.</string>
     <string name="trust_ftps_title">FTPS-bedienersertifikaat tydens toets bespeur.</string>
     <string name="trust_ftps_instruction">Verifieer sertifikaat-identiteit buite-band, klik dan weer Stoor om dit te stoor.</string>
+    <string name="trust_ftps_self_signed">Tydens die toets van die verbinding is \'n selfondertekende sertifikaat gevind.</string>
+    <string name="trust_ftps_next">Dit is in die heksadesimale sertifikaatveld gestoor. Die volgende verbinding sal dit aanvaar.</string>
+    <string name="trust_ftps_compare">Vergelyk hierdie vingerafdrukke met die wat jy verwag. As hulle ooreenstem, tik weer OK. As hulle nie ooreenstem nie, kan dit \'n man-in-the-middle-aanval wees, of antivirus- of MDM-sagteware onderskep dalk die verbinding.</string>
     <string name="trust_host">Gasheer: %1$s</string>
     <string name="trust_port">Poort: %1$s</string>
     <string name="trust_user">Gebruiker: %1$s</string>

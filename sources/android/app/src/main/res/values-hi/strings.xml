@@ -168,6 +168,9 @@
     <string name="trust_sftp_instruction">इस फिंगरप्रिंट को आउट-ऑफ-बैंड सत्यापित करें, फिर इसे स्टोर करने के लिए सहेजें पर फिर से क्लिक करें।</string>
     <string name="trust_ftps_title">परीक्षण के दौरान FTPS सर्वर प्रमाणपत्र का पता चला।</string>
     <string name="trust_ftps_instruction">प्रमाणपत्र की पहचान आउट-ऑफ-बैंड सत्यापित करें, फिर इसे स्टोर करने के लिए सहेजें पर फिर से क्लिक करें।</string>
+    <string name="trust_ftps_self_signed">कनेक्शन की जाँच के दौरान एक स्व-हस्ताक्षरित प्रमाणपत्र मिला।</string>
+    <string name="trust_ftps_next">इसे प्रमाणपत्र के हेक्स फ़ील्ड में सहेजा गया है। अगला कनेक्शन इसे स्वीकार कर लेगा।</string>
+    <string name="trust_ftps_compare">इन फ़िंगरप्रिंट की तुलना उनसे करें जिनकी आप अपेक्षा करते हैं। यदि वे मेल खाते हैं, तो OK फिर से टैप करें। यदि वे मेल नहीं खाते, तो यह मैन-इन-द-मिडल हमला हो सकता है, या एंटीवायरस या MDM सॉफ़्टवेयर कनेक्शन को बीच में रोक रहा हो सकता है।</string>
     <string name="trust_host">होस्ट: %1$s</string>
     <string name="trust_port">पोर्ट: %1$s</string>
     <string name="trust_user">उपयोगकर्ता: %1$s</string>

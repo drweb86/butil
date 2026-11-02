@@ -167,6 +167,9 @@
     <string name="trust_sftp_instruction">Overte tento odtlačok mimo pásma, potom znovu kliknite na Uložiť pre jeho uloženie.</string>
     <string name="trust_ftps_title">Certifikát FTPS servera zistený počas testu.</string>
     <string name="trust_ftps_instruction">Overte identitu certifikátu mimo pásma, potom znovu kliknite na Uložiť pre jeho uloženie.</string>
+    <string name="trust_ftps_self_signed">Pri testovaní pripojenia bol nájdený certifikát podpísaný sám sebou.</string>
+    <string name="trust_ftps_next">Bol uložený do šestnástkového poľa certifikátu. Ďalšie pripojenie ho prijme.</string>
+    <string name="trust_ftps_compare">Porovnajte tieto odtlačky s tými, ktoré očakávate. Ak sa zhodujú, ťuknite znova na OK. Ak sa nezhodujú, môže ísť o útok typu man-in-the-middle, alebo pripojenie zachytáva antivírus či softvér MDM.</string>
     <string name="trust_user">Používateľ: %1$s</string>
     <string name="trust_folder">Priečinok: %1$s</string>
     <string name="trust_fingerprint">Odtlačok (SHA-256): %1$s</string>

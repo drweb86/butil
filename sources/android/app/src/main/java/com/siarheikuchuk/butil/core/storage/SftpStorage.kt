@@ -24,6 +24,7 @@ internal class SftpStorage(
     private val context: Context,
     private val settings: SftpSettings,
     private val testingConnection: Boolean,
+    private val keyFile: String? = settings.keyFile,
 ) : Storage {
     private val ssh = SSHClient()
     private val sftp: SFTPClient
@@ -153,7 +154,7 @@ internal class SftpStorage(
         if (settings.host.isBlank()) throw IllegalArgumentException(context.getString(R.string.error_server_name))
         if (settings.port < 0 || settings.port > 65535) throw IllegalArgumentException(context.getString(R.string.error_port_invalid))
         if (settings.user.isBlank()) throw IllegalArgumentException(context.getString(R.string.error_user_not_specified))
-        if (settings.password.isNullOrBlank() && settings.keyFile.isNullOrBlank()) {
+        if (settings.password.isNullOrBlank() && keyFile.isNullOrBlank()) {
             throw IllegalArgumentException(context.getString(R.string.error_sftp_password_and_key))
         }
         if (!testingConnection && settings.fingerPrintSha256.isBlank()) {
@@ -180,7 +181,7 @@ internal class SftpStorage(
         val port = if (settings.port == 0) 22 else settings.port
         ssh.connect(settings.host, port)
         val methods = mutableListOf<AuthMethod>()
-        if (!settings.keyFile.isNullOrBlank()) {
+        if (!keyFile.isNullOrBlank()) {
             methods += AuthPublickey(loadKey())
         }
         if (!settings.password.isNullOrBlank()) {
@@ -195,7 +196,7 @@ internal class SftpStorage(
     }
 
     private fun loadKey(): KeyProvider {
-        val location = settings.keyFile!!
+        val location = keyFile!!
         if (location.startsWith("content:") || location.startsWith("file:")) {
             throw IllegalArgumentException("Key file must be readable as a local file path passed to the storage.")
         }

@@ -7,15 +7,19 @@ import org.apache.commons.net.ftp.FTP
 import org.apache.commons.net.ftp.FTPReply
 import org.apache.commons.net.ftp.FTPSClient
 import org.conscrypt.Conscrypt
-import java.io.FileDescriptor
 import java.io.InputStream
 import java.io.OutputStream
 import java.net.Socket
+import java.net.SocketTimeoutException
+import java.nio.ByteBuffer
 import java.security.Security
 import java.security.cert.CertificateException
 import java.security.cert.X509Certificate
+import javax.net.ssl.SSLEngine
+import javax.net.ssl.SSLEngineResult
 import javax.net.ssl.SSLSocket
 import javax.net.ssl.TrustManagerFactory
+import javax.net.ssl.X509ExtendedTrustManager
 import javax.net.ssl.X509TrustManager
 
 internal class FtpsStorage(
@@ -121,12 +125,11 @@ internal class FtpsStorage(
         if (settings.port < 0 || settings.port > 65535) throw IllegalArgumentException(context.getString(R.string.error_port_invalid))
         if (settings.user.isBlank()) throw IllegalArgumentException(context.getString(R.string.error_user_not_specified))
         if (settings.password.isBlank()) throw IllegalArgumentException(context.getString(R.string.error_password_not_specified))
-        // The platform engine socket closes TCP before close_notify is written. The server
-        // then rejects the upload. This provider's file-descriptor sockets send the alert first.
+        // Conscrypt's socket close frees the TLS engine while close_notify is still queued.
+        // The data socket writes that alert itself before TCP is closed.
         if (Security.getProvider("Conscrypt") == null) {
             Security.insertProviderAt(Conscrypt.newProvider(), 1)
         }
-        Conscrypt.setUseEngineSocketByDefault(false)
         val implicit = settings.encryption == "Implicit"
         val ftp = SessionReuseFtpsClient(implicit)
         ftp.connectTimeout = 30_000
@@ -186,16 +189,28 @@ internal class FtpsStorage(
 private class PinningTrustManager(
     private val settings: FtpsSettings,
     private val autodetect: Boolean,
-) : X509TrustManager {
+) : X509ExtendedTrustManager() {
     private val system = systemTrust()
 
     override fun checkClientTrusted(chain: Array<out X509Certificate>?, authType: String?) = Unit
 
-    override fun checkServerTrusted(chain: Array<out X509Certificate>?, authType: String?) {
+    override fun checkClientTrusted(chain: Array<out X509Certificate>?, authType: String?, socket: Socket?) = Unit
+
+    override fun checkClientTrusted(chain: Array<out X509Certificate>?, authType: String?, engine: SSLEngine?) = Unit
+
+    override fun checkServerTrusted(chain: Array<out X509Certificate>?, authType: String?) = check(chain, authType)
+
+    override fun checkServerTrusted(chain: Array<out X509Certificate>?, authType: String?, socket: Socket?) = check(chain, authType)
+
+    override fun checkServerTrusted(chain: Array<out X509Certificate>?, authType: String?, engine: SSLEngine?) = check(chain, authType)
+
+    private fun check(chain: Array<out X509Certificate>?, authType: String?) {
         val cert = chain?.firstOrNull() ?: throw CertificateException("FTPS server presented no certificate.")
         val hex = cert.encoded.joinToString("") { "%02X".format(it) }
         if (trustedBySystem(chain, authType)) return
         if (settings.trustedCertificate.equals(hex, ignoreCase = true)) return
+        // First sight of this certificate. Remember it for the form, and reject
+        // this attempt. The next connection presents the same hex and is accepted.
         if (autodetect) settings.trustedCertificate = hex
         throw CertificateException("FTPS certificate is not trusted.")
     }
@@ -232,6 +247,8 @@ private class SessionReuseFtpsClient(implicit: Boolean) : FTPSClient("TLS", impl
         if (socket !is SSLSocket) return
         val control = _socket_ as? SSLSocket ?: return
         try {
+            // A small upload plus the close alert must leave the host before TCP is finished.
+            socket.tcpNoDelay = true
             reuseConscryptSession(control, socket)
         } catch (error: Exception) {
             Log.w("BUtilFtps", "Could not reuse TLS session: ${error.javaClass.simpleName}: ${error.message}")
@@ -245,22 +262,37 @@ private class SessionReuseFtpsClient(implicit: Boolean) : FTPSClient("TLS", impl
 }
 
 /**
- * Commons Net closes the upload stream and then the socket. Conscrypt's
- * [SSLSocket.shutdownOutput] shuts the raw TCP write side and does not send
- * close_notify, so a later [SSLSocket.close] can no longer send it either.
- * Flush the buffered records here, and let [close] perform the TLS shutdown.
+ * Commons Net closes the upload stream and then the socket. [SSLSocket.close] marks
+ * the engine finished and frees it while close_notify is still queued, so the server
+ * sees TCP close first and rejects the upload. Write the alert before that close.
  */
 private class ClosingSslSocket(private val inner: Socket) : Socket() {
     override fun getOutputStream(): OutputStream {
         val raw = inner.getOutputStream()
         return object : java.io.FilterOutputStream(raw) {
             override fun close() {
-                flush()
+                // The buffered stream already flushed the file bytes into this stream.
+                // Send the alert before the socket close frees the TLS engine.
+                if (inner is SSLSocket) sendCloseNotify(inner)
             }
         }
     }
 
-    override fun getInputStream(): InputStream = inner.getInputStream()
+    override fun getInputStream(): InputStream {
+        val raw = inner.getInputStream()
+        return object : java.io.FilterInputStream(raw) {
+            override fun close() {
+                // SSLInputStream.close closes the socket and drops close_notify.
+                // Finish the alert first, then close the socket once.
+                try {
+                    if (inner is SSLSocket) sendCloseNotify(inner)
+                } finally {
+                    inner.close()
+                }
+            }
+        }
+    }
+
     override fun close() {
         if (inner is SSLSocket) sendCloseNotify(inner)
         inner.close()
@@ -272,47 +304,138 @@ private class ClosingSslSocket(private val inner: Socket) : Socket() {
     override fun isOutputShutdown(): Boolean = inner.isOutputShutdown
 }
 
-// File-descriptor Conscrypt interrupts the SSL object inside close() before it writes
-// close_notify, which drops the alert when a write is still finishing. Send it first.
+private fun declaredField(target: Any, name: String): java.lang.reflect.Field? {
+    return generateSequence(target.javaClass as Class<*>?) { it.superclass }
+        .flatMap { type -> type.declaredFields.asSequence() }
+        .firstOrNull { it.name == name }
+        ?.apply { isAccessible = true }
+}
+
+// One alert per data socket. A second close, after the engine is freed, must not
+// try to write again: that throws "Socket is closed" and hides the first result.
+private val closeNotifySent = java.util.Collections.newSetFromMap(java.util.WeakHashMap<SSLSocket, Boolean>())
+
+// closeOutbound queues close_notify inside the engine. A TLS 1.3 NewSessionTicket can
+// arrive first and block that shutdown until it is read. Copy the alert to the raw
+// socket before SSLSocket.close frees the engine and closes TCP.
 private fun sendCloseNotify(socket: SSLSocket) {
+    if (socket in closeNotifySent) return
     try {
-        val sslField = generateSequence(socket.javaClass as Class<*>?) { it.superclass }
-            .flatMap { type -> type.declaredFields.asSequence() }
-            .firstOrNull { it.name == "ssl" }
-            ?: return
-        sslField.isAccessible = true
-        val ssl = sslField.get(socket) ?: return
-        val shutdown = ssl.javaClass.declaredMethods.firstOrNull {
-            it.name == "shutdown" && it.parameterTypes.size == 1 && it.parameterTypes[0] == FileDescriptor::class.java
-        } ?: return
-        shutdown.isAccessible = true
-        val platform = Class.forName("org.conscrypt.Platform")
-        val fd = platform.getDeclaredMethod("getFileDescriptor", Socket::class.java)
-            .apply { isAccessible = true }
-            .invoke(null, socket)
-        shutdown.invoke(ssl, fd)
+        val engine = declaredField(socket, "engine")?.get(socket) as? SSLEngine
+        if (engine == null) {
+            Log.w("BUtilFtps", "Could not send TLS close_notify: data socket has no TLS engine")
+            return
+        }
+        val sslOut = declaredField(socket, "out")?.get(socket) as? OutputStream
+        val raw = sslOut?.let { declaredField(it, "socketOutputStream")?.get(it) } as? OutputStream
+        if (raw == null) {
+            Log.w("BUtilFtps", "Could not send TLS close_notify: data socket has no output stream")
+            return
+        }
+        readPostHandshake(socket)
+        if (!engine.isOutboundDone) engine.closeOutbound()
+        val empty = ByteBuffer.allocate(0)
+        var packet = ByteBuffer.allocate(maxOf(engine.session.packetBufferSize, 18_432))
+        var sent = 0
+        var guard = 0
+        while (guard++ < 8) {
+            packet.clear()
+            val result = engine.wrap(empty, packet)
+            if (result.status == SSLEngineResult.Status.BUFFER_OVERFLOW) {
+                packet = ByteBuffer.allocate(packet.capacity() * 2)
+                continue
+            }
+            packet.flip()
+            if (packet.hasRemaining()) {
+                val bytes = ByteArray(packet.remaining())
+                packet.get(bytes)
+                raw.write(bytes)
+                sent += bytes.size
+            }
+            if (result.handshakeStatus == SSLEngineResult.HandshakeStatus.NEED_UNWRAP) {
+                readPostHandshake(socket)
+            }
+            if (result.handshakeStatus == SSLEngineResult.HandshakeStatus.NEED_TASK) {
+                while (true) {
+                    val task = engine.delegatedTask ?: break
+                    task.run()
+                }
+                continue
+            }
+            if (result.bytesProduced() == 0) break
+        }
+        raw.flush()
+        if (sent > 0) closeNotifySent.add(socket) else Log.w("BUtilFtps", "TLS close_notify was not produced")
     } catch (error: Exception) {
-        Log.w("BUtilFtps", "Could not send TLS close_notify: ${error.javaClass.simpleName}: ${error.message}")
+        Log.w("BUtilFtps", "Could not send TLS close_notify", error)
+    }
+}
+
+// The server may send a session ticket before it is ready for our close alert.
+// Read it, without treating a quiet socket as a failed upload.
+private fun readPostHandshake(socket: SSLSocket) {
+    val previous = try {
+        socket.soTimeout
+    } catch (_: Exception) {
+        return
+    }
+    try {
+        socket.soTimeout = 50
+        val buffer = ByteArray(1)
+        socket.getInputStream().read(buffer)
+    } catch (_: SocketTimeoutException) {
+    } finally {
+        try {
+            socket.soTimeout = previous
+        } catch (_: Exception) {
+        }
     }
 }
 
 private fun reuseConscryptSession(control: SSLSocket, data: SSLSocket) {
     val session = control.session ?: return
+    if (!session.isValid) return
     val context = session.sessionContext ?: return
     val mapField = context.javaClass.declaredFields.firstOrNull { it.name == "sessionsByHostAndPort" } ?: return
     mapField.isAccessible = true
     val map = mapField.get(context) ?: return
-    val values = map.javaClass.getMethod("values").invoke(map) as Collection<*>
-    val holder = values.firstOrNull() ?: return
-    val keys = map.javaClass.getMethod("keySet").invoke(map) as Collection<*>
-    val sampleKey = keys.firstOrNull() ?: return
-    val ctor = sampleKey.javaClass.declaredConstructors.maxByOrNull { it.parameterTypes.size } ?: return
-    ctor.isAccessible = true
-    if (ctor.parameterTypes.size != 2) return
-    val put = map.javaClass.methods.first { it.name == "put" && it.parameterTypes.size == 2 }
-    val port = data.port
-    val hosts = listOfNotNull(data.inetAddress?.hostAddress, data.inetAddress?.hostName, session.peerHost).distinct()
-    for (host in hosts) {
-        put.invoke(map, ctor.newInstance(host, port), holder)
+    // The cache is keyed by host and port, and each value is a list of sessions.
+    // A data connection is a different port, so it will not see the control session.
+    // Copying the first list in the map shares that list: the next connection then
+    // resumes the previous data-port session, the server rejects it, and the attempt
+    // after that works again. Offer only the current control session, in a new list.
+    synchronized(map) {
+        val keySet = map.javaClass.getMethod("keySet").invoke(map) as Collection<*>
+        val sampleKey = keySet.firstOrNull() ?: return
+        val hostField = sampleKey.javaClass.declaredFields.firstOrNull { it.name == "host" } ?: return
+        val portField = sampleKey.javaClass.declaredFields.firstOrNull { it.name == "port" } ?: return
+        hostField.isAccessible = true
+        portField.isAccessible = true
+        val ctor = sampleKey.javaClass.getDeclaredConstructor(String::class.java, Int::class.javaPrimitiveType)
+        ctor.isAccessible = true
+        val get = map.javaClass.methods.first { it.name == "get" && it.parameterTypes.size == 1 }
+        val controlPort = control.port
+        val controlHosts = listOfNotNull(session.peerHost, control.inetAddress?.hostAddress, control.inetAddress?.hostName)
+        var controlSessions: List<*>? = null
+        for (key in keySet) {
+            val keyHost = hostField.get(key) as? String ?: continue
+            val keyPort = portField.getInt(key)
+            if (keyPort == controlPort && controlHosts.any { it.equals(keyHost, ignoreCase = true) }) {
+                controlSessions = get.invoke(map, key) as? List<*>
+                break
+            }
+        }
+        val current = controlSessions?.lastOrNull { it != null && sessionValid(it) } ?: return
+        val put = map.javaClass.methods.first { it.name == "put" && it.parameterTypes.size == 2 }
+        val dataHosts = listOfNotNull(data.inetAddress?.hostAddress, data.inetAddress?.hostName, session.peerHost).distinct()
+        for (host in dataHosts) {
+            put.invoke(map, ctor.newInstance(host, data.port), arrayListOf(current))
+        }
     }
+}
+
+private fun sessionValid(session: Any): Boolean {
+    val valid = session.javaClass.methods.firstOrNull { it.name == "isValid" && it.parameterTypes.isEmpty() }
+        ?: return true
+    return valid.invoke(session) == true
 }

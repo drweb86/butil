@@ -170,6 +170,9 @@
     <string name="trust_sftp_instruction">Patikrinkite šį pirštų atspaudą nepriklausomu kanalu, tada dar kartą paspauskite Išsaugoti.</string>
     <string name="trust_ftps_title">FTPS serverio sertifikatas aptiktas testavimo metu.</string>
     <string name="trust_ftps_instruction">Patikrinkite sertifikato tapatybę nepriklausomu kanalu, tada dar kartą paspauskite Išsaugoti.</string>
+    <string name="trust_ftps_self_signed">Tikrinant ryšį rastas savarankiškai pasirašytas sertifikatas.</string>
+    <string name="trust_ftps_next">Jis įrašytas į sertifikato šešioliktainį lauką. Kitas ryšys jį priims.</string>
+    <string name="trust_ftps_compare">Palyginkite šiuos kontrolinius kodus su tais, kurių tikitės. Jei jie sutampa, bakstelėkite OK dar kartą. Jei nesutampa, tai gali būti tarpininko ataka arba antivirusinė ar MDM programa perima ryšį.</string>
     <string name="trust_host">Serveris: %1$s</string>
     <string name="trust_port">Prievadas: %1$s</string>
     <string name="trust_user">Naudotojas: %1$s</string>

@@ -166,6 +166,9 @@
     <string name="trust_sftp_instruction">Bu parmak izini bant dışı doğrulayın, ardından kaydetmek için Kaydet\'e tekrar tıklayın.</string>
     <string name="trust_ftps_title">Test sırasında FTPS sunucusu sertifikası algılandı.</string>
     <string name="trust_ftps_instruction">Sertifika kimliğini bant dışı doğrulayın, ardından kaydetmek için Kaydet\'e tekrar tıklayın.</string>
+    <string name="trust_ftps_self_signed">Bağlantı denenirken kendinden imzalı bir sertifika bulundu.</string>
+    <string name="trust_ftps_next">Sertifikanın onaltılık alanına kaydedildi. Sonraki bağlantı bunu kabul edecek.</string>
+    <string name="trust_ftps_compare">Bu parmak izlerini beklediklerinizle karşılaştırın. Eşleşirse OK düğmesine yeniden dokunun. Eşleşmezse bu bir aradaki adam saldırısı olabilir ya da bir antivirüs veya MDM yazılımı bağlantıya araya giriyor olabilir.</string>
     <string name="trust_host">Ana bilgisayar: %1$s</string>
     <string name="trust_user">Kullanıcı: %1$s</string>
     <string name="trust_folder">Klasör: %1$s</string>

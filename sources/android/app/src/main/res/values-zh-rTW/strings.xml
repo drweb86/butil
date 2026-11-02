@@ -172,6 +172,9 @@
     <string name="trust_sftp_instruction">請透過頻外方式驗證此指紋，然後再次按一下儲存以進行存放。</string>
     <string name="trust_ftps_title">測試期間偵測到 FTPS 伺服器憑證。</string>
     <string name="trust_ftps_instruction">請透過頻外方式驗證憑證身分，然後再次按一下儲存以進行存放。</string>
+    <string name="trust_ftps_self_signed">測試連線時發現了自我簽署的憑證。</string>
+    <string name="trust_ftps_next">已寫入憑證的十六進位欄位。下次連線將接受此憑證。</string>
+    <string name="trust_ftps_compare">請將這些指紋與預期的指紋比較。如果相符，請再次點按 OK。如果不相符，這可能是中間人攻擊，或防毒軟體或 MDM 軟體正在攔截此連線。</string>
     <string name="trust_host">主機：%1$s</string>
     <string name="trust_port">連接埠：%1$s</string>
     <string name="trust_user">使用者：%1$s</string>

@@ -170,6 +170,9 @@
     <string name="trust_sftp_instruction">Потврдете го овој отпечаток надвор од каналот, потоа кликнете Зачувај повторно за да го зачувате.</string>
     <string name="trust_ftps_title">Сертификат на FTPS-серверот е детектиран за време на тестирањето.</string>
     <string name="trust_ftps_instruction">Потврдете го идентитетот на сертификатот надвор од каналот, потоа кликнете Зачувај повторно за да го зачувате.</string>
+    <string name="trust_ftps_self_signed">При проверката на врската е пронајден самопотпишан сертификат.</string>
+    <string name="trust_ftps_next">Зачуван е во хексадецималното поле на сертификатот. Следната врска ќе го прифати.</string>
+    <string name="trust_ftps_compare">Споредете ги овие отпечатоци со очекуваните. Ако се совпаѓаат, допрете OK повторно. Ако не се совпаѓаат, ова може да е напад „човек во средина“, или антивирус или MDM софтвер ја пресретнува врската.</string>
     <string name="trust_host">Домаќин: %1$s</string>
     <string name="trust_port">Порта: %1$s</string>
     <string name="trust_user">Корисник: %1$s</string>

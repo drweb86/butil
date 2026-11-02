@@ -166,6 +166,9 @@
     <string name="trust_sftp_instruction">Verifiser dette fingeravtrykket utanfor bandet, klikk deretter Lagre igjen.</string>
     <string name="trust_ftps_title">FTPS-tenarsertifikat oppdaga under test.</string>
     <string name="trust_ftps_instruction">Verifiser sertifikatidentiteten utanfor bandet, klikk deretter Lagre igjen.</string>
+    <string name="trust_ftps_self_signed">Under testing av tilkoplinga blei det funne eit sjølvsignert sertifikat.</string>
+    <string name="trust_ftps_next">Det blei lagra i det heksadesimale feltet til sertifikatet. Neste tilkopling godtek det.</string>
+    <string name="trust_ftps_compare">Samanlikn desse fingeravtrykka med dei du ventar. Viss dei samsvarer, trykk OK igjen. Viss dei ikkje samsvarer, kan dette vere eit man-in-the-middle-åtak, eller antivirus- eller MDM-programvare fangar opp tilkoplinga.</string>
     <string name="trust_host">Vert: %1$s</string>
     <string name="trust_user">Brukar: %1$s</string>
     <string name="trust_folder">Mappe: %1$s</string>

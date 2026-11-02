@@ -162,6 +162,9 @@
     <string name="trust_sftp_instruction">Verificate questa impronta digitale fora di a banda, dopu cliccate Salva di novu per guardà.</string>
     <string name="trust_ftps_title">Certificatu di u servitore FTPS rilevatu durante a prova.</string>
     <string name="trust_ftps_instruction">Verificate l\'identità di u certificatu fora di a banda, dopu cliccate Salva di novu per almacenà lu.</string>
+    <string name="trust_ftps_self_signed">Durante a prova di a cunnessione, hè statu trovu un certificatu autofirmatu.</string>
+    <string name="trust_ftps_next">Hè statu arregistratu in u campu esadecimale di u certificatu. A prossima cunnessione l\'accetterà.</string>
+    <string name="trust_ftps_compare">Paragunate ste impronte cù quelle previste. S\'elle currispondenu, tuccate OK di novu. S\'elle ùn currispondenu micca, pò esse un attaccu di l\'omu in u mezu, o un antivirus o un prugramma MDM pò intercettà a cunnessione.</string>
     <string name="trust_port">Portu: %1$s</string>
     <string name="trust_folder">Cartulari: %1$s</string>
     <string name="trust_fingerprint">Impronta digitale (SHA-256): %1$s</string>

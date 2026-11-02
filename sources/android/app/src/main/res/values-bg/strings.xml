@@ -170,6 +170,9 @@
     <string name="trust_sftp_instruction">Проверете този отпечатък по външен канал, след което натиснете Запазване отново, за да го съхраните.</string>
     <string name="trust_ftps_title">Сертификат на FTPS сървър е открит по време на тест.</string>
     <string name="trust_ftps_instruction">Проверете идентичността на сертификата по външен канал, след което натиснете Запазване отново, за да го съхраните.</string>
+    <string name="trust_ftps_self_signed">При проверка на връзката беше намерен самоподписан сертификат.</string>
+    <string name="trust_ftps_next">Той е записан в шестнадесетичното поле за сертификата. Следващата връзка ще го приеме.</string>
+    <string name="trust_ftps_compare">Сравнете тези отпечатъци с очакваните. Ако съвпадат, докоснете OK отново. Ако не съвпадат, това може да е атака „човек по средата“, или антивирусна програма или софтуер MDM прихваща връзката.</string>
     <string name="trust_host">Хост: %1$s</string>
     <string name="trust_port">Порт: %1$s</string>
     <string name="trust_user">Потребител: %1$s</string>

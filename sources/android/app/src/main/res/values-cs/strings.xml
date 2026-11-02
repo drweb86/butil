@@ -163,6 +163,9 @@
     <string name="trust_sftp_instruction">Ověřte tento otisk mimo pásmo, poté znovu klikněte na Uložit.</string>
     <string name="trust_ftps_title">Během testu byl zjištěn certifikát FTPS serveru.</string>
     <string name="trust_ftps_instruction">Ověřte identitu certifikátu mimo pásmo, poté znovu klikněte na Uložit.</string>
+    <string name="trust_ftps_self_signed">Při testování připojení byl nalezen certifikát podepsaný sám sebou.</string>
+    <string name="trust_ftps_next">Byl uložen do šestnáctkového pole certifikátu. Další připojení jej přijme.</string>
+    <string name="trust_ftps_compare">Porovnejte tyto otisky s těmi, které očekáváte. Pokud se shodují, klepněte znovu na OK. Pokud se neshodují, může jít o útok typu man-in-the-middle, nebo připojení zachycuje antivir či software MDM.</string>
     <string name="trust_host">Hostitel: %1$s</string>
     <string name="trust_user">Uživatel: %1$s</string>
     <string name="trust_folder">Složka: %1$s</string>

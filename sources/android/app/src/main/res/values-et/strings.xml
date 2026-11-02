@@ -169,6 +169,9 @@
     <string name="trust_sftp_instruction">Kontrollige seda sõrmejälge väljaspool ribaühendust, seejärel klõpsake uuesti Salvesta.</string>
     <string name="trust_ftps_title">Testi käigus tuvastati FTPS-serveri sertifikaat.</string>
     <string name="trust_ftps_instruction">Kontrollige sertifikaadi identiteeti väljaspool ribaühendust, seejärel klõpsake uuesti Salvesta.</string>
+    <string name="trust_ftps_self_signed">Ühenduse testimisel leiti iseallkirjastatud sert.</string>
+    <string name="trust_ftps_next">See salvestati sertifikaadi kuueteistkümnendsüsteemi väljale. Järgmine ühendus võtab selle vastu.</string>
+    <string name="trust_ftps_compare">Võrrelge neid sõrmejälgi oodatutega. Kui need kattuvad, puudutage uuesti OK. Kui need ei kattu, võib tegu olla vahendajaründega või viirustõrje või MDM-tarkvara peatab ühenduse.</string>
     <string name="trust_user">Kasutaja: %1$s</string>
     <string name="trust_folder">Kaust: %1$s</string>
     <string name="trust_fingerprint">Sõrmejälg (SHA-256): %1$s</string>

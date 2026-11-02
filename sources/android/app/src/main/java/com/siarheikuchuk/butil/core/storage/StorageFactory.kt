@@ -8,19 +8,15 @@ import java.io.InputStream
 
 object StorageFactory {
     fun open(context: Context, settings: StorageSettings, autodetect: Boolean): Storage {
-        val prepared = when (settings) {
-            is SftpSettings -> settings.copy(keyFile = materializeKey(context, settings.keyFile))
-            else -> settings
-        }
-        return when (prepared) {
-            is FolderSettings -> LocalFolder.storage(context, prepared)
-            is FtpsSettings -> FtpsStorage(context, prepared, autodetect)
-            is SftpSettings -> SftpStorage(context, prepared, autodetect)
-            is WebDavSettings -> WebDavStorage(context, prepared)
-            is S3Settings -> S3Storage(prepared)
-            is AzureBlobSettings -> AzureBlobStorage(prepared)
-            is SambaSettings -> SambaStorage(context, prepared)
-            is NfsSettings -> NfsStorage(prepared)
+        return when (settings) {
+            is FolderSettings -> LocalFolder.storage(context, settings)
+            is FtpsSettings -> FtpsStorage(context, settings, autodetect)
+            is SftpSettings -> SftpStorage(context, settings, autodetect, materializeKey(context, settings.keyFile))
+            is WebDavSettings -> WebDavStorage(context, settings)
+            is S3Settings -> S3Storage(settings)
+            is AzureBlobSettings -> AzureBlobStorage(settings)
+            is SambaSettings -> SambaStorage(context, settings)
+            is NfsSettings -> NfsStorage(settings)
         }
     }
 

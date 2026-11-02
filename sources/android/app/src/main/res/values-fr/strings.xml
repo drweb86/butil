@@ -165,6 +165,9 @@
     <string name="trust_sftp_instruction">Vérifiez cette empreinte hors bande, puis cliquez à nouveau sur Enregistrer pour la stocker.</string>
     <string name="trust_ftps_title">Certificat du serveur FTPS détecté lors du test.</string>
     <string name="trust_ftps_instruction">Vérifiez l\'identité du certificat hors bande, puis cliquez à nouveau sur Enregistrer pour le stocker.</string>
+    <string name="trust_ftps_self_signed">Lors du test de la connexion, un certificat auto-signé a été trouvé.</string>
+    <string name="trust_ftps_next">Il a été enregistré dans le champ hexadécimal du certificat. La prochaine connexion l\'acceptera.</string>
+    <string name="trust_ftps_compare">Comparez ces empreintes avec celles que vous attendez. Si elles correspondent, appuyez de nouveau sur OK. Si elles ne correspondent pas, il peut s\'agir d\'une attaque de l\'homme du milieu, ou un antivirus ou un logiciel MDM intercepte la connexion.</string>
     <string name="trust_host">Hôte : %1$s</string>
     <string name="trust_port">Port : %1$s</string>
     <string name="trust_user">Utilisateur : %1$s</string>

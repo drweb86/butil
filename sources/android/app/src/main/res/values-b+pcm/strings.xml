@@ -74,4 +74,7 @@
     <string name="trust_sftp_instruction">Check dis fingerprint outside band, den click Save again to store am.</string>
     <string name="trust_ftps_title">FTPS server certificate don detect during test.</string>
     <string name="trust_ftps_instruction">Check certificate identity outside band, den click Save again to store am.</string>
+    <string name="trust_ftps_self_signed">Wen dem test di connection, dem find one certificate wey sign imself.</string>
+    <string name="trust_ftps_next">Dem don save am for di certificate hex field. Di next connection go accept am.</string>
+    <string name="trust_ftps_compare">Compare dis fingerprints with di ones wey you expect. If dem match, tap OK again. If dem no match, e fit be man-in-the-middle attack, or antivirus or MDM software dey intercept di connection.</string>
 </resources>

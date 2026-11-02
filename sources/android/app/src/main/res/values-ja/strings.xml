@@ -166,6 +166,9 @@
     <string name="trust_sftp_instruction">このフィンガープリントを帯域外で確認してから、保存ボタンをもう一度クリックして保存してください。</string>
     <string name="trust_ftps_title">テスト中にFTPSサーバー証明書が検出されました。</string>
     <string name="trust_ftps_instruction">証明書のIDを帯域外で確認してから、保存ボタンをもう一度クリックして保存してください。</string>
+    <string name="trust_ftps_self_signed">接続のテスト中に、自己署名証明書が見つかりました。</string>
+    <string name="trust_ftps_next">証明書の16進フィールドに保存しました。次の接続では受け入れられます。</string>
+    <string name="trust_ftps_compare">これらのフィンガープリントを、想定しているものと比較してください。一致する場合は、もう一度OKをタップしてください。一致しない場合は、中間者攻撃の可能性、またはウイルス対策ソフトやMDMソフトが接続を傍受している可能性があります。</string>
     <string name="trust_host">ホスト: %1$s</string>
     <string name="trust_port">ポート: %1$s</string>
     <string name="trust_user">ユーザー: %1$s</string>

@@ -183,6 +183,10 @@
     <string name="trust_sftp_instruction">Verify this fingerprint out-of-band, then click Save again to store it.</string>
     <string name="trust_ftps_title">FTPS server certificate detected during test.</string>
     <string name="trust_ftps_instruction">Verify certificate identity out-of-band, then click Save again to store it.</string>
+    <string name="trust_ftps_self_signed">While testing the connection, a self-signed certificate was found.</string>
+    <string name="trust_ftps_next">It was saved in the certificate hex field. The next connection will accept it.</string>
+    <string name="trust_ftps_compare">Compare these fingerprints with the ones you expect. If they match, tap OK again. If they do not match, this may be a man-in-the-middle attack, or antivirus or MDM software may be intercepting the connection.</string>
+    <string name="trust_cert_unreadable">The server certificate could not be read.</string>
     <string name="trust_host">Host: %1$s</string>
     <string name="trust_port">Port: %1$s</string>
     <string name="trust_user">User: %1$s</string>

@@ -170,6 +170,9 @@
     <string name="trust_sftp_instruction">Pārbaudiet šo pirkstu nospiedumu ārpus kanāla, pēc tam vēlreiz noklikšķiniet uz Saglabāt, lai to saglabātu.</string>
     <string name="trust_ftps_title">FTPS servera sertifikāts atklāts testēšanas laikā.</string>
     <string name="trust_ftps_instruction">Pārbaudiet sertifikāta identitāti ārpus kanāla, pēc tam vēlreiz noklikšķiniet uz Saglabāt, lai to saglabātu.</string>
+    <string name="trust_ftps_self_signed">Savienojuma pārbaudes laikā tika atrasts pašparakstīts sertifikāts.</string>
+    <string name="trust_ftps_next">Tas tika saglabāts sertifikāta heksadecimālajā laukā. Nākamais savienojums to pieņems.</string>
+    <string name="trust_ftps_compare">Salīdziniet šos nospiedumus ar gaidītajiem. Ja tie sakrīt, pieskarieties OK vēlreiz. Ja nesakrīt, tā var būt starpnieka uzbrukums, vai arī pretvīrusu vai MDM programmatūra pārtver savienojumu.</string>
     <string name="trust_host">Resursdators: %1$s</string>
     <string name="trust_port">Ports: %1$s</string>
     <string name="trust_user">Lietotājs: %1$s</string>

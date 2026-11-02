@@ -59,9 +59,6 @@ import com.siarheikuchuk.butil.core.tasks.UploadScheduler
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import java.security.MessageDigest
-import java.security.cert.CertificateFactory
-import java.security.cert.X509Certificate
 
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalLayoutApi::class)
 @Composable
@@ -146,10 +143,7 @@ fun UploadFolderEditor(
                     StorageFieldKind.ENUM -> EnumField(field, !busy) { form.applyRules() }
                     StorageFieldKind.FOLDER -> BrowseField(field, stringResource(R.string.field_folder_browse), !busy) { pickStorageFolder.launch(null) }
                     StorageFieldKind.FILE -> BrowseField(field, stringResource(R.string.field_file_browse), !busy) { pickKey.launch(arrayOf("*/*")) }
-                    StorageFieldKind.TEXT -> {
-                        val fingerprints = if (field.spec.key == "certificate") ftpsCertificateFingerprints(field.value) else null
-                        if (fingerprints != null) CertificateFingerprintBlock(fingerprints) else TextField(field, !busy)
-                    }
+                    StorageFieldKind.TEXT -> TextField(field, !busy)
                 }
             }
             NumberField(
@@ -516,7 +510,7 @@ private class UploadFolderForm(store: UploadFolderStore, existingName: String?) 
         val beforeCertificate = (settings as? FtpsSettings)?.trustedCertificate.orEmpty()
         val beforeFingerprint = (settings as? SftpSettings)?.fingerPrintSha256.orEmpty()
         val storageError = StorageFactory.test(context, settings)
-        val trust = trustText(context, settings, beforeCertificate, beforeFingerprint)
+        val trust = detectedTrustMessage(context, settings, beforeCertificate, beforeFingerprint)
         if (trust != null) return TestOutcome(settings, trust, storageError)
         if (storageError != null) return TestOutcome(settings, null, storageError)
         val sourceError = StorageFactory.test(context, FolderSettings(destinationFolder = folder))
@@ -572,90 +566,6 @@ private class UploadFolderForm(store: UploadFolderStore, existingName: String?) 
         return null
     }
 
-    private fun trustText(context: android.content.Context, settings: StorageSettings, beforeCertificate: String, beforeFingerprint: String): String? {
-        if (settings is FtpsSettings && settings.trustedCertificate.isNotBlank() &&
-            !settings.trustedCertificate.equals(beforeCertificate, ignoreCase = true)
-        ) {
-            return certificateText(context, settings)
-        }
-        if (settings is SftpSettings && settings.fingerPrintSha256.isNotBlank() &&
-            !settings.fingerPrintSha256.equals(beforeFingerprint, ignoreCase = true)
-        ) {
-            val port = if (settings.port == 0) context.getString(R.string.trust_port_default_22) else settings.port.toString()
-            return listOf(
-                context.getString(R.string.trust_sftp_title),
-                context.getString(R.string.trust_sftp_instruction),
-                "",
-                context.getString(R.string.trust_host, settings.host),
-                context.getString(R.string.trust_port, port),
-                context.getString(R.string.trust_user, settings.user),
-                context.getString(R.string.trust_folder, settings.folder),
-                context.getString(R.string.trust_fingerprint, settings.fingerPrintSha256),
-            ).joinToString("\n")
-        }
-        return null
-    }
-
-    private fun certificateText(context: android.content.Context, settings: FtpsSettings): String {
-        val port = if (settings.port == 0) context.getString(R.string.trust_port_default) else settings.port.toString()
-        val lines = mutableListOf(
-            context.getString(R.string.trust_ftps_title),
-            context.getString(R.string.trust_ftps_instruction),
-            "",
-            context.getString(R.string.trust_host, settings.host),
-            context.getString(R.string.trust_port, port),
-            context.getString(R.string.trust_encryption, settings.encryption),
-            context.getString(R.string.trust_folder, settings.folder.orEmpty()),
-        )
-        val fingerprints = ftpsCertificateFingerprints(settings.trustedCertificate)
-        if (fingerprints != null) {
-            lines += ""
-            lines += fingerprints
-            val cert = parseFtpsCertificate(settings.trustedCertificate)
-            if (cert != null) {
-                lines += listOf(
-                    "",
-                    context.getString(R.string.trust_subject, cert.subjectDN.toString()),
-                    context.getString(R.string.trust_issuer, cert.issuerDN.toString()),
-                    context.getString(R.string.trust_serial, cert.serialNumber.toString()),
-                    context.getString(R.string.trust_valid_from, cert.notBefore.toString()),
-                    context.getString(R.string.trust_valid_until, cert.notAfter.toString()),
-                )
-            }
-        } else {
-            lines += context.getString(R.string.trust_cert_warning, "the server certificate could not be read.")
-        }
-        return lines.joinToString("\n")
-    }
-}
-
-@Composable
-private fun CertificateFingerprintBlock(fingerprints: String) {
-    Column(verticalArrangement = Arrangement.spacedBy(4.dp)) {
-        Text("Trusted certificate:", style = MaterialTheme.typography.bodySmall)
-        Text(fingerprints, fontFamily = FontFamily.Monospace, style = MaterialTheme.typography.bodyMedium)
-    }
-}
-
-internal fun ftpsCertificateFingerprints(hex: String): String? {
-    val cert = parseFtpsCertificate(hex) ?: return null
-    return "SHA-256:  ${certificateFingerprint(cert, "SHA-256")}\n\nSHA-1:    ${certificateFingerprint(cert, "SHA-1")}"
-}
-
-private fun parseFtpsCertificate(hex: String): X509Certificate? {
-    val cleaned = hex.trim().replace(":", "").replace(" ", "")
-    if (cleaned.length < 64 || cleaned.length % 2 != 0) return null
-    if (cleaned.any { it !in '0'..'9' && it !in 'A'..'F' && it !in 'a'..'f' }) return null
-    return try {
-        val bytes = cleaned.chunked(2).map { it.toInt(16).toByte() }.toByteArray()
-        CertificateFactory.getInstance("X.509").generateCertificate(bytes.inputStream()) as X509Certificate
-    } catch (_: Exception) {
-        null
-    }
-}
-
-private fun certificateFingerprint(cert: X509Certificate, algorithm: String): String {
-    return MessageDigest.getInstance(algorithm).digest(cert.encoded).joinToString(":") { "%02X".format(it) }
 }
 
 private data class TestOutcome(val settings: StorageSettings, val trust: String?, val error: String?)

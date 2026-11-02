@@ -170,6 +170,9 @@
     <string name="trust_sftp_instruction">შეამოწმეთ ეს თითის ანაბეჭდი გარე არხით, შემდეგ კვლავ დააჭირეთ შენახვას.</string>
     <string name="trust_ftps_title">FTPS სერვერის სერტიფიკატი აღმოჩენილია ტესტის დროს.</string>
     <string name="trust_ftps_instruction">შეამოწმეთ სერტიფიკატის იდენტობა გარე არხით, შემდეგ კვლავ დააჭირეთ შენახვას.</string>
+    <string name="trust_ftps_self_signed">კავშირის შემოწმებისას ნაპოვნია თვითხელმოწერილი სერტიფიკატი.</string>
+    <string name="trust_ftps_next">ის შენახულია სერტიფიკატის თექვსმეტობით ველში. შემდეგი კავშირი მიიღებს მას.</string>
+    <string name="trust_ftps_compare">შეადარეთ ეს ანაბეჭდები მოსალოდნელს. თუ ემთხვევა, კიდევ ერთხელ შეეხეთ OK-ს. თუ არ ემთხვევა, ეს შეიძლება იყოს შუამავლის შეტევა, ან ანტივირუსი ან MDM პროგრამა კავშირს იჭერს.</string>
     <string name="trust_host">ჰოსტი: %1$s</string>
     <string name="trust_port">პორტი: %1$s</string>
     <string name="trust_user">მომხმარებელი: %1$s</string>

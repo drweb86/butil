@@ -170,6 +170,9 @@
     <string name="trust_sftp_instruction">Preverite ta prstni odtis zunaj kanala, nato znova kliknite Shrani, da ga shranite.</string>
     <string name="trust_ftps_title">Certifikat FTPS strežnika zaznan med testiranjem.</string>
     <string name="trust_ftps_instruction">Preverite identiteto certifikata zunaj kanala, nato znova kliknite Shrani, da ga shranite.</string>
+    <string name="trust_ftps_self_signed">Med preizkusom povezave je bilo najdeno samo-podpisano potrdilo.</string>
+    <string name="trust_ftps_next">Shranjeno je v šestnajstiško polje potrdila. Naslednja povezava ga bo sprejela.</string>
+    <string name="trust_ftps_compare">Primerjajte te prstne odtise s pričakovanimi. Če se ujemajo, se ponovno dotaknite OK. Če se ne ujemajo, je to lahko napad posrednika, ali pa protivirusni program ali program MDM prestreza povezavo.</string>
     <string name="trust_host">Gostitelj: %1$s</string>
     <string name="trust_port">Vrata: %1$s</string>
     <string name="trust_user">Uporabnik: %1$s</string>

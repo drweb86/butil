@@ -167,6 +167,9 @@
     <string name="trust_sftp_instruction">Проверьте этот отпечаток вне канала, затем нажмите «Сохранить» ещё раз.</string>
     <string name="trust_ftps_title">Сертификат FTPS-сервера обнаружен во время теста.</string>
     <string name="trust_ftps_instruction">Проверьте подлинность сертификата вне канала, затем нажмите «Сохранить» ещё раз.</string>
+    <string name="trust_ftps_self_signed">При проверке подключения обнаружен самоподписанный сертификат.</string>
+    <string name="trust_ftps_next">Он записан в шестнадцатеричное поле сертификата. Следующее подключение примет его.</string>
+    <string name="trust_ftps_compare">Сравните эти отпечатки с ожидаемыми. Если они совпадают, нажмите OK ещё раз. Если не совпадают, это может быть атака «человек посередине», либо антивирус или программа MDM перехватывает подключение.</string>
     <string name="trust_host">Хост: %1$s</string>
     <string name="trust_port">Порт: %1$s</string>
     <string name="trust_user">Пользователь: %1$s</string>
