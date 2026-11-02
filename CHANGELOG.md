@@ -1,4 +1,4 @@
-# 2026.11.04
+# 2026.11.05
 
 ## Bug Fixes
 - Android: self-signed certificate acceptance was not working, corrected message.

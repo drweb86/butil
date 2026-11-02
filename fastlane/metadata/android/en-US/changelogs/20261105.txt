@@ -1,0 +1,3 @@
+Android: self-signed certificate acceptance was not working, corrected message.
+Android: FTPS client did not send close connection.
+Italian language was updated by https://github.com/bovirus .

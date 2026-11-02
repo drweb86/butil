@@ -12,8 +12,8 @@ android {
         applicationId = "com.siarheikuchuk.butil"
         minSdk = 23
         targetSdk = 36
-        val defaultVersionCode = 20261103
-        val defaultVersionName = "2026.11.03"
+        val defaultVersionCode = 20261105
+        val defaultVersionName = "2026.11.05"
         versionCode = findProperty("appVersionCode")?.toString()?.toIntOrNull() ?: defaultVersionCode
         versionName = findProperty("appVersionName")?.toString()?.takeIf { it.isNotBlank() } ?: defaultVersionName
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
