@@ -1,0 +1,18 @@
+Package: butil
+Version: 2026.11.05
+Architecture: amd64
+Maintainer: Siarhei Kuchuk <https://github.com/drweb86>
+Installed-Size: 174526
+Depends: libc6, libgcc-s1, libstdc++6, libx11-6, libfontconfig1, dbus-x11, cron
+Filename: pool/main/butil_2026.11.05_linux_amd64.deb
+Size: 61571384
+MD5sum: b75bff09d7530971b9fa356bfad8b891
+SHA1: cf14b786febc1a7a9f23e0d32d432d0b8b4e9b98
+SHA256: ffbb89dd6a0f8c192c75fc1b1bbcb75d9a177c3995e2e56b6566ae02907ba813
+Section: utils
+Priority: optional
+Homepage: https://github.com/drweb86/butil
+Description: Incremental backup, synchronization, and media import tool
+License: CC0-1.0
+Vendor: none
+
