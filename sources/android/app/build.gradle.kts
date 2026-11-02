@@ -12,8 +12,8 @@ android {
         applicationId = "com.siarheikuchuk.butil"
         minSdk = 23
         targetSdk = 36
-        val defaultVersionCode = 20261102
-        val defaultVersionName = "2026.11.02"
+        val defaultVersionCode = 20261103
+        val defaultVersionName = "2026.11.03"
         versionCode = findProperty("appVersionCode")?.toString()?.toIntOrNull() ?: defaultVersionCode
         versionName = findProperty("appVersionName")?.toString()?.takeIf { it.isNotBlank() } ?: defaultVersionName
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
@@ -75,7 +75,11 @@ android {
 
     packaging {
         resources {
+            excludes += "/META-INF/{AL2.0,LGPL2.1}"
+            excludes += "META-INF/LICENSE.md"
+            excludes += "META-INF/NOTICE.md"
             excludes += "META-INF/versions/9/OSGI-INF/MANIFEST.MF"
+            pickFirsts += "META-INF/versions/9/OSGI-INF/MANIFEST.MF"
         }
     }
 }
