@@ -86,7 +86,7 @@ $rows = foreach ($pkg in ($packages.Values | Sort-Object Id)) {
 
 $rows = @($rows) + [pscustomobject]@{
     Id = ".NET Runtime"
-    Version = "10"
+    Version = "11"
     Authors = ""
     Copyright = "Copyright (c) .NET Foundation and Contributors"
     License = "MIT"

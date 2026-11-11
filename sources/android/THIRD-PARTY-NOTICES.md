@@ -14,7 +14,7 @@ Debug-only tooling (Compose UI tooling) is not part of the release build and is 
 - **AndroidX DocumentFile** 1.1.0. Copyright © The Android Open Source Project.
 - **AndroidX Core KTX** 1.19.1. Copyright © The Android Open Source Project.
 - **Apache Commons Net** 3.13.0. Copyright © The Apache Software Foundation. [https://commons.apache.org/proper/commons-net/](https://commons.apache.org/proper/commons-net/)
-- **Conscrypt** (`org.conscrypt:conscrypt-android`) 2.8.0. Copyright © 2016 The Android Open Source Project. [https://conscrypt.org/](https://conscrypt.org/). This distribution contains a modified portion of Netty ([http://netty.io/](http://netty.io/)) and a modified portion of Apache Harmony ([https://harmony.apache.org/](https://harmony.apache.org/)).
+- **Conscrypt** (`org.conscrypt:conscrypt-android`) 2.9.0. Copyright © 2016 The Android Open Source Project. [https://conscrypt.org/](https://conscrypt.org/). This distribution contains a modified portion of Netty ([http://netty.io/](http://netty.io/)) and a modified portion of Apache Harmony ([https://harmony.apache.org/](https://harmony.apache.org/)).
 - **sshj** 0.41.2. Copyright © SSHJ contributors. [https://github.com/hierynomus/sshj](https://github.com/hierynomus/sshj)
 - **smbj** 0.15.0. Copyright © Jeroen van Erp and contributors. [https://github.com/hierynomus/smbj](https://github.com/hierynomus/smbj)
 - **asn-one** 0.6.0. Copyright © Jeroen van Erp. [https://github.com/hierynomus/asn-one](https://github.com/hierynomus/asn-one)
@@ -27,7 +27,7 @@ Debug-only tooling (Compose UI tooling) is not part of the release build and is 
 
 ## Bouncy Castle Licence
 
-- **Bouncy Castle** `bcprov-jdk18on`, `bcpkix-jdk18on`, and `bcutil-jdk18on` 1.86. Copyright © The Legion of the Bouncy Castle Inc. [https://www.bouncycastle.org/](https://www.bouncycastle.org/)
+- **Bouncy Castle** `bcprov-jdk18on`, `bcpkix-jdk18on`, and `bcutil-jdk18on` 1.87. Copyright © The Legion of the Bouncy Castle Inc. [https://www.bouncycastle.org/](https://www.bouncycastle.org/)
 
 The copyright lines in each group above apply to that license text.
 
@@ -101,9 +101,9 @@ END OF TERMS AND CONDITIONS
 
 ## Bouncy Castle Licence text
 
-Copyright (c) 2000-2024 The Legion of the Bouncy Castle Inc. (https://www.bouncycastle.org)
+Copyright (c) 2000-2026 The Legion of the Bouncy Castle Inc. (https://www.bouncycastle.org).
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sub license, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 

@@ -1,10 +1,14 @@
-# 2026.11.05
+# 2026.11.11
+(unpublished)
 
 ## Bug Fixes
 - Android: self-signed certificate acceptance was not working, corrected message.
 - Android: FTPS client did not send close connection.
 
 ## Changes
+- Upgrade to .NET 11. Runtime async is enabled.
+- Some libraries were updated. Desktop: Avalonia 12.1.6, the FTPS server library, the AWS S3 SDK, and the .NET 11 Microsoft packages. Android: Bouncy Castle 1.87, Conscrypt 2.9.0, and Android Gradle Plugin 9.5.1.
+- FTPS client offers TLS 1.3 where the operating system supports it.
 - Italian language was updated by https://github.com/bovirus .
 
 # 2026.11.03

@@ -21,11 +21,11 @@ if [ "$EUID" -eq 0 ]
 fi
 
 echo
-echo Install .Net 10
+echo Install .Net 11
 echo
 wget https://dot.net/v1/dotnet-install.sh -O /tmp/dotnet-install.sh
 chmod +x /tmp/dotnet-install.sh
-/tmp/dotnet-install.sh --channel 10.0
+/tmp/dotnet-install.sh --channel 11.0
 sudo apt install dbus-x11 cron unzip
 echo
 
