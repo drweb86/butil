@@ -137,6 +137,16 @@ After installation for linux, the following commands are available: **`butil-ui`
 
 </details>
 
+<details>
+
+<summary>📦 Installation for Android</summary>
+
+This is preview. Make backup of your phone files first.
+
+A. Prebuilt APK [look for **android.apk** asset](https://github.com/drweb86/butil/releases/latest). Tap the downloaded APK in the browser download list, or open it from the Android `Downloads` app. If Android blocks the install, tap `Settings` and enable `Allow from this source` for the browser or file manager you used, go back and Install. Because app is self-signed, Android will ask you to confirm that you trust the APK before installing it. When Google Play Protect shows a warning for the self-signed APK, choose the option to install anyway if you trust this project. On Samsung devices click Details, Install anyway.
+
+</details>
+
 ## [Documentation](https://github.com/drweb86/butil/tree/master/help)
 
 - [Changelog](./CHANGELOG.md)
