@@ -4,6 +4,7 @@
 ## Bug Fixes
 - Android: self-signed certificate acceptance was not working, corrected message.
 - Android: FTPS client did not send close connection.
+- Windows Store: Opening last log, Open logs folder were not working.
 
 ## Changes
 - Upgrade to .NET 11. Runtime async is enabled.

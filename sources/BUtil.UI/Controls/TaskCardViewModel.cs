@@ -90,7 +90,7 @@ public class TaskCardViewModel(
     public void OpenLogCommand()
     {
         if (_logFilePath != null)
-            ProcessHelper.ShellExecute(_logFilePath);
+            ProcessHelper.ShellExecute(PlatformSpecificExperience.Instance.UnsandboxPath(_logFilePath));
     }
 
     public void TaskCopyCommandLineCommand()

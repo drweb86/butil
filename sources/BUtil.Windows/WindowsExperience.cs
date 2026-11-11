@@ -30,7 +30,9 @@ public class WindowsExperience : CrossPlatformExperience
 
     public override ISupportManager SupportManager => new WindowsSupportManager();
 
-    public override bool IsStorePackage => WindowsStorePackage.IsCurrentProcessPackaged;
+    public override bool IsSandboxed => WindowsStorePackage.IsSandboxed;
+
+    public override string UnsandboxPath(string path) => WindowsStorePackage.UnsandboxPath(path);
 
     public override IFolderService GetFolderService()
     {

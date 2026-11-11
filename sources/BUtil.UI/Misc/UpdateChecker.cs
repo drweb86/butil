@@ -34,7 +34,7 @@ public static class UpdateChecker
 
     public static Task<AppUpdateInfo> CheckForUpdateGithub()
     {
-        if (PlatformSpecificExperience.Instance.IsStorePackage)
+        if (PlatformSpecificExperience.Instance.IsSandboxed)
             return Task.FromResult(new AppUpdateInfo(false, null, null));
 
         return CheckForUpdateGithubUnpacked();

@@ -31,11 +31,11 @@ internal class WindowsFolderService : IFolderService
 
     public void OpenFolderInShell(string folder)
     {
-        Process.Start("explorer.exe", $"\"{folder}\"");
+        Process.Start("explorer.exe", $"\"{WindowsStorePackage.UnsandboxPath(folder)}\"");
     }
     public void OpenFileInShell(string file)
     {
-        Process.Start("explorer.exe", $"/select,\"{file}\"");
+        Process.Start("explorer.exe", $"/select,\"{WindowsStorePackage.UnsandboxPath(file)}\"");
     }
 
     public string GetStorageItemExcludePatternHelp()

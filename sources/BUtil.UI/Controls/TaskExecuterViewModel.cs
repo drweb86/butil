@@ -508,7 +508,7 @@ public class TaskExecuterViewModel : ObservableObject
         {
             if (!isSuccess)
             {
-                ProcessHelper.ShellExecute(_log.LogFilename);
+                ProcessHelper.ShellExecute(PlatformSpecificExperience.Instance.UnsandboxPath(_log.LogFilename));
             }
 
             PlatformSpecificExperience.Instance.UiService.Blink();

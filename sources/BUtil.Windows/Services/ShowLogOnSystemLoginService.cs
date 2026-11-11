@@ -22,6 +22,6 @@ internal class ShowLogOnSystemLoginService : IShowLogOnSystemLoginService
         if (runOnceKey == null)
             return;
 
-        runOnceKey.SetValue("BUtil Backup Report", "\"" + fileName + "\"");
+        runOnceKey.SetValue("BUtil Backup Report", "\"" + WindowsStorePackage.UnsandboxPath(fileName) + "\"");
     }
 }
