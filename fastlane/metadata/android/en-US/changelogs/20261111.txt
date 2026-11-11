@@ -1,0 +1,5 @@
+Android: FTPS server listings are sent as each file is read. A large folder, such as Camera, no longer stays silent until the client drops the data connection.
+Android: the FTPS control connection and protected data connections use one TLS engine, so an upload can resume the login session.
+Android: self-signed certificate acceptance was not working, corrected message.
+Android: FTPS client did not send close connection.
+Windows Store: Opening last log, Open logs folder were not working....

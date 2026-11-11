@@ -1,5 +1,4 @@
 # 2026.11.11
-(unpublished)
 
 ## Bug Fixes
 - Android: FTPS server listings are sent as each file is read. A large folder, such as Camera, no longer stays silent until the client drops the data connection.
