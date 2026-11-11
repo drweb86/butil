@@ -4,7 +4,7 @@
       "commandName": "Project",
       "commandLineArgs": "!Restore \"Task=backup recovery\"",
       "environmentVariables": {
-        "BUTIL_SCREENSHOT": "0"
+        "1BUTIL_SCREENSHOT": "0"
       }
     }
   }

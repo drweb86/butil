@@ -9,7 +9,7 @@ public static class ImportMediaFileExtensions
         ".png", ".gif", ".bmp", ".webp",
         ".tif", ".tiff",
         ".heic", ".heif", ".avif",
-        ".raw", ".dng", ".cr2", ".cr3", ".nef", ".arw", ".orf", ".rw2", ".pef", ".srw", ".raf",
+        ".raw", ".dng", ".cr2", ".cr3", ".nef", ".arw", ".orf", ".rw2", ".pef", ".srw", ".raf", ".hif",
         // Audio
         ".mp3", ".wav", ".flac", ".aac", ".m4a", ".ogg", ".oga", ".wma", ".aiff", ".aif", ".opus", ".amr", ".m4b",
     ];

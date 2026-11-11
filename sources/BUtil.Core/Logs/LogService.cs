@@ -66,51 +66,6 @@ public class LogService
             File.Delete(path);
     }
 
-    /// <summary>Moves flat log files from <paramref name="flatLogsFolder"/> into per-task subfolders under <see cref="Directories.LogsFolder"/>.</summary>
-    public static void MigrateFlatLogsToTaskFolders(string flatLogsFolder)
-    {
-        if (!Directory.Exists(flatLogsFolder))
-            return;
-
-        foreach (var path in Directory.GetFiles(flatLogsFolder, GetMask("*")))
-        {
-            var info = ParseFileName(path);
-            var destination = GetFileName(info.TaskName, info.CreatedAt, info.IsSuccess);
-            if (path.Cmp(destination))
-                continue;
-
-            FileHelper.EnsureFolderCreatedForFile(destination);
-            if (File.Exists(destination))
-                File.Delete(destination);
-            File.Move(path, destination);
-        }
-    }
-
-    /// <summary>Moves logs from a previous root while preserving task subfolders and other relative paths.</summary>
-    public static void MigrateLogsRoot(string sourceLogsRoot)
-    {
-        if (!Directory.Exists(sourceLogsRoot))
-            return;
-
-        var sourceRoot = Path.GetFullPath(sourceLogsRoot);
-        var destinationRoot = Path.GetFullPath(Directories.LogsFolder);
-        if (sourceRoot.TrimEnd(Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar).Cmp(
-                destinationRoot.TrimEnd(Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar)))
-            return;
-
-        foreach (var path in Directory.GetFiles(sourceRoot, "*", SearchOption.AllDirectories))
-        {
-            var relativePath = Path.GetRelativePath(sourceRoot, path);
-            var destination = Path.Combine(destinationRoot, relativePath);
-            FileHelper.EnsureFolderCreatedForFile(destination);
-            if (File.Exists(destination))
-                File.Delete(destination);
-            File.Move(path, destination);
-        }
-
-        DeleteEmptyDirectories(sourceRoot);
-    }
-
     private static IEnumerable<string> EnumerateLogFiles()
     {
         if (!Directory.Exists(Directories.LogsFolder))

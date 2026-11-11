@@ -11,8 +11,6 @@ public sealed class MigrationService(ILocalFileSystem fileSystem)
 
     public void RunAll()
     {
-        RunOnce("MoveLogsToTempTaskFolders", MoveLogsToTempTaskFolders);
-        RunOnce("MoveLogsFromTempToLocalAppDataV4", MoveLogsFromTempToLocalAppDataV4);
         RunOnce("CreateTaskShortcuts", CreateTaskShortcuts);
     }
 
@@ -33,15 +31,5 @@ public sealed class MigrationService(ILocalFileSystem fileSystem)
         var taskShortcutService = PlatformSpecificExperience.Instance.GetTaskShortcutService();
         foreach (var taskName in new TaskStore(fileSystem).GetNames())
             taskShortcutService.CreateOrUpdate(taskName);
-    }
-
-    private static void MoveLogsToTempTaskFolders()
-    {
-        LogService.MigrateFlatLogsToTaskFolders(Directories.LegacyLogsFolder);
-    }
-
-    private static void MoveLogsFromTempToLocalAppDataV4()
-    {
-        LogService.MigrateLogsRoot(Directories.TempLogsFolder);
     }
 }
