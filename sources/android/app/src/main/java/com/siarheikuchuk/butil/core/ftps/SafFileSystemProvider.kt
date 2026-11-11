@@ -2,6 +2,7 @@ package com.siarheikuchuk.butil.core.ftps
 
 import android.content.Context
 import android.net.Uri
+import android.provider.DocumentsContract
 import androidx.documentfile.provider.DocumentFile
 
 
@@ -133,22 +134,46 @@ class SafFileSystemProvider(private val context: Context) : FileSystemProvider {
     override fun getFileLength(userFolder: String, parts: List<String>): Long =
         navigateFile(userFolder, parts).length()
 
-    override fun directoryEntries(userFolder: String, parts: List<String>): List<FileSystemEntry> {
+    override fun directoryLastWriteTimeMillis(userFolder: String, parts: List<String>): Long =
+        navigateFolder(userFolder, parts).lastModified()
+
+    // DocumentFile.listFiles() returns only ids, then name, date, size, and type are each another
+    // query. A Camera folder of 1400 files never sent a listing byte before the client gave up.
+    // This asks for those columns once and reports each row before reading the next.
+    override fun forEachDirectoryEntry(userFolder: String, parts: List<String>, accept: (FileSystemEntry) -> Unit) {
         val folder = navigateFolder(userFolder, parts)
-        val result = mutableListOf<FileSystemEntry>()
-        result += FileSystemEntry(".", folder.lastModified(), 0, true)
+        accept(FileSystemEntry(".", folder.lastModified(), 0, true))
         val parent = folder.parentFile
-        result += FileSystemEntry("..", parent?.lastModified() ?: folder.lastModified(), 0, true)
-        for (item in folder.listFiles()) {
-            val name = item.name ?: continue
-            result += FileSystemEntry(
-                fileName = name,
-                lastWriteTimeMillis = item.lastModified(),
-                length = if (item.isFile) item.length() else 0,
-                isDirectory = item.isDirectory,
-            )
+        accept(FileSystemEntry("..", parent?.lastModified() ?: folder.lastModified(), 0, true))
+
+        val children = DocumentsContract.buildChildDocumentsUriUsingTree(
+            folder.uri,
+            DocumentsContract.getDocumentId(folder.uri),
+        )
+        val projection = arrayOf(
+            DocumentsContract.Document.COLUMN_DISPLAY_NAME,
+            DocumentsContract.Document.COLUMN_MIME_TYPE,
+            DocumentsContract.Document.COLUMN_LAST_MODIFIED,
+            DocumentsContract.Document.COLUMN_SIZE,
+        )
+        val cursor = context.contentResolver.query(children, projection, null, null, null)
+            ?: throw FileNotFoundException("Directory not found")
+        cursor.use {
+            val nameCol = it.getColumnIndex(DocumentsContract.Document.COLUMN_DISPLAY_NAME)
+            val mimeCol = it.getColumnIndex(DocumentsContract.Document.COLUMN_MIME_TYPE)
+            val modifiedCol = it.getColumnIndex(DocumentsContract.Document.COLUMN_LAST_MODIFIED)
+            val sizeCol = it.getColumnIndex(DocumentsContract.Document.COLUMN_SIZE)
+            if (nameCol < 0) throw FileNotFoundException("Directory not found")
+            while (it.moveToNext()) {
+                val name = if (it.isNull(nameCol)) null else it.getString(nameCol)
+                if (name.isNullOrEmpty()) continue
+                val mime = if (mimeCol < 0 || it.isNull(mimeCol)) null else it.getString(mimeCol)
+                val isDirectory = mime == DocumentsContract.Document.MIME_TYPE_DIR
+                val modified = if (modifiedCol < 0 || it.isNull(modifiedCol)) 0L else it.getLong(modifiedCol)
+                val length = if (isDirectory || sizeCol < 0 || it.isNull(sizeCol)) 0L else it.getLong(sizeCol)
+                accept(FileSystemEntry(name, modified, length, isDirectory))
+            }
         }
-        return result
     }
 
     private fun copyTree(from: DocumentFile, to: DocumentFile) {

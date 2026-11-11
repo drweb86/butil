@@ -258,6 +258,10 @@ object Certificates {
         kmf.init(ks, password.toCharArray())
         val ctx = SSLContext.getInstance("TLS")
         ctx.init(kmf.keyManagers, null, null)
+        // Login and upload both use SSLEngine from this context. A zero cache would
+        // drop the control session before the data connection can resume it.
+        val sessions = ctx.serverSessionContext
+        if (sessions.sessionCacheSize == 0) sessions.sessionCacheSize = 20_480
         return LoadedCertificate(
             sslContext = ctx,
             x509 = cert,

@@ -57,7 +57,10 @@ interface FileSystemProvider {
     fun fileOpenRead(userFolder: String, parts: List<String>): java.io.InputStream
     fun getFileLastWriteTimeUtcMillis(userFolder: String, parts: List<String>): Long
     fun getFileLength(userFolder: String, parts: List<String>): Long
-    fun directoryEntries(userFolder: String, parts: List<String>): List<FileSystemEntry>
+    // "." and ".." are reported first. Each following entry is reported as it is read,
+    // before the next child is read, so a listing can send that line immediately.
+    fun forEachDirectoryEntry(userFolder: String, parts: List<String>, accept: (FileSystemEntry) -> Unit)
+    fun directoryLastWriteTimeMillis(userFolder: String, parts: List<String>): Long
 }
 
 enum class DataProtection { Clear, Protected }

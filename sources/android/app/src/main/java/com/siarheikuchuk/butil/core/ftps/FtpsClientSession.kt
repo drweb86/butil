@@ -20,8 +20,6 @@ import javax.net.ssl.SSLEngineResult
 import javax.net.ssl.SSLException
 import javax.net.ssl.SSLHandshakeException
 import javax.net.ssl.SSLSession
-import javax.net.ssl.SSLSocket
-import javax.net.ssl.SSLSocketFactory
 
 class FtpsClientSession(
     log: FtpsLog,
@@ -32,6 +30,7 @@ class FtpsClientSession(
     private val loginThrottle: LoginThrottle,
 ) {
     private val log: FtpsLog = SanitizingLog(log)
+    private var controlTls: TlsChannel? = null
     private var writer: OutputStreamWriter = OutputStreamWriter(socket.getOutputStream(), LATIN1)
     private var pushedByte = -1
     private val controlByte = ByteArray(1)
@@ -64,6 +63,7 @@ class FtpsClientSession(
             pasv = dataListener
             data = dataSocket
         }
+        // Unblock the session thread. It owns the SSLEngine and sends close_notify.
         try { socket.close() } catch (_: Exception) {}
         try { pasv?.close() } catch (_: Exception) {}
         try { data?.close() } catch (_: Exception) {}
@@ -85,7 +85,7 @@ class FtpsClientSession(
         } catch (e: Exception) {
             sessionError("[$clientAddress] Session error", e)
         } finally {
-            try { socket.close() } catch (_: Exception) {}
+            shutdownControl()
             try { dataListener?.close() } catch (_: Exception) {}
         }
     }
@@ -175,7 +175,16 @@ class FtpsClientSession(
     private fun recreateStreams(clearPushback: Boolean) {
         if (clearPushback) pushedByte = -1
         writer.flush()
-        writer = OutputStreamWriter(socket.getOutputStream(), encoding)
+        writer = OutputStreamWriter(controlOutput(), encoding)
+    }
+
+    private fun controlOutput(): java.io.OutputStream = controlTls?.output ?: socket.getOutputStream()
+
+    private fun shutdownControl() {
+        val tls = controlTls
+        controlTls = null
+        try { tls?.close() } catch (_: Exception) {}
+        try { socket.close() } catch (_: Exception) {}
     }
 
     private fun readCommandLine(): String? {
@@ -218,7 +227,7 @@ class FtpsClientSession(
         val remaining = deadlineMs - System.currentTimeMillis()
         if (remaining <= 0) throw SocketTimeoutException()
         socket.soTimeout = remaining.coerceAtMost(Int.MAX_VALUE.toLong()).toInt().coerceAtLeast(1)
-        val read = socket.getInputStream().read(controlByte)
+        val read = controlTls?.read(controlByte) ?: socket.getInputStream().read(controlByte)
         if (read <= 0) return -1
         return controlByte[0].toInt() and 0xFF
     }
@@ -268,8 +277,7 @@ class FtpsClientSession(
     }
 
     private fun handleAuth(argument: String) {
-        val ctx = sslContext
-        if (ctx == null) {
+        if (sslContext == null) {
             send(502, "TLS not available")
             return
         }
@@ -278,16 +286,15 @@ class FtpsClientSession(
             return
         }
         send(234, "AUTH command ok. Expecting TLS Negotiation.")
+        val tls = TlsChannel(socket, newServerEngine())
         try {
-            val factory = ctx.socketFactory as SSLSocketFactory
-            val ssl = factory.createSocket(socket, socket.inetAddress.hostAddress, socket.port, true) as SSLSocket
-            ssl.useClientMode = false
-            restrictTls(ssl)
-            ssl.startHandshake()
-            socket = ssl
+            writer.flush()
+            tls.handshake()
+            controlTls = tls
             recreateStreams(clearPushback = true)
             log.info("[$clientAddress] TLS enabled on control connection")
         } catch (e: Exception) {
+            try { tls.close() } catch (_: Exception) {}
             sessionError("[$clientAddress] TLS negotiation failed", e)
             disconnect = true
         }
@@ -522,28 +529,26 @@ class FtpsClientSession(
         send(if (extended) 229 else 227, response)
     }
 
-    private fun wrapData(client: Socket): Socket {
-        if (dataProtection != DataProtection.Protected || sslContext == null) return client
-        val factory = sslContext.socketFactory as SSLSocketFactory
-        val ssl = factory.createSocket(client, client.inetAddress.hostAddress, client.port, true) as SSLSocket
-        ssl.useClientMode = false
-        ssl.soTimeout = DATA_IDLE_TIMEOUT_MS.toInt()
-        restrictTls(ssl)
-        ssl.startHandshake()
-        val control = socket as? SSLSocket
-        if (control == null || !sameTlsSession(control, ssl)) {
-            log.warn("[$clientAddress] Rejected data connection: TLS session was not resumed from the control connection")
-            try { ssl.close() } catch (_: Exception) {}
-            throw javax.net.ssl.SSLHandshakeException("Data connection did not resume the control TLS session")
-        }
-        synchronized(ioLock) {
-            if (stopping) {
-                try { ssl.close() } catch (_: Exception) {}
-                throw java.net.SocketException("Server stopped")
+    private fun wrapData(client: Socket): DataLink {
+        if (dataProtection != DataProtection.Protected || sslContext == null) return RawDataLink(client)
+        client.soTimeout = DATA_IDLE_TIMEOUT_MS.toInt()
+        val tls = TlsChannel(client, newServerEngine())
+        try {
+            tls.handshake()
+            val control = controlTls
+            if (control == null || !sameTlsSession(control.session, tls.session)) {
+                log.warn("[$clientAddress] Rejected data connection: TLS session was not resumed from the control connection")
+                throw SSLHandshakeException("Data connection did not resume the control TLS session")
             }
-            dataSocket = ssl
+            synchronized(ioLock) {
+                if (stopping) throw java.net.SocketException("Server stopped")
+                dataSocket = client
+            }
+            return tls
+        } catch (e: Exception) {
+            try { tls.close() } catch (_: Exception) {}
+            throw e
         }
-        return ssl
     }
 
     private fun acceptData(): Socket? {
@@ -650,16 +655,17 @@ class FtpsClientSession(
         info("get directory contents", p.toFtpsPath())
         send(150, "Opening data connection")
         try {
-            wrapData(dataClient).use { sock ->
-                OutputStreamWriter(sock.getOutputStream(), StandardCharsets.UTF_8).use { out ->
+            wrapData(dataClient).use { link ->
+                OutputStreamWriter(link.output, StandardCharsets.UTF_8).use { out ->
                     if (fileSystem.directoryExists(user!!.folder, p.parts)) {
-                        beginTransferWatchdog(sock)
+                        beginTransferWatchdog(dataClient)
                         try {
-                            for (entry in fileSystem.directoryEntries(user!!.folder, p.parts)) {
+                            fileSystem.forEachDirectoryEntry(user!!.folder, p.parts) { entry ->
                                 val permissions = if (entry.isDirectory) "drwxr-xr-x" else "-rw-r--r--"
                                 val size = if (entry.isDirectory) "0" else entry.length.toString()
                                 val modified = formatUnixListDate(entry.lastWriteTimeMillis)
                                 out.write("$permissions 1 owner group ${size.padStart(15)} $modified ${entry.fileName}\r\n")
+                                out.flush()
                                 transferProgressMs = System.currentTimeMillis()
                             }
                             out.flush()
@@ -693,12 +699,13 @@ class FtpsClientSession(
                 return
             }
             send(150, "Opening data connection")
-            wrapData(dataClient).use { sock ->
-                OutputStreamWriter(sock.getOutputStream(), StandardCharsets.UTF_8).use { out ->
-                    beginTransferWatchdog(sock)
+            wrapData(dataClient).use { link ->
+                OutputStreamWriter(link.output, StandardCharsets.UTF_8).use { out ->
+                    beginTransferWatchdog(dataClient)
                     try {
-                        for (entry in fileSystem.directoryEntries(user!!.folder, p.parts)) {
+                        fileSystem.forEachDirectoryEntry(user!!.folder, p.parts) { entry ->
                             out.write(formatMlsRecord(mlsType(entry.fileName, entry.isDirectory), entry.lastWriteTimeMillis, entry.length, entry.isDirectory, entry.fileName) + "\r\n")
+                            out.flush()
                             transferProgressMs = System.currentTimeMillis()
                         }
                         out.flush()
@@ -726,12 +733,12 @@ class FtpsClientSession(
         info("mlst", ftpsPath)
         when {
             fileSystem.directoryExists(user!!.folder, p.parts) -> {
-                val self = fileSystem.directoryEntries(user!!.folder, p.parts).firstOrNull { it.fileName == "." }
+                val modified = fileSystem.directoryLastWriteTimeMillis(user!!.folder, p.parts)
                 val isCurrent = pathname.isBlank() || pathname == "." || pathname == "./"
                 val type = if (isCurrent) "cdir" else "dir"
                 val display = if (isCurrent) ftpsPath else pathname
                 sendLine("250-Listing $ftpsPath")
-                sendLine(" " + formatMlsRecord(type, self?.lastWriteTimeMillis ?: System.currentTimeMillis(), 0, true, display))
+                sendLine(" " + formatMlsRecord(type, modified, 0, true, display))
                 send(250, "End")
             }
             fileSystem.fileExists(user!!.folder, p.parts) -> {
@@ -762,13 +769,14 @@ class FtpsClientSession(
         info("get directory contents 2", p.toFtpsPath())
         send(150, "Opening data connection")
         try {
-            wrapData(dataClient).use { sock ->
-                OutputStreamWriter(sock.getOutputStream(), StandardCharsets.UTF_8).use { out ->
+            wrapData(dataClient).use { link ->
+                OutputStreamWriter(link.output, StandardCharsets.UTF_8).use { out ->
                     if (fileSystem.directoryExists(user!!.folder, p.parts)) {
-                        beginTransferWatchdog(sock)
+                        beginTransferWatchdog(dataClient)
                         try {
-                            for (entry in fileSystem.directoryEntries(user!!.folder, p.parts)) {
+                            fileSystem.forEachDirectoryEntry(user!!.folder, p.parts) { entry ->
                                 out.write(entry.fileName + "\r\n")
+                                out.flush()
                                 transferProgressMs = System.currentTimeMillis()
                             }
                             out.flush()
@@ -802,12 +810,12 @@ class FtpsClientSession(
         }
         send(150, "Opening data connection")
         try {
-            wrapData(dataClient).use { sock ->
-                beginTransferWatchdog(sock)
+            wrapData(dataClient).use { link ->
+                beginTransferWatchdog(dataClient)
                 try {
                     fileSystem.fileOpenRead(user!!.folder, p.parts).use { input ->
-                        copyWithProgress(input, sock.getOutputStream())
-                        sock.getOutputStream().flush()
+                        copyWithProgress(input, link.output)
+                        link.output.flush()
                     }
                 } finally {
                     endTransferWatchdog()
@@ -834,35 +842,17 @@ class FtpsClientSession(
         send(150, "Opening data connection for ${p.toFtpsPath()}")
         var created = false
         try {
-            val tls = dataProtection == DataProtection.Protected && sslContext != null
-            if (tls) {
-                // SSLSocket reports a TCP close on a record boundary as a normal end of stream.
-                // Read the data connection with SSLEngine so a missing close_notify stays visible.
-                dataClient.soTimeout = DATA_IDLE_TIMEOUT_MS.toInt()
-                beginTransferWatchdog(dataClient)
-                try {
-                    val upload = openTlsUpload(dataClient)
+            beginTransferWatchdog(dataClient)
+            try {
+                wrapData(dataClient).use { link ->
                     fileSystem.fileCreate(user!!.folder, p.parts).use { output ->
                         created = true
-                        upload.copyTo(output)
+                        link.copyTo(output)
                         output.flush()
                     }
-                } finally {
-                    endTransferWatchdog()
                 }
-            } else {
-                wrapData(dataClient).use { sock ->
-                    beginTransferWatchdog(sock)
-                    try {
-                        fileSystem.fileCreate(user!!.folder, p.parts).use { output ->
-                            created = true
-                            copyWithProgress(sock.getInputStream(), output)
-                            output.flush()
-                        }
-                    } finally {
-                        endTransferWatchdog()
-                    }
-                }
+            } finally {
+                endTransferWatchdog()
             }
             send(226, "Transfer complete")
         } catch (e: Exception) {
@@ -884,8 +874,11 @@ class FtpsClientSession(
         }
     }
 
-    // Handshake first, then copy plaintext. A TCP EOF before close_notify is not the end of STOR.
-    private fun openTlsUpload(raw: Socket): TlsUpload {
+    // Android 6–9 still enable TLS 1.0 and 1.1 by default. Offer only 1.2 and 1.3,
+    // and only forward-secret AEAD suites. RC4, 3DES, CBC, and RSA key transport stay off.
+    // Every connection is an SSLEngine from the session's SSLContext. SSLSocket and
+    // SSLEngine keep separate session caches, so a TLS 1.2 resume would get a new id.
+    private fun newServerEngine(): SSLEngine {
         val context = sslContext ?: throw SSLException("TLS is not configured")
         val engine = context.createSSLEngine()
         engine.useClientMode = false
@@ -895,161 +888,239 @@ class FtpsClientSession(
         val suites = engine.supportedCipherSuites.filter { suiteAllowed(it) }.toTypedArray()
         if (suites.isEmpty()) throw IllegalStateException("No forward-secret AEAD cipher suite is available")
         engine.enabledCipherSuites = suites
-        val peerIn = raw.getInputStream()
-        val peerOut = raw.getOutputStream()
-        val incoming = ByteBuffer.allocate(maxOf(engine.session.packetBufferSize, 18_432))
-        val plain = ByteBuffer.allocate(maxOf(engine.session.applicationBufferSize, 18_432))
-        val scratch = ByteArray(incoming.capacity())
-        engine.beginHandshake()
-        driveHandshake(engine, peerIn, peerOut, incoming, plain, scratch)
-        val control = socket as? SSLSocket
-        if (control == null || !sameTlsSession(control.session, engine.session)) {
-            log.warn("[$clientAddress] Rejected data connection: TLS session was not resumed from the control connection")
-            throw SSLHandshakeException("Data connection did not resume the control TLS session")
-        }
-        return TlsUpload(engine, peerIn, peerOut, incoming, plain, scratch)
+        return engine
     }
 
-    private inner class TlsUpload(
+    private interface DataLink : java.io.Closeable {
+        val output: java.io.OutputStream
+        fun copyTo(destination: java.io.OutputStream)
+    }
+
+    private inner class RawDataLink(private val raw: Socket) : DataLink {
+        override val output: java.io.OutputStream get() = raw.getOutputStream()
+        override fun copyTo(destination: java.io.OutputStream) {
+            copyWithProgress(raw.getInputStream(), destination)
+        }
+        override fun close() {
+            try { raw.close() } catch (_: Exception) {}
+        }
+    }
+
+    // A TCP EOF before close_notify is not the end of STOR. close() writes close_notify.
+    private inner class TlsChannel(
+        private val raw: Socket,
         private val engine: SSLEngine,
-        private val peerIn: java.io.InputStream,
-        private val peerOut: java.io.OutputStream,
-        private var incoming: ByteBuffer,
-        private var plain: ByteBuffer,
-        private val scratch: ByteArray,
-    ) {
-        fun copyTo(output: java.io.OutputStream) {
-            while (true) {
-                when (engine.handshakeStatus) {
-                    SSLEngineResult.HandshakeStatus.NEED_WRAP -> wrapAndSend(ByteBuffer.allocate(0))
-                    SSLEngineResult.HandshakeStatus.NEED_TASK -> runDelegatedTasks(engine)
-                    else -> Unit
-                }
-                incoming.flip()
-                var result = engine.unwrap(incoming, plain)
-                incoming.compact()
-                if (result.status == SSLEngineResult.Status.BUFFER_OVERFLOW) {
-                    plain = ByteBuffer.allocate(plain.capacity() * 2)
-                    continue
-                }
-                writePlain(output)
-                when (result.status) {
-                    SSLEngineResult.Status.OK -> {
-                        if (result.bytesConsumed() == 0 && result.bytesProduced() == 0 && incoming.position() == 0) {
-                            if (!readCiphertext()) {
-                                throw java.io.IOException("Data connection closed before a TLS close_notify.")
-                            }
-                        }
-                    }
-                    SSLEngineResult.Status.BUFFER_UNDERFLOW -> {
-                        if (!readCiphertext()) {
-                            throw java.io.IOException("Data connection closed before a TLS close_notify.")
-                        }
-                    }
-                    SSLEngineResult.Status.CLOSED -> return
-                    else -> throw java.io.IOException("Unexpected TLS status ${result.status}")
-                }
+    ) : DataLink {
+        private val peerIn = raw.getInputStream()
+        private val peerOut = raw.getOutputStream()
+        private var incoming = ByteBuffer.allocate(maxOf(engine.session.packetBufferSize, 18_432))
+        private var plain = ByteBuffer.allocate(maxOf(engine.session.applicationBufferSize, 18_432))
+        private var scratch = ByteArray(incoming.capacity())
+        private var closed = false
+        val session: SSLSession get() = engine.session
+
+        override val output: java.io.OutputStream = object : java.io.OutputStream() {
+            override fun write(b: Int) {
+                write(byteArrayOf(b.toByte()))
+            }
+
+            override fun write(b: ByteArray, off: Int, len: Int) {
+                writeApplication(b, off, len)
+            }
+
+            override fun flush() {
+                peerOut.flush()
+            }
+
+            override fun close() {
+                flush()
             }
         }
 
-        private fun readCiphertext(): Boolean {
+        fun handshake() {
+            engine.beginHandshake()
+            driveHandshake()
+        }
+
+        fun read(dst: ByteArray): Int = readPlain(dst, 0, dst.size, failOnBareEof = false)
+
+        override fun copyTo(destination: java.io.OutputStream) {
+            val buffer = ByteArray(16 * 1024)
+            while (true) {
+                val n = readPlain(buffer, 0, buffer.size, failOnBareEof = true)
+                if (n < 0) return
+                destination.write(buffer, 0, n)
+                transferProgressMs = System.currentTimeMillis()
+            }
+        }
+
+        override fun close() {
+            if (closed) return
+            closed = true
+            try {
+                if (!engine.isOutboundDone) {
+                    engine.closeOutbound()
+                    val empty = ByteBuffer.allocate(0)
+                    var spins = 0
+                    while (!engine.isOutboundDone && spins < 8) {
+                        if (engine.handshakeStatus == SSLEngineResult.HandshakeStatus.NEED_TASK) {
+                            runDelegatedTasks()
+                        }
+                        wrapOnce(empty)
+                        spins++
+                    }
+                }
+            } catch (_: Exception) {
+            }
+            try {
+                raw.close()
+            } catch (_: Exception) {
+            }
+        }
+
+        private fun readPlain(dst: ByteArray, off: Int, len: Int, failOnBareEof: Boolean): Int {
+            if (len == 0) return 0
+            while (plain.position() == 0) {
+                if (engine.isInboundDone) return -1
+                when (engine.handshakeStatus) {
+                    SSLEngineResult.HandshakeStatus.NEED_WRAP -> wrapOnce(ByteBuffer.allocate(0))
+                    SSLEngineResult.HandshakeStatus.NEED_TASK -> runDelegatedTasks()
+                    SSLEngineResult.HandshakeStatus.NEED_UNWRAP,
+                    SSLEngineResult.HandshakeStatus.NOT_HANDSHAKING,
+                    SSLEngineResult.HandshakeStatus.FINISHED,
+                    -> if (!unwrapOnce(failOnBareEof)) return -1
+                    else -> throw java.io.IOException("Unexpected TLS status ${engine.handshakeStatus}")
+                }
+            }
+            plain.flip()
+            val n = minOf(len, plain.remaining())
+            plain.get(dst, off, n)
+            plain.compact()
+            return n
+        }
+
+        private fun unwrapOnce(failOnBareEof: Boolean): Boolean {
+            if (incoming.position() == 0 && !readCipher(failOnBareEof)) return false
+            incoming.flip()
+            val result = engine.unwrap(incoming, plain)
+            incoming.compact()
+            when (result.status) {
+                SSLEngineResult.Status.BUFFER_OVERFLOW -> plain = ByteBuffer.allocate(plain.capacity() * 2)
+                SSLEngineResult.Status.BUFFER_UNDERFLOW -> if (!readCipher(failOnBareEof)) return false
+                SSLEngineResult.Status.OK -> {
+                    if (plain.position() == 0 && result.bytesConsumed() == 0 && incoming.position() == 0 &&
+                        !readCipher(failOnBareEof)
+                    ) {
+                        return false
+                    }
+                }
+                SSLEngineResult.Status.CLOSED -> Unit
+                else -> throw java.io.IOException("Unexpected TLS status ${result.status}")
+            }
+            return true
+        }
+
+        private fun readCipher(failOnBareEof: Boolean): Boolean {
             if (!incoming.hasRemaining()) {
                 val bigger = ByteBuffer.allocate(incoming.capacity() * 2)
                 incoming.flip()
                 bigger.put(incoming)
                 incoming = bigger
+                if (scratch.size < incoming.capacity()) scratch = ByteArray(incoming.capacity())
             }
             val n = peerIn.read(scratch, 0, minOf(scratch.size, incoming.remaining()))
-            if (n < 0) return false
+            if (n < 0) {
+                if (failOnBareEof && !engine.isInboundDone) {
+                    throw java.io.IOException("Data connection closed before a TLS close_notify.")
+                }
+                return false
+            }
+            if (n == 0) throw java.io.IOException("TLS read returned no bytes")
             incoming.put(scratch, 0, n)
             transferProgressMs = System.currentTimeMillis()
             return true
         }
 
-        private fun writePlain(output: java.io.OutputStream) {
-            if (plain.position() == 0) return
-            plain.flip()
-            val bytes = ByteArray(plain.remaining())
-            plain.get(bytes)
-            plain.clear()
-            output.write(bytes)
-            transferProgressMs = System.currentTimeMillis()
-        }
-
-        private fun wrapAndSend(source: ByteBuffer) {
-            val outgoing = ByteBuffer.allocate(maxOf(engine.session.packetBufferSize, 18_432))
-            val result = engine.wrap(source, outgoing)
-            outgoing.flip()
-            val bytes = ByteArray(outgoing.remaining())
-            outgoing.get(bytes)
-            if (bytes.isNotEmpty()) {
-                peerOut.write(bytes)
-                peerOut.flush()
-            }
-            if (result.status == SSLEngineResult.Status.BUFFER_OVERFLOW) {
-                throw java.io.IOException("TLS packet buffer is too small")
-            }
-        }
-    }
-
-    private fun driveHandshake(
-        engine: SSLEngine,
-        peerIn: java.io.InputStream,
-        peerOut: java.io.OutputStream,
-        incoming: ByteBuffer,
-        plain: ByteBuffer,
-        scratch: ByteArray,
-    ) {
-        val empty = ByteBuffer.allocate(0)
-        var needMore = true
-        while (true) {
-            when (engine.handshakeStatus) {
-                SSLEngineResult.HandshakeStatus.NEED_UNWRAP -> {
-                    if (needMore || incoming.position() == 0) {
-                        val n = peerIn.read(scratch, 0, minOf(scratch.size, incoming.remaining()))
-                        if (n < 0) throw SSLHandshakeException("Data connection closed during TLS handshake")
-                        incoming.put(scratch, 0, n)
-                        transferProgressMs = System.currentTimeMillis()
-                        needMore = false
+        private fun writeApplication(bytes: ByteArray, off: Int, len: Int) {
+            if (len == 0) return
+            val source = ByteBuffer.wrap(bytes, off, len)
+            while (source.hasRemaining()) {
+                when (engine.handshakeStatus) {
+                    SSLEngineResult.HandshakeStatus.NEED_TASK -> runDelegatedTasks()
+                    SSLEngineResult.HandshakeStatus.NEED_UNWRAP -> {
+                        if (!unwrapOnce(failOnBareEof = false)) {
+                            throw java.io.IOException("Connection closed during TLS write")
+                        }
                     }
-                    incoming.flip()
-                    val result = engine.unwrap(incoming, plain)
-                    incoming.compact()
-                    plain.clear()
-                    when (result.status) {
-                        SSLEngineResult.Status.BUFFER_UNDERFLOW -> needMore = true
-                        SSLEngineResult.Status.BUFFER_OVERFLOW -> throw SSLHandshakeException("TLS handshake buffer is too small")
-                        SSLEngineResult.Status.CLOSED -> throw SSLHandshakeException("Data connection closed during TLS handshake")
-                        else -> Unit
-                    }
+                    else -> Unit
                 }
-                SSLEngineResult.HandshakeStatus.NEED_WRAP -> {
-                    val outgoing = ByteBuffer.allocate(maxOf(engine.session.packetBufferSize, 18_432))
-                    val result = engine.wrap(empty, outgoing)
-                    outgoing.flip()
+                val before = source.position()
+                wrapOnce(source)
+                if (source.position() == before) throw java.io.IOException("TLS wrap made no progress")
+                transferProgressMs = System.currentTimeMillis()
+            }
+        }
+
+        private fun wrapOnce(source: ByteBuffer) {
+            var capacity = maxOf(engine.session.packetBufferSize, 18_432)
+            while (true) {
+                val outgoing = ByteBuffer.allocate(capacity)
+                val result = engine.wrap(source, outgoing)
+                outgoing.flip()
+                if (outgoing.hasRemaining()) {
                     val bytes = ByteArray(outgoing.remaining())
                     outgoing.get(bytes)
-                    if (bytes.isNotEmpty()) {
-                        peerOut.write(bytes)
-                        peerOut.flush()
-                        transferProgressMs = System.currentTimeMillis()
-                    }
-                    if (result.status == SSLEngineResult.Status.CLOSED) return
+                    peerOut.write(bytes)
+                    peerOut.flush()
                 }
-                SSLEngineResult.HandshakeStatus.NEED_TASK -> runDelegatedTasks(engine)
-                SSLEngineResult.HandshakeStatus.FINISHED,
-                SSLEngineResult.HandshakeStatus.NOT_HANDSHAKING,
-                -> return
-                else -> throw SSLHandshakeException("Unexpected handshake status ${engine.handshakeStatus}")
+                when (result.status) {
+                    SSLEngineResult.Status.OK, SSLEngineResult.Status.CLOSED -> return
+                    SSLEngineResult.Status.BUFFER_OVERFLOW -> capacity *= 2
+                    else -> throw java.io.IOException("Unexpected TLS status ${result.status}")
+                }
             }
         }
-    }
 
-    private fun runDelegatedTasks(engine: SSLEngine) {
-        while (true) {
-            val task = engine.delegatedTask ?: break
-            task.run()
+        private fun driveHandshake() {
+            val empty = ByteBuffer.allocate(0)
+            while (true) {
+                when (engine.handshakeStatus) {
+                    SSLEngineResult.HandshakeStatus.NEED_UNWRAP -> {
+                        if (incoming.position() == 0 && !readCipher(failOnBareEof = false)) {
+                            throw SSLHandshakeException("Connection closed during TLS handshake")
+                        }
+                        incoming.flip()
+                        val result = engine.unwrap(incoming, plain)
+                        incoming.compact()
+                        plain.clear()
+                        when (result.status) {
+                            SSLEngineResult.Status.BUFFER_UNDERFLOW -> {
+                                if (!readCipher(failOnBareEof = false)) {
+                                    throw SSLHandshakeException("Connection closed during TLS handshake")
+                                }
+                            }
+                            SSLEngineResult.Status.BUFFER_OVERFLOW -> plain = ByteBuffer.allocate(plain.capacity() * 2)
+                            SSLEngineResult.Status.CLOSED -> throw SSLHandshakeException("Connection closed during TLS handshake")
+                            else -> Unit
+                        }
+                    }
+                    SSLEngineResult.HandshakeStatus.NEED_WRAP -> wrapOnce(empty)
+                    SSLEngineResult.HandshakeStatus.NEED_TASK -> runDelegatedTasks()
+                    SSLEngineResult.HandshakeStatus.FINISHED,
+                    SSLEngineResult.HandshakeStatus.NOT_HANDSHAKING,
+                    -> return
+                    else -> throw SSLHandshakeException("Unexpected handshake status ${engine.handshakeStatus}")
+                }
+            }
         }
+
+        private fun runDelegatedTasks() {
+            while (true) {
+                val task = engine.delegatedTask ?: break
+                task.run()
+            }
+        }
+
     }
 
     private fun handleSize(filename: String) {
@@ -1148,20 +1219,7 @@ class FtpsClientSession(
 
     private fun checkAuth() = authenticated && user != null
     private fun dataEncryptedOk() = sslContext == null || dataProtection == DataProtection.Protected
-    private fun controlEncrypted() = socket is SSLSocket
-
-    // Android 6–9 still enable TLS 1.0 and 1.1 by default. Offer only 1.2 and 1.3,
-    // and only forward-secret AEAD suites. RC4, 3DES, CBC, and RSA key transport stay off.
-    private fun restrictTls(ssl: SSLSocket) {
-        val allowed = ssl.supportedProtocols
-            .filter { it == "TLSv1.2" || it == "TLSv1.3" }
-            .toTypedArray()
-        if (allowed.isEmpty()) throw IllegalStateException("TLS 1.2 or 1.3 is not available")
-        ssl.enabledProtocols = allowed
-        val suites = ssl.supportedCipherSuites.filter { suiteAllowed(it) }.toTypedArray()
-        if (suites.isEmpty()) throw IllegalStateException("No forward-secret AEAD cipher suite is available")
-        ssl.enabledCipherSuites = suites
-    }
+    private fun controlEncrypted() = controlTls != null
 
     private fun suiteAllowed(name: String): Boolean {
         val upper = name.uppercase(Locale.US)
@@ -1182,12 +1240,6 @@ class FtpsClientSession(
         if (sslContext == null || controlEncrypted()) return true
         send(replyCode, "SSL/TLS required on the control channel")
         return false
-    }
-
-    private fun sameTlsSession(control: SSLSocket, data: SSLSocket): Boolean {
-        val controlSession = control.session ?: return false
-        val dataSession = data.session ?: return false
-        return sameTlsSession(controlSession, dataSession)
     }
 
     private fun sameTlsSession(control: SSLSession, data: SSLSession): Boolean {
@@ -1244,9 +1296,10 @@ class FtpsClientSession(
         val line = SafeText.sanitize(rawLine)
         log.debug("[$clientAddress] << $line")
         val bytes = (line + "\r\n").toByteArray(encoding)
-        socket.getOutputStream().write(bytes)
-        socket.getOutputStream().flush()
-        writer = OutputStreamWriter(socket.getOutputStream(), encoding)
+        val out = controlOutput()
+        out.write(bytes)
+        out.flush()
+        writer = OutputStreamWriter(out, encoding)
     }
 
     companion object {

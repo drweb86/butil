@@ -50,8 +50,11 @@ internal class SharedFolderFileSystem(context: Context) : FileSystemProvider {
     override fun getFileLength(userFolder: String, parts: List<String>): Long =
         provider(userFolder).getFileLength(userFolder, parts)
 
-    override fun directoryEntries(userFolder: String, parts: List<String>): List<FileSystemEntry> =
-        provider(userFolder).directoryEntries(userFolder, parts)
+    override fun forEachDirectoryEntry(userFolder: String, parts: List<String>, accept: (FileSystemEntry) -> Unit) =
+        provider(userFolder).forEachDirectoryEntry(userFolder, parts, accept)
+
+    override fun directoryLastWriteTimeMillis(userFolder: String, parts: List<String>): Long =
+        provider(userFolder).directoryLastWriteTimeMillis(userFolder, parts)
 }
 
 private class LocalPathFileSystem : FileSystemProvider {
@@ -133,21 +136,24 @@ private class LocalPathFileSystem : FileSystemProvider {
     override fun getFileLength(userFolder: String, parts: List<String>): Long =
         file(userFolder, parts).length()
 
-    override fun directoryEntries(userFolder: String, parts: List<String>): List<FileSystemEntry> {
+    override fun directoryLastWriteTimeMillis(userFolder: String, parts: List<String>): Long =
+        directory(userFolder, parts).lastModified()
+
+    override fun forEachDirectoryEntry(userFolder: String, parts: List<String>, accept: (FileSystemEntry) -> Unit) {
         val folder = directory(userFolder, parts)
-        val result = mutableListOf<FileSystemEntry>()
-        result += FileSystemEntry(".", folder.lastModified(), 0, true)
-        result += FileSystemEntry("..", folder.parentFile?.lastModified() ?: folder.lastModified(), 0, true)
+        accept(FileSystemEntry(".", folder.lastModified(), 0, true))
+        accept(FileSystemEntry("..", folder.parentFile?.lastModified() ?: folder.lastModified(), 0, true))
         for (item in folder.listFiles().orEmpty()) {
             if (!inside(folder, item)) continue
-            result += FileSystemEntry(
-                fileName = item.name,
-                lastWriteTimeMillis = item.lastModified(),
-                length = if (item.isFile) item.length() else 0,
-                isDirectory = item.isDirectory,
+            accept(
+                FileSystemEntry(
+                    fileName = item.name,
+                    lastWriteTimeMillis = item.lastModified(),
+                    length = if (item.isFile) item.length() else 0,
+                    isDirectory = item.isDirectory,
+                ),
             )
         }
-        return result
     }
 
     private fun directory(folder: String, parts: List<String>): File {
