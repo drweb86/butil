@@ -4,6 +4,7 @@ using BUtil.Core.Storages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 
 namespace BUtil.Storages.Ftps;
@@ -129,12 +130,6 @@ public class FtpsStorageSettingsProvider : IStorageSettingsProvider
         {
             Resources.TrustDetected_Ftps_Title,
             Resources.TrustDetected_Ftps_Instruction,
-            string.Empty,
-            string.Format(Resources.TrustDetected_Label_Host, s.Host),
-            string.Format(Resources.TrustDetected_Label_Port, s.Port == 0 ? Resources.TrustDetected_Port_Default : s.Port.ToString()),
-            string.Format(Resources.TrustDetected_Label_Encryption, s.Encryption),
-            string.Format(Resources.TrustDetected_Label_Folder, s.Folder),
-            string.Format(Resources.TrustDetected_Label_CertificateRawHex, s.TrustedCertificate),
         };
 
         if (!string.IsNullOrWhiteSpace(s.TrustedCertificate))
@@ -145,26 +140,9 @@ public class FtpsStorageSettingsProvider : IStorageSettingsProvider
                 using var cert = X509CertificateLoader.LoadCertificate(certBytes);
                 lines.Add(string.Empty);
                 lines.Add(Resources.TrustDetected_ParsedCertificate_Header);
-                lines.Add(string.Format(Resources.TrustDetected_Label_Subject, cert.Subject));
-                lines.Add(string.Format(Resources.TrustDetected_Label_Issuer, cert.Issuer));
-                lines.Add(string.Format(Resources.TrustDetected_Label_SerialNumber, cert.SerialNumber));
-                lines.Add(string.Format(Resources.TrustDetected_Label_Thumbprint, cert.Thumbprint));
-                lines.Add(string.Format(Resources.TrustDetected_Label_ValidFromUtc, cert.NotBefore.ToUniversalTime().ToString("O")));
-                lines.Add(string.Format(Resources.TrustDetected_Label_ValidUntilUtc, cert.NotAfter.ToUniversalTime().ToString("O")));
-                lines.Add(string.Format(Resources.TrustDetected_Label_SignatureAlgorithm, cert.SignatureAlgorithm?.FriendlyName ?? cert.SignatureAlgorithm?.Value));
-                lines.Add(string.Format(Resources.TrustDetected_Label_PublicKeyAlgorithm, cert.PublicKey?.Oid?.FriendlyName ?? cert.PublicKey?.Oid?.Value));
-                lines.Add(string.Format(Resources.TrustDetected_Label_PublicKeySize, GetPublicKeySizeText(cert)));
-
-                var dnsName = cert.GetNameInfo(X509NameType.DnsName, false);
-                if (!string.IsNullOrWhiteSpace(dnsName))
-                    lines.Add(string.Format(Resources.TrustDetected_Label_DnsName, dnsName));
-
-                var san = cert.Extensions
-                    .OfType<X509Extension>()
-                    .FirstOrDefault(x => x.Oid?.Value == "2.5.29.17")
-                    ?.Format(true);
-                if (!string.IsNullOrWhiteSpace(san))
-                    lines.Add(string.Format(Resources.TrustDetected_Label_SubjectAlternativeNames, san));
+                lines.Add(string.Format(Resources.TrustDetected_Label_FingerprintSha256, FormatFingerprint(cert, HashAlgorithmName.SHA256)));
+                lines.Add(string.Empty);
+                lines.Add(string.Format(Resources.TrustDetected_Label_FingerprintSha1, FormatFingerprint(cert, HashAlgorithmName.SHA1)));
             }
             catch (Exception ex)
             {
@@ -176,16 +154,12 @@ public class FtpsStorageSettingsProvider : IStorageSettingsProvider
         return string.Join(Environment.NewLine, lines);
     }
 
-    private static string GetPublicKeySizeText(X509Certificate2 cert)
+    private static string FormatFingerprint(X509Certificate2 cert, HashAlgorithmName algorithm)
     {
-        using var rsa = cert.GetRSAPublicKey();
-        if (rsa != null) return $"{rsa.KeySize} bits";
-        using var ecdsa = cert.GetECDsaPublicKey();
-        if (ecdsa != null) return $"{ecdsa.KeySize} bits";
-        using var dsa = cert.GetDSAPublicKey();
-        if (dsa != null) return $"{dsa.KeySize} bits";
-        using var ecdh = cert.GetECDiffieHellmanPublicKey();
-        if (ecdh != null) return $"{ecdh.KeySize} bits";
-        return Resources.TrustDetected_PublicKeySize_Unknown;
+        var hex = cert.GetCertHashString(algorithm);
+        var pairs = new string[hex.Length / 2];
+        for (var i = 0; i < pairs.Length; i++)
+            pairs[i] = hex.Substring(i * 2, 2);
+        return string.Join(":", pairs);
     }
 }

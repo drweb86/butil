@@ -1131,6 +1131,9 @@
   <data name="TrustDetected_Label_Encryption" xml:space="preserve">
     <value>এনক্রিপশন: {0}</value>
   </data>
+  <data name="TrustDetected_Label_FingerprintSha1" xml:space="preserve">
+    <value>ফিঙ্গারপ্রিন্ট (SHA-1): {0}</value>
+  </data>
   <data name="TrustDetected_Label_FingerprintSha256" xml:space="preserve">
     <value>ফিঙ্গারপ্রিন্ট (SHA-256): {0}</value>
   </data>

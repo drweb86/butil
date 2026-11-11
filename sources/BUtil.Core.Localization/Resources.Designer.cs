@@ -3049,6 +3049,15 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Fingerprint (SHA-1): {0}.
+        /// </summary>
+        public static string TrustDetected_Label_FingerprintSha1 {
+            get {
+                return ResourceManager.GetString("TrustDetected_Label_FingerprintSha1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Fingerprint (SHA-256): {0}.
         /// </summary>
         public static string TrustDetected_Label_FingerprintSha256 {

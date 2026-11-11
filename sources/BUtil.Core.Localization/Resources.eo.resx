@@ -1137,6 +1137,9 @@ See detailed description in the following link.</value>
   <data name="TrustDetected_Label_Encryption" xml:space="preserve">
     <value>Ĉifrado: {0}</value>
   </data>
+  <data name="TrustDetected_Label_FingerprintSha1" xml:space="preserve">
+    <value>Fingrosigno (SHA-1): {0}</value>
+  </data>
   <data name="TrustDetected_Label_FingerprintSha256" xml:space="preserve">
     <value>Fingrosigno (SHA-256): {0}</value>
   </data>

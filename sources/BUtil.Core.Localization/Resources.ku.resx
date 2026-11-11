@@ -1138,6 +1138,9 @@ Ji bo danasîna berfireh lînka jêrîn bibînin.</value>
   <data name="TrustDetected_Label_Encryption" xml:space="preserve">
     <value>Şîfrekirin: {0}</value>
   </data>
+  <data name="TrustDetected_Label_FingerprintSha1" xml:space="preserve">
+    <value>Şopa tiliyê (SHA-1): {0}</value>
+  </data>
   <data name="TrustDetected_Label_FingerprintSha256" xml:space="preserve">
     <value>Şopa tiliyê (SHA-256): {0}</value>
   </data>

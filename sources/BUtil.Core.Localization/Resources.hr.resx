@@ -1137,6 +1137,9 @@ Pogledajte detaljni opis na sljedećoj poveznici.</value>
   <data name="TrustDetected_Label_Encryption" xml:space="preserve">
     <value>Enkripcija: {0}</value>
   </data>
+  <data name="TrustDetected_Label_FingerprintSha1" xml:space="preserve">
+    <value>Otisak (SHA-1): {0}</value>
+  </data>
   <data name="TrustDetected_Label_FingerprintSha256" xml:space="preserve">
     <value>Otisak (SHA-256): {0}</value>
   </data>

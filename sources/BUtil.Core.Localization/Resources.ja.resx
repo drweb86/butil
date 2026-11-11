@@ -1121,6 +1121,9 @@ bin.
   <data name="TrustDetected_Label_Encryption" xml:space="preserve">
     <value>暗号化: {0}</value>
   </data>
+  <data name="TrustDetected_Label_FingerprintSha1" xml:space="preserve">
+    <value>フィンガープリント (SHA-1): {0}</value>
+  </data>
   <data name="TrustDetected_Label_FingerprintSha256" xml:space="preserve">
     <value>フィンガープリント (SHA-256): {0}</value>
   </data>
