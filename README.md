@@ -1,6 +1,6 @@
 # ![BUtil Logotype](./help/Assets/Logotype.gif) BUtil
 
-> Backup/synchronize your data Windows, Linux.
+> Backup/synchronize your data Windows, Android and Linux.
 
 > Import photos from phone via WI-FI and more.
 
