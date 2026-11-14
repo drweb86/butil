@@ -1,3 +1,8 @@
+# 2026.11.15
+
+## Changes
+- Prepare for F-Droid
+
 # 2026.11.11
 
 ## Bug Fixes

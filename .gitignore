@@ -1,4 +1,5 @@
 Output/
+tmp/
 obj
 debug
 packages
