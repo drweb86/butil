@@ -1,0 +1,10 @@
+<p>BUtil sichert, synchronisiert und stellt Dateien wieder her. Inkrementelle Sicherungen speichern nur, was sich geändert hat. Deduplizierung behält eine einzige Kopie, wenn dieselbe Datei mehr als einmal vorkommt.</p>
+<p><b>Wohin die Dateien gehen</b></p>
+<p>Senden Sie Sicherungen in einen Ordner, auf ein NAS (SMB/CIFS) oder zu WebDAV, S3-kompatiblem Speicher, NFS, Azure Blob, SFTP oder FTPS.</p>
+<ul>
+<li>Synchronisieren Sie einen Ordner über Speicher, den Sie kontrollieren, und behalten Sie ältere Versionen, wenn sich Dateien ändern.</li>
+<li>Importieren Sie Bilder, Video und Audio von einer SD-Karte oder einer Kamera.</li>
+<li>Führen Sie Aufgaben nach Zeitplan aus, auch von der Konsole.</li>
+</ul>
+<p>Passwörter, die Sie speichern, werden auf dem Gerät verschlüsselt. Es gibt kein Konto, keine Werbung und keine Telemetrie.</p>
+<p>BUtil ist Open Source. Der eigene Code ist der Gemeinfreiheit gewidmet. Komponenten Dritter behalten ihre eigenen Lizenzen.</p>

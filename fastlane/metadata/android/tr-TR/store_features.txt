@@ -1,0 +1,7 @@
+Artımlı yedek, son çalıştırmadan beri değişenleri saklar.
+Aynı dosya birden fazla kez geçtiğinde tekilleştirme tek bir kopya bırakır.
+Daha önce yaptığınız bir yedekten dosyaları geri yükleyin.
+Yerel klasöre, NAS, WebDAV, S3, NFS, Azure Blob, SFTP veya FTPS'ye yedekleyin.
+Denetlediğiniz bir depolama üzerinden klasör eşitleyin ve eski sürümleri saklayın.
+SD karttan veya fotoğraf makinesinden fotoğraf, video ve ses alın.
+Açık kaynak, hesap yok, reklam yok, telemetri yok.

@@ -1,0 +1,13 @@
+BUtil tekur afrit, samstillir og endurheimtir skrár. Stigvaxandi afrit geyma aðeins það sem breyttist. Tvítekning heldur einu eintaki þegar sama skrá kemur fyrir oftar en einu sinni.
+
+Hvert skrárnar fara
+
+Sendu afrit í möppu, á NAS (SMB/CIFS) eða á WebDAV, S3-samhæfða geymslu, NFS, Azure Blob, SFTP eða FTPS.
+
+- Samstilltu möppu í gegnum geymslu sem þú stjórnar og geymdu eldri útgáfur þegar skrár breytast.
+- Flyttu inn myndir, myndskeið og hljóð af SD-korti eða myndavél.
+- Keyrðu verkefni eftir áætlun, einnig úr stjórnborði.
+
+Lykilorð sem þú vistar eru dulrituð á tækinu. Það er enginn reikningur, engar auglýsingar og engin fjarmæling.
+
+BUtil er opinn hugbúnaður. Eigin kóði er helgaður almenningi. Íhlutir þriðja aðila halda eigin leyfum.

@@ -1,0 +1,7 @@
+Järkjärguline varukoopia salvestab ainult selle, mis on viimasest käivitamisest muutunud.
+Deduplitseerimine jätab ühe koopia, kui sama fail esineb rohkem kui üks kord.
+Taastage faile varukoopiast, mille olete juba teinud.
+Varundage kohalikku kausta, NAS-i, WebDAV-i, S3-sse, NFS-i, Azure Blobisse, SFTP-sse või FTPS-i.
+Sünkroonige kaust teie hallatava salvestusruumi kaudu ja hoidke vanemaid versioone.
+Importige fotosid, videot ja heli SD-kaardilt või kaamerast.
+Avatud lähtekood, ilma kontota, reklaamita ja telemeetriata.

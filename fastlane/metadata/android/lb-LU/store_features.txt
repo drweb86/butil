@@ -1,0 +1,7 @@
+Déi inkrementell Sécherung späichert nëmmen dat, wat sech zanter der leschter Ausféierung geännert huet.
+Deduplizéierung hält eng Kopie, wann déi selwecht Datei méi wéi eemol virkënnt.
+Stellt Dateien aus enger Sécherung erëm hier, déi Dir scho gemaach hutt.
+Séichert an e lokalen Dossier, NAS, WebDAV, S3, NFS, Azure Blob, SFTP oder FTPS.
+Synchroniséiert en Dossier iwwer Späicher, deen Dir kontrolléiert, a hält méi al Versiounen.
+Importéiert Fotoen, Video an Audio vun enger SD-Kaart oder Kamera.
+Open Source, ouni Kont, ouni Reklammen an ouni Telemetrie.

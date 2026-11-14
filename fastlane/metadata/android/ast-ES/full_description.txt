@@ -1,0 +1,10 @@
+<p>BUtil fai copies, sincroniza y restaura ficheros. Les copies incrementales guarden solo lo que camudó. La deduplicación dexa una copia cuando'l mesmu ficheru apaez más d'una vegada.</p>
+<p><b>Ónde van los ficheros</b></p>
+<p>Unvia les copies a una carpeta, a un NAS (SMB/CIFS) o a WebDAV, almacenamientu compatible con S3, NFS, Azure Blob, SFTP o FTPS.</p>
+<ul>
+<li>Sincroniza una carpeta al traviés d'un almacenamientu que controles y conserva versiones anteriores cuando los ficheros camuden.</li>
+<li>Importa imáxenes, videu y audiu dende una tarxeta SD o una cámara.</li>
+<li>Executa xeres con una programación, tamién dende la consola.</li>
+</ul>
+<p>Les contraseñes que guardes cífrense nel preséu. Nun hai cuenta, nin publicidá, nin telemetría.</p>
+<p>BUtil ye de códigu abiertu. El so códigu propiu ta dedicáu al dominiu públicu. Los componentes de terceros caltienen les sos llicencies.</p>

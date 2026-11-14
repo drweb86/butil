@@ -1,0 +1,13 @@
+BUtil mencadangkan, menyinkronkan, dan memulihkan berkas. Cadangan inkremental hanya menyimpan yang berubah. Deduplikasi menyisakan satu salinan bila berkas yang sama muncul lebih dari sekali.
+
+Ke mana berkas pergi
+
+Kirim cadangan ke folder, NAS (SMB/CIFS), atau ke WebDAV, penyimpanan yang kompatibel dengan S3, NFS, Azure Blob, SFTP, atau FTPS.
+
+- Sinkronkan folder lewat penyimpanan yang Anda kendalikan, dan simpan versi lama saat berkas berubah.
+- Impor gambar, video, dan audio dari kartu SD atau kamera.
+- Jalankan tugas sesuai jadwal, termasuk dari konsol.
+
+Kata sandi yang Anda simpan dienkripsi di perangkat. Tidak ada akun, iklan, dan telemetri.
+
+BUtil adalah sumber terbuka. Kodenya sendiri dipersembahkan ke domain publik. Komponen pihak ketiga tetap memakai lisensinya.

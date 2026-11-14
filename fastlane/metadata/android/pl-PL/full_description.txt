@@ -1,0 +1,10 @@
+<p>BUtil tworzy kopie zapasowe, synchronizuje i przywraca pliki. Kopie przyrostowe zapisują tylko to, co się zmieniło. Deduplikacja zostawia jedną kopię, gdy ten sam plik występuje więcej niż raz.</p>
+<p><b>Dokąd trafiają pliki</b></p>
+<p>Wysyłaj kopie do folderu, na serwer NAS (SMB/CIFS) albo do WebDAV, magazynu zgodnego z S3, NFS, Azure Blob, SFTP lub FTPS.</p>
+<ul>
+<li>Synchronizuj folder przez magazyn, który kontrolujesz, i zachowuj starsze wersje, gdy pliki się zmieniają.</li>
+<li>Importuj obrazy, wideo i dźwięk z karty SD lub aparatu.</li>
+<li>Uruchamiaj zadania według harmonogramu, także z konsoli.</li>
+</ul>
+<p>Zapisywane hasła są szyfrowane na urządzeniu. Nie ma konta, reklam ani telemetrii.</p>
+<p>BUtil jest open source. Własny kod jest oddany do domeny publicznej. Składniki innych firm zachowują własne licencje.</p>

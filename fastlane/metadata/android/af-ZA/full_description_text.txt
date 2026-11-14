@@ -1,0 +1,13 @@
+BUtil maak rugsteun, sinkroniseer en herstel lêers. Inkrementele rugsteun stoor net wat verander het. Ontdubbeling hou een kopie wanneer dieselfde lêer meer as een keer voorkom.
+
+Waar die lêers heen gaan
+
+Stuur rugsteun na ’n vouer, ’n NAS (SMB/CIFS), of na WebDAV, S3-versoenbare berging, NFS, Azure Blob, SFTP of FTPS.
+
+- Sinkroniseer ’n vouer deur berging wat jy beheer, en hou ouer weergawes wanneer lêers verander.
+- Voer prente, video en klank van ’n SD-kaart of ’n kamera in.
+- Voer take volgens ’n skedule uit, ook vanaf die konsole.
+
+Wagwoorde wat jy stoor, word op die toestel geïnkripteer. Daar is geen rekening, advertensies of telemetrie nie.
+
+BUtil is oopbron. Sy eie kode is aan die openbare domein gewy. Derdeparty-komponente hou hul eie lisensies.

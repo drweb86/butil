@@ -1,8 +1,8 @@
 # Play Store listing
 
-One folder per Play Console locale. `en-US` is the source. Other locales are added later, the same way as `fastlane/metadata/microsoft`.
+One folder per locale the Android app translates, using Play Console locale names. `en-US` is the source. `values-iw` and `values-in` are legacy aliases of Hebrew and Indonesian, so they do not get a second folder.
 
-The application in `sources/android` is still a stub. This listing is the draft text for the product.
+Changelogs stay in `en-US` only. Screenshots are English only, in `en-US/images`.
 
 | File | Play Console field | Limit |
 |---|---|---|
@@ -14,4 +14,4 @@ The application in `sources/android` is still a stub. This listing is the draft 
 | `language_name.txt` | English name of the language | |
 | `changelogs/<versionCode>.txt` | What's new. `versionCode` is the date with dots removed, for example `20261008` | 500 characters |
 
-Screenshots go in `images/phoneScreenshots` and `images/tenInchScreenshots` when the app has a real UI.
+`en-US/images/phoneScreenshots` holds 7 PNG files, 1269×2256. `en-US/images/tenInchScreenshots` holds 6 JPEG files, 2160×1215. Those sizes match the phone (9:16) and 10-inch (16:9) images used for the other Android app.

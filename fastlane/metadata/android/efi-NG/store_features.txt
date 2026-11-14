@@ -1,0 +1,7 @@
+Backup se osụhọde enim ndien se ekpụhọde oto utom akpatre.
+Deduplication enim kiet ke ini file kiet owụt akan ini kiet.
+Fiak mme file oto backup emi afo ama nam.
+Nam backup ka folder obio, NAS, WebDAV, S3, NFS, Azure Blob, SFTP me FTPS.
+Sync folder nto storage se afo akara, nyụn̄ nim mme version akpa.
+Dat ndise, video ye uyo nto SD card me camera.
+Open source, account ibaha, advert ibaha, telemetry ibaha.

@@ -1,0 +1,7 @@
+Prieauginė kopija saugo tik tai, kas pasikeitė nuo paskutinio paleidimo.
+Pasikartojimų šalinimas palieka vieną kopiją, kai tas pats failas pasitaiko daugiau nei kartą.
+Atkurkite failus iš atsarginės kopijos, kurią jau padarėte.
+Kurkite kopijas į vietinį aplanką, NAS, WebDAV, S3, NFS, Azure Blob, SFTP arba FTPS.
+Sinchronizuokite aplanką per saugyklą, kurią valdote, ir laikykite senesnes versijas.
+Importuokite nuotraukas, vaizdo įrašus ir garsą iš SD kortelės ar fotoaparato.
+Atvirasis kodas, be paskyros, be reklamų ir be telemetrijos.

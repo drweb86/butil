@@ -1,0 +1,13 @@
+BUtil menyandarkan, menyegerak dan memulihkan fail. Sandaran tokokan hanya menyimpan yang berubah. Penyahduplikasi meninggalkan satu salinan apabila fail yang sama muncul lebih daripada sekali.
+
+Ke mana fail pergi
+
+Hantar sandaran ke folder, NAS (SMB/CIFS), atau ke WebDAV, storan serasi S3, NFS, Azure Blob, SFTP atau FTPS.
+
+- Segerakkan folder melalui storan yang anda kawal, dan simpan versi lama apabila fail berubah.
+- Import imej, video dan audio daripada kad SD atau kamera.
+- Jalankan tugas mengikut jadual, termasuk dari konsol.
+
+Kata laluan yang anda simpan disulitkan pada peranti. Tiada akaun, iklan dan telemetri.
+
+BUtil ialah sumber terbuka. Kodnya sendiri diserahkan kepada domain awam. Komponen pihak ketiga kekal dengan lesen masing-masing.

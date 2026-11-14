@@ -1,0 +1,7 @@
+Přírůstková záloha ukládá jen to, co se změnilo od posledního spuštění.
+Deduplikace ponechá jednu kopii, když se stejný soubor objeví víckrát.
+Obnovte soubory ze zálohy, kterou jste už vytvořili.
+Zálohujte do místní složky, na NAS, WebDAV, S3, NFS, Azure Blob, SFTP nebo FTPS.
+Synchronizujte složku přes úložiště, které ovládáte, a uchovávejte starší verze.
+Importujte fotky, video a zvuk z karty SD nebo z fotoaparátu.
+Open source, bez účtu, bez reklam a bez telemetrie.

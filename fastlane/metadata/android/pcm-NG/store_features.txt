@@ -1,0 +1,7 @@
+Incremental backup dey keep only wetin change since the last run.
+Deduplication dey leave one copy when the same file show more than once.
+Restore files from backup wey you don already make.
+Back up go local folder, NAS, WebDAV, S3, NFS, Azure Blob, SFTP, or FTPS.
+Sync folder through storage wey you control, and keep older versions.
+Import photos, video, and audio from SD card or camera.
+Open source, no account, no ads, and no telemetry.

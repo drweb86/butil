@@ -1,0 +1,7 @@
+Kopia przyrostowa zapisuje tylko to, co zmieniło się od poprzedniego uruchomienia.
+Deduplikacja zostawia jedną kopię, gdy ten sam plik występuje więcej niż raz.
+Przywracaj pliki z kopii, którą już wykonałeś.
+Twórz kopie do folderu lokalnego, NAS, WebDAV, S3, NFS, Azure Blob, SFTP lub FTPS.
+Synchronizuj folder przez magazyn, który kontrolujesz, i zachowuj starsze wersje.
+Importuj zdjęcia, wideo i dźwięk z karty SD lub aparatu.
+Open source, bez konta, bez reklam i bez telemetrii.

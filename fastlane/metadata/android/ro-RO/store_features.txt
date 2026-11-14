@@ -1,0 +1,7 @@
+Copia incrementală păstrează doar ce s-a schimbat de la ultima rulare.
+Deduplicarea păstrează o copie când același fișier apare de mai multe ori.
+Restaurați fișiere dintr-o copie pe care ați făcut-o deja.
+Faceți copii într-un folder local, NAS, WebDAV, S3, NFS, Azure Blob, SFTP sau FTPS.
+Sincronizați un folder printr-o stocare pe care o controlați și păstrați versiunile mai vechi.
+Importați fotografii, video și audio de pe un card SD sau dintr-un aparat foto.
+Open source, fără cont, fără reclame și fără telemetrie.

@@ -1,0 +1,7 @@
+Lisäävä varmuuskopio tallentaa vain sen, mikä on muuttunut edellisen ajon jälkeen.
+Kaksoiskappaleiden poisto säilyttää yhden kopion, kun sama tiedosto esiintyy useammin kuin kerran.
+Palauta tiedostoja varmuuskopiosta, jonka olet jo tehnyt.
+Varmuuskopioi paikalliseen kansioon, NAS-laitteeseen, WebDAViin, S3:een, NFS:ään, Azure Blob -tallennukseen, SFTP:hen tai FTPS:ään.
+Synkronoi kansio hallitsemasi tallennustilan kautta ja säilytä vanhemmat versiot.
+Tuo kuvia, videota ja ääntä SD-kortilta tai kamerasta.
+Avoin lähdekoodi, ei tiliä, ei mainoksia eikä telemetriaa.

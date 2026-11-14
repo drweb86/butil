@@ -20,9 +20,10 @@ From the repository root:
 ./build-android.ps1
 ./build-android.ps1 -Install
 ./build-android.ps1 -Release
+./build-android.ps1 -Screenshots
 ```
 
-The debug APK is `Output/butil_android_debug.apk`. A release build reads the version from `CHANGELOG.md` and writes `Output/butil_<version>_android.apk`. The release workflow also writes `Output/butil_<version>_android.aab` and a separate China bundle, `Output/butil_<version>_android_china.aab`.
+The debug APK is `Output/butil_android_debug.apk`. `-Screenshots` writes `Output/butil_android_screenshots_debug.apk`. That build is English only, uses the package id `com.siarheikuchuk.butil.screenshots`, and is for store images. It is not a release. A release build reads the version from `CHANGELOG.md` and writes `Output/butil_<version>_android.apk`. The release workflow also writes `Output/butil_<version>_android.aab` and a separate China bundle, `Output/butil_<version>_android_china.aab`.
 
 Set `ANDROID_KEYSTORE_FILE`, `ANDROID_KEYSTORE_PASSWORD`, `ANDROID_KEY_ALIAS`, and `ANDROID_KEY_PASSWORD` before `-Release` to sign. Without them the release package is unsigned.
 

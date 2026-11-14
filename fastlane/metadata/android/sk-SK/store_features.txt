@@ -1,0 +1,7 @@
+Prírastková záloha ukladá len to, čo sa zmenilo od posledného spustenia.
+Deduplikácia ponechá jednu kópiu, keď sa ten istý súbor objaví viackrát.
+Obnovte súbory zo zálohy, ktorú ste už vytvorili.
+Zálohujte do miestneho priečinka, na NAS, WebDAV, S3, NFS, Azure Blob, SFTP alebo FTPS.
+Synchronizujte priečinok cez úložisko, ktoré ovládate, a uchovávajte staršie verzie.
+Importujte fotky, video a zvuk z karty SD alebo z fotoaparátu.
+Open source, bez účtu, bez reklám a bez telemetrie.

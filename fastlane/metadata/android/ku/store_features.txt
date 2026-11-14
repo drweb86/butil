@@ -1,0 +1,7 @@
+Hilanîna zêdeyî tenê ya ji xebitandina dawî ve guherî tomar dike.
+Dema heman pel ji carekê zêdetir derkeve, jêbirina dubareyan kopiyekê dihêle.
+Pelan ji hilanînekê ku we berê çêkiriye vegerînin.
+Li peldanka herêmî, NAS, WebDAV, S3, NFS, Azure Blob, SFTP an FTPS hilînin.
+Peldankekê bi embarekê ku hûn kontrol dikin hevdem bikin û guhertoyên kevn biparêzin.
+Wêne, vîdyo û deng ji karta SD an kamerayê bînin.
+Çavkaniya vekirî, bê hesab, bê reklam û bê telemetrî.

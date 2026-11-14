@@ -1,0 +1,10 @@
+<p>BUtil fayllarni zaxiralaydi, sinxronlaydi va tiklaydi. O‘suvchi zaxira faqat o‘zgarganini saqlaydi. Bir xil fayl bir necha marta chiqsa, takrorlarni olib tashlash bitta nusxa qoldiradi.</p>
+<p><b>Fayllar qayerga ketadi</b></p>
+<p>Zaxiralarni papka, NAS (SMB/CIFS) yoki WebDAV, S3 bilan mos saqlash, NFS, Azure Blob, SFTP yoki FTPS ga yuboring.</p>
+<ul>
+<li>O‘zingiz boshqaradigan saqlash orqali papkani sinxronlang va fayllar o‘zgaganda eski nusxalarni saqlang.</li>
+<li>SD karta yoki kameradan rasm, video va audio oling.</li>
+<li>Vazifalarni jadval bo‘yicha, konsoldan ham ishga tushiring.</li>
+</ul>
+<p>Saqlagan parollaringiz qurilmada shifrlanadi. Hisob, reklama va telemetriya yo‘q.</p>
+<p>BUtil ochiq manbali. O‘z kodi ommaviy domenga bag‘ishlangan. Uchinchi tomon qismlari o‘z litsenziyalarini saqlaydi.</p>

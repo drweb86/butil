@@ -1,0 +1,7 @@
+Den trinvise sikkerhedskopi gemmer kun det, der er ændret siden sidste kørsel.
+Deduplikering beholder én kopi, når den samme fil forekommer mere end én gang.
+Gendan filer fra en sikkerhedskopi, du allerede har lavet.
+Sikkerhedskopier til en lokal mappe, NAS, WebDAV, S3, NFS, Azure Blob, SFTP eller FTPS.
+Synkroniser en mappe via lagring, du styrer, og behold ældre versioner.
+Importér fotos, video og lyd fra et SD-kort eller kamera.
+Open source, uden konto, uden reklamer og uden telemetri.

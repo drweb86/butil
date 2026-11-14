@@ -1,0 +1,13 @@
+BUtil séchert, synchroniséiert a stellt Fichieren erëm hier. Inkrementell Sécherunge späicheren nëmmen dat, wat geännert huet. Deduplizéierung hält eng Kopie, wann déi selwecht Datei méi wéi eemol virkënnt.
+
+Wou d'Fichiere hi ginn
+
+Schéckt Sécherungen an en Dossier, op en NAS (SMB/CIFS) oder op WebDAV, S3-kompatibelen Späicher, NFS, Azure Blob, SFTP oder FTPS.
+
+- Synchroniséiert en Dossier iwwer Späicher, deen Dir kontrolléiert, a hält méi al Versiounen, wann Dateie sech änneren.
+- Importéiert Biller, Video an Audio vun enger SD-Kaart oder enger Kamera.
+- Féiert Aufgaben no engem Zäitplang aus, och vun der Konsole.
+
+Passwierder, déi Dir späichert, ginn um Apparat verschlësselt. Et gëtt kee Kont, keng Reklamm a keng Telemetrie.
+
+BUtil ass Open Source. Den eegene Code ass dem Public Domain gewidmet. Komponente vun Drëtt behalen hir eege Lizenzen.

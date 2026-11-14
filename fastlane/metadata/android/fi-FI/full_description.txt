@@ -1,0 +1,10 @@
+<p>BUtil varmuuskopioi, synkronoi ja palauttaa tiedostoja. Lisäävät varmuuskopiot tallentavat vain muuttuneen. Kaksoiskappaleiden poisto säilyttää yhden kopion, kun sama tiedosto esiintyy useammin kuin kerran.</p>
+<p><b>Minne tiedostot menevät</b></p>
+<p>Lähetä varmuuskopiot kansioon, NAS-laitteeseen (SMB/CIFS) tai WebDAViin, S3-yhteensopivaan tallennustilaan, NFS:ään, Azure Blob -tallennukseen, SFTP:hen tai FTPS:ään.</p>
+<ul>
+<li>Synkronoi kansio hallitsemasi tallennustilan kautta ja säilytä vanhemmat versiot, kun tiedostot muuttuvat.</li>
+<li>Tuo kuvia, videota ja ääntä SD-kortilta tai kamerasta.</li>
+<li>Suorita tehtäviä aikataulun mukaan, myös konsolista.</li>
+</ul>
+<p>Tallentamasi salasanat salataan laitteessa. Tiliä, mainontaa eikä telemetriaa ole.</p>
+<p>BUtil on avointa lähdekoodia. Sen oma koodi on omistettu vapaaseen käyttöön. Kolmansien osapuolten osat säilyttävät omat lisenssinsä.</p>

@@ -1,0 +1,7 @@
+O‘suvchi zaxira faqat oxirgi ishga tushirishdan keyin o‘zgarganini saqlaydi.
+Bir xil fayl bir necha marta chiqsa, takrorlarni olib tashlash bitta nusxa qoldiradi.
+Allaqachon qilgan zaxirangizdan fayllarni tiklang.
+Mahalliy papka, NAS, WebDAV, S3, NFS, Azure Blob, SFTP yoki FTPS ga zaxiralang.
+O‘zingiz boshqaradigan saqlash orqali papkani sinxronlang va eski nusxalarni saqlang.
+SD karta yoki kameradan foto, video va audio oling.
+Ochiq manba, hisobsiz, reklamasiz va telemetriyasiz.

@@ -1,0 +1,7 @@
+Postopna kopija shrani samo tisto, kar se je spremenilo od zadnjega zagona.
+Odstranjevanje dvojnikov obdrži en izvod, ko se ista datoteka pojavi več kot enkrat.
+Obnovite datoteke iz kopije, ki ste jo že naredili.
+Varnostno kopirajte v lokalno mapo, na NAS, WebDAV, S3, NFS, Azure Blob, SFTP ali FTPS.
+Sinhronizirajte mapo prek shrambe, ki jo upravljate, in obdržite starejše različice.
+Uvozite fotografije, video in zvok s kartice SD ali iz fotoaparata.
+Odprta koda, brez računa, brez oglasov in brez telemetrije.

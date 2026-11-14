@@ -1,0 +1,13 @@
+Déanann BUtil cúltaca, sioncrónaíonn agus athchóiríonn sé comhaid. Ní choinníonn cúltacaí incrimintacha ach an méid a d'athraigh. Fágann dí-dhúbláil cóip amháin nuair a thagann an comhad céanna aníos níos mó ná uair amháin.
+
+Cá dtéann na comhaid
+
+Seol cúltacaí chuig fillteán, NAS (SMB/CIFS), nó chuig WebDAV, stóras atá comhoiriúnach le S3, NFS, Azure Blob, SFTP nó FTPS.
+
+- Sioncrónaigh fillteán trí stóras atá faoi do smacht, agus coinnigh leaganacha níos sine nuair a athraíonn comhaid.
+- Iompórtáil pictiúir, físeán agus fuaim ó chárta SD nó ó cheamara.
+- Rith tascanna de réir sceidil, ón gconsól freisin.
+
+Criptítear na pasfhocail a shábhálann tú ar an ngléas. Níl cuntas, fógra ná teiliméadracht ann.
+
+Is foinse oscailte é BUtil. Tá a chód féin tiomnaithe don fhearann poiblí. Coimeádann comhpháirteanna tríú páirtí a gceadúnais féin.

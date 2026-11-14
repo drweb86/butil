@@ -1,0 +1,7 @@
+La copia incremental guarda solo lo que camudó dende la cabera execución.
+La deduplicación dexa una copia cuando'l mesmu ficheru apaez más d'una vegada.
+Restaura ficheros d'una copia que yá ficisti.
+Fai copies nuna carpeta llocal, NAS, WebDAV, S3, NFS, Azure Blob, SFTP o FTPS.
+Sincroniza una carpeta al traviés d'un almacenamientu que controles y conserva versiones anteriores.
+Importa fotos, videu y audiu dende una tarxeta SD o una cámara.
+Códigu abiertu, ensin cuenta, ensin anuncios y ensin telemetría.

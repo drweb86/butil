@@ -1,0 +1,13 @@
+Nì BUtil lethbhreacan, sioncronachadh agus ath-stèidheachadh air faidhlichean. Cha chùm lethbhreacan mean air mhean ach na dh'atharraich. Fàgaidh toirt air falbh dhùblaichean aon lethbhreac nuair a nochdas an aon fhaidhle barrachd air aon turas.
+
+Càite an tèid na faidhlichean
+
+Cuir lethbhreacan gu pasgan, NAS (SMB/CIFS), no gu WebDAV, stòras co-chòrdail ri S3, NFS, Azure Blob, SFTP no FTPS.
+
+- Sioncronaich pasgan tro stòras a tha fo do smachd, agus cùm seann tionndaidhean nuair a dh'atharraicheas faidhlichean.
+- Thoir a-steach dealbhan, video agus fuaim o chairt SD no camara.
+- Ruith obraichean a rèir clàr-ama, on chonsail cuideachd.
+
+Tha faclan-faire a shàbhalas tu air an crioptachadh air an uidheam. Chan eil cunntas, sanas no telemeatraidh ann.
+
+Tha BUtil le còd fosgailte. Tha a chòd fhèin air a thoirt don raon phoblach. Cumaidh pàirtean treas-phàrtaidh na ceadachdan aca fhèin.

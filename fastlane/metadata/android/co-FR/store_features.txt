@@ -1,0 +1,7 @@
+A copia incrementale tene solu ciò chì hà cambiatu dapoi l'ultima esecuzione.
+A deduplicazione tene una copia sola quandu u listessu schedariu apparisce più d'una volta.
+Risturate schedarii da una copia chì avete digià fatta.
+Fate copie in un cartulare lucale, NAS, WebDAV, S3, NFS, Azure Blob, SFTP o FTPS.
+Sincronizate un cartulare à traversu un almacenamentu chì cuntrullate, è tenite e versioni più vechje.
+Impurtate foto, video è audio da una carta SD o da una camera.
+Open source, senza contu, senza publicità è senza telemetria.

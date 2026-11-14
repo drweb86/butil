@@ -1,0 +1,13 @@
+BUtil face copie, sincronizeghja è ristura i schedarii. E copie incrementali tenenu solu ciò chì hà cambiatu. A deduplicazione tene una copia sola quandu u listessu schedariu apparisce più d'una volta.
+
+Induve vanu i schedarii
+
+Mandate e copie in un cartulare, nant'à un NAS (SMB/CIFS), o versu WebDAV, almacenamentu cumpatibile cù S3, NFS, Azure Blob, SFTP o FTPS.
+
+- Sincronizate un cartulare à traversu un almacenamentu chì cuntrullate, è tenite e versioni più vechje quandu i schedarii cambianu.
+- Impurtate imagine, video è audio da una carta SD o da una camera.
+- Eseguite attività secondu un calendariu, ancu da a cunsola.
+
+E password chì salvate sò cifrate nant'à l'apparechju. Ùn ci hè contu, publicità nè telemetria.
+
+BUtil hè open source. U so codice propiu hè dedicatu à u duminiu publicu. I cumpunenti di terze parti tenenu e so licenze.

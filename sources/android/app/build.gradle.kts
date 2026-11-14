@@ -3,6 +3,8 @@ plugins {
     id("org.jetbrains.kotlin.plugin.compose")
 }
 
+val screenshots = findProperty("screenshots")?.toString() == "true"
+
 android {
     namespace = "com.siarheikuchuk.butil"
     compileSdk = 37
@@ -17,6 +19,14 @@ android {
         versionCode = findProperty("appVersionCode")?.toString()?.toIntOrNull() ?: defaultVersionCode
         versionName = findProperty("appVersionName")?.toString()?.takeIf { it.isNotBlank() } ?: defaultVersionName
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField("boolean", "SCREENSHOTS", if (screenshots) "true" else "false")
+        // Store captures use a separate id and English resources. Do not ship this build.
+        if (screenshots) {
+            applicationIdSuffix = ".screenshots"
+            manifestPlaceholders["appLabel"] = "BUtil (screenshots)"
+        } else {
+            manifestPlaceholders["appLabel"] = "@string/app_name"
+        }
     }
 
     flavorDimensions += "policy"
@@ -57,6 +67,11 @@ android {
         isCoreLibraryDesugaringEnabled = true
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
+    }
+    if (screenshots) {
+        androidResources {
+            localeFilters += "en"
+        }
     }
     buildFeatures {
         compose = true

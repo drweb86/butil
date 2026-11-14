@@ -1,0 +1,7 @@
+A növekményes mentés csak azt tárolja, ami a legutóbbi futás óta megváltozott.
+A deduplikáció egy példányt tart meg, ha ugyanaz a fájl többször szerepel.
+Állítson vissza fájlokat egy már elkészített mentésből.
+Mentés helyi mappába, NAS-ra, WebDAV-ra, S3-ra, NFS-re, Azure Blobba, SFTP-re vagy FTPS-re.
+Szinkronizáljon egy mappát az Ön által kezelt tárhelyen, és őrizze meg a régebbi változatokat.
+Importáljon fotókat, videót és hangot SD-kártyáról vagy fényképezőgépről.
+Nyílt forráskód, fiók, reklám és telemetria nélkül.

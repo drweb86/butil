@@ -1,0 +1,7 @@
+Die inkrementelle Sicherung speichert nur, was sich seit dem letzten Lauf geändert hat.
+Deduplizierung behält eine Kopie, wenn dieselbe Datei mehr als einmal vorkommt.
+Stellen Sie Dateien aus einer Sicherung wieder her, die Sie bereits erstellt haben.
+Sichern Sie in einen lokalen Ordner, auf NAS, WebDAV, S3, NFS, Azure Blob, SFTP oder FTPS.
+Synchronisieren Sie einen Ordner über Speicher, den Sie kontrollieren, und behalten Sie ältere Versionen.
+Importieren Sie Fotos, Video und Audio von einer SD-Karte oder Kamera.
+Open Source, ohne Konto, ohne Werbung und ohne Telemetrie.

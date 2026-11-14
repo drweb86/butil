@@ -1,0 +1,7 @@
+Inkrementalna kopija čuva samo ono što se promenilo od prošlog pokretanja.
+Deduplikacija ostavlja jednu kopiju kada se ista datoteka pojavi više puta.
+Vratite datoteke iz kopije koju ste već napravili.
+Pravite kopiju u lokalnu fasciklu, na NAS, WebDAV, S3, NFS, Azure Blob, SFTP ili FTPS.
+Sinhronizujte fasciklu preko skladišta kojim upravljate i zadržite starije verzije.
+Uvezite fotografije, video i zvuk sa SD kartice ili iz fotoaparata.
+Otvoreni kod, bez naloga, bez reklama i bez telemetrije.

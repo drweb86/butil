@@ -1,0 +1,7 @@
+Mae'r copi cynyddrannol yn cadw dim ond yr hyn a newidiodd ers y rhediad diwethaf.
+Mae dad-ddyblygu yn cadw un copi pan fydd yr un ffeil yn ymddangos fwy nag unwaith.
+Adferwch ffeiliau o gopi rydych chi eisoes wedi'i wneud.
+Copïwch i ffolder leol, NAS, WebDAV, S3, NFS, Azure Blob, SFTP neu FTPS.
+Cydamserwch ffolder drwy storfa rydych chi'n ei rheoli, a chadwch fersiynau hŷn.
+Mewnforiwch luniau, fideo a sain o gerdyn SD neu gamera.
+Cod agored, heb gyfrif, heb hysbysebion a heb delemetreg.

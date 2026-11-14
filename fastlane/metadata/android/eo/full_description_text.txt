@@ -1,0 +1,13 @@
+BUtil sekurkopias, sinkronigas kaj restarigas dosierojn. Pliigaj sekurkopioj konservas nur tion, kio ŝanĝiĝis. Dedupliko tenas unu kopion, kiam la sama dosiero aperas pli ol unu fojon.
+
+Kien iras la dosieroj
+
+Sendu sekurkopiojn al dosierujo, al NAS (SMB/CIFS), aŭ al WebDAV, S3-kongrua konservejo, NFS, Azure Blob, SFTP aŭ FTPS.
+
+- Sinkronigu dosierujon per konservejo, kiun vi regas, kaj konservu pli malnovajn versiojn, kiam dosieroj ŝanĝiĝas.
+- Importu bildojn, videon kaj sonon el SD-karto aŭ fotilo.
+- Lanĉu taskojn laŭ horaro, ankaŭ el la konzolo.
+
+Pasvortoj, kiujn vi konservas, estas ĉifritaj sur la aparato. Ne estas konto, reklamo nek telemetrio.
+
+BUtil estas malfermitkoda. Ĝia propra kodo estas dediĉita al la publika havaĵo. Komponantoj de triaj partioj konservas siajn permesilojn.

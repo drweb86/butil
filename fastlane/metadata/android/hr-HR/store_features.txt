@@ -1,0 +1,7 @@
+Inkrementalna kopija sprema samo ono što se promijenilo od prošlog pokretanja.
+Deduplikacija zadržava jednu kopiju kada se ista datoteka pojavi više puta.
+Vratite datoteke iz kopije koju ste već napravili.
+Izradite kopiju u lokalnu mapu, na NAS, WebDAV, S3, NFS, Azure Blob, SFTP ili FTPS.
+Sinkronizirajte mapu preko pohrane kojom upravljate i zadržite starije inačice.
+Uvezite fotografije, video i zvuk sa SD kartice ili iz fotoaparata.
+Otvoreni kod, bez računa, bez oglasa i bez telemetrije.

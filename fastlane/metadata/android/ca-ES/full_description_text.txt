@@ -1,0 +1,13 @@
+BUtil fa còpies, sincronitza i restaura fitxers. Les còpies incrementals desen només el que ha canviat. La deduplicació en guarda una de sola quan el mateix fitxer apareix més d'una vegada.
+
+On van els fitxers
+
+Envieu les còpies a una carpeta, a un NAS (SMB/CIFS) o a WebDAV, emmagatzematge compatible amb S3, NFS, Azure Blob, SFTP o FTPS.
+
+- Sincronitzeu una carpeta mitjançant un emmagatzematge que controleu i conserveu versions antigues quan els fitxers canviïn.
+- Importeu imatges, vídeo i àudio des d'una targeta SD o d'una càmera.
+- Executeu tasques segons una programació, també des de la consola.
+
+Les contrasenyes que deseu es xifren al dispositiu. No hi ha compte, ni publicitat, ni telemetria.
+
+BUtil és de codi obert. El codi propi està dedicat al domini públic. Els components de tercers conserven les seves llicències.

@@ -1,0 +1,10 @@
+<p>BUtil enam backup, sync ndien fiak mme file. Backup se osụhọde enim ndien se ekpụhọde. Deduplication enim kiet ke ini file kiet owụt akan ini kiet.</p>
+<p><b>Mme file ẹka mmọñ</b></p>
+<p>Dọn backup ka folder, NAS (SMB/CIFS), me WebDAV, storage se eyomde ye S3, NFS, Azure Blob, SFTP me FTPS.</p>
+<ul>
+<li>Sync folder nto storage se afo akara, nyụn̄ nim mme version akpa ke ini file ẹkpụhọde.</li>
+<li>Dat ndise, video ye uyo nto SD card me camera.</li>
+<li>Nam utom ke edinam, ye nto console.</li>
+</ul>
+<p>Mme password emi afo enimde ẹkọd ke defais. Account ibaha, advert ibaha, telemetry ibaha.</p>
+<p>BUtil edi open source. Code esie enọ public domain. Mme part n̄ka enwen ẹnim license mmọ.</p>

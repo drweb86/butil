@@ -1,0 +1,13 @@
+BUtil pravi rezervne kopije, sinhronizuje i vraća datoteke. Inkrementalne kopije čuvaju samo ono što se promijenilo. Deduplikacija ostavlja jednu kopiju kada se ista datoteka pojavi više puta.
+
+Kuda idu datoteke
+
+Šaljite kopije u folder, na NAS (SMB/CIFS) ili na WebDAV, skladište usklađeno sa S3, NFS, Azure Blob, SFTP ili FTPS.
+
+- Sinhronizujte folder preko skladišta kojim upravljate i zadržite starije verzije kada se datoteke promijene.
+- Uvezite slike, video i zvuk sa SD kartice ili iz fotoaparata.
+- Pokrećite zadatke po rasporedu, uključujući iz konzole.
+
+Lozinke koje sačuvate šifruju se na uređaju. Nema naloga, reklama ni telemetrije.
+
+BUtil je otvorenog koda. Vlastiti kod predat je u javno vlasništvo. Komponente trećih strana zadržavaju vlastite licence.

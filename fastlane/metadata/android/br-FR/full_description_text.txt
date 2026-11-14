@@ -1,0 +1,13 @@
+BUtil a sav savete, a sinkronela ha da zistreiñ restroù. Ar saveteoù inkrementel ne viront nemet ar pezh zo cheñchet. An didoublañ a vir un eilad pa zeu an hevelep restr war wel ouzhpenn ur wech.
+
+Pelec'h ez a ar restroù
+
+Kasit ar saveteoù d'un teuliad, d'un NAS (SMB/CIFS), pe da WebDAV, mirva kenglotus gant S3, NFS, Azure Blob, SFTP pe FTPS.
+
+- Sinkronelaat un teuliad dre ur mirva a gontrollit, ha mirit stummoù koshoc'h pa cheñch ar restroù.
+- Enporzhit skeudennoù, video hag aodio adalek ur gartenn SD pe ur c'hamera.
+- Lañsit trevelloù hervez un eurier, adalek ar gonsol ivez.
+
+Ar gerioù-tremen a enrollit a zo sifret war an trevnad. N'eus ket a gont, a vruderezh nag a delemetriezh.
+
+BUtil zo digor e darzh. E god dezhañ e-unan zo roet d'an domani foran. Ar parzhioù trede a vir o aotreoù.

@@ -1,0 +1,13 @@
+BUtil-ek fitxategiak babeskopiatu, sinkronizatu eta leheneratzen ditu. Kopia gehigarriek aldatutakoa soilik gordetzen dute. Bikoiztuen kentzeak kopia bakarra uzten du fitxategi bera behin baino gehiagotan agertzen denean.
+
+Fitxategiak nora doazen
+
+Bidali babeskopiak karpeta batera, NAS batera (SMB/CIFS) edo WebDAV, S3 bateragarria, NFS, Azure Blob, SFTP edo FTPS biltegira.
+
+- Sinkronizatu karpeta bat zuk kontrolatzen duzun biltegi baten bidez, eta gorde bertsio zaharragoak fitxategiak aldatzen direnean.
+- Inportatu irudiak, bideoa eta audioa SD txartel edo kamera batetik.
+- Exekutatu atazak egutegi baten arabera, kontsolatik ere.
+
+Gordetzen dituzun pasahitzak gailuan zifratzen dira. Ez dago konturik, iragarkirik eta telemetriarik.
+
+BUtil kode irekikoa da. Bere kodea jabari publikora eskainita dago. Hirugarrenen osagaiek beren lizentziak gordetzen dituzte.

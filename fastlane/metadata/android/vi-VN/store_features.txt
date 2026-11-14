@@ -1,0 +1,7 @@
+Bản sao lưu tăng dần chỉ giữ phần đã thay đổi kể từ lần chạy trước.
+Khử trùng lặp giữ một bản khi cùng một tệp xuất hiện nhiều lần.
+Khôi phục tệp từ bản sao lưu bạn đã tạo.
+Sao lưu vào thư mục cục bộ, NAS, WebDAV, S3, NFS, Azure Blob, SFTP hoặc FTPS.
+Đồng bộ một thư mục qua kho do bạn kiểm soát, và giữ phiên bản cũ.
+Nhập ảnh, video và âm thanh từ thẻ SD hoặc máy ảnh.
+Mã nguồn mở, không tài khoản, không quảng cáo và không đo từ xa.

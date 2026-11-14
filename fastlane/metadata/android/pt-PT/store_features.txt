@@ -1,0 +1,7 @@
+A cópia incremental guarda apenas o que mudou desde a última execução.
+A deduplicação mantém uma cópia quando o mesmo ficheiro aparece mais do que uma vez.
+Restaure ficheiros de uma cópia que já fez.
+Faça cópias para uma pasta local, NAS, WebDAV, S3, NFS, Azure Blob, SFTP ou FTPS.
+Sincronize uma pasta através de armazenamento que controla e mantenha versões anteriores.
+Importe fotos, vídeo e áudio de um cartão SD ou câmara.
+Código aberto, sem conta, sem anúncios e sem telemetria.

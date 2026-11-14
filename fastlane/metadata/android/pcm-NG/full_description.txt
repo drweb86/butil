@@ -1,0 +1,10 @@
+<p>BUtil dey back up, sync, and restore files. Incremental backup dey keep only wetin change. Deduplication dey leave one copy when the same file show more than once.</p>
+<p><b>Where the files dey go</b></p>
+<p>Send backup go folder, NAS (SMB/CIFS), or WebDAV, S3-compatible storage, NFS, Azure Blob, SFTP, or FTPS.</p>
+<ul>
+<li>Sync folder through storage wey you control, and keep older versions when files change.</li>
+<li>Import pictures, video, and audio from SD card or camera.</li>
+<li>Run tasks on schedule, including from the console.</li>
+</ul>
+<p>Passwords wey you save dey encrypted for the device. No account, no advert, and no telemetry.</p>
+<p>BUtil na open source. E own code don go public domain. Third-party parts still keep their own licenses.</p>

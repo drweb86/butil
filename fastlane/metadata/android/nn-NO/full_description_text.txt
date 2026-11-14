@@ -1,0 +1,13 @@
+BUtil tryggar, synkroniserer og attopprettar filer. Trinnvise tryggingskopiar lagrar berre det som er endra. Deduplisering held på éin kopi når same fila finst meir enn éin gong.
+
+Dit filene blir sende
+
+Send tryggingskopiar til ei mappe, ein NAS (SMB/CIFS) eller til WebDAV, S3-kompatibel lagring, NFS, Azure Blob, SFTP eller FTPS.
+
+- Synkroniser ei mappe via lagring du styrer, og ta vare på eldre versjonar når filer endrar seg.
+- Importer bilete, video og lyd frå eit SD-kort eller eit kamera.
+- Køyr oppgåver etter ein timeplan, også frå konsollen.
+
+Passord du lagrar, blir krypterte på eininga. Det finst ingen konto, ingen reklame og ingen telemetri.
+
+BUtil er open kjeldekode. Eigen kode er gjeven til ålmenta. Komponentar frå andre held på sine eigne lisensar.

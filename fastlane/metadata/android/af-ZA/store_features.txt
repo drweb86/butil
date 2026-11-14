@@ -1,0 +1,7 @@
+Die inkrementele rugsteun stoor net wat sedert die vorige lopie verander het.
+Ontdubbeling hou een kopie wanneer dieselfde lêer meer as een keer voorkom.
+Herstel lêers uit ’n rugsteun wat jy reeds gemaak het.
+Maak rugsteun na ’n plaaslike vouer, NAS, WebDAV, S3, NFS, Azure Blob, SFTP of FTPS.
+Sinkroniseer ’n vouer deur berging wat jy beheer, en hou ouer weergawes.
+Voer foto’s, video en klank van ’n SD-kaart of kamera in.
+Oopbron, sonder rekening, sonder advertensies en sonder telemetrie.

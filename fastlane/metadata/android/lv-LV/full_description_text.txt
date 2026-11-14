@@ -1,0 +1,13 @@
+BUtil dublē, sinhronizē un atjauno failus. Pakāpeniskās dublējumkopijas saglabā tikai to, kas mainījies. Dublēšanās noņemšana patur vienu kopiju, ja tas pats fails parādās vairāk nekā vienu reizi.
+
+Kurp faili nonāk
+
+Sūtiet dublējumkopijas uz mapi, NAS (SMB/CIFS) vai uz WebDAV, ar S3 saderīgu krātuvi, NFS, Azure Blob, SFTP vai FTPS.
+
+- Sinhronizējiet mapi caur krātuvi, kuru kontrolējat, un paturiet vecākas versijas, kad faili mainās.
+- Importējiet attēlus, video un audio no SD kartes vai kameras.
+- Palaidiet uzdevumus pēc grafika, arī no konsoles.
+
+Saglabātās paroles tiek šifrētas ierīcē. Nav konta, reklāmas un telemetrijas.
+
+BUtil ir atvērtais pirmkods. Paša kods ir veltīts publiskajam domēnam. Trešo pušu komponenti patur savas licences.

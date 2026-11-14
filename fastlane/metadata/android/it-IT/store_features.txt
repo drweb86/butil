@@ -1,0 +1,7 @@
+Il backup incrementale conserva solo ciò che è cambiato dall'ultima esecuzione.
+La deduplicazione tiene una copia quando lo stesso file compare più di una volta.
+Ripristina i file da un backup che hai già creato.
+Esegui il backup in una cartella locale, NAS, WebDAV, S3, NFS, Azure Blob, SFTP o FTPS.
+Sincronizza una cartella tramite un archivio che controlli e conserva le versioni precedenti.
+Importa foto, video e audio da una scheda SD o da una fotocamera.
+Open source, senza account, senza pubblicità e senza telemetria.

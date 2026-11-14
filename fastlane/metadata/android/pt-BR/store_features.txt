@@ -1,0 +1,7 @@
+O backup incremental guarda só o que mudou desde a última execução.
+A deduplicação mantém uma cópia quando o mesmo arquivo aparece mais de uma vez.
+Restaure arquivos de um backup que você já fez.
+Faça backup em uma pasta local, NAS, WebDAV, S3, NFS, Azure Blob, SFTP ou FTPS.
+Sincronize uma pasta por um armazenamento que você controla e mantenha versões antigas.
+Importe fotos, vídeo e áudio de um cartão SD ou câmera.
+Código aberto, sem conta, sem anúncios e sem telemetria.

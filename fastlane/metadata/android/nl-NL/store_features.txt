@@ -1,0 +1,7 @@
+De incrementele back-up bewaart alleen wat sinds de vorige keer veranderd is.
+Deduplicatie houdt één kopie wanneer hetzelfde bestand meer dan eens voorkomt.
+Herstel bestanden uit een back-up die u al hebt gemaakt.
+Maak een back-up naar een lokale map, NAS, WebDAV, S3, NFS, Azure Blob, SFTP of FTPS.
+Synchroniseer een map via opslag die u beheert, en bewaar oudere versies.
+Importeer foto's, video en audio van een SD-kaart of camera.
+Open source, zonder account, zonder advertenties en zonder telemetrie.

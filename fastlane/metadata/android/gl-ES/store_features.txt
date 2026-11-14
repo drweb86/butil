@@ -1,0 +1,7 @@
+A copia incremental garda só o que cambiou desde a última execución.
+A deduplicación conserva unha copia cando o mesmo ficheiro aparece máis dunha vez.
+Restaure ficheiros dunha copia que xa fixo.
+Copie nun cartafol local, NAS, WebDAV, S3, NFS, Azure Blob, SFTP ou FTPS.
+Sincronice un cartafol mediante un almacenamento que vostede controla e conserve versións anteriores.
+Importe fotos, vídeo e audio desde unha tarxeta SD ou unha cámara.
+Código aberto, sen conta, sen anuncios e sen telemetría.

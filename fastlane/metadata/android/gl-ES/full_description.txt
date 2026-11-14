@@ -1,0 +1,10 @@
+<p>BUtil fai copias, sincroniza e restaura ficheiros. As copias incrementais gardan só o que cambiou. A deduplicación conserva unha única copia cando o mesmo ficheiro aparece máis dunha vez.</p>
+<p><b>Onde van os ficheiros</b></p>
+<p>Envíe as copias a un cartafol, a un NAS (SMB/CIFS) ou a WebDAV, almacenamento compatible con S3, NFS, Azure Blob, SFTP ou FTPS.</p>
+<ul>
+<li>Sincronice un cartafol a través dun almacenamento que vostede controla e conserve versións anteriores cando os ficheiros cambien.</li>
+<li>Importe imaxes, vídeo e audio desde unha tarxeta SD ou unha cámara.</li>
+<li>Execute tarefas cunha programación, tamén desde a consola.</li>
+</ul>
+<p>Os contrasinais que garda cífranse no dispositivo. Non hai conta, nin publicidade, nin telemetría.</p>
+<p>BUtil é de código aberto. O código propio está dedicado ao dominio público. Os compoñentes de terceiros conservan as súas licenzas.</p>

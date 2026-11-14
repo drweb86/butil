@@ -1,0 +1,13 @@
+BUtil varnostno kopira, sinhronizira in obnavlja datoteke. Postopne kopije shranijo samo tisto, kar se je spremenilo. Odstranjevanje dvojnikov obdrži en izvod, ko se ista datoteka pojavi več kot enkrat.
+
+Kam gredo datoteke
+
+Pošljite kopije v mapo, na NAS (SMB/CIFS) ali v WebDAV, shrambo, združljivo s S3, NFS, Azure Blob, SFTP ali FTPS.
+
+- Sinhronizirajte mapo prek shrambe, ki jo upravljate, in obdržite starejše različice, ko se datoteke spremenijo.
+- Uvozite slike, video in zvok s kartice SD ali iz fotoaparata.
+- Zaganjajte opravila po urniku, tudi iz konzole.
+
+Gesla, ki jih shranite, se v napravi šifrirajo. Ni računa, oglasov in telemetrije.
+
+BUtil je odprta koda. Lastna koda je namenjena javni domeni. Komponente tretjih oseb obdržijo lastne licence.

@@ -1,0 +1,13 @@
+BUtil bën kopje rezervë, sinkronizon dhe rikthen skedarë. Kopjet rritëse ruajnë vetëm atë që ndryshoi. Heqja e dublikatave mban një kopje kur i njëjti skedar shfaqet më shumë se një herë.
+
+Ku shkojnë skedarët
+
+Dërgoni kopjet në një dosje, në një NAS (SMB/CIFS) ose në WebDAV, ruajtje të përputhshme me S3, NFS, Azure Blob, SFTP ose FTPS.
+
+- Sinkronizoni një dosje përmes ruajtjes që kontrolloni dhe mbani versionet më të vjetra kur skedarët ndryshojnë.
+- Importoni figura, video dhe audio nga një kartë SD ose nga një aparat fotografik.
+- Nisni detyra sipas një orari, edhe nga konsola.
+
+Fjalëkalimet që ruani shifrohen në pajisje. Nuk ka llogari, reklamë dhe telemetri.
+
+BUtil është me kod të hapur. Kodi i vet i është dhënë domenit publik. Përbërësit e palëve të treta mbajnë licencat e tyre.

@@ -1,0 +1,7 @@
+Kopia gehigarriak azken exekuziotik aldatutakoa soilik gordetzen du.
+Bikoiztuen kentzeak kopia bakarra uzten du fitxategi bera behin baino gehiagotan agertzen denean.
+Leheneratu fitxategiak dagoeneko egindako babeskopia batetik.
+Egin babeskopiak karpeta lokal, NAS, WebDAV, S3, NFS, Azure Blob, SFTP edo FTPS batera.
+Sinkronizatu karpeta bat zuk kontrolatzen duzun biltegiaren bidez eta gorde bertsio zaharragoak.
+Inportatu argazkiak, bideoa eta audioa SD txartel edo kamera batetik.
+Kode irekia, konturik, iragarkirik eta telemetriarik gabe.

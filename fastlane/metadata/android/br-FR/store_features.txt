@@ -1,0 +1,7 @@
+Ar savete inkrementel ne vir nemet ar pezh zo cheñchet abaoe ar wech diwezhañ.
+An didoublañ a vir un eilad pa zeu an hevelep restr war wel ouzhpenn ur wech.
+Adkavit restroù adalek ur savete hoc'h eus graet dija.
+Saveteit en un teuliad lec'hel, NAS, WebDAV, S3, NFS, Azure Blob, SFTP pe FTPS.
+Sinkronelaat un teuliad dre ur mirva a gontrollit, ha mirit stummoù koshoc'h.
+Enporzhit luc'hskeudennoù, video hag aodio adalek ur gartenn SD pe ur c'hamera.
+Digor e darzh, hep kont, hep bruderezh ha hep telemetriezh.

@@ -1,5 +1,6 @@
 package com.siarheikuchuk.butil
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.os.Process
@@ -21,6 +22,12 @@ import com.siarheikuchuk.butil.ui.controls.MainWindow
 
 class MainActivity : ComponentActivity() {
     private val showStatusPreview = mutableStateOf(false)
+
+    override fun attachBaseContext(newBase: Context) {
+        super.attachBaseContext(
+            if (BuildConfig.SCREENSHOTS) newBase.withEnglishLocale() else newBase,
+        )
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

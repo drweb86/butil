@@ -1,0 +1,7 @@
+La pliiga sekurkopio konservas nur tion, kio ŝanĝiĝis de la lasta lanĉo.
+Dedupliko tenas unu kopion, kiam la sama dosiero aperas pli ol unu fojon.
+Restarigu dosierojn el sekurkopio, kiun vi jam faris.
+Sekurkopiu al loka dosierujo, NAS, WebDAV, S3, NFS, Azure Blob, SFTP aŭ FTPS.
+Sinkronigu dosierujon per konservejo, kiun vi regas, kaj konservu pli malnovajn versiojn.
+Importu fotojn, videon kaj sonon el SD-karto aŭ fotilo.
+Malfermitkoda, sen konto, sen reklamoj kaj sen telemetrio.

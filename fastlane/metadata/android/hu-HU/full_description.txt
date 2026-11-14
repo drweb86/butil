@@ -1,0 +1,10 @@
+<p>A BUtil biztonsági mentést készít, szinkronizál és visszaállít fájlokat. A növekményes mentés csak a változást tárolja. A deduplikáció egy példányt tart meg, ha ugyanaz a fájl többször szerepel.</p>
+<p><b>Hová kerülnek a fájlok</b></p>
+<p>A mentéseket mappába, NAS-ra (SMB/CIFS) vagy WebDAV-ra, S3-kompatibilis tárhelyre, NFS-re, Azure Blobba, SFTP-re vagy FTPS-re küldheti.</p>
+<ul>
+<li>Szinkronizáljon egy mappát az Ön által kezelt tárhelyen, és őrizze meg a régebbi változatokat, ha a fájlok megváltoznak.</li>
+<li>Importáljon képeket, videót és hangot SD-kártyáról vagy fényképezőgépről.</li>
+<li>Futtasson feladatokat ütemezés szerint, a konzolról is.</li>
+</ul>
+<p>A mentett jelszavak a készüléken titkosítva vannak. Nincs fiók, reklám és telemetria.</p>
+<p>A BUtil nyílt forráskódú. Saját kódja közkincs. A harmadik felek összetevői megtartják a saját licenceiket.</p>

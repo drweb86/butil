@@ -1,0 +1,7 @@
+La còpia incremental desa només el que ha canviat des de l'última execució.
+La deduplicació en guarda una de sola quan el mateix fitxer apareix més d'una vegada.
+Restaureu fitxers d'una còpia que ja heu fet.
+Copieu a una carpeta local, NAS, WebDAV, S3, NFS, Azure Blob, SFTP o FTPS.
+Sincronitzeu una carpeta mitjançant un emmagatzematge que controleu i conserveu versions antigues.
+Importeu fotos, vídeo i àudio des d'una targeta SD o una càmera.
+Codi obert, sense compte, sense anuncis i sense telemetria.

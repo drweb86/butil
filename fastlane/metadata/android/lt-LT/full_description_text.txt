@@ -1,0 +1,13 @@
+BUtil kuria atsargines kopijas, sinchronizuoja ir atkuria failus. Prieauginės kopijos saugo tik tai, kas pasikeitė. Pasikartojimų šalinimas palieka vieną kopiją, kai tas pats failas pasitaiko daugiau nei kartą.
+
+Kur siunčiami failai
+
+Siųskite kopijas į aplanką, į NAS (SMB/CIFS) arba į WebDAV, su S3 suderinamą saugyklą, NFS, Azure Blob, SFTP ar FTPS.
+
+- Sinchronizuokite aplanką per saugyklą, kurią valdote, ir laikykite senesnes versijas, kai failai keičiasi.
+- Importuokite vaizdus, vaizdo įrašus ir garsą iš SD kortelės ar fotoaparato.
+- Vykdykite užduotis pagal tvarkaraštį, taip pat iš konsolės.
+
+Įrašyti slaptažodžiai šifruojami įrenginyje. Nėra paskyros, reklamos ir telemetrijos.
+
+BUtil yra atvirojo kodo. Nuosavas kodas skirtas viešajai sričiai. Trečiųjų šalių komponentai išlaiko savo licencijas.

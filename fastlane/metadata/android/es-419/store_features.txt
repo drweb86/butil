@@ -1,0 +1,7 @@
+La copia incremental guarda solo lo que cambió desde la última ejecución.
+La deduplicación conserva una copia cuando el mismo archivo aparece más de una vez.
+Restaure archivos de una copia que ya haya hecho.
+Respalde en una carpeta local, NAS, WebDAV, S3, NFS, Azure Blob, SFTP o FTPS.
+Sincronice una carpeta mediante un almacenamiento que usted controla y conserve versiones anteriores.
+Importe fotos, video y audio desde una tarjeta SD o una cámara.
+Código abierto, sin cuenta, sin anuncios y sin telemetría.

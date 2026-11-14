@@ -1,0 +1,10 @@
+<p>BUtil esegue il backup, sincronizza e ripristina i file. I backup incrementali conservano solo ciò che è cambiato. La deduplicazione tiene una sola copia quando lo stesso file compare più di una volta.</p>
+<p><b>Dove vanno i file</b></p>
+<p>Invia i backup a una cartella, a un NAS (SMB/CIFS) oppure a WebDAV, archiviazione compatibile con S3, NFS, Azure Blob, SFTP o FTPS.</p>
+<ul>
+<li>Sincronizza una cartella tramite un archivio che controlli e conserva le versioni precedenti quando i file cambiano.</li>
+<li>Importa immagini, video e audio da una scheda SD o da una fotocamera.</li>
+<li>Esegui le attività in base a una pianificazione, anche dalla console.</li>
+</ul>
+<p>Le password che salvi sono cifrate sul dispositivo. Non c'è un account, non c'è pubblicità e non c'è telemetria.</p>
+<p>BUtil è open source. Il suo codice è dedicato al pubblico dominio. I componenti di terze parti mantengono le proprie licenze.</p>

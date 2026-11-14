@@ -1,0 +1,7 @@
+Cha chùm an lethbhreac mean air mhean ach na dh'atharraich on ruith mu dheireadh.
+Fàgaidh toirt air falbh dhùblaichean aon lethbhreac nuair a nochdas an aon fhaidhle barrachd air aon turas.
+Ath-stèidhich faidhlichean o lethbhreac a rinn thu mar-thà.
+Dèan lethbhreac gu pasgan ionadail, NAS, WebDAV, S3, NFS, Azure Blob, SFTP no FTPS.
+Sioncronaich pasgan tro stòras a tha fo do smachd, agus cùm seann tionndaidhean.
+Thoir a-steach dealbhan, video agus fuaim o chairt SD no camara.
+Còd fosgailte, gun chunntas, gun sanasan agus gun telemeatraidh.

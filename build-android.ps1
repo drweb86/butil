@@ -3,6 +3,9 @@
 #   powershell -File build-android.ps1
 #   powershell -File build-android.ps1 -Install
 #   powershell -File build-android.ps1 -Release
+#   powershell -File build-android.ps1 -Screenshots
+# -Screenshots builds the English store-capture APK
+# (com.siarheikuchuk.butil.screenshots). It is not a release.
 # Debug APK: Output/butil_android_debug.apk
 # Release APK: Output/butil_<version>_android.apk
 # Release reads CHANGELOG.md when -VersionName is omitted.
@@ -12,6 +15,7 @@
 param(
     [switch]$Install,
     [switch]$Release,
+    [switch]$Screenshots,
     [string]$VersionName = "",
     [string]$VersionCode = ""
 )
@@ -53,8 +57,8 @@ function Find-AndroidSdk {
     throw "Android SDK not found. Set ANDROID_HOME to your SDK directory."
 }
 
-function Invoke-Gradle([string[]]$Tasks) {
-    $gradleArgs = @("--no-daemon") + $Tasks
+function Invoke-Gradle([string[]]$Tasks, [string[]]$ExtraArgs = @()) {
+    $gradleArgs = @("--no-daemon") + $Tasks + $ExtraArgs
     if ($VersionName) { $gradleArgs += "-PappVersionName=$VersionName" }
     if ($VersionCode) { $gradleArgs += "-PappVersionCode=$VersionCode" }
     Write-Host "Building $($Tasks -join ', ') ..."
@@ -107,6 +111,10 @@ Set-Content -Path (Join-Path $AndroidRoot "local.properties") -Value "sdk.dir=$s
 
 $apkOutputs = Join-Path $AndroidRoot "app\build\outputs\apk"
 
+if ($Release -and $Screenshots) {
+    throw "-Screenshots is a debug store-capture build and cannot be combined with -Release."
+}
+
 if ($Release) {
     Invoke-Gradle @("assembleGeneralRelease")
     $releaseDir = Join-Path $apkOutputs "general\release"
@@ -119,6 +127,12 @@ if ($Release) {
         Copy-ToOutput $copied "butil_${VersionName}_android.apk" | Out-Null
     }
     $packageId = "com.siarheikuchuk.butil"
+} elseif ($Screenshots) {
+    # -Pscreenshots=true rewrites the application id, so it cannot share a Gradle
+    # run with the normal debug build.
+    Invoke-Gradle @("assembleGeneralDebug") @("-Pscreenshots=true")
+    $copied = Copy-ToOutput (Join-Path $apkOutputs "general\debug\app-general-debug.apk") "butil_android_screenshots_debug.apk"
+    $packageId = "com.siarheikuchuk.butil.screenshots"
 } else {
     Invoke-Gradle @("assembleGeneralDebug")
     $copied = Copy-ToOutput (Join-Path $apkOutputs "general\debug\app-general-debug.apk") "butil_android_debug.apk"

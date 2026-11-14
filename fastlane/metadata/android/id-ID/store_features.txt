@@ -1,0 +1,7 @@
+Cadangan inkremental hanya menyimpan yang berubah sejak jalan terakhir.
+Deduplikasi menyisakan satu salinan bila berkas yang sama muncul lebih dari sekali.
+Pulihkan berkas dari cadangan yang sudah Anda buat.
+Cadangkan ke folder lokal, NAS, WebDAV, S3, NFS, Azure Blob, SFTP, atau FTPS.
+Sinkronkan folder lewat penyimpanan yang Anda kendalikan, dan simpan versi lama.
+Impor foto, video, dan audio dari kartu SD atau kamera.
+Sumber terbuka, tanpa akun, tanpa iklan, dan tanpa telemetri.

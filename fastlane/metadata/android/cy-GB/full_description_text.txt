@@ -1,0 +1,13 @@
+Mae BUtil yn copïo wrth gefn, yn cydamseru ac yn adfer ffeiliau. Mae copïau cynyddrannol yn cadw dim ond yr hyn a newidiodd. Mae dad-ddyblygu yn cadw un copi pan fydd yr un ffeil yn ymddangos fwy nag unwaith.
+
+I ble mae'r ffeiliau'n mynd
+
+Anfonwch gopïau i ffolder, i NAS (SMB/CIFS), neu i WebDAV, storfa sy'n gydnaws â S3, NFS, Azure Blob, SFTP neu FTPS.
+
+- Cydamserwch ffolder drwy storfa rydych chi'n ei rheoli, a chadwch fersiynau hŷn pan fydd ffeiliau'n newid.
+- Mewnforiwch luniau, fideo a sain o gerdyn SD neu gamera.
+- Rhedeg tasgau ar amserlen, gan gynnwys o'r consol.
+
+Mae cyfrineiriau rydych chi'n eu cadw yn cael eu hamgryptio ar y ddyfais. Does dim cyfrif, dim hysbysebion a dim telemetreg.
+
+Mae BUtil yn god agored. Mae ei god ei hun wedi'i gysegru i'r parth cyhoeddus. Mae cydrannau trydydd parti yn cadw eu trwyddedau eu hunain.

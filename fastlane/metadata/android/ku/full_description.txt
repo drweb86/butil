@@ -1,0 +1,10 @@
+<p>BUtil pelan hiltîne, hevdem dike û vedigerîne. Hilanîna zêdeyî tenê ya guherî tomar dike. Dema heman pel ji carekê zêdetir derkeve, jêbirina dubareyan kopiyekê dihêle.</p>
+<p><b>Pel diçin ku</b></p>
+<p>Hilanînan bişînin peldankekê, NAS (SMB/CIFS) an WebDAV, embarê lihevhatî bi S3, NFS, Azure Blob, SFTP an FTPS.</p>
+<ul>
+<li>Peldankekê bi embarekê ku hûn kontrol dikin hevdem bikin û dema pel biguherin guhertoyên kevn biparêzin.</li>
+<li>Wêne, vîdyo û deng ji karta SD an ji kamerayekê bînin.</li>
+<li>Erkan li gorî bernameyekê bimeşînin, ji konsolê jî.</li>
+</ul>
+<p>Şîfreyên ku hûn tomar dikin li ser amûrê tên şîfrekirin. Hesab, reklam û telemetrî tune ne.</p>
+<p>BUtil çavkaniya vekirî ye. Koda xwe ya qada giştî ye. Pêkhateyên aliyên din lîsansên xwe diparêzin.</p>

@@ -1,0 +1,7 @@
+Pakāpeniskā dublējumkopija saglabā tikai to, kas mainījies kopš iepriekšējās palaišanas.
+Dublēšanās noņemšana patur vienu kopiju, ja tas pats fails parādās vairāk nekā vienu reizi.
+Atjaunojiet failus no dublējumkopijas, kuru jau esat izveidojis.
+Dublējiet lokālā mapē, NAS, WebDAV, S3, NFS, Azure Blob, SFTP vai FTPS.
+Sinhronizējiet mapi caur krātuvi, kuru kontrolējat, un paturiet vecākas versijas.
+Importējiet foto, video un audio no SD kartes vai kameras.
+Atvērtais pirmkods, bez konta, bez reklāmām un bez telemetrijas.

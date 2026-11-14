@@ -1,0 +1,1 @@
+Sauvegarde incrémentale, sync de dossiers, import photo. Sans compte ni pub.

@@ -1,0 +1,7 @@
+Den inkrementella säkerhetskopian sparar bara det som ändrats sedan förra körningen.
+Deduplicering behåller en kopia när samma fil förekommer mer än en gång.
+Återställ filer från en säkerhetskopia du redan har gjort.
+Säkerhetskopiera till en lokal mapp, NAS, WebDAV, S3, NFS, Azure Blob, SFTP eller FTPS.
+Synkronisera en mapp via lagring du styr, och behåll äldre versioner.
+Importera foton, video och ljud från ett SD-kort eller en kamera.
+Öppen källkod, utan konto, utan reklam och utan telemetri.

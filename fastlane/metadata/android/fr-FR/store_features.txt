@@ -1,0 +1,7 @@
+La sauvegarde incrémentale ne conserve que ce qui a changé depuis la dernière exécution.
+La déduplication garde une copie lorsque le même fichier apparaît plus d'une fois.
+Restaurez des fichiers à partir d'une sauvegarde que vous avez déjà faite.
+Sauvegardez vers un dossier local, un NAS, WebDAV, S3, NFS, Azure Blob, SFTP ou FTPS.
+Synchronisez un dossier via un stockage que vous contrôlez, et gardez les anciennes versions.
+Importez photos, vidéo et audio depuis une carte SD ou un appareil photo.
+Open source, sans compte, sans publicité et sans télémétrie.

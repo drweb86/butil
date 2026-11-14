@@ -1,0 +1,7 @@
+Sandaran tokokan hanya menyimpan yang berubah sejak larian terakhir.
+Penyahduplikasi meninggalkan satu salinan apabila fail yang sama muncul lebih daripada sekali.
+Pulihkan fail daripada sandaran yang sudah anda buat.
+Sandarkan ke folder tempatan, NAS, WebDAV, S3, NFS, Azure Blob, SFTP atau FTPS.
+Segerakkan folder melalui storan yang anda kawal, dan simpan versi lama.
+Import foto, video dan audio daripada kad SD atau kamera.
+Sumber terbuka, tanpa akaun, tanpa iklan dan tanpa telemetri.

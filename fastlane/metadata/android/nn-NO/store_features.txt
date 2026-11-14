@@ -1,0 +1,7 @@
+Den trinnvise tryggingskopien lagrar berre det som er endra sidan førre køyring.
+Deduplisering held på éin kopi når same fila finst meir enn éin gong.
+Attopprett filer frå ein tryggingskopi du alt har laga.
+Ta tryggingskopi til ei lokal mappe, NAS, WebDAV, S3, NFS, Azure Blob, SFTP eller FTPS.
+Synkroniser ei mappe via lagring du styrer, og ta vare på eldre versjonar.
+Importer foto, video og lyd frå eit SD-kort eller kamera.
+Open kjeldekode, utan konto, utan reklame og utan telemetri.

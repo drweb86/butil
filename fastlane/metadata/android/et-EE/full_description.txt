@@ -1,0 +1,10 @@
+<p>BUtil varundab, sünkroonib ja taastab faile. Järkjärgulised varukoopiad salvestavad ainult selle, mis muutus. Deduplitseerimine jätab ühe koopia, kui sama fail esineb rohkem kui üks kord.</p>
+<p><b>Kuhu failid lähevad</b></p>
+<p>Saatke varukoopiad kausta, NAS-i (SMB/CIFS) või WebDAV-i, S3-ühilduvasse salvestusruumi, NFS-i, Azure Blobisse, SFTP-sse või FTPS-i.</p>
+<ul>
+<li>Sünkroonige kaust teie hallatava salvestusruumi kaudu ja hoidke vanemaid versioone, kui failid muutuvad.</li>
+<li>Importige pilte, videot ja heli SD-kaardilt või kaamerast.</li>
+<li>Käivitage ülesandeid ajakava järgi, sealhulgas konsoolist.</li>
+</ul>
+<p>Salvestatud paroolid krüptitakse seadmes. Kontot, reklaami ega telemeetriat ei ole.</p>
+<p>BUtil on avatud lähtekoodiga. Oma kood on pühendatud avalikule omandile. Kolmandate osapoolte komponendid säilitavad oma litsentsid.</p>

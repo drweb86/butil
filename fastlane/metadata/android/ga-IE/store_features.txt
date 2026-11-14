@@ -1,0 +1,7 @@
+Ní choinníonn an cúltaca incrimintach ach an méid a d'athraigh ó ritheadh deireanach.
+Fágann dí-dhúbláil cóip amháin nuair a thagann an comhad céanna aníos níos mó ná uair amháin.
+Athchóirigh comhaid ó chúltaca atá déanta agat cheana.
+Déan cúltaca chuig fillteán áitiúil, NAS, WebDAV, S3, NFS, Azure Blob, SFTP nó FTPS.
+Sioncrónaigh fillteán trí stóras atá faoi do smacht, agus coinnigh leaganacha níos sine.
+Iompórtáil grianghraif, físeán agus fuaim ó chárta SD nó ó cheamara.
+Foinse oscailte, gan chuntas, gan fhógraí agus gan teiliméadracht.
