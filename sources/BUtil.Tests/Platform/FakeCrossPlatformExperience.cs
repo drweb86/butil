@@ -70,6 +70,10 @@ internal sealed class FakeCrossPlatformExperience : CrossPlatformExperience
         {
         }
 
+        public void UpdateInstallationFolder()
+        {
+        }
+
         public void OpenLink(string url)
         {
         }

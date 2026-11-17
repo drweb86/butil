@@ -45,7 +45,22 @@ public class EditSynchronizationTaskViewModel : BUtil.UI.Controls.ViewModelBase
         };
 
         var schedule = PlatformSpecificExperience.Instance.GetTaskSchedulerService();
-        WhenTaskViewModel = new BUtil.UI.Controls.WhenTaskViewModel(isNew ? new ScheduleInfo() { Time = new System.TimeSpan(Constants.DefaultHours, Constants.DefaultMinutes, 0), Days = [System.DayOfWeek.Monday, System.DayOfWeek.Tuesday, System.DayOfWeek.Wednesday, System.DayOfWeek.Thursday, System.DayOfWeek.Friday, System.DayOfWeek.Saturday, System.DayOfWeek.Sunday] } : schedule.GetSchedule(taskName) ?? new ScheduleInfo(), isNew);
+        var defaultSchedule = new ScheduleInfo
+        {
+            Days =
+            [
+                System.DayOfWeek.Monday,
+                System.DayOfWeek.Tuesday,
+                System.DayOfWeek.Wednesday,
+                System.DayOfWeek.Thursday,
+                System.DayOfWeek.Friday,
+                System.DayOfWeek.Saturday,
+                System.DayOfWeek.Sunday,
+            ],
+        };
+        WhenTaskViewModel = new BUtil.UI.Controls.WhenTaskViewModel(
+            isNew ? defaultSchedule : schedule.GetSchedule(taskName) ?? new ScheduleInfo(),
+            isNew);
         StorageViewModel = new BUtil.UI.Controls.StorageViewModel(model.To, Resources.LeftMenu_Where, isNew, Resources.SynchronizationTask_Storage_Help);
         StorageViewModel.PropertyChanged += (_, e) =>
         {

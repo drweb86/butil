@@ -6,6 +6,9 @@ namespace BUtil.Windows.Services;
 
 public static class WindowsStorePackage
 {
+    public const string ConsoleExecutionAlias = "SiarheiKuchuk.BUtil.Console.exe";
+    public const string UiExecutionAlias = "SiarheiKuchuk.BUtil.UI.exe";
+
     private const int AppModelErrorNoPackage = 15700;
     private const uint FileShareReadWriteDelete = 0x1 | 0x2 | 0x4;
     private const uint OpenExisting = 3;
@@ -42,6 +45,30 @@ public static class WindowsStorePackage
         }
 
         return StripDosDevicePrefix(buffer.ToString());
+    }
+
+    /// <summary>
+    /// Store updates install each version into a new folder. App execution aliases live under
+    /// %LOCALAPPDATA%\Microsoft\WindowsApps and keep the same path across those updates.
+    /// </summary>
+    public static string ResolveLaunchTarget(string aliasFileName, string installPath)
+    {
+        if (!IsSandboxed)
+            return installPath;
+
+        var windowsApps = Path.Combine(
+            Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
+            "Microsoft",
+            "WindowsApps");
+        if (Directory.Exists(windowsApps))
+        {
+            var resolved = UnsandboxPath(windowsApps);
+            if (resolved.EndsWith($"{Path.DirectorySeparatorChar}WindowsApps", StringComparison.OrdinalIgnoreCase)
+                || resolved.EndsWith($"{Path.AltDirectorySeparatorChar}WindowsApps", StringComparison.OrdinalIgnoreCase))
+                windowsApps = resolved;
+        }
+
+        return Path.Combine(windowsApps, aliasFileName);
     }
 
     private static string StripDosDevicePrefix(string path)

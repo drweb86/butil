@@ -86,6 +86,10 @@ public class SupportManager : ISupportManager
             """;
     }
 
+    public void UpdateInstallationFolder()
+    {
+    }
+
     public void LaunchTasksAppOrExit()
     {
         LaunchUiAppInternal();

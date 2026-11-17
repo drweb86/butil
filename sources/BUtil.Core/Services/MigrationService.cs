@@ -12,6 +12,7 @@ public sealed class MigrationService(ILocalFileSystem fileSystem)
     public void RunAll()
     {
         RunOnce("CreateTaskShortcuts", CreateTaskShortcuts);
+        PlatformSpecificExperience.Instance.SupportManager.UpdateInstallationFolder();
     }
 
     public void RunOnce(string migrationName, Action migration)

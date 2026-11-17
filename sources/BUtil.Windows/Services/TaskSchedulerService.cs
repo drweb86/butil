@@ -1,5 +1,6 @@
 using BUtil.Core.FileSystem;
 using BUtil.Core.Options;
+using BUtil.Core.Services;
 using Microsoft.Win32.TaskScheduler;
 
 
@@ -77,9 +78,9 @@ public class TaskSchedulerService : ITaskSchedulerService
 
         taskDefinition.Actions.Add(new ExecAction
         {
-            WorkingDirectory = Directories.BinariesDir,
+            WorkingDirectory = WindowsSupportManager.ExternalWorkingDirectory,
             Arguments = $"\"Task={taskName}\" {SchedulerLaunchArguments.HideConsole}",
-            Path = $"\"{WindowsSupportManager.ConsoleBackupTool}\""
+            Path = WindowsSupportManager.ConsoleBackupTool
         });
 
         TaskService.Instance.RootFolder.RegisterTaskDefinition(schedulerTaskName, taskDefinition);
@@ -115,6 +116,78 @@ public class TaskSchedulerService : ITaskSchedulerService
         }
 
         return result;
+    }
+
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "<Pending>")]
+    internal void RetargetScheduledTasks(IReadOnlyList<string> taskNames)
+    {
+        var desiredPath = WindowsSupportManager.ConsoleBackupTool;
+        var desiredWorkDir = WindowsSupportManager.ExternalWorkingDirectory;
+        foreach (var taskName in taskNames)
+        {
+            try
+            {
+                var scheduledTask = TaskService.Instance.FindTask(GetScheduledTaskName(taskName), false);
+                if (scheduledTask == null)
+                    continue;
+
+                var changed = false;
+                foreach (var action in scheduledTask.Definition.Actions)
+                {
+                    if (action is not ExecAction exec || !IsOurConsoleLaunch(exec))
+                        continue;
+                    if (!SameLocation(exec.Path, desiredPath))
+                    {
+                        exec.Path = desiredPath;
+                        changed = true;
+                    }
+                    if (!SameLocation(exec.WorkingDirectory, desiredWorkDir))
+                    {
+                        exec.WorkingDirectory = desiredWorkDir;
+                        changed = true;
+                    }
+                }
+
+                if (changed)
+                    scheduledTask.RegisterChanges();
+            }
+            catch
+            {
+                // One broken task must not stop the others from being repaired.
+            }
+        }
+    }
+
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "<Pending>")]
+    private static bool IsOurConsoleLaunch(ExecAction exec)
+    {
+        var fileName = Path.GetFileName(NormalizePath(exec.Path));
+        var launchesConsole = fileName.Equals("butilc.exe", StringComparison.OrdinalIgnoreCase)
+            || fileName.Equals(WindowsStorePackage.ConsoleExecutionAlias, StringComparison.OrdinalIgnoreCase);
+        return launchesConsole
+            && exec.Arguments?.Contains($"{TasksAppArguments.RunTask}=", StringComparison.Ordinal) == true;
+    }
+
+    private static bool SameLocation(string? left, string? right) =>
+        string.Equals(NormalizePath(left), NormalizePath(right), StringComparison.OrdinalIgnoreCase);
+
+    private static string NormalizePath(string? path)
+    {
+        if (string.IsNullOrWhiteSpace(path))
+            return string.Empty;
+
+        var trimmed = path.Trim().Trim('"');
+        if (trimmed.Length == 0)
+            return string.Empty;
+
+        try
+        {
+            return Path.GetFullPath(trimmed);
+        }
+        catch
+        {
+            return trimmed;
+        }
     }
 
     private static string GetScheduledTaskName(string taskName)

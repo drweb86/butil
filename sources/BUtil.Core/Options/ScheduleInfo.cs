@@ -9,7 +9,7 @@ public class ScheduleInfo
     public ScheduleInfo()
     {
         Days = [];
-        Time = new TimeSpan(Constants.DefaultHours, Constants.DefaultMinutes, 0);
+        Time = new TimeSpan(DateTime.Now.Hour, 0, 0);
     }
 
     public List<DayOfWeek> Days { get; set; }

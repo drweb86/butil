@@ -10,6 +10,8 @@ public interface ISupportManager
 
     void LaunchTasksAppOrExit();
 
+    void UpdateInstallationFolder();
+
     void OpenLink(string url);
     bool CanOpenLink { get; }
     bool SupportsSmileIcons { get; }

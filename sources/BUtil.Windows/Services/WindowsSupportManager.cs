@@ -12,10 +12,16 @@ public class WindowsSupportManager : ISupportManager
 {
     public const string ApplicationName = "BUtil";
 
-    public static readonly string UIApp =
-        Path.Combine(Directories.BinariesDir, "butil-ui.Desktop.exe");
-    public static readonly string ConsoleBackupTool =
-        Path.Combine(Directories.BinariesDir, "butilc.exe");
+    public static readonly string UIApp = WindowsStorePackage.ResolveLaunchTarget(
+        WindowsStorePackage.UiExecutionAlias,
+        Path.Combine(Directories.BinariesDir, "butil-ui.Desktop.exe"));
+    public static readonly string ConsoleBackupTool = WindowsStorePackage.ResolveLaunchTarget(
+        WindowsStorePackage.ConsoleExecutionAlias,
+        Path.Combine(Directories.BinariesDir, "butilc.exe"));
+
+    internal static string ExternalWorkingDirectory =>
+        Path.GetDirectoryName(ConsoleBackupTool) ?? Directories.BinariesDir;
+
     internal static readonly string TaskShortcutsFolder = Path.Combine(
         Environment.GetFolderPath(Environment.SpecialFolder.Programs),
         ApplicationName);
@@ -26,13 +32,29 @@ public class WindowsSupportManager : ISupportManager
     internal static string GetTaskShortcutArguments(string taskName) =>
         $"{TasksAppArguments.LaunchTask} {QuoteArgument($"{TasksAppArguments.RunTask}={taskName}")}";
 
-    internal static string GetTaskShortcutWorkingDirectory() => Directories.BinariesDir;
+    internal static string GetTaskShortcutWorkingDirectory() => ExternalWorkingDirectory;
 
     internal static string GetTaskShortcutIconPath() => UIApp;
 
     public void LaunchTasksAppOrExit()
     {
         Process.Start(UIApp);
+    }
+
+    public void UpdateInstallationFolder()
+    {
+        try
+        {
+            var taskNames = new TaskStore(new LocalFileSystem()).GetNames().ToList();
+            var shortcuts = new WindowsTaskShortcutService();
+            foreach (var taskName in taskNames)
+                shortcuts.CreateOrUpdate(taskName);
+            new TaskSchedulerService().RetargetScheduledTasks(taskNames);
+        }
+        catch
+        {
+            // Rewriting launchers must not block startup after the install folder changes.
+        }
     }
 
     #region Link
