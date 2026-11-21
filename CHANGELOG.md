@@ -1,10 +1,12 @@
-# 2026.11.16
+# 2026.11.21
 (unpublished)
 
 ## Bug Fixes
 - Windows Store: task shortcuts in the Start menu, scheduled tasks, and copied command lines keep working after an upgrade. Each Store version is installed into a new folder; those entries now use a stable app execution alias. Open BUtil once after this update so existing entries are rewritten.
-- Scheduler: a new task defaults to the current hour, with minutes at 00. The previous 23:50 default did not run when the PC was already turned off.
 
+## Changes
+- Scheduler: a new task defaults to the current hour, with minutes at 00. The previous 23:50 default did not run when the PC was already turned off.
+- Italian language was updated by https://github.com/bovirus .
 
 # 2026.11.15
 
