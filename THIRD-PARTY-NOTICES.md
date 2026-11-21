@@ -6,8 +6,9 @@ The Windows builds include the .NET runtime. It is listed with the MIT component
 
 ## Apache-2.0
 
-- **AWSSDK.Core** 4.0.103. Authors: Amazon Web Services. [https://github.com/aws/aws-sdk-net/](https://github.com/aws/aws-sdk-net/)
-- **AWSSDK.S3** 4.0.104.12. Authors: Amazon Web Services. [https://github.com/aws/aws-sdk-net/](https://github.com/aws/aws-sdk-net/)
+- **AWSSDK.Core** 4.1.1.1. Authors: Amazon Web Services. [https://github.com/aws/aws-sdk-net/](https://github.com/aws/aws-sdk-net/)
+- **AWSSDK.Extensions.Numerics** 4.1.0. Authors: Amazon Web Services. [https://github.com/aws/aws-sdk-net/](https://github.com/aws/aws-sdk-net/)
+- **AWSSDK.S3** 4.1.2. Authors: Amazon Web Services. [https://github.com/aws/aws-sdk-net/](https://github.com/aws/aws-sdk-net/)
 
 ## CC0-1.0
 
@@ -38,8 +39,8 @@ The Windows builds include the .NET runtime. It is listed with the MIT component
 - **Avalonia.Win32** 12.1.6. Copyright 2013-2026 © The AvaloniaUI Project. [https://avaloniaui.net/](https://avaloniaui.net/)
 - **Avalonia.X11** 12.1.6. Copyright 2013-2026 © The AvaloniaUI Project. [https://avaloniaui.net/](https://avaloniaui.net/)
 - **Azure.Core** 1.60.0. © Microsoft Corporation. All rights reserved. [https://github.com/Azure/azure-sdk-for-net/blob/Azure.Core_1.60.0/sdk/core/Azure.Core/README.md](https://github.com/Azure/azure-sdk-for-net/blob/Azure.Core_1.60.0/sdk/core/Azure.Core/README.md)
-- **Azure.Storage.Blobs** 12.30.1. © Microsoft Corporation. All rights reserved. [https://github.com/Azure/azure-sdk-for-net/blob/Azure.Storage.Blobs_12.30.1/sdk/storage/Azure.Storage.Blobs/README.md](https://github.com/Azure/azure-sdk-for-net/blob/Azure.Storage.Blobs_12.30.1/sdk/storage/Azure.Storage.Blobs/README.md)
-- **Azure.Storage.Common** 12.29.0. © Microsoft Corporation. All rights reserved. [https://github.com/Azure/azure-sdk-for-net/blob/Azure.Storage.Common_12.29.0/sdk/storage/Azure.Storage.Common/README.md](https://github.com/Azure/azure-sdk-for-net/blob/Azure.Storage.Common_12.29.0/sdk/storage/Azure.Storage.Common/README.md)
+- **Azure.Storage.Blobs** 12.30.2. © Microsoft Corporation. All rights reserved. [https://github.com/Azure/azure-sdk-for-net/blob/Azure.Storage.Blobs_12.30.2/sdk/storage/Azure.Storage.Blobs/README.md](https://github.com/Azure/azure-sdk-for-net/blob/Azure.Storage.Blobs_12.30.2/sdk/storage/Azure.Storage.Blobs/README.md)
+- **Azure.Storage.Common** 12.29.1. © Microsoft Corporation. All rights reserved. [https://github.com/Azure/azure-sdk-for-net/blob/Azure.Storage.Common_12.29.1/sdk/storage/Azure.Storage.Common/README.md](https://github.com/Azure/azure-sdk-for-net/blob/Azure.Storage.Common_12.29.1/sdk/storage/Azure.Storage.Common/README.md)
 - **BouncyCastle.Cryptography** 2.7.0. Copyright © Legion of the Bouncy Castle Inc. 2000-2026. [https://www.bouncycastle.org/stable/nuget/csharp/website](https://www.bouncycastle.org/stable/nuget/csharp/website)
 - **CommunityToolkit.Mvvm** 8.4.2. (c) .NET Foundation and Contributors. All rights reserved. [https://github.com/CommunityToolkit/dotnet](https://github.com/CommunityToolkit/dotnet)
 - **FluentFTP** 55.1.0. Copyright (c) 2015 Robin Rodricks and FluentFTP Contributors. [https://github.com/robinrodricks/FluentFTP](https://github.com/robinrodricks/FluentFTP)
@@ -59,10 +60,10 @@ The Windows builds include the .NET runtime. It is listed with the MIT component
 - **SkiaSharp.NativeAssets.macOS** 3.119.4. © Microsoft Corporation. All rights reserved. [https://go.microsoft.com/fwlink/](https://go.microsoft.com/fwlink/)
 - **SkiaSharp.NativeAssets.WebAssembly** 3.119.4. © Microsoft Corporation. All rights reserved. [https://go.microsoft.com/fwlink/](https://go.microsoft.com/fwlink/)
 - **SkiaSharp.NativeAssets.Win32** 3.119.4. © Microsoft Corporation. All rights reserved. [https://go.microsoft.com/fwlink/](https://go.microsoft.com/fwlink/)
-- **SSH.NET** 2026.0.0. Copyright © Renci 2010-2026.
+- **SSH.NET** 2026.0.1. Copyright © Renci 2010-2026.
 - **System.ClientModel** 1.14.0. © Microsoft Corporation. All rights reserved. [https://github.com/Azure/azure-sdk-for-net/blob/System.ClientModel_1.14.0/sdk/core/System.ClientModel/README.md](https://github.com/Azure/azure-sdk-for-net/blob/System.ClientModel_1.14.0/sdk/core/System.ClientModel/README.md)
 - **System.Diagnostics.EventLog** 9.0.2. © Microsoft Corporation. All rights reserved. [https://dot.net/](https://dot.net/)
-- **System.IO.Hashing** 10.0.9. © Microsoft Corporation. All rights reserved. [https://dot.net/](https://dot.net/)
+- **System.IO.Hashing** 11.0.0. © Microsoft Corporation. All rights reserved. [https://dot.net/](https://dot.net/)
 - **System.Memory.Data** 10.0.9. © Microsoft Corporation. All rights reserved. [https://dot.net/](https://dot.net/)
 - **System.Security.Cryptography.ProtectedData** 11.0.0. © Microsoft Corporation. All rights reserved. [https://dot.net/](https://dot.net/)
 - **TaskScheduler** 2.12.2. Copyright © 2002-2025. [https://github.com/dahall/taskscheduler](https://github.com/dahall/taskscheduler)

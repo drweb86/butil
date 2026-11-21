@@ -7,7 +7,7 @@ Debug-only tooling (Compose UI tooling) is not part of the release build and is 
 ## Apache-2.0
 
 - **Kotlin standard library** 2.4.21. Copyright © JetBrains s.r.o. and contributors. [https://github.com/JetBrains/kotlin](https://github.com/JetBrains/kotlin)
-- **AndroidX Compose** (UI, Material3, Material icons), versions selected by Compose BOM 2026.09.00. Copyright © The Android Open Source Project. [https://developer.android.com/jetpack/compose](https://developer.android.com/jetpack/compose)
+- **AndroidX Compose** (UI, Material3, Material icons), versions selected by Compose BOM 2026.11.01. Copyright © The Android Open Source Project. [https://developer.android.com/jetpack/compose](https://developer.android.com/jetpack/compose)
 - **AndroidX Activity Compose** 1.13.0. Copyright © The Android Open Source Project.
 - **Kotlin coroutines** 1.11.0. Copyright © JetBrains s.r.o. and contributors. [https://github.com/Kotlin/kotlinx.coroutines](https://github.com/Kotlin/kotlinx.coroutines)
 - **desugar_jdk_libs** 2.1.5. Copyright © The Android Open Source Project. [https://github.com/google/desugar_jdk_libs](https://github.com/google/desugar_jdk_libs)

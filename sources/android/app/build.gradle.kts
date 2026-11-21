@@ -7,12 +7,16 @@ val screenshots = findProperty("screenshots")?.toString() == "true"
 
 android {
     namespace = "com.siarheikuchuk.butil"
-    compileSdk = 37
+    compileSdk {
+        version = release(37) {
+            minorApiLevel = 2
+        }
+    }
     buildToolsVersion = "36.0.0"
 
     defaultConfig {
         applicationId = "com.siarheikuchuk.butil"
-        minSdk = 23
+        minSdk = 24
         targetSdk = 36
         val defaultVersionCode = 20261115
         val defaultVersionName = "2026.11.15"
@@ -225,7 +229,7 @@ kotlin {
 
 dependencies {
     coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.5")
-    val composeBom = platform("androidx.compose:compose-bom:2026.09.00")
+    val composeBom = platform("androidx.compose:compose-bom:2026.11.01")
     implementation(composeBom)
     implementation("androidx.compose.ui:ui")
     implementation("androidx.compose.ui:ui-tooling-preview")
