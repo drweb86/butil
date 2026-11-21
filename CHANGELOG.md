@@ -1,5 +1,4 @@
 # 2026.11.21
-(unpublished)
 
 ## Bug Fixes
 - Windows Store: task shortcuts in the Start menu, scheduled tasks, and copied command lines keep working after an upgrade. Each Store version is installed into a new folder; those entries now use a stable app execution alias. Open BUtil once after this update so existing entries are rewritten.
