@@ -98,11 +98,15 @@
     <string name="import_skip_help">Iwwerspréngt Fichieren, déi schonn um Zil sinn oder déi scho virdru importéiert goufen.</string>
     <string name="import_delete">Kopéiert Daten vum Quellmedium läschen</string>
     <string name="import_min_date">Fichieren iwwersprangen, déi virun dësem Datum geännert goufen (jjjj-mm-dd):</string>
-    <string name="sync_help">Zwee-Wee Synchroniséierung vu Dateien tëscht Geräter mat zentraliséierter Späichere.</string>
+    <string name="sync_help">Hält en Dossier am Aklang mat engem zentraliséierte Späicher, deen Är Apparater deelen. Fänkt mat Liesen un a wiesselt dann op Zwee-Wee oder Schreiwen.</string>
     <string name="sync_storage_help">Gitt e reservéiert Lager un, iwwer dat d\'Apparater synchroniséieren. All Apparater sollen déi selwecht Plaz an datselwecht Passwuert benotzen.</string>
     <string name="sync_mode">Synchroniséierung Modus:</string>
     <string name="sync_mode_two_way">Zwee-Wee</string>
+    <string name="sync_mode_two_way_help">Kopéiert Ännerungen a béid Richtungen. Eng Datei, déi Dir hei derbäigesat, ännert oder läscht, gëtt um Späicher ugewannt, an eng Datei, déi am Späicher derbäigesat, geännert oder geläscht gouf, gëtt hei ugewannt. Wann déi selwecht Datei op béide Plaze geännert gouf, bleift d\'Kopie mat der spéiderer Ännerungszäit. Déi eeler Kopie bleift an enger fréierer Versioun am Späicher a kann restauréiert ginn. Wiesselt heihin no engem Laf am Modus Liesen, wann dësen Apparat schécken a kréie soll.</string>
     <string name="sync_mode_read">Liesen</string>
+    <string name="sync_mode_read_help">Luet de zentraliséierte Späicher an dësen Dossier erof. Dateien, déi am Späicher derbäigesat oder geännert goufen, ginn hei kopéiert, an Dateien, déi aus dem Späicher ewechgeholl goufen, ginn och hei ewechgeholl. Dësen Dossier gëtt ni eropgelueden. Dateien, déi nëmmen hei sinn, bleiwen esou wéi se sinn. Wann Dir eng Datei hei geännert hutt an d\'Kopie am Späicher anescht ass, ersetzt d\'Kopie aus dem Späicher Är Ännerung. Benotzt dëst op engem Apparat, deen nëmme Dateie soll kréien, a beim éischte Laf op engem neien Apparat.</string>
+    <string name="sync_mode_write">Schreiwen</string>
+    <string name="sync_mode_write_help">Verëffentlecht dësen Dossier als nächst Versioun um zentraliséierte Späicher. Déi Versioun entsprécht dësem Dossier: Dateien hei ginn eropgelueden, an Dateien, déi am Späicher sinn awer net an dësem Dossier, ginn aus dem Späicher geläscht. Näischt an dësem Dossier gëtt geännert oder geläscht. Aner Apparater kréien dësen Dossier beim nächste Laf. Fréier Versioune bleiwen am Späicher a kënne restauréiert ginn. Benotzt dëst, wann dëse Computer d\'Quell vun den Dateien ass, oder wann Dir den Dossier lokal korrigéiert hutt an de Späicher genee dozou passe soll.</string>
     <string name="sync_repository">Ënnerdossier vum Lager:</string>
     <string name="ftps_help">Deelt den ausgewielten Dossier iwwer explizitten FTPS mat engem selwer ënnerschriwwene Zertifikat. Soulaang d\'Aufgab leeft, kann en FTPS-Client am lokale Netzwierk verbannen.</string>
     <string name="ftps_user">Benotzer:</string>

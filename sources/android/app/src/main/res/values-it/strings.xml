@@ -95,11 +95,15 @@
     <string name="import_skip_help">Ignora i file già presenti nella destinazione o importati in precedenza.</string>
     <string name="import_delete">Elimina dati copiati dal supporto sorgente</string>
     <string name="import_min_date">Ignora i file modificati prima di (aaaa-mm-gg):</string>
-    <string name="sync_help">Sincronizzazione bidirezionale file tra dispositivi mediante archiviazione centralizzata.</string>
+    <string name="sync_help">Tiene una cartella allineata a un\'archiviazione centralizzata condivisa dai tuoi dispositivi. Inizia con Lettura, poi passa a Bidirezionale o Scrittura.</string>
     <string name="sync_storage_help">Indica un archivio dedicato attraverso cui i dispositivi si sincronizzano. Tutti i dispositivi devono usare la stessa posizione e la stessa password.</string>
     <string name="sync_mode">Modalità sincronizzazione:</string>
     <string name="sync_mode_two_way">Bidirezionale</string>
+    <string name="sync_mode_two_way_help">Copia le modifiche in entrambe le direzioni. Un file che aggiungi, modifichi o elimini qui viene applicato all\'archiviazione e un file aggiunto, modificato o eliminato nell\'archiviazione viene applicato qui. Se lo stesso file è cambiato in entrambi i posti, viene tenuta la copia con l\'ora di modifica più recente. La copia più vecchia resta in una versione precedente dell\'archiviazione e può essere ripristinata. Passa a questa modalità dopo un\'esecuzione in Lettura, quando questo dispositivo deve sia inviare sia ricevere.</string>
     <string name="sync_mode_read">Lettura</string>
+    <string name="sync_mode_read_help">Scarica l\'archiviazione centralizzata in questa cartella. I file aggiunti o modificati nell\'archiviazione vengono copiati qui e i file rimossi dall\'archiviazione vengono rimossi anche da qui. Questa cartella non viene mai inviata. I file presenti solo qui restano come sono. Se hai modificato un file qui e la copia nell\'archiviazione è diversa, la copia dell\'archiviazione sostituisce la modifica. Usalo su un dispositivo che deve solo ricevere file e alla prima esecuzione su un dispositivo nuovo.</string>
+    <string name="sync_mode_write">Scrittura</string>
+    <string name="sync_mode_write_help">Pubblica questa cartella come versione successiva nell\'archiviazione centralizzata. Quella versione coincide con questa cartella: i file qui vengono inviati e i file che sono nell\'archiviazione ma non in questa cartella vengono eliminati dall\'archiviazione. Niente in questa cartella viene modificato o eliminato. Gli altri dispositivi ricevono questa cartella alla prossima esecuzione. Le versioni precedenti restano nell\'archiviazione e possono essere ripristinate. Usalo quando questo computer è l\'origine dei file, o quando hai corretto la cartella in locale e vuoi che l\'archiviazione coincida esattamente.</string>
     <string name="sync_repository">Sottocartella del deposito:</string>
     <string name="ftps_help">Condivide la cartella scelta con FTPS esplicito e un certificato autofirmato. Mentre l\'attività è in esecuzione, un client FTPS della rete locale può connettersi.</string>
     <string name="ftps_port">Porta:</string>

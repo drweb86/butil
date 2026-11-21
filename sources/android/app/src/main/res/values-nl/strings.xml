@@ -96,11 +96,15 @@
     <string name="import_skip_help">Slaat bestanden over die al op de bestemming staan of eerder zijn geïmporteerd.</string>
     <string name="import_delete">Gekopieerde gegevens van bronmedium verwijderen</string>
     <string name="import_min_date">Bestanden overslaan die zijn gewijzigd vóór (jjjj-mm-dd):</string>
-    <string name="sync_help">Tweerichtingssynchronisatie van bestanden tussen apparaten met gecentraliseerde opslag.</string>
+    <string name="sync_help">Houdt een map gelijk met een centrale opslag die uw apparaten delen. Begin met Lezen en schakel daarna over naar Tweerichtings of Schrijven.</string>
     <string name="sync_storage_help">Geef een eigen opslag op waarmee apparaten synchroniseren. Alle apparaten moeten dezelfde locatie en hetzelfde wachtwoord gebruiken.</string>
     <string name="sync_mode">Synchronisatiemodus:</string>
     <string name="sync_mode_two_way">Tweerichtings</string>
+    <string name="sync_mode_two_way_help">Kopieert wijzigingen in beide richtingen. Een bestand dat u hier toevoegt, bewerkt of verwijdert, wordt op de opslag toegepast, en een bestand dat op de opslag is toegevoegd, bewerkt of verwijderd, wordt hier toegepast. Als hetzelfde bestand op beide plaatsen is gewijzigd, blijft de kopie met het latere wijzigingstijdstip behouden. De oudere kopie blijft in een eerdere versie op de opslag en kan worden hersteld. Schakel hiernaar over na een uitvoering in Lezen, wanneer dit apparaat moet verzenden en ontvangen.</string>
     <string name="sync_mode_read">Lezen</string>
+    <string name="sync_mode_read_help">Downloadt de centrale opslag naar deze map. Bestanden die op de opslag zijn toegevoegd of gewijzigd, worden hierheen gekopieerd, en bestanden die van de opslag zijn verwijderd, worden hier verwijderd. Deze map wordt nooit geüpload. Bestanden die alleen hier bestaan, blijven zoals ze zijn. Als u hier een bestand hebt bewerkt en de kopie op de opslag anders is, vervangt de kopie van de opslag uw bewerking. Gebruik dit op een apparaat dat alleen bestanden moet ontvangen, en bij de eerste uitvoering op een nieuw apparaat.</string>
+    <string name="sync_mode_write">Schrijven</string>
+    <string name="sync_mode_write_help">Publiceert deze map als de volgende versie op de centrale opslag. Die versie komt overeen met deze map: bestanden hier worden geüpload, en bestanden die op de opslag staan maar niet in deze map, worden van de opslag verwijderd. Niets in deze map wordt gewijzigd of verwijderd. Andere apparaten ontvangen deze map bij de volgende uitvoering. Eerdere versies blijven op de opslag en kunnen worden hersteld. Gebruik dit wanneer deze computer de bron van de bestanden is, of wanneer u de map lokaal hebt gecorrigeerd en wilt dat de opslag er precies mee overeenkomt.</string>
     <string name="sync_repository">Submap van de opslag:</string>
     <string name="ftps_help">Deelt de gekozen map via expliciete FTPS met een zelfondertekend certificaat. Zolang de taak loopt, kan een FTPS-client in het lokale netwerk verbinding maken.</string>
     <string name="ftps_port">Poort:</string>

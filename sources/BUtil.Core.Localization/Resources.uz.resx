@@ -934,14 +934,26 @@ Batafsil tavsifni quyidagi havoladan ko'ring.</value>
   <data name="SynchronizationMode_Field_Read" xml:space="preserve">
     <value>O'qish</value>
   </data>
+  <data name="SynchronizationMode_Field_Read_Help" xml:space="preserve">
+    <value>Markazlashtirilgan xotirani shu jildga yuklab oladi. Xotirada qo'shilgan yoki o'zgartirilgan fayllar bu yerga nusxalanadi, xotiradan olib tashlangan fayllar bu yerdan ham olib tashlanadi. Bu jild hech qachon yuklanmaydi. Faqat shu yerda bor fayllar o'z holicha qoladi. Agar siz bu yerda faylni tahrirlagan bo'lsangiz va xotiradagi nusxa boshqacha bo'lsa, xotira nusxasi tahriringiz o'rnini egallaydi. Buni faqat fayl olishi kerak bo'lgan qurilmada va yangi qurilmadagi birinchi ishga tushirishda ishlating.</value>
+  </data>
   <data name="SynchronizationMode_Field_TwoWay" xml:space="preserve">
     <value>Ikki tomonlama</value>
+  </data>
+  <data name="SynchronizationMode_Field_TwoWay_Help" xml:space="preserve">
+    <value>O'zgarishlarni ikkala tomonga nusxalaydi. Siz bu yerda qo'shadigan, tahrirlaydigan yoki o'chiradigan fayl xotiraga qo'llanadi, xotirada qo'shilgan, tahrirlangan yoki o'chirilgan fayl esa bu yerga qo'llanadi. Bir xil fayl ikkala joyda o'zgargan bo'lsa, keyinroq o'zgartirilgan nusxa qoladi. Eski nusxa xotiraning oldingi versiyasida qoladi va uni tiklash mumkin. Bu qurilma yuborishi va olishi kerak bo'lganda, O'qishdan keyin bunga o'ting.</value>
+  </data>
+  <data name="SynchronizationMode_Field_Write" xml:space="preserve">
+    <value>Yozish</value>
+  </data>
+  <data name="SynchronizationMode_Field_Write_Help" xml:space="preserve">
+    <value>Bu jildni markazlashtirilgan xotiradagi keyingi versiya sifatida e'lon qiladi. U versiya shu jildga mos keladi: bu yerdagi fayllar yuklanadi, xotirada bor-u bu jildda yo'q fayllar xotiradan o'chiriladi. Bu jildda hech narsa o'zgarmaydi va o'chirilmaydi. Boshqa qurilmalar keyingi ishga tushirishda shu jildni oladi. Oldingi versiyalar xotirada qoladi va ularni tiklash mumkin. Bu kompyuter fayllar manbai bo'lganda yoki jildni joyida to'g'rilab, xotira aynan unga mos kelishini xohlaganingizda bundan foydalaning.</value>
   </data>
   <data name="SynchronizationTask_Create" xml:space="preserve">
     <value>Sinxronizatsiya</value>
   </data>
   <data name="SynchronizationTask_Help" xml:space="preserve">
-    <value>Markazlashtirilgan xotira yordamida qurilmalar o'rtasida fayllarning ikki tomonlama sinxronizatsiyasi.</value>
+    <value>Jildni qurilmalaringiz ulashadigan markazlashtirilgan xotira bilan mos holda saqlaydi. O'qishdan boshlang, so'ng Ikki tomonlama yoki Yozishga o'ting.</value>
   </data>
   <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
     <value>Qurilmalar sinxronlash uchun foydalanadigan noyob markazlashtirilgan saqlash joyini belgilang. Barcha ishtirok etuvchi qurilmalar bir xil saqlash joyidan foydalanishi kerak. Bu joyni ilova to'liq boshqaradi — ma'lumotlarni o'chirishni ham o'z ichiga olgan holda — shuning uchun uni boshqa hech narsa uchun ishlatmang va bir nechta vazifalar o'rtasida ulashmang.</value>

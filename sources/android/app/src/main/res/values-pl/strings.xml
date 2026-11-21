@@ -96,11 +96,15 @@
     <string name="import_skip_help">Pomija pliki, które już są w miejscu docelowym albo były importowane wcześniej.</string>
     <string name="import_delete">Usuń skopiowane dane z nośnika źródłowego</string>
     <string name="import_min_date">Pomiń pliki zmienione przed (rrrr-mm-dd):</string>
-    <string name="sync_help">Dwukierunkowa synchronizacja plików między urządzeniami z użyciem scentralizowanego magazynu.</string>
+    <string name="sync_help">Utrzymuje folder zgodnie ze scentralizowanym magazynem współdzielonym przez urządzenia. Zacznij od Odczyt, a potem przełącz na Dwukierunkowa lub Zapis.</string>
     <string name="sync_storage_help">Wskaż osobny magazyn, przez który urządzenia się synchronizują. Wszystkie urządzenia powinny używać tego samego miejsca i tego samego hasła.</string>
     <string name="sync_mode">Tryb synchronizacji:</string>
     <string name="sync_mode_two_way">Dwukierunkowa</string>
+    <string name="sync_mode_two_way_help">Kopiuje zmiany w obie strony. Plik dodany, edytowany lub usunięty tutaj jest stosowany w magazynie, a plik dodany, edytowany lub usunięty w magazynie jest stosowany tutaj. Jeśli ten sam plik zmienił się w obu miejscach, zostaje kopia z późniejszym czasem zmiany. Starsza kopia pozostaje w poprzedniej wersji w magazynie i można ją przywrócić. Przełącz na ten tryb po uruchomieniu Odczyt, gdy to urządzenie ma wysyłać i odbierać.</string>
     <string name="sync_mode_read">Odczyt</string>
+    <string name="sync_mode_read_help">Pobiera scentralizowany magazyn do tego folderu. Pliki dodane lub zmienione w magazynie są kopiowane tutaj, a pliki usunięte z magazynu są usuwane także stąd. Ten folder nigdy nie jest wysyłany. Pliki, które istnieją tylko tutaj, pozostają bez zmian. Jeśli edytowano tu plik, a kopia w magazynie jest inna, kopia z magazynu zastępuje tę edycję. Użyj tego na urządzeniu, które ma tylko odbierać pliki, oraz przy pierwszym uruchomieniu na nowym urządzeniu.</string>
+    <string name="sync_mode_write">Zapis</string>
+    <string name="sync_mode_write_help">Publikuje ten folder jako następną wersję w scentralizowanym magazynie. Ta wersja odpowiada temu folderowi: pliki stąd są wysyłane, a pliki, które są w magazynie, ale nie ma ich w tym folderze, są usuwane z magazynu. Nic w tym folderze nie jest zmieniane ani usuwane. Inne urządzenia otrzymają ten folder przy następnym uruchomieniu. Poprzednie wersje zostają w magazynie i można je przywrócić. Użyj tego, gdy ten komputer jest źródłem plików albo gdy folder poprawiono lokalnie i magazyn ma dokładnie mu odpowiadać.</string>
     <string name="sync_repository">Podfolder repozytorium:</string>
     <string name="ftps_help">Udostępnia wybrany folder przez jawny FTPS z certyfikatem podpisanym samodzielnie. Gdy zadanie działa, klient FTPS w sieci lokalnej może się połączyć.</string>
     <string name="ftps_user">Użytkownik:</string>

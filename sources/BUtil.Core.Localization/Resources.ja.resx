@@ -920,14 +920,26 @@ bin.
   <data name="SynchronizationMode_Field_Read" xml:space="preserve">
     <value>読み取り</value>
   </data>
+  <data name="SynchronizationMode_Field_Read_Help" xml:space="preserve">
+    <value>集中ストレージをこのフォルダーにダウンロードします。ストレージで追加または変更されたファイルはここにコピーされ、ストレージから削除されたファイルはここからも削除されます。このフォルダーがアップロードされることはありません。ここだけにあるファイルはそのまま残ります。ここでファイルを編集し、ストレージ側のコピーが異なる場合は、ストレージ側のコピーが編集内容を置き換えます。ファイルを受け取るだけの機器と、新しい機器での最初の実行に使います。</value>
+  </data>
   <data name="SynchronizationMode_Field_TwoWay" xml:space="preserve">
     <value>双方向</value>
+  </data>
+  <data name="SynchronizationMode_Field_TwoWay_Help" xml:space="preserve">
+    <value>変更を両方向にコピーします。ここで追加、編集、削除したファイルはストレージに反映され、ストレージで追加、編集、削除されたファイルはここに反映されます。同じファイルが両方で変わった場合は、更新日時が新しい方が残ります。古い方はストレージの以前のバージョンに残り、復元できます。この機器が送受信するようになったら、読み取りの実行のあとでこれに切り替えます。</value>
+  </data>
+  <data name="SynchronizationMode_Field_Write" xml:space="preserve">
+    <value>書き込み</value>
+  </data>
+  <data name="SynchronizationMode_Field_Write_Help" xml:space="preserve">
+    <value>このフォルダーを集中ストレージの次のバージョンとして公開します。そのバージョンはこのフォルダーと一致します。ここにあるファイルはアップロードされ、ストレージにあってこのフォルダーにないファイルはストレージから削除されます。このフォルダーの中は変更も削除もされません。ほかの機器は次の実行でこのフォルダーを受け取ります。以前のバージョンはストレージに残り、復元できます。このコンピューターがファイルの元であるとき、またはフォルダーを手元で直してストレージをそれと完全に一致させたいときに使います。</value>
   </data>
   <data name="SynchronizationTask_Create" xml:space="preserve">
     <value>同期</value>
   </data>
   <data name="SynchronizationTask_Help" xml:space="preserve">
-    <value>中央集約型ストレージを使用したデバイス間のファイルの双方向同期。</value>
+    <value>機器で共有する集中ストレージとフォルダーをそろえます。読み取りから始め、そのあと双方向または書き込みに切り替えます。</value>
   </data>
   <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
     <value>デバイスが同期に使用する、専用の一元管理されたストレージを指定してください。参加するすべてのデバイスは同じストレージの場所を使用する必要があります。この場所はデータの削除も含めてアプリが完全に管理するため、他の用途には使用せず、複数のタスク間で共有しないでください。</value>

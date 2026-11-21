@@ -933,14 +933,26 @@ Glejte podroben opis na naslednji povezavi.</value>
   <data name="SynchronizationMode_Field_Read" xml:space="preserve">
     <value>Branje</value>
   </data>
+  <data name="SynchronizationMode_Field_Read_Help" xml:space="preserve">
+    <value>Prenese centralizirano shrambo v to mapo. Datoteke, dodane ali spremenjene v shrambi, se kopirajo sem, datoteke, odstranjene iz shrambe, pa se odstranijo tudi od tukaj. Ta mapa se nikoli ne pošlje. Datoteke, ki obstajajo samo tukaj, ostanejo, kot so. Če ste tukaj uredili datoteko in je kopija v shrambi drugačna, kopija iz shrambe nadomesti vaš popravek. Uporabite to na napravi, ki naj samo prejema datoteke, in ob prvem zagonu na novi napravi.</value>
+  </data>
   <data name="SynchronizationMode_Field_TwoWay" xml:space="preserve">
     <value>Dvosmerno</value>
+  </data>
+  <data name="SynchronizationMode_Field_TwoWay_Help" xml:space="preserve">
+    <value>Kopira spremembe v obe smeri. Datoteka, ki jo tukaj dodate, uredite ali izbrišete, se uporabi v shrambi, datoteka, dodana, urejena ali izbrisana v shrambi, pa se uporabi tukaj. Če se ista datoteka spremeni na obeh mestih, ostane kopija s poznejšim časom spremembe. Starejša kopija ostane v prejšnji različici v shrambi in jo je mogoče obnoviti. Preklopite na to po zagonu Branje, ko naj ta naprava pošilja in prejema.</value>
+  </data>
+  <data name="SynchronizationMode_Field_Write" xml:space="preserve">
+    <value>Pisanje</value>
+  </data>
+  <data name="SynchronizationMode_Field_Write_Help" xml:space="preserve">
+    <value>Objavi to mapo kot naslednjo različico v centralizirani shrambi. Ta različica ustreza tej mapi: datoteke od tukaj se pošljejo, datoteke, ki so v shrambi, a niso v tej mapi, pa se iz shrambe izbrišejo. V tej mapi se nič ne spremeni in ne izbriše. Druge naprave prejmejo to mapo ob naslednjem zagonu. Prejšnje različice ostanejo v shrambi in jih je mogoče obnoviti. Uporabite to, ko je ta računalnik vir datotek ali ko ste mapo lokalno popravili in želite, da shramba natančno ustreza.</value>
   </data>
   <data name="SynchronizationTask_Create" xml:space="preserve">
     <value>Sinhronizacija</value>
   </data>
   <data name="SynchronizationTask_Help" xml:space="preserve">
-    <value>Dvosmerna sinhronizacija datotek med napravami z uporabo centralizirane shrambe.</value>
+    <value>Ohranja mapo usklajeno s centralizirano shrambo, ki si jo delijo vaše naprave. Začnite z Branje in nato preklopite na Dvosmerno ali Pisanje.</value>
   </data>
   <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
     <value>Navedite edinstveno centralizirano shrambo, prek katere se naprave sinhronizirajo. Vse sodelujoče naprave naj uporabljajo isto lokacijo shrambe. To mesto v celoti upravlja aplikacija — vključno z brisanjem podatkov — zato ga ne uporabljajte za nič drugega in ga ne delite med več opravili.</value>

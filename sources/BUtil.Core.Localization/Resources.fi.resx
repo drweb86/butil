@@ -933,14 +933,26 @@ Katso yksityiskohtainen kuvaus seuraavasta linkistä.</value>
   <data name="SynchronizationMode_Field_Read" xml:space="preserve">
     <value>Luku</value>
   </data>
+  <data name="SynchronizationMode_Field_Read_Help" xml:space="preserve">
+    <value>Lataa keskitetyn tallennustilan tähän kansioon. Tallennustilaan lisätyt tai siellä muutetut tiedostot kopioidaan tänne, ja tallennustilasta poistetut tiedostot poistetaan täältä. Tätä kansiota ei koskaan lähetetä. Tiedostot, jotka ovat vain täällä, jätetään ennalleen. Jos muokkasit tiedostoa täällä ja tallennustilan kopio on erilainen, tallennustilan kopio korvaa muokkauksesi. Käytä tätä laitteessa, jonka pitää vain vastaanottaa tiedostoja, ja uuden laitteen ensimmäisellä ajolla.</value>
+  </data>
   <data name="SynchronizationMode_Field_TwoWay" xml:space="preserve">
     <value>Kaksisuuntainen</value>
+  </data>
+  <data name="SynchronizationMode_Field_TwoWay_Help" xml:space="preserve">
+    <value>Kopioi muutokset molempiin suuntiin. Tiedosto, jonka lisäät, muokkaat tai poistat täällä, viedään tallennustilaan, ja tallennustilaan lisätty, siellä muokattu tai poistettu tiedosto tuodaan tänne. Jos sama tiedosto on muuttunut molemmissa paikoissa, säilytetään kopio, jonka muokkausaika on myöhäisempi. Vanhempi kopio jää tallennustilan aiempaan versioon ja sen voi palauttaa. Vaihda tähän Luku-ajon jälkeen, kun tämän laitteen pitää sekä lähettää että vastaanottaa.</value>
+  </data>
+  <data name="SynchronizationMode_Field_Write" xml:space="preserve">
+    <value>Kirjoitus</value>
+  </data>
+  <data name="SynchronizationMode_Field_Write_Help" xml:space="preserve">
+    <value>Julkaisee tämän kansion seuraavana versiona keskitetyssä tallennustilassa. Versio vastaa tätä kansiota: täällä olevat tiedostot lähetetään, ja tiedostot, jotka ovat tallennustilassa mutta eivät tässä kansiossa, poistetaan tallennustilasta. Tässä kansiossa ei muuteta eikä poisteta mitään. Muut laitteet saavat tämän kansion seuraavalla ajolla. Aiemmat versiot jäävät tallennustilaan ja ne voi palauttaa. Käytä tätä, kun tämä tietokone on tiedostojen lähde tai kun olet korjannut kansion paikallisesti ja haluat tallennustilan vastaavan sitä täsmälleen.</value>
   </data>
   <data name="SynchronizationTask_Create" xml:space="preserve">
     <value>Synkronointi</value>
   </data>
   <data name="SynchronizationTask_Help" xml:space="preserve">
-    <value>Kaksisuuntainen tiedostojen synkronointi laitteiden välillä keskitettyä tallennustilaa käyttäen.</value>
+    <value>Pitää kansion samassa tilassa laitteidesi jakaman keskitetyn tallennustilan kanssa. Aloita tilasta Luku ja vaihda sitten tilaan Kaksisuuntainen tai Kirjoitus.</value>
   </data>
   <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
     <value>Määritä yksilöllinen keskitetty tallennustila, jonka kautta laitteet synkronoituvat. Kaikkien osallistuvien laitteiden tulisi käyttää samaa tallennussijaintia. Sovellus hallinnoi tätä sijaintia kokonaan — mukaan lukien tietojen poistaminen — joten älä käytä sitä mihinkään muuhun äläkä jaa sitä useiden tehtävien kesken.</value>

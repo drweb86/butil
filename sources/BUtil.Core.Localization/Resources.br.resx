@@ -933,14 +933,26 @@ See detailed description in the following link.</value>
   <data name="SynchronizationMode_Field_Read" xml:space="preserve">
     <value>Read</value>
   </data>
+  <data name="SynchronizationMode_Field_Read_Help" xml:space="preserve">
+    <value>Pellgargañ a ra ar stokañ kreizennet en teuliad-mañ. Ar restroù ouzhpennet pe cheñchet er stokañ a vez eilet amañ, hag ar restroù lamet eus ar stokañ a vez lamet ac'hann. Morse ne vez karget an teuliad-mañ. Ar restroù zo amañ hepken a chom evel m'emaint. Ma kemmoc'h ur restr amañ ha ma'z eo disheñvel an eilad er stokañ, e kemer an eilad-se lec'h ho kemmadenn. Implijit an dra-se war un trevnad a rank degemer restroù hepken, hag evit ar red kentañ war un trevnad nevez.</value>
+  </data>
   <data name="SynchronizationMode_Field_TwoWay" xml:space="preserve">
     <value>Two-way</value>
+  </data>
+  <data name="SynchronizationMode_Field_TwoWay_Help" xml:space="preserve">
+    <value>Eilañ a ra ar cheñchamantoù en daou du. Ur restr a ouzhpennit, a gemmit pe a ziverkit amañ a vez lakaet war ar stokañ, hag ur restr ouzhpennet, kemmet pe diverket er stokañ a vez lakaet amañ. Ma'z eo bet cheñchet ar memes restr en daou lec'h, e vez miret an eilad gant an eur cheñch diwezhatoc'h. An eilad koshoc'h a chom en un handelv kent er stokañ hag e c'haller e adsevel. Tremenit d'an dra-se goude ur red Lenn, pa rank an trevnad-mañ kas ha degemer.</value>
+  </data>
+  <data name="SynchronizationMode_Field_Write" xml:space="preserve">
+    <value>Skrivañ</value>
+  </data>
+  <data name="SynchronizationMode_Field_Write_Help" xml:space="preserve">
+    <value>Embann a ra an teuliad-mañ evel an handelv da zont war ar stokañ kreizennet. Klotañ a ra an handelv-se gant an teuliad-mañ: ar restroù amañ a vez karget, hag ar restroù zo er stokañ met n'int ket en teuliad-mañ a vez diverket eus ar stokañ. Netra en teuliad-mañ na vez cheñchet pe ziverket. An trevnadoù all a zegemero an teuliad-mañ ar wech a zeu ma redont. An handelvoù kent a chom er stokañ hag e c'haller o adsevel. Implijit an dra-se pa vez an urzhiataer-mañ mammenn ar restroù, pe pa hoc'h eus reizhet an teuliad en diabarzh ha pa fell deoc'h e klotfe ar stokañ rik gantañ.</value>
   </data>
   <data name="SynchronizationTask_Create" xml:space="preserve">
     <value>Synchronization</value>
   </data>
   <data name="SynchronizationTask_Help" xml:space="preserve">
-    <value>Two-way synchronization of files between devices using centralized storage.</value>
+    <value>Derc'hel a ra un teuliad a-live gant ur stokañ kreizennet rannet gant ho trevnadoù. Krogit gant Lenn, ha trement da Div-tu pe Skrivañ.</value>
   </data>
   <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
     <value>Erspizit ur bladenn kadaviñ kreizennekaet hepken en em sinkronaocha an trevnadoù drezi. Ret eo d'an holl drevnadoù kemeret perzh en implijout ar memes lec'h kadaviñ. Merañ a ra an arload ar bladenn-mañ en he fezh — en o zouez dilemel roadennoù — neuze n'eo ket dav he implijout evit un dra all, ha n'eo ket dav he rannañ etre meur a dreuzoberiadur.</value>

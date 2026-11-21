@@ -933,14 +933,26 @@ A részletes leírást az alábbi linken találja.</value>
   <data name="SynchronizationMode_Field_Read" xml:space="preserve">
     <value>Olvasás</value>
   </data>
+  <data name="SynchronizationMode_Field_Read_Help" xml:space="preserve">
+    <value>A központosított tárolót ebbe a mappába tölti le. A tárolóban hozzáadott vagy módosított fájlok ide másolódnak, a tárolóból eltávolított fájlok pedig innen is törlődnek. Ez a mappa soha nem töltődik fel. A csak itt lévő fájlok változatlanok maradnak. Ha itt szerkesztett egy fájlt, és a tároló másolata eltér, a tároló másolata felülírja a szerkesztését. Olyan eszközön használja, amelynek csak fájlokat kell fogadnia, és új eszköz első futásakor.</value>
+  </data>
   <data name="SynchronizationMode_Field_TwoWay" xml:space="preserve">
     <value>Kétirányú</value>
+  </data>
+  <data name="SynchronizationMode_Field_TwoWay_Help" xml:space="preserve">
+    <value>A változásokat mindkét irányba másolja. Az itt hozzáadott, szerkesztett vagy törölt fájl a tárolóra kerül, a tárolóban hozzáadott, szerkesztett vagy törölt fájl pedig ide. Ha ugyanaz a fájl mindkét helyen megváltozott, a későbbi módosítási idejű másolat marad meg. A régebbi másolat a tároló egy korábbi verziójában marad, és visszaállítható. Olvasás futása után váltson erre, amikor ennek az eszköznek küldenie és fogadnia is kell.</value>
+  </data>
+  <data name="SynchronizationMode_Field_Write" xml:space="preserve">
+    <value>Írás</value>
+  </data>
+  <data name="SynchronizationMode_Field_Write_Help" xml:space="preserve">
+    <value>Ezt a mappát a központosított tároló következő verziójaként közzéteszi. Az a verzió megegyezik ezzel a mappával: az itteni fájlok feltöltődnek, a tárolóban lévő, de ebben a mappában nem szereplő fájlok pedig törlődnek a tárolóból. Ebben a mappában semmi nem változik és nem törlődik. A többi eszköz a következő futáskor megkapja ezt a mappát. A korábbi verziók a tárolóban maradnak, és visszaállíthatók. Akkor használja, ha ez a számítógép a fájlok forrása, vagy ha helyben javította a mappát, és azt szeretné, hogy a tároló pontosan egyezzen vele.</value>
   </data>
   <data name="SynchronizationTask_Create" xml:space="preserve">
     <value>Szinkronizáció</value>
   </data>
   <data name="SynchronizationTask_Help" xml:space="preserve">
-    <value>Kétirányú fájlszinkronizáció eszközök között központosított tároló használatával.</value>
+    <value>Egy mappát összhangban tart az eszközei által megosztott központosított tárolóval. Kezdje az Olvasás móddal, majd váltson Kétirányú vagy Írás módra.</value>
   </data>
   <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
     <value>Adjon meg egy egyedi, központosított tárolót, amelyen keresztül az eszközök szinkronizálnak. Minden résztvevő eszköznek ugyanazt a tárolási helyet kell használnia. Ezt a helyet teljes egészében az alkalmazás kezeli — beleértve az adatok törlését is —, ezért ne használja semmi másra, és ne ossza meg több feladat között.</value>

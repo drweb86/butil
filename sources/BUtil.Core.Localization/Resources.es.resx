@@ -933,14 +933,26 @@ Consulta la descripción detallada en el siguiente enlace.</value>
   <data name="SynchronizationMode_Field_Read" xml:space="preserve">
     <value>Lectura</value>
   </data>
+  <data name="SynchronizationMode_Field_Read_Help" xml:space="preserve">
+    <value>Descarga el almacenamiento centralizado en esta carpeta. Los archivos añadidos o cambiados en el almacenamiento se copian aquí, y los archivos quitados del almacenamiento se quitan de aquí. Esta carpeta no se sube nunca. Los archivos que solo existen aquí se dejan como están. Si editó un archivo aquí y la copia del almacenamiento es distinta, la copia del almacenamiento sustituye su edición. Úselo en un dispositivo que solo deba recibir archivos, y en la primera ejecución en un dispositivo nuevo.</value>
+  </data>
   <data name="SynchronizationMode_Field_TwoWay" xml:space="preserve">
     <value>Bidireccional</value>
+  </data>
+  <data name="SynchronizationMode_Field_TwoWay_Help" xml:space="preserve">
+    <value>Copia los cambios en ambas direcciones. Un archivo que añada, edite o elimine aquí se aplica al almacenamiento, y un archivo añadido, editado o eliminado en el almacenamiento se aplica aquí. Si el mismo archivo cambió en ambos sitios, se conserva la copia con la hora de modificación más reciente. La copia más antigua permanece en una versión anterior del almacenamiento y se puede restaurar. Cambie a este modo después de una ejecución de Lectura, cuando este dispositivo deba enviar y recibir.</value>
+  </data>
+  <data name="SynchronizationMode_Field_Write" xml:space="preserve">
+    <value>Escritura</value>
+  </data>
+  <data name="SynchronizationMode_Field_Write_Help" xml:space="preserve">
+    <value>Publica esta carpeta como la versión siguiente en el almacenamiento centralizado. Esa versión coincide con esta carpeta: los archivos de aquí se suben, y los archivos que están en el almacenamiento pero no en esta carpeta se eliminan del almacenamiento. Nada de esta carpeta se cambia ni se elimina. Los demás dispositivos reciben esta carpeta la próxima vez que se ejecuten. Las versiones anteriores permanecen en el almacenamiento y se pueden restaurar. Úselo cuando este equipo es el origen de los archivos, o cuando ha corregido la carpeta en local y quiere que el almacenamiento coincida exactamente.</value>
   </data>
   <data name="SynchronizationTask_Create" xml:space="preserve">
     <value>Sincronización</value>
   </data>
   <data name="SynchronizationTask_Help" xml:space="preserve">
-    <value>Sincronización bidireccional de archivos entre dispositivos utilizando almacenamiento centralizado.</value>
+    <value>Mantiene una carpeta al día con un almacenamiento centralizado compartido por sus dispositivos. Empiece en Lectura y después cambie a Bidireccional o Escritura.</value>
   </data>
   <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
     <value>Especifique un almacenamiento centralizado único a través del cual se sincronizan los dispositivos. Todos los dispositivos participantes deben usar la misma ubicación de almacenamiento. Esta ubicación es gestionada completamente por la aplicación — incluida la eliminación de datos —, por lo que no debe utilizarla para nada más ni compartirla entre varias tareas.</value>

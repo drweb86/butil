@@ -933,14 +933,26 @@ Se detaljeret beskrivelse i følgende link.</value>
   <data name="SynchronizationMode_Field_Read" xml:space="preserve">
     <value>Læs</value>
   </data>
+  <data name="SynchronizationMode_Field_Read_Help" xml:space="preserve">
+    <value>Henter det centraliserede lager ned i denne mappe. Filer, der er tilføjet eller ændret på lageret, kopieres hertil, og filer, der er fjernet fra lageret, fjernes her. Denne mappe overføres aldrig. Filer, der kun findes her, bliver som de er. Hvis du har redigeret en fil her, og kopien på lageret er anderledes, erstatter lagerkopien din redigering. Brug dette på en enhed, der kun skal modtage filer, og ved første kørsel på en ny enhed.</value>
+  </data>
   <data name="SynchronizationMode_Field_TwoWay" xml:space="preserve">
     <value>Tovejs</value>
+  </data>
+  <data name="SynchronizationMode_Field_TwoWay_Help" xml:space="preserve">
+    <value>Kopierer ændringer i begge retninger. En fil, du tilføjer, redigerer eller sletter her, anvendes på lageret, og en fil, der er tilføjet, redigeret eller slettet på lageret, anvendes her. Hvis den samme fil er ændret begge steder, beholdes kopien med det seneste ændringstidspunkt. Den ældre kopi bliver i en tidligere version på lageret og kan gendannes. Skift til dette efter en kørsel i Læs, når denne enhed skal både sende og modtage.</value>
+  </data>
+  <data name="SynchronizationMode_Field_Write" xml:space="preserve">
+    <value>Skriv</value>
+  </data>
+  <data name="SynchronizationMode_Field_Write_Help" xml:space="preserve">
+    <value>Udgiver denne mappe som den næste version på det centraliserede lager. Den version svarer til denne mappe: filer her overføres, og filer, der er på lageret, men ikke i denne mappe, slettes fra lageret. Intet i denne mappe ændres eller slettes. Andre enheder modtager denne mappe, næste gang de kører. Tidligere versioner bliver på lageret og kan gendannes. Brug dette, når denne computer er kilden til filerne, eller når du har rettet mappen lokalt og vil have, at lageret svarer nøjagtigt til den.</value>
   </data>
   <data name="SynchronizationTask_Create" xml:space="preserve">
     <value>Synkronisering</value>
   </data>
   <data name="SynchronizationTask_Help" xml:space="preserve">
-    <value>Tovejs synkronisering af filer mellem enheder med centraliseret lager.</value>
+    <value>Holder en mappe i trit med et centraliseret lager, som dine enheder deler. Start med Læs, og skift derefter til Tovejs eller Skriv.</value>
   </data>
   <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
     <value>Angiv en unik, centraliseret lagerplacering, som enheder synkroniserer gennem. Alle deltagende enheder bør bruge den samme lagerplacering. Denne placering administreres udelukkende af appen — herunder sletning af data — så brug den ikke til andet, og del den ikke mellem flere opgaver.</value>

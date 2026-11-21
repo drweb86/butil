@@ -933,14 +933,26 @@ Vaadake üksikasjalikku kirjeldust järgmisel lingil.</value>
   <data name="SynchronizationMode_Field_Read" xml:space="preserve">
     <value>Lugemine</value>
   </data>
+  <data name="SynchronizationMode_Field_Read_Help" xml:space="preserve">
+    <value>Laadib tsentraliseeritud hoidla sellesse kausta. Hoidlasse lisatud või seal muudetud failid kopeeritakse siia ning hoidlast eemaldatud failid eemaldatakse siit. Seda kausta ei laadita kunagi üles. Failid, mis on ainult siin, jäävad endiseks. Kui muutsite faili siin ja hoidla koopia on erinev, asendab hoidla koopia teie muudatuse. Kasutage seda seadmes, mis peaks ainult faile vastu võtma, ja uue seadme esimesel käitusel.</value>
+  </data>
   <data name="SynchronizationMode_Field_TwoWay" xml:space="preserve">
     <value>Kahesuunaline</value>
+  </data>
+  <data name="SynchronizationMode_Field_TwoWay_Help" xml:space="preserve">
+    <value>Kopeerib muudatused mõlemas suunas. Fail, mille siin lisate, muudate või kustutate, rakendatakse hoidlas, ning hoidlas lisatud, muudetud või kustutatud fail rakendatakse siin. Kui sama fail muutus mõlemas kohas, jääb alles hilisema muutmisajaga koopia. Vanem koopia jääb hoidla varasemasse versiooni ja selle saab taastada. Lülituge sellele pärast Lugemise käitust, kui see seade peaks nii saatma kui ka vastu võtma.</value>
+  </data>
+  <data name="SynchronizationMode_Field_Write" xml:space="preserve">
+    <value>Kirjutamine</value>
+  </data>
+  <data name="SynchronizationMode_Field_Write_Help" xml:space="preserve">
+    <value>Avaldab selle kausta tsentraliseeritud hoidla järgmise versioonina. See versioon vastab sellele kaustale: siinsed failid laaditakse üles ning failid, mis on hoidlas, kuid mitte selles kaustas, kustutatakse hoidlast. Selles kaustas ei muudeta ega kustutata midagi. Teised seadmed saavad selle kausta järgmisel käitusel. Varasemad versioonid jäävad hoidlasse ja need saab taastada. Kasutage seda, kui see arvuti on failide allikas või kui olete kausta kohapeal parandanud ja soovite, et hoidla vastaks sellele täpselt.</value>
   </data>
   <data name="SynchronizationTask_Create" xml:space="preserve">
     <value>Sünkroniseerimine</value>
   </data>
   <data name="SynchronizationTask_Help" xml:space="preserve">
-    <value>Kahesuunaline failide sünkroniseerimine seadmete vahel tsentraliseeritud hoidla abil.</value>
+    <value>Hoiab kausta kooskõlas tsentraliseeritud hoidlaga, mida teie seadmed jagavad. Alustage režiimist Lugemine ja lülituge seejärel režiimile Kahesuunaline või Kirjutamine.</value>
   </data>
   <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
     <value>Määrake unikaalne tsentraalne salvestuskoht, mille kaudu seadmed sünkroonivad. Kõik osalevad seadmed peaksid kasutama sama salvestuskohta. Seda asukohta haldab täielikult rakendus — sealhulgas andmete kustutamine —, seega ärge kasutage seda millegi muu jaoks ega jagage seda mitme ülesande vahel.</value>

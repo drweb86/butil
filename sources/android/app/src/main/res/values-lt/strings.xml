@@ -101,11 +101,15 @@
     <string name="import_skip_help">Praleidžia failus, kurie jau yra paskirtyje arba buvo importuoti anksčiau.</string>
     <string name="import_delete">Ištrinti nukopijuotus duomenis iš šaltinio laikmenos</string>
     <string name="import_min_date">Praleisti failus, pakeistus iki (mmmm-mm-dd):</string>
-    <string name="sync_help">Dvikryptė failų sinchronizacija tarp įrenginių naudojant centralizuotą saugyklą.</string>
+    <string name="sync_help">Laiko aplanką suderintą su centralizuota saugykla, kuria dalijasi jūsų įrenginiai. Pradėkite nuo Skaitymo, tada perjunkite į Dvikryptį arba Rašymą.</string>
     <string name="sync_storage_help">Nurodykite atskirą saugyklą, per kurią įrenginiai sinchronizuojasi. Visi įrenginiai turi naudoti tą pačią vietą ir tą patį slaptažodį.</string>
     <string name="sync_mode">Sinchronizacijos režimas:</string>
     <string name="sync_mode_two_way">Dvikryptis</string>
+    <string name="sync_mode_two_way_help">Kopijuoja pakeitimus abiem kryptimis. Failas, kurį čia pridedate, redaguojate arba ištrinate, pritaikomas saugykloje, o saugykloje pridėtas, redaguotas arba ištrintas failas pritaikomas čia. Jei tas pats failas pasikeitė abiejose vietose, paliekama kopija su vėlesniu keitimo laiku. Senesnė kopija lieka ankstesnėje saugyklos versijoje ir ją galima atkurti. Perjunkite į tai po Skaitymo paleidimo, kai šis įrenginys turi ir siųsti, ir gauti.</string>
     <string name="sync_mode_read">Skaitymas</string>
+    <string name="sync_mode_read_help">Atsisiunčia centralizuotą saugyklą į šį aplanką. Saugykloje pridėti arba pakeisti failai nukopijuojami čia, o iš saugyklos pašalinti failai pašalinami ir iš čia. Šis aplankas niekada nesiunčiamas. Failai, kurie yra tik čia, lieka tokie, kokie yra. Jei redagavote failą čia, o saugyklos kopija skiriasi, saugyklos kopija pakeičia jūsų pakeitimą. Naudokite tai įrenginyje, kuris turi tik gauti failus, ir pirmą kartą paleidžiant naujame įrenginyje.</string>
+    <string name="sync_mode_write">Rašymas</string>
+    <string name="sync_mode_write_help">Paskelbia šį aplanką kaip kitą centralizuotos saugyklos versiją. Ta versija atitinka šį aplanką: failai čia įkeliami, o failai, kurie yra saugykloje, bet nėra šiame aplanke, ištrinami iš saugyklos. Šiame aplanke niekas nekeičiama ir neištrinama. Kiti įrenginiai gaus šį aplanką kito paleidimo metu. Ankstesnės versijos lieka saugykloje ir jas galima atkurti. Naudokite tai, kai šis kompiuteris yra failų šaltinis arba kai aplanką pataisėte vietoje ir norite, kad saugykla tiksliai atitiktų.</string>
     <string name="sync_repository">Saugyklos poaplankis:</string>
     <string name="ftps_help">Bendrina pasirinktą aplanką tiesioginiu FTPS su savarankiškai pasirašytu liudijimu. Kol užduotis veikia, vietinio tinklo FTPS klientas gali prisijungti.</string>
     <string name="ftps_port">Prievadas:</string>

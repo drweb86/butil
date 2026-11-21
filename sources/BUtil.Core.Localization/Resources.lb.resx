@@ -933,14 +933,26 @@ See detailed description in the following link.</value>
   <data name="SynchronizationMode_Field_Read" xml:space="preserve">
     <value>Liesen</value>
   </data>
+  <data name="SynchronizationMode_Field_Read_Help" xml:space="preserve">
+    <value>Luet de zentraliséierte Späicher an dësen Dossier erof. Dateien, déi am Späicher derbäigesat oder geännert goufen, ginn hei kopéiert, an Dateien, déi aus dem Späicher ewechgeholl goufen, ginn och hei ewechgeholl. Dësen Dossier gëtt ni eropgelueden. Dateien, déi nëmmen hei sinn, bleiwen esou wéi se sinn. Wann Dir eng Datei hei geännert hutt an d'Kopie am Späicher anescht ass, ersetzt d'Kopie aus dem Späicher Är Ännerung. Benotzt dëst op engem Apparat, deen nëmme Dateie soll kréien, a beim éischte Laf op engem neien Apparat.</value>
+  </data>
   <data name="SynchronizationMode_Field_TwoWay" xml:space="preserve">
     <value>Zwee-Wee</value>
+  </data>
+  <data name="SynchronizationMode_Field_TwoWay_Help" xml:space="preserve">
+    <value>Kopéiert Ännerungen a béid Richtungen. Eng Datei, déi Dir hei derbäigesat, ännert oder läscht, gëtt um Späicher ugewannt, an eng Datei, déi am Späicher derbäigesat, geännert oder geläscht gouf, gëtt hei ugewannt. Wann déi selwecht Datei op béide Plaze geännert gouf, bleift d'Kopie mat der spéiderer Ännerungszäit. Déi eeler Kopie bleift an enger fréierer Versioun am Späicher a kann restauréiert ginn. Wiesselt heihin no engem Laf am Modus Liesen, wann dësen Apparat schécken a kréie soll.</value>
+  </data>
+  <data name="SynchronizationMode_Field_Write" xml:space="preserve">
+    <value>Schreiwen</value>
+  </data>
+  <data name="SynchronizationMode_Field_Write_Help" xml:space="preserve">
+    <value>Verëffentlecht dësen Dossier als nächst Versioun um zentraliséierte Späicher. Déi Versioun entsprécht dësem Dossier: Dateien hei ginn eropgelueden, an Dateien, déi am Späicher sinn awer net an dësem Dossier, ginn aus dem Späicher geläscht. Näischt an dësem Dossier gëtt geännert oder geläscht. Aner Apparater kréien dësen Dossier beim nächste Laf. Fréier Versioune bleiwen am Späicher a kënne restauréiert ginn. Benotzt dëst, wann dëse Computer d'Quell vun den Dateien ass, oder wann Dir den Dossier lokal korrigéiert hutt an de Späicher genee dozou passe soll.</value>
   </data>
   <data name="SynchronizationTask_Create" xml:space="preserve">
     <value>Synchroniséierung</value>
   </data>
   <data name="SynchronizationTask_Help" xml:space="preserve">
-    <value>Zwee-Wee Synchroniséierung vu Dateien tëscht Geräter mat zentraliséierter Späichere.</value>
+    <value>Hält en Dossier am Aklang mat engem zentraliséierte Späicher, deen Är Apparater deelen. Fänkt mat Liesen un a wiesselt dann op Zwee-Wee oder Schreiwen.</value>
   </data>
   <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
     <value>Gitt eng eenzegaarteg, zentraliséiert Späicherplaz un, iwwer déi Apparater synchroniséieren. All deelhuelend Apparat soll déiselwecht Späicherplaz benotzen. Dës Plaz gëtt komplett vun der App verwalt — dorënner d'Läschen vun Donnéeën — dofir benotzt se net fir eppes anescht, an deelt se net tëscht méi Aufgaben.</value>

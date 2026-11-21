@@ -449,5 +449,85 @@ public class SynchronizationDecisionServiceTests
     }
 
     #endregion
+
+    #region Write Sync Decision Making
+
+    [TestMethod(DisplayName = "Write: the stored version matches the local folder")]
+    public void Write_PublishesLocalFolder()
+    {
+        var service = new SynchronizationDecisionService(null);
+        var timeStamp = new DateTime(2026, 1, 1, 0, 0, 0, DateTimeKind.Utc);
+        var localState = new SynchronizationState();
+        localState.FileSystemEntries.Add(new SynchronizationStateFile("keep.txt", timeStamp, "sha-keep", 1));
+        localState.FileSystemEntries.Add(new SynchronizationStateFile("changed.txt", timeStamp, "sha-old", 1));
+        localState.FileSystemEntries.Add(new SynchronizationStateFile("gone.txt", timeStamp, "sha-gone", 1));
+
+        var actualFiles = new SynchronizationState();
+        actualFiles.FileSystemEntries.Add(new SynchronizationStateFile("keep.txt", timeStamp, "sha-keep", 1));
+        actualFiles.FileSystemEntries.Add(new SynchronizationStateFile("changed.txt", timeStamp, "sha-local", 2));
+        actualFiles.FileSystemEntries.Add(new SynchronizationStateFile("only-local.txt", timeStamp, "sha-new", 3));
+
+        var remoteState = new SynchronizationState();
+        remoteState.FileSystemEntries.Add(new SynchronizationStateFile("keep.txt", timeStamp, "sha-keep", 1));
+        remoteState.FileSystemEntries.Add(new SynchronizationStateFile("changed.txt", timeStamp.AddHours(5), "sha-remote", 4));
+        remoteState.FileSystemEntries.Add(new SynchronizationStateFile("only-remote.txt", timeStamp.AddHours(5), "sha-remote-only", 5));
+
+        var decisions = service.Decide(SynchronizationTaskModelMode.Write, localState, actualFiles, remoteState).ToList();
+
+        Assert.IsTrue(decisions.All(x => x.ActualFileAction == SynchronizationDecision.DoNothing));
+        AssertDecision(decisions, "keep.txt", SynchronizationDecision.DoNothing);
+        AssertDecision(decisions, "changed.txt", SynchronizationDecision.Update);
+        AssertDecision(decisions, "only-local.txt", SynchronizationDecision.Update);
+        AssertDecision(decisions, "only-remote.txt", SynchronizationDecision.Delete);
+
+        var gone = decisions.Single(x => x.RelativeFileName == "gone.txt");
+        Assert.AreEqual(SynchronizationDecision.DoNothing, gone.RemoteAction);
+        Assert.IsTrue(gone.ForceUpdateState);
+
+        var published = decisions
+            .Where(x => x.ExistsLocally && x.RemoteAction != SynchronizationDecision.Delete)
+            .Select(x => x.RelativeFileName)
+            .OrderBy(x => x)
+            .ToArray();
+        CollectionAssert.AreEqual(new[] { "changed.txt", "keep.txt", "only-local.txt" }, published);
+    }
+
+    [TestMethod(DisplayName = "Write: a newer remote edit does not replace the local file")]
+    public void Write_LocalWinsOverNewerRemote()
+    {
+        var service = new SynchronizationDecisionService(null);
+        var timeStamp = new DateTime(2026, 1, 1, 0, 0, 0, DateTimeKind.Utc);
+        var localState = new SynchronizationState();
+        localState.FileSystemEntries.Add(new SynchronizationStateFile("a.txt", timeStamp, "sha-local", 1));
+        var actualFiles = new SynchronizationState();
+        actualFiles.FileSystemEntries.Add(new SynchronizationStateFile("a.txt", timeStamp, "sha-local", 1));
+        var remoteState = new SynchronizationState();
+        remoteState.FileSystemEntries.Add(new SynchronizationStateFile("a.txt", timeStamp.AddDays(2), "sha-remote", 9));
+
+        var item = service.Decide(SynchronizationTaskModelMode.Write, localState, actualFiles, remoteState).Single();
+
+        Assert.AreEqual(SynchronizationDecision.DoNothing, item.ActualFileAction);
+        Assert.AreEqual(SynchronizationDecision.Update, item.RemoteAction);
+    }
+
+    [TestMethod]
+    public void SynchronizationMode_ValuesStayCompatibleWithSavedTasks()
+    {
+        Assert.AreEqual(0, (int)SynchronizationTaskModelMode.TwoWay);
+        Assert.AreEqual(1, (int)SynchronizationTaskModelMode.Read);
+        Assert.AreEqual(2, (int)SynchronizationTaskModelMode.Write);
+        Assert.AreEqual(SynchronizationTaskModelMode.Read, new SynchronizationTaskModelOptionsV2().SynchronizationMode);
+    }
+
+    private static void AssertDecision(
+        List<SynchronizationConsolidatedFileInfo> decisions,
+        string relativeFileName,
+        SynchronizationDecision remoteAction)
+    {
+        var item = decisions.Single(x => x.RelativeFileName == relativeFileName);
+        Assert.AreEqual(remoteAction, item.RemoteAction);
+    }
+
+    #endregion
 }
 

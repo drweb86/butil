@@ -933,14 +933,26 @@ Skatiet detalizētu aprakstu šajā saitē.</value>
   <data name="SynchronizationMode_Field_Read" xml:space="preserve">
     <value>Lasīšana</value>
   </data>
+  <data name="SynchronizationMode_Field_Read_Help" xml:space="preserve">
+    <value>Lejupielādē centralizēto krātuvi šajā mapē. Krātuvē pievienotie vai mainītie faili tiek kopēti šeit, un no krātuves noņemtie faili tiek noņemti arī no šejienes. Šī mape nekad netiek augšupielādēta. Faili, kas ir tikai šeit, paliek tādi, kā ir. Ja rediģējāt failu šeit un krātuves kopija ir citāda, krātuves kopija aizstāj jūsu labojumu. Izmantojiet to ierīcē, kurai jāsaņem tikai faili, un pirmajā palaišanā jaunā ierīcē.</value>
+  </data>
   <data name="SynchronizationMode_Field_TwoWay" xml:space="preserve">
     <value>Divvirzienu</value>
+  </data>
+  <data name="SynchronizationMode_Field_TwoWay_Help" xml:space="preserve">
+    <value>Kopē izmaiņas abos virzienos. Fails, ko šeit pievienojat, rediģējat vai dzēšat, tiek lietots krātuvē, un krātuvē pievienots, rediģēts vai dzēsts fails tiek lietots šeit. Ja tas pats fails mainījās abās vietās, tiek paturēta kopija ar vēlāku izmaiņu laiku. Vecākā kopija paliek krātuves iepriekšējā versijā, un to var atjaunot. Pārslēdzieties uz šo pēc Lasīšanas palaišanas, kad šai ierīcei jāsūta un jāsaņem.</value>
+  </data>
+  <data name="SynchronizationMode_Field_Write" xml:space="preserve">
+    <value>Rakstīšana</value>
+  </data>
+  <data name="SynchronizationMode_Field_Write_Help" xml:space="preserve">
+    <value>Publicē šo mapi kā nākamo versiju centralizētajā krātuvē. Šī versija atbilst šai mapei: faili šeit tiek augšupielādēti, un faili, kas ir krātuvē, bet nav šajā mapē, tiek dzēsti no krātuves. Šajā mapē nekas netiek mainīts vai dzēsts. Citas ierīces saņems šo mapi nākamajā palaišanā. Iepriekšējās versijas paliek krātuvē, un tās var atjaunot. Izmantojiet to, kad šis dators ir failu avots vai kad esat labojis mapi lokāli un vēlaties, lai krātuve precīzi atbilstu.</value>
   </data>
   <data name="SynchronizationTask_Create" xml:space="preserve">
     <value>Sinhronizācija</value>
   </data>
   <data name="SynchronizationTask_Help" xml:space="preserve">
-    <value>Divvirzienu failu sinhronizācija starp ierīcēm, izmantojot centralizētu krātuvi.</value>
+    <value>Uztur mapi saskaņā ar centralizētu krātuvi, ko koplieto jūsu ierīces. Sāciet ar Lasīšanu un pēc tam pārslēdzieties uz Divvirzienu vai Rakstīšanu.</value>
   </data>
   <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
     <value>Norādiet unikālu, centralizētu krātuvi, caur kuru ierīces sinhronizējas. Visām iesaistītajām ierīcēm jāizmanto viena un tā pati krātuves atrašanās vieta. Šo atrašanās vietu pilnībā pārvalda lietotne — tostarp datu dzēšanu, — tāpēc neizmantojiet to nekam citam un nekopīgojiet to vairākiem uzdevumiem.</value>

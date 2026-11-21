@@ -930,14 +930,26 @@ See detailed description in the following link.</value>
   <data name="SynchronizationMode_Field_Read" xml:space="preserve">
     <value>Read</value>
   </data>
+  <data name="SynchronizationMode_Field_Read_Help" xml:space="preserve">
+    <value>Kop fal n̄kpọ n̄kpọ emi odude ke itie unim nkpo ke folda emi. Fal emi edianade midighe ekpụhọde ke itie unim nkpo eyekop ke mmi, nnyụn̄ fal emi esiohode oto itie unim nkpo eyesio ke mmi. Folda emi iduhe eyewet ka itie unim nkpo. Fal emi odude kpọt ke mmi eyeberede nte enye odude. Edieke afo ekpụhọde fal ke mmi nnyụn̄ kopi ke itie unim nkpo edi nkọwa, kopi oro eyetak nkpụhọde fo. Kama emi ke defais emi ekpetde ibọ fal kpọt, ye ke ini akpa ke defais obufa.</value>
+  </data>
   <data name="SynchronizationMode_Field_TwoWay" xml:space="preserve">
     <value>Two-way</value>
+  </data>
+  <data name="SynchronizationMode_Field_TwoWay_Help" xml:space="preserve">
+    <value>Kop nkpụhọde ke mme usụn̄ iba. Fal emi afo diande, kpụhọde midighe sọhịde ke mmi eyesin ke itie unim nkpo, nnyụn̄ fal emi edianade, ekpụhọde midighe esọhịde ke itie unim nkpo eyesin ke mmi. Edieke fal kiet ekpụhọde ke mme itie iba, eyenim kopi emi ekpụhọde ke ini ikpehe. Kopi akpa eyesụn̄ ke version ekebede ke itie unim nkpo, ekeme ndifiak. Kpụhọ ka emi ke ini ama nam Read, ke ini defais emi ekpetde ndọn̄ nnyụn̄ ibọ.</value>
+  </data>
+  <data name="SynchronizationMode_Field_Write" xml:space="preserve">
+    <value>Wet</value>
+  </data>
+  <data name="SynchronizationMode_Field_Write_Help" xml:space="preserve">
+    <value>Sio folda emi nte version enwen ke itie unim nkpo emi odude ke ufọt. Version oro edi ukem ye folda emi: fal ke mmi eyewet ka itie unim nkpo, nnyụn̄ fal emi odude ke itie unim nkpo edi iduhe ke folda emi eyesọhị oto itie unim nkpo. Nkpo kiet iduhe ke folda emi eyesịn midighe esọhị. Mme defais enwen eyebọ folda emi ke ini enwen ema enam. Mme version ekebede eyesụn̄ ke itie unim nkpo, ekeme ndifiak. Kama emi ke ini komputa emi edi itie fal, midighe ke ini afo emen folda ke itie fo nnyụn̄ oyom itie unim nkpo edi ukem nnennen.</value>
   </data>
   <data name="SynchronizationTask_Create" xml:space="preserve">
     <value>Synchronization</value>
   </data>
   <data name="SynchronizationTask_Help" xml:space="preserve">
-    <value>Two-way synchronization of files between devices using centralized storage.</value>
+    <value>Nim folda ke ukem ye itie unim nkpo emi mme defais fo ekamade. Tọn̄ọ ye Read, ema do kpụhọ ka Two-way midighe Wet.</value>
   </data>
   <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
     <value>Select one special storage location that devices use to sync. All devices taking part should use the same storage location. This location is fully managed by the app, including deleting data, so do not use it for anything else, and do not share it between multiple tasks.</value>

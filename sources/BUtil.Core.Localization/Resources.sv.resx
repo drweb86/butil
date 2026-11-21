@@ -933,14 +933,26 @@ Se detaljerad beskrivning i följande länk.</value>
   <data name="SynchronizationMode_Field_Read" xml:space="preserve">
     <value>Läs</value>
   </data>
+  <data name="SynchronizationMode_Field_Read_Help" xml:space="preserve">
+    <value>Hämtar det centraliserade lagringsutrymmet till den här mappen. Filer som lagts till eller ändrats i lagringen kopieras hit, och filer som tagits bort från lagringen tas bort även här. Den här mappen laddas aldrig upp. Filer som bara finns här lämnas som de är. Om du redigerade en fil här och kopian i lagringen skiljer sig, ersätter lagringskopian din redigering. Använd detta på en enhet som bara ska ta emot filer, och vid första körningen på en ny enhet.</value>
+  </data>
   <data name="SynchronizationMode_Field_TwoWay" xml:space="preserve">
     <value>Tvåvägs</value>
+  </data>
+  <data name="SynchronizationMode_Field_TwoWay_Help" xml:space="preserve">
+    <value>Kopierar ändringar i båda riktningarna. En fil som du lägger till, redigerar eller tar bort här tillämpas på lagringen, och en fil som lagts till, redigerats eller tagits bort i lagringen tillämpas här. Om samma fil ändrats på båda ställena behålls kopian med den senare ändringstiden. Den äldre kopian finns kvar i en tidigare version i lagringen och kan återställas. Byt till detta efter en körning i Läs, när den här enheten ska både skicka och ta emot.</value>
+  </data>
+  <data name="SynchronizationMode_Field_Write" xml:space="preserve">
+    <value>Skriv</value>
+  </data>
+  <data name="SynchronizationMode_Field_Write_Help" xml:space="preserve">
+    <value>Publicerar den här mappen som nästa version i det centraliserade lagringsutrymmet. Den versionen stämmer med den här mappen: filer här laddas upp, och filer som finns i lagringen men inte i den här mappen tas bort från lagringen. Ingenting i den här mappen ändras eller tas bort. Andra enheter tar emot den här mappen nästa gång de körs. Tidigare versioner finns kvar i lagringen och kan återställas. Använd detta när den här datorn är källan till filerna, eller när du har rättat mappen lokalt och vill att lagringen ska stämma exakt.</value>
   </data>
   <data name="SynchronizationTask_Create" xml:space="preserve">
     <value>Synkronisering</value>
   </data>
   <data name="SynchronizationTask_Help" xml:space="preserve">
-    <value>Tvåvägssynkronisering av filer mellan enheter med centraliserad lagring.</value>
+    <value>Håller en mapp i takt med ett centraliserat lagringsutrymme som dina enheter delar. Börja med Läs och byt sedan till Tvåvägs eller Skriv.</value>
   </data>
   <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
     <value>Ange en unik, centraliserad lagringsplats som enheter synkroniserar genom. Alla deltagande enheter bör använda samma lagringsplats. Denna plats hanteras helt av appen — inklusive borttagning av data — så använd den inte till något annat och dela den inte mellan flera uppgifter.</value>

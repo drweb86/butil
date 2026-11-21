@@ -12,6 +12,6 @@ public class SynchronizationTaskModelOptionsV2 : ITaskModelOptionsV2
     /// Obsolete. Mapping to subfolder of repository. If partial data checkout to local folder is needed, this is to be specified.
     /// </summary>
     public string? RepositorySubfolder { get; set; }
-    public SynchronizationTaskModelMode SynchronizationMode { get; set; }
+    public SynchronizationTaskModelMode SynchronizationMode { get; set; } = SynchronizationTaskModelMode.Read;
     public string Password { get; set; } = string.Empty;
 }

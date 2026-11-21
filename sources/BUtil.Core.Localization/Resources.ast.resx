@@ -933,14 +933,26 @@ See detailed description in the following link.</value>
   <data name="SynchronizationMode_Field_Read" xml:space="preserve">
     <value>Read</value>
   </data>
+  <data name="SynchronizationMode_Field_Read_Help" xml:space="preserve">
+    <value>Descarga l'almacenamientu centralizáu nesti cartafu. Los ficheros amestaos o camudaos nel almacenamientu cópiense equí, y los ficheros quitaos del almacenamientu quítense d'equí. Esti cartafu nun s'unvia nunca. Los ficheros que solo tán equí quédense como tán. Si editesti un ficheru equí y la copia del almacenamientu ye distinta, esa copia sustitúi la to edición. Úsalo nun preséu que solo tenga de recibir ficheros, y na primer execución nun preséu nuevu.</value>
+  </data>
   <data name="SynchronizationMode_Field_TwoWay" xml:space="preserve">
     <value>Two-way</value>
+  </data>
+  <data name="SynchronizationMode_Field_TwoWay_Help" xml:space="preserve">
+    <value>Copia los cambios nos dos sentíos. Un ficheru qu'amestes, edites o desanicies equí aplícase al almacenamientu, y un ficheru amestáu, editáu o desaniciáu nel almacenamientu aplícase equí. Si'l mesmu ficheru camudó nos dos sitios, consérvase la copia cola hora de cambéu más reciente. La copia más antigua queda nuna versión anterior del almacenamientu y pue restaurase. Cambia a esti mou dempués d'una execución en Llectura, cuando esti preséu tenga d'unviar y recibir.</value>
+  </data>
+  <data name="SynchronizationMode_Field_Write" xml:space="preserve">
+    <value>Escritura</value>
+  </data>
+  <data name="SynchronizationMode_Field_Write_Help" xml:space="preserve">
+    <value>Espubliza esti cartafu como la versión siguiente nel almacenamientu centralizáu. Esa versión casa con esti cartafu: los ficheros d'equí únviense, y los ficheros que tán nel almacenamientu pero non nesti cartafu desanícense del almacenamientu. Ná nesti cartafu se camuda nin se desanicia. Los otros preseos reciben esti cartafu na siguiente execución. Les versiones anteriores queden nel almacenamientu y puen restaurase. Úsalo cuando esti ordenador seya la fonte de los ficheros, o cuando corrixisti'l cartafu en llocal y quies que l'almacenamientu case exactamente con él.</value>
   </data>
   <data name="SynchronizationTask_Create" xml:space="preserve">
     <value>Synchronization</value>
   </data>
   <data name="SynchronizationTask_Help" xml:space="preserve">
-    <value>Two-way synchronization of files between devices using centralized storage.</value>
+    <value>Caltién un cartafu al día con un almacenamientu centralizáu compartíu pelos tos preseos. Entama en Llectura y dempués pasa a Nos dos sentíos o Escritura.</value>
   </data>
   <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
     <value>Especifica un almacenamientu centralizáu únicu al traviés del cual sincronicen los preseos. Tolos preseos participantes tienen d'usar el mesmu llugar d'almacenamientu. Esti llugar ye xestionáu enteramente pola aplicación — incluyendo la desaniciu de datos — asina que nun lu uses pa nada más, y nun lu compartas ente delles xeres.</value>

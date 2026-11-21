@@ -2437,11 +2437,47 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Downloads the centralized storage into this folder. Files added or changed on the storage are copied here, and files removed on the storage are removed here. This folder is never uploaded. Files that exist only here are left as they are. If you edited a file here and the storage copy is different, the storage copy replaces your edit. Use this on a device that should only receive files, and for the first run on a new device..
+        /// </summary>
+        public static string SynchronizationMode_Field_Read_Help {
+            get {
+                return ResourceManager.GetString("SynchronizationMode_Field_Read_Help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Two-way.
         /// </summary>
         public static string SynchronizationMode_Field_TwoWay {
             get {
                 return ResourceManager.GetString("SynchronizationMode_Field_TwoWay", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Copies changes in both directions. A file you add, edit, or delete here is applied to the storage, and a file added, edited, or deleted on the storage is applied here. If the same file changed in both places, the one with the later modification time is kept. The older copy remains in a previous version on the storage and can be restored. Switch to this after a Read run, when this device should both send and receive..
+        /// </summary>
+        public static string SynchronizationMode_Field_TwoWay_Help {
+            get {
+                return ResourceManager.GetString("SynchronizationMode_Field_TwoWay_Help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Write.
+        /// </summary>
+        public static string SynchronizationMode_Field_Write {
+            get {
+                return ResourceManager.GetString("SynchronizationMode_Field_Write", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Publishes this folder as the next version on the centralized storage. That version matches this folder: files here are uploaded, and files that are on the storage but not in this folder are deleted from the storage. Nothing in this folder is changed or deleted. Other devices receive this folder the next time they run. Previous versions stay on the storage and can be restored. Use this when this computer is the source of the files, or when you have fixed the folder locally and want the storage to match it exactly..
+        /// </summary>
+        public static string SynchronizationMode_Field_Write_Help {
+            get {
+                return ResourceManager.GetString("SynchronizationMode_Field_Write_Help", resourceCulture);
             }
         }
         
@@ -2455,7 +2491,7 @@ namespace BUtil.Core.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Two-way synchronization of files between devices using centralized storage..
+        ///   Looks up a localized string similar to Keeps a folder in step with a centralized storage shared by your devices. Start in Read, then switch to Two-way or Write..
         /// </summary>
         public static string SynchronizationTask_Help {
             get {

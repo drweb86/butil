@@ -101,11 +101,15 @@
     <string name="import_skip_help">Fágann sé comhaid atá sa cheann scríbe cheana nó a allmhairíodh cheana.</string>
     <string name="import_delete">Scrios sonraí cóipeáilte ón meán foinse</string>
     <string name="import_min_date">Ná bac le comhaid a athraíodh roimh (bbbb-mm-ll):</string>
-    <string name="sync_help">Comhaid a shioncronú dhá bhealach idir gléasanna ag baint úsáide as stóráil láraithe.</string>
+    <string name="sync_help">Coimeádann sé fillteán i gcomhréir le stóráil láraithe a roinneann do ghléasanna. Tosaigh le Léigh, ansin athraigh go Dhá-bhealach nó Scríobh.</string>
     <string name="sync_storage_help">Luaigh stóras ar leith trína ndéanann gléasanna sioncronú. Ba cheart do gach gléas an áit chéanna agus an focal faire céanna a úsáid.</string>
     <string name="sync_mode">Mód sioncrónaithe:</string>
     <string name="sync_mode_two_way">Dhá-bhealach</string>
+    <string name="sync_mode_two_way_help">Cóipeálann sé athruithe sa dá threo. Cuirtear comhad a chuireann tú leis, a chuireann tú in eagar nó a scriosann tú anseo i bhfeidhm ar an stóráil, agus cuirtear comhad a cuireadh leis, a cuireadh in eagar nó a scriosadh ar an stóráil i bhfeidhm anseo. Má d\'athraigh an comhad céanna sa dá áit, coimeádtar an chóip leis an am modhnaithe is déanaí. Fanann an chóip is sine i leagan níos sine ar an stóráil agus is féidir í a chur ar ais. Athraigh go dtí seo tar éis rith Léigh, nuair ba cheart don ghléas seo seoladh agus fáil.</string>
     <string name="sync_mode_read">Léigh</string>
+    <string name="sync_mode_read_help">Íoslódálann sé an stóráil láraithe isteach san fhillteán seo. Cóipeáiltear comhaid a cuireadh leis nó a athraíodh ar an stóráil anseo, agus baintear as seo comhaid a baineadh den stóráil. Ní uaslódáiltear an fillteán seo riamh. Fágtar comhaid nach bhfuil ach anseo mar atá siad. Má chuir tú comhad in eagar anseo agus tá cóip na stórála difriúil, cuirtear cóip na stórála in ionad d\'eagarthóireachta. Úsáid é seo ar ghléas nár cheart dó ach comhaid a fháil, agus don chéad rith ar ghléas nua.</string>
+    <string name="sync_mode_write">Scríobh</string>
+    <string name="sync_mode_write_help">Foilsíonn sé an fillteán seo mar an chéad leagan eile ar an stóráil láraithe. Tagann an leagan sin leis an bhfillteán seo: uaslódáiltear comhaid anseo, agus scriostar den stóráil comhaid atá ar an stóráil ach nach bhfuil san fhillteán seo. Ní athraítear ná ní scriostar aon rud san fhillteán seo. Faigheann gléasanna eile an fillteán seo an chéad uair eile a ritheann siad. Fanann leaganacha níos sine ar an stóráil agus is féidir iad a chur ar ais. Úsáid é seo nuair is é an ríomhaire seo foinse na gcomhad, nó nuair atá an fillteán ceartaithe agat go logánta agus gur mian leat go mbeadh an stóráil ag teacht leis go díreach.</string>
     <string name="sync_repository">Fofhillteán an taisclainne:</string>
     <string name="ftps_help">Roinneann sé an fillteán roghnaithe le FTPS follasach agus teastas féinsínithe. Fad is atá an tasc ag rith, is féidir le cliant FTPS ar an líonra logánta nascadh.</string>
     <string name="ftps_user">Úsáideoir:</string>

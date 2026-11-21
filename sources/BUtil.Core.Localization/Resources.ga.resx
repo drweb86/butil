@@ -933,14 +933,26 @@ See detailed description in the following link.</value>
   <data name="SynchronizationMode_Field_Read" xml:space="preserve">
     <value>Léigh</value>
   </data>
+  <data name="SynchronizationMode_Field_Read_Help" xml:space="preserve">
+    <value>Íoslódálann sé an stóráil láraithe isteach san fhillteán seo. Cóipeáiltear comhaid a cuireadh leis nó a athraíodh ar an stóráil anseo, agus baintear as seo comhaid a baineadh den stóráil. Ní uaslódáiltear an fillteán seo riamh. Fágtar comhaid nach bhfuil ach anseo mar atá siad. Má chuir tú comhad in eagar anseo agus tá cóip na stórála difriúil, cuirtear cóip na stórála in ionad d'eagarthóireachta. Úsáid é seo ar ghléas nár cheart dó ach comhaid a fháil, agus don chéad rith ar ghléas nua.</value>
+  </data>
   <data name="SynchronizationMode_Field_TwoWay" xml:space="preserve">
     <value>Dhá-bhealach</value>
+  </data>
+  <data name="SynchronizationMode_Field_TwoWay_Help" xml:space="preserve">
+    <value>Cóipeálann sé athruithe sa dá threo. Cuirtear comhad a chuireann tú leis, a chuireann tú in eagar nó a scriosann tú anseo i bhfeidhm ar an stóráil, agus cuirtear comhad a cuireadh leis, a cuireadh in eagar nó a scriosadh ar an stóráil i bhfeidhm anseo. Má d'athraigh an comhad céanna sa dá áit, coimeádtar an chóip leis an am modhnaithe is déanaí. Fanann an chóip is sine i leagan níos sine ar an stóráil agus is féidir í a chur ar ais. Athraigh go dtí seo tar éis rith Léigh, nuair ba cheart don ghléas seo seoladh agus fáil.</value>
+  </data>
+  <data name="SynchronizationMode_Field_Write" xml:space="preserve">
+    <value>Scríobh</value>
+  </data>
+  <data name="SynchronizationMode_Field_Write_Help" xml:space="preserve">
+    <value>Foilsíonn sé an fillteán seo mar an chéad leagan eile ar an stóráil láraithe. Tagann an leagan sin leis an bhfillteán seo: uaslódáiltear comhaid anseo, agus scriostar den stóráil comhaid atá ar an stóráil ach nach bhfuil san fhillteán seo. Ní athraítear ná ní scriostar aon rud san fhillteán seo. Faigheann gléasanna eile an fillteán seo an chéad uair eile a ritheann siad. Fanann leaganacha níos sine ar an stóráil agus is féidir iad a chur ar ais. Úsáid é seo nuair is é an ríomhaire seo foinse na gcomhad, nó nuair atá an fillteán ceartaithe agat go logánta agus gur mian leat go mbeadh an stóráil ag teacht leis go díreach.</value>
   </data>
   <data name="SynchronizationTask_Create" xml:space="preserve">
     <value>Sioncrónú</value>
   </data>
   <data name="SynchronizationTask_Help" xml:space="preserve">
-    <value>Comhaid a shioncronú dhá bhealach idir gléasanna ag baint úsáide as stóráil láraithe.</value>
+    <value>Coimeádann sé fillteán i gcomhréir le stóráil láraithe a roinneann do ghléasanna. Tosaigh le Léigh, ansin athraigh go Dhá-bhealach nó Scríobh.</value>
   </data>
   <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
     <value>Sonraigh stóras láraithe uathúil trína sioncronaíonn gléasanna. Ba cheart go n-úsáidfeadh gach gléas rannpháirteach an suíomh stórála céanna. Bainistíonn an aip an suíomh seo go hiomlán — lena n-áirítear scriosadh sonraí — mar sin ná húsáid é le haghaidh aon ní eile, agus ná roinn é idir tascanna éagsúla.</value>

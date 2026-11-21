@@ -44,7 +44,7 @@ data class SynchronizationTask(
     override var name: String = "",
     var localFolder: String = "",
     var repositorySubfolder: String? = null,
-    var synchronizationMode: Int = MODE_TWO_WAY,
+    var synchronizationMode: Int = MODE_READ,
     var password: String = "",
     var storage: StorageSettings = FolderSettings(),
     override var schedule: Schedule = Schedule(),
@@ -54,6 +54,7 @@ data class SynchronizationTask(
     companion object {
         const val MODE_TWO_WAY = 0
         const val MODE_READ = 1
+        const val MODE_WRITE = 2
     }
 }
 

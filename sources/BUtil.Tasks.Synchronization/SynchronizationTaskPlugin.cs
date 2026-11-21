@@ -22,7 +22,7 @@ public static class SynchronizationTaskPlugin
                 if (string.IsNullOrWhiteSpace(options.LocalFolder) || !Directory.Exists(options.LocalFolder))
                     return string.Format(Resources.SourceItem_Validation_NotExists, options.LocalFolder);
 
-                return StorageFactory.Test(log, options.To, writeMode && options.SynchronizationMode == SynchronizationTaskModelMode.TwoWay);
+                return StorageFactory.Test(log, options.To, writeMode && options.SynchronizationMode != SynchronizationTaskModelMode.Read);
             });
     }
 }

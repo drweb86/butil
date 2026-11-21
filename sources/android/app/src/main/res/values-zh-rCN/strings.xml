@@ -99,11 +99,15 @@
     <string name="import_skip_help">跳过目标中已有的文件，以及以前导入过的文件。</string>
     <string name="import_delete">从源媒体删除已复制的数据</string>
     <string name="import_min_date">跳过在此日期之前修改的文件（yyyy-MM-dd）：</string>
-    <string name="sync_help">使用集中存储的设备之间的双向文件同步。</string>
+    <string name="sync_help">使文件夹与设备共用的集中存储保持一致。从读取开始，然后切换到双向或写入。</string>
     <string name="sync_storage_help">指定设备用来同步的专用存储位置。所有设备应使用同一位置和同一密码。</string>
     <string name="sync_mode">同步模式:</string>
     <string name="sync_mode_two_way">双向</string>
+    <string name="sync_mode_two_way_help">向两个方向复制更改。您在这里添加、编辑或删除的文件会应用到存储，存储中添加、编辑或删除的文件会应用到这里。如果同一文件在两处都发生了更改，保留修改时间较晚的副本。较早的副本留在存储的先前版本中，可以还原。在读取运行之后，当此设备需要发送和接收时，切换到此模式。</string>
     <string name="sync_mode_read">读取</string>
+    <string name="sync_mode_read_help">将集中存储下载到此文件夹。存储中新增或更改的文件会复制到这里，从存储中移除的文件也会从这里移除。此文件夹不会被上传。只存在于这里的文件保持原样。如果您在这里编辑了文件，而存储中的副本不同，存储中的副本会替换您的编辑。在只应接收文件的设备上使用，也用于新设备上的第一次运行。</string>
+    <string name="sync_mode_write">写入</string>
+    <string name="sync_mode_write_help">将此文件夹发布为集中存储上的下一个版本。该版本与此文件夹一致：这里的文件会上传，存储中有但此文件夹中没有的文件会从存储中删除。此文件夹中的内容不会被更改或删除。其他设备在下次运行时会收到此文件夹。先前的版本留在存储中，可以还原。当这台计算机是文件的来源，或您已在本地修正文件夹并希望存储与它完全一致时使用。</string>
     <string name="sync_repository">存储库子文件夹：</string>
     <string name="ftps_help">用显式 FTPS 和自签名证书共享所选文件夹。任务运行时，局域网中的 FTPS 客户端可以连接。</string>
     <string name="ftps_port">端口：</string>

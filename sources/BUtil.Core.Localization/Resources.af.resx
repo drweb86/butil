@@ -933,14 +933,26 @@ See detailed description in the following link.</value>
   <data name="SynchronizationMode_Field_Read" xml:space="preserve">
     <value>Lees</value>
   </data>
+  <data name="SynchronizationMode_Field_Read_Help" xml:space="preserve">
+    <value>Laai die gesentraliseerde berging af na hierdie vouer. Lêers wat op die berging bygevoeg of verander is, word hierheen gekopieer, en lêers wat op die berging verwyder is, word hier verwyder. Hierdie vouer word nooit opgelaai nie. Lêers wat net hier bestaan, bly soos hulle is. As u 'n lêer hier gewysig het en die kopie op die berging verskil, vervang die bergingkopie u wysiging. Gebruik dit op 'n toestel wat net lêers moet ontvang, en vir die eerste lopie op 'n nuwe toestel.</value>
+  </data>
   <data name="SynchronizationMode_Field_TwoWay" xml:space="preserve">
     <value>Tweerigting</value>
+  </data>
+  <data name="SynchronizationMode_Field_TwoWay_Help" xml:space="preserve">
+    <value>Kopieer veranderinge in albei rigtings. 'n Lêer wat u hier byvoeg, wysig of uitvee, word op die berging toegepas, en 'n lêer wat op die berging bygevoeg, gewysig of uitgevee is, word hier toegepas. As dieselfde lêer op albei plekke verander het, word die kopie met die latere wysigingstyd gehou. Die ouer kopie bly in 'n vorige weergawe op die berging en kan herstel word. Skakel hierna oor ná 'n Lees-lopie, wanneer hierdie toestel moet stuur en ontvang.</value>
+  </data>
+  <data name="SynchronizationMode_Field_Write" xml:space="preserve">
+    <value>Skryf</value>
+  </data>
+  <data name="SynchronizationMode_Field_Write_Help" xml:space="preserve">
+    <value>Publiseer hierdie vouer as die volgende weergawe op die gesentraliseerde berging. Daardie weergawe stem met hierdie vouer ooreen: lêers hier word opgelaai, en lêers wat op die berging is maar nie in hierdie vouer nie, word van die berging uitgevee. Niks in hierdie vouer word verander of uitgevee nie. Ander toestelle ontvang hierdie vouer die volgende keer as hulle loop. Vorige weergawes bly op die berging en kan herstel word. Gebruik dit wanneer hierdie rekenaar die bron van die lêers is, of wanneer u die vouer plaaslik reggestel het en die berging presies daarmee moet ooreenstem.</value>
   </data>
   <data name="SynchronizationTask_Create" xml:space="preserve">
     <value>Sinchronisasie</value>
   </data>
   <data name="SynchronizationTask_Help" xml:space="preserve">
-    <value>Tweerigtingsinchronisasie van lêers tussen toestelle met behulp van gesentraliseerde berging.</value>
+    <value>Hou 'n vouer in pas met 'n gesentraliseerde berging wat u toestelle deel. Begin met Lees, en skakel dan oor na Tweerigting of Skryf.</value>
   </data>
   <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
     <value>Spesifiseer 'n unieke, gesentraliseerde bergingsplek waardeur toestelle sinkroniseer. Alle deelnemende toestelle moet dieselfde bergingsplek gebruik. Hierdie plek word heeltemal deur die app bestuur — insluitend die verwydering van data — moet dit dus nie vir enigiets anders gebruik nie, en moenie dit tussen verskeie take deel nie.</value>

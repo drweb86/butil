@@ -9,33 +9,6 @@ import org.json.JSONArray
 import org.json.JSONObject
 import java.io.File
 
-private enum class SyncRelation { NotChanged, Created, Changed, Deleted }
-private enum class SyncAction { DoNothing, Update, Delete }
-
-private data class SyncFile(
-    val relativeFileName: String,
-    val modifiedAtUtcMillis: Long,
-    val sha512: String,
-    val size: Long,
-) {
-    fun sameContent(other: SyncFile?): Boolean {
-        if (other == null) return false
-        return size == other.size && sha512.equals(other.sha512, ignoreCase = true)
-    }
-}
-
-private class SyncItem(val relativeFileName: String) {
-    var actual: SyncFile? = null
-    var local: SyncFile? = null
-    var remote: SyncFile? = null
-    var actualToLocal = SyncRelation.NotChanged
-    var remoteToLocal = SyncRelation.NotChanged
-    var actualAction = SyncAction.DoNothing
-    var remoteAction = SyncAction.DoNothing
-    var forceUpdateState = false
-    val existsLocally: Boolean get() = actual != null
-}
-
 class SynchronizationRunner(private val context: Context) {
     fun run(task: SynchronizationTask, onProgress: (String) -> Unit, cancelled: () -> Boolean): String? {
         if (task.password.isBlank()) return "Password is not specified."
@@ -48,11 +21,11 @@ class SynchronizationRunner(private val context: Context) {
             return StorageFactory.open(context, task.storage, autodetect = false).use { storage ->
                 onProgress("Reading synchronization state.")
                 val remoteBackup = BackupStateCodec.read(storage, task.password, work)
-                if (task.synchronizationMode == SynchronizationTask.MODE_TWO_WAY) removeUnknownVersions(storage, remoteBackup)
+                if (task.synchronizationMode != SynchronizationTask.MODE_READ) removeUnknownVersions(storage, remoteBackup)
                 val localState = if (remoteBackup.versions.isEmpty()) emptyList() else loadLocal(task)
                 val actual = scanLocal(task, work, cancelled) ?: return "Synchronization cancelled."
                 val remoteFiles = remoteFiles(remoteBackup)
-                val decisions = decide(task.synchronizationMode, localState, actual, remoteFiles)
+                val decisions = SynchronizationDecisionService.decide(task.synchronizationMode, localState, actual, remoteFiles)
                 var changed = false
                 decisions.filter { it.actualAction != SyncAction.DoNothing }.forEach { item ->
                     if (cancelled()) return "Synchronization cancelled."
@@ -81,7 +54,7 @@ class SynchronizationRunner(private val context: Context) {
                 }
                 val uploads = decisions.filter { it.remoteAction == SyncAction.Update && it.actual != null }
                 val deletes = decisions.filter { it.remoteAction == SyncAction.Delete }
-                if (task.synchronizationMode == SynchronizationTask.MODE_TWO_WAY && (uploads.isNotEmpty() || deletes.isNotEmpty())) {
+                if (task.synchronizationMode != SynchronizationTask.MODE_READ && (uploads.isNotEmpty() || deletes.isNotEmpty())) {
                     changed = true
                     publishRemote(task, storage, remoteBackup, uploads, deletes, work, onProgress, cancelled)?.let { return it }
                 }
@@ -209,138 +182,9 @@ class SynchronizationRunner(private val context: Context) {
         actual: List<SyncFile>,
         remote: List<SyncFile>,
     ): List<SyncFile> {
-        return decide(mode, previousLocal, actual, remote)
+        return SynchronizationDecisionService.decide(mode, previousLocal, actual, remote)
             .filter { it.actualAction == SyncAction.DoNothing && it.remoteAction == SyncAction.DoNothing && it.remote != null && it.existsLocally }
             .mapNotNull { it.actual }
-    }
-
-    private fun decide(mode: Int, local: List<SyncFile>, actual: List<SyncFile>, remote: List<SyncFile>): List<SyncItem> {
-        val items = linkedMapOf<String, SyncItem>()
-        fun add(files: List<SyncFile>, assign: (SyncItem, SyncFile) -> Unit) {
-            files.forEach { file ->
-                val item = items.getOrPut(file.relativeFileName) { SyncItem(file.relativeFileName) }
-                assign(item, file)
-            }
-        }
-        add(actual) { item, file -> item.actual = file }
-        add(local) { item, file -> item.local = file }
-        add(remote) { item, file -> item.remote = file }
-        items.values.forEach { item ->
-            val actualFile = item.actual
-            val remoteFile = item.remote
-            item.actualToLocal = relation(actualFile, item.local)
-            item.remoteToLocal = relation(remoteFile, item.local)
-            if (actualFile != null && remoteFile != null && actualFile.sameContent(remoteFile)) {
-                item.forceUpdateState = !remoteFile.sameContent(item.local)
-                return@forEach
-            }
-            if (mode == SynchronizationTask.MODE_TWO_WAY) resolveTwoWay(item) else resolveRead(item)
-        }
-        return items.values.toList()
-    }
-
-    private fun relation(primary: SyncFile?, secondary: SyncFile?): SyncRelation {
-        if (primary == null) return if (secondary == null) SyncRelation.NotChanged else SyncRelation.Deleted
-        if (secondary == null) return SyncRelation.Created
-        return if (primary.sameContent(secondary)) SyncRelation.NotChanged else SyncRelation.Changed
-    }
-
-    private fun resolveRead(item: SyncItem) {
-        fun apply(relation: SyncRelation, changed: SyncAction, deleted: SyncAction = SyncAction.DoNothing, created: SyncAction = SyncAction.Update) {
-            item.actualAction = when (relation) {
-                SyncRelation.NotChanged -> SyncAction.DoNothing
-                SyncRelation.Created, SyncRelation.Changed -> created
-                SyncRelation.Deleted -> deleted
-            }
-        }
-        when (item.actualToLocal) {
-            SyncRelation.NotChanged -> apply(item.remoteToLocal, SyncAction.Update, SyncAction.Delete)
-            SyncRelation.Created -> when (item.remoteToLocal) {
-                SyncRelation.NotChanged -> item.actualAction = SyncAction.DoNothing
-                SyncRelation.Created -> item.actualAction = SyncAction.Update
-                else -> Unit
-            }
-            SyncRelation.Changed -> when (item.remoteToLocal) {
-                SyncRelation.NotChanged, SyncRelation.Changed -> item.actualAction = SyncAction.Update
-                SyncRelation.Deleted -> item.actualAction = SyncAction.Delete
-                SyncRelation.Created -> Unit
-            }
-            SyncRelation.Deleted -> when (item.remoteToLocal) {
-                SyncRelation.NotChanged, SyncRelation.Changed -> item.actualAction = SyncAction.Update
-                SyncRelation.Deleted -> item.actualAction = SyncAction.DoNothing
-                SyncRelation.Created -> Unit
-            }
-        }
-    }
-
-    private fun resolveTwoWay(item: SyncItem) {
-        val actualFile = item.actual
-        val remoteFile = item.remote
-        val actualRelation = item.actualToLocal
-        val remoteRelation = item.remoteToLocal
-        if (item.existsLocally && item.remote == null && item.local == null &&
-            actualRelation == SyncRelation.Created && remoteRelation == SyncRelation.NotChanged
-        ) {
-            item.remoteAction = SyncAction.Update
-            return
-        }
-        if (item.existsLocally && item.remote != null && item.local != null &&
-            actualRelation == SyncRelation.NotChanged && remoteRelation == SyncRelation.NotChanged
-        ) {
-            return
-        }
-        if (item.existsLocally && item.remote != null && item.local != null &&
-            actualRelation == SyncRelation.NotChanged && remoteRelation == SyncRelation.Changed
-        ) {
-            item.actualAction = SyncAction.Update
-            return
-        }
-        if (!item.existsLocally && item.remote != null &&
-            actualRelation == SyncRelation.Deleted && remoteRelation == SyncRelation.NotChanged
-        ) {
-            item.remoteAction = SyncAction.Delete
-            return
-        }
-        if (item.existsLocally && actualRelation == SyncRelation.NotChanged && remoteRelation == SyncRelation.Deleted) {
-            item.actualAction = SyncAction.Delete
-            return
-        }
-        if (remoteFile != null && actualFile != null && item.existsLocally && actualRelation == SyncRelation.Created &&
-            (remoteRelation == SyncRelation.Created || remoteRelation == SyncRelation.Changed)
-        ) {
-            if (remoteFile.modifiedAtUtcMillis > actualFile.modifiedAtUtcMillis) item.actualAction = SyncAction.Update
-            else item.remoteAction = SyncAction.Update
-            return
-        }
-        if (item.existsLocally && actualRelation == SyncRelation.Created && remoteRelation == SyncRelation.Deleted) {
-            item.remoteAction = SyncAction.Update
-        }
-        if (item.existsLocally && actualRelation == SyncRelation.Changed && remoteRelation == SyncRelation.NotChanged) {
-            item.remoteAction = SyncAction.Update
-            return
-        }
-        if (remoteFile != null && actualFile != null && item.existsLocally &&
-            actualRelation == SyncRelation.Changed && remoteRelation == SyncRelation.Changed
-        ) {
-            if (remoteFile.modifiedAtUtcMillis > actualFile.modifiedAtUtcMillis) item.actualAction = SyncAction.Update
-            else item.remoteAction = SyncAction.Update
-            return
-        }
-        if (item.existsLocally && actualRelation == SyncRelation.Changed && remoteRelation == SyncRelation.Deleted) {
-            item.remoteAction = SyncAction.Update
-            return
-        }
-        if (!item.existsLocally && actualRelation == SyncRelation.Deleted && remoteRelation == SyncRelation.Changed) {
-            item.actualAction = SyncAction.Update
-            return
-        }
-        if (!item.existsLocally && actualRelation == SyncRelation.Deleted && remoteRelation == SyncRelation.Deleted) {
-            item.forceUpdateState = true
-            return
-        }
-        if (!item.existsLocally && actualRelation == SyncRelation.NotChanged && remoteRelation == SyncRelation.Created) {
-            item.actualAction = SyncAction.Update
-        }
     }
 
     private fun stateFolder(): File {

@@ -933,14 +933,26 @@ See detailed description in the following link.</value>
   <data name="SynchronizationMode_Field_Read" xml:space="preserve">
     <value>Legu</value>
   </data>
+  <data name="SynchronizationMode_Field_Read_Help" xml:space="preserve">
+    <value>Elŝutas la centralizitan stokejon en ĉi tiun dosierujon. Dosieroj aldonitaj aŭ ŝanĝitaj en la stokejo estas kopiitaj ĉi tien, kaj dosieroj forigitaj el la stokejo estas forigitaj ankaŭ ĉi tie. Ĉi tiu dosierujo neniam estas alŝutata. Dosieroj kiuj ekzistas nur ĉi tie restas kiel ili estas. Se vi redaktis dosieron ĉi tie kaj la kopio en la stokejo estas alia, la kopio el la stokejo anstataŭas vian redakton. Uzu ĉi tion en aparato kiu nur ricevu dosierojn, kaj je la unua rulo en nova aparato.</value>
+  </data>
   <data name="SynchronizationMode_Field_TwoWay" xml:space="preserve">
     <value>Dudirekte</value>
+  </data>
+  <data name="SynchronizationMode_Field_TwoWay_Help" xml:space="preserve">
+    <value>Kopias ŝanĝojn en ambaŭ direktoj. Dosiero kiun vi aldonas, redaktas aŭ forigas ĉi tie estas aplikata al la stokejo, kaj dosiero aldonita, redaktita aŭ forigita en la stokejo estas aplikata ĉi tie. Se la sama dosiero ŝanĝiĝis en ambaŭ lokoj, restas la kopio kun la pli posta modifa tempo. La pli malnova kopio restas en antaŭa versio en la stokejo kaj povas esti restaŭrita. Ŝanĝu al ĉi tio post rulo de Legu, kiam ĉi tiu aparato devas kaj sendi kaj ricevi.</value>
+  </data>
+  <data name="SynchronizationMode_Field_Write" xml:space="preserve">
+    <value>Skribo</value>
+  </data>
+  <data name="SynchronizationMode_Field_Write_Help" xml:space="preserve">
+    <value>Publikigas ĉi tiun dosierujon kiel la sekvan version en la centralizita stokejo. Tiu versio kongruas kun ĉi tiu dosierujo: dosieroj ĉi tie estas alŝutataj, kaj dosieroj kiuj estas en la stokejo sed ne en ĉi tiu dosierujo estas forigitaj el la stokejo. Nenio en ĉi tiu dosierujo estas ŝanĝata aŭ forigata. Aliaj aparatoj ricevas ĉi tiun dosierujon je la sekva rulo. Antaŭaj versioj restas en la stokejo kaj povas esti restaŭritaj. Uzu ĉi tion kiam ĉi tiu komputilo estas la fonto de la dosieroj, aŭ kiam vi korektis la dosierujon loke kaj volas ke la stokejo kongruu precize.</value>
   </data>
   <data name="SynchronizationTask_Create" xml:space="preserve">
     <value>Sinkronigo</value>
   </data>
   <data name="SynchronizationTask_Help" xml:space="preserve">
-    <value>Dudirekta sinkronigo de dosieroj inter aparatoj uzantaj centralizitan stokadon.</value>
+    <value>Tenadas dosierujon kongrua kun centralizita stokejo kiun viaj aparatoj kunhavas. Komencu per Legu, poste ŝanĝu al Dudirekte aŭ Skribo.</value>
   </data>
   <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
     <value>Specifu unikan centran konservejon, per kiu aparatoj sinkroniĝas. Ĉiuj partoprenantaj aparatoj devus uzi la saman konservejan lokon. Ĉi tiu loko estas tute administrata de la aplikaĵo — inkluzive de la forigo de datumoj — do ne uzu ĝin por io alia, kaj ne kunhavigu ĝin inter pluraj taskoj.</value>

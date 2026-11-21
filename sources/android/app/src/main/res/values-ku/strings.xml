@@ -101,11 +101,15 @@
     <string name="import_skip_help">Pelên ku jixwe li armancê ne an berê hatine anîn derbas dike.</string>
     <string name="import_delete">Daneyên hatine kopîkirin ji medyaya çavkaniyê jê bibe</string>
     <string name="import_min_date">Pelên ku berî vê dîrokê hatine guhertin derbas bike (yyyy-MM-dd):</string>
-    <string name="sync_help">Hevdemkirina du-alî ya pelan di navbera amûran de bi karanîna hilanîna navendî.</string>
+    <string name="sync_help">Peldankek bi hilanîna navendî ya ku amûrên we parve dikin re li hev dihêle. Bi Xwendinê dest pê bikin, paşê derbasî Du-alî an Nivîsandinê bibin.</string>
     <string name="sync_storage_help">Embarek cuda diyar bike ku cîhaz bi rêya wê hevdem dibin. Hemû cîhaz divê heman cih û heman şîfreyê bi kar bînin.</string>
     <string name="sync_mode">Moda hevdemkirinê:</string>
     <string name="sync_mode_two_way">Du-alî</string>
+    <string name="sync_mode_two_way_help">Guhertinan li her du aliyan kopî dike. Pelek ku hûn li vir lê zêde dikin, diguherînin an jê dibin li hilanînê tê sepandin, û pelek ku li hilanînê hatiye zêdekirin, guhertin an jêbirin li vir tê sepandin. Heke heman pel li her du cihan guherîbe, kopiya bi dema guhertinê ya nûtir tê hilanîn. Kopiya kevn di guhertoyek berê ya hilanînê de dimîne û dikare were vegerandin. Piştî xebitandina Xwendinê derbasî vê bibin, dema ku ev amûr divê bişîne û bistîne.</string>
     <string name="sync_mode_read">Xwendin</string>
+    <string name="sync_mode_read_help">Hilanîna navendî dadixe vê peldankê. Pelên ku li hilanînê hatine zêdekirin an guhertin li vir têne kopîkirin, û pelên ku ji hilanînê hatine rakirin ji vir jî têne rakirin. Ev peldank qet nayê barkirin. Pelên ku tenê li vir hene wekî xwe dimînin. Heke we pelê li vir guhertiye û kopiya hilanînê cuda ye, kopiya hilanînê şûna guhertina we digire. Vê li amûrekê bi kar bînin ku divê tenê pelan bistîne, û di xebitandina yekem de li amûrek nû.</string>
+    <string name="sync_mode_write">Nivîsandin</string>
+    <string name="sync_mode_write_help">Vê peldankê wekî guhertoya pêş a li hilanîna navendî diweşîne. Ew guherto bi vê peldankê re ye: pelên li vir têne barkirin, û pelên ku li hilanînê ne lê di vê peldankê de nînin ji hilanînê têne jêbirin. Di vê peldankê de tiştek nayê guhertin û jêbirin. Amûrên din di xebitandina pêş de vê peldankê distînin. Guhertoyên berê li hilanînê dimînin û dikarin werin vegerandin. Dema ku ev kompîtur çavkaniya pelan e, an dema we peldank li cihê xwe rast kiriye û dixwazin hilanîn bi temamî li hev were, vê bi kar bînin.</string>
     <string name="sync_repository">Binpeldanka embarê:</string>
     <string name="ftps_help">Peldanka hilbijartî bi FTPS a eşkere û belgeya xwe-îmzekirî parve dike. Dema peywir dixebite, xerîdarek FTPS a li ser tora herêmî dikare girê bide.</string>
     <string name="ftps_user">Bikarhêner:</string>

@@ -98,11 +98,15 @@
     <string name="import_skip_help">Omite los archivos que ya están en el destino o que se importaron antes.</string>
     <string name="import_delete">Eliminar los datos copiados del medio de origen</string>
     <string name="import_min_date">Omitir archivos modificados antes de (aaaa-mm-dd):</string>
-    <string name="sync_help">Sincronización bidireccional de archivos entre dispositivos utilizando almacenamiento centralizado.</string>
+    <string name="sync_help">Mantiene una carpeta al día con un almacenamiento centralizado compartido por sus dispositivos. Empiece en Lectura y después cambie a Bidireccional o Escritura.</string>
     <string name="sync_storage_help">Indique un almacenamiento propio a través del cual se sincronizan los dispositivos. Todos deben usar la misma ubicación y la misma contraseña.</string>
     <string name="sync_mode">Modo de sincronización:</string>
     <string name="sync_mode_two_way">Bidireccional</string>
+    <string name="sync_mode_two_way_help">Copia los cambios en ambas direcciones. Un archivo que añada, edite o elimine aquí se aplica al almacenamiento, y un archivo añadido, editado o eliminado en el almacenamiento se aplica aquí. Si el mismo archivo cambió en ambos sitios, se conserva la copia con la hora de modificación más reciente. La copia más antigua permanece en una versión anterior del almacenamiento y se puede restaurar. Cambie a este modo después de una ejecución de Lectura, cuando este dispositivo deba enviar y recibir.</string>
     <string name="sync_mode_read">Lectura</string>
+    <string name="sync_mode_read_help">Descarga el almacenamiento centralizado en esta carpeta. Los archivos añadidos o cambiados en el almacenamiento se copian aquí, y los archivos quitados del almacenamiento se quitan de aquí. Esta carpeta no se sube nunca. Los archivos que solo existen aquí se dejan como están. Si editó un archivo aquí y la copia del almacenamiento es distinta, la copia del almacenamiento sustituye su edición. Úselo en un dispositivo que solo deba recibir archivos, y en la primera ejecución en un dispositivo nuevo.</string>
+    <string name="sync_mode_write">Escritura</string>
+    <string name="sync_mode_write_help">Publica esta carpeta como la versión siguiente en el almacenamiento centralizado. Esa versión coincide con esta carpeta: los archivos de aquí se suben, y los archivos que están en el almacenamiento pero no en esta carpeta se eliminan del almacenamiento. Nada de esta carpeta se cambia ni se elimina. Los demás dispositivos reciben esta carpeta la próxima vez que se ejecuten. Las versiones anteriores permanecen en el almacenamiento y se pueden restaurar. Úselo cuando este equipo es el origen de los archivos, o cuando ha corregido la carpeta en local y quiere que el almacenamiento coincida exactamente.</string>
     <string name="sync_repository">Subcarpeta del repositorio:</string>
     <string name="ftps_help">Comparte la carpeta elegida por FTPS explícito con un certificado autofirmado. Mientras la tarea está en marcha, un cliente FTPS de la red local puede conectarse.</string>
     <string name="ftps_port">Puerto:</string>

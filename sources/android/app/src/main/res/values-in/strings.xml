@@ -95,11 +95,15 @@
     <string name="import_skip_help">Melewati berkas yang sudah ada di tujuan atau yang pernah diimpor.</string>
     <string name="import_delete">Hapus data yang disalin dari media sumber</string>
     <string name="import_min_date">Lewati berkas yang diubah sebelum (yyyy-MM-dd):</string>
-    <string name="sync_help">Sinkronisasi dua arah file antara perangkat dengan menggunakan penyimpanan terpusat.</string>
+    <string name="sync_help">Menjaga folder tetap selaras dengan penyimpanan terpusat yang dipakai bersama perangkat Anda. Mulai dengan Baca, lalu beralih ke Dua arah atau Tulis.</string>
     <string name="sync_storage_help">Tentukan penyimpanan tersendiri yang dipakai perangkat untuk menyinkronkan. Semua perangkat harus memakai lokasi dan kata sandi yang sama.</string>
     <string name="sync_mode">Mode sinkronisasi:</string>
     <string name="sync_mode_two_way">Dua arah</string>
+    <string name="sync_mode_two_way_help">Menyalin perubahan ke dua arah. File yang Anda tambahkan, edit, atau hapus di sini diterapkan ke penyimpanan, dan file yang ditambahkan, diedit, atau dihapus di penyimpanan diterapkan di sini. Jika file yang sama berubah di kedua tempat, salinan dengan waktu perubahan yang lebih baru disimpan. Salinan yang lebih lama tetap ada di versi sebelumnya pada penyimpanan dan dapat dipulihkan. Beralih ke ini setelah menjalankan Baca, saat perangkat ini harus mengirim dan menerima.</string>
     <string name="sync_mode_read">Baca</string>
+    <string name="sync_mode_read_help">Mengunduh penyimpanan terpusat ke folder ini. File yang ditambahkan atau diubah di penyimpanan disalin ke sini, dan file yang dihapus dari penyimpanan dihapus dari sini. Folder ini tidak pernah diunggah. File yang hanya ada di sini dibiarkan apa adanya. Jika Anda mengedit file di sini dan salinan di penyimpanan berbeda, salinan penyimpanan menggantikan suntingan Anda. Gunakan ini pada perangkat yang hanya boleh menerima file, dan pada menjalankan pertama di perangkat baru.</string>
+    <string name="sync_mode_write">Tulis</string>
+    <string name="sync_mode_write_help">Menerbitkan folder ini sebagai versi berikutnya pada penyimpanan terpusat. Versi itu sama dengan folder ini: file di sini diunggah, dan file yang ada di penyimpanan tetapi tidak ada di folder ini dihapus dari penyimpanan. Tidak ada yang diubah atau dihapus di folder ini. Perangkat lain menerima folder ini pada menjalankan berikutnya. Versi sebelumnya tetap di penyimpanan dan dapat dipulihkan. Gunakan ini saat komputer ini menjadi sumber file, atau saat Anda telah memperbaiki folder secara lokal dan ingin penyimpanan sama persis dengannya.</string>
     <string name="sync_repository">Subfolder repositori:</string>
     <string name="ftps_help">Membagikan folder yang dipilih lewat FTPS eksplisit dengan sertifikat yang ditandatangani sendiri. Selama tugas berjalan, klien FTPS di jaringan lokal dapat tersambung.</string>
     <string name="ftps_user">Pengguna:</string>

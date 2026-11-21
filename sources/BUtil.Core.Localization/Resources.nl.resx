@@ -933,14 +933,26 @@ Zie gedetailleerde beschrijving via de volgende link.</value>
   <data name="SynchronizationMode_Field_Read" xml:space="preserve">
     <value>Lezen</value>
   </data>
+  <data name="SynchronizationMode_Field_Read_Help" xml:space="preserve">
+    <value>Downloadt de centrale opslag naar deze map. Bestanden die op de opslag zijn toegevoegd of gewijzigd, worden hierheen gekopieerd, en bestanden die van de opslag zijn verwijderd, worden hier verwijderd. Deze map wordt nooit geüpload. Bestanden die alleen hier bestaan, blijven zoals ze zijn. Als u hier een bestand hebt bewerkt en de kopie op de opslag anders is, vervangt de kopie van de opslag uw bewerking. Gebruik dit op een apparaat dat alleen bestanden moet ontvangen, en bij de eerste uitvoering op een nieuw apparaat.</value>
+  </data>
   <data name="SynchronizationMode_Field_TwoWay" xml:space="preserve">
     <value>Tweerichtings</value>
+  </data>
+  <data name="SynchronizationMode_Field_TwoWay_Help" xml:space="preserve">
+    <value>Kopieert wijzigingen in beide richtingen. Een bestand dat u hier toevoegt, bewerkt of verwijdert, wordt op de opslag toegepast, en een bestand dat op de opslag is toegevoegd, bewerkt of verwijderd, wordt hier toegepast. Als hetzelfde bestand op beide plaatsen is gewijzigd, blijft de kopie met het latere wijzigingstijdstip behouden. De oudere kopie blijft in een eerdere versie op de opslag en kan worden hersteld. Schakel hiernaar over na een uitvoering in Lezen, wanneer dit apparaat moet verzenden en ontvangen.</value>
+  </data>
+  <data name="SynchronizationMode_Field_Write" xml:space="preserve">
+    <value>Schrijven</value>
+  </data>
+  <data name="SynchronizationMode_Field_Write_Help" xml:space="preserve">
+    <value>Publiceert deze map als de volgende versie op de centrale opslag. Die versie komt overeen met deze map: bestanden hier worden geüpload, en bestanden die op de opslag staan maar niet in deze map, worden van de opslag verwijderd. Niets in deze map wordt gewijzigd of verwijderd. Andere apparaten ontvangen deze map bij de volgende uitvoering. Eerdere versies blijven op de opslag en kunnen worden hersteld. Gebruik dit wanneer deze computer de bron van de bestanden is, of wanneer u de map lokaal hebt gecorrigeerd en wilt dat de opslag er precies mee overeenkomt.</value>
   </data>
   <data name="SynchronizationTask_Create" xml:space="preserve">
     <value>Synchronisatie</value>
   </data>
   <data name="SynchronizationTask_Help" xml:space="preserve">
-    <value>Tweerichtingssynchronisatie van bestanden tussen apparaten met gecentraliseerde opslag.</value>
+    <value>Houdt een map gelijk met een centrale opslag die uw apparaten delen. Begin met Lezen en schakel daarna over naar Tweerichtings of Schrijven.</value>
   </data>
   <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
     <value>Geef een unieke, gecentraliseerde opslaglocatie op waarmee apparaten synchroniseren. Alle deelnemende apparaten moeten dezelfde opslaglocatie gebruiken. Deze locatie wordt volledig beheerd door de app — inclusief het verwijderen van gegevens — dus gebruik deze nergens anders voor en deel deze niet tussen meerdere taken.</value>

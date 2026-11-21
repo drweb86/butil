@@ -60,14 +60,15 @@ So even if a wrong file wins a conflict, or a deletion propagates incorrectly, y
 
 ## Synchronization modes
 
-A Synchronization task supports two modes (configured in the **What?** section):
+A Synchronization task supports three modes (configured in the **What?** section). A new task starts in **Read**.
 
-- **Two-way** - changes made locally are uploaded, changes made remotely are downloaded, deletions on either side propagate to the other side. This is the typical mode for sharing a working folder between several of your own devices.
-- **Read** - only changes from the centralized storage are downloaded. Local changes are not pushed out and may be overwritten or removed when the remote side reports changes or deletions. Use this mode when one device is the authoritative source and other devices should only consume.
+- **Read** - downloads the centralized storage into the local folder. Files added or changed on the storage are copied locally, and files removed on the storage are removed locally. Nothing is uploaded. Files that exist only in the local folder are left as they are. If a file was edited locally and the storage copy is different, the storage copy replaces the local edit. Use this on a device that should only receive files, and for the first run on a new device.
+- **Two-way** - changes made locally are uploaded, changes made remotely are downloaded, deletions on either side propagate to the other side. If the same file changed in both places, the copy with the later modification time is kept. This is the typical mode for sharing a working folder between several of your own devices. Switch to it after a Read run.
+- **Write** - publishes the local folder as the next version on the centralized storage. That version matches the folder: files in the folder are uploaded, and files that are on the storage but not in the folder are deleted from the storage. Nothing in the local folder is changed or deleted. Previous versions stay on the storage and can be restored. Use this when this computer is the source of the files, or when the folder has been corrected locally and the storage should match it exactly. Other devices receive that folder the next time they run, usually in Read.
 
 ## Conflict resolution
 
-When the same file has been changed on more than one device since the last successful synchronization, BUtil resolves the conflict automatically by **most recent modification time**. The older version is overwritten - but, as noted above, the overwritten content is still available as a previous version on the centralized storage and can be restored from any device.
+When the same file has been changed on more than one device since the last successful synchronization, **Two-way** resolves the conflict by **most recent modification time**. The older version is overwritten - but, as noted above, the overwritten content is still available as a previous version on the centralized storage and can be restored from any device. **Read** keeps the storage copy. **Write** keeps the local folder and publishes it, so a newer copy on the storage is replaced by the local file.
 
 If you cannot afford automatic conflict resolution, do not edit the same file from multiple devices between sync runs.
 
@@ -80,7 +81,7 @@ In the **Synchronization task**:
 1. **Name** - any name; it does not need to match across devices.
 2. **What?**
    - **Folder** - the local folder that will be synchronized. It can be different per device (for example `C:\Users\alice\Sync` on one machine and `/home/alice/Sync` on another).
-   - **Synchronization mode** - typically **Two-way** (see also [Setting up the second device](#setting-up-the-second-device-and-beyond) below).
+   - **Synchronization mode** - **Read** on a new task. Switch to **Two-way** once this device should both send and receive, or to **Write** when this folder should replace the storage version (see also [Setting up the second device](#setting-up-the-second-device-and-beyond) below).
 3. **When?** - the schedule. All devices should run reasonably often so changes have a chance to converge.
 4. **Where?** - the centralized storage. **All devices must point to the same physical location**: same FTPS/SFTP server and folder, same SMB share, same shared/cloud-mounted folder, etc. If devices point to different folders they will not see each other's changes.
 5. **Encryption** - if a password is set, the **same password must be used on every device**. Files in the centralized storage are encrypted; without the matching password the other devices cannot decrypt them.
@@ -105,7 +106,7 @@ What you typically have to do once on the storage side:
 
 - You do not need to install BUtil on the server. The server only has to expose a folder over a supported transport (Folder/SMB/SFTP/FTPS).
 - You do not need to set up replication or merging on the server. All of the synchronization logic runs on the devices.
-- You do not need a fixed primary device - in **Two-way** mode all devices are equal.
+- You do not need a fixed primary device. In **Two-way** mode all devices are equal. Use **Write** on one device, and **Read** on the others, when a single folder should be the source.
 
 ## Setting up the second device and beyond
 
@@ -124,16 +125,17 @@ If the local folder is **empty** when you create the task on the new device, you
 
 ## First run
 
-On the very first run on a device, the local synchronized state does not yet exist. BUtil treats every file present in the centralized storage as something to download and, in **Two-way** mode, every local file that is not yet remote as something to upload. Expect the first run to take longer than later, incremental runs.
+On the very first run on a device, the local synchronized state does not yet exist. **Read** downloads the centralized storage and does not upload. **Two-way** downloads that storage and also uploads local files that are not yet on it. **Write** uploads the local folder so the next storage version matches it, and deletes storage files that are not in the folder. Expect the first run to take longer than later, incremental runs.
 
 If a device has only just been added and you want it to start from a clean state, start with an empty local folder so that nothing local is uploaded by accident, or follow the [second-device procedure](#setting-up-the-second-device-and-beyond) above.
 
 ## Behavior summary
 
-- When a previous remote upload was interrupted, the next run on any device will retry the upload.
-- When a device has never completed a download, the run will overwrite the local files with the centralized state.
-- Once the local state matches the remote state, two-way reconciliation is performed.
-- Conflicts are resolved by the most recent modification timestamp; the overwritten content remains restorable from previous versions on the centralized storage.
+- When a previous remote upload was interrupted, the next **Two-way** or **Write** run retries the upload.
+- **Read** copies the storage into the local folder and does not upload.
+- **Two-way** reconciles both sides. If the same file changed in both places, the later modification time wins.
+- **Write** makes the next storage version match the local folder, including deletions, and does not change the folder.
+- Overwritten content remains restorable from previous versions on the centralized storage.
 
 ## Encryption
 

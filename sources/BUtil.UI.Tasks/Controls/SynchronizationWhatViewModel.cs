@@ -35,8 +35,9 @@ public class SynchronizationWhatViewModel : ObservableObject
 
     public IReadOnlyList<string> SynchronizationModeOptions { get; } =
     [
+        Resources.SynchronizationMode_Field_Read,
         Resources.SynchronizationMode_Field_TwoWay,
-        Resources.SynchronizationMode_Field_Read
+        Resources.SynchronizationMode_Field_Write
     ];
 
     #region Labels
@@ -45,8 +46,9 @@ public class SynchronizationWhatViewModel : ObservableObject
     public static string Field_Folder_Browse => Resources.Field_Folder_Browse;
 
     public static string SynchronizationMode_Field => Resources.SynchronizationMode_Field;
-    public static string SynchronizationMode_Field_TwoWay => Resources.SynchronizationMode_Field_TwoWay;
     public static string SynchronizationMode_Field_Read => Resources.SynchronizationMode_Field_Read;
+    public static string SynchronizationMode_Field_TwoWay => Resources.SynchronizationMode_Field_TwoWay;
+    public static string SynchronizationMode_Field_Write => Resources.SynchronizationMode_Field_Write;
 
     #endregion
 
@@ -63,8 +65,16 @@ public class SynchronizationWhatViewModel : ObservableObject
             if (value == _synchronizationMode) return;
             _synchronizationMode = value;
             OnPropertyChanged(nameof(SynchronizationMode));
+            OnPropertyChanged(nameof(SynchronizationModeHelp));
         }
     }
+
+    public string SynchronizationModeHelp => SynchronizationMode switch
+    {
+        SynchronizationTaskModelMode.TwoWay => Resources.SynchronizationMode_Field_TwoWay_Help,
+        SynchronizationTaskModelMode.Write => Resources.SynchronizationMode_Field_Write_Help,
+        _ => Resources.SynchronizationMode_Field_Read_Help,
+    };
 
     public string SelectedSynchronizationMode
     {
@@ -79,14 +89,21 @@ public class SynchronizationWhatViewModel : ObservableObject
     }
 
     private static string ToDisplay(SynchronizationTaskModelMode mode)
-        => mode == SynchronizationTaskModelMode.Read
-            ? Resources.SynchronizationMode_Field_Read
-            : Resources.SynchronizationMode_Field_TwoWay;
+        => mode switch
+        {
+            SynchronizationTaskModelMode.TwoWay => Resources.SynchronizationMode_Field_TwoWay,
+            SynchronizationTaskModelMode.Write => Resources.SynchronizationMode_Field_Write,
+            _ => Resources.SynchronizationMode_Field_Read,
+        };
 
     private static SynchronizationTaskModelMode FromDisplay(string? display)
-        => display == Resources.SynchronizationMode_Field_Read
-            ? SynchronizationTaskModelMode.Read
-            : SynchronizationTaskModelMode.TwoWay;
+    {
+        if (display == Resources.SynchronizationMode_Field_TwoWay)
+            return SynchronizationTaskModelMode.TwoWay;
+        if (display == Resources.SynchronizationMode_Field_Write)
+            return SynchronizationTaskModelMode.Write;
+        return SynchronizationTaskModelMode.Read;
+    }
 
     #endregion
 

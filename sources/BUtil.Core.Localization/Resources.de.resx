@@ -933,14 +933,26 @@ Siehe detaillierte Beschreibung im folgenden Link.</value>
   <data name="SynchronizationMode_Field_Read" xml:space="preserve">
     <value>Lesen</value>
   </data>
+  <data name="SynchronizationMode_Field_Read_Help" xml:space="preserve">
+    <value>Lädt den zentralen Speicher in diesen Ordner herunter. Dateien, die im Speicher hinzugefügt oder geändert wurden, werden hierher kopiert, und Dateien, die im Speicher entfernt wurden, werden hier entfernt. Dieser Ordner wird nie hochgeladen. Dateien, die nur hier vorhanden sind, bleiben unverändert. Wenn Sie eine Datei hier bearbeitet haben und die Kopie im Speicher anders ist, ersetzt die Kopie aus dem Speicher Ihre Bearbeitung. Verwenden Sie dies auf einem Gerät, das nur Dateien empfangen soll, und für den ersten Lauf auf einem neuen Gerät.</value>
+  </data>
   <data name="SynchronizationMode_Field_TwoWay" xml:space="preserve">
     <value>Zwei-Wege</value>
+  </data>
+  <data name="SynchronizationMode_Field_TwoWay_Help" xml:space="preserve">
+    <value>Kopiert Änderungen in beide Richtungen. Eine Datei, die Sie hier hinzufügen, bearbeiten oder löschen, wird auf den Speicher angewendet, und eine Datei, die im Speicher hinzugefügt, bearbeitet oder gelöscht wurde, wird hier angewendet. Wenn dieselbe Datei an beiden Orten geändert wurde, bleibt die Kopie mit dem späteren Änderungszeitpunkt erhalten. Die ältere Kopie bleibt in einer früheren Version im Speicher und kann wiederhergestellt werden. Wechseln Sie hierzu nach einem Lauf im Modus Lesen, wenn dieses Gerät sowohl senden als auch empfangen soll.</value>
+  </data>
+  <data name="SynchronizationMode_Field_Write" xml:space="preserve">
+    <value>Schreiben</value>
+  </data>
+  <data name="SynchronizationMode_Field_Write_Help" xml:space="preserve">
+    <value>Veröffentlicht diesen Ordner als nächste Version im zentralen Speicher. Diese Version entspricht diesem Ordner: Dateien hier werden hochgeladen, und Dateien, die im Speicher, aber nicht in diesem Ordner sind, werden aus dem Speicher gelöscht. In diesem Ordner wird nichts geändert oder gelöscht. Andere Geräte erhalten diesen Ordner beim nächsten Lauf. Frühere Versionen bleiben im Speicher und können wiederhergestellt werden. Verwenden Sie dies, wenn dieser Computer die Quelle der Dateien ist oder wenn Sie den Ordner lokal korrigiert haben und der Speicher genau dazu passen soll.</value>
   </data>
   <data name="SynchronizationTask_Create" xml:space="preserve">
     <value>Synchronisation</value>
   </data>
   <data name="SynchronizationTask_Help" xml:space="preserve">
-    <value>Zwei-Wege-Synchronisierung von Dateien zwischen Geräten unter Verwendung eines zentralisierten Speichers.</value>
+    <value>Hält einen Ordner auf demselben Stand wie ein zentraler Speicher, den Ihre Geräte gemeinsam nutzen. Beginnen Sie mit Lesen und wechseln Sie dann zu Zwei-Wege oder Schreiben.</value>
   </data>
   <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
     <value>Geben Sie einen eindeutigen, zentralen Speicherort an, über den Geräte synchronisiert werden. Alle beteiligten Geräte sollten denselben Speicherort verwenden. Dieser Speicherort wird vollständig von der App verwaltet — einschließlich des Löschens von Daten —, verwenden Sie ihn daher für nichts anderes und teilen Sie ihn nicht zwischen mehreren Aufgaben.</value>

@@ -102,11 +102,15 @@
     <string name="import_skip_help">Omet els fitxers que ja són a la destinació o que s\'han importat abans.</string>
     <string name="import_delete">Suprimeix les dades copiades del suport d\'origen</string>
     <string name="import_min_date">Omet els fitxers modificats abans de (aaaa-mm-dd):</string>
-    <string name="sync_help">Sincronització bidireccional de fitxers entre dispositius mitjançant emmagatzematge centralitzat.</string>
+    <string name="sync_help">Manté una carpeta al dia amb un emmagatzematge centralitzat compartit pels vostres dispositius. Comenceu amb Llegeix i després passeu a Bidireccional o Escriptura.</string>
     <string name="sync_storage_help">Indiqueu un emmagatzematge propi a través del qual se sincronitzen els dispositius. Tots han d\'usar el mateix lloc i la mateixa contrasenya.</string>
     <string name="sync_mode">Mode de sincronització:</string>
     <string name="sync_mode_two_way">Bidireccional</string>
+    <string name="sync_mode_two_way_help">Copia els canvis en les dues direccions. Un fitxer que afegiu, editeu o suprimiu aquí s\'aplica a l\'emmagatzematge, i un fitxer afegit, editat o suprimit a l\'emmagatzematge s\'aplica aquí. Si el mateix fitxer ha canviat als dos llocs, es conserva la còpia amb l\'hora de modificació més recent. La còpia més antiga roman en una versió anterior de l\'emmagatzematge i es pot restaurar. Passeu a aquest mode després d\'una execució de Llegeix, quan aquest dispositiu hagi d\'enviar i rebre.</string>
     <string name="sync_mode_read">Llegeix</string>
+    <string name="sync_mode_read_help">Baixa l\'emmagatzematge centralitzat en aquesta carpeta. Els fitxers afegits o canviats a l\'emmagatzematge es copien aquí, i els fitxers eliminats de l\'emmagatzematge s\'eliminen d\'aquí. Aquesta carpeta no es puja mai. Els fitxers que només existeixen aquí es deixen tal com són. Si heu editat un fitxer aquí i la còpia de l\'emmagatzematge és diferent, la còpia de l\'emmagatzematge substitueix la vostra edició. Feu-lo servir en un dispositiu que només hagi de rebre fitxers, i en la primera execució en un dispositiu nou.</string>
+    <string name="sync_mode_write">Escriptura</string>
+    <string name="sync_mode_write_help">Publica aquesta carpeta com la versió següent a l\'emmagatzematge centralitzat. Aquesta versió coincideix amb aquesta carpeta: els fitxers d\'aquí es pugen, i els fitxers que són a l\'emmagatzematge però no en aquesta carpeta se suprimeixen de l\'emmagatzematge. Res d\'aquesta carpeta no es canvia ni se suprimeix. Els altres dispositius reben aquesta carpeta la propera vegada que s\'executin. Les versions anteriors romanen a l\'emmagatzematge i es poden restaurar. Feu-lo servir quan aquest ordinador és la font dels fitxers, o quan heu corregit la carpeta localment i voleu que l\'emmagatzematge hi coincideixi exactament.</string>
     <string name="sync_repository">Subcarpeta del dipòsit:</string>
     <string name="ftps_help">Comparteix la carpeta triada amb FTPS explícit i un certificat autofirmat. Mentre la tasca s\'executa, un client FTPS de la xarxa local s\'hi pot connectar.</string>
     <string name="ftps_user">Usuari:</string>

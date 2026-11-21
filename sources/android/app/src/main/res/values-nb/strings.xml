@@ -101,11 +101,15 @@
     <string name="import_skip_help">Hopper over filer som allerede finnes på målet, eller som ble importert tidligere.</string>
     <string name="import_delete">Slett kopierte data fra kildemediet</string>
     <string name="import_min_date">Hopp over filer endret før (åååå-mm-dd):</string>
-    <string name="sync_help">Toveis synkronisering av filer mellom enheter med sentralisert lagring.</string>
+    <string name="sync_help">Holder en mappe i takt med et sentralisert lager som enhetene dine deler. Start med Les, og bytt deretter til Toveis eller Skriv.</string>
     <string name="sync_storage_help">Oppgi et eget lager som enhetene synkroniserer gjennom. Alle enheter skal bruke samme sted og samme passord.</string>
     <string name="sync_mode">Synkroniseringsmodus:</string>
     <string name="sync_mode_two_way">Toveis</string>
+    <string name="sync_mode_two_way_help">Kopierer endringer i begge retninger. En fil du legger til, redigerer eller sletter her, brukes på lageret, og en fil som er lagt til, redigert eller slettet på lageret, brukes her. Hvis den samme filen er endret begge steder, beholdes kopien med det senere endringstidspunktet. Den eldre kopien blir i en tidligere versjon på lageret og kan gjenopprettes. Bytt til dette etter en kjøring i Les, når denne enheten skal både sende og motta.</string>
     <string name="sync_mode_read">Les</string>
+    <string name="sync_mode_read_help">Laster det sentraliserte lageret ned i denne mappen. Filer som er lagt til eller endret på lageret, kopieres hit, og filer som er fjernet fra lageret, fjernes her. Denne mappen lastes aldri opp. Filer som bare finnes her, blir som de er. Hvis du har redigert en fil her og kopien på lageret er annerledes, erstatter lagerkopien redigeringen din. Bruk dette på en enhet som bare skal motta filer, og ved første kjøring på en ny enhet.</string>
+    <string name="sync_mode_write">Skriv</string>
+    <string name="sync_mode_write_help">Publiserer denne mappen som neste versjon på det sentraliserte lageret. Den versjonen samsvarer med denne mappen: filer her lastes opp, og filer som er på lageret, men ikke i denne mappen, slettes fra lageret. Ingenting i denne mappen endres eller slettes. Andre enheter mottar denne mappen neste gang de kjører. Tidligere versjoner blir på lageret og kan gjenopprettes. Bruk dette når denne datamaskinen er kilden til filene, eller når du har rettet mappen lokalt og vil at lageret skal samsvare nøyaktig.</string>
     <string name="sync_repository">Undermappe i lageret:</string>
     <string name="ftps_help">Deler den valgte mappen med eksplisitt FTPS og et selvsignert sertifikat. Mens oppgaven kjører, kan en FTPS-klient på det lokale nettverket koble til.</string>
     <string name="ftps_user">Bruker:</string>

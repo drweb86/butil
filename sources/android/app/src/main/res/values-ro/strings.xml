@@ -96,11 +96,15 @@
     <string name="import_skip_help">Omite fișierele care există deja la destinație sau care au fost importate mai devreme.</string>
     <string name="import_delete">Șterge datele copiate de pe mediul sursă</string>
     <string name="import_min_date">Omite fișierele modificate înainte de (aaaa-ll-zz):</string>
-    <string name="sync_help">Sincronizare bidirecțională a fișierelor între dispozitive utilizând stocare centralizată.</string>
+    <string name="sync_help">Menține un folder aliniat cu o stocare centralizată partajată de dispozitivele dvs. Începeți cu Citire, apoi treceți la Bidirecțional sau Scriere.</string>
     <string name="sync_storage_help">Indicați un spațiu propriu prin care se sincronizează dispozitivele. Toate trebuie să folosească același loc și aceeași parolă.</string>
     <string name="sync_mode">Mod de sincronizare:</string>
     <string name="sync_mode_two_way">Bidirecțional</string>
+    <string name="sync_mode_two_way_help">Copiază modificările în ambele direcții. Un fișier pe care îl adăugați, editați sau ștergeți aici este aplicat în stocare, iar un fișier adăugat, editat sau șters în stocare este aplicat aici. Dacă același fișier s-a schimbat în ambele locuri, se păstrează copia cu ora modificării mai recentă. Copia mai veche rămâne într-o versiune anterioară din stocare și poate fi restaurată. Treceți la aceasta după o rulare Citire, când acest dispozitiv trebuie să trimită și să primească.</string>
     <string name="sync_mode_read">Citire</string>
+    <string name="sync_mode_read_help">Descarcă stocarea centralizată în acest folder. Fișierele adăugate sau modificate în stocare sunt copiate aici, iar fișierele eliminate din stocare sunt eliminate și de aici. Acest folder nu este niciodată încărcat. Fișierele care există doar aici rămân așa cum sunt. Dacă ați editat un fișier aici și copia din stocare este diferită, copia din stocare înlocuiește editarea. Folosiți aceasta pe un dispozitiv care trebuie doar să primească fișiere și la prima rulare pe un dispozitiv nou.</string>
+    <string name="sync_mode_write">Scriere</string>
+    <string name="sync_mode_write_help">Publică acest folder ca versiunea următoare în stocarea centralizată. Acea versiune corespunde acestui folder: fișierele de aici sunt încărcate, iar fișierele care sunt în stocare dar nu în acest folder sunt șterse din stocare. Nimic din acest folder nu este modificat sau șters. Celelalte dispozitive primesc acest folder la următoarea rulare. Versiunile anterioare rămân în stocare și pot fi restaurate. Folosiți aceasta când acest calculator este sursa fișierelor sau când ați corectat folderul local și vreți ca stocarea să corespundă exact.</string>
     <string name="sync_repository">Subdosarul depozitului:</string>
     <string name="ftps_help">Partajează dosarul ales prin FTPS explicit, cu un certificat semnat de sine. Cât timp sarcina rulează, un client FTPS din rețeaua locală se poate conecta.</string>
     <string name="ftps_user">Utilizator:</string>

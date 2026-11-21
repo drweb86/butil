@@ -933,14 +933,26 @@ bin.
   <data name="SynchronizationMode_Field_Read" xml:space="preserve">
     <value>קריאה</value>
   </data>
+  <data name="SynchronizationMode_Field_Read_Help" xml:space="preserve">
+    <value>מוריד את האחסון המרכזי לתיקייה זו. קבצים שנוספו או השתנו באחסון מועתקים לכאן, וקבצים שהוסרו מהאחסון מוסרים גם מכאן. תיקייה זו לעולם אינה מועלית. קבצים שקיימים רק כאן נשארים כפי שהם. אם ערכת קובץ כאן והעותק באחסון שונה, עותק האחסון מחליף את העריכה שלך. השתמש בזה במכשיר שאמור רק לקבל קבצים, ובריצה הראשונה במכשיר חדש.</value>
+  </data>
   <data name="SynchronizationMode_Field_TwoWay" xml:space="preserve">
     <value>דו-כיווני</value>
+  </data>
+  <data name="SynchronizationMode_Field_TwoWay_Help" xml:space="preserve">
+    <value>מעתיק שינויים בשני הכיוונים. קובץ שאתה מוסיף, עורך או מוחק כאן מוחל על האחסון, וקובץ שנוסף, נערך או נמחק באחסון מוחל כאן. אם אותו קובץ השתנה בשני המקומות, נשמר העותק עם זמן השינוי המאוחר יותר. העותק הישן נשאר בגרסה קודמת באחסון ואפשר לשחזר אותו. עבור לזה אחרי ריצה של קריאה, כשהמכשיר הזה צריך גם לשלוח וגם לקבל.</value>
+  </data>
+  <data name="SynchronizationMode_Field_Write" xml:space="preserve">
+    <value>כתיבה</value>
+  </data>
+  <data name="SynchronizationMode_Field_Write_Help" xml:space="preserve">
+    <value>מפרסם את התיקייה הזו כגרסה הבאה באחסון המרכזי. הגרסה הזו תואמת לתיקייה: הקבצים כאן מועלים, וקבצים שנמצאים באחסון אבל לא בתיקייה הזו נמחקים מהאחסון. שום דבר בתיקייה הזו לא משתנה ולא נמחק. מכשירים אחרים יקבלו את התיקייה הזו בריצה הבאה. גרסאות קודמות נשארות באחסון ואפשר לשחזר אותן. השתמש בזה כשהמחשב הזה הוא מקור הקבצים, או כשתיקנת את התיקייה באופן מקומי ואתה רוצה שהאחסון יתאים לה בדיוק.</value>
   </data>
   <data name="SynchronizationTask_Create" xml:space="preserve">
     <value>סנכרון</value>
   </data>
   <data name="SynchronizationTask_Help" xml:space="preserve">
-    <value>סנכרון דו-כיווני של קבצים בין התקנים באמצעות אחסון מרכזי.</value>
+    <value>שומר תיקייה תואמת לאחסון מרכזי שמשותף למכשירים שלך. התחל בקריאה, ואז עבור לדו-כיווני או לכתיבה.</value>
   </data>
   <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
     <value>ציינו מיקום אחסון מרכזי וייחודי שדרכו יתבצע הסנכרון בין המכשירים. על כל המכשירים המשתתפים להשתמש באותו מיקום אחסון. מיקום זה מנוהל במלואו על ידי האפליקציה — כולל מחיקת נתונים — לכן אין להשתמש בו לכל מטרה אחרת, ואין לשתף אותו בין כמה משימות.</value>

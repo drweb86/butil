@@ -101,11 +101,15 @@
     <string name="import_skip_help">Preterlasas dosierojn, kiuj jam estas en la celo aŭ kiuj estis importitaj pli frue.</string>
     <string name="import_delete">Forigi kopiitajn datumojn de la fonta datumportilo</string>
     <string name="import_min_date">Preterlasi dosierojn ŝanĝitajn antaŭ (jjjj-mm-tt):</string>
-    <string name="sync_help">Dudirekta sinkronigo de dosieroj inter aparatoj uzantaj centralizitan stokadon.</string>
+    <string name="sync_help">Tenadas dosierujon kongrua kun centralizita stokejo kiun viaj aparatoj kunhavas. Komencu per Legu, poste ŝanĝu al Dudirekte aŭ Skribo.</string>
     <string name="sync_storage_help">Indiku apartan konservejon, per kiu aparatoj sinkronigas. Ĉiuj aparatoj uzu la saman lokon kaj la saman pasvorton.</string>
     <string name="sync_mode">Sinkroniga reĝimo:</string>
     <string name="sync_mode_two_way">Dudirekte</string>
+    <string name="sync_mode_two_way_help">Kopias ŝanĝojn en ambaŭ direktoj. Dosiero kiun vi aldonas, redaktas aŭ forigas ĉi tie estas aplikata al la stokejo, kaj dosiero aldonita, redaktita aŭ forigita en la stokejo estas aplikata ĉi tie. Se la sama dosiero ŝanĝiĝis en ambaŭ lokoj, restas la kopio kun la pli posta modifa tempo. La pli malnova kopio restas en antaŭa versio en la stokejo kaj povas esti restaŭrita. Ŝanĝu al ĉi tio post rulo de Legu, kiam ĉi tiu aparato devas kaj sendi kaj ricevi.</string>
     <string name="sync_mode_read">Legu</string>
+    <string name="sync_mode_read_help">Elŝutas la centralizitan stokejon en ĉi tiun dosierujon. Dosieroj aldonitaj aŭ ŝanĝitaj en la stokejo estas kopiitaj ĉi tien, kaj dosieroj forigitaj el la stokejo estas forigitaj ankaŭ ĉi tie. Ĉi tiu dosierujo neniam estas alŝutata. Dosieroj kiuj ekzistas nur ĉi tie restas kiel ili estas. Se vi redaktis dosieron ĉi tie kaj la kopio en la stokejo estas alia, la kopio el la stokejo anstataŭas vian redakton. Uzu ĉi tion en aparato kiu nur ricevu dosierojn, kaj je la unua rulo en nova aparato.</string>
+    <string name="sync_mode_write">Skribo</string>
+    <string name="sync_mode_write_help">Publikigas ĉi tiun dosierujon kiel la sekvan version en la centralizita stokejo. Tiu versio kongruas kun ĉi tiu dosierujo: dosieroj ĉi tie estas alŝutataj, kaj dosieroj kiuj estas en la stokejo sed ne en ĉi tiu dosierujo estas forigitaj el la stokejo. Nenio en ĉi tiu dosierujo estas ŝanĝata aŭ forigata. Aliaj aparatoj ricevas ĉi tiun dosierujon je la sekva rulo. Antaŭaj versioj restas en la stokejo kaj povas esti restaŭritaj. Uzu ĉi tion kiam ĉi tiu komputilo estas la fonto de la dosieroj, aŭ kiam vi korektis la dosierujon loke kaj volas ke la stokejo kongruu precize.</string>
     <string name="sync_repository">Subdosierujo de la deponejo:</string>
     <string name="ftps_help">Kunhavigas la elektitan dosierujon per eksplicita FTPS kun memsubskribita atestilo. Dum la tasko rulas, FTPS-kliento en la loka reto povas konektiĝi.</string>
     <string name="ftps_port">Haveno:</string>

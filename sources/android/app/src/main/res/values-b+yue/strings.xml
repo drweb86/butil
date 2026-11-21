@@ -98,11 +98,15 @@
     <string name="import_skip_help">跳過目的地已經有嘅檔案，同埋之前匯入過嘅檔案。</string>
     <string name="import_delete">從來源媒體刪除已複製資料</string>
     <string name="import_min_date">跳過呢個日期之前修改過嘅檔案（yyyy-MM-dd）：</string>
-    <string name="sync_help">使用集中存儲進行設備之間的文件雙向同步。</string>
+    <string name="sync_help">令一個資料夾同你嘅裝置共用嘅集中存儲保持一致。由讀取開始，然後轉去雙向或者寫入。</string>
     <string name="sync_storage_help">指定裝置用嚟同步嘅專用儲存位置。所有裝置都應該用同一個位置同同一個密碼。</string>
     <string name="sync_mode">同步模式：</string>
     <string name="sync_mode_two_way">雙向</string>
+    <string name="sync_mode_two_way_help">將改動向兩個方向複製。你喺呢度新增、修改或者刪除嘅檔案會套用到存儲，存儲入面新增、修改或者刪除嘅檔案會套用到呢度。如果同一檔案兩邊都改過，會保留修改時間較後嗰份。較舊嗰份會留喺存儲之前嘅版本，可以還原。喺讀取執行之後，當呢部裝置要發送同接收時，轉去呢個模式。</string>
     <string name="sync_mode_read">讀取</string>
+    <string name="sync_mode_read_help">將集中存儲下載到呢個資料夾。存儲入面新增或者改過嘅檔案會複製到呢度，存儲入面刪咗嘅檔案亦會喺呢度刪走。呢個資料夾永遠唔會上傳。只係呢度先有嘅檔案會保持原樣。如果你喺呢度改過檔案，而存儲嘅副本唔同，存儲嗰份會取代你嘅修改。喺只應該接收檔案嘅裝置，同埋新裝置第一次執行時用。</string>
+    <string name="sync_mode_write">寫入</string>
+    <string name="sync_mode_write_help">將呢個資料夾發佈做集中存儲嘅下一個版本。嗰個版本同呢個資料夾一致：呢度嘅檔案會上傳，存儲有但係呢個資料夾冇嘅檔案會由存儲刪除。呢個資料夾入面冇嘢會被改或者刪。其他裝置下次執行就會收到呢個資料夾。之前嘅版本會留喺存儲，可以還原。當呢部電腦係檔案嘅來源，或者你已經喺本機修正咗資料夾、想存儲完全同佢一致時用。</string>
     <string name="sync_repository">儲存庫子資料夾：</string>
     <string name="ftps_help">用明確 FTPS 同自簽憑證分享所選資料夾。工作執行嗰陣，區域網絡入面嘅 FTPS 用戶端可以連線。</string>
     <string name="ftps_port">端口：</string>

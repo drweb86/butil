@@ -933,14 +933,26 @@ See detailed description in the following link.</value>
   <data name="SynchronizationMode_Field_Read" xml:space="preserve">
     <value>Leugh</value>
   </data>
+  <data name="SynchronizationMode_Field_Read_Help" xml:space="preserve">
+    <value>A' luchdachadh a-nuas an stòradh meadhanaichte dhan phasgan seo. Thèid faidhlichean a chaidh a chur ris no atharrachadh air an stòradh a chopaigeadh an seo, agus thèid faidhlichean a chaidh a thoirt far an stòraidh a thoirt air falbh às an seo. Cha tèid am pasgan seo a luchdachadh suas gu bràth. Thèid faidhlichean a tha ann an seo a-mhàin fhàgail mar a tha iad. Ma dheasaich thu faidhle an seo agus tha lethbhreac an stòraidh eadar-dhealaichte, thèid lethbhreac an stòraidh an àite na deasachaidh agad. Cleachd seo air inneal nach bu chòir ach faidhlichean fhaighinn, agus air a' chiad ruith air inneal ùr.</value>
+  </data>
   <data name="SynchronizationMode_Field_TwoWay" xml:space="preserve">
     <value>Dà-shlighe</value>
+  </data>
+  <data name="SynchronizationMode_Field_TwoWay_Help" xml:space="preserve">
+    <value>A' copaigeadh atharraichean an dà dhòigh. Thèid faidhle a chuireas tu ris, a dheasaicheas tu no a sguabas tu às an seo a chur air an stòradh, agus thèid faidhle a chaidh a chur ris, a dheasachadh no a sguabadh às air an stòradh a chur an seo. Ma dh'atharraich an aon fhaidhle anns an dà àite, thèid an lethbhreac leis an àm atharrachaidh as ùire a chumail. Fanaidh an lethbhreac as sine ann an tionndadh na bu tràithe air an stòradh agus gabhaidh e aiseag. Atharraich gu seo às dèidh ruith Leugh, nuair bu chòir don inneal seo an dà chuid a chur agus fhaighinn.</value>
+  </data>
+  <data name="SynchronizationMode_Field_Write" xml:space="preserve">
+    <value>Sgrìobh</value>
+  </data>
+  <data name="SynchronizationMode_Field_Write_Help" xml:space="preserve">
+    <value>A' foillseachadh a' phasgain seo mar an ath thionndadh air an stòradh meadhanaichte. Tha an tionndadh sin a' freagairt ris a' phasgan seo: thèid faidhlichean an seo a luchdachadh suas, agus thèid faidhlichean a tha air an stòradh ach nach eil sa phasgan seo a sguabadh às an stòradh. Cha tèid dad sa phasgan seo atharrachadh no a sguabadh às. Gheibh innealan eile am pasgan seo an ath thuras a ruitheas iad. Fanaidh tionndaidhean na bu tràithe air an stòradh agus gabhaidh an aiseag. Cleachd seo nuair is e an coimpiutair seo tùs nam faidhle, no nuair a cheartaich thu am pasgan gu h-ionadail agus gu bheil thu airson gum freagair an stòradh ris gu dìreach.</value>
   </data>
   <data name="SynchronizationTask_Create" xml:space="preserve">
     <value>Sioncronadh</value>
   </data>
   <data name="SynchronizationTask_Help" xml:space="preserve">
-    <value>Sioncronadh faidhlichean dà-shligheach eadar innealan a’ cleachdadh stòradh meadhanaichte.</value>
+    <value>A' cumail pasgan a rèir stòradh meadhanaichte a tha na h-innealan agad a' co-roinn. Tòisich le Leugh, an uair sin atharraich gu Dà-shlighe no Sgrìobh.</value>
   </data>
   <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
     <value>Sònraich stòradh meadhanaichte àraidh tro bheil innealan a' sioncronachadh. Bu chòir do gach inneal a tha an sàs an aon àite stòraidh a chleachdadh. Tha an t-àite seo air a stiùireadh gu tur leis an aplacaid — a' gabhail a-steach sguabadh às dàta — mar sin na cleachd e airson dad eile, agus na co-roinn e eadar iomadh gnìomh.</value>

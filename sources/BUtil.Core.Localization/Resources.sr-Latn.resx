@@ -933,14 +933,26 @@ Pogledajte detaljan opis na sledećem linku.</value>
   <data name="SynchronizationMode_Field_Read" xml:space="preserve">
     <value>Čitanje</value>
   </data>
+  <data name="SynchronizationMode_Field_Read_Help" xml:space="preserve">
+    <value>Preuzima centralizovano skladište u ovu fasciklu. Datoteke dodate ili izmenjene u skladištu kopiraju se ovde, a datoteke uklonjene iz skladišta uklanjaju se i odavde. Ova fascikla se nikad ne šalje. Datoteke koje postoje samo ovde ostaju kakve jesu. Ako ste ovde uredili datoteku, a kopija u skladištu je drugačija, kopija iz skladišta zamenjuje vašu izmenu. Koristite ovo na uređaju koji treba samo da prima datoteke i pri prvom pokretanju na novom uređaju.</value>
+  </data>
   <data name="SynchronizationMode_Field_TwoWay" xml:space="preserve">
     <value>Dvosmerno</value>
+  </data>
+  <data name="SynchronizationMode_Field_TwoWay_Help" xml:space="preserve">
+    <value>Kopira izmene u oba smera. Datoteka koju ovde dodate, uredite ili obrišete primenjuje se na skladište, a datoteka dodata, uređena ili obrisana u skladištu primenjuje se ovde. Ako je ista datoteka izmenjena na oba mesta, zadržava se kopija sa kasnijim vremenom izmene. Starija kopija ostaje u prethodnoj verziji u skladištu i može se vratiti. Prebacite se na ovo posle pokretanja u režimu Čitanje, kada ovaj uređaj treba i da šalje i da prima.</value>
+  </data>
+  <data name="SynchronizationMode_Field_Write" xml:space="preserve">
+    <value>Upisivanje</value>
+  </data>
+  <data name="SynchronizationMode_Field_Write_Help" xml:space="preserve">
+    <value>Objavljuje ovu fasciklu kao sledeću verziju na centralizovanom skladištu. Ta verzija odgovara ovoj fascikli: datoteke odavde se šalju, a datoteke koje su u skladištu, ali nisu u ovoj fascikli, brišu se iz skladišta. Ništa u ovoj fascikli se ne menja niti briše. Drugi uređaji dobijaju ovu fasciklu pri sledećem pokretanju. Prethodne verzije ostaju u skladištu i mogu se vratiti. Koristite ovo kada je ovaj računar izvor datoteka ili kada ste fasciklu lokalno ispravili i želite da skladište tačno odgovara.</value>
   </data>
   <data name="SynchronizationTask_Create" xml:space="preserve">
     <value>Sinhronizacija</value>
   </data>
   <data name="SynchronizationTask_Help" xml:space="preserve">
-    <value>Dvosmerna sinhronizacija datoteka između uređaja korišćenjem centralizovanog skladišta.</value>
+    <value>Drži fasciklu usklađenom sa centralizovanim skladištem koje dele vaši uređaji. Počnite sa Čitanje, pa prebacite na Dvosmerno ili Upisivanje.</value>
   </data>
   <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
     <value>Navedite jedinstveno centralizovano skladište preko kog se uređaji sinhronizuju. Svi uređaji koji učestvuju treba da koriste istu lokaciju skladišta. Ovom lokacijom u potpunosti upravlja aplikacija — uključujući brisanje podataka — stoga je nemojte koristiti ni za šta drugo i nemojte je deliti između više zadataka.</value>

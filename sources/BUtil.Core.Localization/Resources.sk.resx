@@ -933,14 +933,26 @@ Pozrite si podrobný popis na nasledujúcom odkaze.</value>
   <data name="SynchronizationMode_Field_Read" xml:space="preserve">
     <value>Čítanie</value>
   </data>
+  <data name="SynchronizationMode_Field_Read_Help" xml:space="preserve">
+    <value>Stiahne centralizované úložisko do tohto priečinka. Súbory pridané alebo zmenené v úložisku sa skopírujú sem a súbory odobraté z úložiska sa odoberú aj odtiaľto. Tento priečinok sa nikdy neodošle. Súbory, ktoré existujú len tu, ostanú bez zmeny. Ak ste tu súbor upravili a kópia v úložisku sa líši, kópia z úložiska nahradí vašu úpravu. Použite to na zariadení, ktoré má súbory len prijímať, a pri prvom spustení na novom zariadení.</value>
+  </data>
   <data name="SynchronizationMode_Field_TwoWay" xml:space="preserve">
     <value>Obojsmerný</value>
+  </data>
+  <data name="SynchronizationMode_Field_TwoWay_Help" xml:space="preserve">
+    <value>Kopíruje zmeny oboma smermi. Súbor, ktorý tu pridáte, upravíte alebo odstránite, sa použije v úložisku, a súbor pridaný, upravený alebo odstránený v úložisku sa použije tu. Ak sa rovnaký súbor zmenil na oboch miestach, zostane kópia s neskorším časom zmeny. Staršia kópia zostane v predchádzajúcej verzii v úložisku a dá sa obnoviť. Prepnite na tento režim po spustení Čítanie, keď má toto zariadenie odosielať aj prijímať.</value>
+  </data>
+  <data name="SynchronizationMode_Field_Write" xml:space="preserve">
+    <value>Zápis</value>
+  </data>
+  <data name="SynchronizationMode_Field_Write_Help" xml:space="preserve">
+    <value>Zverejní tento priečinok ako ďalšiu verziu v centralizovanom úložisku. Táto verzia zodpovedá tomuto priečinku: súbory odtiaľto sa odošlú a súbory, ktoré sú v úložisku, ale nie v tomto priečinku, sa z úložiska odstránia. V tomto priečinku sa nič nezmení ani neodstráni. Ostatné zariadenia dostanú tento priečinok pri ďalšom spustení. Predchádzajúce verzie ostanú v úložisku a dajú sa obnoviť. Použite to, keď je tento počítač zdrojom súborov, alebo keď ste priečinok miestne opravili a chcete, aby úložisko presne zodpovedalo.</value>
   </data>
   <data name="SynchronizationTask_Create" xml:space="preserve">
     <value>Synchronizácia</value>
   </data>
   <data name="SynchronizationTask_Help" xml:space="preserve">
-    <value>Obojsmerná synchronizácia súborov medzi zariadeniami pomocou centralizovaného úložiska.</value>
+    <value>Udržiava priečinok v súlade s centralizovaným úložiskom, ktoré zdieľajú vaše zariadenia. Začnite režimom Čítanie a potom prepnite na Obojsmerný alebo Zápis.</value>
   </data>
   <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
     <value>Zadajte jedinečné centralizované úložisko, cez ktoré sa zariadenia synchronizujú. Všetky zúčastnené zariadenia by mali používať rovnaké umiestnenie úložiska. Toto umiestnenie úplne spravuje aplikácia — vrátane mazania údajov —, preto ho nepoužívajte na nič iné a nezdieľajte ho medzi viacerými úlohami.</value>

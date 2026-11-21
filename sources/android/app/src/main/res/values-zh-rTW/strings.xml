@@ -103,11 +103,15 @@
     <string name="import_skip_help">略過目的地已有的檔案，以及先前匯入過的檔案。</string>
     <string name="import_delete">從來源媒體刪除已複製的資料</string>
     <string name="import_min_date">略過在此日期之前修改的檔案（yyyy-MM-dd）：</string>
-    <string name="sync_help">使用集中式儲存空間在裝置之間進行雙向檔案同步。</string>
+    <string name="sync_help">使資料夾與裝置共用的集中式儲存空間保持一致。從讀取開始，然後切換到雙向或寫入。</string>
     <string name="sync_storage_help">指定裝置用來同步的專用儲存位置。所有裝置應使用相同位置和相同密碼。</string>
     <string name="sync_mode">同步模式：</string>
     <string name="sync_mode_two_way">雙向</string>
+    <string name="sync_mode_two_way_help">向兩個方向複製變更。您在這裡新增、編輯或刪除的檔案會套用到儲存空間，儲存空間中新增、編輯或刪除的檔案會套用到這裡。如果同一個檔案在兩處都變更了，會保留修改時間較晚的複本。較早的複本留在儲存空間的先前版本中，可以還原。在讀取執行之後，當此裝置需要傳送和接收時，切換到此模式。</string>
     <string name="sync_mode_read">讀取</string>
+    <string name="sync_mode_read_help">將集中式儲存空間下載到此資料夾。儲存空間中新增或變更的檔案會複製到這裡，從儲存空間移除的檔案也會從這裡移除。此資料夾不會被上傳。只存在於這裡的檔案會保持原樣。如果您在這裡編輯了檔案，而儲存空間中的複本不同，儲存空間中的複本會取代您的編輯。在只應接收檔案的裝置上使用，也用於新裝置上的第一次執行。</string>
+    <string name="sync_mode_write">寫入</string>
+    <string name="sync_mode_write_help">將此資料夾發佈為集中式儲存空間上的下一個版本。該版本與此資料夾一致：這裡的檔案會上傳，儲存空間中有但此資料夾中沒有的檔案會從儲存空間刪除。此資料夾中的內容不會被變更或刪除。其他裝置在下次執行時會收到此資料夾。先前的版本留在儲存空間中，可以還原。當這部電腦是檔案的來源，或您已在本機修正資料夾並希望儲存空間與它完全一致時使用。</string>
     <string name="sync_repository">儲存庫子資料夾：</string>
     <string name="ftps_help">以明確 FTPS 和自我簽署憑證分享所選資料夾。工作執行時，區域網路中的 FTPS 用戶端可以連線。</string>
     <string name="ftps_port">連接埠：</string>

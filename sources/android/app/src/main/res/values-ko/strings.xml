@@ -98,11 +98,15 @@
     <string name="import_skip_help">대상에 이미 있는 파일과 이전에 가져온 파일을 건너뜁니다.</string>
     <string name="import_delete">원본 미디어에서 복사된 데이터 삭제</string>
     <string name="import_min_date">이 날짜 이전에 수정된 파일 건너뛰기(yyyy-MM-dd):</string>
-    <string name="sync_help">중앙 저장소를 사용한 장치 간 양방향 파일 동기화.</string>
+    <string name="sync_help">장치들이 함께 쓰는 중앙 저장소와 폴더를 맞춰 둡니다. 읽기로 시작한 다음 양방향 또는 쓰기로 바꿉니다.</string>
     <string name="sync_storage_help">기기가 동기화에 사용할 전용 저장소를 지정하세요. 모든 기기는 같은 위치와 같은 암호를 써야 합니다.</string>
     <string name="sync_mode">동기화 모드:</string>
     <string name="sync_mode_two_way">양방향</string>
+    <string name="sync_mode_two_way_help">변경 내용을 양방향으로 복사합니다. 여기서 추가, 편집 또는 삭제한 파일은 저장소에 적용되고, 저장소에서 추가, 편집 또는 삭제된 파일은 여기에 적용됩니다. 같은 파일이 양쪽에서 바뀌면 수정 시각이 더 늦은 사본이 남습니다. 이전 사본은 저장소의 이전 버전에 남으며 복원할 수 있습니다. 이 장치가 보내고 받아야 하면 읽기 실행 뒤에 이 모드로 바꿉니다.</string>
     <string name="sync_mode_read">읽기</string>
+    <string name="sync_mode_read_help">중앙 저장소를 이 폴더로 내려받습니다. 저장소에 추가되거나 변경된 파일은 여기로 복사되고, 저장소에서 제거된 파일은 여기에서도 제거됩니다. 이 폴더는 올리지 않습니다. 여기에만 있는 파일은 그대로 둡니다. 여기서 파일을 편집했는데 저장소의 사본이 다르면 저장소 사본이 편집 내용을 바꿉니다. 파일만 받아야 하는 장치와 새 장치에서의 첫 실행에 사용합니다.</string>
+    <string name="sync_mode_write">쓰기</string>
+    <string name="sync_mode_write_help">이 폴더를 중앙 저장소의 다음 버전으로 게시합니다. 그 버전은 이 폴더와 같습니다. 여기 있는 파일은 올라가고, 저장소에는 있지만 이 폴더에는 없는 파일은 저장소에서 삭제됩니다. 이 폴더 안의 내용은 바뀌거나 삭제되지 않습니다. 다른 장치는 다음에 실행할 때 이 폴더를 받습니다. 이전 버전은 저장소에 남으며 복원할 수 있습니다. 이 컴퓨터가 파일의 원본일 때, 또는 폴더를 이 자리에서 고친 뒤 저장소를 그와 똑같이 맞추고 싶을 때 사용합니다.</string>
     <string name="sync_repository">저장소 하위 폴더:</string>
     <string name="ftps_help">선택한 폴더를 명시적 FTPS와 자체 서명 인증서로 공유합니다. 작업이 실행되는 동안 로컬 네트워크의 FTPS 클라이언트가 연결할 수 있습니다.</string>
     <string name="ftps_port">포트:</string>

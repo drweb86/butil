@@ -933,14 +933,26 @@ Sjá nákvæma lýsingu á eftirfarandi tengli.</value>
   <data name="SynchronizationMode_Field_Read" xml:space="preserve">
     <value>Lesa</value>
   </data>
+  <data name="SynchronizationMode_Field_Read_Help" xml:space="preserve">
+    <value>Sækir miðlæga geymsluna í þessa möppu. Skrár sem bætt hefur verið við eða breytt í geymslunni eru afritaðar hingað og skrár sem fjarlægðar eru úr geymslunni eru fjarlægðar héðan. Þessi mappa er aldrei send. Skrár sem eru aðeins hér eru látnar óbreyttar. Ef þú breyttir skrá hér og afritið í geymslunni er annað kemur afrit geymslunnar í stað breytingarinnar. Notaðu þetta á tæki sem á aðeins að taka við skrám og í fyrstu keyrslu á nýju tæki.</value>
+  </data>
   <data name="SynchronizationMode_Field_TwoWay" xml:space="preserve">
     <value>Tvíátta</value>
+  </data>
+  <data name="SynchronizationMode_Field_TwoWay_Help" xml:space="preserve">
+    <value>Afritar breytingar í báðar áttir. Skrá sem þú bætir við, breytir eða eyðir hér er sett á geymsluna og skrá sem bætt er við, breytt eða eytt í geymslunni er sett hér. Ef sama skrá breyttist á báðum stöðum er afritið með síðari breytingartíma haldið. Eldra afritið er áfram í fyrri útgáfu í geymslunni og hægt er að endurheimta það. Skiptu yfir í þetta eftir keyrslu á Lesa þegar þetta tæki á bæði að senda og taka við.</value>
+  </data>
+  <data name="SynchronizationMode_Field_Write" xml:space="preserve">
+    <value>Skrifa</value>
+  </data>
+  <data name="SynchronizationMode_Field_Write_Help" xml:space="preserve">
+    <value>Birtir þessa möppu sem næstu útgáfu í miðlægu geymslunni. Sú útgáfa passar við þessa möppu: skrár hér eru sendar og skrám sem eru í geymslunni en ekki í þessari möppu er eytt úr geymslunni. Ekkert í þessari möppu er breytt eða eytt. Önnur tæki fá þessa möppu í næstu keyrslu. Fyrri útgáfur eru áfram í geymslunni og hægt er að endurheimta þær. Notaðu þetta þegar þessi tölva er uppspretta skránna eða þegar þú hefur lagfært möppuna á staðnum og vilt að geymslan passi nákvæmlega.</value>
   </data>
   <data name="SynchronizationTask_Create" xml:space="preserve">
     <value>Samstilling</value>
   </data>
   <data name="SynchronizationTask_Help" xml:space="preserve">
-    <value>Tvíátta samstilling skráa milli tækja með miðlægri geymslu.</value>
+    <value>Heldur möppu í samræmi við miðlæga geymslu sem tækin þín deila. Byrjaðu á Lesa og skiptu svo yfir í Tvíátta eða Skrifa.</value>
   </data>
   <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
     <value>Tilgreindu einstaka, miðlæga geymslu sem tæki samstilla í gegnum. Öll þátttökutæki ættu að nota sömu geymslustaðsetningu. Forritið sér alfarið um þessa staðsetningu — þar með talið eyðingu gagna — svo notaðu hana ekki í neitt annað og deildu henni ekki milli margra verkefna.</value>

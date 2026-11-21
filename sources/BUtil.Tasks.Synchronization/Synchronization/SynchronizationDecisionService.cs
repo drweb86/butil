@@ -60,6 +60,9 @@ class SynchronizationDecisionService(string? repositorySubfolder)
             case SynchronizationTaskModelMode.Read:
                 ResolveActionReadonlyMode(item);
                 break;
+            case SynchronizationTaskModelMode.Write:
+                ResolveActionWriteMode(item);
+                break;
         }
     }
 
@@ -278,6 +281,27 @@ class SynchronizationDecisionService(string? repositorySubfolder)
                     break;
             }
         }
+    }
+
+    private static void ResolveActionWriteMode(SynchronizationConsolidatedFileInfo item)
+    {
+        item.ActualFileAction = SynchronizationDecision.DoNothing;
+        item.RemoteAction = SynchronizationDecision.DoNothing;
+
+        if (item.ActualFile != null)
+        {
+            if (item.RemoteState == null || !item.ActualFile.Equal(item.RemoteState))
+                item.RemoteAction = SynchronizationDecision.Update;
+            return;
+        }
+
+        if (item.RemoteState != null)
+        {
+            item.RemoteAction = SynchronizationDecision.Delete;
+            return;
+        }
+
+        item.ForceUpdateState = item.LocalState != null;
     }
 
 

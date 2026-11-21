@@ -114,11 +114,15 @@
     <string name="import_skip_help">Skips files that already exist in the destination or that were imported earlier.</string>
     <string name="import_delete">Delete copied data on source media</string>
     <string name="import_min_date">Skip files modified before (yyyy-MM-dd):</string>
-    <string name="sync_help">Two-way synchronization of files between devices using centralized storage.</string>
+    <string name="sync_help">Keeps a folder in step with a centralized storage shared by your devices. Start in Read, then switch to Two-way or Write.</string>
     <string name="sync_storage_help">Specify a unique storage that devices sync through. All devices should use the same location and the same password.</string>
     <string name="sync_mode">Synchronization mode:</string>
     <string name="sync_mode_two_way">Two-way</string>
+    <string name="sync_mode_two_way_help">Copies changes in both directions. A file you add, edit, or delete here is applied to the storage, and a file added, edited, or deleted on the storage is applied here. If the same file changed in both places, the one with the later modification time is kept. The older copy remains in a previous version on the storage and can be restored. Switch to this after a Read run, when this device should both send and receive.</string>
     <string name="sync_mode_read">Read</string>
+    <string name="sync_mode_read_help">Downloads the centralized storage into this folder. Files added or changed on the storage are copied here, and files removed on the storage are removed here. This folder is never uploaded. Files that exist only here are left as they are. If you edited a file here and the storage copy is different, the storage copy replaces your edit. Use this on a device that should only receive files, and for the first run on a new device.</string>
+    <string name="sync_mode_write">Write</string>
+    <string name="sync_mode_write_help">Publishes this folder as the next version on the centralized storage. That version matches this folder: files here are uploaded, and files that are on the storage but not in this folder are deleted from the storage. Nothing in this folder is changed or deleted. Other devices receive this folder the next time they run. Previous versions stay on the storage and can be restored. Use this when this computer is the source of the files, or when you have fixed the folder locally and want the storage to match it exactly.</string>
     <string name="sync_repository">Repository subfolder:</string>
     <string name="ftps_help">Shares the selected folder with explicit FTPS and a self-signed certificate. While it is running, an FTPS client on your local network can connect.</string>
     <string name="ftps_port">Port:</string>

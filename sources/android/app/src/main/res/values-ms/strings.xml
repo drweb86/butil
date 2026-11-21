@@ -95,11 +95,15 @@
     <string name="import_skip_help">Melangkau fail yang sudah ada di destinasi atau yang diimport dahulu.</string>
     <string name="import_delete">Padam data yang disalin daripada media sumber</string>
     <string name="import_min_date">Langkau fail yang diubah sebelum (yyyy-MM-dd):</string>
-    <string name="sync_help">Penyegerakan dua hala fail antara peranti menggunakan storan berpusat.</string>
+    <string name="sync_help">Menjaga folder selaras dengan storan berpusat yang dikongsi peranti anda. Mulakan dengan Baca, kemudian tukar kepada Dua hala atau Tulis.</string>
     <string name="sync_storage_help">Nyatakan storan tersendiri yang digunakan peranti untuk menyegerak. Semua peranti hendaklah menggunakan lokasi dan kata laluan yang sama.</string>
     <string name="sync_mode">Mod penyegerakan:</string>
     <string name="sync_mode_two_way">Dua hala</string>
+    <string name="sync_mode_two_way_help">Menyalin perubahan pada kedua-dua arah. Fail yang anda tambah, edit atau padam di sini digunakan pada storan, dan fail yang ditambah, diedit atau dipadam pada storan digunakan di sini. Jika fail yang sama berubah di kedua-dua tempat, salinan dengan masa ubah yang lebih kemudian dikekalkan. Salinan yang lebih lama kekal dalam versi terdahulu pada storan dan boleh dipulihkan. Tukar kepada ini selepas larian Baca, apabila peranti ini patut menghantar dan menerima.</string>
     <string name="sync_mode_read">Baca</string>
+    <string name="sync_mode_read_help">Memuat turun storan berpusat ke dalam folder ini. Fail yang ditambah atau diubah pada storan disalin ke sini, dan fail yang dibuang dari storan dibuang dari sini. Folder ini tidak pernah dimuat naik. Fail yang hanya ada di sini dibiarkan sebagaimana adanya. Jika anda mengedit fail di sini dan salinan storan berbeza, salinan storan menggantikan suntingan anda. Gunakan ini pada peranti yang hanya patut menerima fail, dan pada larian pertama pada peranti baharu.</string>
+    <string name="sync_mode_write">Tulis</string>
+    <string name="sync_mode_write_help">Menerbitkan folder ini sebagai versi seterusnya pada storan berpusat. Versi itu sepadan dengan folder ini: fail di sini dimuat naik, dan fail yang ada pada storan tetapi tiada dalam folder ini dipadam dari storan. Tiada apa-apa dalam folder ini diubah atau dipadam. Peranti lain menerima folder ini pada larian seterusnya. Versi terdahulu kekal pada storan dan boleh dipulihkan. Gunakan ini apabila komputer ini ialah sumber fail, atau apabila anda telah membetulkan folder secara tempatan dan mahu storan sepadan dengannya tepat.</string>
     <string name="sync_repository">Subfolder repositori:</string>
     <string name="ftps_help">Berkongsi folder yang dipilih melalui FTPS tersurat dengan sijil yang ditandatangani sendiri. Semasa tugas berjalan, klien FTPS pada rangkaian tempatan boleh bersambung.</string>
     <string name="ftps_user">Pengguna:</string>

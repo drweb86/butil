@@ -933,14 +933,26 @@ See detailed description in the following link.</value>
   <data name="SynchronizationMode_Field_Read" xml:space="preserve">
     <value>Irakurri</value>
   </data>
+  <data name="SynchronizationMode_Field_Read_Help" xml:space="preserve">
+    <value>Biltegiratze zentralizatua karpeta honetara deskargatzen du. Biltegian gehitutako edo aldatutako fitxategiak hona kopiatzen dira, eta biltegitik kendutako fitxategiak hemendik ere kentzen dira. Karpeta hau ez da inoiz igotzen. Hemen bakarrik dauden fitxategiak dauden bezala uzten dira. Fitxategi bat hemen editatu baduzu eta biltegiko kopia desberdina bada, biltegiko kopiak zure edizioa ordezkatzen du. Erabili fitxategiak soilik jaso behar dituen gailu batean, eta gailu berri bateko lehen exekuzioan.</value>
+  </data>
   <data name="SynchronizationMode_Field_TwoWay" xml:space="preserve">
     <value>Bi norabidekoa</value>
+  </data>
+  <data name="SynchronizationMode_Field_TwoWay_Help" xml:space="preserve">
+    <value>Aldaketak bi norabideetan kopiatzen ditu. Hemen gehitzen, editatzen edo ezabatzen duzun fitxategia biltegian aplikatzen da, eta biltegian gehitutako, editatutako edo ezabatutako fitxategia hemen aplikatzen da. Fitxategi bera bi lekuetan aldatu bada, aldaketa-ordu berriena duen kopia gordetzen da. Kopia zaharragoa biltegiaren aurreko bertsio batean geratzen da eta lehenera daiteke. Aldatu honetara Irakurri exekuzio baten ondoren, gailu honek bidali eta jaso behar duenean.</value>
+  </data>
+  <data name="SynchronizationMode_Field_Write" xml:space="preserve">
+    <value>Idazketa</value>
+  </data>
+  <data name="SynchronizationMode_Field_Write_Help" xml:space="preserve">
+    <value>Karpeta hau biltegiratze zentralizatuaren hurrengo bertsio gisa argitaratzen du. Bertsio hori karpeta honekin bat dator: hemengo fitxategiak igotzen dira, eta biltegian dauden baina karpeta honetan ez dauden fitxategiak biltegitik ezabatzen dira. Karpeta honetan ez da ezer aldatzen edo ezabatzen. Beste gailuek karpeta hau jasoko dute hurrengo exekuzioan. Aurreko bertsioak biltegian geratzen dira eta lehenera daitezke. Erabili ordenagailu hau fitxategien iturria denean, edo karpeta lokalean zuzendu duzunean eta biltegia zehatz-mehatz bat etortzea nahi duzunean.</value>
   </data>
   <data name="SynchronizationTask_Create" xml:space="preserve">
     <value>Sinkronizazioa</value>
   </data>
   <data name="SynchronizationTask_Help" xml:space="preserve">
-    <value>Biltegiratze zentralizatua erabiliz gailuen arteko fitxategien bi norabideko sinkronizazioa.</value>
+    <value>Zure gailuek partekatzen duten biltegiratze zentralizatu batekin karpeta bat eguneratuta mantentzen du. Hasi Irakurri moduan, eta gero aldatu Bi norabidekoa edo Idazketa modura.</value>
   </data>
   <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
     <value>Zehaztu gailuek sinkronizatzeko erabiltzen duten biltegi zentralizatu bakarra. Parte hartzen duten gailu guztiek biltegiratze-kokapen bera erabili behar dute. Kokapen hori guztiz aplikazioak kudeatzen du — datuak ezabatzea barne —, beraz, ez erabili beste ezertarako, eta ez partekatu zenbait ataza artean.</value>

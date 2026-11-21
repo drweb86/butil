@@ -101,11 +101,15 @@
     <string name="import_skip_help">Slaan lêers oor wat reeds by die bestemming is of vroeër ingevoer is.</string>
     <string name="import_delete">Verwyder gekopieerde data op bronmedia</string>
     <string name="import_min_date">Slaan lêers oor wat voor hierdie datum verander is (jjjj-mm-dd):</string>
-    <string name="sync_help">Tweerigtingsinchronisasie van lêers tussen toestelle met behulp van gesentraliseerde berging.</string>
+    <string name="sync_help">Hou \'n vouer in pas met \'n gesentraliseerde berging wat u toestelle deel. Begin met Lees, en skakel dan oor na Tweerigting of Skryf.</string>
     <string name="sync_storage_help">Gee ’n eie bewaring aan waardeur toestelle sinchroniseer. Alle toestelle moet dieselfde plek en wagwoord gebruik.</string>
     <string name="sync_mode">Sinchronisasiemodus:</string>
     <string name="sync_mode_two_way">Tweerigting</string>
+    <string name="sync_mode_two_way_help">Kopieer veranderinge in albei rigtings. \'n Lêer wat u hier byvoeg, wysig of uitvee, word op die berging toegepas, en \'n lêer wat op die berging bygevoeg, gewysig of uitgevee is, word hier toegepas. As dieselfde lêer op albei plekke verander het, word die kopie met die latere wysigingstyd gehou. Die ouer kopie bly in \'n vorige weergawe op die berging en kan herstel word. Skakel hierna oor ná \'n Lees-lopie, wanneer hierdie toestel moet stuur en ontvang.</string>
     <string name="sync_mode_read">Lees</string>
+    <string name="sync_mode_read_help">Laai die gesentraliseerde berging af na hierdie vouer. Lêers wat op die berging bygevoeg of verander is, word hierheen gekopieer, en lêers wat op die berging verwyder is, word hier verwyder. Hierdie vouer word nooit opgelaai nie. Lêers wat net hier bestaan, bly soos hulle is. As u \'n lêer hier gewysig het en die kopie op die berging verskil, vervang die bergingkopie u wysiging. Gebruik dit op \'n toestel wat net lêers moet ontvang, en vir die eerste lopie op \'n nuwe toestel.</string>
+    <string name="sync_mode_write">Skryf</string>
+    <string name="sync_mode_write_help">Publiseer hierdie vouer as die volgende weergawe op die gesentraliseerde berging. Daardie weergawe stem met hierdie vouer ooreen: lêers hier word opgelaai, en lêers wat op die berging is maar nie in hierdie vouer nie, word van die berging uitgevee. Niks in hierdie vouer word verander of uitgevee nie. Ander toestelle ontvang hierdie vouer die volgende keer as hulle loop. Vorige weergawes bly op die berging en kan herstel word. Gebruik dit wanneer hierdie rekenaar die bron van die lêers is, of wanneer u die vouer plaaslik reggestel het en die berging presies daarmee moet ooreenstem.</string>
     <string name="sync_repository">Subvouer van die bewaring:</string>
     <string name="ftps_help">Deel die gekose vouer met eksplisiete FTPS en ’n selfondertekende sertifikaat. Terwyl die taak loop, kan ’n FTPS-kliënt op die plaaslike netwerk koppel.</string>
     <string name="ftps_port">Poort:</string>

@@ -40,7 +40,7 @@ internal class SynchronizationAllStatesReadTask : SequentialBuTask
         _remoteStateLoadTask = new RemoteStateLoadTask(synchronizationServices.StorageSpecificServices, Events, model.TaskOptions.Password);
         tasks.Add(_remoteStateLoadTask);
 
-        if (model.TaskOptions.SynchronizationMode == SynchronizationTaskModelMode.TwoWay)
+        if (model.TaskOptions.SynchronizationMode != SynchronizationTaskModelMode.Read)
         {
             var deleteUnversionedFilesStorageTask = new DataStorageMaintananceTask(synchronizationServices.StorageSpecificServices, Events, _remoteStateLoadTask.GetSuccessResult);
             tasks.Add(deleteUnversionedFilesStorageTask);

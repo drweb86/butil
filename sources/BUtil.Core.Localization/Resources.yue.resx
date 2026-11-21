@@ -950,14 +950,26 @@ bin。
   <data name="SynchronizationMode_Field_Read" xml:space="preserve">
     <value>讀取</value>
   </data>
+  <data name="SynchronizationMode_Field_Read_Help" xml:space="preserve">
+    <value>將集中存儲下載到呢個資料夾。存儲入面新增或者改過嘅檔案會複製到呢度，存儲入面刪咗嘅檔案亦會喺呢度刪走。呢個資料夾永遠唔會上傳。只係呢度先有嘅檔案會保持原樣。如果你喺呢度改過檔案，而存儲嘅副本唔同，存儲嗰份會取代你嘅修改。喺只應該接收檔案嘅裝置，同埋新裝置第一次執行時用。</value>
+  </data>
   <data name="SynchronizationMode_Field_TwoWay" xml:space="preserve">
     <value>雙向</value>
+  </data>
+  <data name="SynchronizationMode_Field_TwoWay_Help" xml:space="preserve">
+    <value>將改動向兩個方向複製。你喺呢度新增、修改或者刪除嘅檔案會套用到存儲，存儲入面新增、修改或者刪除嘅檔案會套用到呢度。如果同一檔案兩邊都改過，會保留修改時間較後嗰份。較舊嗰份會留喺存儲之前嘅版本，可以還原。喺讀取執行之後，當呢部裝置要發送同接收時，轉去呢個模式。</value>
+  </data>
+  <data name="SynchronizationMode_Field_Write" xml:space="preserve">
+    <value>寫入</value>
+  </data>
+  <data name="SynchronizationMode_Field_Write_Help" xml:space="preserve">
+    <value>將呢個資料夾發佈做集中存儲嘅下一個版本。嗰個版本同呢個資料夾一致：呢度嘅檔案會上傳，存儲有但係呢個資料夾冇嘅檔案會由存儲刪除。呢個資料夾入面冇嘢會被改或者刪。其他裝置下次執行就會收到呢個資料夾。之前嘅版本會留喺存儲，可以還原。當呢部電腦係檔案嘅來源，或者你已經喺本機修正咗資料夾、想存儲完全同佢一致時用。</value>
   </data>
   <data name="SynchronizationTask_Create" xml:space="preserve">
     <value>同步</value>
   </data>
   <data name="SynchronizationTask_Help" xml:space="preserve">
-    <value>使用集中存儲進行設備之間的文件雙向同步。</value>
+    <value>令一個資料夾同你嘅裝置共用嘅集中存儲保持一致。由讀取開始，然後轉去雙向或者寫入。</value>
   </data>
   <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
     <value>指定一個獨一無二嘅集中式儲存空間，畀裝置用嚟同步。所有參與嘅裝置都應該用同一個儲存位置。呢個位置完全由應用程式管理——包括刪除數據喺內——所以唔好用嚟做其他嘢，亦都唔好喺多個任務之間共用。</value>

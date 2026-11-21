@@ -101,11 +101,15 @@
     <string name="import_skip_help">Kapërcen skedarët që janë tashmë në destinacion ose që janë importuar më parë.</string>
     <string name="import_delete">Fshi të dhënat e kopjuara nga media burimore</string>
     <string name="import_min_date">Kapërce skedarët e ndryshuar para (vvvv-mm-dd):</string>
-    <string name="sync_help">Sinkronizim dydrejtimësh i skedarëve ndërmjet pajisjeve duke përdorur ruajtje të centralizuar.</string>
+    <string name="sync_help">Mban një dosje në përputhje me një ruajtje të centralizuar që e ndajnë pajisjet tuaja. Filloni me Lexo, pastaj kaloni te Dydrejtimësh ose Shkrim.</string>
     <string name="sync_storage_help">Tregoni një depozitë të veçantë përmes së cilës pajisjet sinkronizohen. Të gjitha pajisjet duhet të përdorin të njëjtin vend dhe të njëjtën fjalëkalim.</string>
     <string name="sync_mode">Mënyra e sinkronizimit:</string>
     <string name="sync_mode_two_way">Dydrejtimësh</string>
+    <string name="sync_mode_two_way_help">Kopjon ndryshimet në të dy drejtimet. Një skedar që shtoni, redaktoni ose fshini këtu zbatohet në ruajtje, dhe një skedar i shtuar, i redaktuar ose i fshirë në ruajtje zbatohet këtu. Nëse i njëjti skedar ndryshoi në të dy vendet, mbahet kopja me kohën më të vonë të ndryshimit. Kopja më e vjetër mbetet në një version të mëparshëm në ruajtje dhe mund të rikthehet. Kaloni te kjo pas një ekzekutimi Lexo, kur kjo pajisje duhet të dërgojë dhe të marrë.</string>
     <string name="sync_mode_read">Lexo</string>
+    <string name="sync_mode_read_help">Shkarkon ruajtjen e centralizuar në këtë dosje. Skedarët e shtuar ose të ndryshuar në ruajtje kopjohen këtu, dhe skedarët e hequr nga ruajtja hiqen edhe nga këtu. Kjo dosje nuk ngarkohet kurrë. Skedarët që ekzistojnë vetëm këtu mbeten siç janë. Nëse keni redaktuar një skedar këtu dhe kopja në ruajtje është ndryshe, kopja e ruajtjes zëvendëson redaktimin tuaj. Përdoreni këtë në një pajisje që duhet vetëm të marrë skedarë, dhe në ekzekutimin e parë në një pajisje të re.</string>
+    <string name="sync_mode_write">Shkrim</string>
+    <string name="sync_mode_write_help">Publikon këtë dosje si versionin tjetër në ruajtjen e centralizuar. Ai version përputhet me këtë dosje: skedarët këtu ngarkohen, dhe skedarët që janë në ruajtje por jo në këtë dosje fshihen nga ruajtja. Asgjë në këtë dosje nuk ndryshohet apo fshihet. Pajisjet e tjera e marrin këtë dosje në ekzekutimin tjetër. Versionet e mëparshme mbeten në ruajtje dhe mund të rikthehen. Përdoreni këtë kur ky kompjuter është burimi i skedarëve, ose kur e keni ndrequr dosjen lokalisht dhe doni që ruajtja të përputhet saktësisht.</string>
     <string name="sync_repository">Nëndosja e depozitës:</string>
     <string name="ftps_help">Ndajnë dosjen e zgjedhur me FTPS të shprehur dhe një certifikatë të nënshkruar vetë. Ndërsa detyra punon, një klient FTPS në rrjetin lokal mund të lidhet.</string>
     <string name="ftps_port">Porta:</string>

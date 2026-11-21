@@ -99,11 +99,15 @@
     <string name="import_skip_help">Preskače datoteke koje već postoje na odredištu ili su ranije uvezene.</string>
     <string name="import_delete">Izbriši kopirane podatke sa izvornog medija</string>
     <string name="import_min_date">Preskoči datoteke izmijenjene prije (gggg-mm-dd):</string>
-    <string name="sync_help">Dvosmjerna sinhronizacija datoteka između uređaja koristeći centraliziranu pohranu.</string>
+    <string name="sync_help">Drži fasciklu usklađenom sa centraliziranom pohranom koju dijele vaši uređaji. Počnite sa Čitanje, pa prebacite na Dvosmjerno ili Pisanje.</string>
     <string name="sync_storage_help">Navedite zasebno spremište preko kojeg se uređaji sinhronizuju. Svi uređaji treba da koriste isto mjesto i istu lozinku.</string>
     <string name="sync_mode">Način sinhronizacije:</string>
     <string name="sync_mode_two_way">Dvosmjerno</string>
+    <string name="sync_mode_two_way_help">Kopira promjene u oba smjera. Datoteka koju ovdje dodate, uredite ili obrišete primjenjuje se na pohranu, a datoteka dodana, uređena ili obrisana na pohrani primjenjuje se ovdje. Ako je ista datoteka promijenjena na oba mjesta, zadržava se kopija s kasnijim vremenom izmjene. Starija kopija ostaje u prethodnoj verziji na pohrani i može se vratiti. Prebacite se na ovo nakon pokretanja u režimu Čitanje, kada ovaj uređaj treba i slati i primati.</string>
     <string name="sync_mode_read">Čitanje</string>
+    <string name="sync_mode_read_help">Preuzima centraliziranu pohranu u ovu fasciklu. Datoteke dodane ili promijenjene na pohrani kopiraju se ovdje, a datoteke uklonjene s pohrane uklanjaju se odavde. Ova fascikla se nikad ne šalje. Datoteke koje postoje samo ovdje ostaju kakve jesu. Ako ste ovdje uredili datoteku, a kopija na pohrani je drugačija, kopija s pohrane zamjenjuje vašu izmjenu. Koristite ovo na uređaju koji treba samo primati datoteke i pri prvom pokretanju na novom uređaju.</string>
+    <string name="sync_mode_write">Pisanje</string>
+    <string name="sync_mode_write_help">Objavljuje ovu fasciklu kao sljedeću verziju na centraliziranoj pohrani. Ta verzija odgovara ovoj fascikli: datoteke odavde se šalju, a datoteke koje su na pohrani, ali nisu u ovoj fascikli, brišu se s pohrane. Ništa u ovoj fascikli se ne mijenja niti briše. Drugi uređaji dobijaju ovu fasciklu pri sljedećem pokretanju. Prethodne verzije ostaju na pohrani i mogu se vratiti. Koristite ovo kada je ovaj računar izvor datoteka ili kada ste fasciklu lokalno ispravili i želite da pohrana tačno odgovara njoj.</string>
     <string name="sync_repository">Podmapa spremišta:</string>
     <string name="ftps_help">Dijeli odabranu mapu izričitim FTPS-om sa samopotpisanim certifikatom. Dok zadatak radi, FTPS klijent u lokalnoj mreži može se povezati.</string>
     <string name="ftps_user">Korisnik:</string>

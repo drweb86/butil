@@ -100,11 +100,15 @@
     <string name="import_skip_help">Ignora arquivos que já estão no destino ou que foram importados antes.</string>
     <string name="import_delete">Excluir os dados copiados da mídia de origem</string>
     <string name="import_min_date">Ignorar arquivos modificados antes de (aaaa-mm-dd):</string>
-    <string name="sync_help">Sincronização bidirecional de arquivos entre dispositivos usando armazenamento centralizado.</string>
+    <string name="sync_help">Mantém uma pasta alinhada a um armazenamento centralizado compartilhado pelos seus dispositivos. Comece em Leitura e depois mude para Bidirecional ou Gravação.</string>
     <string name="sync_storage_help">Indique um armazenamento próprio pelo qual os dispositivos sincronizam. Todos devem usar o mesmo local e a mesma senha.</string>
     <string name="sync_mode">Modo de sincronização:</string>
     <string name="sync_mode_two_way">Bidirecional</string>
+    <string name="sync_mode_two_way_help">Copia alterações nos dois sentidos. Um arquivo que você adiciona, edita ou exclui aqui é aplicado ao armazenamento, e um arquivo adicionado, editado ou excluído no armazenamento é aplicado aqui. Se o mesmo arquivo mudou nos dois lugares, fica a cópia com o horário de alteração mais recente. A cópia mais antiga permanece em uma versão anterior no armazenamento e pode ser restaurada. Mude para este modo depois de uma execução em Leitura, quando este dispositivo deve enviar e receber.</string>
     <string name="sync_mode_read">Leitura</string>
+    <string name="sync_mode_read_help">Baixa o armazenamento centralizado para esta pasta. Arquivos adicionados ou alterados no armazenamento são copiados para cá, e arquivos removidos do armazenamento são removidos daqui. Esta pasta nunca é enviada. Arquivos que existem só aqui ficam como estão. Se você editou um arquivo aqui e a cópia do armazenamento é diferente, a cópia do armazenamento substitui a sua edição. Use isto em um dispositivo que só deve receber arquivos e na primeira execução em um dispositivo novo.</string>
+    <string name="sync_mode_write">Gravação</string>
+    <string name="sync_mode_write_help">Publica esta pasta como a próxima versão no armazenamento centralizado. Essa versão corresponde a esta pasta: os arquivos daqui são enviados, e os arquivos que estão no armazenamento mas não nesta pasta são excluídos do armazenamento. Nada nesta pasta é alterado ou excluído. Os outros dispositivos recebem esta pasta na próxima execução. As versões anteriores permanecem no armazenamento e podem ser restauradas. Use isto quando este computador é a origem dos arquivos, ou quando você corrigiu a pasta localmente e quer que o armazenamento corresponda exatamente a ela.</string>
     <string name="sync_repository">Subpasta do repositório:</string>
     <string name="ftps_help">Compartilha a pasta escolhida por FTPS explícito com um certificado autoassinado. Enquanto a tarefa estiver em execução, um cliente FTPS da rede local pode se conectar.</string>
     <string name="ftps_port">Porta:</string>

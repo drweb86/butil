@@ -97,11 +97,15 @@
     <string name="import_skip_help">Manzilda allaqachon bor yoki avval import qilingan fayllarni tashlab ketadi.</string>
     <string name="import_delete">Nusxalangan ma\'lumotlarni manba mediadan o\'chirish</string>
     <string name="import_min_date">Shu sanadan oldin oʻzgargan fayllarni tashlab ketish (yyyy-MM-dd):</string>
-    <string name="sync_help">Markazlashtirilgan xotira yordamida qurilmalar o\'rtasida fayllarning ikki tomonlama sinxronizatsiyasi.</string>
+    <string name="sync_help">Jildni qurilmalaringiz ulashadigan markazlashtirilgan xotira bilan mos holda saqlaydi. O\'qishdan boshlang, so\'ng Ikki tomonlama yoki Yozishga o\'ting.</string>
     <string name="sync_storage_help">Qurilmalar sinxronlanadigan alohida omborni koʻrsating. Barcha qurilmalar bir joy va bir paroldan foydalanishi kerak.</string>
     <string name="sync_mode">Sinxronizatsiya rejimi:</string>
     <string name="sync_mode_two_way">Ikki tomonlama</string>
+    <string name="sync_mode_two_way_help">O\'zgarishlarni ikkala tomonga nusxalaydi. Siz bu yerda qo\'shadigan, tahrirlaydigan yoki o\'chiradigan fayl xotiraga qo\'llanadi, xotirada qo\'shilgan, tahrirlangan yoki o\'chirilgan fayl esa bu yerga qo\'llanadi. Bir xil fayl ikkala joyda o\'zgargan bo\'lsa, keyinroq o\'zgartirilgan nusxa qoladi. Eski nusxa xotiraning oldingi versiyasida qoladi va uni tiklash mumkin. Bu qurilma yuborishi va olishi kerak bo\'lganda, O\'qishdan keyin bunga o\'ting.</string>
     <string name="sync_mode_read">O\'qish</string>
+    <string name="sync_mode_read_help">Markazlashtirilgan xotirani shu jildga yuklab oladi. Xotirada qo\'shilgan yoki o\'zgartirilgan fayllar bu yerga nusxalanadi, xotiradan olib tashlangan fayllar bu yerdan ham olib tashlanadi. Bu jild hech qachon yuklanmaydi. Faqat shu yerda bor fayllar o\'z holicha qoladi. Agar siz bu yerda faylni tahrirlagan bo\'lsangiz va xotiradagi nusxa boshqacha bo\'lsa, xotira nusxasi tahriringiz o\'rnini egallaydi. Buni faqat fayl olishi kerak bo\'lgan qurilmada va yangi qurilmadagi birinchi ishga tushirishda ishlating.</string>
+    <string name="sync_mode_write">Yozish</string>
+    <string name="sync_mode_write_help">Bu jildni markazlashtirilgan xotiradagi keyingi versiya sifatida e\'lon qiladi. U versiya shu jildga mos keladi: bu yerdagi fayllar yuklanadi, xotirada bor-u bu jildda yo\'q fayllar xotiradan o\'chiriladi. Bu jildda hech narsa o\'zgarmaydi va o\'chirilmaydi. Boshqa qurilmalar keyingi ishga tushirishda shu jildni oladi. Oldingi versiyalar xotirada qoladi va ularni tiklash mumkin. Bu kompyuter fayllar manbai bo\'lganda yoki jildni joyida to\'g\'rilab, xotira aynan unga mos kelishini xohlaganingizda bundan foydalaning.</string>
     <string name="sync_repository">Omborning ichki jildi:</string>
     <string name="ftps_help">Tanlangan jildni aniq FTPS va oʻzi imzolagan sertifikat bilan ulashadi. Vazifa ishlayotganda mahalliy tarmoqdagi FTPS mijozi ulanishi mumkin.</string>
     <string name="ftps_user">Foydalanuvchi:</string>

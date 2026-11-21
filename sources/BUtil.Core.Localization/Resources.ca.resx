@@ -933,14 +933,26 @@ See detailed description in the following link.</value>
   <data name="SynchronizationMode_Field_Read" xml:space="preserve">
     <value>Llegeix</value>
   </data>
+  <data name="SynchronizationMode_Field_Read_Help" xml:space="preserve">
+    <value>Baixa l'emmagatzematge centralitzat en aquesta carpeta. Els fitxers afegits o canviats a l'emmagatzematge es copien aquí, i els fitxers eliminats de l'emmagatzematge s'eliminen d'aquí. Aquesta carpeta no es puja mai. Els fitxers que només existeixen aquí es deixen tal com són. Si heu editat un fitxer aquí i la còpia de l'emmagatzematge és diferent, la còpia de l'emmagatzematge substitueix la vostra edició. Feu-lo servir en un dispositiu que només hagi de rebre fitxers, i en la primera execució en un dispositiu nou.</value>
+  </data>
   <data name="SynchronizationMode_Field_TwoWay" xml:space="preserve">
     <value>Bidireccional</value>
+  </data>
+  <data name="SynchronizationMode_Field_TwoWay_Help" xml:space="preserve">
+    <value>Copia els canvis en les dues direccions. Un fitxer que afegiu, editeu o suprimiu aquí s'aplica a l'emmagatzematge, i un fitxer afegit, editat o suprimit a l'emmagatzematge s'aplica aquí. Si el mateix fitxer ha canviat als dos llocs, es conserva la còpia amb l'hora de modificació més recent. La còpia més antiga roman en una versió anterior de l'emmagatzematge i es pot restaurar. Passeu a aquest mode després d'una execució de Llegeix, quan aquest dispositiu hagi d'enviar i rebre.</value>
+  </data>
+  <data name="SynchronizationMode_Field_Write" xml:space="preserve">
+    <value>Escriptura</value>
+  </data>
+  <data name="SynchronizationMode_Field_Write_Help" xml:space="preserve">
+    <value>Publica aquesta carpeta com la versió següent a l'emmagatzematge centralitzat. Aquesta versió coincideix amb aquesta carpeta: els fitxers d'aquí es pugen, i els fitxers que són a l'emmagatzematge però no en aquesta carpeta se suprimeixen de l'emmagatzematge. Res d'aquesta carpeta no es canvia ni se suprimeix. Els altres dispositius reben aquesta carpeta la propera vegada que s'executin. Les versions anteriors romanen a l'emmagatzematge i es poden restaurar. Feu-lo servir quan aquest ordinador és la font dels fitxers, o quan heu corregit la carpeta localment i voleu que l'emmagatzematge hi coincideixi exactament.</value>
   </data>
   <data name="SynchronizationTask_Create" xml:space="preserve">
     <value>Sincronització</value>
   </data>
   <data name="SynchronizationTask_Help" xml:space="preserve">
-    <value>Sincronització bidireccional de fitxers entre dispositius mitjançant emmagatzematge centralitzat.</value>
+    <value>Manté una carpeta al dia amb un emmagatzematge centralitzat compartit pels vostres dispositius. Comenceu amb Llegeix i després passeu a Bidireccional o Escriptura.</value>
   </data>
   <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
     <value>Especifiqueu un emmagatzematge centralitzat únic mitjançant el qual se sincronitzen els dispositius. Tots els dispositius participants han d'utilitzar la mateixa ubicació d'emmagatzematge. Aquesta ubicació és gestionada completament per l'aplicació — inclosa l'eliminació de dades — per la qual cosa no l'utilitzeu per a res més, ni la compartiu entre diverses tasques.</value>

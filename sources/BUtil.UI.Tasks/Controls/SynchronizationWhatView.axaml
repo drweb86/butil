@@ -23,7 +23,8 @@
 			<decor:DropdownField
 				Label="{Binding SynchronizationMode_Field}"
 				ItemsSource="{Binding SynchronizationModeOptions}"
-				SelectedItem="{Binding SelectedSynchronizationMode}" />
+				SelectedItem="{Binding SelectedSynchronizationMode}"
+				Help="{Binding SynchronizationModeHelp}" />
 		</StackPanel>
 	</Expander>
 </UserControl>

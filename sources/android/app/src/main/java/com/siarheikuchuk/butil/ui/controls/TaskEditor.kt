@@ -239,10 +239,16 @@ private fun SyncFields(form: TaskDraft, busy: Boolean, browse: (DraftValue) -> U
         stringResource(R.string.sync_mode),
         form.mode,
         listOf(
-            "Two-way" to stringResource(R.string.sync_mode_two_way),
             "Read" to stringResource(R.string.sync_mode_read),
+            "Two-way" to stringResource(R.string.sync_mode_two_way),
+            "Write" to stringResource(R.string.sync_mode_write),
         ),
         !busy,
+        when (form.mode) {
+            "Two-way" -> stringResource(R.string.sync_mode_two_way_help)
+            "Write" -> stringResource(R.string.sync_mode_write_help)
+            else -> stringResource(R.string.sync_mode_read_help)
+        },
     ) { form.mode = it }
     if (form.repository.isNotBlank()) {
         OutlinedTextField(form.repository, { form.repository = it }, modifier = Modifier.fillMaxWidth(), label = { Text(stringResource(R.string.sync_repository)) })
@@ -304,11 +310,11 @@ private fun textOf(res: Int, fallback: String) = if (res != 0) stringResource(re
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-private fun ChoiceLine(label: String, current: String, options: List<Pair<String, String>>, enabled: Boolean, onSelect: (String) -> Unit = {}) {
+private fun ChoiceLine(label: String, current: String, options: List<Pair<String, String>>, enabled: Boolean, help: String? = null, onSelect: (String) -> Unit = {}) {
     var open by remember { mutableStateOf(false) }
     val selected = options.firstOrNull { it.first == current }?.second ?: current
     ExposedDropdownMenuBox(expanded = open, onExpandedChange = { if (enabled) open = it }) {
-        OutlinedTextField(selected, {}, readOnly = true, label = { Text(label) }, trailingIcon = { ExposedDropdownMenuDefaults.TrailingIcon(open) }, modifier = Modifier.menuAnchor(ExposedDropdownMenuAnchorType.PrimaryNotEditable).fillMaxWidth())
+        OutlinedTextField(selected, {}, readOnly = true, label = { Text(label) }, supportingText = help?.let { { Text(it) } }, trailingIcon = { ExposedDropdownMenuDefaults.TrailingIcon(open) }, modifier = Modifier.menuAnchor(ExposedDropdownMenuAnchorType.PrimaryNotEditable).fillMaxWidth())
         ExposedDropdownMenu(expanded = open, onDismissRequest = { open = false }) {
             options.forEach { (value, text) ->
                 DropdownMenuItem(text = { Text(text) }, onClick = {
@@ -480,7 +486,13 @@ private class TaskDraft(store: UploadFolderStore, private val kind: String, exis
     var minimumDate by mutableStateOf((loaded as? ImportMediaTask)?.fileLastWriteTimeMinMillis?.let { millis ->
         java.time.Instant.ofEpochMilli(millis).atZone(ZoneOffset.UTC).toLocalDate().toString()
     }.orEmpty())
-    var mode by mutableStateOf(if ((loaded as? SynchronizationTask)?.synchronizationMode == SynchronizationTask.MODE_READ) "Read" else "Two-way")
+    var mode by mutableStateOf(
+        when ((loaded as? SynchronizationTask)?.synchronizationMode) {
+            SynchronizationTask.MODE_TWO_WAY -> "Two-way"
+            SynchronizationTask.MODE_WRITE -> "Write"
+            else -> "Read"
+        },
+    )
     var repository by mutableStateOf((loaded as? SynchronizationTask)?.repositorySubfolder.orEmpty())
     var port by mutableStateOf(((loaded as? FtpsServerTask)?.port ?: 10999).toString())
     var user by mutableStateOf((loaded as? FtpsServerTask)?.username ?: "user")
@@ -575,7 +587,11 @@ private class TaskDraft(store: UploadFolderStore, private val kind: String, exis
                 name = trimmed,
                 localFolder = output.value,
                 repositorySubfolder = repository.ifBlank { null },
-                synchronizationMode = if (mode == "Read") SynchronizationTask.MODE_READ else SynchronizationTask.MODE_TWO_WAY,
+                synchronizationMode = when (mode) {
+                    "Two-way" -> SynchronizationTask.MODE_TWO_WAY
+                    "Write" -> SynchronizationTask.MODE_WRITE
+                    else -> SynchronizationTask.MODE_READ
+                },
                 password = password,
                 storage = where.settings(),
                 schedule = schedule,

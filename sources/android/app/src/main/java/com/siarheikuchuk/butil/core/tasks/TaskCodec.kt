@@ -269,7 +269,7 @@ object TaskCodec {
                 name = name,
                 localFolder = model.optString("LocalFolder"),
                 repositorySubfolder = model.nullableString("RepositorySubfolder"),
-                synchronizationMode = enumNumber(model.opt("SynchronizationMode"), SynchronizationTask.MODE_TWO_WAY),
+                synchronizationMode = enumNumber(model.opt("SynchronizationMode"), SynchronizationTask.MODE_READ),
                 password = model.optString("Password"),
                 storage = storageFromJson(model.getJSONObject("To")),
             )

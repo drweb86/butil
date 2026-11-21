@@ -930,14 +930,26 @@ Abeg do one of dese:
   <data name="SynchronizationMode_Field_Read" xml:space="preserve">
     <value>Read</value>
   </data>
+  <data name="SynchronizationMode_Field_Read_Help" xml:space="preserve">
+    <value>E go download di central storage enter dis folder. File wey dem add or change for storage go copy come here, and file wey dem remove for storage go comot for here. Dis folder no go upload at all. File wey dey only here go remain as e be. If you edit file here and di copy for storage different, di storage copy go replace your edit. Use am for device wey suppose only receive file, and for di first run for new device.</value>
+  </data>
   <data name="SynchronizationMode_Field_TwoWay" xml:space="preserve">
     <value>Two-way</value>
+  </data>
+  <data name="SynchronizationMode_Field_TwoWay_Help" xml:space="preserve">
+    <value>E dey copy change for di two side. File wey you add, edit or delete here go apply for storage, and file wey dem add, edit or delete for storage go apply here. If di same file change for di two place, di copy wey get later change time go remain. Di old copy go still dey for previous version for storage and you fit restore am. Switch to dis one after Read run, when dis device suppose send and receive.</value>
+  </data>
+  <data name="SynchronizationMode_Field_Write" xml:space="preserve">
+    <value>Write</value>
+  </data>
+  <data name="SynchronizationMode_Field_Write_Help" xml:space="preserve">
+    <value>E go publish dis folder as di next version for di central storage. Dat version go match dis folder: file wey dey here go upload, and file wey dey for storage but no dey inside dis folder go delete from storage. Nothing inside dis folder go change or delete. Other device go receive dis folder di next time wey dem run. Previous version go still dey for storage and you fit restore dem. Use am when dis computer na di source of di file, or when you don correct di folder for your side and you want di storage to match am exactly.</value>
   </data>
   <data name="SynchronizationTask_Create" xml:space="preserve">
     <value>Synchronization</value>
   </data>
   <data name="SynchronizationTask_Help" xml:space="preserve">
-    <value>Two-way synchronization of files between devices using centralized storage.</value>
+    <value>E dey keep folder in step with central storage wey your device dem share. Start with Read, then switch to Two-way or Write.</value>
   </data>
   <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
     <value>Choose one special storage wey all the devices go dey use to sync. All the devices wey dey involved must use the same storage location. The app go dey manage the storage well-well — including to delete data — so no use am for anything else, and no share am between different tasks.</value>

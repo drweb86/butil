@@ -105,6 +105,18 @@ public class TaskV2StoreServiceRoundTripTests
 
         yield return [new TaskV2
         {
+            Name = "synchronization-write-options",
+            Model = new SynchronizationTaskModelOptionsV2
+            {
+                To = FolderStorage("F:\\backup\\sync-write"),
+                LocalFolder = "C:\\sync-local",
+                SynchronizationMode = SynchronizationTaskModelMode.Write,
+                Password = "sync-write-task-password",
+            },
+        }];
+
+        yield return [new TaskV2
+        {
             Name = "import-media-options",
             Model = new ImportMediaTaskModelOptionsV2
             {

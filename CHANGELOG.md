@@ -4,6 +4,9 @@
 ## Bug Fixes
 - Windows Store: task shortcuts in the Start menu, scheduled tasks, and copied command lines keep working after an upgrade. Each Store version is installed into a new folder; those entries now use a stable app execution alias. Open BUtil once after this update so existing entries are rewritten.
 
+## New Features
+- Synchronization has a Write mode on desktop and Android. It publishes the local folder as the next version on the storage, so that version matches the folder, including deletions. A new task starts in Read. Each mode shows an explanation under the choice.
+
 ## Changes
 - Scheduler: a new task defaults to the current hour, with minutes at 00. The previous 23:50 default did not run when the PC was already turned off.
 - Libraries were updated. Desktop: SSH.NET 2026.0.1, the AWS S3 SDK 4.1.2, and Azure Storage Blobs 12.30.2. Android: Compose BOM 2026.11.01, Android Gradle Plugin 9.5.2, and Gradle 9.9.2. The Android app now requires Android 7.0.

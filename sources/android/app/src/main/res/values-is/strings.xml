@@ -101,11 +101,15 @@
     <string name="import_skip_help">Sleppir skrám sem þegar eru á áfangastað eða voru fluttar inn áður.</string>
     <string name="import_delete">Eyða afrituðum gögnum af upprunamiðli</string>
     <string name="import_min_date">Sleppa skrám sem breytt var fyrir (áááá-mm-dd):</string>
-    <string name="sync_help">Tvíátta samstilling skráa milli tækja með miðlægri geymslu.</string>
+    <string name="sync_help">Heldur möppu í samræmi við miðlæga geymslu sem tækin þín deila. Byrjaðu á Lesa og skiptu svo yfir í Tvíátta eða Skrifa.</string>
     <string name="sync_storage_help">Tilgreindu sérstaka geymslu sem tækin samstilla í gegnum. Öll tæki eiga að nota sama stað og sama lykilorð.</string>
     <string name="sync_mode">Samstillingarhamur:</string>
     <string name="sync_mode_two_way">Tvíátta</string>
+    <string name="sync_mode_two_way_help">Afritar breytingar í báðar áttir. Skrá sem þú bætir við, breytir eða eyðir hér er sett á geymsluna og skrá sem bætt er við, breytt eða eytt í geymslunni er sett hér. Ef sama skrá breyttist á báðum stöðum er afritið með síðari breytingartíma haldið. Eldra afritið er áfram í fyrri útgáfu í geymslunni og hægt er að endurheimta það. Skiptu yfir í þetta eftir keyrslu á Lesa þegar þetta tæki á bæði að senda og taka við.</string>
     <string name="sync_mode_read">Lesa</string>
+    <string name="sync_mode_read_help">Sækir miðlæga geymsluna í þessa möppu. Skrár sem bætt hefur verið við eða breytt í geymslunni eru afritaðar hingað og skrár sem fjarlægðar eru úr geymslunni eru fjarlægðar héðan. Þessi mappa er aldrei send. Skrár sem eru aðeins hér eru látnar óbreyttar. Ef þú breyttir skrá hér og afritið í geymslunni er annað kemur afrit geymslunnar í stað breytingarinnar. Notaðu þetta á tæki sem á aðeins að taka við skrám og í fyrstu keyrslu á nýju tæki.</string>
+    <string name="sync_mode_write">Skrifa</string>
+    <string name="sync_mode_write_help">Birtir þessa möppu sem næstu útgáfu í miðlægu geymslunni. Sú útgáfa passar við þessa möppu: skrár hér eru sendar og skrám sem eru í geymslunni en ekki í þessari möppu er eytt úr geymslunni. Ekkert í þessari möppu er breytt eða eytt. Önnur tæki fá þessa möppu í næstu keyrslu. Fyrri útgáfur eru áfram í geymslunni og hægt er að endurheimta þær. Notaðu þetta þegar þessi tölva er uppspretta skránna eða þegar þú hefur lagfært möppuna á staðnum og vilt að geymslan passi nákvæmlega.</string>
     <string name="sync_repository">Undirmappa geymslu:</string>
     <string name="ftps_help">Deilir völdu möppunni með berum FTPS og vottorði sem er undirritað af sjálfu sér. Á meðan verkið keyrir getur FTPS-biðlari á staðarnetinu tengst.</string>
     <string name="ftps_port">Gátt:</string>

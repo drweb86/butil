@@ -933,14 +933,26 @@ bin.
   <data name="SynchronizationMode_Field_Read" xml:space="preserve">
     <value>Skaitymas</value>
   </data>
+  <data name="SynchronizationMode_Field_Read_Help" xml:space="preserve">
+    <value>Atsisiunčia centralizuotą saugyklą į šį aplanką. Saugykloje pridėti arba pakeisti failai nukopijuojami čia, o iš saugyklos pašalinti failai pašalinami ir iš čia. Šis aplankas niekada nesiunčiamas. Failai, kurie yra tik čia, lieka tokie, kokie yra. Jei redagavote failą čia, o saugyklos kopija skiriasi, saugyklos kopija pakeičia jūsų pakeitimą. Naudokite tai įrenginyje, kuris turi tik gauti failus, ir pirmą kartą paleidžiant naujame įrenginyje.</value>
+  </data>
   <data name="SynchronizationMode_Field_TwoWay" xml:space="preserve">
     <value>Dvikryptis</value>
+  </data>
+  <data name="SynchronizationMode_Field_TwoWay_Help" xml:space="preserve">
+    <value>Kopijuoja pakeitimus abiem kryptimis. Failas, kurį čia pridedate, redaguojate arba ištrinate, pritaikomas saugykloje, o saugykloje pridėtas, redaguotas arba ištrintas failas pritaikomas čia. Jei tas pats failas pasikeitė abiejose vietose, paliekama kopija su vėlesniu keitimo laiku. Senesnė kopija lieka ankstesnėje saugyklos versijoje ir ją galima atkurti. Perjunkite į tai po Skaitymo paleidimo, kai šis įrenginys turi ir siųsti, ir gauti.</value>
+  </data>
+  <data name="SynchronizationMode_Field_Write" xml:space="preserve">
+    <value>Rašymas</value>
+  </data>
+  <data name="SynchronizationMode_Field_Write_Help" xml:space="preserve">
+    <value>Paskelbia šį aplanką kaip kitą centralizuotos saugyklos versiją. Ta versija atitinka šį aplanką: failai čia įkeliami, o failai, kurie yra saugykloje, bet nėra šiame aplanke, ištrinami iš saugyklos. Šiame aplanke niekas nekeičiama ir neištrinama. Kiti įrenginiai gaus šį aplanką kito paleidimo metu. Ankstesnės versijos lieka saugykloje ir jas galima atkurti. Naudokite tai, kai šis kompiuteris yra failų šaltinis arba kai aplanką pataisėte vietoje ir norite, kad saugykla tiksliai atitiktų.</value>
   </data>
   <data name="SynchronizationTask_Create" xml:space="preserve">
     <value>Sinchronizacija</value>
   </data>
   <data name="SynchronizationTask_Help" xml:space="preserve">
-    <value>Dvikryptė failų sinchronizacija tarp įrenginių naudojant centralizuotą saugyklą.</value>
+    <value>Laiko aplanką suderintą su centralizuota saugykla, kuria dalijasi jūsų įrenginiai. Pradėkite nuo Skaitymo, tada perjunkite į Dvikryptį arba Rašymą.</value>
   </data>
   <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
     <value>Nurodykite unikalią centralizuotą saugyklą, per kurią sinchronizuojami įrenginiai. Visi dalyvaujantys įrenginiai turėtų naudoti tą pačią saugyklos vietą. Šią vietą visiškai valdo programa — įskaitant duomenų trynimą, — todėl nenaudokite jos jokiam kitam tikslui ir nesidalykite ja tarp kelių užduočių.</value>

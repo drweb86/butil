@@ -100,11 +100,15 @@
     <string name="import_skip_help">Springer filer over, der allerede findes på destinationen, eller som er importeret tidligere.</string>
     <string name="import_delete">Slet kopierede data på kildemediet</string>
     <string name="import_min_date">Spring filer over, der er ændret før (åååå-mm-dd):</string>
-    <string name="sync_help">Tovejs synkronisering af filer mellem enheder med centraliseret lager.</string>
+    <string name="sync_help">Holder en mappe i trit med et centraliseret lager, som dine enheder deler. Start med Læs, og skift derefter til Tovejs eller Skriv.</string>
     <string name="sync_storage_help">Angiv et eget lager, som enhederne synkroniserer gennem. Alle enheder skal bruge samme sted og samme adgangskode.</string>
     <string name="sync_mode">Synkroniseringstilstand:</string>
     <string name="sync_mode_two_way">Tovejs</string>
+    <string name="sync_mode_two_way_help">Kopierer ændringer i begge retninger. En fil, du tilføjer, redigerer eller sletter her, anvendes på lageret, og en fil, der er tilføjet, redigeret eller slettet på lageret, anvendes her. Hvis den samme fil er ændret begge steder, beholdes kopien med det seneste ændringstidspunkt. Den ældre kopi bliver i en tidligere version på lageret og kan gendannes. Skift til dette efter en kørsel i Læs, når denne enhed skal både sende og modtage.</string>
     <string name="sync_mode_read">Læs</string>
+    <string name="sync_mode_read_help">Henter det centraliserede lager ned i denne mappe. Filer, der er tilføjet eller ændret på lageret, kopieres hertil, og filer, der er fjernet fra lageret, fjernes her. Denne mappe overføres aldrig. Filer, der kun findes her, bliver som de er. Hvis du har redigeret en fil her, og kopien på lageret er anderledes, erstatter lagerkopien din redigering. Brug dette på en enhed, der kun skal modtage filer, og ved første kørsel på en ny enhed.</string>
+    <string name="sync_mode_write">Skriv</string>
+    <string name="sync_mode_write_help">Udgiver denne mappe som den næste version på det centraliserede lager. Den version svarer til denne mappe: filer her overføres, og filer, der er på lageret, men ikke i denne mappe, slettes fra lageret. Intet i denne mappe ændres eller slettes. Andre enheder modtager denne mappe, næste gang de kører. Tidligere versioner bliver på lageret og kan gendannes. Brug dette, når denne computer er kilden til filerne, eller når du har rettet mappen lokalt og vil have, at lageret svarer nøjagtigt til den.</string>
     <string name="sync_repository">Undermappe i lageret:</string>
     <string name="ftps_help">Deler den valgte mappe med eksplicit FTPS og et selvsigneret certifikat. Mens opgaven kører, kan en FTPS-klient på det lokale netværk oprette forbindelse.</string>
     <string name="ftps_user">Bruger:</string>

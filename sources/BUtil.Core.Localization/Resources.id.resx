@@ -930,14 +930,26 @@ Silakan:
   <data name="SynchronizationMode_Field_Read" xml:space="preserve">
     <value>Baca</value>
   </data>
+  <data name="SynchronizationMode_Field_Read_Help" xml:space="preserve">
+    <value>Mengunduh penyimpanan terpusat ke folder ini. File yang ditambahkan atau diubah di penyimpanan disalin ke sini, dan file yang dihapus dari penyimpanan dihapus dari sini. Folder ini tidak pernah diunggah. File yang hanya ada di sini dibiarkan apa adanya. Jika Anda mengedit file di sini dan salinan di penyimpanan berbeda, salinan penyimpanan menggantikan suntingan Anda. Gunakan ini pada perangkat yang hanya boleh menerima file, dan pada menjalankan pertama di perangkat baru.</value>
+  </data>
   <data name="SynchronizationMode_Field_TwoWay" xml:space="preserve">
     <value>Dua arah</value>
+  </data>
+  <data name="SynchronizationMode_Field_TwoWay_Help" xml:space="preserve">
+    <value>Menyalin perubahan ke dua arah. File yang Anda tambahkan, edit, atau hapus di sini diterapkan ke penyimpanan, dan file yang ditambahkan, diedit, atau dihapus di penyimpanan diterapkan di sini. Jika file yang sama berubah di kedua tempat, salinan dengan waktu perubahan yang lebih baru disimpan. Salinan yang lebih lama tetap ada di versi sebelumnya pada penyimpanan dan dapat dipulihkan. Beralih ke ini setelah menjalankan Baca, saat perangkat ini harus mengirim dan menerima.</value>
+  </data>
+  <data name="SynchronizationMode_Field_Write" xml:space="preserve">
+    <value>Tulis</value>
+  </data>
+  <data name="SynchronizationMode_Field_Write_Help" xml:space="preserve">
+    <value>Menerbitkan folder ini sebagai versi berikutnya pada penyimpanan terpusat. Versi itu sama dengan folder ini: file di sini diunggah, dan file yang ada di penyimpanan tetapi tidak ada di folder ini dihapus dari penyimpanan. Tidak ada yang diubah atau dihapus di folder ini. Perangkat lain menerima folder ini pada menjalankan berikutnya. Versi sebelumnya tetap di penyimpanan dan dapat dipulihkan. Gunakan ini saat komputer ini menjadi sumber file, atau saat Anda telah memperbaiki folder secara lokal dan ingin penyimpanan sama persis dengannya.</value>
   </data>
   <data name="SynchronizationTask_Create" xml:space="preserve">
     <value>Sinkronisasi</value>
   </data>
   <data name="SynchronizationTask_Help" xml:space="preserve">
-    <value>Sinkronisasi dua arah file antara perangkat dengan menggunakan penyimpanan terpusat.</value>
+    <value>Menjaga folder tetap selaras dengan penyimpanan terpusat yang dipakai bersama perangkat Anda. Mulai dengan Baca, lalu beralih ke Dua arah atau Tulis.</value>
   </data>
   <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
     <value>Tentukan penyimpanan terpusat unik tempat perangkat melakukan sinkronisasi. Semua perangkat yang berpartisipasi harus menggunakan lokasi penyimpanan yang sama. Lokasi ini sepenuhnya dikelola oleh aplikasi — termasuk penghapusan data — jadi jangan gunakan untuk hal lain, dan jangan bagikan antar beberapa tugas.</value>

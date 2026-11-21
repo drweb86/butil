@@ -934,14 +934,26 @@ Ji bo danasîna berfireh lînka jêrîn bibînin.</value>
   <data name="SynchronizationMode_Field_Read" xml:space="preserve">
     <value>Xwendin</value>
   </data>
+  <data name="SynchronizationMode_Field_Read_Help" xml:space="preserve">
+    <value>Hilanîna navendî dadixe vê peldankê. Pelên ku li hilanînê hatine zêdekirin an guhertin li vir têne kopîkirin, û pelên ku ji hilanînê hatine rakirin ji vir jî têne rakirin. Ev peldank qet nayê barkirin. Pelên ku tenê li vir hene wekî xwe dimînin. Heke we pelê li vir guhertiye û kopiya hilanînê cuda ye, kopiya hilanînê şûna guhertina we digire. Vê li amûrekê bi kar bînin ku divê tenê pelan bistîne, û di xebitandina yekem de li amûrek nû.</value>
+  </data>
   <data name="SynchronizationMode_Field_TwoWay" xml:space="preserve">
     <value>Du-alî</value>
+  </data>
+  <data name="SynchronizationMode_Field_TwoWay_Help" xml:space="preserve">
+    <value>Guhertinan li her du aliyan kopî dike. Pelek ku hûn li vir lê zêde dikin, diguherînin an jê dibin li hilanînê tê sepandin, û pelek ku li hilanînê hatiye zêdekirin, guhertin an jêbirin li vir tê sepandin. Heke heman pel li her du cihan guherîbe, kopiya bi dema guhertinê ya nûtir tê hilanîn. Kopiya kevn di guhertoyek berê ya hilanînê de dimîne û dikare were vegerandin. Piştî xebitandina Xwendinê derbasî vê bibin, dema ku ev amûr divê bişîne û bistîne.</value>
+  </data>
+  <data name="SynchronizationMode_Field_Write" xml:space="preserve">
+    <value>Nivîsandin</value>
+  </data>
+  <data name="SynchronizationMode_Field_Write_Help" xml:space="preserve">
+    <value>Vê peldankê wekî guhertoya pêş a li hilanîna navendî diweşîne. Ew guherto bi vê peldankê re ye: pelên li vir têne barkirin, û pelên ku li hilanînê ne lê di vê peldankê de nînin ji hilanînê têne jêbirin. Di vê peldankê de tiştek nayê guhertin û jêbirin. Amûrên din di xebitandina pêş de vê peldankê distînin. Guhertoyên berê li hilanînê dimînin û dikarin werin vegerandin. Dema ku ev kompîtur çavkaniya pelan e, an dema we peldank li cihê xwe rast kiriye û dixwazin hilanîn bi temamî li hev were, vê bi kar bînin.</value>
   </data>
   <data name="SynchronizationTask_Create" xml:space="preserve">
     <value>Hevdemkirin</value>
   </data>
   <data name="SynchronizationTask_Help" xml:space="preserve">
-    <value>Hevdemkirina du-alî ya pelan di navbera amûran de bi karanîna hilanîna navendî.</value>
+    <value>Peldankek bi hilanîna navendî ya ku amûrên we parve dikin re li hev dihêle. Bi Xwendinê dest pê bikin, paşê derbasî Du-alî an Nivîsandinê bibin.</value>
   </data>
   <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
     <value>Cîhek hilanînê ya navendî û yekta diyar bikin ku amûr bi rêya wê hevdemî dikin. Divê hemû amûrên beşdar heman cîhê hilanînê bikar bînin. Ev cî bi tevahî ji hêla sepanê ve tê rêvebirin — di nav de jêbirina daneyan jî — ji ber vê yekê wê ji bo tiştek din bikar neynin, û navbera çend erkan de par nekin.</value>

@@ -933,14 +933,26 @@ Pogledajte detaljni opis na sljedećoj poveznici.</value>
   <data name="SynchronizationMode_Field_Read" xml:space="preserve">
     <value>Čitanje</value>
   </data>
+  <data name="SynchronizationMode_Field_Read_Help" xml:space="preserve">
+    <value>Preuzima centraliziranu pohranu u ovu mapu. Datoteke dodane ili promijenjene na pohrani kopiraju se ovdje, a datoteke uklonjene s pohrane uklanjaju se odavde. Ova se mapa nikad ne šalje. Datoteke koje postoje samo ovdje ostaju kakve jesu. Ako ste ovdje uredili datoteku, a kopija na pohrani je drugačija, kopija s pohrane zamjenjuje vašu izmjenu. Koristite ovo na uređaju koji treba samo primati datoteke i pri prvom pokretanju na novom uređaju.</value>
+  </data>
   <data name="SynchronizationMode_Field_TwoWay" xml:space="preserve">
     <value>Dvosmjerno</value>
+  </data>
+  <data name="SynchronizationMode_Field_TwoWay_Help" xml:space="preserve">
+    <value>Kopira promjene u oba smjera. Datoteka koju ovdje dodate, uredite ili izbrišete primjenjuje se na pohranu, a datoteka dodana, uređena ili izbrisana na pohrani primjenjuje se ovdje. Ako je ista datoteka promijenjena na oba mjesta, zadržava se kopija s kasnijim vremenom izmjene. Starija kopija ostaje u prethodnoj verziji na pohrani i može se vratiti. Prebacite se na ovo nakon pokretanja u načinu Čitanje, kada ovaj uređaj treba i slati i primati.</value>
+  </data>
+  <data name="SynchronizationMode_Field_Write" xml:space="preserve">
+    <value>Pisanje</value>
+  </data>
+  <data name="SynchronizationMode_Field_Write_Help" xml:space="preserve">
+    <value>Objavljuje ovu mapu kao sljedeću verziju na centraliziranoj pohrani. Ta verzija odgovara ovoj mapi: datoteke odavde se šalju, a datoteke koje su na pohrani, ali nisu u ovoj mapi, brišu se s pohrane. Ništa se u ovoj mapi ne mijenja niti briše. Drugi uređaji dobivaju ovu mapu pri sljedećem pokretanju. Prethodne verzije ostaju na pohrani i mogu se vratiti. Koristite ovo kada je ovo računalo izvor datoteka ili kada ste mapu lokalno ispravili i želite da pohrana točno odgovara njoj.</value>
   </data>
   <data name="SynchronizationTask_Create" xml:space="preserve">
     <value>Sinkronizacija</value>
   </data>
   <data name="SynchronizationTask_Help" xml:space="preserve">
-    <value>Dvosmjerna sinkronizacija datoteka između uređaja koristeći centraliziranu pohranu.</value>
+    <value>Drži mapu usklađenom sa centraliziranom pohranom koju dijele vaši uređaji. Počnite s Čitanje, zatim prijeđite na Dvosmjerno ili Pisanje.</value>
   </data>
   <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
     <value>Odredite jedinstvenu centraliziranu pohranu putem koje se uređaji sinkroniziraju. Svi uređaji koji sudjeluju trebaju koristiti istu lokaciju pohrane. Ovom lokacijom u potpunosti upravlja aplikacija — uključujući brisanje podataka — stoga je nemojte koristiti ni za što drugo i nemojte je dijeliti između više zadataka.</value>

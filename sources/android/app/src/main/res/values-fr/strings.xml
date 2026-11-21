@@ -97,11 +97,15 @@
     <string name="import_skip_help">Ignore les fichiers déjà présents à la destination ou importés plus tôt.</string>
     <string name="import_delete">Supprimer les données copiées du support source</string>
     <string name="import_min_date">Ignorer les fichiers modifiés avant (aaaa-mm-jj) :</string>
-    <string name="sync_help">La synchronisation bidirectionnelle des fichiers entre les appareils utilisant un stockage centralisé.</string>
+    <string name="sync_help">Garde un dossier au même état qu\'un stockage centralisé partagé par vos appareils. Commencez en Lecture, puis passez à Bidirectionnel ou Écriture.</string>
     <string name="sync_storage_help">Indiquez un stockage réservé par lequel les appareils se synchronisent. Tous les appareils doivent utiliser le même emplacement et le même mot de passe.</string>
     <string name="sync_mode">Mode de synchronisation:</string>
     <string name="sync_mode_two_way">Bidirectionnel</string>
+    <string name="sync_mode_two_way_help">Copie les changements dans les deux sens. Un fichier que vous ajoutez, modifiez ou supprimez ici est appliqué au stockage, et un fichier ajouté, modifié ou supprimé dans le stockage est appliqué ici. Si le même fichier a changé aux deux endroits, la copie dont l\'heure de modification est la plus récente est conservée. L\'ancienne copie reste dans une version précédente du stockage et peut être restaurée. Passez à ce mode après une exécution en Lecture, lorsque cet appareil doit envoyer et recevoir.</string>
     <string name="sync_mode_read">Lecture</string>
+    <string name="sync_mode_read_help">Télécharge le stockage centralisé dans ce dossier. Les fichiers ajoutés ou modifiés dans le stockage sont copiés ici, et les fichiers retirés du stockage sont retirés d\'ici. Ce dossier n\'est jamais envoyé. Les fichiers qui n\'existent qu\'ici sont laissés tels quels. Si vous avez modifié un fichier ici et que la copie du stockage est différente, la copie du stockage remplace votre modification. Utilisez ce mode sur un appareil qui ne doit que recevoir des fichiers, et pour la première exécution sur un nouvel appareil.</string>
+    <string name="sync_mode_write">Écriture</string>
+    <string name="sync_mode_write_help">Publie ce dossier comme version suivante du stockage centralisé. Cette version correspond à ce dossier : les fichiers d\'ici sont envoyés, et les fichiers qui sont dans le stockage mais pas dans ce dossier sont supprimés du stockage. Rien dans ce dossier n\'est modifié ni supprimé. Les autres appareils reçoivent ce dossier à leur prochaine exécution. Les versions précédentes restent dans le stockage et peuvent être restaurées. Utilisez ce mode lorsque cet ordinateur est la source des fichiers, ou lorsque vous avez corrigé le dossier localement et voulez que le stockage lui corresponde exactement.</string>
     <string name="sync_repository">Sous-dossier du dépôt :</string>
     <string name="ftps_help">Partage le dossier choisi en FTPS explicite avec un certificat auto-signé. Pendant que la tâche fonctionne, un client FTPS du réseau local peut se connecter.</string>
     <string name="ftps_port">Port :</string>

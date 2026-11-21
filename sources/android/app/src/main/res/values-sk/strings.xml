@@ -100,11 +100,15 @@
     <string name="import_skip_help">Preskočí súbory, ktoré v cieli už sú alebo ktoré sa importovali skôr.</string>
     <string name="import_delete">Odstrániť skopírované údaje zo zdrojového média</string>
     <string name="import_min_date">Preskočiť súbory zmenené pred (rrrr-mm-dd):</string>
-    <string name="sync_help">Obojsmerná synchronizácia súborov medzi zariadeniami pomocou centralizovaného úložiska.</string>
+    <string name="sync_help">Udržiava priečinok v súlade s centralizovaným úložiskom, ktoré zdieľajú vaše zariadenia. Začnite režimom Čítanie a potom prepnite na Obojsmerný alebo Zápis.</string>
     <string name="sync_storage_help">Zadajte samostatné úložisko, cez ktoré sa zariadenia synchronizujú. Všetky zariadenia majú používať to isté miesto a to isté heslo.</string>
     <string name="sync_mode">Režim synchronizácie:</string>
     <string name="sync_mode_two_way">Obojsmerný</string>
+    <string name="sync_mode_two_way_help">Kopíruje zmeny oboma smermi. Súbor, ktorý tu pridáte, upravíte alebo odstránite, sa použije v úložisku, a súbor pridaný, upravený alebo odstránený v úložisku sa použije tu. Ak sa rovnaký súbor zmenil na oboch miestach, zostane kópia s neskorším časom zmeny. Staršia kópia zostane v predchádzajúcej verzii v úložisku a dá sa obnoviť. Prepnite na tento režim po spustení Čítanie, keď má toto zariadenie odosielať aj prijímať.</string>
     <string name="sync_mode_read">Čítanie</string>
+    <string name="sync_mode_read_help">Stiahne centralizované úložisko do tohto priečinka. Súbory pridané alebo zmenené v úložisku sa skopírujú sem a súbory odobraté z úložiska sa odoberú aj odtiaľto. Tento priečinok sa nikdy neodošle. Súbory, ktoré existujú len tu, ostanú bez zmeny. Ak ste tu súbor upravili a kópia v úložisku sa líši, kópia z úložiska nahradí vašu úpravu. Použite to na zariadení, ktoré má súbory len prijímať, a pri prvom spustení na novom zariadení.</string>
+    <string name="sync_mode_write">Zápis</string>
+    <string name="sync_mode_write_help">Zverejní tento priečinok ako ďalšiu verziu v centralizovanom úložisku. Táto verzia zodpovedá tomuto priečinku: súbory odtiaľto sa odošlú a súbory, ktoré sú v úložisku, ale nie v tomto priečinku, sa z úložiska odstránia. V tomto priečinku sa nič nezmení ani neodstráni. Ostatné zariadenia dostanú tento priečinok pri ďalšom spustení. Predchádzajúce verzie ostanú v úložisku a dajú sa obnoviť. Použite to, keď je tento počítač zdrojom súborov, alebo keď ste priečinok miestne opravili a chcete, aby úložisko presne zodpovedalo.</string>
     <string name="sync_repository">Podpriečinok úložiska:</string>
     <string name="ftps_help">Zdieľa vybratý priečinok cez explicitné FTPS s certifikátom podpísaným samým sebou. Kým úloha beží, môže sa pripojiť klient FTPS v miestnej sieti.</string>
     <string name="ftps_user">Používateľ:</string>

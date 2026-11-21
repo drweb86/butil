@@ -933,14 +933,26 @@ Veja a descrição detalhada no seguinte link.</value>
   <data name="SynchronizationMode_Field_Read" xml:space="preserve">
     <value>Leitura</value>
   </data>
+  <data name="SynchronizationMode_Field_Read_Help" xml:space="preserve">
+    <value>Baixa o armazenamento centralizado para esta pasta. Arquivos adicionados ou alterados no armazenamento são copiados para cá, e arquivos removidos do armazenamento são removidos daqui. Esta pasta nunca é enviada. Arquivos que existem só aqui ficam como estão. Se você editou um arquivo aqui e a cópia do armazenamento é diferente, a cópia do armazenamento substitui a sua edição. Use isto em um dispositivo que só deve receber arquivos e na primeira execução em um dispositivo novo.</value>
+  </data>
   <data name="SynchronizationMode_Field_TwoWay" xml:space="preserve">
     <value>Bidirecional</value>
+  </data>
+  <data name="SynchronizationMode_Field_TwoWay_Help" xml:space="preserve">
+    <value>Copia alterações nos dois sentidos. Um arquivo que você adiciona, edita ou exclui aqui é aplicado ao armazenamento, e um arquivo adicionado, editado ou excluído no armazenamento é aplicado aqui. Se o mesmo arquivo mudou nos dois lugares, fica a cópia com o horário de alteração mais recente. A cópia mais antiga permanece em uma versão anterior no armazenamento e pode ser restaurada. Mude para este modo depois de uma execução em Leitura, quando este dispositivo deve enviar e receber.</value>
+  </data>
+  <data name="SynchronizationMode_Field_Write" xml:space="preserve">
+    <value>Gravação</value>
+  </data>
+  <data name="SynchronizationMode_Field_Write_Help" xml:space="preserve">
+    <value>Publica esta pasta como a próxima versão no armazenamento centralizado. Essa versão corresponde a esta pasta: os arquivos daqui são enviados, e os arquivos que estão no armazenamento mas não nesta pasta são excluídos do armazenamento. Nada nesta pasta é alterado ou excluído. Os outros dispositivos recebem esta pasta na próxima execução. As versões anteriores permanecem no armazenamento e podem ser restauradas. Use isto quando este computador é a origem dos arquivos, ou quando você corrigiu a pasta localmente e quer que o armazenamento corresponda exatamente a ela.</value>
   </data>
   <data name="SynchronizationTask_Create" xml:space="preserve">
     <value>Sincronização</value>
   </data>
   <data name="SynchronizationTask_Help" xml:space="preserve">
-    <value>Sincronização bidirecional de arquivos entre dispositivos usando armazenamento centralizado.</value>
+    <value>Mantém uma pasta alinhada a um armazenamento centralizado compartilhado pelos seus dispositivos. Comece em Leitura e depois mude para Bidirecional ou Gravação.</value>
   </data>
   <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
     <value>Especifique um armazenamento centralizado exclusivo através do qual os dispositivos sincronizam. Todos os dispositivos participantes devem usar o mesmo local de armazenamento. Este local é totalmente gerenciado pelo aplicativo — incluindo a exclusão de dados — portanto, não o utilize para mais nada e não o compartilhe entre várias tarefas.</value>

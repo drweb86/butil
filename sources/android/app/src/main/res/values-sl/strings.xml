@@ -101,11 +101,15 @@
     <string name="import_skip_help">Preskoči datoteke, ki so že na cilju ali so bile uvožene prej.</string>
     <string name="import_delete">Izbriši kopirane podatke z izvornega medija</string>
     <string name="import_min_date">Preskoči datoteke, spremenjene pred (llll-mm-dd):</string>
-    <string name="sync_help">Dvosmerna sinhronizacija datotek med napravami z uporabo centralizirane shrambe.</string>
+    <string name="sync_help">Ohranja mapo usklajeno s centralizirano shrambo, ki si jo delijo vaše naprave. Začnite z Branje in nato preklopite na Dvosmerno ali Pisanje.</string>
     <string name="sync_storage_help">Navedite ločeno shrambo, prek katere se naprave sinhronizirajo. Vse naprave naj uporabljajo isto mesto in isto geslo.</string>
     <string name="sync_mode">Način sinhronizacije:</string>
     <string name="sync_mode_two_way">Dvosmerno</string>
+    <string name="sync_mode_two_way_help">Kopira spremembe v obe smeri. Datoteka, ki jo tukaj dodate, uredite ali izbrišete, se uporabi v shrambi, datoteka, dodana, urejena ali izbrisana v shrambi, pa se uporabi tukaj. Če se ista datoteka spremeni na obeh mestih, ostane kopija s poznejšim časom spremembe. Starejša kopija ostane v prejšnji različici v shrambi in jo je mogoče obnoviti. Preklopite na to po zagonu Branje, ko naj ta naprava pošilja in prejema.</string>
     <string name="sync_mode_read">Branje</string>
+    <string name="sync_mode_read_help">Prenese centralizirano shrambo v to mapo. Datoteke, dodane ali spremenjene v shrambi, se kopirajo sem, datoteke, odstranjene iz shrambe, pa se odstranijo tudi od tukaj. Ta mapa se nikoli ne pošlje. Datoteke, ki obstajajo samo tukaj, ostanejo, kot so. Če ste tukaj uredili datoteko in je kopija v shrambi drugačna, kopija iz shrambe nadomesti vaš popravek. Uporabite to na napravi, ki naj samo prejema datoteke, in ob prvem zagonu na novi napravi.</string>
+    <string name="sync_mode_write">Pisanje</string>
+    <string name="sync_mode_write_help">Objavi to mapo kot naslednjo različico v centralizirani shrambi. Ta različica ustreza tej mapi: datoteke od tukaj se pošljejo, datoteke, ki so v shrambi, a niso v tej mapi, pa se iz shrambe izbrišejo. V tej mapi se nič ne spremeni in ne izbriše. Druge naprave prejmejo to mapo ob naslednjem zagonu. Prejšnje različice ostanejo v shrambi in jih je mogoče obnoviti. Uporabite to, ko je ta računalnik vir datotek ali ko ste mapo lokalno popravili in želite, da shramba natančno ustreza.</string>
     <string name="sync_repository">Podmapa shrambe:</string>
     <string name="ftps_help">Deli izbrano mapo z izrecnim FTPS in samopodpisanim potrdilom. Medtem ko opravilo teče, se lahko poveže odjemalec FTPS v lokalnem omrežju.</string>
     <string name="ftps_port">Vrata:</string>

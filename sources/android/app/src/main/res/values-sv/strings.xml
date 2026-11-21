@@ -98,11 +98,15 @@
     <string name="import_skip_help">Hoppar över filer som redan finns på destinationen eller som importerats tidigare.</string>
     <string name="import_delete">Ta bort kopierade data från källmediet</string>
     <string name="import_min_date">Hoppa över filer som ändrats före (åååå-mm-dd):</string>
-    <string name="sync_help">Tvåvägssynkronisering av filer mellan enheter med centraliserad lagring.</string>
+    <string name="sync_help">Håller en mapp i takt med ett centraliserat lagringsutrymme som dina enheter delar. Börja med Läs och byt sedan till Tvåvägs eller Skriv.</string>
     <string name="sync_storage_help">Ange ett eget lager som enheterna synkroniserar genom. Alla enheter ska använda samma plats och samma lösenord.</string>
     <string name="sync_mode">Synkroniseringsläge:</string>
     <string name="sync_mode_two_way">Tvåvägs</string>
+    <string name="sync_mode_two_way_help">Kopierar ändringar i båda riktningarna. En fil som du lägger till, redigerar eller tar bort här tillämpas på lagringen, och en fil som lagts till, redigerats eller tagits bort i lagringen tillämpas här. Om samma fil ändrats på båda ställena behålls kopian med den senare ändringstiden. Den äldre kopian finns kvar i en tidigare version i lagringen och kan återställas. Byt till detta efter en körning i Läs, när den här enheten ska både skicka och ta emot.</string>
     <string name="sync_mode_read">Läs</string>
+    <string name="sync_mode_read_help">Hämtar det centraliserade lagringsutrymmet till den här mappen. Filer som lagts till eller ändrats i lagringen kopieras hit, och filer som tagits bort från lagringen tas bort även här. Den här mappen laddas aldrig upp. Filer som bara finns här lämnas som de är. Om du redigerade en fil här och kopian i lagringen skiljer sig, ersätter lagringskopian din redigering. Använd detta på en enhet som bara ska ta emot filer, och vid första körningen på en ny enhet.</string>
+    <string name="sync_mode_write">Skriv</string>
+    <string name="sync_mode_write_help">Publicerar den här mappen som nästa version i det centraliserade lagringsutrymmet. Den versionen stämmer med den här mappen: filer här laddas upp, och filer som finns i lagringen men inte i den här mappen tas bort från lagringen. Ingenting i den här mappen ändras eller tas bort. Andra enheter tar emot den här mappen nästa gång de körs. Tidigare versioner finns kvar i lagringen och kan återställas. Använd detta när den här datorn är källan till filerna, eller när du har rättat mappen lokalt och vill att lagringen ska stämma exakt.</string>
     <string name="sync_repository">Undermapp i lagret:</string>
     <string name="ftps_help">Delar den valda mappen med explicit FTPS och ett självsignerat certifikat. Medan uppgiften körs kan en FTPS-klient i det lokala nätverket ansluta.</string>
     <string name="ftps_user">Användare:</string>

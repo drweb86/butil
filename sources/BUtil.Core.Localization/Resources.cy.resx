@@ -933,14 +933,26 @@ See detailed description in the following link.</value>
   <data name="SynchronizationMode_Field_Read" xml:space="preserve">
     <value>Darllen</value>
   </data>
+  <data name="SynchronizationMode_Field_Read_Help" xml:space="preserve">
+    <value>Yn lawrlwytho'r storfa ganolog i'r ffolder hon. Caiff ffeiliau a ychwanegwyd neu a newidiwyd ar y storfa eu copïo yma, ac caiff ffeiliau a dynnwyd oddi ar y storfa eu tynnu oddi yma. Ni chaiff y ffolder hon ei huwchlwytho byth. Caiff ffeiliau sy'n bodoli yma'n unig eu gadael fel y maent. Os gwnaethoch olygu ffeil yma ac mae copi'r storfa'n wahanol, mae copi'r storfa'n disodli eich golygiad. Defnyddiwch hwn ar ddyfais sydd i dderbyn ffeiliau'n unig, ac ar gyfer y rhediad cyntaf ar ddyfais newydd.</value>
+  </data>
   <data name="SynchronizationMode_Field_TwoWay" xml:space="preserve">
     <value>Dwy-ffordd</value>
+  </data>
+  <data name="SynchronizationMode_Field_TwoWay_Help" xml:space="preserve">
+    <value>Yn copïo newidiadau i'r ddau gyfeiriad. Mae ffeil rydych chi'n ei hychwanegu, ei golygu neu ei dileu yma'n cael ei rhoi ar y storfa, ac mae ffeil a ychwanegwyd, a olygwyd neu a ddilëwyd ar y storfa'n cael ei rhoi yma. Os newidiodd yr un ffeil yn y ddau le, cedwir y copi sydd ag amser addasu diweddarach. Mae'r copi hŷn yn aros mewn fersiwn flaenorol ar y storfa a gellir ei adfer. Newidiwch i hwn ar ôl rhediad Darllen, pan ddylai'r ddyfais hon anfon a derbyn.</value>
+  </data>
+  <data name="SynchronizationMode_Field_Write" xml:space="preserve">
+    <value>Ysgrifennu</value>
+  </data>
+  <data name="SynchronizationMode_Field_Write_Help" xml:space="preserve">
+    <value>Yn cyhoeddi'r ffolder hon fel y fersiwn nesaf ar y storfa ganolog. Mae'r fersiwn honno'n cyfateb i'r ffolder hon: caiff ffeiliau yma eu huwchlwytho, ac caiff ffeiliau sydd ar y storfa ond ddim yn y ffolder hon eu dileu o'r storfa. Ni chaiff dim yn y ffolder hon ei newid na'i ddileu. Mae dyfeisiau eraill yn derbyn y ffolder hon y tro nesaf y byddant yn rhedeg. Mae fersiynau blaenorol yn aros ar y storfa a gellir eu hadfer. Defnyddiwch hwn pan mai'r cyfrifiadur hwn yw ffynhonnell y ffeiliau, neu pan rydych wedi cywiro'r ffolder yn lleol ac am i'r storfa gyfateb iddi'n union.</value>
   </data>
   <data name="SynchronizationTask_Create" xml:space="preserve">
     <value>Cydamseru</value>
   </data>
   <data name="SynchronizationTask_Help" xml:space="preserve">
-    <value>Cydamseru dwy ffordd o ffeiliau rhwng dyfeisiau gan ddefnyddio storfa ganolog.</value>
+    <value>Yn cadw ffolder yn gyson â storfa ganolog a rennir gan eich dyfeisiau. Dechreuwch gyda Darllen, yna newidiwch i Dwy-ffordd neu Ysgrifennu.</value>
   </data>
   <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
     <value>Nodwch storfa ganolog unigryw y mae dyfeisiau'n cydweddu drwyddi. Dylai pob dyfais sy'n cymryd rhan ddefnyddio'r un lleoliad storio. Mae'r lleoliad hwn yn cael ei reoli'n gyfan gwbl gan yr ap — gan gynnwys dileu data — felly peidiwch â'i ddefnyddio ar gyfer unrhyw beth arall, a pheidiwch â'i rannu rhwng sawl tasg.</value>

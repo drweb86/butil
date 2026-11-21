@@ -933,14 +933,26 @@ Szczegółowy opis znajdziesz pod poniższym linkiem.</value>
   <data name="SynchronizationMode_Field_Read" xml:space="preserve">
     <value>Odczyt</value>
   </data>
+  <data name="SynchronizationMode_Field_Read_Help" xml:space="preserve">
+    <value>Pobiera scentralizowany magazyn do tego folderu. Pliki dodane lub zmienione w magazynie są kopiowane tutaj, a pliki usunięte z magazynu są usuwane także stąd. Ten folder nigdy nie jest wysyłany. Pliki, które istnieją tylko tutaj, pozostają bez zmian. Jeśli edytowano tu plik, a kopia w magazynie jest inna, kopia z magazynu zastępuje tę edycję. Użyj tego na urządzeniu, które ma tylko odbierać pliki, oraz przy pierwszym uruchomieniu na nowym urządzeniu.</value>
+  </data>
   <data name="SynchronizationMode_Field_TwoWay" xml:space="preserve">
     <value>Dwukierunkowa</value>
+  </data>
+  <data name="SynchronizationMode_Field_TwoWay_Help" xml:space="preserve">
+    <value>Kopiuje zmiany w obie strony. Plik dodany, edytowany lub usunięty tutaj jest stosowany w magazynie, a plik dodany, edytowany lub usunięty w magazynie jest stosowany tutaj. Jeśli ten sam plik zmienił się w obu miejscach, zostaje kopia z późniejszym czasem zmiany. Starsza kopia pozostaje w poprzedniej wersji w magazynie i można ją przywrócić. Przełącz na ten tryb po uruchomieniu Odczyt, gdy to urządzenie ma wysyłać i odbierać.</value>
+  </data>
+  <data name="SynchronizationMode_Field_Write" xml:space="preserve">
+    <value>Zapis</value>
+  </data>
+  <data name="SynchronizationMode_Field_Write_Help" xml:space="preserve">
+    <value>Publikuje ten folder jako następną wersję w scentralizowanym magazynie. Ta wersja odpowiada temu folderowi: pliki stąd są wysyłane, a pliki, które są w magazynie, ale nie ma ich w tym folderze, są usuwane z magazynu. Nic w tym folderze nie jest zmieniane ani usuwane. Inne urządzenia otrzymają ten folder przy następnym uruchomieniu. Poprzednie wersje zostają w magazynie i można je przywrócić. Użyj tego, gdy ten komputer jest źródłem plików albo gdy folder poprawiono lokalnie i magazyn ma dokładnie mu odpowiadać.</value>
   </data>
   <data name="SynchronizationTask_Create" xml:space="preserve">
     <value>Synchronizacja</value>
   </data>
   <data name="SynchronizationTask_Help" xml:space="preserve">
-    <value>Dwukierunkowa synchronizacja plików między urządzeniami z użyciem scentralizowanego magazynu.</value>
+    <value>Utrzymuje folder zgodnie ze scentralizowanym magazynem współdzielonym przez urządzenia. Zacznij od Odczyt, a potem przełącz na Dwukierunkowa lub Zapis.</value>
   </data>
   <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
     <value>Wskaż unikalny scentralizowany magazyn, za pośrednictwem którego synchronizują się urządzenia. Wszystkie uczestniczące urządzenia powinny korzystać z tej samej lokalizacji magazynu. Ta lokalizacja jest w pełni zarządzana przez aplikację — łącznie z usuwaniem danych — dlatego nie używaj jej do niczego innego i nie udostępniaj jej pomiędzy różnymi zadaniami.</value>

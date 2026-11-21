@@ -125,7 +125,7 @@ class SynchronizationRootTask : SequentialBuTask
 
     private void ExecuteActionsRemotely(List<BuTask> tasks, IEnumerable<SynchronizationConsolidatedFileInfo> syncItems)
     {
-        if (_model.TaskOptions.SynchronizationMode != SynchronizationTaskModelMode.TwoWay)
+        if (_model.TaskOptions.SynchronizationMode == SynchronizationTaskModelMode.Read)
             return;
 
 

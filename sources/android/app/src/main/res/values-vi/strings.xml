@@ -97,11 +97,15 @@
     <string name="import_skip_help">Bỏ qua tệp đã có ở đích hoặc đã được nhập trước đó.</string>
     <string name="import_delete">Xóa dữ liệu đã sao chép khỏi phương tiện nguồn</string>
     <string name="import_min_date">Bỏ qua tệp sửa trước (yyyy-MM-dd):</string>
-    <string name="sync_help">Đồng bộ hóa hai chiều của các tệp giữa các thiết bị sử dụng lưu trữ tập trung.</string>
+    <string name="sync_help">Giữ một thư mục khớp với kho lưu trữ tập trung mà các thiết bị của bạn dùng chung. Bắt đầu bằng Đọc, rồi chuyển sang Hai chiều hoặc Ghi.</string>
     <string name="sync_storage_help">Chỉ định một kho riêng mà các thiết bị đồng bộ qua đó. Mọi thiết bị nên dùng cùng vị trí và cùng mật khẩu.</string>
     <string name="sync_mode">Chế độ đồng bộ hóa:</string>
     <string name="sync_mode_two_way">Hai chiều</string>
+    <string name="sync_mode_two_way_help">Sao chép thay đổi theo cả hai chiều. Tệp bạn thêm, sửa hoặc xóa ở đây được áp dụng lên kho, và tệp được thêm, sửa hoặc xóa trên kho được áp dụng ở đây. Nếu cùng một tệp đổi ở cả hai nơi, bản có thời điểm sửa muộn hơn được giữ. Bản cũ hơn vẫn nằm trong một phiên bản trước trên kho và có thể khôi phục. Chuyển sang chế độ này sau một lần chạy Đọc, khi thiết bị này cần vừa gửi vừa nhận.</string>
     <string name="sync_mode_read">Đọc</string>
+    <string name="sync_mode_read_help">Tải kho lưu trữ tập trung vào thư mục này. Tệp được thêm hoặc thay đổi trên kho được sao chép vào đây, và tệp bị xóa khỏi kho cũng bị xóa khỏi đây. Thư mục này không bao giờ được tải lên. Tệp chỉ có ở đây được giữ nguyên. Nếu bạn sửa một tệp ở đây và bản trên kho khác đi, bản trên kho thay thế bản sửa của bạn. Dùng chế độ này trên thiết bị chỉ nên nhận tệp, và ở lần chạy đầu trên thiết bị mới.</string>
+    <string name="sync_mode_write">Ghi</string>
+    <string name="sync_mode_write_help">Công bố thư mục này thành phiên bản tiếp theo trên kho lưu trữ tập trung. Phiên bản đó khớp với thư mục này: tệp ở đây được tải lên, và tệp có trên kho nhưng không có trong thư mục này bị xóa khỏi kho. Không có gì trong thư mục này bị đổi hoặc bị xóa. Thiết bị khác nhận thư mục này ở lần chạy sau. Các phiên bản trước vẫn nằm trên kho và có thể khôi phục. Dùng chế độ này khi máy tính này là nguồn của tệp, hoặc khi bạn đã sửa thư mục tại chỗ và muốn kho khớp đúng với thư mục đó.</string>
     <string name="sync_repository">Thư mục con của kho:</string>
     <string name="ftps_help">Chia sẻ thư mục đã chọn bằng FTPS tường minh với chứng chỉ tự ký. Khi tác vụ đang chạy, máy khách FTPS trên mạng cục bộ có thể kết nối.</string>
     <string name="ftps_port">Cổng:</string>

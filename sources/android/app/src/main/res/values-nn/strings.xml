@@ -101,11 +101,15 @@
     <string name="import_skip_help">Hoppar over filer som alt finst på målet, eller som vart importerte tidlegare.</string>
     <string name="import_delete">Slett kopierte data frå kjeldemediet</string>
     <string name="import_min_date">Hopp over filer endra før (åååå-mm-dd):</string>
-    <string name="sync_help">Tovegs synkronisering av filer mellom einingar med sentralisert lagring.</string>
+    <string name="sync_help">Held ei mappe i takt med eit sentralisert lager som einingane dine deler. Start med Les, og byt deretter til Tovegs eller Skriv.</string>
     <string name="sync_storage_help">Oppgi eit eige lager som einingane synkroniserer gjennom. Alle einingar skal bruke same stad og same passord.</string>
     <string name="sync_mode">Synkroniseringsmodus:</string>
     <string name="sync_mode_two_way">Tovegs</string>
+    <string name="sync_mode_two_way_help">Kopierer endringar i begge retningar. Ei fil du legg til, redigerer eller slettar her, blir brukt på lageret, og ei fil som er lagd til, redigert eller sletta på lageret, blir brukt her. Om same fila er endra begge stader, blir kopien med det seinare endringstidspunktet behalden. Den eldre kopien blir verande i ein tidlegare versjon på lageret og kan bli gjenoppretta. Byt til dette etter ei køyring i Les, når denne eininga skal både sende og ta imot.</string>
     <string name="sync_mode_read">Les</string>
+    <string name="sync_mode_read_help">Lastar det sentraliserte lageret ned i denne mappa. Filer som er lagde til eller endra på lageret, blir kopierte hit, og filer som er fjerna frå lageret, blir fjerna her. Denne mappa blir aldri lasta opp. Filer som berre finst her, blir ståande som dei er. Om du har redigert ei fil her og kopien på lageret er annleis, tek lagerkopien plassen til redigeringa di. Bruk dette på ei eining som berre skal ta imot filer, og ved første køyring på ei ny eining.</string>
+    <string name="sync_mode_write">Skriv</string>
+    <string name="sync_mode_write_help">Publiserer denne mappa som neste versjon på det sentraliserte lageret. Den versjonen svarar til denne mappa: filer her blir lasta opp, og filer som er på lageret men ikkje i denne mappa, blir sletta frå lageret. Ingenting i denne mappa blir endra eller sletta. Andre einingar tek imot denne mappa neste gong dei køyrer. Tidlegare versjonar blir verande på lageret og kan bli gjenoppretta. Bruk dette når denne datamaskinen er kjelda til filene, eller når du har retta mappa lokalt og vil at lageret skal svare nøyaktig til ho.</string>
     <string name="sync_repository">Undermappe i lageret:</string>
     <string name="ftps_help">Deler den valde mappa med eksplisitt FTPS og eit sjølvsignert sertifikat. Medan oppgåva køyrer, kan ein FTPS-klient på det lokale nettverket kople til.</string>
     <string name="ftps_user">Brukar:</string>

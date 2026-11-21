@@ -103,11 +103,15 @@
     <string name="import_skip_help">Helburuan lehendik dauden edo lehen inportatutako fitxategiak saltatzen ditu.</string>
     <string name="import_delete">Ezabatu kopiatutako datuak iturburu-euskarritik</string>
     <string name="import_min_date">Saltatu data honen aurretik aldatutako fitxategiak (uuuu-hh-ee):</string>
-    <string name="sync_help">Biltegiratze zentralizatua erabiliz gailuen arteko fitxategien bi norabideko sinkronizazioa.</string>
+    <string name="sync_help">Zure gailuek partekatzen duten biltegiratze zentralizatu batekin karpeta bat eguneratuta mantentzen du. Hasi Irakurri moduan, eta gero aldatu Bi norabidekoa edo Idazketa modura.</string>
     <string name="sync_storage_help">Adierazi gailuek sinkronizatzeko erabiliko duten biltegi bereizi bat. Gailu guztiek leku eta pasahitz bera erabili behar dute.</string>
     <string name="sync_mode">Sinkronizazio modua:</string>
     <string name="sync_mode_two_way">Bi norabidekoa</string>
+    <string name="sync_mode_two_way_help">Aldaketak bi norabideetan kopiatzen ditu. Hemen gehitzen, editatzen edo ezabatzen duzun fitxategia biltegian aplikatzen da, eta biltegian gehitutako, editatutako edo ezabatutako fitxategia hemen aplikatzen da. Fitxategi bera bi lekuetan aldatu bada, aldaketa-ordu berriena duen kopia gordetzen da. Kopia zaharragoa biltegiaren aurreko bertsio batean geratzen da eta lehenera daiteke. Aldatu honetara Irakurri exekuzio baten ondoren, gailu honek bidali eta jaso behar duenean.</string>
     <string name="sync_mode_read">Irakurri</string>
+    <string name="sync_mode_read_help">Biltegiratze zentralizatua karpeta honetara deskargatzen du. Biltegian gehitutako edo aldatutako fitxategiak hona kopiatzen dira, eta biltegitik kendutako fitxategiak hemendik ere kentzen dira. Karpeta hau ez da inoiz igotzen. Hemen bakarrik dauden fitxategiak dauden bezala uzten dira. Fitxategi bat hemen editatu baduzu eta biltegiko kopia desberdina bada, biltegiko kopiak zure edizioa ordezkatzen du. Erabili fitxategiak soilik jaso behar dituen gailu batean, eta gailu berri bateko lehen exekuzioan.</string>
+    <string name="sync_mode_write">Idazketa</string>
+    <string name="sync_mode_write_help">Karpeta hau biltegiratze zentralizatuaren hurrengo bertsio gisa argitaratzen du. Bertsio hori karpeta honekin bat dator: hemengo fitxategiak igotzen dira, eta biltegian dauden baina karpeta honetan ez dauden fitxategiak biltegitik ezabatzen dira. Karpeta honetan ez da ezer aldatzen edo ezabatzen. Beste gailuek karpeta hau jasoko dute hurrengo exekuzioan. Aurreko bertsioak biltegian geratzen dira eta lehenera daitezke. Erabili ordenagailu hau fitxategien iturria denean, edo karpeta lokalean zuzendu duzunean eta biltegia zehatz-mehatz bat etortzea nahi duzunean.</string>
     <string name="sync_repository">Biltegiaren azpikarpeta:</string>
     <string name="ftps_help">Hautatutako karpeta FTPS esplizituarekin eta norberak sinatutako ziurtagiri batekin partekatzen du. Zeregina martxan dagoen bitartean, sare lokaleko FTPS bezero batek konekta dezake.</string>
     <string name="ftps_port">Portua:</string>

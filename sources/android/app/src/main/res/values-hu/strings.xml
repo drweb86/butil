@@ -98,11 +98,15 @@
     <string name="import_skip_help">Kihagyja a célban már meglévő vagy korábban importált fájlokat.</string>
     <string name="import_delete">Másolt adatok törlése a forrás adathordozóról</string>
     <string name="import_min_date">A következő dátum előtt módosított fájlok kihagyása (éééé-hh-nn):</string>
-    <string name="sync_help">Kétirányú fájlszinkronizáció eszközök között központosított tároló használatával.</string>
+    <string name="sync_help">Egy mappát összhangban tart az eszközei által megosztott központosított tárolóval. Kezdje az Olvasás móddal, majd váltson Kétirányú vagy Írás módra.</string>
     <string name="sync_storage_help">Adjon meg egy külön tárolót, amelyen keresztül az eszközök szinkronizálnak. Minden eszköznek ugyanazt a helyet és ugyanazt a jelszót kell használnia.</string>
     <string name="sync_mode">Szinkronizációs mód:</string>
     <string name="sync_mode_two_way">Kétirányú</string>
+    <string name="sync_mode_two_way_help">A változásokat mindkét irányba másolja. Az itt hozzáadott, szerkesztett vagy törölt fájl a tárolóra kerül, a tárolóban hozzáadott, szerkesztett vagy törölt fájl pedig ide. Ha ugyanaz a fájl mindkét helyen megváltozott, a későbbi módosítási idejű másolat marad meg. A régebbi másolat a tároló egy korábbi verziójában marad, és visszaállítható. Olvasás futása után váltson erre, amikor ennek az eszköznek küldenie és fogadnia is kell.</string>
     <string name="sync_mode_read">Olvasás</string>
+    <string name="sync_mode_read_help">A központosított tárolót ebbe a mappába tölti le. A tárolóban hozzáadott vagy módosított fájlok ide másolódnak, a tárolóból eltávolított fájlok pedig innen is törlődnek. Ez a mappa soha nem töltődik fel. A csak itt lévő fájlok változatlanok maradnak. Ha itt szerkesztett egy fájlt, és a tároló másolata eltér, a tároló másolata felülírja a szerkesztését. Olyan eszközön használja, amelynek csak fájlokat kell fogadnia, és új eszköz első futásakor.</string>
+    <string name="sync_mode_write">Írás</string>
+    <string name="sync_mode_write_help">Ezt a mappát a központosított tároló következő verziójaként közzéteszi. Az a verzió megegyezik ezzel a mappával: az itteni fájlok feltöltődnek, a tárolóban lévő, de ebben a mappában nem szereplő fájlok pedig törlődnek a tárolóból. Ebben a mappában semmi nem változik és nem törlődik. A többi eszköz a következő futáskor megkapja ezt a mappát. A korábbi verziók a tárolóban maradnak, és visszaállíthatók. Akkor használja, ha ez a számítógép a fájlok forrása, vagy ha helyben javította a mappát, és azt szeretné, hogy a tároló pontosan egyezzen vele.</string>
     <string name="sync_repository">A tároló almappája:</string>
     <string name="ftps_help">A kiválasztott mappát explicit FTPS-sel és önaláírt tanúsítvánnyal osztja meg. Amíg a feladat fut, a helyi hálózat egy FTPS-kliense csatlakozhat.</string>
     <string name="ftps_user">Felhasználó:</string>
