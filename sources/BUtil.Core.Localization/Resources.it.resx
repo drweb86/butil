@@ -501,7 +501,7 @@ Sceglie una delle seguenti opzioni:
     <value>Scegli il tipo di installazione</value>
   </data>
   <data name="Installer_LaunchApp" xml:space="preserve">
-    <value>Avvia applicazione</value>
+    <value>Esegui BUtil</value>
   </data>
   <data name="KeyFile_Field" xml:space="preserve">
     <value>File chiave:</value>
