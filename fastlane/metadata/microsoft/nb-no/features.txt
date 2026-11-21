@@ -1,5 +1,5 @@
 En trinnvis sikkerhetskopi lagrer bare det som er endret siden forrige kjøring.
-Deduplisering beholder én kopi når samme fil finnes mer enn én gang.
+Deduplisering beholder én kopi når samme fil finnes igjen.
 Gjenopprett filer fra en sikkerhetskopi du allerede har laget.
 Sikkerhetskopier til en lokal mappe, WebDAV, S3-kompatibel lagring eller NFS.
 Sikkerhetskopier til en NAS (SMB/CIFS), Azure Blob, SFTP eller FTPS.

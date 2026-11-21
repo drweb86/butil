@@ -1,4 +1,4 @@
-BUtil sikkerhetskopierer, synkroniserer og gjenoppretter filer på denne PC-en. Trinnvise sikkerhetskopier lagrer bare det som er endret. Deduplisering beholder én kopi når samme fil finnes mer enn én gang.
+BUtil sikkerhetskopierer, synkroniserer og gjenoppretter filer på denne PC-en. Trinnvise sikkerhetskopier lagrer bare det som er endret. Deduplisering beholder én kopi når samme fil finnes igjen.
 
 Send sikkerhetskopier til en mappe på denne PC-en, til en NAS (SMB/CIFS), eller til WebDAV, S3-kompatibel lagring, NFS, Azure Blob, SFTP eller FTPS.
 

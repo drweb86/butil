@@ -1,5 +1,5 @@
 En trinvis sikkerhedskopi gemmer kun det, der er ændret siden sidste kørsel.
-Deduplikering beholder én kopi, når den samme fil optræder mere end én gang.
+Deduplikering beholder én kopi, når den samme fil optræder igen.
 Gendan filer fra en sikkerhedskopi, du allerede har lavet.
 Sikkerhedskopiér til en lokal mappe, WebDAV, S3-kompatibel lagerplads eller NFS.
 Sikkerhedskopiér til en NAS (SMB/CIFS), Azure Blob, SFTP eller FTPS.
@@ -12,7 +12,7 @@ Planlæg en sikkerhedskopi ved logon eller efter en ugentlig plan.
 Kør de samme opgaver fra konsollen, også efter en tidsplan.
 Kopiér en konsolkommando for en opgave, så du kan automatisere den.
 Se hvilke opgaver der er planlagt, og hvordan det sidste kørsel endte.
-Gemte adgangskoder krypteres på denne computer.
+Gemte kodeord krypteres på denne computer.
 Efter en opgave kan pc'en blive tændt, logge af, genstarte eller lukke ned.
 Open source, uden konto, uden reklamer og uden telemetri.
 Upload en mappe, og spring filer over, der allerede er gemt.
