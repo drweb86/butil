@@ -9,7 +9,6 @@ using System;
 using System.IO;
 using System.Linq;
 using System.Net.Security;
-using System.Security.Authentication;
 
 namespace BUtil.Storages.Ftps;
 
@@ -91,8 +90,7 @@ class FtpsStorage : StorageBase<FtpsStorageSettingsV2>
 
         var client = new FtpClient(Settings.Host, Settings.User, Settings.Password, Settings.Port);
         client.Config.EncryptionMode = GetFtpEncryptionMode();
-        // FluentFTP defaults to TLS 1.2. None is the operating-system default, so TLS 1.3 is offered only where the platform supports it.
-        client.Config.SslProtocols = SslProtocols.None;
+        // FluentFTP defaults to TLS 1.2. Forcing the OS default negotiates TLS 1.3, and Synology then answers 426 after creating the file.
         client.ValidateCertificate += OnClientValidateCertificate;
         client.Connect();
         return client;

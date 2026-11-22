@@ -1,3 +1,1 @@
-(unpublished)
-Windows Store: task shortcuts in the Start menu, scheduled tasks, and copied command lines keep working after an upgrade. Each Store version is installed into a new folder; those entries now use a stable app execution alias. Open BUtil once after this update so existing entries are rewritten.
-Synchronization has a Write mode on desktop and Android. It publishes the local folder as the next version on the storage, so that version matches the folder, including deletions. A new...
+Desktop: FTPS uses TLS 1.2 again. Offering TLS 1.3 makes Synology create the remote file and then reject the upload with 426. FluentFTP's TLS 1.3 option is the separate GnuTLS package, and that package ships Windows x64 binaries only, so it does not cover Windows ARM64 or Linux ARM64. Android still uses TLS 1.3.

@@ -1,3 +1,8 @@
+# 2026.11.22
+
+## Bug Fixes
+- Desktop: FTPS uses TLS 1.2 again. Offering TLS 1.3 makes Synology create the remote file and then reject the upload with 426. FluentFTP's TLS 1.3 option is the separate GnuTLS package, and that package ships Windows x64 binaries only, so it does not cover Windows ARM64 or Linux ARM64. Android still uses TLS 1.3.
+
 # 2026.11.21
 
 ## Bug Fixes
