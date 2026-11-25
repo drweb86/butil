@@ -60,9 +60,18 @@ android {
         }
     }
 
+    val playProguard = getDefaultProguardFile("proguard-android-optimize.txt")
     buildTypes {
         release {
             isMinifyEnabled = false
+            signingConfig = signingConfigs.findByName("release")
+        }
+        // Google Play bundle only. The release APK, release AAB, and China AAB stay unminified.
+        create("play") {
+            initWith(getByName("release"))
+            matchingFallbacks += listOf("release")
+            isMinifyEnabled = true
+            proguardFiles(playProguard, "proguard-rules.pro")
             signingConfig = signingConfigs.findByName("release")
         }
     }
@@ -183,6 +192,10 @@ abstract class CopyLicenseDocumentsTask : DefaultTask() {
 
 androidComponents {
     beforeVariants { builder ->
+        if (builder.buildType == "play" && builder.flavorName == "chinaPiplPolicy") {
+            builder.enable = false
+            return@beforeVariants
+        }
         builder.hostTests[com.android.build.api.variant.HostTestBuilder.UNIT_TEST_TYPE]?.enable = true
     }
     onVariants { variant ->

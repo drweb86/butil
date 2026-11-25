@@ -23,7 +23,7 @@ From the repository root:
 ./build-android.ps1 -Screenshots
 ```
 
-The debug APK is `Output/butil_android_debug.apk`. `-Screenshots` writes `Output/butil_android_screenshots_debug.apk`. That build is English only, uses the package id `com.siarheikuchuk.butil.screenshots`, and is for store images. It is not a release. A release build reads the version from `CHANGELOG.md` and writes `Output/butil_<version>_android.apk`. The release workflow also writes `Output/butil_<version>_android.aab` and a separate China bundle, `Output/butil_<version>_android_china.aab`.
+The debug APK is `Output/butil_android_debug.apk`. `-Screenshots` writes `Output/butil_android_screenshots_debug.apk`. That build is English only, uses the package id `com.siarheikuchuk.butil.screenshots`, and is for store images. It is not a release. A release build reads the version from `CHANGELOG.md` and writes `Output/butil_<version>_android.apk`. The release workflow also writes `Output/butil_<version>_android.aab`, a separate China bundle `Output/butil_<version>_android_china.aab`, and `Output/butil_<version>_android_google_play.aab`. The Google Play bundle is the only minified and obfuscated package. Its mapping file is `Output/butil_<version>_android_google_play.mapping.txt`. The APK, the other AAB, and the China bundle stay unobfuscated.
 
 Set `ANDROID_KEYSTORE_FILE`, `ANDROID_KEYSTORE_PASSWORD`, `ANDROID_KEY_ALIAS`, and `ANDROID_KEY_PASSWORD` before `-Release` to sign. Without them the release package is unsigned.
 
