@@ -937,25 +937,25 @@ Sceglie una delle seguenti opzioni:
     <value>Lettura</value>
   </data>
   <data name="SynchronizationMode_Field_Read_Help" xml:space="preserve">
-    <value>Scarica l'archiviazione centralizzata in questa cartella. I file aggiunti o modificati nell'archiviazione vengono copiati qui e i file rimossi dall'archiviazione vengono rimossi anche da qui. Questa cartella non viene mai inviata. I file presenti solo qui restano come sono. Se hai modificato un file qui e la copia nell'archiviazione è diversa, la copia dell'archiviazione sostituisce la modifica. Usalo su un dispositivo che deve solo ricevere file e alla prima esecuzione su un dispositivo nuovo.</value>
+    <value>Scarica l'archivio centralizzato in questa cartella. I file aggiunti o modificati nella memoria vengono copiati qui e i file rimossi dall'archivio vengono rimossi qui. Questa cartella non viene mai caricata. I file che esistono solo qui vengono lasciati così come sono. Se è stato modificato un file qui e la copia dell'archivio è diversa, la copia dell'archivio sostituisce la modifica. Usa questo in un dispositivo che dovrebbe ricevere solo file e per la prima esecuzione in un nuovo dispositivo.</value>
   </data>
   <data name="SynchronizationMode_Field_TwoWay" xml:space="preserve">
     <value>Bidirezionale</value>
   </data>
   <data name="SynchronizationMode_Field_TwoWay_Help" xml:space="preserve">
-    <value>Copia le modifiche in entrambe le direzioni. Un file che aggiungi, modifichi o elimini qui viene applicato all'archiviazione e un file aggiunto, modificato o eliminato nell'archiviazione viene applicato qui. Se lo stesso file è cambiato in entrambi i posti, viene tenuta la copia con l'ora di modifica più recente. La copia più vecchia resta in una versione precedente dell'archiviazione e può essere ripristinata. Passa a questa modalità dopo un'esecuzione in Lettura, quando questo dispositivo deve sia inviare sia ricevere.</value>
+    <value>Copia i cambiamenti in entrambe le direzioni. Un file aggiunto, modificato o eliminato qui viene applicato all'archivio e un file aggiunto, modificato o eliminato nell'archivio viene applicato qui. Se lo stesso file è cambiato in entrambi i punti, viene mantenuto quello con data/ora di modifica successiva. La copia precedente rimane in una versione precedente nell'archivio e può essere ripristinata. Passa a questo dopo un ciclo di lettura, quando questo dispositivo dovrebbe sia inviare che ricevere.</value>
   </data>
   <data name="SynchronizationMode_Field_Write" xml:space="preserve">
     <value>Scrittura</value>
   </data>
   <data name="SynchronizationMode_Field_Write_Help" xml:space="preserve">
-    <value>Pubblica questa cartella come versione successiva nell'archiviazione centralizzata. Quella versione coincide con questa cartella: i file qui vengono inviati e i file che sono nell'archiviazione ma non in questa cartella vengono eliminati dall'archiviazione. Niente in questa cartella viene modificato o eliminato. Gli altri dispositivi ricevono questa cartella alla prossima esecuzione. Le versioni precedenti restano nell'archiviazione e possono essere ripristinate. Usalo quando questo computer è l'origine dei file, o quando hai corretto la cartella in locale e vuoi che l'archiviazione coincida esattamente.</value>
+    <value>Pubblica questa cartella come versione successiva nella memoria centralizzata. Questa versione corrisponde a questa cartella: i file vengono caricati qui e i file che si trovano nell'archivio ma non in questa cartella vengono eliminati dall'archivio. Nulla in questa cartella viene modificato o eliminato. Altri dispositivi ricevono questa cartella la prossima volta che vengono eseguiti. Le versioni precedenti rimangono nell'archivio e possono essere ripristinate. Usa questo quando questo computer è la sorgente dei file o quando è stata riparata la cartella localmente e vuoi che l'archivio corrisponda esattamente.</value>
   </data>
   <data name="SynchronizationTask_Create" xml:space="preserve">
     <value>Sincronizzazione</value>
   </data>
   <data name="SynchronizationTask_Help" xml:space="preserve">
-    <value>Tiene una cartella allineata a un'archiviazione centralizzata condivisa dai tuoi dispositivi. Inizia con Lettura, poi passa a Bidirezionale o Scrittura.</value>
+    <value>Mantiene una cartella allineata con l'archivio centralizzato condiviso dai dispositivi. Inizia in Lettura, quindi passa a Bidirezionale o Scrittura.</value>
   </data>
   <data name="SynchronizationTask_Storage_Help" xml:space="preserve">
     <value>Specifica un archivio centralizzato univoco tramite cui i dispositivi si sincronizzano. Tutti i dispositivi partecipanti devono utilizzare la stessa posizione di archiviazione. Questa posizione è gestita interamente dall'app — inclusa l'eliminazione dei dati — quindi non utilizzarla per altri scopi e non condividerla tra più attività.</value>
